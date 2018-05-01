@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		2167C2A52098FF5C00A8653E /* NRLWalletSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 2167C2A32098FF5C00A8653E /* NRLWalletSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2167C2AC2098FFA400A8653E /* NRLWalletSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2167C2AB2098FFA400A8653E /* NRLWalletSDK.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2167C2A02098FF5C00A8653E /* NRLWalletSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NRLWalletSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2167C2A32098FF5C00A8653E /* NRLWalletSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NRLWalletSDK.h; sourceTree = "<group>"; };
 		2167C2A42098FF5C00A8653E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2167C2AB2098FFA400A8653E /* NRLWalletSDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRLWalletSDK.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +50,7 @@
 			children = (
 				2167C2A32098FF5C00A8653E /* NRLWalletSDK.h */,
 				2167C2A42098FF5C00A8653E /* Info.plist */,
+				2167C2AB2098FFA400A8653E /* NRLWalletSDK.swift */,
 			);
 			path = NRLWalletSDK;
 			sourceTree = "<group>";
@@ -95,6 +98,7 @@
 				TargetAttributes = {
 					2167C29F2098FF5C00A8653E = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 				};
 			};
@@ -130,6 +134,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2167C2AC2098FFA400A8653E /* NRLWalletSDK.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +264,7 @@
 		2167C2A92098FF5C00A8653E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -275,6 +281,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.norestlabs.NRLWalletSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -283,6 +290,7 @@
 		2167C2AA2098FF5C00A8653E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
