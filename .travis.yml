@@ -1,0 +1,26 @@
+language: objective-c
+osx_image: xcode9.3
+xcode_project: NRLWalletSDK.xcodeproj
+xcode_scheme: NRLWalletSDK
+xcode_sdk: iphonesimulator9.3
+env:
+  global:
+  - FRAMEWORK_NAME=NRLWalletSDK
+before_install:
+- brew update
+- brew outdated carthage || brew upgrade carthage
+before_script:
+- carthage bootstrap
+before_deploy:
+- carthage build --no-skip-current
+- carthage archive $FRAMEWORK_NAME
+deploy:
+  provider: releases
+  api_key:
+    secure: AOrs7PhndDwjEL9v9o6AVLwjm/KB3AE0RXCNfGjzYQWkVcFVQUjjqmEEx3vqtiqAyL2nsTKXHLlYjMDazgKCvFV6o8Bzbf6czQWx28T8Q+Gp4VZrty3renGFvla6Xb3vMVSI5ACT+zZ1RE/muhoAB8QUMd8TlDk/AcI1iffGHdA5WGGb9R1dyvgIO6TiZ3BMUYtb/sdJqFnHYf37xWPIE/7hCn9JmQLaKY9RL5YcvExhat0PKIesKZ2iZgB7rtoLvDGlnQh+vPY7VX6VLsFA7D0GIrprEmXJVLxOrV/jJiDsDM6+w9kZv4oAKFZapDdU/g8/Mk5Dpi00FGm+t5QLm2z6AMRL870+F7h0TW+waVxgkq6Zni4eWPd1KNd5y+K5HQf+Ayx83wtk4jzG1CdnA/2c5+OKELoJG8h6P7lm3asTRrOTha3Xw2uv/hri2xNYIFITj/afD5tPf3yR8SeDdXtaf2gCqeR8L3PGot+2XthLWScBTp/GPpTpSJDw2lHi3P88xLZ9dpkbioNmvN50W+EATbd1HSmCju5FTMsoEvZIxX7MaozQ0J0wQls6hadH7UqK+4WRtcpxx9D7JiGqgfeXmu0RbqLiHNOKR4gugpkrDNt6wSn2LPgFq9a4ILKvi+qbjO2RsPKR1Yi+UIbjo1BuY9vC093Je5XXMy355ag=
+  file: "$FRAMEWORK_NAME.framework.zip"
+  skip_cleanup: true
+  on:
+    repo: gedanziger/nrlwallet-ios-sdk
+    branch: develop
+    tags: true
