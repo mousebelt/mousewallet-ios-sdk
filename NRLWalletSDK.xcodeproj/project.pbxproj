@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2167C2A52098FF5C00A8653E /* NRLWalletSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 2167C2A32098FF5C00A8653E /* NRLWalletSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2167C2AC2098FFA400A8653E /* NRLWalletSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2167C2AB2098FFA400A8653E /* NRLWalletSDK.swift */; };
+		2167C2CB2099A58F00A8653E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 2167C2CA2099A58F00A8653E /* LICENSE */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -16,6 +17,7 @@
 		2167C2A32098FF5C00A8653E /* NRLWalletSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NRLWalletSDK.h; sourceTree = "<group>"; };
 		2167C2A42098FF5C00A8653E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2167C2AB2098FFA400A8653E /* NRLWalletSDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRLWalletSDK.swift; sourceTree = "<group>"; };
+		2167C2CA2099A58F00A8653E /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,7 +34,8 @@
 		2167C2962098FF5B00A8653E = {
 			isa = PBXGroup;
 			children = (
-				2167C2A22098FF5C00A8653E /* NRLWalletSDK */,
+				2167C2C72099A49B00A8653E /* Metadata */,
+				2167C2C62099A47C00A8653E /* Sources */,
 				2167C2A12098FF5C00A8653E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,14 +48,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2167C2A22098FF5C00A8653E /* NRLWalletSDK */ = {
+		2167C2C62099A47C00A8653E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				2167C2A32098FF5C00A8653E /* NRLWalletSDK.h */,
 				2167C2A42098FF5C00A8653E /* Info.plist */,
 				2167C2AB2098FFA400A8653E /* NRLWalletSDK.swift */,
 			);
-			path = NRLWalletSDK;
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		2167C2C72099A49B00A8653E /* Metadata */ = {
+			isa = PBXGroup;
+			children = (
+				2167C2CA2099A58F00A8653E /* LICENSE */,
+			);
+			path = Metadata;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,6 +135,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2167C2CB2099A58F00A8653E /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
