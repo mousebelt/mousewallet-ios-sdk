@@ -7,17 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		184887C8D6FBDBC0EFD978BD /* Pods_NRLWalletSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDEC3E1D827802DBD616217E /* Pods_NRLWalletSDK.framework */; };
 		2167C2A52098FF5C00A8653E /* NRLWalletSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 2167C2A32098FF5C00A8653E /* NRLWalletSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2167C2AC2098FFA400A8653E /* NRLWalletSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2167C2AB2098FFA400A8653E /* NRLWalletSDK.swift */; };
 		2167C2CB2099A58F00A8653E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 2167C2CA2099A58F00A8653E /* LICENSE */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19FC4D586CCE8866B238611F /* Pods-NRLWalletSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NRLWalletSDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NRLWalletSDK/Pods-NRLWalletSDK.debug.xcconfig"; sourceTree = "<group>"; };
 		2167C2A02098FF5C00A8653E /* NRLWalletSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NRLWalletSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2167C2A32098FF5C00A8653E /* NRLWalletSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NRLWalletSDK.h; sourceTree = "<group>"; };
 		2167C2A42098FF5C00A8653E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2167C2AB2098FFA400A8653E /* NRLWalletSDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRLWalletSDK.swift; sourceTree = "<group>"; };
 		2167C2CA2099A58F00A8653E /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		883A456B25092D5BF51BC0CA /* Pods-NRLWalletSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NRLWalletSDK.release.xcconfig"; path = "Pods/Target Support Files/Pods-NRLWalletSDK/Pods-NRLWalletSDK.release.xcconfig"; sourceTree = "<group>"; };
+		FDEC3E1D827802DBD616217E /* Pods_NRLWalletSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NRLWalletSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -25,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				184887C8D6FBDBC0EFD978BD /* Pods_NRLWalletSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +42,8 @@
 				2167C2C72099A49B00A8653E /* Metadata */,
 				2167C2C62099A47C00A8653E /* Sources */,
 				2167C2A12098FF5C00A8653E /* Products */,
+				B599D139E783632BA30FF572 /* Pods */,
+				431162E9CDABEB14022578A5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +73,23 @@
 			path = Metadata;
 			sourceTree = "<group>";
 		};
+		431162E9CDABEB14022578A5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FDEC3E1D827802DBD616217E /* Pods_NRLWalletSDK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B599D139E783632BA30FF572 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				19FC4D586CCE8866B238611F /* Pods-NRLWalletSDK.debug.xcconfig */,
+				883A456B25092D5BF51BC0CA /* Pods-NRLWalletSDK.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -84,10 +108,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2167C2A82098FF5C00A8653E /* Build configuration list for PBXNativeTarget "NRLWalletSDK" */;
 			buildPhases = (
+				AA3F2ACFC5CC4340969F382A /* [CP] Check Pods Manifest.lock */,
 				2167C29B2098FF5C00A8653E /* Sources */,
 				2167C29C2098FF5C00A8653E /* Frameworks */,
 				2167C29D2098FF5C00A8653E /* Headers */,
 				2167C29E2098FF5C00A8653E /* Resources */,
+				246906563715FAF1099009F9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -140,6 +166,42 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		246906563715FAF1099009F9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NRLWalletSDK/Pods-NRLWalletSDK-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA3F2ACFC5CC4340969F382A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NRLWalletSDK-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2167C29B2098FF5C00A8653E /* Sources */ = {
@@ -275,6 +337,7 @@
 		};
 		2167C2A92098FF5C00A8653E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19FC4D586CCE8866B238611F /* Pods-NRLWalletSDK.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -285,11 +348,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.norestlabs.NRLWalletSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -301,6 +360,7 @@
 		};
 		2167C2AA2098FF5C00A8653E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 883A456B25092D5BF51BC0CA /* Pods-NRLWalletSDK.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -311,11 +371,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.norestlabs.NRLWalletSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

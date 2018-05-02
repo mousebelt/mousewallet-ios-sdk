@@ -1,6 +1,6 @@
 language: objective-c
 osx_image: xcode9.3
-xcode_project: NRLWalletSDK.xcodeproj
+xcode_project: NRLWalletSDK.xcworkspace
 xcode_scheme: NRLWalletSDK
 xcode_sdk: iphonesimulator9.3
 env:
