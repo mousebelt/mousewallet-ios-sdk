@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CryptoSwift
 
 open class NRLWalletSDK: NSObject {
     
@@ -15,6 +16,6 @@ open class NRLWalletSDK: NSObject {
     }
     
     open func hello() {
-        debugPrint("Hello from NRLWalletSDK")
+        debugPrint("Hello from NRLWalletSDK------------")
     }
 }

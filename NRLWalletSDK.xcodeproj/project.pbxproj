@@ -11,7 +11,45 @@
 		2167C2A52098FF5C00A8653E /* NRLWalletSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 2167C2A32098FF5C00A8653E /* NRLWalletSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2167C2AC2098FFA400A8653E /* NRLWalletSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2167C2AB2098FFA400A8653E /* NRLWalletSDK.swift */; };
 		2167C2CB2099A58F00A8653E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 2167C2CA2099A58F00A8653E /* LICENSE */; };
+		2167C2F6209AF09D00A8653E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2167C2F5209AF09D00A8653E /* AppDelegate.swift */; };
+		2167C2F8209AF09D00A8653E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2167C2F7209AF09D00A8653E /* ViewController.swift */; };
+		2167C2FB209AF09D00A8653E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2167C2F9209AF09D00A8653E /* Main.storyboard */; };
+		2167C2FD209AF0A500A8653E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2167C2FC209AF0A500A8653E /* Assets.xcassets */; };
+		2167C300209AF0A500A8653E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2167C2FE209AF0A500A8653E /* LaunchScreen.storyboard */; };
+		2167C305209AF0C100A8653E /* NRLWalletSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2167C2A02098FF5C00A8653E /* NRLWalletSDK.framework */; };
+		2167C306209AF0C100A8653E /* NRLWalletSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2167C2A02098FF5C00A8653E /* NRLWalletSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2167C30F209AF2F700A8653E /* Chinese.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2167C30D209AF2F700A8653E /* Chinese.swift */; };
+		2167C310209AF2F700A8653E /* English.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2167C30E209AF2F700A8653E /* English.swift */; };
+		2167C312209AF38500A8653E /* French.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2167C311209AF38500A8653E /* French.swift */; };
+		2167C314209AF4B100A8653E /* Italian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2167C313209AF4B100A8653E /* Italian.swift */; };
+		2167C316209AF56500A8653E /* Japanese.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2167C315209AF56500A8653E /* Japanese.swift */; };
+		2167C318209AF60500A8653E /* Spanish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2167C317209AF60500A8653E /* Spanish.swift */; };
+		2167C31A209AF60F00A8653E /* Korean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2167C319209AF60F00A8653E /* Korean.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2167C307209AF0C100A8653E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2167C2972098FF5B00A8653E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2167C29F2098FF5C00A8653E;
+			remoteInfo = NRLWalletSDK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2167C309209AF0C100A8653E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2167C306209AF0C100A8653E /* NRLWalletSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		19FC4D586CCE8866B238611F /* Pods-NRLWalletSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NRLWalletSDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NRLWalletSDK/Pods-NRLWalletSDK.debug.xcconfig"; sourceTree = "<group>"; };
@@ -20,6 +58,20 @@
 		2167C2A42098FF5C00A8653E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2167C2AB2098FFA400A8653E /* NRLWalletSDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRLWalletSDK.swift; sourceTree = "<group>"; };
 		2167C2CA2099A58F00A8653E /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		2167C2F3209AF09D00A8653E /* NRLWalletSDK Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NRLWalletSDK Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2167C2F5209AF09D00A8653E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2167C2F7209AF09D00A8653E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2167C2FA209AF09D00A8653E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2167C2FC209AF0A500A8653E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2167C2FF209AF0A500A8653E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2167C301209AF0A500A8653E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2167C30D209AF2F700A8653E /* Chinese.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chinese.swift; sourceTree = "<group>"; };
+		2167C30E209AF2F700A8653E /* English.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = English.swift; sourceTree = "<group>"; };
+		2167C311209AF38500A8653E /* French.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = French.swift; sourceTree = "<group>"; };
+		2167C313209AF4B100A8653E /* Italian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Italian.swift; sourceTree = "<group>"; };
+		2167C315209AF56500A8653E /* Japanese.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Japanese.swift; sourceTree = "<group>"; };
+		2167C317209AF60500A8653E /* Spanish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spanish.swift; sourceTree = "<group>"; };
+		2167C319209AF60F00A8653E /* Korean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Korean.swift; sourceTree = "<group>"; };
 		883A456B25092D5BF51BC0CA /* Pods-NRLWalletSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NRLWalletSDK.release.xcconfig"; path = "Pods/Target Support Files/Pods-NRLWalletSDK/Pods-NRLWalletSDK.release.xcconfig"; sourceTree = "<group>"; };
 		FDEC3E1D827802DBD616217E /* Pods_NRLWalletSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NRLWalletSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -33,6 +85,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2167C2F0209AF09D00A8653E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2167C305209AF0C100A8653E /* NRLWalletSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -41,6 +101,7 @@
 			children = (
 				2167C2C72099A49B00A8653E /* Metadata */,
 				2167C2C62099A47C00A8653E /* Sources */,
+				2167C2F4209AF09D00A8653E /* NRLWalletSDK Example */,
 				2167C2A12098FF5C00A8653E /* Products */,
 				B599D139E783632BA30FF572 /* Pods */,
 				431162E9CDABEB14022578A5 /* Frameworks */,
@@ -51,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				2167C2A02098FF5C00A8653E /* NRLWalletSDK.framework */,
+				2167C2F3209AF09D00A8653E /* NRLWalletSDK Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,6 +120,7 @@
 		2167C2C62099A47C00A8653E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				2167C30C209AF2EB00A8653E /* Language */,
 				2167C2A32098FF5C00A8653E /* NRLWalletSDK.h */,
 				2167C2A42098FF5C00A8653E /* Info.plist */,
 				2167C2AB2098FFA400A8653E /* NRLWalletSDK.swift */,
@@ -71,6 +134,33 @@
 				2167C2CA2099A58F00A8653E /* LICENSE */,
 			);
 			path = Metadata;
+			sourceTree = "<group>";
+		};
+		2167C2F4209AF09D00A8653E /* NRLWalletSDK Example */ = {
+			isa = PBXGroup;
+			children = (
+				2167C2F5209AF09D00A8653E /* AppDelegate.swift */,
+				2167C2F7209AF09D00A8653E /* ViewController.swift */,
+				2167C2F9209AF09D00A8653E /* Main.storyboard */,
+				2167C2FC209AF0A500A8653E /* Assets.xcassets */,
+				2167C2FE209AF0A500A8653E /* LaunchScreen.storyboard */,
+				2167C301209AF0A500A8653E /* Info.plist */,
+			);
+			path = "NRLWalletSDK Example";
+			sourceTree = "<group>";
+		};
+		2167C30C209AF2EB00A8653E /* Language */ = {
+			isa = PBXGroup;
+			children = (
+				2167C30D209AF2F700A8653E /* Chinese.swift */,
+				2167C30E209AF2F700A8653E /* English.swift */,
+				2167C311209AF38500A8653E /* French.swift */,
+				2167C313209AF4B100A8653E /* Italian.swift */,
+				2167C315209AF56500A8653E /* Japanese.swift */,
+				2167C317209AF60500A8653E /* Spanish.swift */,
+				2167C319209AF60F00A8653E /* Korean.swift */,
+			);
+			path = Language;
 			sourceTree = "<group>";
 		};
 		431162E9CDABEB14022578A5 /* Frameworks */ = {
@@ -124,18 +214,41 @@
 			productReference = 2167C2A02098FF5C00A8653E /* NRLWalletSDK.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		2167C2F2209AF09D00A8653E /* NRLWalletSDK Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2167C304209AF0A500A8653E /* Build configuration list for PBXNativeTarget "NRLWalletSDK Example" */;
+			buildPhases = (
+				2167C2EF209AF09D00A8653E /* Sources */,
+				2167C2F0209AF09D00A8653E /* Frameworks */,
+				2167C2F1209AF09D00A8653E /* Resources */,
+				2167C309209AF0C100A8653E /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2167C308209AF0C100A8653E /* PBXTargetDependency */,
+			);
+			name = "NRLWalletSDK Example";
+			productName = "NRLWalletSDK Example";
+			productReference = 2167C2F3209AF09D00A8653E /* NRLWalletSDK Example.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		2167C2972098FF5B00A8653E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = NoRestLabs;
 				TargetAttributes = {
 					2167C29F2098FF5C00A8653E = {
 						CreatedOnToolsVersion = 9.3;
 						LastSwiftMigration = 0930;
+					};
+					2167C2F2209AF09D00A8653E = {
+						CreatedOnToolsVersion = 9.3;
 					};
 				};
 			};
@@ -145,6 +258,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 2167C2962098FF5B00A8653E;
 			productRefGroup = 2167C2A12098FF5C00A8653E /* Products */;
@@ -152,6 +266,7 @@
 			projectRoot = "";
 			targets = (
 				2167C29F2098FF5C00A8653E /* NRLWalletSDK */,
+				2167C2F2209AF09D00A8653E /* NRLWalletSDK Example */,
 			);
 		};
 /* End PBXProject section */
@@ -162,6 +277,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				2167C2CB2099A58F00A8653E /* LICENSE in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2167C2F1209AF09D00A8653E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2167C300209AF0A500A8653E /* LaunchScreen.storyboard in Resources */,
+				2167C2FD209AF0A500A8653E /* Assets.xcassets in Resources */,
+				2167C2FB209AF09D00A8653E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,11 +333,54 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2167C318209AF60500A8653E /* Spanish.swift in Sources */,
+				2167C316209AF56500A8653E /* Japanese.swift in Sources */,
+				2167C314209AF4B100A8653E /* Italian.swift in Sources */,
 				2167C2AC2098FFA400A8653E /* NRLWalletSDK.swift in Sources */,
+				2167C312209AF38500A8653E /* French.swift in Sources */,
+				2167C310209AF2F700A8653E /* English.swift in Sources */,
+				2167C30F209AF2F700A8653E /* Chinese.swift in Sources */,
+				2167C31A209AF60F00A8653E /* Korean.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2167C2EF209AF09D00A8653E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2167C2F8209AF09D00A8653E /* ViewController.swift in Sources */,
+				2167C2F6209AF09D00A8653E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2167C308209AF0C100A8653E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2167C29F2098FF5C00A8653E /* NRLWalletSDK */;
+			targetProxy = 2167C307209AF0C100A8653E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2167C2F9209AF09D00A8653E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2167C2FA209AF09D00A8653E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2167C2FE209AF0A500A8653E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2167C2FF209AF0A500A8653E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2167C2A62098FF5C00A8653E /* Debug */ = {
@@ -348,7 +516,11 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.norestlabs.NRLWalletSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -371,10 +543,50 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.norestlabs.NRLWalletSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2167C302209AF0A500A8653E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "NRLWalletSDK Example/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.norestlabs.NRLWalletSDK-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2167C303209AF0A500A8653E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "NRLWalletSDK Example/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.norestlabs.NRLWalletSDK-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -397,6 +609,15 @@
 			buildConfigurations = (
 				2167C2A92098FF5C00A8653E /* Debug */,
 				2167C2AA2098FF5C00A8653E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2167C304209AF0A500A8653E /* Build configuration list for PBXNativeTarget "NRLWalletSDK Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2167C302209AF0A500A8653E /* Debug */,
+				2167C303209AF0A500A8653E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

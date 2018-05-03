@@ -2,7 +2,7 @@
 //  NRLWalletSDK.h
 //  NRLWalletSDK
 //
-//  Created by Wang Gang on 5/2/18.
+//  Created by David Bala on 5/2/18.
 //  Copyright © 2018 NoRestLabs. All rights reserved.
 //
 

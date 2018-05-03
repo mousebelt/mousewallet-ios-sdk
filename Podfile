@@ -6,5 +6,6 @@ target 'NRLWalletSDK' do
   use_frameworks!
 
   # Pods for NRLWalletSDK
-
+  pod 'CryptoSwift', '0.7.2'
+  
 end
