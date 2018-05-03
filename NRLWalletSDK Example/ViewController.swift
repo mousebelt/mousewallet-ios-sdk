@@ -13,8 +13,15 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        try! debugPrint(NRLMnemonic.generateMnemonic(strength: 128, language: .english))
+        
+        do {
+            let mnemonic = try NRLMnemonic.generateMnemonic(strength: 128, language: .english)
+            print("mnemonic = \(mnemonic)")
+            let seed = try NRLMnemonic.mnemonicToSeed(from: mnemonic, passphrase: "Test", language: .english)
+            print("seed = \(seed)")
+        } catch {
+            print(error)
+        }
     }
 
     override func didReceiveMemoryWarning() {
