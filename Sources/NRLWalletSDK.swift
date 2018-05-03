@@ -16,6 +16,6 @@ open class NRLWalletSDK: NSObject {
     }
     
     open func hello() {
-        debugPrint("Hello from NRLWalletSDK------------")
+        debugPrint("Hello from NRLWalletSDK")
     }
 }

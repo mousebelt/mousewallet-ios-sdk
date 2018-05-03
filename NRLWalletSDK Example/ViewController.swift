@@ -14,8 +14,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let walletSDK = NRLWalletSDK()
-        walletSDK.hello()
+        try! debugPrint(NRLMnemonic.generateMnemonic(strength: 128, language: .english))
     }
 
     override func didReceiveMemoryWarning() {
