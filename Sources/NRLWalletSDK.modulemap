@@ -1,0 +1,11 @@
+framework module NRLWalletSDK {
+    umbrella header "NRLWalletSDK.h"
+    
+    export *
+    module * { export * }
+    
+    explicit module Private {
+        header "Internal.h"
+        link "crypto"
+    }
+}

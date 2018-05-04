@@ -14,21 +14,21 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        do {
-            let mnemonic = try NRLMnemonic.generateMnemonic(strength: 128, language: .english)
-            print("mnemonic = \(mnemonic)")
-            let seed = try NRLMnemonic.mnemonicToSeed(from: mnemonic, passphrase: "Test", language: .english)
-            print("seed = \(seed)")
+        let mnemonic = NRLMnemonic.generateMnemonic(strength: .normal, language: .english)
+        print("mnemonic = \(mnemonic.joined(separator: " "))")
+        let seed = NRLMnemonic.mnemonicToSeed(from: mnemonic, withPassphrase: "Test")
+        print("seed = \(seed.toHexString())")
+        
+        // Generate mnemonic and seed
+        do {    
+            let wallet = NRLWallet(seed: seed, network: .main(.ethereum))
+            let privateKey = try wallet.generateExternalPrivateKey(at: 60)
+            let publicKey = privateKey.nrlPublicKey()
+            
+            print("private key = \(privateKey.raw.toHexString())")
+            print("public key = \(publicKey.raw.toHexString())")
         } catch {
             print(error)
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
-
