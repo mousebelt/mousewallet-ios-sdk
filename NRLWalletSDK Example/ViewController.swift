@@ -22,12 +22,21 @@ class ViewController: UIViewController {
             let seed = try NRLMnemonic.mnemonicToSeed(from: mnemonic, withPassphrase: "Test")
             print("seed = \(seed.toHexString())")
             
+            // Ethereum : 60
             let wallet = NRLWallet(seed: seed, network: .main(.ethereum))
             let privateKey = try wallet.generateExternalPrivateKey(at: 60)
             let publicKey = privateKey.nrlPublicKey()
             
-            print("private key = \(privateKey.raw.toHexString())")
-            print("public key = \(publicKey.raw.toHexString())")
+            print("eth private key = \(privateKey.raw.toHexString())")
+            print("eth public key = \(publicKey.raw.toHexString())")
+            
+            // NEO : 888
+            let neoWallet = NRLWallet(seed: seed, network: .main(.neo))
+            let neoPrivateKey = try neoWallet.generateExternalPrivateKey(at: 60)
+            let neoPublicKey = neoPrivateKey.nrlPublicKey()
+            
+            print("neo private key = \(neoPrivateKey.raw.toHexString())")
+            print("neo public key = \(neoPublicKey.raw.toHexString())")
         } catch {
             print(error)
         }

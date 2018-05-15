@@ -16,6 +16,7 @@ public enum Coin {
     case zcash
     case lisk
     case bitcoinCash
+    case neo
 }
 
 public enum Network {
@@ -45,6 +46,8 @@ public enum Network {
                 return 134
             case .bitcoinCash:
                 return 145
+            case .neo:
+                return 888
             }
             
         case .test:
