@@ -23,12 +23,15 @@ class ViewController: UIViewController {
             print("seed = \(seed.toHexString())")
             
             // Ethereum : 60
-            let wallet = NRLWallet(seed: seed, network: .main(.ethereum))
-            let privateKey = try wallet.generateExternalPrivateKey(at: 60)
+            let etherWallet = NRLWallet(seed: seed, network: .main(.ethereum))
+            let privateKey = try etherWallet.generateExternalPrivateKey(at: 60)
             let publicKey = privateKey.nrlPublicKey()
             
             print("eth private key = \(privateKey.raw.toHexString())")
             print("eth public key = \(publicKey.raw.toHexString())")
+            
+            let address = NRLEthereum.Utils.publicToAddressStr(publicKey.raw);
+            print("eth address = \(address)")
             
             // NEO : 888
             let neoWallet = NRLWallet(seed: seed, network: .main(.neo))
