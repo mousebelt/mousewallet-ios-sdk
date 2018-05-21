@@ -1,9 +1,6 @@
 
 import Foundation
 import secp256k1_ios
-//import BigInt
-
-
 
 public struct SECP256K1 {
     public struct UnmarshaledSignature{
