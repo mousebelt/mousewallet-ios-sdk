@@ -12,34 +12,35 @@ public struct NRLPrivateKey {
     private let depth: UInt8
     private let fingerprint: UInt32
     private let childIndex: UInt32
-    private let network: Network
-
-    public init(seed: Data, network: Network) {
-        let output = Crypto.HMACSHA512(key: "Bitcoin seed".data(using: .ascii)!, data: seed)
+    private let coin: NRLCoin
+    
+    //Fixeds: seed key is different to coin types.
+    init(seed: Data, coin: NRLCoin) {
+        self.coin = coin
+        let output = Crypto.HMACSHA512(key: self.coin.getSeedKey(), data: seed)
         self.raw = output[0..<32]
         self.chainCode = output[32..<64]
         self.depth = 0
         self.fingerprint = 0
         self.childIndex = 0
-        self.network = network
     }
 
-    private init(nrlPrivateKey: Data, chainCode: Data, depth: UInt8, fingerprint: UInt32, index: UInt32, network: Network) {
+    private init(nrlPrivateKey: Data, chainCode: Data, depth: UInt8, fingerprint: UInt32, index: UInt32, coin: NRLCoin) {
         self.raw = nrlPrivateKey
         self.chainCode = chainCode
         self.depth = depth
         self.fingerprint = fingerprint
         self.childIndex = index
-        self.network = network
+        self.coin = coin
     }
 
     public func nrlPublicKey() -> NRLPublicKey {
-        return NRLPublicKey(nrlPrivateKey: self, chainCode: chainCode, network: network, depth: depth, fingerprint: fingerprint, childIndex: childIndex)
+        return NRLPublicKey(nrlPrivateKey: self, chainCode: chainCode, coin: self.coin, depth: depth, fingerprint: fingerprint, childIndex: childIndex)
     }
 
     public func extended() -> String {
         var extendedPrivateKeyData = Data()
-        extendedPrivateKeyData += network.privateKeyPrefix.bigEndian
+        extendedPrivateKeyData += self.coin.network.privateKeyPrefix.bigEndian
         extendedPrivateKeyData += depth.littleEndian
         extendedPrivateKeyData += fingerprint.littleEndian
         extendedPrivateKeyData += childIndex.littleEndian
@@ -64,7 +65,7 @@ public struct NRLPrivateKey {
             childIndex: childIndex
         )
 
-        guard let derivedKey = keyDeriver.derived(at: index, hardened: hardens) else {
+        guard let derivedKey = keyDeriver.derived(at: index, hardened: hardens, curveOrder: coin.curve) else {
             throw NRLWalletSDKError.keyDerivateionFailed
         }
 
@@ -74,7 +75,7 @@ public struct NRLPrivateKey {
             depth: derivedKey.depth,
             fingerprint: derivedKey.fingerprint,
             index: derivedKey.childIndex,
-            network: network
+            coin: self.coin
         )
     }
 }

@@ -82,6 +82,9 @@
 		630DC74320AC2E210005800A /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DC74020AC2E200005800A /* Dictionary+Extension.swift */; };
 		630DC74420AC2E210005800A /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DC74120AC2E200005800A /* String+Extension.swift */; };
 		630DC74520AC2E210005800A /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DC74220AC2E210005800A /* Array+Extension.swift */; };
+		63304D6720AD4D77006D444B /* Neo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63304D6620AD4D77006D444B /* Neo.swift */; };
+		63304D6920AF3475006D444B /* neoutils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63304D6820AF3474006D444B /* neoutils.framework */; };
+		63304D6F20B0502F006D444B /* NRLCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63304D6E20B0502F006D444B /* NRLCoin.swift */; };
 		634EB2AC20AC2EAB00ACAA06 /* NSRegularExpressionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634EB2AB20AC2EAB00ACAA06 /* NSRegularExpressionExtension.swift */; };
 		634EB2B120AC302E00ACAA06 /* libsodium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634EB2B020AC302E00ACAA06 /* libsodium.framework */; };
 		634EB2B220AC3B8000ACAA06 /* libsodium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634EB2B020AC302E00ACAA06 /* libsodium.framework */; };
@@ -212,6 +215,9 @@
 		630DC74020AC2E200005800A /* Dictionary+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
 		630DC74120AC2E200005800A /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		630DC74220AC2E210005800A /* Array+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		63304D6620AD4D77006D444B /* Neo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neo.swift; sourceTree = "<group>"; };
+		63304D6820AF3474006D444B /* neoutils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = neoutils.framework; sourceTree = "<group>"; };
+		63304D6E20B0502F006D444B /* NRLCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRLCoin.swift; sourceTree = "<group>"; };
 		634EB2AB20AC2EAB00ACAA06 /* NSRegularExpressionExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSRegularExpressionExtension.swift; sourceTree = "<group>"; };
 		634EB2B020AC302E00ACAA06 /* libsodium.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = libsodium.framework; sourceTree = "<group>"; };
 		634EB2B420AC3BA600ACAA06 /* secp256k1_ios.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = secp256k1_ios.framework; sourceTree = "<group>"; };
@@ -230,6 +236,7 @@
 				BBF6E6C5FB0AE931830C2C18 /* Pods_NRLWalletSDK.framework in Frameworks */,
 				634EB2B120AC302E00ACAA06 /* libsodium.framework in Frameworks */,
 				634EB2B520AC3BA600ACAA06 /* secp256k1_ios.framework in Frameworks */,
+				63304D6920AF3475006D444B /* neoutils.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,22 +281,19 @@
 		2167C2C62099A47C00A8653E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				63304D6520AD4D4E006D444B /* Coins */,
 				630DC67F20ABEFB00005800A /* Cryptography */,
 				630DC67920ABE9CC0005800A /* Convenience */,
-				630DC67620ABE46F0005800A /* Ethereum */,
 				2167C31B209AF7E000A8653E /* Mnemonic */,
-				2167C30C209AF2EB00A8653E /* Language */,
 				2167C2A42098FF5C00A8653E /* Info.plist */,
 				2167C346209B464400A8653E /* NRLWalletSDK.h */,
 				2167C333209B1E2800A8653E /* Network.swift */,
-				2167C335209B421D00A8653E /* Base58Encode.swift */,
-				2167C33A209B421E00A8653E /* Crypto.swift */,
-				2167C338209B421E00A8653E /* DataConvertable.swift */,
 				2167C336209B421E00A8653E /* NRLPrivateKey.swift */,
 				2167C339209B421E00A8653E /* NRLPublicKey.swift */,
 				2167C337209B421E00A8653E /* NRLWallet.swift */,
 				2171AA33209B481200EA283E /* NRLWalletSDKError.swift */,
 				2167C342209B431500A8653E /* NRLWalletSDK.modulemap */,
+				63304D6E20B0502F006D444B /* NRLCoin.swift */,
 				2167C341209B431500A8653E /* Internal.h */,
 				2167C343209B431500A8653E /* Internal.m */,
 			);
@@ -334,6 +338,7 @@
 		2167C31B209AF7E000A8653E /* Mnemonic */ = {
 			isa = PBXGroup;
 			children = (
+				2167C30C209AF2EB00A8653E /* Language */,
 				2167C31D209AF7F300A8653E /* NRLMnemonic.swift */,
 				2167C31C209AF7F300A8653E /* Data+NRLBitArray.swift */,
 				2167C31E209AF7F300A8653E /* String+MnemonicData.swift */,
@@ -344,6 +349,7 @@
 		431162E9CDABEB14022578A5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				63304D6820AF3474006D444B /* neoutils.framework */,
 				2167C32B209B071D00A8653E /* CryptoSwift.framework */,
 				634EB2B420AC3BA600ACAA06 /* secp256k1_ios.framework */,
 				634EB2B020AC302E00ACAA06 /* libsodium.framework */,
@@ -383,6 +389,7 @@
 		630DC67A20ABE9D70005800A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2167C338209B421E00A8653E /* DataConvertable.swift */,
 				634EB2AB20AC2EAB00ACAA06 /* NSRegularExpressionExtension.swift */,
 				630DC74220AC2E210005800A /* Array+Extension.swift */,
 				630DC74020AC2E200005800A /* Dictionary+Extension.swift */,
@@ -398,6 +405,8 @@
 		630DC67F20ABEFB00005800A /* Cryptography */ = {
 			isa = PBXGroup;
 			children = (
+				2167C335209B421D00A8653E /* Base58Encode.swift */,
+				2167C33A209B421E00A8653E /* Crypto.swift */,
 				630DC72220ABF0700005800A /* SipHash */,
 				630DC6BC20ABF02C0005800A /* BigInt */,
 			);
@@ -462,6 +471,23 @@
 				630DC72920ABF0700005800A /* SipHasher.swift */,
 			);
 			path = SipHash;
+			sourceTree = "<group>";
+		};
+		63304D6420AD4D3E006D444B /* Neo */ = {
+			isa = PBXGroup;
+			children = (
+				63304D6620AD4D77006D444B /* Neo.swift */,
+			);
+			path = Neo;
+			sourceTree = "<group>";
+		};
+		63304D6520AD4D4E006D444B /* Coins */ = {
+			isa = PBXGroup;
+			children = (
+				630DC67620ABE46F0005800A /* Ethereum */,
+				63304D6420AD4D3E006D444B /* Neo */,
+			);
+			path = Coins;
 			sourceTree = "<group>";
 		};
 		E1E285B0682A5893EE5F2766 /* Pods */ = {
@@ -662,6 +688,7 @@
 				2167C31F209AF7F300A8653E /* Data+NRLBitArray.swift in Sources */,
 				2167C310209AF2F700A8653E /* English.swift in Sources */,
 				630DC73A20AC2C4F0005800A /* CryptoExtensions.swift in Sources */,
+				63304D6F20B0502F006D444B /* NRLCoin.swift in Sources */,
 				630DC71220ABF02C0005800A /* Data Conversion.swift in Sources */,
 				630DC74320AC2E210005800A /* Dictionary+Extension.swift in Sources */,
 				630DC67E20ABEA6F0005800A /* LibSecp256k1Extension.swift in Sources */,
@@ -680,6 +707,7 @@
 				630DC72D20ABF0710005800A /* RandomUInt64.swift in Sources */,
 				630DC70F20ABF02C0005800A /* Bitwise Ops.swift in Sources */,
 				630DC67520ABE42B0005800A /* EthereumUtils.swift in Sources */,
+				63304D6720AD4D77006D444B /* Neo.swift in Sources */,
 				2167C31A209AF60F00A8653E /* Korean.swift in Sources */,
 				630DC71A20ABF02C0005800A /* Prime Test.swift in Sources */,
 				630DC74420AC2E210005800A /* String+Extension.swift in Sources */,

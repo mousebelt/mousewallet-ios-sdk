@@ -19,42 +19,11 @@ public enum Coin {
     case neo
 }
 
+//coin_type
 public enum Network {
     case main(Coin)
     case test
-
-    // https://github.com/satoshilabs/slips/blob/master/slip-0044.md
-    public var coinType: UInt32 {
-        switch self {
-        case .main(let coin):
-            switch coin {
-            case .bitcoin:
-                return 0
-            case .litecoin:
-                return 2
-            case .nem:
-                return 43
-            case .ethereum:
-                return 60
-            case .ethereumClassic:
-                return 61
-            case .monero:
-                return 128
-            case .zcash:
-                return 133
-            case .lisk:
-                return 134
-            case .bitcoinCash:
-                return 145
-            case .neo:
-                return 888
-            }
-            
-        case .test:
-            return 1
-        }
-    }
-
+    
     public var privateKeyPrefix: UInt32 {
         switch self {
         case .main:

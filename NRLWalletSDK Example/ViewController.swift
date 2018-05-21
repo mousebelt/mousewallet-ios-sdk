@@ -9,6 +9,7 @@
 import UIKit
 import NRLWalletSDK
 
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -16,7 +17,7 @@ class ViewController: UIViewController {
 
         // Generate mnemonic and seed
         do {
-            let mnemonic = try NRLMnemonic.generateMnemonic(strength: .normal, language: .english)
+            let mnemonic = try NRLMnemonic.generateMnemonic(strength: .hight, language: .english)
             print("mnemonic = \(mnemonic.joined(separator: " "))")
 
             let seed = try NRLMnemonic.mnemonicToSeed(from: mnemonic, withPassphrase: "Test")
@@ -24,22 +25,29 @@ class ViewController: UIViewController {
             
             // Ethereum : 60
             let etherWallet = NRLWallet(seed: seed, network: .main(.ethereum))
-            let privateKey = try etherWallet.generateExternalPrivateKey(at: 60)
-            let publicKey = privateKey.nrlPublicKey()
+            etherWallet.generateExternalKeyPair(at: 2)
             
-            print("eth private key = \(privateKey.raw.toHexString())")
-            print("eth public key = \(publicKey.raw.toHexString())")
-            
-            let address = NRLEthereum.Utils.publicToAddressStr(publicKey.raw);
-            print("eth address = \(address)")
+            var privateKey = etherWallet.getWIF()
+            var publicKey = etherWallet.getPublicKey()
+            var address = etherWallet.getAddress()
+
+            print("Ethereum private key = \(privateKey)")
+            print("Ethereum public key = \(publicKey)")
+            print("Ethereum address = \(address)")
             
             // NEO : 888
             let neoWallet = NRLWallet(seed: seed, network: .main(.neo))
-            let neoPrivateKey = try neoWallet.generateExternalPrivateKey(at: 60)
-            let neoPublicKey = neoPrivateKey.nrlPublicKey()
+            neoWallet.generateExternalKeyPair(at: 2)
             
-            print("neo private key = \(neoPrivateKey.raw.toHexString())")
-            print("neo public key = \(neoPublicKey.raw.toHexString())")
+            privateKey = neoWallet.getWIF()
+            publicKey = neoWallet.getPublicKey()
+            address = neoWallet.getAddress()
+            
+            print("Neo private key = \(privateKey)")
+            print("Neo public key = \(publicKey)")
+            print("Neo address = \(address)")
+            
+            
         } catch {
             print(error)
         }
