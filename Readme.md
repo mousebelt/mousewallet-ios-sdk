@@ -15,3 +15,7 @@
 ### neoutils.framework
 >https://github.com/O3Labs/neo-utils
 
+# environment
+### carthage
+* Download latest carthage from https://github.com/Carthage/Carthage/releases
+
