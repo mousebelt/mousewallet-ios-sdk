@@ -9,6 +9,24 @@
 import UIKit
 import NRLWalletSDK
 
+//data extension to convert binary data to hex string
+extension Data {
+    struct HexEncodingOptions: OptionSet {
+        let rawValue: Int
+        static let upperCase = HexEncodingOptions(rawValue: 1 << 0)
+    }
+    
+    func hexEncodedString(options: HexEncodingOptions = []) -> String {
+        let hexDigits = Array((options.contains(.upperCase) ? "0123456789ABCDEF" : "0123456789abcdef").utf16)
+        var chars: [unichar] = []
+        chars.reserveCapacity(2 * count)
+        for byte in self {
+            chars.append(hexDigits[Int(byte / 16)])
+            chars.append(hexDigits[Int(byte % 16)])
+        }
+        return String(utf16CodeUnits: chars, count: chars.count)
+    }
+}
 
 class ViewController: UIViewController {
 
@@ -21,7 +39,7 @@ class ViewController: UIViewController {
             print("mnemonic = \(mnemonic.joined(separator: " "))")
 
             let seed = try NRLMnemonic.mnemonicToSeed(from: mnemonic, withPassphrase: "Test")
-            print("seed = \(seed.toHexString())")
+            print("\nseed = \(seed.hexEncodedString())")
             
             // Ethereum : 60
             let etherWallet = NRLWallet(seed: seed, network: .main(.ethereum))
@@ -31,7 +49,7 @@ class ViewController: UIViewController {
             var publicKey = etherWallet.getPublicKey()
             var address = etherWallet.getAddress()
 
-            print("Ethereum private key = \(privateKey)")
+            print("\nEthereum private key = \(privateKey)")
             print("Ethereum public key = \(publicKey)")
             print("Ethereum address = \(address)")
             
@@ -43,7 +61,7 @@ class ViewController: UIViewController {
             publicKey = neoWallet.getPublicKey()
             address = neoWallet.getAddress()
             
-            print("Neo private key = \(privateKey)")
+            print("\nNeo private key = \(privateKey)")
             print("Neo public key = \(publicKey)")
             print("Neo address = \(address)")
             
