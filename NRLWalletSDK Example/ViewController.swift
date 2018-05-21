@@ -21,7 +21,7 @@ class ViewController: UIViewController {
             print("mnemonic = \(mnemonic.joined(separator: " "))")
 
             let seed = try NRLMnemonic.mnemonicToSeed(from: mnemonic, withPassphrase: "Test")
-            print("seed = \(seed.toHexString())")
+            print("\nseed = \(seed.toHexString())")
             
             // Ethereum : 60
             let etherWallet = NRLWallet(seed: seed, network: .main(.ethereum))
@@ -31,7 +31,7 @@ class ViewController: UIViewController {
             var publicKey = etherWallet.getPublicKey()
             var address = etherWallet.getAddress()
 
-            print("Ethereum private key = \(privateKey)")
+            print("\nEthereum private key = \(privateKey)")
             print("Ethereum public key = \(publicKey)")
             print("Ethereum address = \(address)")
             
@@ -43,7 +43,7 @@ class ViewController: UIViewController {
             publicKey = neoWallet.getPublicKey()
             address = neoWallet.getAddress()
             
-            print("Neo private key = \(privateKey)")
+            print("\nNeo private key = \(privateKey)")
             print("Neo public key = \(publicKey)")
             print("Neo address = \(address)")
             
