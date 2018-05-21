@@ -1,1 +1,4 @@
 github "krzyzanowskim/CryptoSwift"
+github "shamatar/secp256k1_ios"
+github "jedisct1/libsodium"
+github "O3Labs/neo-utils"
