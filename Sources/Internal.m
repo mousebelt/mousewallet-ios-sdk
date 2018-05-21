@@ -3,7 +3,7 @@
 #import <openssl/ripemd.h>
 #import <openssl/hmac.h>
 #import <openssl/ec.h>
-
+//https://github.com/yuzushioh/EthereumKit
 @implementation CryptoHash
 
 + (NSData *)sha256:(NSData *)data {
@@ -33,9 +33,75 @@
 
 @implementation Secp256k1
 
++(NSString *)hexadecimalString:(NSData *) data
+{
+    /* Returns hexadecimal string of NSData. Empty string if data is empty.   */
+    
+    const unsigned char *dataBuffer = (const unsigned char *)[data bytes];
+    
+    if (!dataBuffer)
+    {
+        return [NSString string];
+    }
+    
+    NSUInteger          dataLength  = [data length];
+    NSMutableString     *hexString  = [NSMutableString stringWithCapacity:(dataLength * 2)];
+    
+    for (int i = 0; i < dataLength; ++i)
+    {
+        [hexString appendFormat:@"%02x", (unsigned int)dataBuffer[i]];
+    }
+    
+    return [NSString stringWithString:hexString];
+}
+
+//+ (NSData *)generatePublicKeyWithPrivateKey:(NSData *)privateKeyData compression:(BOOL)isCompression {
+//    BN_CTX *ctx = BN_CTX_new();
+//    EC_KEY *key = EC_KEY_new_by_curve_name(NID_secp256k1);
+//
+//
+////    int length1 = 40;//i2o_ECPublicKey(key, &bytes1);
+////    NSData * result1 = [NSMutableData dataWithBytes:key length:length1];
+////    NSLog(@"---- pubkey-----");
+////    NSLog([Secp256k1 hexadecimalString: result1]);
+//
+//    const EC_GROUP *group = EC_KEY_get0_group(key);
+//    
+//    BIGNUM *prv = BN_new();
+//    BN_bin2bn(privateKeyData.bytes, (int)privateKeyData.length, prv);
+//    
+//    EC_POINT *pub = EC_POINT_new(group);
+//    EC_POINT_mul(group, pub, prv, nil, nil, ctx);
+//    EC_KEY_set_private_key(key, prv);
+//    EC_KEY_set_public_key(key, pub);
+//    
+//    NSMutableData *result;
+//    if (isCompression) {
+//        EC_KEY_set_conv_form(key, POINT_CONVERSION_COMPRESSED);
+//        unsigned char *bytes = NULL;
+//        int length = i2o_ECPublicKey(key, &bytes);
+//        result = [NSMutableData dataWithBytesNoCopy:bytes length:length];
+//        NSLog([Secp256k1 hexadecimalString: result]);
+//    } else {
+//        result = [NSMutableData dataWithLength:65];
+//        BIGNUM *n = BN_new();
+//        EC_POINT_point2bn(group, pub, POINT_CONVERSION_UNCOMPRESSED, n, ctx);
+//        BN_bn2bin(n, result.mutableBytes);
+//        BN_free(n);
+//    }
+//    
+//    BN_free(prv);
+//    EC_POINT_free(pub);
+//    EC_KEY_free(key);
+//    BN_CTX_free(ctx);
+//    
+//    return result;
+//}
+
 + (NSData *)generatePublicKeyWithPrivateKey:(NSData *)privateKeyData compression:(BOOL)isCompression {
     BN_CTX *ctx = BN_CTX_new();
     EC_KEY *key = EC_KEY_new_by_curve_name(NID_secp256k1);
+    
     const EC_GROUP *group = EC_KEY_get0_group(key);
     
     BIGNUM *prv = BN_new();
@@ -68,6 +134,7 @@
     return result;
 }
 
+
 @end
 
 @implementation PKCS5
@@ -93,9 +160,33 @@
     return self;
 }
 
-- (KeyDerivation *)derivedAtIndex:(uint32_t)index hardened:(BOOL)hardened {
-    BN_CTX *ctx = BN_CTX_new();
+-(NSString *)hexadecimalString:(NSData *) data
+{
+    /* Returns hexadecimal string of NSData. Empty string if data is empty.   */
     
+    const unsigned char *dataBuffer = (const unsigned char *)[data bytes];
+    
+    if (!dataBuffer)
+    {
+        return [NSString string];
+    }
+    
+    NSUInteger          dataLength  = [data length];
+    NSMutableString     *hexString  = [NSMutableString stringWithCapacity:(dataLength * 2)];
+    
+    for (int i = 0; i < dataLength; ++i)
+    {
+        [hexString appendFormat:@"%02x", (unsigned int)dataBuffer[i]];
+    }
+    
+    return [NSString stringWithString:hexString];
+}
+
+- (KeyDerivation *)derivedAtIndex:(uint32_t)index hardened:(BOOL)hardened curveOrder:(const char *)curveOrderStr {
+    BN_CTX *ctx = BN_CTX_new();
+//    NSLog(@"index = %d", index);
+//    NSLog([self hexadecimalString:self.privateKey]);
+//    NSLog([self hexadecimalString:self.publicKey]);
     NSMutableData *data = [NSMutableData data];
     if (hardened) {
         uint8_t padding = 0;
@@ -107,13 +198,15 @@
     
     uint32_t childIndex = OSSwapHostToBigInt32(hardened ? (0x80000000 | index) : index);
     [data appendBytes:&childIndex length:sizeof(childIndex)];
+//    NSLog([self hexadecimalString:data]);
     
     NSData *digest = [CryptoHash hmacsha512:data key:self.chainCode];
     NSData *derivedPrivateKey = [digest subdataWithRange:NSMakeRange(0, 32)];
     NSData *derivedChainCode = [digest subdataWithRange:NSMakeRange(32, 32)];
     
+    
     BIGNUM *curveOrder = BN_new();
-    BN_hex2bn(&curveOrder, "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141");
+    BN_hex2bn(&curveOrder, curveOrderStr);
     
     BIGNUM *factor = BN_new();
     BN_bin2bn(derivedPrivateKey.bytes, (int)derivedPrivateKey.length, factor);
@@ -121,6 +214,8 @@
     if (BN_cmp(factor, curveOrder) >= 0) {
         return nil;
     }
+    
+//    NSLog([self hexadecimalString:derivedPrivateKey]);
     
     NSMutableData *result;
     if (self.privateKey) {

@@ -6,47 +6,41 @@
 //  Copyright © 2018 NoRestLabs. All rights reserved.
 //
 
-public final class NRLWallet {
-
-    private let masterPrivateKey: NRLPrivateKey
-    private let network: Network
-
+public class NRLWallet {
+    let coin: NRLCoin
+    
     public init(seed: Data, network: Network) {
-        self.masterPrivateKey = NRLPrivateKey(seed: seed, network: network)
-        self.network = network
+        switch network {
+        case .main(.ethereum):
+            coin = NRLEthereum(seed: seed)
+            break
+        case .main(.neo):
+            coin = NRLNeo(seed: seed)
+            break
+        default:
+            coin = NRLEthereum(seed: seed)
+            break
+        }
+    }
+    
+    public func generateExternalKeyPair(at index: UInt32) {
+        try! self.coin.generateExternalKeyPair(at: index);
+    }
+    
+    public func generateInternalKeyPair(at index: UInt32) throws {
+        try! self.coin.generateInternalKeyPair(at: index);
+    }
+    
+    public func getPublicKey() -> String {
+        return self.coin.getPublicKey();
+    }
+    
+    public func getWIF() -> String {
+        return self.coin.getPrivateKey();
+    }
+    
+    public func getAddress() -> String {
+        return self.coin.getAddress();
     }
 
-    // MARK: - Public Methods
-
-    public func generateExternalPrivateKey(at index: UInt32) throws -> NRLPrivateKey {
-        return try externalPrivateKey().derived(at: index)
-    }
-
-    public func generateInteranlPrivateKey(at index: UInt32) throws -> NRLPrivateKey {
-        return try internalPrivateKey().derived(at: index)
-    }
-
-    // MARK: - Private Methods
-
-    private func externalPrivateKey() throws -> NRLPrivateKey {
-        return try privateKey(change: .external)
-    }
-
-    private func internalPrivateKey() throws -> NRLPrivateKey {
-        return try privateKey(change: .internal)
-    }
-
-    private enum Change: UInt32 {
-        case external = 0
-        case `internal` = 1
-    }
-
-    // m/44'/coin_type'/0'/external
-    private func privateKey(change: Change) throws -> NRLPrivateKey {
-        return try masterPrivateKey
-            .derived(at: 44, hardens: true)
-            .derived(at: network.coinType, hardens: true)
-            .derived(at: 0, hardens: true)
-            .derived(at: change.rawValue)
-    }
 }

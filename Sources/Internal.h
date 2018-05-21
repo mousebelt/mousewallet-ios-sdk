@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) uint32_t childIndex;
 
 - (instancetype)initWithPrivateKey:(nullable NSData *)privateKey publicKey:(nullable NSData *)publicKey chainCode:(NSData *)chainCode depth:(uint8_t)depth fingerprint:(uint32_t)fingerprint childIndex:(uint32_t)childIndex;
-- (nullable KeyDerivation *)derivedAtIndex:(uint32_t)childIndex hardened:(BOOL)hardened;
+- (nullable KeyDerivation *)derivedAtIndex:(uint32_t)childIndex hardened:(BOOL)hardened curveOrder:(const char *)curveOrderStr;
 
 @end
 NS_ASSUME_NONNULL_END
