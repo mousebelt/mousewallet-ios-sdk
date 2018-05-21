@@ -78,6 +78,10 @@
 		630DC74320AC2E210005800A /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DC74020AC2E200005800A /* Dictionary+Extension.swift */; };
 		630DC74420AC2E210005800A /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DC74120AC2E200005800A /* String+Extension.swift */; };
 		630DC74520AC2E210005800A /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DC74220AC2E210005800A /* Array+Extension.swift */; };
+		632CB17F20B2D0F200BA1CEA /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6393FB1820B2BF6B00EDEB56 /* CryptoSwift.framework */; };
+		632CB18020B2D0F200BA1CEA /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6393FB1820B2BF6B00EDEB56 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		632CB18120B2D11300BA1CEA /* secp256k1_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6393FB1C20B2BF6B00EDEB56 /* secp256k1_ios.framework */; };
+		632CB18220B2D11300BA1CEA /* secp256k1_ios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6393FB1C20B2BF6B00EDEB56 /* secp256k1_ios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		63304D6720AD4D77006D444B /* Neo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63304D6620AD4D77006D444B /* Neo.swift */; };
 		63304D6F20B0502F006D444B /* NRLCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63304D6E20B0502F006D444B /* NRLCoin.swift */; };
 		634EB2AC20AC2EAB00ACAA06 /* NSRegularExpressionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634EB2AB20AC2EAB00ACAA06 /* NSRegularExpressionExtension.swift */; };
@@ -195,6 +199,8 @@
 		6393FB1F20B2BF6B00EDEB56 /* libsodium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6393FB1A20B2BF6B00EDEB56 /* libsodium.framework */; };
 		6393FB2020B2BF6B00EDEB56 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6393FB1B20B2BF6B00EDEB56 /* libcrypto.a */; };
 		6393FB2120B2BF6B00EDEB56 /* secp256k1_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6393FB1C20B2BF6B00EDEB56 /* secp256k1_ios.framework */; };
+		6393FB2220B2CBB400EDEB56 /* libsodium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6393FB1A20B2BF6B00EDEB56 /* libsodium.framework */; };
+		6393FB2320B2CBB400EDEB56 /* libsodium.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6393FB1A20B2BF6B00EDEB56 /* libsodium.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -214,7 +220,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				632CB18020B2D0F200BA1CEA /* CryptoSwift.framework in Embed Frameworks */,
+				632CB18220B2D11300BA1CEA /* secp256k1_ios.framework in Embed Frameworks */,
 				2167C306209AF0C100A8653E /* NRLWalletSDK.framework in Embed Frameworks */,
+				6393FB2320B2CBB400EDEB56 /* libsodium.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,7 +441,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				632CB17F20B2D0F200BA1CEA /* CryptoSwift.framework in Frameworks */,
+				632CB18120B2D11300BA1CEA /* secp256k1_ios.framework in Frameworks */,
 				2167C305209AF0C100A8653E /* NRLWalletSDK.framework in Frameworks */,
+				6393FB2220B2CBB400EDEB56 /* libsodium.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1358,6 +1370,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Sources",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = "NRLWalletSDK Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1382,6 +1395,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Sources",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = "NRLWalletSDK Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
