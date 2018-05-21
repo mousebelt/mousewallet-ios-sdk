@@ -157,7 +157,6 @@
 		2167C31C209AF7F300A8653E /* Data+NRLBitArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+NRLBitArray.swift"; sourceTree = "<group>"; };
 		2167C31D209AF7F300A8653E /* NRLMnemonic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRLMnemonic.swift; sourceTree = "<group>"; };
 		2167C31E209AF7F300A8653E /* String+MnemonicData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+MnemonicData.swift"; sourceTree = "<group>"; };
-		2167C322209AFF5400A8653E /* CryptoSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2167C32B209B071D00A8653E /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = SOURCE_ROOT; };
 		2167C333209B1E2800A8653E /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		2167C335209B421D00A8653E /* Base58Encode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base58Encode.swift; sourceTree = "<group>"; };
@@ -354,7 +353,6 @@
 				634EB2B420AC3BA600ACAA06 /* secp256k1_ios.framework */,
 				634EB2B020AC302E00ACAA06 /* libsodium.framework */,
 				219D0359209C5D980018C003 /* libcrypto.a */,
-				2167C322209AFF5400A8653E /* CryptoSwift.framework */,
 				C9399DEDEBA3548239DEC8CF /* Pods_NRLWalletSDK.framework */,
 			);
 			name = Frameworks;
