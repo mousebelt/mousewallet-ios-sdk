@@ -33,10 +33,5 @@ class NRLNeo : NRLCoin{
         self.wif = (wallet?.wif())!
         self.address = (wallet?.address())!
     }
-    
-    override func generateExternalKeyPair(at index: UInt32) throws {
-        try super.generateExternalKeyPair(at: index)
-        generateAddress()
-    }
 }
 

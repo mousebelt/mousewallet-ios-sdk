@@ -25,12 +25,9 @@ class NRLEthereum : NRLCoin{
     }
     
     override func generateAddress() {
-        self.address = ENRLEthereumUtils.publicToAddressStr(self.pathPrivateKey!.nrlPublicKey().raw)!
+//        self.address = ENRLEthereumUtils.publicToAddressStr(self.pathPrivateKey!.nrlPublicKey().raw)!
+        let publicKey = Crypto.generatePublicKey(data: (self.pathPrivateKey?.raw)!, compressed: false)
+        self.address = Address.generateAddress(publicKey: publicKey)
         self.wif = self.pathPrivateKey?.raw.toHexString()
-    }
-    
-    override func generateExternalKeyPair(at index: UInt32) throws {
-        try super.generateExternalKeyPair(at: index)
-        generateAddress()
     }
 }
