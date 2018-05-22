@@ -35,7 +35,7 @@ class ViewController: UIViewController {
 
         // Generate mnemonic and seed
         do {
-            let mnemonic = try NRLMnemonic.generateMnemonic(strength: .hight, language: .english)
+            let mnemonic = try NRLMnemonic.generateMnemonic(strength: .normal, language: .english)
             print("mnemonic = \(mnemonic.joined(separator: " "))")
 
             let seed = try NRLMnemonic.mnemonicToSeed(from: mnemonic, withPassphrase: "Test")
@@ -43,7 +43,7 @@ class ViewController: UIViewController {
             
             // Ethereum : 60
             let etherWallet = NRLWallet(seed: seed, network: .main(.ethereum))
-            etherWallet.generateExternalKeyPair(at: 2)
+            etherWallet.generateExternalKeyPair(at: 0)
             
             var privateKey = etherWallet.getWIF()
             var publicKey = etherWallet.getPublicKey()

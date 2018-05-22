@@ -6,7 +6,6 @@
 //
 
 import Foundation
-//import BigInt
 
 public struct EthereumAddress: Equatable {
     public enum AddressType {

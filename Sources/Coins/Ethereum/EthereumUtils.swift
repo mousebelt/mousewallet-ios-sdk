@@ -8,53 +8,55 @@
 
 import Foundation
 
-typealias ENRLEthereumUtils = NRLEthereum.Utils
-
-extension NRLEthereum {
-    public struct Utils {
+// NOTE: https://github.com/ethereum/EIPs/blob/master/EIPS/eip-55.md
+public struct EIP55 {
+    public static func encode(_ data: Data) -> String {
+        let address = data.toHexString()
+        let hash = Crypto.hashSHA3_256(address.data(using: .ascii)!).toHexString()
+        
+        return zip(address, hash)
+            .map { a, h -> String in
+                switch (a, h) {
+                case ("0", _), ("1", _), ("2", _), ("3", _), ("4", _), ("5", _), ("6", _), ("7", _), ("8", _), ("9", _):
+                    return String(a)
+                case (_, "8"), (_, "9"), (_, "a"), (_, "b"), (_, "c"), (_, "d"), (_, "e"), (_, "f"):
+                    return String(a).uppercased()
+                default:
+                    return String(a).lowercased()
+                }
+            }
+            .joined()
     }
 }
 
-extension NRLEthereum.Utils {
-    public static func publicToAddressData(_ publicKey: Data) -> Data? {
-        if publicKey.count == 33 {
-            guard let decompressedKey = SECP256K1.combineSerializedPublicKeys(keys: [publicKey], outputCompressed: false) else {return nil}
-            return publicToAddressData(decompressedKey)
-        }
-        var stipped = publicKey
-        if (stipped.count == 65) {
-            if (stipped[0] != 4) {
-                return nil
-            }
-            stipped = stipped[1...64]
-        }
-        if (stipped.count != 64) {
-            return nil
-        }
-        let sha3 = stipped.sha3(.keccak256)
-        let addressData = sha3[12...31]
-        return addressData
-    }
-
-    public static func publicToAddress(_ publicKey: Data) -> EthereumAddress? {
-        guard let addressData = NRLEthereum.Utils.publicToAddressData(publicKey) else {return nil}
-        let address = addressData.toHexString().addHexPrefix().lowercased()
-        return EthereumAddress(address)
+/// Represents an address
+public struct Address {
+    
+    /// Address in data format
+    public let data: Data
+    
+    /// Address in string format, EIP55 encoded
+    public let string: String
+    
+    public init(data: Data) {
+        self.data = data
+        self.string = "0x" + EIP55.encode(data)
     }
     
-    public static func publicToAddressStr(_ publicKey: Data) -> String? {
-        guard let addressData = NRLEthereum.Utils.publicToAddressData(publicKey) else {return nil}
-        let address = addressData.toHexString().addHexPrefix().lowercased()
-        return address
+    public init(string: String) {
+        self.data = Data(hex: string.stripHexPrefix())
+        self.string = string
     }
-
-    public static func publicToAddressString(_ publicKey: Data) -> String? {
-        guard let addressData = NRLEthereum.Utils.publicToAddressData(publicKey) else {return nil}
-        let address = addressData.toHexString().addHexPrefix().lowercased()
-        return address
+    
+    /// generates address from its public key
+    ///
+    /// - Returns: address in string format
+    public static func generateAddress(publicKey: Data) -> String {
+        return Address(data: addressDataFromPublicKey(publicKey: publicKey)).string
     }
-
-    public static func addressDataToString(_ addressData: Data) -> String {
-        return addressData.toHexString().addHexPrefix().lowercased()
+    
+    /// Address data generated from public key in data format
+    static func addressDataFromPublicKey(publicKey: Data) -> Data {
+        return Crypto.hashSHA3_256(publicKey.dropFirst()).suffix(20)
     }
 }
