@@ -43,6 +43,7 @@
 		630DC74320AC2E210005800A /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DC74020AC2E200005800A /* Dictionary+Extension.swift */; };
 		630DC74420AC2E210005800A /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DC74120AC2E200005800A /* String+Extension.swift */; };
 		630DC74520AC2E210005800A /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DC74220AC2E210005800A /* Array+Extension.swift */; };
+		6327C13720B6363500CB2017 /* SMP+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6327C13620B6363500CB2017 /* SMP+Extensions.swift */; };
 		63304D6720AD4D77006D444B /* Neo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63304D6620AD4D77006D444B /* Neo.swift */; };
 		634EB2AC20AC2EAB00ACAA06 /* NSRegularExpressionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634EB2AB20AC2EAB00ACAA06 /* NSRegularExpressionExtension.swift */; };
 		63F66C1120B421BF007DF79D /* NRLPrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C0C20B421BF007DF79D /* NRLPrivateKey.swift */; };
@@ -154,6 +155,7 @@
 		630DC74020AC2E200005800A /* Dictionary+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
 		630DC74120AC2E200005800A /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		630DC74220AC2E210005800A /* Array+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		6327C13620B6363500CB2017 /* SMP+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SMP+Extensions.swift"; sourceTree = "<group>"; };
 		63304D6620AD4D77006D444B /* Neo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neo.swift; sourceTree = "<group>"; };
 		634EB2AB20AC2EAB00ACAA06 /* NSRegularExpressionExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSRegularExpressionExtension.swift; sourceTree = "<group>"; };
 		63F66C0C20B421BF007DF79D /* NRLPrivateKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRLPrivateKey.swift; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 				630DC74120AC2E200005800A /* String+Extension.swift */,
 				630DC73920AC2C4F0005800A /* CryptoExtensions.swift */,
 				630DC73C20AC2D7B0005800A /* Data+Extension.swift */,
+				6327C13620B6363500CB2017 /* SMP+Extensions.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -621,6 +624,7 @@
 				63F66C1420B421BF007DF79D /* NRLWallet.swift in Sources */,
 				2167C314209AF4B100A8653E /* Italian.swift in Sources */,
 				63F66C6820B4C502007DF79D /* HTTPClientType.swift in Sources */,
+				6327C13720B6363500CB2017 /* SMP+Extensions.swift in Sources */,
 				2167C33B209B421E00A8653E /* Base58Encode.swift in Sources */,
 				63F66C6B20B4C502007DF79D /* Batch.swift in Sources */,
 				63F66C4420B4B722007DF79D /* EIP155Signer.swift in Sources */,
