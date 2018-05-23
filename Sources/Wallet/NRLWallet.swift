@@ -12,13 +12,13 @@ public class NRLWallet {
     public init(seed: Data, network: Network) {
         switch network {
         case .main(.ethereum):
-            coin = NRLEthereum(seed: seed)
+            coin = NRLEthereum(seed: seed, fTest: true)
             break
         case .main(.neo):
-            coin = NRLNeo(seed: seed)
+            coin = NRLNeo(seed: seed, fTest: true)
             break
         default:
-            coin = NRLEthereum(seed: seed)
+            coin = NRLEthereum(seed: seed, fTest: true)
             break
         }
     }

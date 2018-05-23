@@ -10,10 +10,17 @@ import Foundation
 import Neoutils
 
 class NRLNeo : NRLCoin{
-    init(seed: Data) {
+    init(seed: Data, fTest: Bool) {
+        var network: Network = .main(.ethereum)
+        if (fTest) {
+            network = .test(.ethereum)
+        }
+        
+        let cointype = network.coinType
+        
         super.init(seed: seed,
-                   network: .main(.neo),
-                   coinType: 888,
+                   network: network,
+                   coinType: cointype,
                    seedKey: "Nist256p1 seed",
                    curve: "ffffffff00000000ffffffffffffffffbce6faada7179e84f3b9cac2fc632551")
     }
