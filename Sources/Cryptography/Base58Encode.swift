@@ -1,11 +1,3 @@
-//
-//  Base58Encode.swift
-//  NRLWalletSDK
-//
-//  Created by David Bala on 5/4/2018.
-//  Copyright © 2018 NoRestLabs. All rights reserved.
-//
-
 // Copied from https://github.com/kishikawakatsumi/BitcoinKit/blob/master/BitcoinKit/Encoding.swift
 public struct Base58 {
     private static let alphabet = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"

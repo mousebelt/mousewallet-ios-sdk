@@ -45,15 +45,15 @@ class NRLCoin {
         return Data()
     }
     
-    func getPublicKey() -> String {
-        return self.pathPrivateKey!.nrlPublicKey().raw.toHexString();
+    func getPublicKey() -> Data {
+        return self.pathPrivateKey!.nrlPublicKey().raw;
     }
 
-    func getAddress() -> String {
+    func getAddressStr() -> String {
         return self.address!;
     }
 
-    func getPrivateKey() -> String {
+    func getPrivateKeyStr() -> String {
         return self.wif!;
     }
     
@@ -64,7 +64,10 @@ class NRLCoin {
     //these functions should be overrided by subcoins with generate address function
     func generateExternalKeyPair(at index: UInt32) throws {
         self.masterPrivateKey = NRLPrivateKey(seed: self.seed, coin: self)
+        print("masterprivatekey: \(self.masterPrivateKey?.extended())")
+        
         self.pathPrivateKey = try generateExternalPrivateKey(at: index)
+        print("pathPrivateKey: \(self.pathPrivateKey?.extended())")
         generateAddress()
     }
     
@@ -85,11 +88,13 @@ class NRLCoin {
     }
     
     private func externalPrivateKey() throws -> NRLPrivateKey {
-        return try privateKey(change: .external)
+        let key :NRLPrivateKey = try privateKey(change: .external)
+        return key
     }
     
     private func internalPrivateKey() throws -> NRLPrivateKey {
-        return try privateKey(change: .internal)
+        let key :NRLPrivateKey = try privateKey(change: .internal)
+        return key
     }
     
     private enum Change: UInt32 {

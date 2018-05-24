@@ -52,6 +52,7 @@ class ViewController: UIViewController {
             print("\nEthereum private key = \(privateKey)")
             print("Ethereum public key = \(publicKey)")
             print("Ethereum address = \(address)")
+            print("\n-----------------------------------------------------\n")
             
             // NEO : 888
             let neoWallet = NRLWallet(seed: seed, network: .main(.neo))
@@ -64,8 +65,34 @@ class ViewController: UIViewController {
             print("\nNeo private key = \(privateKey)")
             print("Neo public key = \(publicKey)")
             print("Neo address = \(address)")
+            print("\n-----------------------------------------------------\n")
             
+            // Bitcoin : 0
+            let bitcoinWallet = NRLWallet(seed: seed, network: .main(.bitcoin))
+            bitcoinWallet.generateExternalKeyPair(at: 0)
             
+            privateKey = bitcoinWallet.getWIF()
+            publicKey = bitcoinWallet.getPublicKey()
+            address = bitcoinWallet.getAddress()
+            
+            print("\nBitcoinWallet private key = \(privateKey)")
+            print("BitcoinWallet public key = \(publicKey)")
+            print("BitcoinWallet address = \(address)")
+            print("\n-----------------------------------------------------\n")
+            
+            // Litecoin : 2
+            let litecoinWallet = NRLWallet(seed: seed, network: .main(.litecoin))
+            litecoinWallet.generateExternalKeyPair(at: 0)
+            
+            privateKey = litecoinWallet.getWIF()
+            publicKey = litecoinWallet.getPublicKey()
+            address = litecoinWallet.getAddress()
+            
+            print("\nLitecoinWallet private key = \(privateKey)")
+            print("LitecoinWallet public key = \(publicKey)")
+            print("LitecoinWallet address = \(address)")
+            print("\n-----------------------------------------------------\n")
+
         } catch {
             print(error)
         }

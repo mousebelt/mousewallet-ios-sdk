@@ -2,6 +2,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 @interface CryptoHash : NSObject
++ (NSData *)sha256:(NSData *)data;
++ (NSData *)ripemd160:(NSData *)data;
 + (NSData *)hmacsha512:(NSData *)data key:(NSData *)key;
 @end
 
