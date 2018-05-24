@@ -38,6 +38,7 @@ public struct NRLPrivateKey {
         return NRLPublicKey(nrlPrivateKey: self, chainCode: chainCode, coin: self.coin, depth: depth, fingerprint: fingerprint, childIndex: childIndex)
     }
 
+    //this is for bitcoin case
     public func extended() -> String {
         var extendedPrivateKeyData = Data()
         extendedPrivateKeyData += self.coin.network.privateKeyPrefix.bigEndian

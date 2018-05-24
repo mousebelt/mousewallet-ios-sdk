@@ -44,6 +44,7 @@
 		630DC74420AC2E210005800A /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DC74120AC2E200005800A /* String+Extension.swift */; };
 		630DC74520AC2E210005800A /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DC74220AC2E210005800A /* Array+Extension.swift */; };
 		6327C13720B6363500CB2017 /* SMP+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6327C13620B6363500CB2017 /* SMP+Extensions.swift */; };
+		6327C13A20B6526300CB2017 /* Litecoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6327C13920B6526300CB2017 /* Litecoin.swift */; };
 		63304D6720AD4D77006D444B /* Neo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63304D6620AD4D77006D444B /* Neo.swift */; };
 		634EB2AC20AC2EAB00ACAA06 /* NSRegularExpressionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634EB2AB20AC2EAB00ACAA06 /* NSRegularExpressionExtension.swift */; };
 		63F66C1120B421BF007DF79D /* NRLPrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C0C20B421BF007DF79D /* NRLPrivateKey.swift */; };
@@ -156,6 +157,7 @@
 		630DC74120AC2E200005800A /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		630DC74220AC2E210005800A /* Array+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		6327C13620B6363500CB2017 /* SMP+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SMP+Extensions.swift"; sourceTree = "<group>"; };
+		6327C13920B6526300CB2017 /* Litecoin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Litecoin.swift; sourceTree = "<group>"; };
 		63304D6620AD4D77006D444B /* Neo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neo.swift; sourceTree = "<group>"; };
 		634EB2AB20AC2EAB00ACAA06 /* NSRegularExpressionExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSRegularExpressionExtension.swift; sourceTree = "<group>"; };
 		63F66C0C20B421BF007DF79D /* NRLPrivateKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRLPrivateKey.swift; sourceTree = "<group>"; };
@@ -381,6 +383,14 @@
 			path = SipHash;
 			sourceTree = "<group>";
 		};
+		6327C13820B6526300CB2017 /* Litecoin */ = {
+			isa = PBXGroup;
+			children = (
+				6327C13920B6526300CB2017 /* Litecoin.swift */,
+			);
+			path = Litecoin;
+			sourceTree = "<group>";
+		};
 		63304D6420AD4D3E006D444B /* Neo */ = {
 			isa = PBXGroup;
 			children = (
@@ -396,6 +406,7 @@
 				63F66C2920B4B511007DF79D /* Bitcoin */,
 				630DC67620ABE46F0005800A /* Ethereum */,
 				63304D6420AD4D3E006D444B /* Neo */,
+				6327C13820B6526300CB2017 /* Litecoin */,
 			);
 			path = Coins;
 			sourceTree = "<group>";
@@ -634,6 +645,7 @@
 				63F66C4920B4B722007DF79D /* DataConvertable.swift in Sources */,
 				2167C321209AF7F300A8653E /* String+MnemonicData.swift in Sources */,
 				63F66C3720B4B671007DF79D /* SentTransaction.swift in Sources */,
+				6327C13A20B6526300CB2017 /* Litecoin.swift in Sources */,
 				63F66C7320B4C502007DF79D /* JSONRPC.swift in Sources */,
 				2167C312209AF38500A8653E /* French.swift in Sources */,
 				63F66C6620B4C502007DF79D /* Configuration.swift in Sources */,

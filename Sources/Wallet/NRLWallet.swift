@@ -12,13 +12,19 @@ public class NRLWallet {
     public init(seed: Data, network: Network) {
         switch network {
         case .main(.ethereum):
-            coin = NRLEthereum(seed: seed, fTest: true)
+            coin = NRLEthereum(seed: seed, fTest: false)
             break
         case .main(.neo):
-            coin = NRLNeo(seed: seed, fTest: true)
+            coin = NRLNeo(seed: seed, fTest: false)
+            break
+        case .main(.bitcoin):
+            coin = NRLBitcoin(seed: seed, fTest: false)
+            break
+        case .main(.litecoin):
+            coin = NRLLitecoin(seed: seed, fTest: false)
             break
         default:
-            coin = NRLEthereum(seed: seed, fTest: true)
+            coin = NRLEthereum(seed: seed, fTest: false)
             break
         }
     }
@@ -32,15 +38,15 @@ public class NRLWallet {
     }
     
     public func getPublicKey() -> String {
-        return self.coin.getPublicKey();
+        return self.coin.getPublicKey().toHexString();
     }
     
     public func getWIF() -> String {
-        return self.coin.getPrivateKey();
+        return self.coin.getPrivateKeyStr();
     }
     
     public func getAddress() -> String {
-        return self.coin.getAddress();
+        return self.coin.getAddressStr();
     }
 
 }

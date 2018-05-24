@@ -26,7 +26,7 @@ public struct NRLPublicKey {
         self.nrlPrivateKey = nrlPrivateKey
     }
 
-    
+    //this is for bitcoin case
     public func extended() -> String {
         var extendedPublicKeyData = Data()
         extendedPublicKeyData += self.coin.network.publicKeyPrefix.bigEndian

@@ -36,18 +36,3 @@ extension Address: Codable {
         try container.encode(string, forKey: .string)
     }
 }
-
-//address generation
-extension Address {
-    /// generates address from its public key
-    ///
-    /// - Returns: address in string format
-    public static func generateAddress(publicKey: Data) -> String {
-        return Address(data: addressDataFromPublicKey(publicKey: publicKey)).string
-    }
-    
-    /// Address data generated from public key in data format
-    static func addressDataFromPublicKey(publicKey: Data) -> Data {
-        return Crypto.hashSHA3_256(publicKey.dropFirst()).suffix(20)
-    }
-}

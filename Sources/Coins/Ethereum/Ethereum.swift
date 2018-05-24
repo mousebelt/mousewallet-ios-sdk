@@ -30,9 +30,14 @@ class NRLEthereum : NRLCoin{
         return publicKey;
     }
     
+    /// Address data generated from public key in data format
+    func addressDataFromPublicKey(publicKey: Data) -> Data {
+        return Crypto.hashSHA3_256(publicKey.dropFirst()).suffix(20)
+    }
+    
     override func generateAddress() {
         let publicKey = Crypto.generatePublicKey(data: (self.pathPrivateKey?.raw)!, compressed: false)
-        self.address = Address.generateAddress(publicKey: publicKey)
+        self.address = Address(data: addressDataFromPublicKey(publicKey: publicKey)).string
         self.wif = self.pathPrivateKey?.raw.toHexString()
     }
 }
