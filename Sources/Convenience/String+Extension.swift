@@ -114,3 +114,9 @@ extension String {
         return from ..< to
     }
 }
+
+extension String {
+    func toData() -> Data {
+        return decomposedStringWithCompatibilityMapping.data(using: .utf8)!
+    }
+}

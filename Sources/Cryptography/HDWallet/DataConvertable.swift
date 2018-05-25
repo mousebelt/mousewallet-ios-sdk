@@ -1,16 +1,26 @@
-public protocol DataConvertable {
+//
+//  DataConvertable.swift
+//  WalletKit
+//
+//  Created by yuzushioh on 2018/02/11.
+//  Copyright © 2018 yuzushioh. All rights reserved.
+//
+
+import Foundation
+
+protocol DataConvertable {
     static func +(lhs: Data, rhs: Self) -> Data
     static func +=(lhs: inout Data, rhs: Self)
 }
 
 extension DataConvertable {
-    public static func +(lhs: Data, rhs: Self) -> Data {
+    static func +(lhs: Data, rhs: Self) -> Data {
         var value = rhs
         let data = Data(buffer: UnsafeBufferPointer(start: &value, count: 1))
         return lhs + data
     }
     
-    public static func +=(lhs: inout Data, rhs: Self) {
+    static func +=(lhs: inout Data, rhs: Self) {
         lhs = lhs + rhs
     }
 }
@@ -18,8 +28,3 @@ extension DataConvertable {
 extension UInt8: DataConvertable {}
 extension UInt32: DataConvertable {}
 
-extension String {
-    func toData() -> Data {
-        return decomposedStringWithCompatibilityMapping.data(using: .utf8)!
-    }
-}

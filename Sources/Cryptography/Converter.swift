@@ -2,11 +2,11 @@
 public typealias Ether = BDouble
 public typealias Wei = BInt
 
-extension Wei {
-    public init?(hex: String) {
-        self.init(hex, radix: 16)
-    }
-}
+//extension Wei {
+//    public init?(hex: String) {
+//        self.init(hex, radix: 16)
+//    }
+//}
 
 public final class Converter {
     private static let etherInWei = Wei(number: "1000000000000000000", withBase: 10)!

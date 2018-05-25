@@ -26,6 +26,43 @@ extension Data {
         }
         return String(utf16CodeUnits: chars, count: chars.count)
     }
+    
+    // Convert 0 ... 9, a ... f, A ...F to their decimal value,
+    // return nil for all other input characters
+    fileprivate func decodeNibble(_ u: UInt16) -> UInt8? {
+        switch(u) {
+        case 0x30 ... 0x39:
+            return UInt8(u - 0x30)
+        case 0x41 ... 0x46:
+            return UInt8(u - 0x41 + 10)
+        case 0x61 ... 0x66:
+            return UInt8(u - 0x61 + 10)
+        default:
+            return nil
+        }
+    }
+    
+    init?(fromHexEncodedString: String) {
+        var str = fromHexEncodedString
+        if str.count%2 != 0 {
+            // insert 0 to get even number of chars
+            str.insert("0", at: str.startIndex)
+        }
+        
+        let utf16 = str.utf16
+        self.init(capacity: utf16.count/2)
+        
+        var i = utf16.startIndex
+        while i != str.utf16.endIndex {
+            guard let hi = decodeNibble(utf16[i]),
+                let lo = decodeNibble(utf16[utf16.index(i, offsetBy: 1, limitedBy: utf16.endIndex)!]) else {
+                    return nil
+            }
+            var value = hi << 4 + lo
+            self.append(&value, count: 1)
+            i = utf16.index(i, offsetBy: 2, limitedBy: utf16.endIndex)!
+        }
+    }
 }
 
 class ViewController: UIViewController {
@@ -35,15 +72,17 @@ class ViewController: UIViewController {
 
         // Generate mnemonic and seed
         do {
-            let mnemonic = try NRLMnemonic.generateMnemonic(strength: .normal, language: .english)
-            print("mnemonic = \(mnemonic.joined(separator: " "))")
+            //let mnemonic = try NRLMnemonic.generateMnemonic(strength: .hight, language: .english)
+            //print("mnemonic = \(mnemonic.joined(separator: " "))")
 
-            let seed = try NRLMnemonic.mnemonicToSeed(from: mnemonic, withPassphrase: "Test")
-            print("\nseed = \(seed.hexEncodedString())")
+            //let seed = try NRLMnemonic.mnemonicToSeed(from: mnemonic, withPassphrase: "Test")
+            print("mnemonic = receive dutch member possible excuse judge ghost cotton what attitude memory recycle verify alert loan fan cheap cricket mention tennis faculty circle focus chicken")
+            let seed = Data(fromHexEncodedString:"a4044ebf27229b8fcb273b8f2a8320e54870d70e250b79a358a1fc91ab0e623c320fec889299cb5ad97900beea6aecb24e9465c50ac60d7cc82b4ced40c83787");
+            print("\nseed = \(String(describing: seed?.hexEncodedString()))")
             
             print("\n------------------------- Ethereum ----------------------------\n")
-            // Ethereum : 60
-            let etherWallet = NRLWallet(seed: seed, network: .main(.ethereum))
+            // Ethereum : 60ß
+            let etherWallet = NRLWallet(seed: seed!, network: .main(.ethereum))
             etherWallet.generateExternalKeyPair(at: 0)
             
             var privateKey = etherWallet.getWIF()
@@ -56,7 +95,7 @@ class ViewController: UIViewController {
             
             print("\n------------------------- NEO ----------------------------\n")
             // NEO : 888
-            let neoWallet = NRLWallet(seed: seed, network: .main(.neo))
+            let neoWallet = NRLWallet(seed: seed!, network: .main(.neo))
             neoWallet.generateExternalKeyPair(at: 2)
             
             privateKey = neoWallet.getWIF()
@@ -70,7 +109,7 @@ class ViewController: UIViewController {
             
             print("\n------------------------- Bitcoin ----------------------------\n")
             // Bitcoin : 0
-            let bitcoinWallet = NRLWallet(seed: seed, network: .main(.bitcoin))
+            let bitcoinWallet = NRLWallet(seed: seed!, network: .main(.bitcoin))
             bitcoinWallet.generateExternalKeyPair(at: 0)
             
             privateKey = bitcoinWallet.getWIF()
@@ -84,7 +123,7 @@ class ViewController: UIViewController {
             
             print("\n------------------------- Litecoin ----------------------------\n")
             // Litecoin : 2
-            let litecoinWallet = NRLWallet(seed: seed, network: .main(.litecoin))
+            let litecoinWallet = NRLWallet(seed: seed!, network: .main(.litecoin))
             litecoinWallet.generateExternalKeyPair(at: 0)
             
             privateKey = litecoinWallet.getWIF()
@@ -94,6 +133,20 @@ class ViewController: UIViewController {
             print("\nLitecoinWallet private key = \(privateKey)")
             print("LitecoinWallet public key = \(publicKey)")
             print("LitecoinWallet address = \(address)")
+            
+            print("\n------------------------- Stellar ----------------------------\n")
+            // Stellar : 148
+            let stellarWallet = NRLWallet(seed: seed!, network: .main(.stellar))
+            stellarWallet.generateExternalKeyPair(at: 0)
+            
+            privateKey = stellarWallet.getWIF()
+            publicKey = stellarWallet.getPublicKey()
+            address = stellarWallet.getAddress()
+            
+            print("\n stellarWallet private key = \(privateKey)")
+             print("stellarWallet public key = \(publicKey)")
+            print("stellarWallet address = \(address)")
+            
             print("\n-----------------------------------------------------\n")
 
         } catch {

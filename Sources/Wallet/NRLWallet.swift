@@ -23,6 +23,9 @@ public class NRLWallet {
         case .main(.litecoin):
             coin = NRLLitecoin(seed: seed, fTest: false)
             break
+        case .main(.stellar):
+            coin = NRLStellar(seed: seed, fTest: false)
+            break
         default:
             coin = NRLEthereum(seed: seed, fTest: false)
             break

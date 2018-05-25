@@ -25,6 +25,16 @@ public struct NRLPublicKey {
         self.childIndex = childIndex
         self.nrlPrivateKey = nrlPrivateKey
     }
+    
+    init(pubkey: Data, nrlPrivateKey:NRLPrivateKey, coin: NRLCoin) {
+        self.coin = coin
+        self.raw = pubkey;
+        self.chainCode = Data()
+        self.depth = 0
+        self.fingerprint = 0
+        self.childIndex = 0
+        self.nrlPrivateKey = nrlPrivateKey
+    }
 
     //this is for bitcoin case
     public func extended() -> String {

@@ -8,6 +8,7 @@
 >https://github.com/O3Labs/neo-utils
 >need setting of bitcode disabled
 >need to manually include from O3Labs
+>to build neo-utils, need to install go and go-mobile
 
 # environment
 ### carthage
@@ -17,6 +18,8 @@
 
 
 # Build Carthage framework
+
+## build
 
 ### download dependences
 >carthage update --platform iOS
@@ -29,3 +32,16 @@
 >carthage build --no-skip-current
 
 now we can get result at $SOURCEROOT/carthage/Build/iOS
+
+
+## test
+### bitcoin, litecoin, ethereum
+>https://iancoleman.io/bip39/
+
+### neo
+>https://coranos.github.io/neo/ledger-nano-s/recovery/
+
+### stellar
+>https://github.com/stellar/go/releases/  stellar-hd-wallet
+
+

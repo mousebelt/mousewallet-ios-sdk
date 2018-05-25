@@ -84,15 +84,5 @@ class NRLLitecoin : NRLCoin{
         self.address = toAddress(publickkey: (self.pathPrivateKey?.nrlPublicKey().raw)!);
         self.wif = toWIF(privatekey: (self.pathPrivateKey?.raw)!, compressed: true);
     }
-    
-    func buildSecret(privKey: Data) {
-//        var widHex = new Buffer(walletId.replace(/-/g, ''), 'hex');
-//        var widBase58 = new Bitcore.encoding.Base58(widHex).toString();
-//        return _.padRight(widBase58, 22, '0') + walletPrivKey.toWIF() + (network == 'testnet' ? 'T' : 'L');
-        var prefix: String = "L"
-        if (isTest) {
-            prefix = "T"
-        }
-    };
 }
 
