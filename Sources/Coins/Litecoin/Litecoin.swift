@@ -26,17 +26,18 @@ class NRLLitecoin : NRLCoin{
                    curve: "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141")
     }
     
+    //from https://github.com/onmyway133/AddressGenerator
     var pubkeyhash: UInt8 {
         if (self.isTest) {
-            return 0x6f
+            return 0x6f //??? maybe no testnet in litecoin
         }
-        return 0x00
+        return 0x30
     }
     var privatekey: UInt8 {
         if (self.isTest) {
-            return 0xef
+            return 0xef//??? maybe no testnet in litecoin
         }
-        return 0x80
+        return 0xb0
     }
     var scripthash: UInt8 {
         if (self.isTest) {
@@ -52,7 +53,6 @@ class NRLLitecoin : NRLCoin{
         return 0xf9beb4d9
     }
     
-    //in neo should use secp256r1. (it was secp256k1 in ethereum)
     override func generatePublickeyFromPrivatekey(privateKey: Data) throws -> Data {
         let publicKey = Crypto.generatePublicKey(data: privateKey, compressed: true)
         return publicKey;
@@ -84,5 +84,15 @@ class NRLLitecoin : NRLCoin{
         self.address = toAddress(publickkey: (self.pathPrivateKey?.nrlPublicKey().raw)!);
         self.wif = toWIF(privatekey: (self.pathPrivateKey?.raw)!, compressed: true);
     }
+    
+    func buildSecret(privKey: Data) {
+//        var widHex = new Buffer(walletId.replace(/-/g, ''), 'hex');
+//        var widBase58 = new Bitcore.encoding.Base58(widHex).toString();
+//        return _.padRight(widBase58, 22, '0') + walletPrivKey.toWIF() + (network == 'testnet' ? 'T' : 'L');
+        var prefix: String = "L"
+        if (isTest) {
+            prefix = "T"
+        }
+    };
 }
 

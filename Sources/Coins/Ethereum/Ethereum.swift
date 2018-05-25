@@ -24,7 +24,6 @@ class NRLEthereum : NRLCoin{
                    curve: "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141")
     }
 
-    //in neo should use secp256r1. (it was secp256k1 in ethereum)
     override func generatePublickeyFromPrivatekey(privateKey: Data) throws -> Data {
         let publicKey = Crypto.generatePublicKey(data: privateKey, compressed: true)
         return publicKey;

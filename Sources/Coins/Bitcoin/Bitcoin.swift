@@ -52,7 +52,6 @@ class NRLBitcoin : NRLCoin{
         return 0xf9beb4d9
     }
 
-    //in neo should use secp256r1. (it was secp256k1 in ethereum)
     override func generatePublickeyFromPrivatekey(privateKey: Data) throws -> Data {
         let publicKey = Crypto.generatePublicKey(data: privateKey, compressed: true)
         return publicKey;
