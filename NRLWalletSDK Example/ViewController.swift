@@ -41,6 +41,7 @@ class ViewController: UIViewController {
             let seed = try NRLMnemonic.mnemonicToSeed(from: mnemonic, withPassphrase: "Test")
             print("\nseed = \(seed.hexEncodedString())")
             
+            print("\n------------------------- Ethereum ----------------------------\n")
             // Ethereum : 60
             let etherWallet = NRLWallet(seed: seed, network: .main(.ethereum))
             etherWallet.generateExternalKeyPair(at: 0)
@@ -52,8 +53,8 @@ class ViewController: UIViewController {
             print("\nEthereum private key = \(privateKey)")
             print("Ethereum public key = \(publicKey)")
             print("Ethereum address = \(address)")
-            print("\n-----------------------------------------------------\n")
             
+            print("\n------------------------- NEO ----------------------------\n")
             // NEO : 888
             let neoWallet = NRLWallet(seed: seed, network: .main(.neo))
             neoWallet.generateExternalKeyPair(at: 2)
@@ -65,8 +66,9 @@ class ViewController: UIViewController {
             print("\nNeo private key = \(privateKey)")
             print("Neo public key = \(publicKey)")
             print("Neo address = \(address)")
-            print("\n-----------------------------------------------------\n")
             
+            
+            print("\n------------------------- Bitcoin ----------------------------\n")
             // Bitcoin : 0
             let bitcoinWallet = NRLWallet(seed: seed, network: .main(.bitcoin))
             bitcoinWallet.generateExternalKeyPair(at: 0)
@@ -78,8 +80,9 @@ class ViewController: UIViewController {
             print("\nBitcoinWallet private key = \(privateKey)")
             print("BitcoinWallet public key = \(publicKey)")
             print("BitcoinWallet address = \(address)")
-            print("\n-----------------------------------------------------\n")
             
+            
+            print("\n------------------------- Litecoin ----------------------------\n")
             // Litecoin : 2
             let litecoinWallet = NRLWallet(seed: seed, network: .main(.litecoin))
             litecoinWallet.generateExternalKeyPair(at: 0)
