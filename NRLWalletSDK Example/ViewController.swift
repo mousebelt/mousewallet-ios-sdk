@@ -72,17 +72,15 @@ class ViewController: UIViewController {
 
         // Generate mnemonic and seed
         do {
-            //let mnemonic = try NRLMnemonic.generateMnemonic(strength: .hight, language: .english)
-            //print("mnemonic = \(mnemonic.joined(separator: " "))")
+            let mnemonic = try NRLMnemonic.generateMnemonic(strength: .hight, language: .english)
+            print("mnemonic = \(mnemonic.joined(separator: " "))")
 
-            //let seed = try NRLMnemonic.mnemonicToSeed(from: mnemonic, withPassphrase: "Test")
-            print("mnemonic = receive dutch member possible excuse judge ghost cotton what attitude memory recycle verify alert loan fan cheap cricket mention tennis faculty circle focus chicken")
-            let seed = Data(fromHexEncodedString:"a4044ebf27229b8fcb273b8f2a8320e54870d70e250b79a358a1fc91ab0e623c320fec889299cb5ad97900beea6aecb24e9465c50ac60d7cc82b4ced40c83787");
-            print("\nseed = \(String(describing: seed?.hexEncodedString()))")
+            let seed = try NRLMnemonic.mnemonicToSeed(from: mnemonic, withPassphrase: "Test")
+            print("\nseed = \(String(describing: seed.hexEncodedString()))")
             
             print("\n------------------------- Ethereum ----------------------------\n")
             // Ethereum : 60ß
-            let etherWallet = NRLWallet(seed: seed!, network: .main(.ethereum))
+            let etherWallet = NRLWallet(seed: seed, network: .main(.ethereum))
             etherWallet.generateExternalKeyPair(at: 0)
             
             var privateKey = etherWallet.getWIF()
