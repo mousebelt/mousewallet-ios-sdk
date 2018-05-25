@@ -61,18 +61,20 @@ class NRLCoin {
         return self.seedKey.data(using: .ascii)!;
     }
     
+    func generateMasterKey() -> Data {
+        return Crypto.HMACSHA512(key: self.getSeedKey(), data: self.seed);
+    }
+    
     //these functions should be overrided by subcoins with generate address function
     func generateExternalKeyPair(at index: UInt32) throws {
-        self.masterPrivateKey = NRLPrivateKey(seed: self.seed, coin: self)
-        print("masterprivatekey: \(self.masterPrivateKey?.extended())")
         
+        self.masterPrivateKey = NRLPrivateKey(seed: self.seed, privkey: generateMasterKey(), coin: self)
         self.pathPrivateKey = try generateExternalPrivateKey(at: index)
-        print("pathPrivateKey: \(self.pathPrivateKey?.extended())")
         generateAddress()
     }
     
     func generateInternalKeyPair(at index: UInt32) throws {
-        self.masterPrivateKey = NRLPrivateKey(seed: self.seed, coin: self)
+        self.masterPrivateKey = NRLPrivateKey(seed: self.seed, privkey: generateMasterKey(), coin: self)
         self.pathPrivateKey = try generateInteranlPrivateKey(at: index)
         generateAddress()
     }
