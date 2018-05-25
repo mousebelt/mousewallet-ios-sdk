@@ -1,14 +1,13 @@
 ## dependency libraries
 
-### libcrypto.a
-> https://www.openssl.org/source/ or git clone git://git.openssl.org/openssl.git
-
 ### CryptoSwift.framework
 >https://github.com/krzyzanowskim/CryptoSwift
+>this framework will be installed when run carthage update --platform iOS
 
 ### neoutils.framework
 >https://github.com/O3Labs/neo-utils
->bitcode disabled
+>need setting of bitcode disabled
+>need to manually include from O3Labs
 
 # environment
 ### carthage
@@ -17,5 +16,16 @@
 * Select proper command line tool from Xcode > Preferences > Locations 
 
 
-carthage update --platform iOS
+# Build Carthage framework
 
+### download dependences
+>carthage update --platform iOS
+
+### build project at xcode
+
+### compress framework from building to zip and put it at root directory
+
+### carthage build
+>carthage build --no-skip-current
+
+now we can get result at $SOURCEROOT/carthage/Build/iOS
