@@ -93,7 +93,7 @@ class ViewController: UIViewController {
             
             print("\n------------------------- NEO ----------------------------\n")
             // NEO : 888
-            let neoWallet = NRLWallet(seed: seed!, network: .main(.neo))
+            let neoWallet = NRLWallet(seed: seed, network: .main(.neo))
             neoWallet.generateExternalKeyPair(at: 2)
             
             privateKey = neoWallet.getWIF()
@@ -107,7 +107,7 @@ class ViewController: UIViewController {
             
             print("\n------------------------- Bitcoin ----------------------------\n")
             // Bitcoin : 0
-            let bitcoinWallet = NRLWallet(seed: seed!, network: .main(.bitcoin))
+            let bitcoinWallet = NRLWallet(seed: seed, network: .main(.bitcoin))
             bitcoinWallet.generateExternalKeyPair(at: 0)
             
             privateKey = bitcoinWallet.getWIF()
@@ -121,7 +121,7 @@ class ViewController: UIViewController {
             
             print("\n------------------------- Litecoin ----------------------------\n")
             // Litecoin : 2
-            let litecoinWallet = NRLWallet(seed: seed!, network: .main(.litecoin))
+            let litecoinWallet = NRLWallet(seed: seed, network: .main(.litecoin))
             litecoinWallet.generateExternalKeyPair(at: 0)
             
             privateKey = litecoinWallet.getWIF()
@@ -134,7 +134,7 @@ class ViewController: UIViewController {
             
             print("\n------------------------- Stellar ----------------------------\n")
             // Stellar : 148
-            let stellarWallet = NRLWallet(seed: seed!, network: .main(.stellar))
+            let stellarWallet = NRLWallet(seed: seed, network: .main(.stellar))
             stellarWallet.generateExternalKeyPair(at: 0)
             
             privateKey = stellarWallet.getWIF()
