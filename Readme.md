@@ -10,6 +10,18 @@
 >need to manually include from O3Labs
 >to build neo-utils, need to install go and go-mobile
 
+### BitcoinSPV
+>https://github.com/keeshux/BitcoinSPV/
+>need to add in Libraries manually
+
+### secp256k1
+>https://github.com/bitcoin-core/secp256k1
+>need to add in Libraries manually
+
+### openssl
+>https://github.com/openssl/openssl
+>need to add in Libraries manually
+
 # environment
 ### carthage
 * Download latest carthage from https://github.com/Carthage/Carthage/releases

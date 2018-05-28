@@ -1,0 +1,4 @@
+module BitcoinSPV {
+    private header "include/BitcoinSPV.h"
+    link "BitcoinSPV"
+}
