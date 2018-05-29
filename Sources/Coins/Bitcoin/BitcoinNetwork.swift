@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import BitcoinSPV
+//import BitcoinSPV
 
 protocol PeearEventCallback {
     func walletDidRegisterTransaction(notification: Notification)
@@ -25,10 +25,10 @@ public class BitcoinPeer {
     let dbPath: String
     let listener: PeearEventCallback
     
-    init(memonic: String, listener: PeearEventCallback) {
+    init(mnemonic: String, listener: PeearEventCallback) {
         self.listener = listener
         self.parameters = WSParametersForNetworkType(WSNetworkTypeTestnet3)
-        let seed = WSSeed.init(mnemonic: memonic)
+        let seed = WSSeed.init(mnemonic: mnemonic)
         self.wallet = WSHDWallet.init(parameters: self.parameters, seed: seed)
         
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]

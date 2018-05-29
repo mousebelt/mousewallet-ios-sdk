@@ -10,13 +10,15 @@ import Foundation
 
 class NRLBitcoin : NRLCoin, PeearEventCallback{
     let isTest: Bool;
-    init(seed: Data, fTest: Bool) {
+    var btcpeer: BitcoinPeer?
+    
+    init(mnemonic: String, seed: Data, fTest: Bool) {
         self.isTest = fTest;
+
         var network: Network = .main(.bitcoin)
         if (fTest) {
             network = .test(.bitcoin)
         }
-        
         let cointype = network.coinType
         
         super.init(seed: seed,
@@ -24,6 +26,7 @@ class NRLBitcoin : NRLCoin, PeearEventCallback{
                    coinType: cointype,
                    seedKey: "Bitcoin seed",
                    curve: "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141")
+        self.btcpeer = BitcoinPeer(mnemonic: mnemonic, listener: self)
     }
     
     var pubkeyhash: UInt8 {
