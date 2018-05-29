@@ -6,6 +6,11 @@
 //  Copyright © 2018 NoRestLabs. All rights reserved.
 //
 
+import NRLWalletSDK.Private
+import secp256k1
+import CryptoSwift
+import openssl
+
 public class NRLWallet {
     let coin: NRLCoin
     

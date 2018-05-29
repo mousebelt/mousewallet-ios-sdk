@@ -86,6 +86,7 @@
 		6327C1C920B89BBB00CB2017 /* VersionByte.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6327C1C820B89BBB00CB2017 /* VersionByte.swift */; };
 		63304D6720AD4D77006D444B /* Neo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63304D6620AD4D77006D444B /* Neo.swift */; };
 		634EB2AC20AC2EAB00ACAA06 /* NSRegularExpressionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634EB2AB20AC2EAB00ACAA06 /* NSRegularExpressionExtension.swift */; };
+		6377EF2E20BC6DA900F668E3 /* BitcoinNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6377EF2D20BC6DA900F668E3 /* BitcoinNetwork.swift */; };
 		63F66C1120B421BF007DF79D /* NRLPrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C0C20B421BF007DF79D /* NRLPrivateKey.swift */; };
 		63F66C1220B421BF007DF79D /* NRLPublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C0D20B421BF007DF79D /* NRLPublicKey.swift */; };
 		63F66C1320B421BF007DF79D /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C0F20B421BF007DF79D /* Network.swift */; };
@@ -235,6 +236,7 @@
 		6327C1C820B89BBB00CB2017 /* VersionByte.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionByte.swift; sourceTree = "<group>"; };
 		63304D6620AD4D77006D444B /* Neo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neo.swift; sourceTree = "<group>"; };
 		634EB2AB20AC2EAB00ACAA06 /* NSRegularExpressionExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSRegularExpressionExtension.swift; sourceTree = "<group>"; };
+		6377EF2D20BC6DA900F668E3 /* BitcoinNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinNetwork.swift; sourceTree = "<group>"; };
 		63F66C0C20B421BF007DF79D /* NRLPrivateKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRLPrivateKey.swift; sourceTree = "<group>"; };
 		63F66C0D20B421BF007DF79D /* NRLPublicKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRLPublicKey.swift; sourceTree = "<group>"; };
 		63F66C0F20B421BF007DF79D /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
@@ -572,6 +574,7 @@
 			isa = PBXGroup;
 			children = (
 				63F66C2A20B4B511007DF79D /* Bitcoin.swift */,
+				6377EF2D20BC6DA900F668E3 /* BitcoinNetwork.swift */,
 			);
 			path = Bitcoin;
 			sourceTree = "<group>";
@@ -821,6 +824,7 @@
 				6327C1C920B89BBB00CB2017 /* VersionByte.swift in Sources */,
 				6327C1A920B86C7A00CB2017 /* SMP.swift in Sources */,
 				63F66C3520B4B671007DF79D /* BlockParameter.swift in Sources */,
+				6377EF2E20BC6DA900F668E3 /* BitcoinNetwork.swift in Sources */,
 				6327C19220B839D500CB2017 /* sc.c in Sources */,
 				63F66C1220B421BF007DF79D /* NRLPublicKey.swift in Sources */,
 				63F66C3820B4B671007DF79D /* Transaction.swift in Sources */,
@@ -1060,9 +1064,15 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(SRCROOT)/Libraries/secp256k1/lib",
 					"$(SRCROOT)/Libraries/openssl/lib",
+					"$(SRCROOT)/Libraries/BitcoinSPV/lib",
+					"$(PROJECT_DIR)/Libraries/openssl/lib",
 				);
 				MODULEMAP_FILE = "$(SRCROOT)/Sources/NRLWalletSDK.modulemap";
 				MODULEMAP_PRIVATE_FILE = "";
+				OTHER_LDFLAGS = (
+					"-l\"crypto\"",
+					"-l\"ssl\"",
+				);
 				OTHER_LIBTOOLFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.norestlabs.NRLWalletSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -1108,9 +1118,15 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(SRCROOT)/Libraries/secp256k1/lib",
 					"$(SRCROOT)/Libraries/openssl/lib",
+					"$(SRCROOT)/Libraries/BitcoinSPV/lib",
+					"$(PROJECT_DIR)/Libraries/openssl/lib",
 				);
 				MODULEMAP_FILE = "$(SRCROOT)/Sources/NRLWalletSDK.modulemap";
 				MODULEMAP_PRIVATE_FILE = "";
+				OTHER_LDFLAGS = (
+					"-l\"crypto\"",
+					"-l\"ssl\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.norestlabs.NRLWalletSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

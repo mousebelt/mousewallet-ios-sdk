@@ -6,6 +6,5 @@ framework module NRLWalletSDK {
     
     explicit module Private {
         header "Internal.h"
-        link "crypto"
     }
 }

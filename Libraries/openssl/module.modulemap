@@ -1,0 +1,4 @@
+module openssl {
+    link "ssl"
+    link "crypto"
+}

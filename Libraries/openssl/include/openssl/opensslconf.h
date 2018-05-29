@@ -11,29 +11,11 @@ extern "C" {
 #ifndef OPENSSL_DOING_MAKEDEPEND
 
 
-#ifndef OPENSSL_NO_COMP
-# define OPENSSL_NO_COMP
-#endif
-#ifndef OPENSSL_NO_DTLS
-# define OPENSSL_NO_DTLS
-#endif
-#ifndef OPENSSL_NO_DTLS1
-# define OPENSSL_NO_DTLS1
-#endif
-#ifndef OPENSSL_NO_EC2M
-# define OPENSSL_NO_EC2M
-#endif
 #ifndef OPENSSL_NO_EC_NISTP_64_GCC_128
 # define OPENSSL_NO_EC_NISTP_64_GCC_128
 #endif
-#ifndef OPENSSL_NO_ENGINE
-# define OPENSSL_NO_ENGINE
-#endif
 #ifndef OPENSSL_NO_GMP
 # define OPENSSL_NO_GMP
-#endif
-#ifndef OPENSSL_NO_IDEA
-# define OPENSSL_NO_IDEA
 #endif
 #ifndef OPENSSL_NO_JPAKE
 # define OPENSSL_NO_JPAKE
@@ -47,12 +29,6 @@ extern "C" {
 #ifndef OPENSSL_NO_MD2
 # define OPENSSL_NO_MD2
 #endif
-#ifndef OPENSSL_NO_NPN
-# define OPENSSL_NO_NPN
-#endif
-#ifndef OPENSSL_NO_PSK
-# define OPENSSL_NO_PSK
-#endif
 #ifndef OPENSSL_NO_RC5
 # define OPENSSL_NO_RC5
 #endif
@@ -62,17 +38,11 @@ extern "C" {
 #ifndef OPENSSL_NO_SCTP
 # define OPENSSL_NO_SCTP
 #endif
-#ifndef OPENSSL_NO_SRP
-# define OPENSSL_NO_SRP
-#endif
 #ifndef OPENSSL_NO_SSL_TRACE
 # define OPENSSL_NO_SSL_TRACE
 #endif
 #ifndef OPENSSL_NO_SSL2
 # define OPENSSL_NO_SSL2
-#endif
-#ifndef OPENSSL_NO_SSL3
-# define OPENSSL_NO_SSL3
 #endif
 #ifndef OPENSSL_NO_STORE
 # define OPENSSL_NO_STORE
@@ -86,14 +56,8 @@ extern "C" {
 
 #endif /* OPENSSL_DOING_MAKEDEPEND */
 
-#ifndef OPENSSL_NO_ASM
-# define OPENSSL_NO_ASM
-#endif
-#ifndef OPENSSL_NO_ERR
-# define OPENSSL_NO_ERR
-#endif
-#ifndef OPENSSL_NO_HW
-# define OPENSSL_NO_HW
+#ifndef OPENSSL_THREADS
+# define OPENSSL_THREADS
 #endif
 #ifndef OPENSSL_NO_DYNAMIC_ENGINE
 # define OPENSSL_NO_DYNAMIC_ENGINE
@@ -104,29 +68,11 @@ extern "C" {
    who haven't had the time to do the appropriate changes in their
    applications.  */
 #ifdef OPENSSL_ALGORITHM_DEFINES
-# if defined(OPENSSL_NO_COMP) && !defined(NO_COMP)
-#  define NO_COMP
-# endif
-# if defined(OPENSSL_NO_DTLS) && !defined(NO_DTLS)
-#  define NO_DTLS
-# endif
-# if defined(OPENSSL_NO_DTLS1) && !defined(NO_DTLS1)
-#  define NO_DTLS1
-# endif
-# if defined(OPENSSL_NO_EC2M) && !defined(NO_EC2M)
-#  define NO_EC2M
-# endif
 # if defined(OPENSSL_NO_EC_NISTP_64_GCC_128) && !defined(NO_EC_NISTP_64_GCC_128)
 #  define NO_EC_NISTP_64_GCC_128
 # endif
-# if defined(OPENSSL_NO_ENGINE) && !defined(NO_ENGINE)
-#  define NO_ENGINE
-# endif
 # if defined(OPENSSL_NO_GMP) && !defined(NO_GMP)
 #  define NO_GMP
-# endif
-# if defined(OPENSSL_NO_IDEA) && !defined(NO_IDEA)
-#  define NO_IDEA
 # endif
 # if defined(OPENSSL_NO_JPAKE) && !defined(NO_JPAKE)
 #  define NO_JPAKE
@@ -140,12 +86,6 @@ extern "C" {
 # if defined(OPENSSL_NO_MD2) && !defined(NO_MD2)
 #  define NO_MD2
 # endif
-# if defined(OPENSSL_NO_NPN) && !defined(NO_NPN)
-#  define NO_NPN
-# endif
-# if defined(OPENSSL_NO_PSK) && !defined(NO_PSK)
-#  define NO_PSK
-# endif
 # if defined(OPENSSL_NO_RC5) && !defined(NO_RC5)
 #  define NO_RC5
 # endif
@@ -155,17 +95,11 @@ extern "C" {
 # if defined(OPENSSL_NO_SCTP) && !defined(NO_SCTP)
 #  define NO_SCTP
 # endif
-# if defined(OPENSSL_NO_SRP) && !defined(NO_SRP)
-#  define NO_SRP
-# endif
 # if defined(OPENSSL_NO_SSL_TRACE) && !defined(NO_SSL_TRACE)
 #  define NO_SSL_TRACE
 # endif
 # if defined(OPENSSL_NO_SSL2) && !defined(NO_SSL2)
 #  define NO_SSL2
-# endif
-# if defined(OPENSSL_NO_SSL3) && !defined(NO_SSL3)
-#  define NO_SSL3
 # endif
 # if defined(OPENSSL_NO_STORE) && !defined(NO_STORE)
 #  define NO_STORE
@@ -185,8 +119,8 @@ extern "C" {
 
 #if !(defined(VMS) || defined(__VMS)) /* VMS uses logical names instead */
 #if defined(HEADER_CRYPTLIB_H) && !defined(OPENSSLDIR)
-#define ENGINESDIR "/usr/local/ssl/lib/engines"
-#define OPENSSLDIR "/usr/local/ssl"
+#define ENGINESDIR "/tmp/openssl/bin/iPhoneOS11.3-arm64.sdk/lib/engines"
+#define OPENSSLDIR "/tmp/openssl/bin/iPhoneOS11.3-arm64.sdk"
 #endif
 #endif
 

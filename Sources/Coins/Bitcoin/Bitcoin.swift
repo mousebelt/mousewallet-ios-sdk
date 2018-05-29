@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NRLBitcoin : NRLCoin{
+class NRLBitcoin : NRLCoin, PeearEventCallback{
     let isTest: Bool;
     init(seed: Data, fTest: Bool) {
         self.isTest = fTest;
@@ -82,5 +82,15 @@ class NRLBitcoin : NRLCoin{
     override func generateAddress() {
         self.address = toAddress(publickkey: (self.pathPrivateKey?.nrlPublicKey().raw)!);
         self.wif = toWIF(privatekey: (self.pathPrivateKey?.raw)!, compressed: true);
+    }
+    
+    //callback from BitcoinNetwork
+    func walletDidRegisterTransaction(notification: Notification) {
+    }
+    
+    func peerGroupDidStartDownload(notification: Notification) {
+    }
+    
+    func peerGroupDidFinishDownload(notification: Notification) {
     }
 }
