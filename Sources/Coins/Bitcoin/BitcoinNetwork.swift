@@ -35,8 +35,6 @@ public class BitcoinPeer {
         self.walletPath = documentsDirectory.appendingPathComponent("nrlbtc.wallet").path
         self.dbPath = documentsDirectory.appendingPathComponent("nrlbtc.sql").path
         
-
-        
         let store = WSMemoryBlockStore.init(parameters: self.parameters)
         self.downloader = WSBlockChainDownloader.init(store: store, wallet: self.wallet)
         
