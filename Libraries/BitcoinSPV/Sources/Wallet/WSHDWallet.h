@@ -30,7 +30,7 @@
 #import "WSWallet.h"
 
 @class WSParameters;
-@class WSSeed;
+//@class WSSeed;
 
 #pragma mark -
 
@@ -39,11 +39,14 @@
 @property (nonatomic, assign) BOOL shouldAutoSave; // NO
 @property (nonatomic, assign) BOOL maySpendUnconfirmed; // NO
 
-- (instancetype)initWithParameters:(WSParameters *)parameters seed:(WSSeed *)seed;
-- (instancetype)initWithParameters:(WSParameters *)parameters seed:(WSSeed *)seed chainsPath:(NSString *)chainsPath;
-- (instancetype)initWithParameters:(WSParameters *)parameters seed:(WSSeed *)seed chainsPath:(NSString *)chainsPath gapLimit:(NSUInteger)gapLimit;
+- (instancetype)initWithParameters:(WSParameters *)parameters seeddata:(NSData *)seeddata;
+//- (instancetype)initWithParameters:(WSParameters *)parameters seed:(WSSeed *)seed;
+//- (instancetype)initWithParameters:(WSParameters *)parameters seed:(WSSeed *)seed chainsPath:(NSString *)chainsPath;
+//- (instancetype)initWithParameters:(WSParameters *)parameters seed:(WSSeed *)seed chainsPath:(NSString *)chainsPath gapLimit:(NSUInteger)gapLimit;
+- (instancetype)initWithParameters:(WSParameters *)parameters seed:(NSData *)seed chainsPath:(NSString *)chainsPath gapLimit:(NSUInteger)gapLimit;
 - (WSParameters *)parameters;
-- (WSSeed *)seed;
+//- (WSSeed *)seed;
+- (NSData *)seed;
 - (NSUInteger)gapLimit;
 
 - (NSArray *)watchedReceiveAddresses; // WSAddress
@@ -55,6 +58,6 @@
 // the wallet, you should only use the following method and explicity
 // provide the seed each time you reload a serialized wallet.
 //
-+ (instancetype)loadFromPath:(NSString *)path parameters:(WSParameters *)parameters seed:(WSSeed *)seed;
+//+ (instancetype)loadFromPath:(NSString *)path parameters:(WSParameters *)parameters seed:(WSSeed *)seed;
 
 @end

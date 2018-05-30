@@ -57,7 +57,7 @@
         NSBundle *bundle = WSClientBundle([self class]);
 
         self.defaultEntropyLength = WSSeedGeneratorDefaultEntropyBits;
-        self.wordsPath = [bundle pathForResource:WSBIP39WordsResource ofType:WSBIP39WordsType];
+        self.wordsPath = [[NSBundle mainBundle] pathForResource:WSBIP39WordsResource ofType:WSBIP39WordsType];
     }
     return self;
 }

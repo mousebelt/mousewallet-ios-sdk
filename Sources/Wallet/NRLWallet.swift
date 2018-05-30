@@ -13,7 +13,7 @@ import CryptoSwift
 public class NRLWallet {
     let coin: NRLCoin
     
-    public init(mnemonic: String, seed: Data, network: Network) {
+    public init(seed: Data, network: Network) {
         switch network {
         case .main(.ethereum):
             coin = NRLEthereum(seed: seed, fTest: false)
@@ -22,7 +22,7 @@ public class NRLWallet {
             coin = NRLNeo(seed: seed, fTest: false)
             break
         case .main(.bitcoin):
-            coin = NRLBitcoin(mnemonic:mnemonic, seed: seed, fTest: false)
+            coin = NRLBitcoin(seed: seed, fTest: false)
             break
         case .main(.litecoin):
             coin = NRLLitecoin(seed: seed, fTest: false)

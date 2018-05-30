@@ -25,11 +25,10 @@ public class BitcoinPeer {
     let dbPath: String
     let listener: PeearEventCallback
     
-    init(mnemonic: String, listener: PeearEventCallback) {
+    init(seedData: Data, listener: PeearEventCallback) {
         self.listener = listener
         self.parameters = WSParametersForNetworkType(WSNetworkTypeTestnet3)
-        let seed = WSSeed.init(mnemonic: mnemonic)
-        self.wallet = WSHDWallet.init(parameters: self.parameters, seed: seed)
+        self.wallet = WSHDWallet.init(parameters: self.parameters, seeddata: seedData)
         
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         self.walletPath = documentsDirectory.appendingPathComponent("nrlbtc.wallet").path

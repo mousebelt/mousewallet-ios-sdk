@@ -28,7 +28,7 @@
 #import "AutoCoding.h"
 
 #import "WSHDWallet.h"
-#import "WSSeed.h"
+//#import "WSSeed.h"
 #import "WSHash256.h"
 #import "WSHash160.h"
 #import "WSHDKeyring.h"
@@ -79,7 +79,10 @@ NSString *WSHDWalletDefaultChainsPath(WSParameters *parameters)
     NSMutableDictionary *_metadataByTxId;               // WSHash256 -> WSTransactionMetadata
 
     // transient (sensitive)
-    WSSeed *_seed;
+//    WSSeed *_seed;
+    NSData *_seed;
+    NSTimeInterval _creationTime;
+    
     id<WSBIP32Keyring> _externalChain;
     id<WSBIP32Keyring> _internalChain;
 
@@ -117,7 +120,8 @@ NSString *WSHDWalletDefaultChainsPath(WSParameters *parameters)
 - (id<WSBIP32Keyring>)safeExternalChain;
 - (id<WSBIP32Keyring>)safeInternalChain;
 
-- (void)loadSensitiveDataWithSeed:(WSSeed *)seed;
+//- (void)loadSensitiveDataWithSeed:(WSSeed *)seed;
+- (void)loadSensitiveDataWithSeed:(NSData *)seeddata;
 - (void)rebuildTransientStructures;
 - (void)unloadSensitiveData;
 
@@ -129,21 +133,53 @@ NSString *WSHDWalletDefaultChainsPath(WSParameters *parameters)
 
 @implementation WSHDWallet
 
-- (instancetype)initWithParameters:(WSParameters *)parameters seed:(WSSeed *)seed
+- (instancetype)initWithParameters:(WSParameters *)parameters seeddata:(NSData *)seeddata
 {
-    return [self initWithParameters:parameters seed:seed chainsPath:WSHDWalletDefaultChainsPath(parameters) gapLimit:WSHDWalletDefaultGapLimit];
+    return [self initWithParameters:parameters seeddata:seeddata chainsPath:WSHDWalletDefaultChainsPath(parameters) gapLimit:WSHDWalletDefaultGapLimit];
 }
 
-- (instancetype)initWithParameters:(WSParameters *)parameters seed:(WSSeed *)seed chainsPath:(NSString *)chainsPath
-{
-    
-    return [self initWithParameters:parameters seed:seed chainsPath:chainsPath gapLimit:WSHDWalletDefaultGapLimit];
-}
+//- (instancetype)initWithParameters:(WSParameters *)parameters seed:(WSSeed *)seed
+//{
+//    return [self initWithParameters:parameters seed:seed chainsPath:WSHDWalletDefaultChainsPath(parameters) gapLimit:WSHDWalletDefaultGapLimit];
+//}
+//
+//- (instancetype)initWithParameters:(WSParameters *)parameters seed:(WSSeed *)seed chainsPath:(NSString *)chainsPath
+//{
+//
+//    return [self initWithParameters:parameters seed:seed chainsPath:chainsPath gapLimit:WSHDWalletDefaultGapLimit];
+//}
 
-- (instancetype)initWithParameters:(WSParameters *)parameters seed:(WSSeed *)seed chainsPath:(NSString *)chainsPath gapLimit:(NSUInteger)gapLimit
+//- (instancetype)initWithParameters:(WSParameters *)parameters seed:(WSSeed *)seed chainsPath:(NSString *)chainsPath gapLimit:(NSUInteger)gapLimit
+//{
+//    WSExceptionCheckIllegal(parameters);
+//    WSExceptionCheckIllegal(seed);
+//    WSExceptionCheckIllegal(chainsPath);
+//    WSExceptionCheckIllegal(gapLimit > 0);
+//
+//    if ((self = [self init])) {
+//        self.parameters = parameters;
+//        _networkType = parameters.networkType;
+//        _chainsPath = chainsPath;
+//        _gapLimit = gapLimit;
+//
+//        _allExternalAddresses = [[NSMutableOrderedSet alloc] init];
+//        _allInternalAddresses = [[NSMutableOrderedSet alloc] init];
+//        _currentExternalAccount = 0;
+//        _currentInternalAccount = 0;
+//        _txs = [[NSMutableOrderedSet alloc] init];
+//        _usedAddresses = [[NSMutableSet alloc] init];
+//        _metadataByTxId = [[NSMutableDictionary alloc] init];
+//
+//        [self loadSensitiveDataWithSeed:seed];
+//        [self rebuildTransientStructures];
+//    }
+//    return self;
+//}
+
+- (instancetype)initWithParameters:(WSParameters *)parameters seeddata:(NSData *)seeddata chainsPath:(NSString *)chainsPath gapLimit:(NSUInteger)gapLimit
 {
     WSExceptionCheckIllegal(parameters);
-    WSExceptionCheckIllegal(seed);
+    WSExceptionCheckIllegal(seeddata);
     WSExceptionCheckIllegal(chainsPath);
     WSExceptionCheckIllegal(gapLimit > 0);
     
@@ -152,7 +188,7 @@ NSString *WSHDWalletDefaultChainsPath(WSParameters *parameters)
         _networkType = parameters.networkType;
         _chainsPath = chainsPath;
         _gapLimit = gapLimit;
-
+        
         _allExternalAddresses = [[NSMutableOrderedSet alloc] init];
         _allInternalAddresses = [[NSMutableOrderedSet alloc] init];
         _currentExternalAccount = 0;
@@ -161,18 +197,25 @@ NSString *WSHDWalletDefaultChainsPath(WSParameters *parameters)
         _usedAddresses = [[NSMutableSet alloc] init];
         _metadataByTxId = [[NSMutableDictionary alloc] init];
         
-        [self loadSensitiveDataWithSeed:seed];
+        [self loadSensitiveDataWithSeed:seeddata];
         [self rebuildTransientStructures];
     }
     return self;
 }
 
-- (WSSeed *)seed
+- (NSData *)seed
 {
     @synchronized (self) {
         return _seed;
     }
 }
+
+//- (WSSeed *)seed
+//{
+//    @synchronized (self) {
+//        return _seed;
+//    }
+//}
 
 - (NSUInteger)gapLimit
 {
@@ -206,7 +249,7 @@ NSString *WSHDWalletDefaultChainsPath(WSParameters *parameters)
 {
     @synchronized (self) {
         WSExceptionCheck(_seed != nil, WSExceptionIllegalArgument, @"Seed is missing, probably unloaded with unloadSensitiveData and never reloaded");
-        return _seed.creationTime;
+        return _creationTime;
     }
 }
 
@@ -676,42 +719,56 @@ NSString *WSHDWalletDefaultChainsPath(WSParameters *parameters)
     }
 }
 
-+ (instancetype)loadFromPath:(NSString *)path parameters:(WSParameters *)parameters seed:(WSSeed *)seed
-{
-    WSExceptionCheckIllegal(path);
-    WSExceptionCheckIllegal(parameters);
-    WSExceptionCheckIllegal(seed);
+//+ (instancetype)loadFromPath:(NSString *)path parameters:(WSParameters *)parameters seed:(WSSeed *)seed
+//{
+//    WSExceptionCheckIllegal(path);
+//    WSExceptionCheckIllegal(parameters);
+//    WSExceptionCheckIllegal(seed);
+//
+//    @synchronized (self) {
+//        WSHDWallet *wallet = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+//        if (![wallet isKindOfClass:[WSHDWallet class]]) {
+//            return nil;
+//        }
+//
+//        if (!wallet->_chainsPath) {
+//            NSString *bip32ChainsPath = WSBIP32PathForAccount(0);
+//            DDLogWarn(@"Missing chainsPath, falling back to BIP32 root (%@)", bip32ChainsPath);
+//            wallet->_chainsPath = bip32ChainsPath;
+//        }
+//
+//        // safe check on singletons
+//        WSExceptionCheck(parameters == wallet.parameters,
+//                         WSExceptionIllegalArgument,
+//                         @"Wallet created on '%@' network (expected: '%@')",
+//                         [wallet.parameters networkTypeString],
+//                         [parameters networkTypeString]);
+//
+//        DDLogInfo(@"Loaded wallet from %@", path);
+//
+//        wallet->_path = path;
+//        [wallet loadSensitiveDataWithSeed:seed];
+//        [wallet rebuildTransientStructures];
+//        [wallet sortTransactions];
+//        return wallet;
+//    }
+//}
 
-    @synchronized (self) {
-        WSHDWallet *wallet = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
-        if (![wallet isKindOfClass:[WSHDWallet class]]) {
-            return nil;
-        }
-        
-        if (!wallet->_chainsPath) {
-            NSString *bip32ChainsPath = WSBIP32PathForAccount(0);
-            DDLogWarn(@"Missing chainsPath, falling back to BIP32 root (%@)", bip32ChainsPath);
-            wallet->_chainsPath = bip32ChainsPath;
-        }
+//- (void)loadSensitiveDataWithSeed:(WSSeed *)seed
+//{
+//    NSParameterAssert(seed);
+//
+//    NSAssert(self.parameters, @"Parameters not set (check init* and loadFromPath*)");
+//
+//    @synchronized (self) {
+//        _seed = seed;
+//        WSHDKeyring *keyring = [[WSHDKeyring alloc] initWithParameters:self.parameters data:[_seed derivedKeyData]];
+//        _externalChain = [keyring keyringAtPath:[NSString stringWithFormat:@"%@/0", _chainsPath]];
+//        _internalChain = [keyring keyringAtPath:[NSString stringWithFormat:@"%@/1", _chainsPath]];
+//    }
+//}
 
-        // safe check on singletons
-        WSExceptionCheck(parameters == wallet.parameters,
-                         WSExceptionIllegalArgument,
-                         @"Wallet created on '%@' network (expected: '%@')",
-                         [wallet.parameters networkTypeString],
-                         [parameters networkTypeString]);
-
-        DDLogInfo(@"Loaded wallet from %@", path);
-
-        wallet->_path = path;
-        [wallet loadSensitiveDataWithSeed:seed];
-        [wallet rebuildTransientStructures];
-        [wallet sortTransactions];
-        return wallet;
-    }
-}
-
-- (void)loadSensitiveDataWithSeed:(WSSeed *)seed
+- (void)loadSensitiveDataWithSeed:(NSData *)seed
 {
     NSParameterAssert(seed);
     
@@ -719,7 +776,8 @@ NSString *WSHDWalletDefaultChainsPath(WSParameters *parameters)
 
     @synchronized (self) {
         _seed = seed;
-        WSHDKeyring *keyring = [[WSHDKeyring alloc] initWithParameters:self.parameters data:[_seed derivedKeyData]];
+        _creationTime = [NSDate timeIntervalSinceReferenceDate];
+        WSHDKeyring *keyring = [[WSHDKeyring alloc] initWithParameters:self.parameters data:_seed];
         _externalChain = [keyring keyringAtPath:[NSString stringWithFormat:@"%@/0", _chainsPath]];
         _internalChain = [keyring keyringAtPath:[NSString stringWithFormat:@"%@/1", _chainsPath]];
     }
