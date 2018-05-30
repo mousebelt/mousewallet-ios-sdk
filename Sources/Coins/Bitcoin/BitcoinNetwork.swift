@@ -9,6 +9,7 @@
 import Foundation
 //import BitcoinSPV
 
+
 protocol PeearEventCallback {
     func walletDidRegisterTransaction(notification: Notification)
     func peerGroupDidStartDownload(notification: Notification)

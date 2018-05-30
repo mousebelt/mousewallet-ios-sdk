@@ -29,6 +29,8 @@ can be downloaded from BitcoinSPV pod. or
 
 can be downloaded from BitcoinSPV pod. or 
 
+to libs of libssl and libcrypto should be explicitly included as linked library of NRLWalletSDK
+
 >https://github.com/openssl/openssl
 >need to add in Libraries manually
 

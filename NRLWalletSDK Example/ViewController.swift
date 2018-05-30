@@ -9,6 +9,7 @@
 import UIKit
 import NRLWalletSDK
 
+
 //data extension to convert binary data to hex string
 extension Data {
     struct HexEncodingOptions: OptionSet {
@@ -69,6 +70,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        DDLog.add(DDTTYLogger.sharedInstance())
 
         // Generate mnemonic and seed
         do {
@@ -79,31 +81,35 @@ class ViewController: UIViewController {
             let seed = try NRLMnemonic.mnemonicToSeed(from: mnemonic, withPassphrase: "Test")
             print("\nseed = \(String(describing: seed.hexEncodedString()))")
             
-            print("\n------------------------- Ethereum ----------------------------\n")
-            // Ethereum : 60ß
-            let etherWallet = NRLWallet(seed: seed, network: .main(.ethereum))
-            etherWallet.generateExternalKeyPair(at: 0)
+            var privateKey: String
+            var publicKey: String
+            var address: String
             
-            var privateKey = etherWallet.getWIF()
-            var publicKey = etherWallet.getPublicKey()
-            var address = etherWallet.getAddress()
-
-            print("\nEthereum private key = \(privateKey)")
-            print("Ethereum public key = \(publicKey)")
-            print("Ethereum address = \(address)")
-            
-            print("\n------------------------- NEO ----------------------------\n")
-            // NEO : 888
-            let neoWallet = NRLWallet(seed: seed, network: .main(.neo))
-            neoWallet.generateExternalKeyPair(at: 2)
-            
-            privateKey = neoWallet.getWIF()
-            publicKey = neoWallet.getPublicKey()
-            address = neoWallet.getAddress()
-            
-            print("\nNeo private key = \(privateKey)")
-            print("Neo public key = \(publicKey)")
-            print("Neo address = \(address)")
+//            print("\n------------------------- Ethereum ----------------------------\n")
+//            // Ethereum : 60ß
+//            let etherWallet = NRLWallet(seed: seed, network: .main(.ethereum))
+//            etherWallet.generateExternalKeyPair(at: 0)
+//
+//            var privateKey = etherWallet.getWIF()
+//            var publicKey = etherWallet.getPublicKey()
+//            var address = etherWallet.getAddress()
+//
+//            print("\nEthereum private key = \(privateKey)")
+//            print("Ethereum public key = \(publicKey)")
+//            print("Ethereum address = \(address)")
+//
+//            print("\n------------------------- NEO ----------------------------\n")
+//            // NEO : 888
+//            let neoWallet = NRLWallet(seed: seed, network: .main(.neo))
+//            neoWallet.generateExternalKeyPair(at: 2)
+//
+//            privateKey = neoWallet.getWIF()
+//            publicKey = neoWallet.getPublicKey()
+//            address = neoWallet.getAddress()
+//
+//            print("\nNeo private key = \(privateKey)")
+//            print("Neo public key = \(publicKey)")
+//            print("Neo address = \(address)")
             
             
             print("\n------------------------- Bitcoin ----------------------------\n")
@@ -120,33 +126,33 @@ class ViewController: UIViewController {
             print("BitcoinWallet address = \(address)")
             
             
-            print("\n------------------------- Litecoin ----------------------------\n")
-            // Litecoin : 2
-            let litecoinWallet = NRLWallet(seed: seed, network: .main(.litecoin))
-            litecoinWallet.generateExternalKeyPair(at: 0)
-            
-            privateKey = litecoinWallet.getWIF()
-            publicKey = litecoinWallet.getPublicKey()
-            address = litecoinWallet.getAddress()
-            
-            print("\nLitecoinWallet private key = \(privateKey)")
-            print("LitecoinWallet public key = \(publicKey)")
-            print("LitecoinWallet address = \(address)")
-            
-            print("\n------------------------- Stellar ----------------------------\n")
-            // Stellar : 148
-            let stellarWallet = NRLWallet(seed: seed, network: .main(.stellar))
-            stellarWallet.generateExternalKeyPair(at: 0)
-            
-            privateKey = stellarWallet.getWIF()
-            publicKey = stellarWallet.getPublicKey()
-            address = stellarWallet.getAddress()
-            
-            print("\n stellarWallet private key = \(privateKey)")
-             print("stellarWallet public key = \(publicKey)")
-            print("stellarWallet address = \(address)")
-            
-            print("\n-----------------------------------------------------\n")
+//            print("\n------------------------- Litecoin ----------------------------\n")
+//            // Litecoin : 2
+//            let litecoinWallet = NRLWallet(seed: seed, network: .main(.litecoin))
+//            litecoinWallet.generateExternalKeyPair(at: 0)
+//
+//            privateKey = litecoinWallet.getWIF()
+//            publicKey = litecoinWallet.getPublicKey()
+//            address = litecoinWallet.getAddress()
+//
+//            print("\nLitecoinWallet private key = \(privateKey)")
+//            print("LitecoinWallet public key = \(publicKey)")
+//            print("LitecoinWallet address = \(address)")
+//
+//            print("\n------------------------- Stellar ----------------------------\n")
+//            // Stellar : 148
+//            let stellarWallet = NRLWallet(seed: seed, network: .main(.stellar))
+//            stellarWallet.generateExternalKeyPair(at: 0)
+//
+//            privateKey = stellarWallet.getWIF()
+//            publicKey = stellarWallet.getPublicKey()
+//            address = stellarWallet.getAddress()
+//
+//            print("\n stellarWallet private key = \(privateKey)")
+//             print("stellarWallet public key = \(publicKey)")
+//            print("stellarWallet address = \(address)")
+//
+//            print("\n-----------------------------------------------------\n")
 
         } catch {
             print(error)

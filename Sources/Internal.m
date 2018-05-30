@@ -3,6 +3,9 @@
 #import <openssl/ripemd.h>
 #import <openssl/hmac.h>
 #import <openssl/ec.h>
+#import "DDLog.h"
+
+
 //https://github.com/yuzushioh/EthereumKit
 @implementation CryptoHash
 
