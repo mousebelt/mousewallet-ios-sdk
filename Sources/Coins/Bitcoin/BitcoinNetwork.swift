@@ -7,7 +7,7 @@
 //
 
 import Foundation
-//import BitcoinSPV
+import NRLWalletSDK.Private
 
 
 protocol PeearEventCallback {
@@ -28,7 +28,7 @@ public class BitcoinPeer {
     
     init(seedData: Data, listener: PeearEventCallback) {
         self.listener = listener
-        self.parameters = WSParametersForNetworkType(WSNetworkTypeTestnet3)
+        self.parameters = WSParametersForNetworkType(WSNetworkTypeMain)
         self.wallet = WSHDWallet.init(parameters: self.parameters, seeddata: seedData)
         
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
@@ -46,6 +46,31 @@ public class BitcoinPeer {
         NotificationCenter.default.addObserver(self, selector: #selector(PeerGroupDidStartDownload(notification:)), name: NSNotification.Name.WSPeerGroupDidStartDownload, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(PeerGroupDidFinishDownload(notification:)), name: NSNotification.Name.WSPeerGroupDidFinishDownload, object: nil)
+        
+        let balance = self.wallet.balance()
+        print("Balance: \(balance)")
+        
+        let allReceiveAddresses = self.wallet.allReceiveAddresses()
+        print("allReceiveAddresses: \(allReceiveAddresses)")
+        
+        var addressesEncoded = NSMutableArray()
+        var addressesHexEncoded = NSMutableArray()
+        for address in allReceiveAddresses! {
+            let encodedAddress = address as! WSAddress
+            let privkey = self.wallet.privateKey(for: encodedAddress)
+            let pubkey = self.wallet.publicKey(for: encodedAddress)
+            addressesEncoded.add(privkey)
+            addressesHexEncoded.add(pubkey)
+        }
+        
+        print("addressesEncoded: \(addressesEncoded)")
+        print("addressesHexEncoded: \(addressesHexEncoded)")
+        
+        let address = self.wallet.receiveAddress()
+        print("receiveAddress: \(address)")
+        
+        let transactions = self.wallet.allTransactions()
+        print("allTransactions: \(transactions)")
     }
     
     //callback from BitcoinNetwork
