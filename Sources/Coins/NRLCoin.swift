@@ -112,4 +112,13 @@ class NRLCoin {
             .derived(at: 0, hardens: true)
             .derived(at: change.rawValue)
     }
+    
+    
+    //override functions for own wallet and synchronizing as spv
+    public func createOwnWallet() {}
+    public func createPeerGroup() {}
+    public func connectPeers() {}
+    public func disConnectPeers() {}
+    public func startSyncing() {}
+    public func stopSyncing() {}
 }

@@ -26,7 +26,7 @@ class NRLBitcoin : NRLCoin, PeearEventCallback{
                    coinType: cointype,
                    seedKey: "Bitcoin seed",
                    curve: "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141")
-        self.btcpeer = BitcoinPeer(seedData: seed, listener: self)
+        self.btcpeer = BitcoinPeer(listener: self, fTest: self.isTest)
     }
     
     var pubkeyhash: UInt8 {
@@ -85,6 +85,31 @@ class NRLBitcoin : NRLCoin, PeearEventCallback{
     override func generateAddress() {
         self.address = toAddress(publickkey: (self.pathPrivateKey?.nrlPublicKey().raw)!);
         self.wif = toWIF(privatekey: (self.pathPrivateKey?.raw)!, compressed: true);
+    }
+    
+    //override functions for own wallet and synchronizing as spv
+    override func createOwnWallet() {
+        self.btcpeer?.createWallet(seedData: self.seed)
+    }
+    
+    override func createPeerGroup() {
+        self.btcpeer?.createPeerGroup()
+    }
+    
+    override func connectPeers() {
+        self.btcpeer?.connect()
+    }
+    
+    override func disConnectPeers() {
+        self.btcpeer?.disconnect()
+    }
+    
+    override func startSyncing() {
+        self.btcpeer?.startSync()
+    }
+    
+    override func stopSyncing() {
+        self.btcpeer?.stopSync()
     }
     
     //callback from BitcoinNetwork

@@ -78,7 +78,7 @@ class ViewController: UIViewController {
             let bindedString = mnemonic.joined(separator: " ")
             print("mnemonic = \(bindedString)")
 
-            let seed = try NRLMnemonic.mnemonicToSeed(from: mnemonic, withPassphrase: "Test")
+            var seed = try NRLMnemonic.mnemonicToSeed(from: mnemonic, withPassphrase: "Test")
             print("\nseed = \(String(describing: seed.hexEncodedString()))")
             
             var privateKey: String
@@ -114,7 +114,28 @@ class ViewController: UIViewController {
             
             print("\n------------------------- Bitcoin ----------------------------\n")
             // Bitcoin : 0
-            let bitcoinWallet = NRLWallet(seed: seed, network: .main(.bitcoin))
+            /* menmonic= "click offer off current alien soon foster wide senior student mystery agree target grace whale puppy slim join wet plug love trophy federal destroy"
+             
+             address:
+                 myqAKSukSdtUH4YUregNvfjEWJMk3jTEUj,
+                 mjnt7mvGW3mZNd6Ao1SamDDezcWrpT8n8r,
+                 mvb4PXxf77LvtF9ooy1N77tzZSD5bqfFWT,
+                 n42oeaDttQTJXxVo6wcHFr8AXNe4kifEAm,
+                 mo89Y9csq3Yy96Vkp8XoZqnKUSFKjedhB7,
+                 mpaQosi6hUaSPyv4Q5TmHm1BpAQJMWo8Nn,
+                 mn1qQyyUMAQTK4Qjebof7gSXks7pUFDibq,
+             privkeys:
+                 cS2zeeAtj51W3Pre6bSa8pjcr4nDmFSWQa8ynGzDEbt9xu7w3kBd,
+                 cPwaYXfxwP7UpEMAczgcub6V5ugK3EVspzmFKuUrQAnqbRD8hzND,
+                 cUFKu2NJnQxAGEbZwJjsHSzuN1ei2KM4EywtNNg86V9JUVRPfRLq,
+                 cPTzK5xGh2b6WmbsC2RV4V4G7sGWNtfewv2JcDofysauQrnPMsUK,
+                 cQErDBqZqbiXqoiTRVHJTkgbX42qqFJmSpoByLLbCRy6xeaFmKEt,
+                 cRw3wwp8sJiiDbvSbSYKYZ7Zzz7mG5ZayC5aF2oCPTTZCw99KFtU,
+                 cQHC62RtXrnidk55i19rpWBJGKMXHVG3wWnahxoPMRzVcFtN5aRb,
+            */
+            seed = Data(fromHexEncodedString: "47d8d8898556e5c4fcf042b249ef92160e667046d7ff487392a9e6ca9e1d912b11a7b134baf7a8893c92d1a40731b08d1ef24789128d07101df740ad1ba4a12c")!
+
+            let bitcoinWallet = NRLWallet(seed: seed, network: .test(.bitcoin))
             bitcoinWallet.generateExternalKeyPair(at: 0)
             
             privateKey = bitcoinWallet.getWIF()
@@ -124,6 +145,17 @@ class ViewController: UIViewController {
             print("\nBitcoinWallet private key = \(privateKey)")
             print("BitcoinWallet public key = \(publicKey)")
             print("BitcoinWallet address = \(address)")
+            
+            print("\nCreate Own Wallet")
+            bitcoinWallet.createOwnWallet()
+            print("\nCreate Peer Group")
+            bitcoinWallet.createPeerGroup()
+            print("\nConnect Peers")
+            bitcoinWallet.connectPeers()
+            print("\nStart Syncing")
+            bitcoinWallet.startSyncing()
+            
+            
             
             
 //            print("\n------------------------- Litecoin ----------------------------\n")
