@@ -34,6 +34,9 @@ to libs of libssl and libcrypto should be explicitly included as linked library 
 >https://github.com/openssl/openssl
 >need to add in Libraries manually
 
+### CocoaLumberjack
+>https://github.com/CocoaLumberjack/CocoaLumberjack
+
 # environment
 ### carthage
 * Download latest carthage from https://github.com/Carthage/Carthage/releases

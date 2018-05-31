@@ -10,28 +10,19 @@ import Foundation
 import NRLWalletSDK.Private
 
 
-protocol PeearEventCallback {
-    func walletDidRegisterTransaction(notification: Notification)
-    func peerGroupDidStartDownload(notification: Notification)
-    func peerGroupDidFinishDownload(notification: Notification)
-}
-
-
 public class BitcoinPeer {
     let isTest: Bool
     let parameters: WSParameters
 
     let walletPath: String
     let dbPath: String
-    var listener: PeearEventCallback
     
     var downloader: WSBlockChainDownloader?
     var peerGroup: WSPeerGroup?
     var wallet: WSHDWallet?
     
-    init(listener: PeearEventCallback, fTest: Bool) {
+    init(fTest: Bool) {
         self.isTest = fTest
-        self.listener = listener
         
         if (self.isTest) {
             self.parameters = WSParametersForNetworkType(WSNetworkTypeTestnet3)
@@ -43,103 +34,134 @@ public class BitcoinPeer {
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         self.walletPath = documentsDirectory.appendingPathComponent("nrlbtc.wallet").path
         self.dbPath = documentsDirectory.appendingPathComponent("nrlbtc.sql").path
-        
-//        createWallet(seedData: seedData)
-//        createPeerGroup()
-        
-//        showWalletStatus()
     }
     
-    func showWalletStatus() {
+    func getWalletBalance() -> UInt64 {
+        self.wallet?.recalculateSpendsAndBalance()
         let balance = self.wallet?.balance()
-        print("Balance: \(String(describing: balance))")
+        DDLogDebug("Balance: \(String(describing: balance))")
         
+        return balance!
+    }
+    
+    func getAddressesOfWallet() -> NSMutableArray {
         let allReceiveAddresses = self.wallet?.allReceiveAddresses()
-        print("allReceiveAddresses: \(String(describing: allReceiveAddresses))")
+        
+        let addressArray = NSMutableArray()
+        for address in allReceiveAddresses! {
+            let encodedAddress = address as! WSAddress
+            
+            addressArray.add(encodedAddress.encoded() as Any)
+        }
+
+        DDLogDebug("allReceiveAddresses: \(String(describing: addressArray))")
+        return addressArray
+    }
+    
+    
+    func getPrivKeysOfWallet() -> NSMutableArray {
+        let allReceiveAddresses = self.wallet?.allReceiveAddresses()
         
         let privkeys = NSMutableArray()
-        let pubkeys = NSMutableArray()
         for address in allReceiveAddresses! {
             let encodedAddress = address as! WSAddress
             let privkey = self.wallet?.privateKey(for: encodedAddress)
-            let pubkey = self.wallet?.publicKey(for: encodedAddress)
             let wif = privkey?.wif(with: self.parameters)
             privkeys.add(wif as Any)
+        }
+
+        DDLogDebug("privkeys: \(privkeys)")
+        return privkeys
+    }
+    
+    func getPubKeysOfWallet() -> NSMutableArray {
+        let allReceiveAddresses = self.wallet?.allReceiveAddresses()
+        
+        let pubkeys = NSMutableArray()
+        for address in allReceiveAddresses! {
+            let encodedAddress = address as! WSAddress
+            let pubkey = self.wallet?.publicKey(for: encodedAddress)
             pubkeys.add(pubkey as Any)
         }
         
-        print("privkeys: \(privkeys)")
-        print("pubkeys: \(pubkeys)")
-        
+        DDLogDebug("pubkeys: \(pubkeys)")
+        return pubkeys
+    }
+    
+    func getReceiveAddress() -> String {
         let address = self.wallet?.receiveAddress()
-        print("receiveAddress: \(String(describing: address))")
+        DDLogDebug("receiveAddress: \(String(describing: address))")
         
+        return (address?.encoded())!
+    }
+    
+    func getAllTransactions() -> NSDictionary {
         let transactions = self.wallet?.allTransactions()
-        print("allTransactions: \(String(describing: transactions))")
+        DDLogDebug("allTransactions: \(String(describing: transactions))")
+        
+        return transactions! as NSDictionary
     }
     
     func createWallet(seedData: Data) {
-        self.wallet = WSHDWallet.init(parameters: self.parameters, seeddata: seedData)
+        self.wallet = WSHDWallet(parameters: self.parameters, seeddata: seedData)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(WalletDidRegisterTransaction(notification:)), name: NSNotification.Name.WSWalletDidRegisterTransaction, object: nil)
-        
-        showWalletStatus()
+
     }
     
     func createPeerGroup() {
-        let store = WSMemoryBlockStore.init(parameters: self.parameters)
-        self.downloader = WSBlockChainDownloader.init(store: store, wallet: self.wallet)
+        let store = WSMemoryBlockStore(parameters: self.parameters)
+        self.downloader = WSBlockChainDownloader(store: store, wallet: self.wallet)
         
-        self.peerGroup = WSPeerGroup.init(parameters: self.parameters)
+        self.peerGroup = WSPeerGroup(parameters: self.parameters)
         self.peerGroup?.maxConnections = 10;
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(PeerGroupDidStartDownload(notification:)), name: NSNotification.Name.WSPeerGroupDidStartDownload, object: nil)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(PeerGroupDidFinishDownload(notification:)), name: NSNotification.Name.WSPeerGroupDidFinishDownload, object: nil)
+
     }
     
-    func connect() {
+    func connect() -> Bool {
         if (!(self.peerGroup?.isStarted())!) {
             if (self.peerGroup?.startConnections())! {
-                print("peers connected")
+                DDLogVerbose("peers connected")
+                return true
             }
         }
+        
+        return false
     }
     
-    func disconnect() {
+    func disconnect() -> Bool {
         if ((self.peerGroup?.isStarted())!) {
             if (self.peerGroup?.stopConnections())! {
-                print("peers disconnected")
+                DDLogVerbose("peers disconnected")
+                return true
             }
         }
+        return false
     }
     
-    func startSync() {
+    func startSync() -> Bool {
         if (!(self.peerGroup?.isDownloading())!) {
             if (self.peerGroup?.startDownload(with: self.downloader))! {
-                print("start syncing")
+                DDLogVerbose("start syncing")
+                return true
             }
         }
+        return false
     }
     
-    func stopSync() {
+    func stopSync() -> Bool {
         if ((self.peerGroup?.isDownloading())!) {
             self.peerGroup?.stopDownload()
-            print("stop syncing")
+            DDLogVerbose("stop syncing")
+            return true
         }
+        return false
     }
     
-    //callback from BitcoinNetwork
-    @objc func WalletDidRegisterTransaction(notification: Notification) {
-        self.listener.walletDidRegisterTransaction(notification: notification)
+    func isConnected() -> Bool {
+        return (self.peerGroup?.isStarted())!
     }
     
-    @objc func PeerGroupDidStartDownload(notification: Notification) {
-        self.listener.peerGroupDidStartDownload(notification: notification)
+    func isDownloading() -> Bool {
+        return (self.peerGroup?.isDownloading())!
     }
-    
-    @objc func PeerGroupDidFinishDownload(notification: Notification) {
-        self.listener.peerGroupDidFinishDownload(notification: notification)
-    }
-
 }

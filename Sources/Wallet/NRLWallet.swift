@@ -73,26 +73,59 @@ public class NRLWallet {
     
     // functions for own wallet and synchronizing as spv
     public func createOwnWallet() {
-        coin.createOwnWallet()
+        self.coin.createOwnWallet()
     }
     
     public func createPeerGroup() {
-        coin.createPeerGroup()
+        self.coin.createPeerGroup()
     }
     
-    public func connectPeers() {
-        coin.connectPeers()
+    public func connectPeers() -> Bool {
+        return self.coin.connectPeers()
     }
     
-    public func disConnectPeers() {
-        coin.disConnectPeers()
+    public func disConnectPeers() -> Bool {
+        return self.coin.disConnectPeers()
     }
     
-    public func startSyncing() {
-        coin.startSyncing()
+    public func startSyncing() -> Bool {
+        return self.coin.startSyncing()
     }
     
-    public func stopSyncing() {
-        coin.stopSyncing()
+    public func stopSyncing() -> Bool {
+        return self.coin.stopSyncing()
     }
+    
+    public func isConnected() -> Bool {
+        return self.coin.isConnected()
+    }
+    
+    public func isDownloading() -> Bool {
+        return self.coin.isDownloading()
+    }
+    
+    public func getWalletBalance() -> UInt64 {
+        return self.coin.getWalletBalance()
+    }
+    
+    public func getAddressesOfWallet() -> NSMutableArray? {
+        return self.coin.getAddressesOfWallet()
+    }
+    
+    public func getPrivKeysOfWallet() -> NSMutableArray? {
+        return self.coin.getPrivKeysOfWallet()
+    }
+    
+    public func getPubKeysOfWallet() -> NSMutableArray? {
+        return self.coin.getPubKeysOfWallet()
+    }
+    
+    public func getReceiveAddress() -> String? {
+        return self.coin.getReceiveAddress()
+    }
+    
+    public func getAllTransactions() -> NSDictionary? {
+        return self.coin.getAllTransactions()
+    }
+    
 }

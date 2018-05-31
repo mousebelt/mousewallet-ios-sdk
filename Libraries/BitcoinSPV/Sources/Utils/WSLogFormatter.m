@@ -31,10 +31,11 @@
 
 - (NSString *)formatLogMessage:(DDLogMessage *)logMessage
 {
-    NSString *filename = [[NSString stringWithUTF8String:logMessage->file] lastPathComponent];
-    
+//    NSString *filename = [[NSString stringWithUTF8String:logMessage->file] lastPathComponent];
+    NSString *filename = [logMessage->_fileName lastPathComponent];
+
     return [NSString stringWithFormat:@"%@ %@:%d [%s] %@",
-            logMessage->timestamp, filename, logMessage->lineNumber, logMessage->queueLabel, logMessage->logMsg];
+            logMessage->_timestamp, filename, logMessage->_line, logMessage->_queueLabel, logMessage->_message];
 }
 
 @end

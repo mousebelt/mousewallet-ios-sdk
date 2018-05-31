@@ -89,29 +89,6 @@
 		6377EF2E20BC6DA900F668E3 /* BitcoinNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6377EF2D20BC6DA900F668E3 /* BitcoinNetwork.swift */; };
 		6377F21120BD9DD100F668E3 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6377F20F20BD9DD100F668E3 /* libssl.a */; };
 		6377F21220BD9DD100F668E3 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6377F21020BD9DD100F668E3 /* libcrypto.a */; };
-		6377F37120BDA35100F668E3 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6377F28B20BDA35100F668E3 /* LICENSE.txt */; };
-		6377F37220BDA35100F668E3 /* DDAbstractDatabaseLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F28D20BDA35100F668E3 /* DDAbstractDatabaseLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6377F37320BDA35100F668E3 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F28E20BDA35100F668E3 /* DDAbstractDatabaseLogger.m */; };
-		6377F37420BDA35100F668E3 /* DDASLLogCapture.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F28F20BDA35100F668E3 /* DDASLLogCapture.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6377F37520BDA35100F668E3 /* DDASLLogCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F29020BDA35100F668E3 /* DDASLLogCapture.m */; };
-		6377F37620BDA35100F668E3 /* DDASLLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F29120BDA35100F668E3 /* DDASLLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6377F37720BDA35100F668E3 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F29220BDA35100F668E3 /* DDASLLogger.m */; };
-		6377F37820BDA35100F668E3 /* DDAssert.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F29320BDA35100F668E3 /* DDAssert.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6377F37920BDA35100F668E3 /* DDFileLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F29420BDA35100F668E3 /* DDFileLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6377F37A20BDA35100F668E3 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F29520BDA35100F668E3 /* DDFileLogger.m */; };
-		6377F37B20BDA35100F668E3 /* DDLog+LOGV.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F29620BDA35100F668E3 /* DDLog+LOGV.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6377F37C20BDA35100F668E3 /* DDLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F29720BDA35100F668E3 /* DDLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6377F37D20BDA35100F668E3 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F29820BDA35100F668E3 /* DDLog.m */; };
-		6377F37E20BDA35100F668E3 /* DDTTYLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F29920BDA35100F668E3 /* DDTTYLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6377F37F20BDA35100F668E3 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F29A20BDA35100F668E3 /* DDTTYLogger.m */; };
-		6377F38020BDA35100F668E3 /* DDContextFilterLogFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F29C20BDA35100F668E3 /* DDContextFilterLogFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6377F38120BDA35100F668E3 /* DDContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F29D20BDA35100F668E3 /* DDContextFilterLogFormatter.m */; };
-		6377F38220BDA35100F668E3 /* DDDispatchQueueLogFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F29E20BDA35100F668E3 /* DDDispatchQueueLogFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6377F38320BDA35100F668E3 /* DDDispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F29F20BDA35100F668E3 /* DDDispatchQueueLogFormatter.m */; };
-		6377F38420BDA35100F668E3 /* DDMultiFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F2A020BDA35100F668E3 /* DDMultiFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6377F38520BDA35100F668E3 /* DDMultiFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F2A120BDA35100F668E3 /* DDMultiFormatter.m */; };
-		6377F38620BDA35100F668E3 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6377F2A220BDA35100F668E3 /* README.txt */; };
-		6377F38720BDA35100F668E3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6377F2A320BDA35100F668E3 /* README.md */; };
 		6377F3EF20BDACE500F668E3 /* AutoCoding.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F3DD20BDACE500F668E3 /* AutoCoding.h */; };
 		6377F3F020BDACE500F668E3 /* AutoCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F3DE20BDACE500F668E3 /* AutoCoding.m */; };
 		6377F3F120BDACE500F668E3 /* LICENCE.md in Resources */ = {isa = PBXBuildFile; fileRef = 6377F3DF20BDACE500F668E3 /* LICENCE.md */; };
@@ -348,6 +325,34 @@
 		6377F95B20BE0E1700F668E3 /* WSWebTickerMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F80C20BE0E1600F668E3 /* WSWebTickerMonitor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6377F95C20BE0E1700F668E3 /* WSWebTickerMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F80D20BE0E1600F668E3 /* WSWebTickerMonitor.m */; };
 		6377F96D20BEB24500F668E3 /* ForLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F96C20BEB24500F668E3 /* ForLog.m */; };
+		6395BB6D20C0192D002EA989 /* CLIColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB5020C0192D002EA989 /* CLIColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6395BB6E20C0192D002EA989 /* CLIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395BB5120C0192D002EA989 /* CLIColor.m */; };
+		6395BB6F20C0192D002EA989 /* CocoaLumberjack.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB5220C0192D002EA989 /* CocoaLumberjack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6395BB7020C0192D002EA989 /* CocoaLumberjack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6395BB5320C0192D002EA989 /* CocoaLumberjack.swift */; };
+		6395BB7120C0192D002EA989 /* DDAbstractDatabaseLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB5420C0192D002EA989 /* DDAbstractDatabaseLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6395BB7220C0192D002EA989 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395BB5520C0192D002EA989 /* DDAbstractDatabaseLogger.m */; };
+		6395BB7320C0192D002EA989 /* DDASLLogCapture.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB5620C0192D002EA989 /* DDASLLogCapture.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6395BB7420C0192D002EA989 /* DDASLLogCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395BB5720C0192D002EA989 /* DDASLLogCapture.m */; };
+		6395BB7520C0192D002EA989 /* DDASLLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB5820C0192D002EA989 /* DDASLLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6395BB7620C0192D002EA989 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395BB5920C0192D002EA989 /* DDASLLogger.m */; };
+		6395BB7720C0192D002EA989 /* DDAssertMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB5A20C0192D002EA989 /* DDAssertMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6395BB7820C0192D002EA989 /* DDFileLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB5B20C0192D002EA989 /* DDFileLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6395BB7920C0192D002EA989 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395BB5C20C0192D002EA989 /* DDFileLogger.m */; };
+		6395BB7A20C0192D002EA989 /* DDLegacyMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB5D20C0192D002EA989 /* DDLegacyMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6395BB7B20C0192D002EA989 /* DDLog+LOGV.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB5E20C0192D002EA989 /* DDLog+LOGV.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6395BB7C20C0192D002EA989 /* DDLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB5F20C0192D002EA989 /* DDLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6395BB7D20C0192D002EA989 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395BB6020C0192D002EA989 /* DDLog.m */; };
+		6395BB7E20C0192D002EA989 /* DDLogMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB6120C0192D002EA989 /* DDLogMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6395BB7F20C0192D002EA989 /* DDOSLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB6220C0192D002EA989 /* DDOSLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6395BB8020C0192D002EA989 /* DDOSLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395BB6320C0192D002EA989 /* DDOSLogger.m */; };
+		6395BB8120C0192D002EA989 /* DDTTYLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB6420C0192D002EA989 /* DDTTYLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6395BB8220C0192D002EA989 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395BB6520C0192D002EA989 /* DDTTYLogger.m */; };
+		6395BB8320C0192D002EA989 /* DDContextFilterLogFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB6720C0192D002EA989 /* DDContextFilterLogFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6395BB8420C0192D002EA989 /* DDContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395BB6820C0192D002EA989 /* DDContextFilterLogFormatter.m */; };
+		6395BB8520C0192D002EA989 /* DDDispatchQueueLogFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB6920C0192D002EA989 /* DDDispatchQueueLogFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6395BB8620C0192D002EA989 /* DDDispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395BB6A20C0192D002EA989 /* DDDispatchQueueLogFormatter.m */; };
+		6395BB8720C0192D002EA989 /* DDMultiFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB6B20C0192D002EA989 /* DDMultiFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6395BB8820C0192D002EA989 /* DDMultiFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395BB6C20C0192D002EA989 /* DDMultiFormatter.m */; };
 		63F66C1120B421BF007DF79D /* NRLPrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C0C20B421BF007DF79D /* NRLPrivateKey.swift */; };
 		63F66C1220B421BF007DF79D /* NRLPublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C0D20B421BF007DF79D /* NRLPublicKey.swift */; };
 		63F66C1320B421BF007DF79D /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C0F20B421BF007DF79D /* Network.swift */; };
@@ -500,29 +505,6 @@
 		6377EF2D20BC6DA900F668E3 /* BitcoinNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinNetwork.swift; sourceTree = "<group>"; };
 		6377F20F20BD9DD100F668E3 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "Libraries/OpenSSL-Universal/lib-ios/libssl.a"; sourceTree = "<group>"; };
 		6377F21020BD9DD100F668E3 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "Libraries/OpenSSL-Universal/lib-ios/libcrypto.a"; sourceTree = "<group>"; };
-		6377F28B20BDA35100F668E3 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
-		6377F28D20BDA35100F668E3 /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
-		6377F28E20BDA35100F668E3 /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
-		6377F28F20BDA35100F668E3 /* DDASLLogCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogCapture.h; sourceTree = "<group>"; };
-		6377F29020BDA35100F668E3 /* DDASLLogCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDASLLogCapture.m; sourceTree = "<group>"; };
-		6377F29120BDA35100F668E3 /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
-		6377F29220BDA35100F668E3 /* DDASLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDASLLogger.m; sourceTree = "<group>"; };
-		6377F29320BDA35100F668E3 /* DDAssert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAssert.h; sourceTree = "<group>"; };
-		6377F29420BDA35100F668E3 /* DDFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDFileLogger.h; sourceTree = "<group>"; };
-		6377F29520BDA35100F668E3 /* DDFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDFileLogger.m; sourceTree = "<group>"; };
-		6377F29620BDA35100F668E3 /* DDLog+LOGV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DDLog+LOGV.h"; sourceTree = "<group>"; };
-		6377F29720BDA35100F668E3 /* DDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLog.h; sourceTree = "<group>"; };
-		6377F29820BDA35100F668E3 /* DDLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDLog.m; sourceTree = "<group>"; };
-		6377F29920BDA35100F668E3 /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTTYLogger.h; sourceTree = "<group>"; };
-		6377F29A20BDA35100F668E3 /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
-		6377F29C20BDA35100F668E3 /* DDContextFilterLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDContextFilterLogFormatter.h; sourceTree = "<group>"; };
-		6377F29D20BDA35100F668E3 /* DDContextFilterLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDContextFilterLogFormatter.m; sourceTree = "<group>"; };
-		6377F29E20BDA35100F668E3 /* DDDispatchQueueLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDispatchQueueLogFormatter.h; sourceTree = "<group>"; };
-		6377F29F20BDA35100F668E3 /* DDDispatchQueueLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDispatchQueueLogFormatter.m; sourceTree = "<group>"; };
-		6377F2A020BDA35100F668E3 /* DDMultiFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMultiFormatter.h; sourceTree = "<group>"; };
-		6377F2A120BDA35100F668E3 /* DDMultiFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMultiFormatter.m; sourceTree = "<group>"; };
-		6377F2A220BDA35100F668E3 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
-		6377F2A320BDA35100F668E3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6377F3DD20BDACE500F668E3 /* AutoCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoCoding.h; sourceTree = "<group>"; };
 		6377F3DE20BDACE500F668E3 /* AutoCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoCoding.m; sourceTree = "<group>"; };
 		6377F3DF20BDACE500F668E3 /* LICENCE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENCE.md; sourceTree = "<group>"; };
@@ -759,6 +741,34 @@
 		6377F80C20BE0E1600F668E3 /* WSWebTickerMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSWebTickerMonitor.h; sourceTree = "<group>"; };
 		6377F80D20BE0E1600F668E3 /* WSWebTickerMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSWebTickerMonitor.m; sourceTree = "<group>"; };
 		6377F96C20BEB24500F668E3 /* ForLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForLog.m; sourceTree = "<group>"; };
+		6395BB5020C0192D002EA989 /* CLIColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLIColor.h; sourceTree = "<group>"; };
+		6395BB5120C0192D002EA989 /* CLIColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLIColor.m; sourceTree = "<group>"; };
+		6395BB5220C0192D002EA989 /* CocoaLumberjack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaLumberjack.h; sourceTree = "<group>"; };
+		6395BB5320C0192D002EA989 /* CocoaLumberjack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoaLumberjack.swift; sourceTree = "<group>"; };
+		6395BB5420C0192D002EA989 /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
+		6395BB5520C0192D002EA989 /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
+		6395BB5620C0192D002EA989 /* DDASLLogCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogCapture.h; sourceTree = "<group>"; };
+		6395BB5720C0192D002EA989 /* DDASLLogCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDASLLogCapture.m; sourceTree = "<group>"; };
+		6395BB5820C0192D002EA989 /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
+		6395BB5920C0192D002EA989 /* DDASLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDASLLogger.m; sourceTree = "<group>"; };
+		6395BB5A20C0192D002EA989 /* DDAssertMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAssertMacros.h; sourceTree = "<group>"; };
+		6395BB5B20C0192D002EA989 /* DDFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDFileLogger.h; sourceTree = "<group>"; };
+		6395BB5C20C0192D002EA989 /* DDFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDFileLogger.m; sourceTree = "<group>"; };
+		6395BB5D20C0192D002EA989 /* DDLegacyMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLegacyMacros.h; sourceTree = "<group>"; };
+		6395BB5E20C0192D002EA989 /* DDLog+LOGV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DDLog+LOGV.h"; sourceTree = "<group>"; };
+		6395BB5F20C0192D002EA989 /* DDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLog.h; sourceTree = "<group>"; };
+		6395BB6020C0192D002EA989 /* DDLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDLog.m; sourceTree = "<group>"; };
+		6395BB6120C0192D002EA989 /* DDLogMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLogMacros.h; sourceTree = "<group>"; };
+		6395BB6220C0192D002EA989 /* DDOSLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDOSLogger.h; sourceTree = "<group>"; };
+		6395BB6320C0192D002EA989 /* DDOSLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDOSLogger.m; sourceTree = "<group>"; };
+		6395BB6420C0192D002EA989 /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTTYLogger.h; sourceTree = "<group>"; };
+		6395BB6520C0192D002EA989 /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
+		6395BB6720C0192D002EA989 /* DDContextFilterLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDContextFilterLogFormatter.h; sourceTree = "<group>"; };
+		6395BB6820C0192D002EA989 /* DDContextFilterLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDContextFilterLogFormatter.m; sourceTree = "<group>"; };
+		6395BB6920C0192D002EA989 /* DDDispatchQueueLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDispatchQueueLogFormatter.h; sourceTree = "<group>"; };
+		6395BB6A20C0192D002EA989 /* DDDispatchQueueLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDispatchQueueLogFormatter.m; sourceTree = "<group>"; };
+		6395BB6B20C0192D002EA989 /* DDMultiFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMultiFormatter.h; sourceTree = "<group>"; };
+		6395BB6C20C0192D002EA989 /* DDMultiFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMultiFormatter.m; sourceTree = "<group>"; };
 		63F66C0C20B421BF007DF79D /* NRLPrivateKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRLPrivateKey.swift; sourceTree = "<group>"; };
 		63F66C0D20B421BF007DF79D /* NRLPublicKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRLPublicKey.swift; sourceTree = "<group>"; };
 		63F66C0F20B421BF007DF79D /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
@@ -1094,47 +1104,9 @@
 		6377F28A20BDA35100F668E3 /* CocoaLumberjack */ = {
 			isa = PBXGroup;
 			children = (
-				6377F28B20BDA35100F668E3 /* LICENSE.txt */,
-				6377F28C20BDA35100F668E3 /* Lumberjack */,
-				6377F2A320BDA35100F668E3 /* README.md */,
+				6395BB4E20C0192D002EA989 /* Lumberjack */,
 			);
 			path = CocoaLumberjack;
-			sourceTree = "<group>";
-		};
-		6377F28C20BDA35100F668E3 /* Lumberjack */ = {
-			isa = PBXGroup;
-			children = (
-				6377F28D20BDA35100F668E3 /* DDAbstractDatabaseLogger.h */,
-				6377F28E20BDA35100F668E3 /* DDAbstractDatabaseLogger.m */,
-				6377F28F20BDA35100F668E3 /* DDASLLogCapture.h */,
-				6377F29020BDA35100F668E3 /* DDASLLogCapture.m */,
-				6377F29120BDA35100F668E3 /* DDASLLogger.h */,
-				6377F29220BDA35100F668E3 /* DDASLLogger.m */,
-				6377F29320BDA35100F668E3 /* DDAssert.h */,
-				6377F29420BDA35100F668E3 /* DDFileLogger.h */,
-				6377F29520BDA35100F668E3 /* DDFileLogger.m */,
-				6377F29620BDA35100F668E3 /* DDLog+LOGV.h */,
-				6377F29720BDA35100F668E3 /* DDLog.h */,
-				6377F29820BDA35100F668E3 /* DDLog.m */,
-				6377F29920BDA35100F668E3 /* DDTTYLogger.h */,
-				6377F29A20BDA35100F668E3 /* DDTTYLogger.m */,
-				6377F29B20BDA35100F668E3 /* Extensions */,
-			);
-			path = Lumberjack;
-			sourceTree = "<group>";
-		};
-		6377F29B20BDA35100F668E3 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				6377F29C20BDA35100F668E3 /* DDContextFilterLogFormatter.h */,
-				6377F29D20BDA35100F668E3 /* DDContextFilterLogFormatter.m */,
-				6377F29E20BDA35100F668E3 /* DDDispatchQueueLogFormatter.h */,
-				6377F29F20BDA35100F668E3 /* DDDispatchQueueLogFormatter.m */,
-				6377F2A020BDA35100F668E3 /* DDMultiFormatter.h */,
-				6377F2A120BDA35100F668E3 /* DDMultiFormatter.m */,
-				6377F2A220BDA35100F668E3 /* README.txt */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		6377F3DB20BDACE500F668E3 /* AutoCoding */ = {
@@ -1530,6 +1502,57 @@
 			path = Web;
 			sourceTree = "<group>";
 		};
+		6395BB4E20C0192D002EA989 /* Lumberjack */ = {
+			isa = PBXGroup;
+			children = (
+				6395BB4F20C0192D002EA989 /* CLI */,
+				6395BB5220C0192D002EA989 /* CocoaLumberjack.h */,
+				6395BB5320C0192D002EA989 /* CocoaLumberjack.swift */,
+				6395BB5420C0192D002EA989 /* DDAbstractDatabaseLogger.h */,
+				6395BB5520C0192D002EA989 /* DDAbstractDatabaseLogger.m */,
+				6395BB5620C0192D002EA989 /* DDASLLogCapture.h */,
+				6395BB5720C0192D002EA989 /* DDASLLogCapture.m */,
+				6395BB5820C0192D002EA989 /* DDASLLogger.h */,
+				6395BB5920C0192D002EA989 /* DDASLLogger.m */,
+				6395BB5A20C0192D002EA989 /* DDAssertMacros.h */,
+				6395BB5B20C0192D002EA989 /* DDFileLogger.h */,
+				6395BB5C20C0192D002EA989 /* DDFileLogger.m */,
+				6395BB5D20C0192D002EA989 /* DDLegacyMacros.h */,
+				6395BB5E20C0192D002EA989 /* DDLog+LOGV.h */,
+				6395BB5F20C0192D002EA989 /* DDLog.h */,
+				6395BB6020C0192D002EA989 /* DDLog.m */,
+				6395BB6120C0192D002EA989 /* DDLogMacros.h */,
+				6395BB6220C0192D002EA989 /* DDOSLogger.h */,
+				6395BB6320C0192D002EA989 /* DDOSLogger.m */,
+				6395BB6420C0192D002EA989 /* DDTTYLogger.h */,
+				6395BB6520C0192D002EA989 /* DDTTYLogger.m */,
+				6395BB6620C0192D002EA989 /* Extensions */,
+			);
+			path = Lumberjack;
+			sourceTree = "<group>";
+		};
+		6395BB4F20C0192D002EA989 /* CLI */ = {
+			isa = PBXGroup;
+			children = (
+				6395BB5020C0192D002EA989 /* CLIColor.h */,
+				6395BB5120C0192D002EA989 /* CLIColor.m */,
+			);
+			path = CLI;
+			sourceTree = "<group>";
+		};
+		6395BB6620C0192D002EA989 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6395BB6720C0192D002EA989 /* DDContextFilterLogFormatter.h */,
+				6395BB6820C0192D002EA989 /* DDContextFilterLogFormatter.m */,
+				6395BB6920C0192D002EA989 /* DDDispatchQueueLogFormatter.h */,
+				6395BB6A20C0192D002EA989 /* DDDispatchQueueLogFormatter.m */,
+				6395BB6B20C0192D002EA989 /* DDMultiFormatter.h */,
+				6395BB6C20C0192D002EA989 /* DDMultiFormatter.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		63F66C0B20B421BF007DF79D /* Key */ = {
 			isa = PBXGroup;
 			children = (
@@ -1636,14 +1659,11 @@
 			files = (
 				6377F89320BE0E1600F668E3 /* WSStorableBlock+BlockChain.h in Headers */,
 				6377F88820BE0E1600F668E3 /* WSBIP39.h in Headers */,
-				6377F37C20BDA35100F668E3 /* DDLog.h in Headers */,
 				6377F94F20BE0E1700F668E3 /* WSWebExplorerBlockExplorer.h in Headers */,
 				6377F88F20BE0E1600F668E3 /* WSBlockStore.h in Headers */,
 				6377F8B820BE0E1700F668E3 /* WSScript.h in Headers */,
-				6377F37620BDA35100F668E3 /* DDASLLogger.h in Headers */,
 				6377F91520BE0E1700F668E3 /* WSMessageGetblocks.h in Headers */,
 				6327C19320B839D500CB2017 /* sc.h in Headers */,
-				6377F38020BDA35100F668E3 /* DDContextFilterLogFormatter.h in Headers */,
 				6377F92920BE0E1700F668E3 /* WSMessageReject.h in Headers */,
 				6377F94920BE0E1700F668E3 /* WSWebExplorer.h in Headers */,
 				6377F8C420BE0E1700F668E3 /* WSTransactionOutPoint.h in Headers */,
@@ -1656,22 +1676,21 @@
 				6377F95320BE0E1700F668E3 /* WSWebTicker.h in Headers */,
 				6377F88420BE0E1600F668E3 /* WSBIP37.h in Headers */,
 				6377F90520BE0E1700F668E3 /* WSAbstractMessageInventoryBased.h in Headers */,
-				6377F37920BDA35100F668E3 /* DDFileLogger.h in Headers */,
 				6377F90D20BE0E1700F668E3 /* WSMessageBlock.h in Headers */,
 				6377F8D920BE0E1700F668E3 /* WSPartialMerkleTreeEntity.h in Headers */,
 				6377F95720BE0E1700F668E3 /* WSWebTickerBitstamp.h in Headers */,
 				6377F94720BE0E1700F668E3 /* WSJSONClient.h in Headers */,
 				6377F92120BE0E1700F668E3 /* WSMessageMerkleblock.h in Headers */,
+				6395BB7B20C0192D002EA989 /* DDLog+LOGV.h in Headers */,
 				6377F91720BE0E1700F668E3 /* WSMessageGetdata.h in Headers */,
 				6377F91F20BE0E1700F668E3 /* WSMessageMempool.h in Headers */,
-				6377F37B20BDA35100F668E3 /* DDLog+LOGV.h in Headers */,
 				6377F3F720BDACE500F668E3 /* GCDAsyncUdpSocket.h in Headers */,
 				6377F90720BE0E1700F668E3 /* WSAbstractMessageLocatorBased.h in Headers */,
 				6377F92B20BE0E1700F668E3 /* WSMessageTx.h in Headers */,
+				6395BB7720C0192D002EA989 /* DDAssertMacros.h in Headers */,
 				6377F8BA20BE0E1700F668E3 /* WSSeed.h in Headers */,
 				6377F90120BE0E1700F668E3 /* WSParametersFactoryTestnet3.h in Headers */,
 				6377F8B620BE0E1700F668E3 /* WSPublicKey.h in Headers */,
-				6377F37420BDA35100F668E3 /* DDASLLogCapture.h in Headers */,
 				6377F90F20BE0E1700F668E3 /* WSMessageFactory.h in Headers */,
 				6377F93520BE0E1700F668E3 /* NSData+Hash.h in Headers */,
 				6377F93920BE0E1700F668E3 /* NSString+Binary.h in Headers */,
@@ -1682,9 +1701,10 @@
 				6377F8E520BE0E1700F668E3 /* WSBlockChainDownloader.h in Headers */,
 				6377F8FD20BE0E1700F668E3 /* WSParametersFactoryMain.h in Headers */,
 				6377F8AA20BE0E1700F668E3 /* WSInventory.h in Headers */,
+				6395BB8520C0192D002EA989 /* DDDispatchQueueLogFormatter.h in Headers */,
 				6377F8A420BE0E1700F668E3 /* WSHash160.h in Headers */,
+				6395BB8120C0192D002EA989 /* DDTTYLogger.h in Headers */,
 				6377F94120BE0E1700F668E3 /* WSHDWallet.h in Headers */,
-				6377F37820BDA35100F668E3 /* DDAssert.h in Headers */,
 				6377F8F920BE0E1700F668E3 /* WSParameters.h in Headers */,
 				6377F8C220BE0E1700F668E3 /* WSTransactionInput.h in Headers */,
 				6377F95B20BE0E1700F668E3 /* WSWebTickerMonitor.h in Headers */,
@@ -1694,6 +1714,8 @@
 				6377F3F520BDACE500F668E3 /* GCDAsyncSocket.h in Headers */,
 				6377F93E20BE0E1700F668E3 /* WSLogFormatter.h in Headers */,
 				6377F94D20BE0E1700F668E3 /* WSWebExplorerBlockchain.h in Headers */,
+				6395BB7820C0192D002EA989 /* DDFileLogger.h in Headers */,
+				6395BB7E20C0192D002EA989 /* DDLogMacros.h in Headers */,
 				6377F8F120BE0E1700F668E3 /* WSPeerGroupNotifier.h in Headers */,
 				6377F91320BE0E1700F668E3 /* WSMessageGetaddr.h in Headers */,
 				6377F8F720BE0E1700F668E3 /* WSNetworkType.h in Headers */,
@@ -1701,8 +1723,8 @@
 				6377F92F20BE0E1700F668E3 /* WSMessageVersion.h in Headers */,
 				6377F8AE20BE0E1700F668E3 /* WSMacrosCore.h in Headers */,
 				6377F8D320BE0E1700F668E3 /* WSLogging.h in Headers */,
+				6395BB7520C0192D002EA989 /* DDASLLogger.h in Headers */,
 				6377F8DF20BE0E1700F668E3 /* WSTransactionInputEntity.h in Headers */,
-				6377F37E20BDA35100F668E3 /* DDTTYLogger.h in Headers */,
 				6377F8E720BE0E1700F668E3 /* WSConnection.h in Headers */,
 				6377F8CD20BE0E1700F668E3 /* WSBitcoinConstants.h in Headers */,
 				6377F93D20BE0E1700F668E3 /* WSIndentableDescription.h in Headers */,
@@ -1712,9 +1734,8 @@
 				6377F93B20BE0E1700F668E3 /* WSGCDTimer.h in Headers */,
 				6377F8B020BE0E1700F668E3 /* WSMacrosPrivate.h in Headers */,
 				6377F88D20BE0E1600F668E3 /* WSBlockChain.h in Headers */,
-				6377F37220BDA35100F668E3 /* DDAbstractDatabaseLogger.h in Headers */,
+				6395BB6D20C0192D002EA989 /* CLIColor.h in Headers */,
 				6377F91920BE0E1700F668E3 /* WSMessageGetheaders.h in Headers */,
-				6377F38420BDA35100F668E3 /* DDMultiFormatter.h in Headers */,
 				6377F3EF20BDACE500F668E3 /* AutoCoding.h in Headers */,
 				6377F8BE20BE0E1700F668E3 /* WSStorableBlock.h in Headers */,
 				6377F8A220BE0E1700F668E3 /* WSFilteredBlock.h in Headers */,
@@ -1724,10 +1745,15 @@
 				6377F88620BE0E1600F668E3 /* WSBIP38.h in Headers */,
 				6377F8D720BE0E1700F668E3 /* WSCoreDataManager.h in Headers */,
 				6377F88A20BE0E1600F668E3 /* WSBIP44.h in Headers */,
+				6395BB7320C0192D002EA989 /* DDASLLogCapture.h in Headers */,
 				6327C19120B839D500CB2017 /* precomp_data.h in Headers */,
 				6377F89520BE0E1600F668E3 /* WSAbstractKey.h in Headers */,
 				6377F8A020BE0E1700F668E3 /* WSBuffer.h in Headers */,
+				6395BB7A20C0192D002EA989 /* DDLegacyMacros.h in Headers */,
+				6395BB8320C0192D002EA989 /* DDContextFilterLogFormatter.h in Headers */,
 				6377F3FB20BDACE500F668E3 /* AsyncUdpSocket.h in Headers */,
+				6395BB8720C0192D002EA989 /* DDMultiFormatter.h in Headers */,
+				6395BB7F20C0192D002EA989 /* DDOSLogger.h in Headers */,
 				6377F8F520BE0E1700F668E3 /* WSReachability.h in Headers */,
 				6377F8A620BE0E1700F668E3 /* WSHash256.h in Headers */,
 				6377F8E120BE0E1700F668E3 /* WSTransactionOutPointEntity.h in Headers */,
@@ -1742,10 +1768,10 @@
 				6377F8E320BE0E1700F668E3 /* WSTransactionOutputEntity.h in Headers */,
 				6377F8EB20BE0E1700F668E3 /* WSPeer.h in Headers */,
 				6377F8ED20BE0E1700F668E3 /* WSPeerGroup+Download.h in Headers */,
-				6377F38220BDA35100F668E3 /* DDDispatchQueueLogFormatter.h in Headers */,
 				6377F8B420BE0E1700F668E3 /* WSPartialMerkleTree.h in Headers */,
 				6327C18C20B839D500CB2017 /* ge.h in Headers */,
 				6377F88C20BE0E1600F668E3 /* BitcoinSPV.h in Headers */,
+				6395BB7120C0192D002EA989 /* DDAbstractDatabaseLogger.h in Headers */,
 				6377F8C620BE0E1700F668E3 /* WSTransactionOutput.h in Headers */,
 				6377F93720BE0E1700F668E3 /* NSString+Base58.h in Headers */,
 				6377F88220BE0E1600F668E3 /* WSBIP32.h in Headers */,
@@ -1762,9 +1788,11 @@
 				6327C18A20B839D500CB2017 /* fixedint.h in Headers */,
 				6377F92D20BE0E1700F668E3 /* WSMessageVerack.h in Headers */,
 				6377F93120BE0E1700F668E3 /* NSData+Base58.h in Headers */,
+				6395BB6F20C0192D002EA989 /* CocoaLumberjack.h in Headers */,
 				6377F8B220BE0E1700F668E3 /* WSNetworkAddress.h in Headers */,
 				6377F8FF20BE0E1700F668E3 /* WSParametersFactoryRegtest.h in Headers */,
 				6377F8A820BE0E1700F668E3 /* WSHDKeyring.h in Headers */,
+				6395BB7C20C0192D002EA989 /* DDLog.h in Headers */,
 				6377F92720BE0E1700F668E3 /* WSMessagePong.h in Headers */,
 				6377F8CB20BE0E1700F668E3 /* WSPhysicalCurrency.h in Headers */,
 				6377F89120BE0E1600F668E3 /* WSMemoryBlockStore.h in Headers */,
@@ -1863,12 +1891,9 @@
 				6327C19020B839D500CB2017 /* license.txt in Resources */,
 				630DC5D620AB35A80005800A /* Readme.md in Resources */,
 				630DC72B20ABF0710005800A /* README.md in Resources */,
-				6377F38720BDA35100F668E3 /* README.md in Resources */,
 				6377F3F120BDACE500F668E3 /* LICENCE.md in Resources */,
-				6377F37120BDA35100F668E3 /* LICENSE.txt in Resources */,
 				6377F3F320BDACE500F668E3 /* README.markdown in Resources */,
 				6377F3F220BDACE500F668E3 /* README.md in Resources */,
-				6377F38620BDA35100F668E3 /* README.txt in Resources */,
 				630DC72A20ABF0710005800A /* LICENSE.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1901,14 +1926,12 @@
 				6377F93420BE0E1700F668E3 /* NSData+Binary.m in Sources */,
 				6377F95C20BE0E1700F668E3 /* WSWebTickerMonitor.m in Sources */,
 				630DC72F20ABF0710005800A /* SipHasher.swift in Sources */,
-				6377F38320BDA35100F668E3 /* DDDispatchQueueLogFormatter.m in Sources */,
 				2167C316209AF56500A8653E /* Japanese.swift in Sources */,
 				6377F8B320BE0E1700F668E3 /* WSNetworkAddress.m in Sources */,
 				6377F89020BE0E1600F668E3 /* WSBlockStore.m in Sources */,
 				6377F90620BE0E1700F668E3 /* WSAbstractMessageInventoryBased.m in Sources */,
 				63F66C3420B4B671007DF79D /* Balance.swift in Sources */,
 				6327C1BC20B86D7D00CB2017 /* DateFormatter+ISOParsing.swift in Sources */,
-				6377F37720BDA35100F668E3 /* DDASLLogger.m in Sources */,
 				2171AA34209B481200EA283E /* NRLWalletSDKError.swift in Sources */,
 				6377F91820BE0E1700F668E3 /* WSMessageGetdata.m in Sources */,
 				6327C1AA20B86C7A00CB2017 /* DataConvertable.swift in Sources */,
@@ -1936,11 +1959,14 @@
 				63F66C7320B4C502007DF79D /* JSONRPC.swift in Sources */,
 				6377F90A20BE0E1700F668E3 /* WSMessage.m in Sources */,
 				6327C1A820B86C7A00CB2017 /* BigInt+Extension.swift in Sources */,
+				6395BB7D20C0192D002EA989 /* DDLog.m in Sources */,
 				6377F8D820BE0E1700F668E3 /* WSCoreDataManager.m in Sources */,
 				6377F8C720BE0E1700F668E3 /* WSTransactionOutput.m in Sources */,
+				6395BB8020C0192D002EA989 /* DDOSLogger.m in Sources */,
 				6377F90E20BE0E1700F668E3 /* WSMessageBlock.m in Sources */,
 				6377F89220BE0E1600F668E3 /* WSMemoryBlockStore.m in Sources */,
 				2167C312209AF38500A8653E /* French.swift in Sources */,
+				6395BB7920C0192D002EA989 /* DDFileLogger.m in Sources */,
 				6377F89920BE0E1600F668E3 /* WSBlock.m in Sources */,
 				63F66C6620B4C502007DF79D /* Configuration.swift in Sources */,
 				6377F3FA20BDACE500F668E3 /* AsyncSocket.m in Sources */,
@@ -1949,7 +1975,6 @@
 				6377F8F620BE0E1700F668E3 /* WSReachability.m in Sources */,
 				6327C1BE20B86D7D00CB2017 /* String+Base64.swift in Sources */,
 				6377F3F820BDACE500F668E3 /* GCDAsyncUdpSocket.m in Sources */,
-				6377F37A20BDA35100F668E3 /* DDFileLogger.m in Sources */,
 				6377F8E820BE0E1700F668E3 /* WSConnection.m in Sources */,
 				6327C18B20B839D500CB2017 /* ge.c in Sources */,
 				63F66C6F20B4C502007DF79D /* IDGenerator.swift in Sources */,
@@ -1967,9 +1992,10 @@
 				6377F8A320BE0E1700F668E3 /* WSFilteredBlock.m in Sources */,
 				6377F92620BE0E1700F668E3 /* WSMessagePing.m in Sources */,
 				63F66C7120B4C502007DF79D /* JSONRPCRequest.swift in Sources */,
+				6395BB7220C0192D002EA989 /* DDAbstractDatabaseLogger.m in Sources */,
+				6395BB7020C0192D002EA989 /* CocoaLumberjack.swift in Sources */,
 				6377F93220BE0E1700F668E3 /* NSData+Base58.m in Sources */,
 				6377F94820BE0E1700F668E3 /* WSJSONClient.m in Sources */,
-				6377F38520BDA35100F668E3 /* DDMultiFormatter.m in Sources */,
 				6377F8A920BE0E1700F668E3 /* WSHDKeyring.m in Sources */,
 				6377F94E20BE0E1700F668E3 /* WSWebExplorerBlockchain.m in Sources */,
 				6327C1C320B86D7D00CB2017 /* UtilBase32.swift in Sources */,
@@ -1977,7 +2003,6 @@
 				6377F95620BE0E1700F668E3 /* WSWebTickerBitPay.m in Sources */,
 				6377F95020BE0E1700F668E3 /* WSWebExplorerBlockExplorer.m in Sources */,
 				6377F8BF20BE0E1700F668E3 /* WSStorableBlock.m in Sources */,
-				6377F37520BDA35100F668E3 /* DDASLLogCapture.m in Sources */,
 				6377F8AF20BE0E1700F668E3 /* WSMacrosCore.m in Sources */,
 				63F66C1320B421BF007DF79D /* Network.swift in Sources */,
 				6327C1C020B86D7D00CB2017 /* Data+Base32.swift in Sources */,
@@ -1997,6 +2022,7 @@
 				6327C19220B839D500CB2017 /* sc.c in Sources */,
 				6377F8F020BE0E1700F668E3 /* WSPeerGroup.m in Sources */,
 				6377F8DC20BE0E1700F668E3 /* WSStorableBlockEntity.m in Sources */,
+				6395BB8620C0192D002EA989 /* DDDispatchQueueLogFormatter.m in Sources */,
 				63F66C1220B421BF007DF79D /* NRLPublicKey.swift in Sources */,
 				6377F93A20BE0E1700F668E3 /* NSString+Binary.m in Sources */,
 				63F66C3820B4B671007DF79D /* Transaction.swift in Sources */,
@@ -2009,10 +2035,8 @@
 				6377F90020BE0E1700F668E3 /* WSParametersFactoryRegtest.m in Sources */,
 				6377F88320BE0E1600F668E3 /* WSBIP32.m in Sources */,
 				6327C1AB20B86C7A00CB2017 /* HDCrypto.swift in Sources */,
-				6377F37D20BDA35100F668E3 /* DDLog.m in Sources */,
 				6377F8E420BE0E1700F668E3 /* WSTransactionOutputEntity.m in Sources */,
 				6377F91C20BE0E1700F668E3 /* WSMessageHeaders.m in Sources */,
-				6377F37F20BDA35100F668E3 /* DDTTYLogger.m in Sources */,
 				63F66C1120B421BF007DF79D /* NRLPrivateKey.swift in Sources */,
 				6377F8DE20BE0E1700F668E3 /* WSTransactionEntity.m in Sources */,
 				63F66C7220B4C502007DF79D /* Etherscan.swift in Sources */,
@@ -2055,6 +2079,7 @@
 				630DC74520AC2E210005800A /* Array+Extension.swift in Sources */,
 				2167C340209B421E00A8653E /* Crypto.swift in Sources */,
 				6377F88720BE0E1600F668E3 /* WSBIP38.m in Sources */,
+				6395BB7620C0192D002EA989 /* DDASLLogger.m in Sources */,
 				630DC73D20AC2D7C0005800A /* Data+Extension.swift in Sources */,
 				6377F92C20BE0E1700F668E3 /* WSMessageTx.m in Sources */,
 				63F66C6E20B4C502007DF79D /* HTTPJSONRPCRequest.swift in Sources */,
@@ -2070,6 +2095,7 @@
 				6327C16920B8201500CB2017 /* ChecksumXmodem.swift in Sources */,
 				6327C1BB20B86D7D00CB2017 /* Dictionary+HttpParams.swift in Sources */,
 				6377F8C320BE0E1700F668E3 /* WSTransactionInput.m in Sources */,
+				6395BB8820C0192D002EA989 /* DDMultiFormatter.m in Sources */,
 				6327C1C520B86D7D00CB2017 /* String+Encoding.swift in Sources */,
 				6377F8C520BE0E1700F668E3 /* WSTransactionOutPoint.m in Sources */,
 				63F66C4620B4B722007DF79D /* Result.swift in Sources */,
@@ -2081,22 +2107,24 @@
 				2167C31A209AF60F00A8653E /* Korean.swift in Sources */,
 				6377F8A720BE0E1700F668E3 /* WSHash256.m in Sources */,
 				6377F94A20BE0E1700F668E3 /* WSWebExplorer.m in Sources */,
-				6377F37320BDA35100F668E3 /* DDAbstractDatabaseLogger.m in Sources */,
 				6327C19820B839D500CB2017 /* verify.c in Sources */,
 				6377F8CC20BE0E1700F668E3 /* WSPhysicalCurrency.m in Sources */,
 				6377F90220BE0E1700F668E3 /* WSParametersFactoryTestnet3.m in Sources */,
 				630DC74420AC2E210005800A /* String+Extension.swift in Sources */,
+				6395BB6E20C0192D002EA989 /* CLIColor.m in Sources */,
 				6377F91020BE0E1700F668E3 /* WSMessageFactory.m in Sources */,
-				6377F38120BDA35100F668E3 /* DDContextFilterLogFormatter.m in Sources */,
 				6377F3F620BDACE500F668E3 /* GCDAsyncSocket.m in Sources */,
 				6377F8F820BE0E1700F668E3 /* WSNetworkType.m in Sources */,
 				2167C320209AF7F300A8653E /* NRLMnemonic.swift in Sources */,
 				63F66C6420B4C502007DF79D /* Geth.swift in Sources */,
 				6377F91620BE0E1700F668E3 /* WSMessageGetblocks.m in Sources */,
+				6395BB8220C0192D002EA989 /* DDTTYLogger.m in Sources */,
 				6377F8AD20BE0E1700F668E3 /* WSKey.m in Sources */,
 				6377F92420BE0E1700F668E3 /* WSMessageNotfound.m in Sources */,
 				63F66C6A20B4C502007DF79D /* RequestType.swift in Sources */,
+				6395BB8420C0192D002EA989 /* DDContextFilterLogFormatter.m in Sources */,
 				6377F95420BE0E1700F668E3 /* WSWebTicker.m in Sources */,
+				6395BB7420C0192D002EA989 /* DDASLLogCapture.m in Sources */,
 				6377F92A20BE0E1700F668E3 /* WSMessageReject.m in Sources */,
 				63F66C3620B4B671007DF79D /* RawTransaction.swift in Sources */,
 				6327C1A720B86C7A00CB2017 /* Base58Encode.swift in Sources */,

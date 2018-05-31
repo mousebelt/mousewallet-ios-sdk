@@ -50,7 +50,7 @@
 - (NSUInteger)gapLimit;
 
 - (NSArray *)watchedReceiveAddresses; // WSAddress
-
+- (void)recalculateSpendsAndBalance;
 //
 // WARNING: seed is NOT serialized and MUST be saved elsewhere
 //

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class NRLBitcoin : NRLCoin, PeearEventCallback{
+class NRLBitcoin : NRLCoin{
     let isTest: Bool;
     var btcpeer: BitcoinPeer?
     
@@ -26,7 +26,7 @@ class NRLBitcoin : NRLCoin, PeearEventCallback{
                    coinType: cointype,
                    seedKey: "Bitcoin seed",
                    curve: "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141")
-        self.btcpeer = BitcoinPeer(listener: self, fTest: self.isTest)
+        self.btcpeer = BitcoinPeer(fTest: self.isTest)
     }
     
     var pubkeyhash: UInt8 {
@@ -96,29 +96,52 @@ class NRLBitcoin : NRLCoin, PeearEventCallback{
         self.btcpeer?.createPeerGroup()
     }
     
-    override func connectPeers() {
-        self.btcpeer?.connect()
+    override func connectPeers() -> Bool {
+        return (self.btcpeer?.connect())!
     }
     
-    override func disConnectPeers() {
-        self.btcpeer?.disconnect()
+    override func disConnectPeers() -> Bool {
+        return (self.btcpeer?.disconnect())!
     }
     
-    override func startSyncing() {
-        self.btcpeer?.startSync()
+    override func startSyncing() -> Bool {
+        return (self.btcpeer?.startSync())!
     }
     
-    override func stopSyncing() {
-        self.btcpeer?.stopSync()
+    override func stopSyncing() -> Bool {
+        return (self.btcpeer?.stopSync())!
     }
     
-    //callback from BitcoinNetwork
-    func walletDidRegisterTransaction(notification: Notification) {
+    override func isConnected() -> Bool {
+        return self.btcpeer!.isConnected()
     }
     
-    func peerGroupDidStartDownload(notification: Notification) {
+    override func isDownloading() -> Bool {
+        return self.btcpeer!.isDownloading()
     }
     
-    func peerGroupDidFinishDownload(notification: Notification) {
+    override func getWalletBalance() -> UInt64 {
+        return self.btcpeer!.getWalletBalance()
+    }
+    
+    override func getAddressesOfWallet() -> NSMutableArray {
+        return self.btcpeer!.getAddressesOfWallet()
+    }
+    
+    
+    override func getPrivKeysOfWallet() -> NSMutableArray {
+        return self.btcpeer!.getPrivKeysOfWallet()
+    }
+    
+    override func getPubKeysOfWallet() -> NSMutableArray {
+        return self.btcpeer!.getPubKeysOfWallet()
+    }
+    
+    override func getReceiveAddress() -> String {
+        return self.btcpeer!.getReceiveAddress()
+    }
+    
+    override func getAllTransactions() -> NSDictionary {
+        return self.btcpeer!.getAllTransactions()
     }
 }
