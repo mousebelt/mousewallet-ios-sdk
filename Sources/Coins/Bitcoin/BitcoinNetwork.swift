@@ -103,9 +103,10 @@ public class BitcoinPeer {
     }
     
     func createWallet(seedData: Data) {
-        self.wallet = WSHDWallet(parameters: self.parameters, seeddata: seedData)
-        
-
+        self.wallet = WSHDWallet.load(fromPath: self.walletPath, parameters: self.parameters, seed: seedData)
+        if (!(self.wallet != nil)) {
+            self.wallet = WSHDWallet(parameters: self.parameters, seeddata: seedData)
+        }
     }
     
     func createPeerGroup() {

@@ -719,6 +719,41 @@ NSString *WSHDWalletDefaultChainsPath(WSParameters *parameters)
     }
 }
 
++ (instancetype)loadFromPath:(NSString *)path parameters:(WSParameters *)parameters seed:(NSData *)seed
+{
+    WSExceptionCheckIllegal(path);
+    WSExceptionCheckIllegal(parameters);
+    WSExceptionCheckIllegal(seed);
+
+    @synchronized (self) {
+        WSHDWallet *wallet = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+        if (![wallet isKindOfClass:[WSHDWallet class]]) {
+            return nil;
+        }
+
+        if (!wallet->_chainsPath) {
+            NSString *bip32ChainsPath = WSBIP32PathForAccount(0);
+            DDLogWarn(@"Missing chainsPath, falling back to BIP32 root (%@)", bip32ChainsPath);
+            wallet->_chainsPath = bip32ChainsPath;
+        }
+
+        // safe check on singletons
+        WSExceptionCheck(parameters == wallet.parameters,
+                         WSExceptionIllegalArgument,
+                         @"Wallet created on '%@' network (expected: '%@')",
+                         [wallet.parameters networkTypeString],
+                         [parameters networkTypeString]);
+
+        DDLogInfo(@"Loaded wallet from %@", path);
+
+        wallet->_path = path;
+        [wallet loadSensitiveDataWithSeed:seed];
+        [wallet rebuildTransientStructures];
+        [wallet sortTransactions];
+        return wallet;
+    }
+}
+
 //+ (instancetype)loadFromPath:(NSString *)path parameters:(WSParameters *)parameters seed:(WSSeed *)seed
 //{
 //    WSExceptionCheckIllegal(path);

@@ -12,7 +12,7 @@
 #import "DDTTYLogger.h"
 
 #ifdef DEBUG
-static const int ddLogLevel = LOG_LEVEL_INFO;
+static const int ddLogLevel = LOG_LEVEL_ALL;
 #else
 static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 #endif
