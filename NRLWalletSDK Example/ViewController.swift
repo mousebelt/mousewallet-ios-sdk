@@ -183,7 +183,7 @@ class ViewController: UIViewController {
     }
     
     @objc func WalletDidUpdateTransactionsMetadata(notification: Notification) {
-        let metadataById = notification.userInfo![WSWalletTransactionKey] as! NSDictionary
+        let metadataById = notification.userInfo![WSWalletTransactionsMetadataKey] as! NSDictionary
         print("Mined transactions: \(metadataById)")
     }
     
