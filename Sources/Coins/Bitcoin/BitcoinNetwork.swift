@@ -33,7 +33,7 @@ public class BitcoinPeer {
         
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         self.walletPath = documentsDirectory.appendingPathComponent("nrlbtc.wallet").path
-        self.dbPath = documentsDirectory.appendingPathComponent("nrlbtc.sql").path
+        self.dbPath = documentsDirectory.appendingPathComponent("nrlbtcChainData.sql").path
     }
     
     func getWalletBalance() -> UInt64 {
@@ -109,9 +109,18 @@ public class BitcoinPeer {
         }
     }
     
+    func saveWallet() {
+        self.wallet?.save(toPath: self.walletPath)
+    }
+    
     func createPeerGroup() {
-        let store = WSMemoryBlockStore(parameters: self.parameters)
+        let store = WSMemoryBlockStore(parameters: self.parameters) as WSBlockStore
         self.downloader = WSBlockChainDownloader(store: store, wallet: self.wallet)
+        do {
+            self.downloader?.coreDataManager = try WSCoreDataManager(path: self.dbPath)
+        } catch {
+            print(error)
+        }
         
         self.peerGroup = WSPeerGroup(parameters: self.parameters)
         self.peerGroup?.maxConnections = 10;

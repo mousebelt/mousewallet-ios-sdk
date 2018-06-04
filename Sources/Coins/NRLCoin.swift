@@ -116,6 +116,7 @@ class NRLCoin {
     
     //override functions for own wallet and synchronizing as spv
     func createOwnWallet() {}
+    func saveWallet() {}
     func createPeerGroup() {}
     func connectPeers() -> Bool {return false}
     func disConnectPeers() -> Bool {return false}

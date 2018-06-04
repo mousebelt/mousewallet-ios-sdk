@@ -90,7 +90,7 @@ class ViewController: UIViewController {
         }
         else {
             print("\nDisconnect Peers")
-            if (coinWallet?.disConnectPeers())! {
+            if (self.coinWallet?.disConnectPeers())! {
                 button.setTitle("Connect", for: UIControlState.normal)
             }
         }
@@ -107,7 +107,7 @@ class ViewController: UIViewController {
         }
         else {
             print("\nStop Sycing")
-            if (coinWallet?.stopSyncing())! {
+            if (self.coinWallet?.stopSyncing())! {
                 button.setTitle("Sync", for: UIControlState.normal)
             }
         }
@@ -152,21 +152,39 @@ class ViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(WalletDidRegisterTransaction(notification:)), name: NSNotification.Name.WSWalletDidRegisterTransaction, object: nil)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(WalletDidUpdateBalance(notification:)), name: NSNotification.Name.WSWalletDidUpdateBalance, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(WalletDidUpdateTransactionsMetadata(notification:)), name: NSNotification.Name.WSWalletDidUpdateTransactionsMetadata, object: nil)
+        
         NotificationCenter.default.addObserver(self, selector: #selector(PeerGroupDidStartDownload(notification:)), name: NSNotification.Name.WSPeerGroupDidStartDownload, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(PeerGroupDidFinishDownload(notification:)), name: NSNotification.Name.WSPeerGroupDidFinishDownload, object: nil)
 
         NotificationCenter.default.addObserver(self, selector: #selector(PeerGroupDidDownloadBlock(notification:)), name: NSNotification.Name.WSPeerGroupDidDownloadBlock, object: nil)
+
         
         print("\nCreate Own Wallet")
-        coinWallet?.createOwnWallet()
+        self.coinWallet?.createOwnWallet()
         print("\nCreate Peer Group")
-        coinWallet?.createPeerGroup()
+        self.coinWallet?.createPeerGroup()
     }
     
     //callback from BitcoinNetwork
     @objc func WalletDidRegisterTransaction(notification: Notification) {
+        self.coinWallet?.saveWallet()
+        let tx = notification.userInfo![NSNotification.Name.WSWalletDidRegisterTransaction] as! WSSignedTransaction
+        print("Registered transaction: \(tx)")
+    }
+    
+    @objc func WalletDidUpdateBalance(notification: Notification) {
+        let walletObj = notification.object as! WSWallet;
         
+        print("Balance: \(walletObj.balance)")
+    }
+    
+    @objc func WalletDidUpdateTransactionsMetadata(notification: Notification) {
+        let metadataById = notification.userInfo![NSNotification.Name.WSWalletDidUpdateTransactionsMetadata] as! NSDictionary
+        print("Mined transactions: \(metadataById)")
     }
     
     @objc func PeerGroupDidStartDownload(notification: Notification) {
@@ -190,8 +208,13 @@ class ViewController: UIViewController {
     }
     
     @objc func PeerGroupDidFinishDownload(notification: Notification) {
-        self.lbBalance.text = String(format: "%.8f", Double((coinWallet?.getWalletBalance())!) / 100000000)
-        self.lbAddress.text = coinWallet?.getReceiveAddress();
+        self.lbBalance.text = String(format: "%.8f", Double((self.coinWallet?.getWalletBalance())!) / 100000000)
+        self.lbAddress.text = self.coinWallet?.getReceiveAddress();
+        
+        print("\nStop Sycing")
+        if (self.coinWallet?.stopSyncing())! {
+            btnSync.setTitle("Sync", for: UIControlState.normal)
+        }
     }
     
     func generateMneonic() {

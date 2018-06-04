@@ -92,6 +92,10 @@ class NRLBitcoin : NRLCoin{
         self.btcpeer?.createWallet(seedData: self.seed)
     }
     
+    override func saveWallet() {
+        self.btcpeer?.saveWallet()
+    }
+    
     override func createPeerGroup() {
         self.btcpeer?.createPeerGroup()
     }

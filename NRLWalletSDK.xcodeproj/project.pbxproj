@@ -353,6 +353,8 @@
 		6395BB8620C0192D002EA989 /* DDDispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395BB6A20C0192D002EA989 /* DDDispatchQueueLogFormatter.m */; };
 		6395BB8720C0192D002EA989 /* DDMultiFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB6B20C0192D002EA989 /* DDMultiFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6395BB8820C0192D002EA989 /* DDMultiFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395BB6C20C0192D002EA989 /* DDMultiFormatter.m */; };
+		63F4FD4A20C585F700215698 /* WSCoreDataBlockStore.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 63F4FD4920C585F700215698 /* WSCoreDataBlockStore.xcdatamodel */; };
+		63F4FD4B20C589F800215698 /* WSCoreDataBlockStore.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 63F4FD4920C585F700215698 /* WSCoreDataBlockStore.xcdatamodel */; };
 		63F66C1120B421BF007DF79D /* NRLPrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C0C20B421BF007DF79D /* NRLPrivateKey.swift */; };
 		63F66C1220B421BF007DF79D /* NRLPublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C0D20B421BF007DF79D /* NRLPublicKey.swift */; };
 		63F66C1320B421BF007DF79D /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C0F20B421BF007DF79D /* Network.swift */; };
@@ -769,6 +771,7 @@
 		6395BB6A20C0192D002EA989 /* DDDispatchQueueLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDispatchQueueLogFormatter.m; sourceTree = "<group>"; };
 		6395BB6B20C0192D002EA989 /* DDMultiFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMultiFormatter.h; sourceTree = "<group>"; };
 		6395BB6C20C0192D002EA989 /* DDMultiFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMultiFormatter.m; sourceTree = "<group>"; };
+		63F4FD4920C585F700215698 /* WSCoreDataBlockStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WSCoreDataBlockStore.xcdatamodel; sourceTree = "<group>"; };
 		63F66C0C20B421BF007DF79D /* NRLPrivateKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRLPrivateKey.swift; sourceTree = "<group>"; };
 		63F66C0D20B421BF007DF79D /* NRLPublicKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRLPublicKey.swift; sourceTree = "<group>"; };
 		63F66C0F20B421BF007DF79D /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
@@ -1172,6 +1175,7 @@
 		6377F6AD20BE0E1600F668E3 /* BitcoinSPV */ = {
 			isa = PBXGroup;
 			children = (
+				63F4FD4920C585F700215698 /* WSCoreDataBlockStore.xcdatamodel */,
 				6377F72420BE0E1600F668E3 /* Sources */,
 			);
 			name = BitcoinSPV;
@@ -2033,6 +2037,7 @@
 				6327C13E20B815D100CB2017 /* Stellar.swift in Sources */,
 				6377F8B720BE0E1700F668E3 /* WSPublicKey.m in Sources */,
 				6377F90020BE0E1700F668E3 /* WSParametersFactoryRegtest.m in Sources */,
+				63F4FD4A20C585F700215698 /* WSCoreDataBlockStore.xcdatamodel in Sources */,
 				6377F88320BE0E1600F668E3 /* WSBIP32.m in Sources */,
 				6327C1AB20B86C7A00CB2017 /* HDCrypto.swift in Sources */,
 				6377F8E420BE0E1700F668E3 /* WSTransactionOutputEntity.m in Sources */,
@@ -2143,6 +2148,7 @@
 			files = (
 				2167C2F8209AF09D00A8653E /* ViewController.swift in Sources */,
 				6377F96D20BEB24500F668E3 /* ForLog.m in Sources */,
+				63F4FD4B20C589F800215698 /* WSCoreDataBlockStore.xcdatamodel in Sources */,
 				2167C2F6209AF09D00A8653E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
