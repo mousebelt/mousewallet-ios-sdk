@@ -811,7 +811,13 @@ NSString *WSHDWalletDefaultChainsPath(WSParameters *parameters)
 
     @synchronized (self) {
         _seed = seed;
-        _creationTime = [NSDate timeIntervalSinceReferenceDate];
+        NSCalendar *calendar = [NSCalendar currentCalendar];
+        NSDateComponents *components = [[NSDateComponents alloc] init];
+        [components setDay:1];
+        [components setMonth:4];
+        [components setYear:2018];
+        NSDate *_date = [calendar dateFromComponents:components];
+        _creationTime = _date.timeIntervalSinceReferenceDate;//[NSDate timeIntervalSinceReferenceDate];
         WSHDKeyring *keyring = [[WSHDKeyring alloc] initWithParameters:self.parameters data:_seed];
         _externalChain = [keyring keyringAtPath:[NSString stringWithFormat:@"%@/0", _chainsPath]];
         _internalChain = [keyring keyringAtPath:[NSString stringWithFormat:@"%@/1", _chainsPath]];

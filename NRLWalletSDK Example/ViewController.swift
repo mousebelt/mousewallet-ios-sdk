@@ -172,7 +172,7 @@ class ViewController: UIViewController {
     //callback from BitcoinNetwork
     @objc func WalletDidRegisterTransaction(notification: Notification) {
         self.coinWallet?.saveWallet()
-        let tx = notification.userInfo![NSNotification.Name.WSWalletDidRegisterTransaction] as! WSSignedTransaction
+        let tx = notification.userInfo![WSWalletTransactionKey] as! WSSignedTransaction
         print("Registered transaction: \(tx)")
     }
     
@@ -183,7 +183,7 @@ class ViewController: UIViewController {
     }
     
     @objc func WalletDidUpdateTransactionsMetadata(notification: Notification) {
-        let metadataById = notification.userInfo![NSNotification.Name.WSWalletDidUpdateTransactionsMetadata] as! NSDictionary
+        let metadataById = notification.userInfo![WSWalletTransactionKey] as! NSDictionary
         print("Mined transactions: \(metadataById)")
     }
     
