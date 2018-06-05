@@ -129,4 +129,8 @@ class NRLCoin {
     func getPubKeysOfWallet() -> NSMutableArray? {return nil}
     func getReceiveAddress() -> String? {return ""}
     func getAllTransactions() -> NSDictionary? {return nil}
+    //transaction
+    func sendTransaction(to: String, value: UInt64, fee: UInt64) -> Bool {return false}
+    func signTransaction(to: String, value: UInt64, fee: UInt64) -> WSSignedTransaction? {return nil}
+    func sendSignTransaction(tx: WSSignedTransaction) -> Bool {return false}
 }

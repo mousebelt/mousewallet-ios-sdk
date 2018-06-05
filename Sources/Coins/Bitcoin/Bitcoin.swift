@@ -144,4 +144,17 @@ class NRLBitcoin : NRLCoin{
     override func getAllTransactions() -> NSDictionary {
         return self.btcpeer!.getAllTransactions()
     }
+    
+    //transaction
+    override func sendTransaction(to: String, value: UInt64, fee: UInt64) -> Bool {
+        return (self.btcpeer?.sendTransaction(to: to, value: value, fee: fee))!
+    }
+    
+    override func signTransaction(to: String, value: UInt64, fee: UInt64) -> WSSignedTransaction? {
+        return self.btcpeer?.signTransaction(to: to, value: value, fee: fee)
+    }
+    
+    override func sendSignTransaction(tx: WSSignedTransaction) -> Bool {
+        return (self.btcpeer?.sendSignTransaction(tx: tx))!
+    }
 }

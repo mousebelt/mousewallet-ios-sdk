@@ -351,6 +351,7 @@
 		6395BB8820C0192D002EA989 /* DDMultiFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395BB6C20C0192D002EA989 /* DDMultiFormatter.m */; };
 		63F4FD4A20C585F700215698 /* WSCoreDataBlockStore.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 63F4FD4920C585F700215698 /* WSCoreDataBlockStore.xcdatamodel */; };
 		63F4FD4B20C589F800215698 /* WSCoreDataBlockStore.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 63F4FD4920C585F700215698 /* WSCoreDataBlockStore.xcdatamodel */; };
+		63F4FD4D20C6D09900215698 /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F4FD4C20C6D09900215698 /* TransactionViewController.swift */; };
 		63F66C1120B421BF007DF79D /* NRLPrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C0C20B421BF007DF79D /* NRLPrivateKey.swift */; };
 		63F66C1220B421BF007DF79D /* NRLPublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C0D20B421BF007DF79D /* NRLPublicKey.swift */; };
 		63F66C1320B421BF007DF79D /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C0F20B421BF007DF79D /* Network.swift */; };
@@ -767,6 +768,7 @@
 		6395BB6B20C0192D002EA989 /* DDMultiFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMultiFormatter.h; sourceTree = "<group>"; };
 		6395BB6C20C0192D002EA989 /* DDMultiFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMultiFormatter.m; sourceTree = "<group>"; };
 		63F4FD4920C585F700215698 /* WSCoreDataBlockStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WSCoreDataBlockStore.xcdatamodel; sourceTree = "<group>"; };
+		63F4FD4C20C6D09900215698 /* TransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
 		63F66C0C20B421BF007DF79D /* NRLPrivateKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRLPrivateKey.swift; sourceTree = "<group>"; };
 		63F66C0D20B421BF007DF79D /* NRLPublicKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRLPublicKey.swift; sourceTree = "<group>"; };
 		63F66C0F20B421BF007DF79D /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
@@ -878,6 +880,7 @@
 			children = (
 				2167C2F5209AF09D00A8653E /* AppDelegate.swift */,
 				2167C2F7209AF09D00A8653E /* ViewController.swift */,
+				63F4FD4C20C6D09900215698 /* TransactionViewController.swift */,
 				2167C2F9209AF09D00A8653E /* Main.storyboard */,
 				2167C2FC209AF0A500A8653E /* Assets.xcassets */,
 				2167C2FE209AF0A500A8653E /* LaunchScreen.storyboard */,
@@ -2140,6 +2143,7 @@
 				2167C2F8209AF09D00A8653E /* ViewController.swift in Sources */,
 				63F4FD4B20C589F800215698 /* WSCoreDataBlockStore.xcdatamodel in Sources */,
 				2167C2F6209AF09D00A8653E /* AppDelegate.swift in Sources */,
+				63F4FD4D20C6D09900215698 /* TransactionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

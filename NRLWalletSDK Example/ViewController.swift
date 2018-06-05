@@ -71,6 +71,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var lbProgress: UILabel!
     @IBOutlet weak var lbBalance: UILabel!
     @IBOutlet weak var lbAddress: UILabel!
+    @IBOutlet weak var txtTransactions: UITextView!
     
     var coinWallet: NRLWallet?
     var mnemonic: [String]?
@@ -81,7 +82,8 @@ class ViewController: UIViewController {
     
     @IBAction func OnGetAllTransactions(_ sender: Any) {
         let transactions = self.coinWallet?.getAllTransactions();
-        print("transactions: \(transactions)")
+        print("transactions: \(String(describing: transactions))")
+        self.txtTransactions.text = String(describing: transactions)
     }
     
     @IBAction func OnConnect(_ sender: Any) {

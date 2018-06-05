@@ -202,6 +202,53 @@ public class BitcoinPeer {
         return (self.peerGroup?.isDownloading())!
     }
     
+    //transaction
+    func sendTransaction(to: String, value: UInt64, fee: UInt64) -> Bool {
+        let address = WSAddress(parameters: self.parameters, encoded: to)
+        
+        do {
+            let builder = try self.wallet?.buildTransaction(to: address, forValue: value, fee: fee)
+            let tx = try self.wallet?.signedTransaction(with: builder)
+            
+            if (!(self.peerGroup?.publishTransaction(tx))!) {
+                DDLogInfo("Publish failed, no connected peers");
+                return false;
+            }
+            
+            DDLogVerbose("\(value) was sent to \(to)")
+            return true
+        } catch {
+            print(error)
+            return false
+        }
+    }
+    
+    func signTransaction(to: String, value: UInt64, fee: UInt64) -> WSSignedTransaction? {
+        let address = WSAddress(parameters: self.parameters, encoded: to)
+        
+        do {
+            let builder = try self.wallet?.buildTransaction(to: address, forValue: value, fee: fee)
+            let tx = try self.wallet?.signedTransaction(with: builder)
+            
+            DDLogVerbose("signed transaction (\(value) to \(to))")
+            return tx
+        } catch {
+            print(error)
+            return nil
+        }
+    }
+    
+    func sendSignTransaction(tx: WSSignedTransaction) -> Bool {
+        if (!(self.peerGroup?.publishTransaction(tx))!) {
+            DDLogInfo("Publish failed, no connected peers");
+            return false;
+        }
+
+        return true
+    }
+    
+    
+    // Notification
     func setNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(WalletDidRegisterTransaction(notification:)), name: NSNotification.Name.WSWalletDidRegisterTransaction, object: nil)
         

@@ -128,5 +128,15 @@ public class NRLWallet {
         return self.coin.getAllTransactions()
     }
     
+    public func sendTransaction(to: String, value: UInt64, fee: UInt64) -> Bool {
+        return self.coin.sendTransaction(to: to, value: value, fee: fee)
+    }
+    
+    public func signTransaction(to: String, value: UInt64, fee: UInt64) -> WSSignedTransaction? {
+        return self.coin.signTransaction(to: to, value: value, fee: fee)
+    }
+    public func sendSignTransaction(tx: WSSignedTransaction) -> Bool {
+        return self.coin.sendSignTransaction(tx: tx)
+    }
 
 }
