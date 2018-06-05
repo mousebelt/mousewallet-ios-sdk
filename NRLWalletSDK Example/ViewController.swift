@@ -79,6 +79,11 @@ class ViewController: UIViewController {
     var blockFromHight: UInt32?
     var blockToHight: UInt32?
     
+    @IBAction func OnGetAllTransactions(_ sender: Any) {
+        let transactions = self.coinWallet?.getAllTransactions();
+        print("transactions: \(transactions)")
+    }
+    
     @IBAction func OnConnect(_ sender: Any) {
         let button = sender as! UIButton
         
