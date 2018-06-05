@@ -106,8 +106,26 @@ public class BitcoinPeer {
         return transactions! as NSDictionary
     }
     
-    func createWallet(seedData: Data) {
-        self.wallet = WSHDWallet.load(fromPath: self.walletPath, parameters: self.parameters, seed: seedData)
+    func createWallet(seedData: Data, created: Date, fnew: Bool) {
+        if (!fnew) {
+            self.wallet = WSHDWallet.load(fromPath: self.walletPath, parameters: self.parameters, seed: seedData, created: created)
+        }
+        else {
+            let fileManager = FileManager.default
+            
+            do {
+                if (fileManager.fileExists(atPath: self.walletPath)) {
+                    try fileManager.removeItem(atPath: self.walletPath)
+                }
+                if (fileManager.fileExists(atPath: self.dbPath)) {
+                    try fileManager.removeItem(atPath: self.dbPath)
+                }
+            }
+            catch let error as NSError {
+                print("File remove failed: \(error)")
+            }
+        }
+        
         if (!(self.wallet != nil)) {
             self.wallet = WSHDWallet(parameters: self.parameters, seeddata: seedData)
             self.wallet?.save(toPath: self.walletPath)

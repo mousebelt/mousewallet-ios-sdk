@@ -59,6 +59,6 @@
 // provide the seed each time you reload a serialized wallet.
 //
 //+ (instancetype)loadFromPath:(NSString *)path parameters:(WSParameters *)parameters seed:(WSSeed *)seed;
-+ (instancetype)loadFromPath:(NSString *)path parameters:(WSParameters *)parameters seed:(NSData *)seed;
++ (instancetype)loadFromPath:(NSString *)path parameters:(WSParameters *)parameters seed:(NSData *)seed created: (NSDate *)created;
 
 @end

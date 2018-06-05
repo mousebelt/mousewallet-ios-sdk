@@ -72,8 +72,8 @@ public class NRLWallet {
     }
     
     // functions for own wallet and synchronizing as spv
-    public func createOwnWallet() {
-        self.coin.createOwnWallet()
+    public func createOwnWallet(created: Date, fnew: Bool) {
+        self.coin.createOwnWallet(created: created, fnew: fnew)
     }
     
     public func createPeerGroup() {

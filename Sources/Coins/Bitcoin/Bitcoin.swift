@@ -88,8 +88,8 @@ class NRLBitcoin : NRLCoin{
     }
     
     //override functions for own wallet and synchronizing as spv
-    override func createOwnWallet() {
-        self.btcpeer?.createWallet(seedData: self.seed)
+    override func createOwnWallet(created: Date, fnew: Bool) {
+        self.btcpeer?.createWallet(seedData: self.seed, created: created, fnew: fnew)
     }
 
     override func createPeerGroup() {

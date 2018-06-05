@@ -153,8 +153,16 @@ class ViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(WalletDidUpdateBalance(notification:)), name: NSNotification.Name.WSWalletDidUpdateBalance, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(PeerGroupDidDownloadBlock(notification:)), name: NSNotification.Name.WSPeerGroupDidDownloadBlock, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(PeerGroupDidStartDownload(notification:)), name: NSNotification.Name.WSPeerGroupDidStartDownload, object: nil)
+        
+        let calendar = NSCalendar.current
+        var components = DateComponents()
+        components.day = 1
+        components.month = 4
+        components.year = 2018
+        let date = calendar.date(from: components)
+        
         print("\nCreate Own Wallet")
-        coinWallet?.createOwnWallet()
+        coinWallet?.createOwnWallet(created: date!, fnew: true)
         print("\nCreate Peer Group")
         coinWallet?.createPeerGroup()
     }

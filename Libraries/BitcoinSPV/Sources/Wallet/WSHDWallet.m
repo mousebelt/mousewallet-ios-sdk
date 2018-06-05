@@ -197,7 +197,7 @@ NSString *WSHDWalletDefaultChainsPath(WSParameters *parameters)
         _usedAddresses = [[NSMutableSet alloc] init];
         _metadataByTxId = [[NSMutableDictionary alloc] init];
         
-        [self loadSensitiveDataWithSeed:seeddata];
+        [self loadSensitiveDataWithSeed:seeddata created:[NSDate date]];
         [self rebuildTransientStructures];
     }
     return self;
@@ -719,7 +719,7 @@ NSString *WSHDWalletDefaultChainsPath(WSParameters *parameters)
     }
 }
 
-+ (instancetype)loadFromPath:(NSString *)path parameters:(WSParameters *)parameters seed:(NSData *)seed
++ (instancetype)loadFromPath:(NSString *)path parameters:(WSParameters *)parameters seed:(NSData *)seed created: (NSDate *)created
 {
     WSExceptionCheckIllegal(path);
     WSExceptionCheckIllegal(parameters);
@@ -747,7 +747,7 @@ NSString *WSHDWalletDefaultChainsPath(WSParameters *parameters)
         DDLogInfo(@"Loaded wallet from %@", path);
 
         wallet->_path = path;
-        [wallet loadSensitiveDataWithSeed:seed];
+        [wallet loadSensitiveDataWithSeed:seed created:created];
         [wallet rebuildTransientStructures];
         [wallet sortTransactions];
         return wallet;
@@ -803,7 +803,7 @@ NSString *WSHDWalletDefaultChainsPath(WSParameters *parameters)
 //    }
 //}
 
-- (void)loadSensitiveDataWithSeed:(NSData *)seed
+- (void)loadSensitiveDataWithSeed:(NSData *)seed created:(NSDate *)created
 {
     NSParameterAssert(seed);
     
@@ -811,15 +811,7 @@ NSString *WSHDWalletDefaultChainsPath(WSParameters *parameters)
 
     @synchronized (self) {
         _seed = seed;
-        //later we will insert parameter of wallet creation date
-//        NSCalendar *calendar = [NSCalendar currentCalendar];
-//        NSDateComponents *components = [[NSDateComponents alloc] init];
-//        [components setDay:1];
-//        [components setMonth:4];
-//        [components setYear:2018];
-//        NSDate *_date = [calendar dateFromComponents:components];
-//        _creationTime = _date.timeIntervalSinceReferenceDate;//[NSDate timeIntervalSinceReferenceDate];
-        _creationTime = [NSDate timeIntervalSinceReferenceDate];
+        _creationTime = [created timeIntervalSinceReferenceDate];//[NSDate timeIntervalSinceReferenceDate];
         WSHDKeyring *keyring = [[WSHDKeyring alloc] initWithParameters:self.parameters data:_seed];
         _externalChain = [keyring keyringAtPath:[NSString stringWithFormat:@"%@/0", _chainsPath]];
         _internalChain = [keyring keyringAtPath:[NSString stringWithFormat:@"%@/1", _chainsPath]];
