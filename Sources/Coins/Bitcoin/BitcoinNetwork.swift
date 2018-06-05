@@ -20,6 +20,8 @@ public class BitcoinPeer {
     var downloader: WSBlockChainDownloader?
     var peerGroup: WSPeerGroup?
     var wallet: WSHDWallet?
+
+    var syncTimer = Timer()
     
     init(fTest: Bool) {
         self.isTest = fTest
@@ -34,6 +36,8 @@ public class BitcoinPeer {
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         self.walletPath = documentsDirectory.appendingPathComponent("nrlbtc.wallet").path
         self.dbPath = documentsDirectory.appendingPathComponent("nrlbtcChainData.sql").path
+        
+        setNotifications()
     }
     
     func getWalletBalance() -> UInt64 {
@@ -110,10 +114,6 @@ public class BitcoinPeer {
         }
     }
     
-    func saveWallet() {
-        self.wallet?.save(toPath: self.walletPath)
-    }
-    
     func createPeerGroup() {
         let store = WSMemoryBlockStore(parameters: self.parameters) as WSBlockStore
         self.downloader = WSBlockChainDownloader(store: store, wallet: self.wallet)
@@ -128,24 +128,49 @@ public class BitcoinPeer {
 
     }
     
+    func startSyncSchedular() {
+        self.syncTimer.invalidate()
+        self.syncTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(trySync(_:)), userInfo: nil, repeats: false)
+    }
+    
+    @objc func trySync(_ timer:Timer) {
+        if (!(self.peerGroup?.isDownloading())!) {
+            if (self.peerGroup?.startDownload(with: self.downloader))! {
+                DDLogVerbose("start syncing")
+            }
+        }
+    }
+    
     func connect() -> Bool {
         if (!(self.peerGroup?.isStarted())!) {
             if (self.peerGroup?.startConnections())! {
-                DDLogVerbose("peers connected")
+                startSyncSchedular()
+                DDLogVerbose("peers connected and start syncing")
                 return true
             }
+            return false
         }
         
-        return false
+        return true
     }
     
     func disconnect() -> Bool {
         if ((self.peerGroup?.isStarted())!) {
             if (self.peerGroup?.stopConnections())! {
-                DDLogVerbose("peers disconnected")
-                return true
+                self.syncTimer.invalidate()
+                if (stopSync()) {
+                    DDLogVerbose("peers disconnected")
+                    return true
+                }
             }
+            return false
         }
+        
+        if (stopSync()) {
+            DDLogVerbose("peers disconnected")
+            return true
+        }
+
         return false
     }
     
@@ -155,8 +180,9 @@ public class BitcoinPeer {
                 DDLogVerbose("start syncing")
                 return true
             }
+            return false
         }
-        return false
+        return true
     }
     
     func stopSync() -> Bool {
@@ -165,7 +191,7 @@ public class BitcoinPeer {
             DDLogVerbose("stop syncing")
             return true
         }
-        return false
+        return true
     }
     
     func isConnected() -> Bool {
@@ -174,5 +200,36 @@ public class BitcoinPeer {
     
     func isDownloading() -> Bool {
         return (self.peerGroup?.isDownloading())!
+    }
+    
+    func setNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(WalletDidRegisterTransaction(notification:)), name: NSNotification.Name.WSWalletDidRegisterTransaction, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(WalletDidUpdateTransactionsMetadata(notification:)), name: NSNotification.Name.WSWalletDidUpdateTransactionsMetadata, object: nil)
+        
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(PeerGroupDidFinishDownload(notification:)), name: NSNotification.Name.WSPeerGroupDidFinishDownload, object: nil)
+
+    }
+    
+    //callback from BitcoinNetwork
+    @objc func WalletDidRegisterTransaction(notification: Notification) {
+        self.wallet?.save(toPath: self.walletPath)
+        
+        let tx = notification.userInfo![WSWalletTransactionKey] as! WSSignedTransaction
+        DDLogDebug("Registered transaction: \(tx)")
+    }
+    
+
+    
+    @objc func WalletDidUpdateTransactionsMetadata(notification: Notification) {
+        let metadataById = notification.userInfo![WSWalletTransactionsMetadataKey] as! NSDictionary
+        DDLogDebug("Mined transactions: \(metadataById)")
+    }
+    
+    @objc func PeerGroupDidFinishDownload(notification: Notification) {
+        if (stopSync()) {
+            DDLogVerbose("Fully synced and stop sync")
+        }
     }
 }

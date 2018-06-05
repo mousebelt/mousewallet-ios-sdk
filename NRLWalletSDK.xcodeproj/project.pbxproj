@@ -32,7 +32,6 @@
 		630DC5D620AB35A80005800A /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 630DC5D520AB35A80005800A /* Readme.md */; };
 		630DC67820ABE8510005800A /* Ethereum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DC67720ABE8510005800A /* Ethereum.swift */; };
 		630DC72A20ABF0710005800A /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 630DC72320ABF0700005800A /* LICENSE.md */; };
-		630DC72B20ABF0710005800A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 630DC72420ABF0700005800A /* README.md */; };
 		630DC72C20ABF0710005800A /* Primitive Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DC72620ABF0700005800A /* Primitive Types.swift */; };
 		630DC72D20ABF0710005800A /* RandomUInt64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DC72720ABF0700005800A /* RandomUInt64.swift */; };
 		630DC72E20ABF0710005800A /* SipHashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DC72820ABF0700005800A /* SipHashable.swift */; };
@@ -92,8 +91,6 @@
 		6377F3EF20BDACE500F668E3 /* AutoCoding.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F3DD20BDACE500F668E3 /* AutoCoding.h */; };
 		6377F3F020BDACE500F668E3 /* AutoCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F3DE20BDACE500F668E3 /* AutoCoding.m */; };
 		6377F3F120BDACE500F668E3 /* LICENCE.md in Resources */ = {isa = PBXBuildFile; fileRef = 6377F3DF20BDACE500F668E3 /* LICENCE.md */; };
-		6377F3F220BDACE500F668E3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6377F3E020BDACE500F668E3 /* README.md */; };
-		6377F3F320BDACE500F668E3 /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = 6377F3E220BDACE500F668E3 /* README.markdown */; };
 		6377F3F420BDACE500F668E3 /* CocoaAsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F3E420BDACE500F668E3 /* CocoaAsyncSocket.h */; };
 		6377F3F520BDACE500F668E3 /* GCDAsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F3E620BDACE500F668E3 /* GCDAsyncSocket.h */; };
 		6377F3F620BDACE500F668E3 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F3E720BDACE500F668E3 /* GCDAsyncSocket.m */; };
@@ -324,8 +321,7 @@
 		6377F95A20BE0E1700F668E3 /* WSWebTickerBlockchain.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F80B20BE0E1600F668E3 /* WSWebTickerBlockchain.m */; };
 		6377F95B20BE0E1700F668E3 /* WSWebTickerMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F80C20BE0E1600F668E3 /* WSWebTickerMonitor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6377F95C20BE0E1700F668E3 /* WSWebTickerMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F80D20BE0E1600F668E3 /* WSWebTickerMonitor.m */; };
-		6377F96D20BEB24500F668E3 /* ForLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F96C20BEB24500F668E3 /* ForLog.m */; };
-		6395BB6D20C0192D002EA989 /* CLIColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB5020C0192D002EA989 /* CLIColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6395BB6D20C0192D002EA989 /* CLIColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB5020C0192D002EA989 /* CLIColor.h */; };
 		6395BB6E20C0192D002EA989 /* CLIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395BB5120C0192D002EA989 /* CLIColor.m */; };
 		6395BB6F20C0192D002EA989 /* CocoaLumberjack.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB5220C0192D002EA989 /* CocoaLumberjack.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6395BB7020C0192D002EA989 /* CocoaLumberjack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6395BB5320C0192D002EA989 /* CocoaLumberjack.swift */; };
@@ -339,7 +335,7 @@
 		6395BB7820C0192D002EA989 /* DDFileLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB5B20C0192D002EA989 /* DDFileLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6395BB7920C0192D002EA989 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395BB5C20C0192D002EA989 /* DDFileLogger.m */; };
 		6395BB7A20C0192D002EA989 /* DDLegacyMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB5D20C0192D002EA989 /* DDLegacyMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6395BB7B20C0192D002EA989 /* DDLog+LOGV.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB5E20C0192D002EA989 /* DDLog+LOGV.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6395BB7B20C0192D002EA989 /* DDLog+LOGV.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB5E20C0192D002EA989 /* DDLog+LOGV.h */; };
 		6395BB7C20C0192D002EA989 /* DDLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB5F20C0192D002EA989 /* DDLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6395BB7D20C0192D002EA989 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395BB6020C0192D002EA989 /* DDLog.m */; };
 		6395BB7E20C0192D002EA989 /* DDLogMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB6120C0192D002EA989 /* DDLogMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -742,7 +738,6 @@
 		6377F80B20BE0E1600F668E3 /* WSWebTickerBlockchain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSWebTickerBlockchain.m; sourceTree = "<group>"; };
 		6377F80C20BE0E1600F668E3 /* WSWebTickerMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSWebTickerMonitor.h; sourceTree = "<group>"; };
 		6377F80D20BE0E1600F668E3 /* WSWebTickerMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSWebTickerMonitor.m; sourceTree = "<group>"; };
-		6377F96C20BEB24500F668E3 /* ForLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForLog.m; sourceTree = "<group>"; };
 		6395BB5020C0192D002EA989 /* CLIColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLIColor.h; sourceTree = "<group>"; };
 		6395BB5120C0192D002EA989 /* CLIColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLIColor.m; sourceTree = "<group>"; };
 		6395BB5220C0192D002EA989 /* CocoaLumberjack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaLumberjack.h; sourceTree = "<group>"; };
@@ -887,7 +882,6 @@
 				2167C2FC209AF0A500A8653E /* Assets.xcassets */,
 				2167C2FE209AF0A500A8653E /* LaunchScreen.storyboard */,
 				2167C301209AF0A500A8653E /* Info.plist */,
-				6377F96C20BEB24500F668E3 /* ForLog.m */,
 			);
 			path = "NRLWalletSDK Example";
 			sourceTree = "<group>";
@@ -1894,10 +1888,7 @@
 			files = (
 				6327C19020B839D500CB2017 /* license.txt in Resources */,
 				630DC5D620AB35A80005800A /* Readme.md in Resources */,
-				630DC72B20ABF0710005800A /* README.md in Resources */,
 				6377F3F120BDACE500F668E3 /* LICENCE.md in Resources */,
-				6377F3F320BDACE500F668E3 /* README.markdown in Resources */,
-				6377F3F220BDACE500F668E3 /* README.md in Resources */,
 				630DC72A20ABF0710005800A /* LICENSE.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2147,7 +2138,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2167C2F8209AF09D00A8653E /* ViewController.swift in Sources */,
-				6377F96D20BEB24500F668E3 /* ForLog.m in Sources */,
 				63F4FD4B20C589F800215698 /* WSCoreDataBlockStore.xcdatamodel in Sources */,
 				2167C2F6209AF09D00A8653E /* AppDelegate.swift in Sources */,
 			);
@@ -2334,12 +2324,8 @@
 					"@loader_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = (
-					"$(SRCROOT)/Libraries/secp256k1/lib",
-					"$(SRCROOT)/Libraries/BitcoinSPV/lib",
 					"$(PROJECT_DIR)/Libraries/OpenSSL-Universal/lib-ios",
-					"$(PROJECT_DIR)/Libraries/BitcoinSPV/lib",
 					"$(PROJECT_DIR)/Libraries/secp256k1/lib",
-					"$(PROJECT_DIR)/Libraries/BitcoinSPV/build/lib",
 				);
 				MODULEMAP_FILE = "$(SRCROOT)/Sources/NRLWalletSDK.modulemap";
 				MODULEMAP_PRIVATE_FILE = "";
@@ -2390,12 +2376,8 @@
 					"@loader_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = (
-					"$(SRCROOT)/Libraries/secp256k1/lib",
-					"$(SRCROOT)/Libraries/BitcoinSPV/lib",
 					"$(PROJECT_DIR)/Libraries/OpenSSL-Universal/lib-ios",
-					"$(PROJECT_DIR)/Libraries/BitcoinSPV/lib",
 					"$(PROJECT_DIR)/Libraries/secp256k1/lib",
-					"$(PROJECT_DIR)/Libraries/BitcoinSPV/build/lib",
 				);
 				MODULEMAP_FILE = "$(SRCROOT)/Sources/NRLWalletSDK.modulemap";
 				MODULEMAP_PRIVATE_FILE = "";

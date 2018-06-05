@@ -76,10 +76,6 @@ public class NRLWallet {
         self.coin.createOwnWallet()
     }
     
-    public func saveWallet() {
-        self.coin.saveWallet()
-    }
-    
     public func createPeerGroup() {
         self.coin.createPeerGroup()
     }
@@ -132,4 +128,5 @@ public class NRLWallet {
         return self.coin.getAllTransactions()
     }
     
+
 }

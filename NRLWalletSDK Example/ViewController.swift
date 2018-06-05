@@ -68,7 +68,6 @@ extension Data {
 
 class ViewController: UIViewController {
     @IBOutlet weak var btnConnect: UIButton!
-    @IBOutlet weak var btnSync: UIButton!
     @IBOutlet weak var lbProgress: UILabel!
     @IBOutlet weak var lbBalance: UILabel!
     @IBOutlet weak var lbAddress: UILabel!
@@ -76,6 +75,7 @@ class ViewController: UIViewController {
     var coinWallet: NRLWallet?
     var mnemonic: [String]?
     var seed: Data?
+    
     var blockFromHight: UInt32?
     var blockToHight: UInt32?
     
@@ -83,35 +83,19 @@ class ViewController: UIViewController {
         let button = sender as! UIButton
         
         if (!(self.coinWallet?.isConnected())!) {
-            print("\nConnect Peers")
+            print("\nStart")
             if (self.coinWallet?.connectPeers())! {
                 button.setTitle("Disconnect", for: UIControlState.normal)
             }
         }
         else {
-            print("\nDisconnect Peers")
+            print("\nStop")
             if (self.coinWallet?.disConnectPeers())! {
                 button.setTitle("Connect", for: UIControlState.normal)
             }
         }
     }
-    
-    @IBAction func OnSync(_ sender: Any) {
-        let button = sender as! UIButton
-        
-        if (!(self.coinWallet?.isDownloading())!) {
-            print("\nStart Syncing")
-            if (self.coinWallet?.startSyncing())! {
-                button.setTitle("Stop Sync", for: UIControlState.normal)
-            }
-        }
-        else {
-            print("\nStop Sycing")
-            if (self.coinWallet?.stopSyncing())! {
-                button.setTitle("Sync", for: UIControlState.normal)
-            }
-        }
-    }
+
     
     func setBitcoinWallet() {
         print("\n------------------------- Bitcoin ----------------------------\n")
@@ -150,46 +134,36 @@ class ViewController: UIViewController {
 //        print("BitcoinWallet public key = \(publicKey)")
 //        print("BitcoinWallet address = \(address)")
         
-        NotificationCenter.default.addObserver(self, selector: #selector(WalletDidRegisterTransaction(notification:)), name: NSNotification.Name.WSWalletDidRegisterTransaction, object: nil)
-        
+
         NotificationCenter.default.addObserver(self, selector: #selector(WalletDidUpdateBalance(notification:)), name: NSNotification.Name.WSWalletDidUpdateBalance, object: nil)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(WalletDidUpdateTransactionsMetadata(notification:)), name: NSNotification.Name.WSWalletDidUpdateTransactionsMetadata, object: nil)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(PeerGroupDidStartDownload(notification:)), name: NSNotification.Name.WSPeerGroupDidStartDownload, object: nil)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(PeerGroupDidFinishDownload(notification:)), name: NSNotification.Name.WSPeerGroupDidFinishDownload, object: nil)
-
         NotificationCenter.default.addObserver(self, selector: #selector(PeerGroupDidDownloadBlock(notification:)), name: NSNotification.Name.WSPeerGroupDidDownloadBlock, object: nil)
-
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(PeerGroupDidStartDownload(notification:)), name: NSNotification.Name.WSPeerGroupDidStartDownload, object: nil)
         print("\nCreate Own Wallet")
         self.coinWallet?.createOwnWallet()
         print("\nCreate Peer Group")
         self.coinWallet?.createPeerGroup()
     }
     
-    //callback from BitcoinNetwork
-    @objc func WalletDidRegisterTransaction(notification: Notification) {
-        self.coinWallet?.saveWallet()
-        let tx = notification.userInfo![WSWalletTransactionKey] as! WSSignedTransaction
-        print("Registered transaction: \(tx)")
-    }
-    
     @objc func WalletDidUpdateBalance(notification: Notification) {
         let walletObj = notification.object as! WSWallet;
         
         print("Balance: \(walletObj.balance)")
-    }
-    
-    @objc func WalletDidUpdateTransactionsMetadata(notification: Notification) {
-        let metadataById = notification.userInfo![WSWalletTransactionsMetadataKey] as! NSDictionary
-        print("Mined transactions: \(metadataById)")
+        
+        self.lbBalance.text = String(format: "%.8f", Double((self.coinWallet?.getWalletBalance())!) / 100000000)
     }
     
     @objc func PeerGroupDidStartDownload(notification: Notification) {
         self.blockFromHight = notification.userInfo?[WSPeerGroupDownloadFromHeightKey] as? UInt32
         self.blockToHight = notification.userInfo?[WSPeerGroupDownloadToHeightKey] as? UInt32
+        
+        self.lbBalance.text = String(format: "%.8f", Double((self.coinWallet?.getWalletBalance())!) / 100000000)
+        self.lbAddress.text = self.coinWallet?.getReceiveAddress();
+        
+        var progressed = 0;
+        if (self.blockFromHight == self.blockToHight) {
+            progressed = 100
+        }
+        self.lbProgress.text = String(format: "%d/%d       %.2f%%", self.blockFromHight!, self.blockToHight!, Double(progressed))
     }
     
     @objc func PeerGroupDidDownloadBlock(notification: Notification) {
@@ -206,16 +180,7 @@ class ViewController: UIViewController {
             }
         }
     }
-    
-    @objc func PeerGroupDidFinishDownload(notification: Notification) {
-        self.lbBalance.text = String(format: "%.8f", Double((self.coinWallet?.getWalletBalance())!) / 100000000)
-        self.lbAddress.text = self.coinWallet?.getReceiveAddress();
-        
-        print("\nStop Sycing")
-        if (self.coinWallet?.stopSyncing())! {
-            btnSync.setTitle("Sync", for: UIControlState.normal)
-        }
-    }
+
     
     func generateMneonic() {
         do {
@@ -301,6 +266,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        defaultDebugLevel = DDLogLevel.verbose
         DDLog.add(DDTTYLogger.sharedInstance)
 
         setBitcoinWallet()

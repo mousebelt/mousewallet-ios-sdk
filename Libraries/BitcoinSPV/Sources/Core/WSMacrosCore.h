@@ -92,7 +92,7 @@ WSParameters *WSParametersForNetworkType(WSNetworkType networkType);
 WSHash256 *WSHash256Compute(NSData *sourceData);
 WSHash256 *WSHash256FromHex(NSString *hexString);
 WSHash256 *WSHash256FromData(NSData *data);
-WSHash256 *WSHash256Zero();
+WSHash256 *WSHash256Zero(void);
 
 WSHash160 *WSHash160Compute(NSData *sourceData);
 WSHash160 *WSHash160FromHex(NSString *hexString);
