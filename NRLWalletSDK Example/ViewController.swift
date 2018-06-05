@@ -66,6 +66,8 @@ extension Data {
     }
 }
 
+var coinWallet: NRLWallet?
+
 class ViewController: UIViewController {
     @IBOutlet weak var btnConnect: UIButton!
     @IBOutlet weak var lbProgress: UILabel!
@@ -73,7 +75,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var lbAddress: UILabel!
     @IBOutlet weak var txtTransactions: UITextView!
     
-    var coinWallet: NRLWallet?
     var mnemonic: [String]?
     var seed: Data?
     
@@ -81,23 +82,28 @@ class ViewController: UIViewController {
     var blockToHight: UInt32?
     
     @IBAction func OnGetAllTransactions(_ sender: Any) {
-        let transactions = self.coinWallet?.getAllTransactions();
-        print("transactions: \(String(describing: transactions))")
-        self.txtTransactions.text = String(describing: transactions)
+        let transactions = coinWallet?.getAllTransactions();
+        var strTransactions = String(describing: transactions)
+        
+        strTransactions = strTransactions.replacingOccurrences(of: "\\n", with: "\n")
+        strTransactions = strTransactions.replacingOccurrences(of: "\\t", with: "\t")
+        
+        print("transactions: \(strTransactions)")
+        self.txtTransactions.text = strTransactions
     }
     
     @IBAction func OnConnect(_ sender: Any) {
         let button = sender as! UIButton
         
-        if (!(self.coinWallet?.isConnected())!) {
+        if (!(coinWallet?.isConnected())!) {
             print("\nStart")
-            if (self.coinWallet?.connectPeers())! {
+            if (coinWallet?.connectPeers())! {
                 button.setTitle("Disconnect", for: UIControlState.normal)
             }
         }
         else {
             print("\nStop")
-            if (self.coinWallet?.disConnectPeers())! {
+            if (coinWallet?.disConnectPeers())! {
                 button.setTitle("Connect", for: UIControlState.normal)
             }
         }
@@ -125,11 +131,13 @@ class ViewController: UIViewController {
          cQErDBqZqbiXqoiTRVHJTkgbX42qqFJmSpoByLLbCRy6xeaFmKEt,
          cRw3wwp8sJiiDbvSbSYKYZ7Zzz7mG5ZayC5aF2oCPTTZCw99KFtU,
          cQHC62RtXrnidk55i19rpWBJGKMXHVG3wWnahxoPMRzVcFtN5aRb,
-         */
+ 
         
         let seed = Data(fromHexEncodedString: "47d8d8898556e5c4fcf042b249ef92160e667046d7ff487392a9e6ca9e1d912b11a7b134baf7a8893c92d1a40731b08d1ef24789128d07101df740ad1ba4a12c")!
-        
-        self.coinWallet = NRLWallet(seed: seed, network: .test(.bitcoin))
+        */
+        generateMneonic()
+        generateSeed()
+        coinWallet = NRLWallet(seed: self.seed!, network: .test(.bitcoin))
         
 //        bitcoinWallet.generateExternalKeyPair(at: 0)
         
@@ -146,9 +154,9 @@ class ViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(PeerGroupDidDownloadBlock(notification:)), name: NSNotification.Name.WSPeerGroupDidDownloadBlock, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(PeerGroupDidStartDownload(notification:)), name: NSNotification.Name.WSPeerGroupDidStartDownload, object: nil)
         print("\nCreate Own Wallet")
-        self.coinWallet?.createOwnWallet()
+        coinWallet?.createOwnWallet()
         print("\nCreate Peer Group")
-        self.coinWallet?.createPeerGroup()
+        coinWallet?.createPeerGroup()
     }
     
     @objc func WalletDidUpdateBalance(notification: Notification) {
@@ -156,15 +164,15 @@ class ViewController: UIViewController {
         
         print("Balance: \(walletObj.balance)")
         
-        self.lbBalance.text = String(format: "%.8f", Double((self.coinWallet?.getWalletBalance())!) / 100000000)
+        self.lbBalance.text = String(format: "%.8f", Double((coinWallet?.getWalletBalance())!) / 100000000)
     }
     
     @objc func PeerGroupDidStartDownload(notification: Notification) {
         self.blockFromHight = notification.userInfo?[WSPeerGroupDownloadFromHeightKey] as? UInt32
         self.blockToHight = notification.userInfo?[WSPeerGroupDownloadToHeightKey] as? UInt32
         
-        self.lbBalance.text = String(format: "%.8f", Double((self.coinWallet?.getWalletBalance())!) / 100000000)
-        self.lbAddress.text = self.coinWallet?.getReceiveAddress();
+        self.lbBalance.text = String(format: "%.8f", Double((coinWallet?.getWalletBalance())!) / 100000000)
+        self.lbAddress.text = coinWallet?.getReceiveAddress();
         
         var progressed = 0;
         if (self.blockFromHight == self.blockToHight) {
@@ -211,12 +219,12 @@ class ViewController: UIViewController {
     func setEthereumWallet() {
         print("\n------------------------- Ethereum ----------------------------\n")
         // Ethereum : 60ß
-        self.coinWallet = NRLWallet(seed: self.seed!, network: .main(.ethereum))
-        self.coinWallet?.generateExternalKeyPair(at: 0)
+        coinWallet = NRLWallet(seed: self.seed!, network: .main(.ethereum))
+        coinWallet?.generateExternalKeyPair(at: 0)
 
-        let privateKey = self.coinWallet?.getWIF()
-        let publicKey = self.coinWallet?.getPublicKey()
-        let address = self.coinWallet?.getAddress()
+        let privateKey = coinWallet?.getWIF()
+        let publicKey = coinWallet?.getPublicKey()
+        let address = coinWallet?.getAddress()
 
         print("\nEthereum private key = \(String(describing: privateKey))")
         print("Ethereum public key = \(String(describing: publicKey))")
@@ -227,12 +235,12 @@ class ViewController: UIViewController {
         print("\n------------------------- NEO ----------------------------\n")
         // NEO : 888
 
-        self.coinWallet = NRLWallet(seed: self.seed!, network: .main(.neo))
-        self.coinWallet?.generateExternalKeyPair(at: 0)
+        coinWallet = NRLWallet(seed: self.seed!, network: .main(.neo))
+        coinWallet?.generateExternalKeyPair(at: 0)
         
-        let privateKey = self.coinWallet?.getWIF()
-        let publicKey = self.coinWallet?.getPublicKey()
-        let address = self.coinWallet?.getAddress()
+        let privateKey = coinWallet?.getWIF()
+        let publicKey = coinWallet?.getPublicKey()
+        let address = coinWallet?.getAddress()
         
         print("\nNeo private key = \(String(describing: privateKey))")
         print("Neo public key = \(String(describing: publicKey))")
@@ -243,12 +251,12 @@ class ViewController: UIViewController {
         print("\n------------------------- Litecoin ----------------------------\n")
         // Litecoin : 2
         
-        self.coinWallet = NRLWallet(seed: self.seed!, network: .main(.litecoin))
-        self.coinWallet?.generateExternalKeyPair(at: 0)
+        coinWallet = NRLWallet(seed: self.seed!, network: .main(.litecoin))
+        coinWallet?.generateExternalKeyPair(at: 0)
         
-        let privateKey = self.coinWallet?.getWIF()
-        let publicKey = self.coinWallet?.getPublicKey()
-        let address = self.coinWallet?.getAddress()
+        let privateKey = coinWallet?.getWIF()
+        let publicKey = coinWallet?.getPublicKey()
+        let address = coinWallet?.getAddress()
         
         print("\nLitecoinWallet private key = \(String(describing: privateKey))")
         print("LitecoinWallet public key = \(String(describing: publicKey))")
@@ -259,12 +267,12 @@ class ViewController: UIViewController {
         print("\n------------------------- Stellar ----------------------------\n")
         // Stellar : 148
         
-        self.coinWallet = NRLWallet(seed: self.seed!, network: .main(.stellar))
-        self.coinWallet?.generateExternalKeyPair(at: 0)
+        coinWallet = NRLWallet(seed: self.seed!, network: .main(.stellar))
+        coinWallet?.generateExternalKeyPair(at: 0)
         
-        let privateKey = self.coinWallet?.getWIF()
-        let publicKey = self.coinWallet?.getPublicKey()
-        let address = self.coinWallet?.getAddress()
+        let privateKey = coinWallet?.getWIF()
+        let publicKey = coinWallet?.getPublicKey()
+        let address = coinWallet?.getAddress()
         
         print("\nstellar private key = \(String(describing: privateKey))")
         print("stellar public key = \(String(describing: publicKey))")
@@ -273,8 +281,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        defaultDebugLevel = DDLogLevel.verbose
-        DDLog.add(DDTTYLogger.sharedInstance)
+        //defaultDebugLevel = DDLogLevel.verbose
+        //DDLog.add(DDTTYLogger.sharedInstance)
 
         setBitcoinWallet()
     }
