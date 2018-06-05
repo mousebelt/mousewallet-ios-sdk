@@ -1,4 +1,7 @@
 #import <Foundation/Foundation.h>
+#import "BitcoinSPV.h"
+#import "DDLog.h"
+#import "DDTTYLogger.h"
 
 NS_ASSUME_NONNULL_BEGIN
 @interface CryptoHash : NSObject

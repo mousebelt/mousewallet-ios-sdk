@@ -112,4 +112,25 @@ class NRLCoin {
             .derived(at: 0, hardens: true)
             .derived(at: change.rawValue)
     }
+    
+    
+    //override functions for own wallet and synchronizing as spv
+    func createOwnWallet(created: Date, fnew: Bool) {}
+    func createPeerGroup() {}
+    func connectPeers() -> Bool {return false}
+    func disConnectPeers() -> Bool {return false}
+    func startSyncing() -> Bool {return false}
+    func stopSyncing() -> Bool {return false}
+    func isConnected() -> Bool {return false}
+    func isDownloading() -> Bool {return false}
+    func getWalletBalance() -> UInt64 {return 0}
+    func getAddressesOfWallet() -> NSMutableArray? {return nil}
+    func getPrivKeysOfWallet() -> NSMutableArray? {return nil}
+    func getPubKeysOfWallet() -> NSMutableArray? {return nil}
+    func getReceiveAddress() -> String? {return ""}
+    func getAllTransactions() -> NSDictionary? {return nil}
+    //transaction
+    func sendTransaction(to: String, value: UInt64, fee: UInt64) -> Bool {return false}
+    func signTransaction(to: String, value: UInt64, fee: UInt64) -> WSSignedTransaction? {return nil}
+    func sendSignTransaction(tx: WSSignedTransaction) -> Bool {return false}
 }

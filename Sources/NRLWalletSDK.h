@@ -7,6 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CocoaLumberjack.h"
+
+
+
+//#import "DDLog.h"
+//#import "DDTTYLogger.h"
 
 //! Project version number for NRLWalletSDK.
 FOUNDATION_EXPORT double NRLWalletSDKVersionNumber;

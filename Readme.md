@@ -4,11 +4,38 @@
 >https://github.com/krzyzanowskim/CryptoSwift
 >this framework will be installed when run carthage update --platform iOS
 
+### CocoaLumberjack
+
+can be downloaded from BitcoinSPV pod. or 
+
+>https://github.com/CocoaLumberjack/CocoaLumberjack
+
+
 ### neoutils.framework
 >https://github.com/O3Labs/neo-utils
 >need setting of bitcode disabled
 >need to manually include from O3Labs
 >to build neo-utils, need to install go and go-mobile
+
+### secp256k1
+>https://github.com/bitcoin-core/secp256k1
+>need to add in Libraries manually
+
+### BitcoinSPV
+>https://github.com/keeshux/BitcoinSPV/
+>need to add in Libraries manually
+
+### openssl
+
+can be downloaded from BitcoinSPV pod. or 
+
+to libs of libssl and libcrypto should be explicitly included as linked library of NRLWalletSDK
+
+>https://github.com/openssl/openssl
+>need to add in Libraries manually
+
+### CocoaLumberjack
+>https://github.com/CocoaLumberjack/CocoaLumberjack
 
 # environment
 ### carthage

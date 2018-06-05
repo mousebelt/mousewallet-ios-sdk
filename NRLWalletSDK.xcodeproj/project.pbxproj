@@ -32,7 +32,6 @@
 		630DC5D620AB35A80005800A /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 630DC5D520AB35A80005800A /* Readme.md */; };
 		630DC67820ABE8510005800A /* Ethereum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DC67720ABE8510005800A /* Ethereum.swift */; };
 		630DC72A20ABF0710005800A /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 630DC72320ABF0700005800A /* LICENSE.md */; };
-		630DC72B20ABF0710005800A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 630DC72420ABF0700005800A /* README.md */; };
 		630DC72C20ABF0710005800A /* Primitive Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DC72620ABF0700005800A /* Primitive Types.swift */; };
 		630DC72D20ABF0710005800A /* RandomUInt64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DC72720ABF0700005800A /* RandomUInt64.swift */; };
 		630DC72E20ABF0710005800A /* SipHashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DC72820ABF0700005800A /* SipHashable.swift */; };
@@ -86,6 +85,273 @@
 		6327C1C920B89BBB00CB2017 /* VersionByte.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6327C1C820B89BBB00CB2017 /* VersionByte.swift */; };
 		63304D6720AD4D77006D444B /* Neo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63304D6620AD4D77006D444B /* Neo.swift */; };
 		634EB2AC20AC2EAB00ACAA06 /* NSRegularExpressionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634EB2AB20AC2EAB00ACAA06 /* NSRegularExpressionExtension.swift */; };
+		6377EF2E20BC6DA900F668E3 /* BitcoinNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6377EF2D20BC6DA900F668E3 /* BitcoinNetwork.swift */; };
+		6377F21120BD9DD100F668E3 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6377F20F20BD9DD100F668E3 /* libssl.a */; };
+		6377F21220BD9DD100F668E3 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6377F21020BD9DD100F668E3 /* libcrypto.a */; };
+		6377F3EF20BDACE500F668E3 /* AutoCoding.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F3DD20BDACE500F668E3 /* AutoCoding.h */; };
+		6377F3F020BDACE500F668E3 /* AutoCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F3DE20BDACE500F668E3 /* AutoCoding.m */; };
+		6377F3F120BDACE500F668E3 /* LICENCE.md in Resources */ = {isa = PBXBuildFile; fileRef = 6377F3DF20BDACE500F668E3 /* LICENCE.md */; };
+		6377F3F420BDACE500F668E3 /* CocoaAsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F3E420BDACE500F668E3 /* CocoaAsyncSocket.h */; };
+		6377F3F520BDACE500F668E3 /* GCDAsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F3E620BDACE500F668E3 /* GCDAsyncSocket.h */; };
+		6377F3F620BDACE500F668E3 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F3E720BDACE500F668E3 /* GCDAsyncSocket.m */; };
+		6377F3F720BDACE500F668E3 /* GCDAsyncUdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F3E820BDACE500F668E3 /* GCDAsyncUdpSocket.h */; };
+		6377F3F820BDACE500F668E3 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F3E920BDACE500F668E3 /* GCDAsyncUdpSocket.m */; };
+		6377F3F920BDACE500F668E3 /* AsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F3EB20BDACE500F668E3 /* AsyncSocket.h */; };
+		6377F3FA20BDACE500F668E3 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F3EC20BDACE500F668E3 /* AsyncSocket.m */; };
+		6377F3FB20BDACE500F668E3 /* AsyncUdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F3ED20BDACE500F668E3 /* AsyncUdpSocket.h */; };
+		6377F3FC20BDACE500F668E3 /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F3EE20BDACE500F668E3 /* AsyncUdpSocket.m */; };
+		6377F88020BE0E1600F668E3 /* WSBIP21.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F72620BE0E1600F668E3 /* WSBIP21.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F88120BE0E1600F668E3 /* WSBIP21.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F72720BE0E1600F668E3 /* WSBIP21.m */; };
+		6377F88220BE0E1600F668E3 /* WSBIP32.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F72820BE0E1600F668E3 /* WSBIP32.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F88320BE0E1600F668E3 /* WSBIP32.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F72920BE0E1600F668E3 /* WSBIP32.m */; };
+		6377F88420BE0E1600F668E3 /* WSBIP37.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F72A20BE0E1600F668E3 /* WSBIP37.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F88520BE0E1600F668E3 /* WSBIP37.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F72B20BE0E1600F668E3 /* WSBIP37.m */; };
+		6377F88620BE0E1600F668E3 /* WSBIP38.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F72C20BE0E1600F668E3 /* WSBIP38.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F88720BE0E1600F668E3 /* WSBIP38.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F72D20BE0E1600F668E3 /* WSBIP38.m */; };
+		6377F88820BE0E1600F668E3 /* WSBIP39.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F72E20BE0E1600F668E3 /* WSBIP39.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F88920BE0E1600F668E3 /* WSBIP39.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F72F20BE0E1600F668E3 /* WSBIP39.m */; };
+		6377F88A20BE0E1600F668E3 /* WSBIP44.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F73020BE0E1600F668E3 /* WSBIP44.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F88B20BE0E1600F668E3 /* WSBIP44.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F73120BE0E1600F668E3 /* WSBIP44.m */; };
+		6377F88C20BE0E1600F668E3 /* BitcoinSPV.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F73220BE0E1600F668E3 /* BitcoinSPV.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F88D20BE0E1600F668E3 /* WSBlockChain.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F73420BE0E1600F668E3 /* WSBlockChain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F88E20BE0E1600F668E3 /* WSBlockChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F73520BE0E1600F668E3 /* WSBlockChain.m */; };
+		6377F88F20BE0E1600F668E3 /* WSBlockStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F73620BE0E1600F668E3 /* WSBlockStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F89020BE0E1600F668E3 /* WSBlockStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F73720BE0E1600F668E3 /* WSBlockStore.m */; };
+		6377F89120BE0E1600F668E3 /* WSMemoryBlockStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F73820BE0E1600F668E3 /* WSMemoryBlockStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F89220BE0E1600F668E3 /* WSMemoryBlockStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F73920BE0E1600F668E3 /* WSMemoryBlockStore.m */; };
+		6377F89320BE0E1600F668E3 /* WSStorableBlock+BlockChain.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F73A20BE0E1600F668E3 /* WSStorableBlock+BlockChain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F89420BE0E1600F668E3 /* WSStorableBlock+BlockChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F73B20BE0E1600F668E3 /* WSStorableBlock+BlockChain.m */; };
+		6377F89520BE0E1600F668E3 /* WSAbstractKey.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F73D20BE0E1600F668E3 /* WSAbstractKey.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F89620BE0E1600F668E3 /* WSAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F73E20BE0E1600F668E3 /* WSAddress.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F89720BE0E1600F668E3 /* WSAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F73F20BE0E1600F668E3 /* WSAddress.m */; };
+		6377F89820BE0E1600F668E3 /* WSBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F74020BE0E1600F668E3 /* WSBlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F89920BE0E1600F668E3 /* WSBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F74120BE0E1600F668E3 /* WSBlock.m */; };
+		6377F89A20BE0E1600F668E3 /* WSBlockHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F74220BE0E1600F668E3 /* WSBlockHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F89B20BE0E1700F668E3 /* WSBlockHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F74320BE0E1600F668E3 /* WSBlockHeader.m */; };
+		6377F89C20BE0E1700F668E3 /* WSBlockLocator.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F74420BE0E1600F668E3 /* WSBlockLocator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F89D20BE0E1700F668E3 /* WSBlockLocator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F74520BE0E1600F668E3 /* WSBlockLocator.m */; };
+		6377F89E20BE0E1700F668E3 /* WSBloomFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F74620BE0E1600F668E3 /* WSBloomFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F89F20BE0E1700F668E3 /* WSBloomFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F74720BE0E1600F668E3 /* WSBloomFilter.m */; };
+		6377F8A020BE0E1700F668E3 /* WSBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F74820BE0E1600F668E3 /* WSBuffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8A120BE0E1700F668E3 /* WSBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F74920BE0E1600F668E3 /* WSBuffer.m */; };
+		6377F8A220BE0E1700F668E3 /* WSFilteredBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F74A20BE0E1600F668E3 /* WSFilteredBlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8A320BE0E1700F668E3 /* WSFilteredBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F74B20BE0E1600F668E3 /* WSFilteredBlock.m */; };
+		6377F8A420BE0E1700F668E3 /* WSHash160.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F74C20BE0E1600F668E3 /* WSHash160.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8A520BE0E1700F668E3 /* WSHash160.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F74D20BE0E1600F668E3 /* WSHash160.m */; };
+		6377F8A620BE0E1700F668E3 /* WSHash256.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F74E20BE0E1600F668E3 /* WSHash256.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8A720BE0E1700F668E3 /* WSHash256.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F74F20BE0E1600F668E3 /* WSHash256.m */; };
+		6377F8A820BE0E1700F668E3 /* WSHDKeyring.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F75020BE0E1600F668E3 /* WSHDKeyring.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8A920BE0E1700F668E3 /* WSHDKeyring.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F75120BE0E1600F668E3 /* WSHDKeyring.m */; };
+		6377F8AA20BE0E1700F668E3 /* WSInventory.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F75220BE0E1600F668E3 /* WSInventory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8AB20BE0E1700F668E3 /* WSInventory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F75320BE0E1600F668E3 /* WSInventory.m */; };
+		6377F8AC20BE0E1700F668E3 /* WSKey.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F75420BE0E1600F668E3 /* WSKey.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8AD20BE0E1700F668E3 /* WSKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F75520BE0E1600F668E3 /* WSKey.m */; };
+		6377F8AE20BE0E1700F668E3 /* WSMacrosCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F75620BE0E1600F668E3 /* WSMacrosCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8AF20BE0E1700F668E3 /* WSMacrosCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F75720BE0E1600F668E3 /* WSMacrosCore.m */; };
+		6377F8B020BE0E1700F668E3 /* WSMacrosPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F75820BE0E1600F668E3 /* WSMacrosPrivate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8B120BE0E1700F668E3 /* WSMacrosPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F75920BE0E1600F668E3 /* WSMacrosPrivate.m */; };
+		6377F8B220BE0E1700F668E3 /* WSNetworkAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F75A20BE0E1600F668E3 /* WSNetworkAddress.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8B320BE0E1700F668E3 /* WSNetworkAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F75B20BE0E1600F668E3 /* WSNetworkAddress.m */; };
+		6377F8B420BE0E1700F668E3 /* WSPartialMerkleTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F75C20BE0E1600F668E3 /* WSPartialMerkleTree.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8B520BE0E1700F668E3 /* WSPartialMerkleTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F75D20BE0E1600F668E3 /* WSPartialMerkleTree.m */; };
+		6377F8B620BE0E1700F668E3 /* WSPublicKey.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F75E20BE0E1600F668E3 /* WSPublicKey.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8B720BE0E1700F668E3 /* WSPublicKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F75F20BE0E1600F668E3 /* WSPublicKey.m */; };
+		6377F8B820BE0E1700F668E3 /* WSScript.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F76020BE0E1600F668E3 /* WSScript.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8B920BE0E1700F668E3 /* WSScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F76120BE0E1600F668E3 /* WSScript.m */; };
+		6377F8BA20BE0E1700F668E3 /* WSSeed.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F76220BE0E1600F668E3 /* WSSeed.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8BB20BE0E1700F668E3 /* WSSeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F76320BE0E1600F668E3 /* WSSeed.m */; };
+		6377F8BC20BE0E1700F668E3 /* WSSeedGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F76420BE0E1600F668E3 /* WSSeedGenerator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8BD20BE0E1700F668E3 /* WSSeedGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F76520BE0E1600F668E3 /* WSSeedGenerator.m */; };
+		6377F8BE20BE0E1700F668E3 /* WSStorableBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F76620BE0E1600F668E3 /* WSStorableBlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8BF20BE0E1700F668E3 /* WSStorableBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F76720BE0E1600F668E3 /* WSStorableBlock.m */; };
+		6377F8C020BE0E1700F668E3 /* WSTransaction.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F76820BE0E1600F668E3 /* WSTransaction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8C120BE0E1700F668E3 /* WSTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F76920BE0E1600F668E3 /* WSTransaction.m */; };
+		6377F8C220BE0E1700F668E3 /* WSTransactionInput.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F76A20BE0E1600F668E3 /* WSTransactionInput.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8C320BE0E1700F668E3 /* WSTransactionInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F76B20BE0E1600F668E3 /* WSTransactionInput.m */; };
+		6377F8C420BE0E1700F668E3 /* WSTransactionOutPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F76C20BE0E1600F668E3 /* WSTransactionOutPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8C520BE0E1700F668E3 /* WSTransactionOutPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F76D20BE0E1600F668E3 /* WSTransactionOutPoint.m */; };
+		6377F8C620BE0E1700F668E3 /* WSTransactionOutput.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F76E20BE0E1600F668E3 /* WSTransactionOutput.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8C720BE0E1700F668E3 /* WSTransactionOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F76F20BE0E1600F668E3 /* WSTransactionOutput.m */; };
+		6377F8C820BE0E1700F668E3 /* WSBitcoinCurrency.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F77120BE0E1600F668E3 /* WSBitcoinCurrency.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8C920BE0E1700F668E3 /* WSBitcoinCurrency.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F77220BE0E1600F668E3 /* WSBitcoinCurrency.m */; };
+		6377F8CA20BE0E1700F668E3 /* WSCurrency.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F77320BE0E1600F668E3 /* WSCurrency.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8CB20BE0E1700F668E3 /* WSPhysicalCurrency.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F77420BE0E1600F668E3 /* WSPhysicalCurrency.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8CC20BE0E1700F668E3 /* WSPhysicalCurrency.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F77520BE0E1600F668E3 /* WSPhysicalCurrency.m */; };
+		6377F8CD20BE0E1700F668E3 /* WSBitcoinConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F77720BE0E1600F668E3 /* WSBitcoinConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8CE20BE0E1700F668E3 /* WSBitcoinConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F77820BE0E1600F668E3 /* WSBitcoinConstants.m */; };
+		6377F8CF20BE0E1700F668E3 /* WSConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F77920BE0E1600F668E3 /* WSConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8D020BE0E1700F668E3 /* WSConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F77A20BE0E1600F668E3 /* WSConfig.m */; };
+		6377F8D120BE0E1700F668E3 /* WSErrors.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F77B20BE0E1600F668E3 /* WSErrors.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8D220BE0E1700F668E3 /* WSErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F77C20BE0E1600F668E3 /* WSErrors.m */; };
+		6377F8D320BE0E1700F668E3 /* WSLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F77D20BE0E1600F668E3 /* WSLogging.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8D420BE0E1700F668E3 /* WSLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F77E20BE0E1600F668E3 /* WSLogging.m */; };
+		6377F8D520BE0E1700F668E3 /* WSBlockHeaderEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F78020BE0E1600F668E3 /* WSBlockHeaderEntity.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8D620BE0E1700F668E3 /* WSBlockHeaderEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F78120BE0E1600F668E3 /* WSBlockHeaderEntity.m */; };
+		6377F8D720BE0E1700F668E3 /* WSCoreDataManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F78220BE0E1600F668E3 /* WSCoreDataManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8D820BE0E1700F668E3 /* WSCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F78320BE0E1600F668E3 /* WSCoreDataManager.m */; };
+		6377F8D920BE0E1700F668E3 /* WSPartialMerkleTreeEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F78420BE0E1600F668E3 /* WSPartialMerkleTreeEntity.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8DA20BE0E1700F668E3 /* WSPartialMerkleTreeEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F78520BE0E1600F668E3 /* WSPartialMerkleTreeEntity.m */; };
+		6377F8DB20BE0E1700F668E3 /* WSStorableBlockEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F78620BE0E1600F668E3 /* WSStorableBlockEntity.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8DC20BE0E1700F668E3 /* WSStorableBlockEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F78720BE0E1600F668E3 /* WSStorableBlockEntity.m */; };
+		6377F8DD20BE0E1700F668E3 /* WSTransactionEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F78820BE0E1600F668E3 /* WSTransactionEntity.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8DE20BE0E1700F668E3 /* WSTransactionEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F78920BE0E1600F668E3 /* WSTransactionEntity.m */; };
+		6377F8DF20BE0E1700F668E3 /* WSTransactionInputEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F78A20BE0E1600F668E3 /* WSTransactionInputEntity.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8E020BE0E1700F668E3 /* WSTransactionInputEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F78B20BE0E1600F668E3 /* WSTransactionInputEntity.m */; };
+		6377F8E120BE0E1700F668E3 /* WSTransactionOutPointEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F78C20BE0E1600F668E3 /* WSTransactionOutPointEntity.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8E220BE0E1700F668E3 /* WSTransactionOutPointEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F78D20BE0E1600F668E3 /* WSTransactionOutPointEntity.m */; };
+		6377F8E320BE0E1700F668E3 /* WSTransactionOutputEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F78E20BE0E1600F668E3 /* WSTransactionOutputEntity.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8E420BE0E1700F668E3 /* WSTransactionOutputEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F78F20BE0E1600F668E3 /* WSTransactionOutputEntity.m */; };
+		6377F8E520BE0E1700F668E3 /* WSBlockChainDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F79120BE0E1600F668E3 /* WSBlockChainDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8E620BE0E1700F668E3 /* WSBlockChainDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F79220BE0E1600F668E3 /* WSBlockChainDownloader.m */; };
+		6377F8E720BE0E1700F668E3 /* WSConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F79320BE0E1600F668E3 /* WSConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8E820BE0E1700F668E3 /* WSConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F79420BE0E1600F668E3 /* WSConnection.m */; };
+		6377F8E920BE0E1700F668E3 /* WSConnectionPool.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F79520BE0E1600F668E3 /* WSConnectionPool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8EA20BE0E1700F668E3 /* WSConnectionPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F79620BE0E1600F668E3 /* WSConnectionPool.m */; };
+		6377F8EB20BE0E1700F668E3 /* WSPeer.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F79720BE0E1600F668E3 /* WSPeer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8EC20BE0E1700F668E3 /* WSPeer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F79820BE0E1600F668E3 /* WSPeer.m */; };
+		6377F8ED20BE0E1700F668E3 /* WSPeerGroup+Download.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F79920BE0E1600F668E3 /* WSPeerGroup+Download.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8EE20BE0E1700F668E3 /* WSPeerGroup+Download.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F79A20BE0E1600F668E3 /* WSPeerGroup+Download.m */; };
+		6377F8EF20BE0E1700F668E3 /* WSPeerGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F79B20BE0E1600F668E3 /* WSPeerGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8F020BE0E1700F668E3 /* WSPeerGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F79C20BE0E1600F668E3 /* WSPeerGroup.m */; };
+		6377F8F120BE0E1700F668E3 /* WSPeerGroupNotifier.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F79D20BE0E1600F668E3 /* WSPeerGroupNotifier.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8F220BE0E1700F668E3 /* WSPeerGroupNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F79E20BE0E1600F668E3 /* WSPeerGroupNotifier.m */; };
+		6377F8F320BE0E1700F668E3 /* WSProtocolDeserializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F79F20BE0E1600F668E3 /* WSProtocolDeserializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8F420BE0E1700F668E3 /* WSProtocolDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7A020BE0E1600F668E3 /* WSProtocolDeserializer.m */; };
+		6377F8F520BE0E1700F668E3 /* WSReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7A120BE0E1600F668E3 /* WSReachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8F620BE0E1700F668E3 /* WSReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7A220BE0E1600F668E3 /* WSReachability.m */; };
+		6377F8F720BE0E1700F668E3 /* WSNetworkType.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7A420BE0E1600F668E3 /* WSNetworkType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8F820BE0E1700F668E3 /* WSNetworkType.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7A520BE0E1600F668E3 /* WSNetworkType.m */; };
+		6377F8F920BE0E1700F668E3 /* WSParameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7A620BE0E1600F668E3 /* WSParameters.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8FA20BE0E1700F668E3 /* WSParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7A720BE0E1600F668E3 /* WSParameters.m */; };
+		6377F8FB20BE0E1700F668E3 /* WSParametersFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7A820BE0E1600F668E3 /* WSParametersFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8FC20BE0E1700F668E3 /* WSParametersFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7A920BE0E1600F668E3 /* WSParametersFactory.m */; };
+		6377F8FD20BE0E1700F668E3 /* WSParametersFactoryMain.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7AA20BE0E1600F668E3 /* WSParametersFactoryMain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F8FE20BE0E1700F668E3 /* WSParametersFactoryMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7AB20BE0E1600F668E3 /* WSParametersFactoryMain.m */; };
+		6377F8FF20BE0E1700F668E3 /* WSParametersFactoryRegtest.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7AC20BE0E1600F668E3 /* WSParametersFactoryRegtest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F90020BE0E1700F668E3 /* WSParametersFactoryRegtest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7AD20BE0E1600F668E3 /* WSParametersFactoryRegtest.m */; };
+		6377F90120BE0E1700F668E3 /* WSParametersFactoryTestnet3.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7AE20BE0E1600F668E3 /* WSParametersFactoryTestnet3.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F90220BE0E1700F668E3 /* WSParametersFactoryTestnet3.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7AF20BE0E1600F668E3 /* WSParametersFactoryTestnet3.m */; };
+		6377F90320BE0E1700F668E3 /* WSAbstractMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7B120BE0E1600F668E3 /* WSAbstractMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F90420BE0E1700F668E3 /* WSAbstractMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7B220BE0E1600F668E3 /* WSAbstractMessage.m */; };
+		6377F90520BE0E1700F668E3 /* WSAbstractMessageInventoryBased.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7B320BE0E1600F668E3 /* WSAbstractMessageInventoryBased.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F90620BE0E1700F668E3 /* WSAbstractMessageInventoryBased.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7B420BE0E1600F668E3 /* WSAbstractMessageInventoryBased.m */; };
+		6377F90720BE0E1700F668E3 /* WSAbstractMessageLocatorBased.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7B520BE0E1600F668E3 /* WSAbstractMessageLocatorBased.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F90820BE0E1700F668E3 /* WSAbstractMessageLocatorBased.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7B620BE0E1600F668E3 /* WSAbstractMessageLocatorBased.m */; };
+		6377F90920BE0E1700F668E3 /* WSMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7B720BE0E1600F668E3 /* WSMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F90A20BE0E1700F668E3 /* WSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7B820BE0E1600F668E3 /* WSMessage.m */; };
+		6377F90B20BE0E1700F668E3 /* WSMessageAddr.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7B920BE0E1600F668E3 /* WSMessageAddr.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F90C20BE0E1700F668E3 /* WSMessageAddr.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7BA20BE0E1600F668E3 /* WSMessageAddr.m */; };
+		6377F90D20BE0E1700F668E3 /* WSMessageBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7BB20BE0E1600F668E3 /* WSMessageBlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F90E20BE0E1700F668E3 /* WSMessageBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7BC20BE0E1600F668E3 /* WSMessageBlock.m */; };
+		6377F90F20BE0E1700F668E3 /* WSMessageFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7BD20BE0E1600F668E3 /* WSMessageFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F91020BE0E1700F668E3 /* WSMessageFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7BE20BE0E1600F668E3 /* WSMessageFactory.m */; };
+		6377F91120BE0E1700F668E3 /* WSMessageFilterload.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7BF20BE0E1600F668E3 /* WSMessageFilterload.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F91220BE0E1700F668E3 /* WSMessageFilterload.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7C020BE0E1600F668E3 /* WSMessageFilterload.m */; };
+		6377F91320BE0E1700F668E3 /* WSMessageGetaddr.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7C120BE0E1600F668E3 /* WSMessageGetaddr.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F91420BE0E1700F668E3 /* WSMessageGetaddr.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7C220BE0E1600F668E3 /* WSMessageGetaddr.m */; };
+		6377F91520BE0E1700F668E3 /* WSMessageGetblocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7C320BE0E1600F668E3 /* WSMessageGetblocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F91620BE0E1700F668E3 /* WSMessageGetblocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7C420BE0E1600F668E3 /* WSMessageGetblocks.m */; };
+		6377F91720BE0E1700F668E3 /* WSMessageGetdata.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7C520BE0E1600F668E3 /* WSMessageGetdata.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F91820BE0E1700F668E3 /* WSMessageGetdata.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7C620BE0E1600F668E3 /* WSMessageGetdata.m */; };
+		6377F91920BE0E1700F668E3 /* WSMessageGetheaders.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7C720BE0E1600F668E3 /* WSMessageGetheaders.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F91A20BE0E1700F668E3 /* WSMessageGetheaders.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7C820BE0E1600F668E3 /* WSMessageGetheaders.m */; };
+		6377F91B20BE0E1700F668E3 /* WSMessageHeaders.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7C920BE0E1600F668E3 /* WSMessageHeaders.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F91C20BE0E1700F668E3 /* WSMessageHeaders.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7CA20BE0E1600F668E3 /* WSMessageHeaders.m */; };
+		6377F91D20BE0E1700F668E3 /* WSMessageInv.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7CB20BE0E1600F668E3 /* WSMessageInv.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F91E20BE0E1700F668E3 /* WSMessageInv.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7CC20BE0E1600F668E3 /* WSMessageInv.m */; };
+		6377F91F20BE0E1700F668E3 /* WSMessageMempool.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7CD20BE0E1600F668E3 /* WSMessageMempool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F92020BE0E1700F668E3 /* WSMessageMempool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7CE20BE0E1600F668E3 /* WSMessageMempool.m */; };
+		6377F92120BE0E1700F668E3 /* WSMessageMerkleblock.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7CF20BE0E1600F668E3 /* WSMessageMerkleblock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F92220BE0E1700F668E3 /* WSMessageMerkleblock.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7D020BE0E1600F668E3 /* WSMessageMerkleblock.m */; };
+		6377F92320BE0E1700F668E3 /* WSMessageNotfound.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7D120BE0E1600F668E3 /* WSMessageNotfound.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F92420BE0E1700F668E3 /* WSMessageNotfound.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7D220BE0E1600F668E3 /* WSMessageNotfound.m */; };
+		6377F92520BE0E1700F668E3 /* WSMessagePing.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7D320BE0E1600F668E3 /* WSMessagePing.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F92620BE0E1700F668E3 /* WSMessagePing.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7D420BE0E1600F668E3 /* WSMessagePing.m */; };
+		6377F92720BE0E1700F668E3 /* WSMessagePong.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7D520BE0E1600F668E3 /* WSMessagePong.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F92820BE0E1700F668E3 /* WSMessagePong.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7D620BE0E1600F668E3 /* WSMessagePong.m */; };
+		6377F92920BE0E1700F668E3 /* WSMessageReject.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7D720BE0E1600F668E3 /* WSMessageReject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F92A20BE0E1700F668E3 /* WSMessageReject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7D820BE0E1600F668E3 /* WSMessageReject.m */; };
+		6377F92B20BE0E1700F668E3 /* WSMessageTx.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7D920BE0E1600F668E3 /* WSMessageTx.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F92C20BE0E1700F668E3 /* WSMessageTx.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7DA20BE0E1600F668E3 /* WSMessageTx.m */; };
+		6377F92D20BE0E1700F668E3 /* WSMessageVerack.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7DB20BE0E1600F668E3 /* WSMessageVerack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F92E20BE0E1700F668E3 /* WSMessageVerack.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7DC20BE0E1600F668E3 /* WSMessageVerack.m */; };
+		6377F92F20BE0E1700F668E3 /* WSMessageVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7DD20BE0E1600F668E3 /* WSMessageVersion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F93020BE0E1700F668E3 /* WSMessageVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7DE20BE0E1600F668E3 /* WSMessageVersion.m */; };
+		6377F93120BE0E1700F668E3 /* NSData+Base58.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7E020BE0E1600F668E3 /* NSData+Base58.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F93220BE0E1700F668E3 /* NSData+Base58.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7E120BE0E1600F668E3 /* NSData+Base58.m */; };
+		6377F93320BE0E1700F668E3 /* NSData+Binary.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7E220BE0E1600F668E3 /* NSData+Binary.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F93420BE0E1700F668E3 /* NSData+Binary.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7E320BE0E1600F668E3 /* NSData+Binary.m */; };
+		6377F93520BE0E1700F668E3 /* NSData+Hash.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7E420BE0E1600F668E3 /* NSData+Hash.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F93620BE0E1700F668E3 /* NSData+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7E520BE0E1600F668E3 /* NSData+Hash.m */; };
+		6377F93720BE0E1700F668E3 /* NSString+Base58.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7E620BE0E1600F668E3 /* NSString+Base58.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F93820BE0E1700F668E3 /* NSString+Base58.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7E720BE0E1600F668E3 /* NSString+Base58.m */; };
+		6377F93920BE0E1700F668E3 /* NSString+Binary.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7E820BE0E1600F668E3 /* NSString+Binary.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F93A20BE0E1700F668E3 /* NSString+Binary.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7E920BE0E1600F668E3 /* NSString+Binary.m */; };
+		6377F93B20BE0E1700F668E3 /* WSGCDTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7EA20BE0E1600F668E3 /* WSGCDTimer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F93C20BE0E1700F668E3 /* WSGCDTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7EB20BE0E1600F668E3 /* WSGCDTimer.m */; };
+		6377F93D20BE0E1700F668E3 /* WSIndentableDescription.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7EC20BE0E1600F668E3 /* WSIndentableDescription.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F93E20BE0E1700F668E3 /* WSLogFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7ED20BE0E1600F668E3 /* WSLogFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F93F20BE0E1700F668E3 /* WSLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7EE20BE0E1600F668E3 /* WSLogFormatter.m */; };
+		6377F94020BE0E1700F668E3 /* WSSized.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7EF20BE0E1600F668E3 /* WSSized.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F94120BE0E1700F668E3 /* WSHDWallet.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7F120BE0E1600F668E3 /* WSHDWallet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F94220BE0E1700F668E3 /* WSHDWallet.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7F220BE0E1600F668E3 /* WSHDWallet.m */; };
+		6377F94320BE0E1700F668E3 /* WSTransactionMetadata.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7F320BE0E1600F668E3 /* WSTransactionMetadata.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F94420BE0E1700F668E3 /* WSTransactionMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7F420BE0E1600F668E3 /* WSTransactionMetadata.m */; };
+		6377F94520BE0E1700F668E3 /* WSWallet.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7F520BE0E1600F668E3 /* WSWallet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F94620BE0E1700F668E3 /* WSWallet.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7F620BE0E1600F668E3 /* WSWallet.m */; };
+		6377F94720BE0E1700F668E3 /* WSJSONClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7F820BE0E1600F668E3 /* WSJSONClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F94820BE0E1700F668E3 /* WSJSONClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7F920BE0E1600F668E3 /* WSJSONClient.m */; };
+		6377F94920BE0E1700F668E3 /* WSWebExplorer.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7FA20BE0E1600F668E3 /* WSWebExplorer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F94A20BE0E1700F668E3 /* WSWebExplorer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7FB20BE0E1600F668E3 /* WSWebExplorer.m */; };
+		6377F94B20BE0E1700F668E3 /* WSWebExplorerBiteasy.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7FC20BE0E1600F668E3 /* WSWebExplorerBiteasy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F94C20BE0E1700F668E3 /* WSWebExplorerBiteasy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7FD20BE0E1600F668E3 /* WSWebExplorerBiteasy.m */; };
+		6377F94D20BE0E1700F668E3 /* WSWebExplorerBlockchain.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F7FE20BE0E1600F668E3 /* WSWebExplorerBlockchain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F94E20BE0E1700F668E3 /* WSWebExplorerBlockchain.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F7FF20BE0E1600F668E3 /* WSWebExplorerBlockchain.m */; };
+		6377F94F20BE0E1700F668E3 /* WSWebExplorerBlockExplorer.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F80020BE0E1600F668E3 /* WSWebExplorerBlockExplorer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F95020BE0E1700F668E3 /* WSWebExplorerBlockExplorer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F80120BE0E1600F668E3 /* WSWebExplorerBlockExplorer.m */; };
+		6377F95120BE0E1700F668E3 /* WSWebExplorerBlockr.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F80220BE0E1600F668E3 /* WSWebExplorerBlockr.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F95220BE0E1700F668E3 /* WSWebExplorerBlockr.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F80320BE0E1600F668E3 /* WSWebExplorerBlockr.m */; };
+		6377F95320BE0E1700F668E3 /* WSWebTicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F80420BE0E1600F668E3 /* WSWebTicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F95420BE0E1700F668E3 /* WSWebTicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F80520BE0E1600F668E3 /* WSWebTicker.m */; };
+		6377F95520BE0E1700F668E3 /* WSWebTickerBitPay.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F80620BE0E1600F668E3 /* WSWebTickerBitPay.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F95620BE0E1700F668E3 /* WSWebTickerBitPay.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F80720BE0E1600F668E3 /* WSWebTickerBitPay.m */; };
+		6377F95720BE0E1700F668E3 /* WSWebTickerBitstamp.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F80820BE0E1600F668E3 /* WSWebTickerBitstamp.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F95820BE0E1700F668E3 /* WSWebTickerBitstamp.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F80920BE0E1600F668E3 /* WSWebTickerBitstamp.m */; };
+		6377F95920BE0E1700F668E3 /* WSWebTickerBlockchain.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F80A20BE0E1600F668E3 /* WSWebTickerBlockchain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F95A20BE0E1700F668E3 /* WSWebTickerBlockchain.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F80B20BE0E1600F668E3 /* WSWebTickerBlockchain.m */; };
+		6377F95B20BE0E1700F668E3 /* WSWebTickerMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F80C20BE0E1600F668E3 /* WSWebTickerMonitor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6377F95C20BE0E1700F668E3 /* WSWebTickerMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F80D20BE0E1600F668E3 /* WSWebTickerMonitor.m */; };
+		6395BB6D20C0192D002EA989 /* CLIColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB5020C0192D002EA989 /* CLIColor.h */; };
+		6395BB6E20C0192D002EA989 /* CLIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395BB5120C0192D002EA989 /* CLIColor.m */; };
+		6395BB6F20C0192D002EA989 /* CocoaLumberjack.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB5220C0192D002EA989 /* CocoaLumberjack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6395BB7020C0192D002EA989 /* CocoaLumberjack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6395BB5320C0192D002EA989 /* CocoaLumberjack.swift */; };
+		6395BB7120C0192D002EA989 /* DDAbstractDatabaseLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB5420C0192D002EA989 /* DDAbstractDatabaseLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6395BB7220C0192D002EA989 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395BB5520C0192D002EA989 /* DDAbstractDatabaseLogger.m */; };
+		6395BB7320C0192D002EA989 /* DDASLLogCapture.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB5620C0192D002EA989 /* DDASLLogCapture.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6395BB7420C0192D002EA989 /* DDASLLogCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395BB5720C0192D002EA989 /* DDASLLogCapture.m */; };
+		6395BB7520C0192D002EA989 /* DDASLLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB5820C0192D002EA989 /* DDASLLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6395BB7620C0192D002EA989 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395BB5920C0192D002EA989 /* DDASLLogger.m */; };
+		6395BB7720C0192D002EA989 /* DDAssertMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB5A20C0192D002EA989 /* DDAssertMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6395BB7820C0192D002EA989 /* DDFileLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB5B20C0192D002EA989 /* DDFileLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6395BB7920C0192D002EA989 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395BB5C20C0192D002EA989 /* DDFileLogger.m */; };
+		6395BB7A20C0192D002EA989 /* DDLegacyMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB5D20C0192D002EA989 /* DDLegacyMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6395BB7B20C0192D002EA989 /* DDLog+LOGV.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB5E20C0192D002EA989 /* DDLog+LOGV.h */; };
+		6395BB7C20C0192D002EA989 /* DDLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB5F20C0192D002EA989 /* DDLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6395BB7D20C0192D002EA989 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395BB6020C0192D002EA989 /* DDLog.m */; };
+		6395BB7E20C0192D002EA989 /* DDLogMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB6120C0192D002EA989 /* DDLogMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6395BB7F20C0192D002EA989 /* DDOSLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB6220C0192D002EA989 /* DDOSLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6395BB8020C0192D002EA989 /* DDOSLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395BB6320C0192D002EA989 /* DDOSLogger.m */; };
+		6395BB8120C0192D002EA989 /* DDTTYLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB6420C0192D002EA989 /* DDTTYLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6395BB8220C0192D002EA989 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395BB6520C0192D002EA989 /* DDTTYLogger.m */; };
+		6395BB8320C0192D002EA989 /* DDContextFilterLogFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB6720C0192D002EA989 /* DDContextFilterLogFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6395BB8420C0192D002EA989 /* DDContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395BB6820C0192D002EA989 /* DDContextFilterLogFormatter.m */; };
+		6395BB8520C0192D002EA989 /* DDDispatchQueueLogFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB6920C0192D002EA989 /* DDDispatchQueueLogFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6395BB8620C0192D002EA989 /* DDDispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395BB6A20C0192D002EA989 /* DDDispatchQueueLogFormatter.m */; };
+		6395BB8720C0192D002EA989 /* DDMultiFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB6B20C0192D002EA989 /* DDMultiFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6395BB8820C0192D002EA989 /* DDMultiFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395BB6C20C0192D002EA989 /* DDMultiFormatter.m */; };
+		63F4FD4A20C585F700215698 /* WSCoreDataBlockStore.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 63F4FD4920C585F700215698 /* WSCoreDataBlockStore.xcdatamodel */; };
+		63F4FD4B20C589F800215698 /* WSCoreDataBlockStore.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 63F4FD4920C585F700215698 /* WSCoreDataBlockStore.xcdatamodel */; };
+		63F4FD4D20C6D09900215698 /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F4FD4C20C6D09900215698 /* TransactionViewController.swift */; };
 		63F66C1120B421BF007DF79D /* NRLPrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C0C20B421BF007DF79D /* NRLPrivateKey.swift */; };
 		63F66C1220B421BF007DF79D /* NRLPublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C0D20B421BF007DF79D /* NRLPublicKey.swift */; };
 		63F66C1320B421BF007DF79D /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C0F20B421BF007DF79D /* Network.swift */; };
@@ -235,6 +501,274 @@
 		6327C1C820B89BBB00CB2017 /* VersionByte.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionByte.swift; sourceTree = "<group>"; };
 		63304D6620AD4D77006D444B /* Neo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neo.swift; sourceTree = "<group>"; };
 		634EB2AB20AC2EAB00ACAA06 /* NSRegularExpressionExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSRegularExpressionExtension.swift; sourceTree = "<group>"; };
+		6377EF2D20BC6DA900F668E3 /* BitcoinNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinNetwork.swift; sourceTree = "<group>"; };
+		6377F20F20BD9DD100F668E3 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "Libraries/OpenSSL-Universal/lib-ios/libssl.a"; sourceTree = "<group>"; };
+		6377F21020BD9DD100F668E3 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "Libraries/OpenSSL-Universal/lib-ios/libcrypto.a"; sourceTree = "<group>"; };
+		6377F3DD20BDACE500F668E3 /* AutoCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoCoding.h; sourceTree = "<group>"; };
+		6377F3DE20BDACE500F668E3 /* AutoCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoCoding.m; sourceTree = "<group>"; };
+		6377F3DF20BDACE500F668E3 /* LICENCE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENCE.md; sourceTree = "<group>"; };
+		6377F3E020BDACE500F668E3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		6377F3E220BDACE500F668E3 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.markdown; sourceTree = "<group>"; };
+		6377F3E420BDACE500F668E3 /* CocoaAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaAsyncSocket.h; sourceTree = "<group>"; };
+		6377F3E620BDACE500F668E3 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		6377F3E720BDACE500F668E3 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		6377F3E820BDACE500F668E3 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		6377F3E920BDACE500F668E3 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		6377F3EB20BDACE500F668E3 /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
+		6377F3EC20BDACE500F668E3 /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
+		6377F3ED20BDACE500F668E3 /* AsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncUdpSocket.h; sourceTree = "<group>"; };
+		6377F3EE20BDACE500F668E3 /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
+		6377F72620BE0E1600F668E3 /* WSBIP21.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSBIP21.h; sourceTree = "<group>"; };
+		6377F72720BE0E1600F668E3 /* WSBIP21.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSBIP21.m; sourceTree = "<group>"; };
+		6377F72820BE0E1600F668E3 /* WSBIP32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSBIP32.h; sourceTree = "<group>"; };
+		6377F72920BE0E1600F668E3 /* WSBIP32.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSBIP32.m; sourceTree = "<group>"; };
+		6377F72A20BE0E1600F668E3 /* WSBIP37.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSBIP37.h; sourceTree = "<group>"; };
+		6377F72B20BE0E1600F668E3 /* WSBIP37.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSBIP37.m; sourceTree = "<group>"; };
+		6377F72C20BE0E1600F668E3 /* WSBIP38.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSBIP38.h; sourceTree = "<group>"; };
+		6377F72D20BE0E1600F668E3 /* WSBIP38.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSBIP38.m; sourceTree = "<group>"; };
+		6377F72E20BE0E1600F668E3 /* WSBIP39.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSBIP39.h; sourceTree = "<group>"; };
+		6377F72F20BE0E1600F668E3 /* WSBIP39.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSBIP39.m; sourceTree = "<group>"; };
+		6377F73020BE0E1600F668E3 /* WSBIP44.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSBIP44.h; sourceTree = "<group>"; };
+		6377F73120BE0E1600F668E3 /* WSBIP44.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSBIP44.m; sourceTree = "<group>"; };
+		6377F73220BE0E1600F668E3 /* BitcoinSPV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BitcoinSPV.h; sourceTree = "<group>"; };
+		6377F73420BE0E1600F668E3 /* WSBlockChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSBlockChain.h; sourceTree = "<group>"; };
+		6377F73520BE0E1600F668E3 /* WSBlockChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSBlockChain.m; sourceTree = "<group>"; };
+		6377F73620BE0E1600F668E3 /* WSBlockStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSBlockStore.h; sourceTree = "<group>"; };
+		6377F73720BE0E1600F668E3 /* WSBlockStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSBlockStore.m; sourceTree = "<group>"; };
+		6377F73820BE0E1600F668E3 /* WSMemoryBlockStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMemoryBlockStore.h; sourceTree = "<group>"; };
+		6377F73920BE0E1600F668E3 /* WSMemoryBlockStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMemoryBlockStore.m; sourceTree = "<group>"; };
+		6377F73A20BE0E1600F668E3 /* WSStorableBlock+BlockChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WSStorableBlock+BlockChain.h"; sourceTree = "<group>"; };
+		6377F73B20BE0E1600F668E3 /* WSStorableBlock+BlockChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WSStorableBlock+BlockChain.m"; sourceTree = "<group>"; };
+		6377F73D20BE0E1600F668E3 /* WSAbstractKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSAbstractKey.h; sourceTree = "<group>"; };
+		6377F73E20BE0E1600F668E3 /* WSAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSAddress.h; sourceTree = "<group>"; };
+		6377F73F20BE0E1600F668E3 /* WSAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSAddress.m; sourceTree = "<group>"; };
+		6377F74020BE0E1600F668E3 /* WSBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSBlock.h; sourceTree = "<group>"; };
+		6377F74120BE0E1600F668E3 /* WSBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSBlock.m; sourceTree = "<group>"; };
+		6377F74220BE0E1600F668E3 /* WSBlockHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSBlockHeader.h; sourceTree = "<group>"; };
+		6377F74320BE0E1600F668E3 /* WSBlockHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSBlockHeader.m; sourceTree = "<group>"; };
+		6377F74420BE0E1600F668E3 /* WSBlockLocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSBlockLocator.h; sourceTree = "<group>"; };
+		6377F74520BE0E1600F668E3 /* WSBlockLocator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSBlockLocator.m; sourceTree = "<group>"; };
+		6377F74620BE0E1600F668E3 /* WSBloomFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSBloomFilter.h; sourceTree = "<group>"; };
+		6377F74720BE0E1600F668E3 /* WSBloomFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSBloomFilter.m; sourceTree = "<group>"; };
+		6377F74820BE0E1600F668E3 /* WSBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSBuffer.h; sourceTree = "<group>"; };
+		6377F74920BE0E1600F668E3 /* WSBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSBuffer.m; sourceTree = "<group>"; };
+		6377F74A20BE0E1600F668E3 /* WSFilteredBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSFilteredBlock.h; sourceTree = "<group>"; };
+		6377F74B20BE0E1600F668E3 /* WSFilteredBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSFilteredBlock.m; sourceTree = "<group>"; };
+		6377F74C20BE0E1600F668E3 /* WSHash160.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSHash160.h; sourceTree = "<group>"; };
+		6377F74D20BE0E1600F668E3 /* WSHash160.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSHash160.m; sourceTree = "<group>"; };
+		6377F74E20BE0E1600F668E3 /* WSHash256.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSHash256.h; sourceTree = "<group>"; };
+		6377F74F20BE0E1600F668E3 /* WSHash256.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSHash256.m; sourceTree = "<group>"; };
+		6377F75020BE0E1600F668E3 /* WSHDKeyring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSHDKeyring.h; sourceTree = "<group>"; };
+		6377F75120BE0E1600F668E3 /* WSHDKeyring.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSHDKeyring.m; sourceTree = "<group>"; };
+		6377F75220BE0E1600F668E3 /* WSInventory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSInventory.h; sourceTree = "<group>"; };
+		6377F75320BE0E1600F668E3 /* WSInventory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSInventory.m; sourceTree = "<group>"; };
+		6377F75420BE0E1600F668E3 /* WSKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSKey.h; sourceTree = "<group>"; };
+		6377F75520BE0E1600F668E3 /* WSKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSKey.m; sourceTree = "<group>"; };
+		6377F75620BE0E1600F668E3 /* WSMacrosCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMacrosCore.h; sourceTree = "<group>"; };
+		6377F75720BE0E1600F668E3 /* WSMacrosCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMacrosCore.m; sourceTree = "<group>"; };
+		6377F75820BE0E1600F668E3 /* WSMacrosPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMacrosPrivate.h; sourceTree = "<group>"; };
+		6377F75920BE0E1600F668E3 /* WSMacrosPrivate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMacrosPrivate.m; sourceTree = "<group>"; };
+		6377F75A20BE0E1600F668E3 /* WSNetworkAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSNetworkAddress.h; sourceTree = "<group>"; };
+		6377F75B20BE0E1600F668E3 /* WSNetworkAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSNetworkAddress.m; sourceTree = "<group>"; };
+		6377F75C20BE0E1600F668E3 /* WSPartialMerkleTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSPartialMerkleTree.h; sourceTree = "<group>"; };
+		6377F75D20BE0E1600F668E3 /* WSPartialMerkleTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSPartialMerkleTree.m; sourceTree = "<group>"; };
+		6377F75E20BE0E1600F668E3 /* WSPublicKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSPublicKey.h; sourceTree = "<group>"; };
+		6377F75F20BE0E1600F668E3 /* WSPublicKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSPublicKey.m; sourceTree = "<group>"; };
+		6377F76020BE0E1600F668E3 /* WSScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSScript.h; sourceTree = "<group>"; };
+		6377F76120BE0E1600F668E3 /* WSScript.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSScript.m; sourceTree = "<group>"; };
+		6377F76220BE0E1600F668E3 /* WSSeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSSeed.h; sourceTree = "<group>"; };
+		6377F76320BE0E1600F668E3 /* WSSeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSSeed.m; sourceTree = "<group>"; };
+		6377F76420BE0E1600F668E3 /* WSSeedGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSSeedGenerator.h; sourceTree = "<group>"; };
+		6377F76520BE0E1600F668E3 /* WSSeedGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSSeedGenerator.m; sourceTree = "<group>"; };
+		6377F76620BE0E1600F668E3 /* WSStorableBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSStorableBlock.h; sourceTree = "<group>"; };
+		6377F76720BE0E1600F668E3 /* WSStorableBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSStorableBlock.m; sourceTree = "<group>"; };
+		6377F76820BE0E1600F668E3 /* WSTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSTransaction.h; sourceTree = "<group>"; };
+		6377F76920BE0E1600F668E3 /* WSTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSTransaction.m; sourceTree = "<group>"; };
+		6377F76A20BE0E1600F668E3 /* WSTransactionInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSTransactionInput.h; sourceTree = "<group>"; };
+		6377F76B20BE0E1600F668E3 /* WSTransactionInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSTransactionInput.m; sourceTree = "<group>"; };
+		6377F76C20BE0E1600F668E3 /* WSTransactionOutPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSTransactionOutPoint.h; sourceTree = "<group>"; };
+		6377F76D20BE0E1600F668E3 /* WSTransactionOutPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSTransactionOutPoint.m; sourceTree = "<group>"; };
+		6377F76E20BE0E1600F668E3 /* WSTransactionOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSTransactionOutput.h; sourceTree = "<group>"; };
+		6377F76F20BE0E1600F668E3 /* WSTransactionOutput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSTransactionOutput.m; sourceTree = "<group>"; };
+		6377F77120BE0E1600F668E3 /* WSBitcoinCurrency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSBitcoinCurrency.h; sourceTree = "<group>"; };
+		6377F77220BE0E1600F668E3 /* WSBitcoinCurrency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSBitcoinCurrency.m; sourceTree = "<group>"; };
+		6377F77320BE0E1600F668E3 /* WSCurrency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSCurrency.h; sourceTree = "<group>"; };
+		6377F77420BE0E1600F668E3 /* WSPhysicalCurrency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSPhysicalCurrency.h; sourceTree = "<group>"; };
+		6377F77520BE0E1600F668E3 /* WSPhysicalCurrency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSPhysicalCurrency.m; sourceTree = "<group>"; };
+		6377F77720BE0E1600F668E3 /* WSBitcoinConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSBitcoinConstants.h; sourceTree = "<group>"; };
+		6377F77820BE0E1600F668E3 /* WSBitcoinConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSBitcoinConstants.m; sourceTree = "<group>"; };
+		6377F77920BE0E1600F668E3 /* WSConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSConfig.h; sourceTree = "<group>"; };
+		6377F77A20BE0E1600F668E3 /* WSConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSConfig.m; sourceTree = "<group>"; };
+		6377F77B20BE0E1600F668E3 /* WSErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSErrors.h; sourceTree = "<group>"; };
+		6377F77C20BE0E1600F668E3 /* WSErrors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSErrors.m; sourceTree = "<group>"; };
+		6377F77D20BE0E1600F668E3 /* WSLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSLogging.h; sourceTree = "<group>"; };
+		6377F77E20BE0E1600F668E3 /* WSLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSLogging.m; sourceTree = "<group>"; };
+		6377F78020BE0E1600F668E3 /* WSBlockHeaderEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSBlockHeaderEntity.h; sourceTree = "<group>"; };
+		6377F78120BE0E1600F668E3 /* WSBlockHeaderEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSBlockHeaderEntity.m; sourceTree = "<group>"; };
+		6377F78220BE0E1600F668E3 /* WSCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSCoreDataManager.h; sourceTree = "<group>"; };
+		6377F78320BE0E1600F668E3 /* WSCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSCoreDataManager.m; sourceTree = "<group>"; };
+		6377F78420BE0E1600F668E3 /* WSPartialMerkleTreeEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSPartialMerkleTreeEntity.h; sourceTree = "<group>"; };
+		6377F78520BE0E1600F668E3 /* WSPartialMerkleTreeEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSPartialMerkleTreeEntity.m; sourceTree = "<group>"; };
+		6377F78620BE0E1600F668E3 /* WSStorableBlockEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSStorableBlockEntity.h; sourceTree = "<group>"; };
+		6377F78720BE0E1600F668E3 /* WSStorableBlockEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSStorableBlockEntity.m; sourceTree = "<group>"; };
+		6377F78820BE0E1600F668E3 /* WSTransactionEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSTransactionEntity.h; sourceTree = "<group>"; };
+		6377F78920BE0E1600F668E3 /* WSTransactionEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSTransactionEntity.m; sourceTree = "<group>"; };
+		6377F78A20BE0E1600F668E3 /* WSTransactionInputEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSTransactionInputEntity.h; sourceTree = "<group>"; };
+		6377F78B20BE0E1600F668E3 /* WSTransactionInputEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSTransactionInputEntity.m; sourceTree = "<group>"; };
+		6377F78C20BE0E1600F668E3 /* WSTransactionOutPointEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSTransactionOutPointEntity.h; sourceTree = "<group>"; };
+		6377F78D20BE0E1600F668E3 /* WSTransactionOutPointEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSTransactionOutPointEntity.m; sourceTree = "<group>"; };
+		6377F78E20BE0E1600F668E3 /* WSTransactionOutputEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSTransactionOutputEntity.h; sourceTree = "<group>"; };
+		6377F78F20BE0E1600F668E3 /* WSTransactionOutputEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSTransactionOutputEntity.m; sourceTree = "<group>"; };
+		6377F79120BE0E1600F668E3 /* WSBlockChainDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSBlockChainDownloader.h; sourceTree = "<group>"; };
+		6377F79220BE0E1600F668E3 /* WSBlockChainDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSBlockChainDownloader.m; sourceTree = "<group>"; };
+		6377F79320BE0E1600F668E3 /* WSConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSConnection.h; sourceTree = "<group>"; };
+		6377F79420BE0E1600F668E3 /* WSConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSConnection.m; sourceTree = "<group>"; };
+		6377F79520BE0E1600F668E3 /* WSConnectionPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSConnectionPool.h; sourceTree = "<group>"; };
+		6377F79620BE0E1600F668E3 /* WSConnectionPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSConnectionPool.m; sourceTree = "<group>"; };
+		6377F79720BE0E1600F668E3 /* WSPeer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSPeer.h; sourceTree = "<group>"; };
+		6377F79820BE0E1600F668E3 /* WSPeer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSPeer.m; sourceTree = "<group>"; };
+		6377F79920BE0E1600F668E3 /* WSPeerGroup+Download.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WSPeerGroup+Download.h"; sourceTree = "<group>"; };
+		6377F79A20BE0E1600F668E3 /* WSPeerGroup+Download.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WSPeerGroup+Download.m"; sourceTree = "<group>"; };
+		6377F79B20BE0E1600F668E3 /* WSPeerGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSPeerGroup.h; sourceTree = "<group>"; };
+		6377F79C20BE0E1600F668E3 /* WSPeerGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSPeerGroup.m; sourceTree = "<group>"; };
+		6377F79D20BE0E1600F668E3 /* WSPeerGroupNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSPeerGroupNotifier.h; sourceTree = "<group>"; };
+		6377F79E20BE0E1600F668E3 /* WSPeerGroupNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSPeerGroupNotifier.m; sourceTree = "<group>"; };
+		6377F79F20BE0E1600F668E3 /* WSProtocolDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSProtocolDeserializer.h; sourceTree = "<group>"; };
+		6377F7A020BE0E1600F668E3 /* WSProtocolDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSProtocolDeserializer.m; sourceTree = "<group>"; };
+		6377F7A120BE0E1600F668E3 /* WSReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSReachability.h; sourceTree = "<group>"; };
+		6377F7A220BE0E1600F668E3 /* WSReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSReachability.m; sourceTree = "<group>"; };
+		6377F7A420BE0E1600F668E3 /* WSNetworkType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSNetworkType.h; sourceTree = "<group>"; };
+		6377F7A520BE0E1600F668E3 /* WSNetworkType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSNetworkType.m; sourceTree = "<group>"; };
+		6377F7A620BE0E1600F668E3 /* WSParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSParameters.h; sourceTree = "<group>"; };
+		6377F7A720BE0E1600F668E3 /* WSParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSParameters.m; sourceTree = "<group>"; };
+		6377F7A820BE0E1600F668E3 /* WSParametersFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSParametersFactory.h; sourceTree = "<group>"; };
+		6377F7A920BE0E1600F668E3 /* WSParametersFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSParametersFactory.m; sourceTree = "<group>"; };
+		6377F7AA20BE0E1600F668E3 /* WSParametersFactoryMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSParametersFactoryMain.h; sourceTree = "<group>"; };
+		6377F7AB20BE0E1600F668E3 /* WSParametersFactoryMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSParametersFactoryMain.m; sourceTree = "<group>"; };
+		6377F7AC20BE0E1600F668E3 /* WSParametersFactoryRegtest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSParametersFactoryRegtest.h; sourceTree = "<group>"; };
+		6377F7AD20BE0E1600F668E3 /* WSParametersFactoryRegtest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSParametersFactoryRegtest.m; sourceTree = "<group>"; };
+		6377F7AE20BE0E1600F668E3 /* WSParametersFactoryTestnet3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSParametersFactoryTestnet3.h; sourceTree = "<group>"; };
+		6377F7AF20BE0E1600F668E3 /* WSParametersFactoryTestnet3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSParametersFactoryTestnet3.m; sourceTree = "<group>"; };
+		6377F7B120BE0E1600F668E3 /* WSAbstractMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSAbstractMessage.h; sourceTree = "<group>"; };
+		6377F7B220BE0E1600F668E3 /* WSAbstractMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSAbstractMessage.m; sourceTree = "<group>"; };
+		6377F7B320BE0E1600F668E3 /* WSAbstractMessageInventoryBased.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSAbstractMessageInventoryBased.h; sourceTree = "<group>"; };
+		6377F7B420BE0E1600F668E3 /* WSAbstractMessageInventoryBased.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSAbstractMessageInventoryBased.m; sourceTree = "<group>"; };
+		6377F7B520BE0E1600F668E3 /* WSAbstractMessageLocatorBased.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSAbstractMessageLocatorBased.h; sourceTree = "<group>"; };
+		6377F7B620BE0E1600F668E3 /* WSAbstractMessageLocatorBased.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSAbstractMessageLocatorBased.m; sourceTree = "<group>"; };
+		6377F7B720BE0E1600F668E3 /* WSMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMessage.h; sourceTree = "<group>"; };
+		6377F7B820BE0E1600F668E3 /* WSMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMessage.m; sourceTree = "<group>"; };
+		6377F7B920BE0E1600F668E3 /* WSMessageAddr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMessageAddr.h; sourceTree = "<group>"; };
+		6377F7BA20BE0E1600F668E3 /* WSMessageAddr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMessageAddr.m; sourceTree = "<group>"; };
+		6377F7BB20BE0E1600F668E3 /* WSMessageBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMessageBlock.h; sourceTree = "<group>"; };
+		6377F7BC20BE0E1600F668E3 /* WSMessageBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMessageBlock.m; sourceTree = "<group>"; };
+		6377F7BD20BE0E1600F668E3 /* WSMessageFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMessageFactory.h; sourceTree = "<group>"; };
+		6377F7BE20BE0E1600F668E3 /* WSMessageFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMessageFactory.m; sourceTree = "<group>"; };
+		6377F7BF20BE0E1600F668E3 /* WSMessageFilterload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMessageFilterload.h; sourceTree = "<group>"; };
+		6377F7C020BE0E1600F668E3 /* WSMessageFilterload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMessageFilterload.m; sourceTree = "<group>"; };
+		6377F7C120BE0E1600F668E3 /* WSMessageGetaddr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMessageGetaddr.h; sourceTree = "<group>"; };
+		6377F7C220BE0E1600F668E3 /* WSMessageGetaddr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMessageGetaddr.m; sourceTree = "<group>"; };
+		6377F7C320BE0E1600F668E3 /* WSMessageGetblocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMessageGetblocks.h; sourceTree = "<group>"; };
+		6377F7C420BE0E1600F668E3 /* WSMessageGetblocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMessageGetblocks.m; sourceTree = "<group>"; };
+		6377F7C520BE0E1600F668E3 /* WSMessageGetdata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMessageGetdata.h; sourceTree = "<group>"; };
+		6377F7C620BE0E1600F668E3 /* WSMessageGetdata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMessageGetdata.m; sourceTree = "<group>"; };
+		6377F7C720BE0E1600F668E3 /* WSMessageGetheaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMessageGetheaders.h; sourceTree = "<group>"; };
+		6377F7C820BE0E1600F668E3 /* WSMessageGetheaders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMessageGetheaders.m; sourceTree = "<group>"; };
+		6377F7C920BE0E1600F668E3 /* WSMessageHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMessageHeaders.h; sourceTree = "<group>"; };
+		6377F7CA20BE0E1600F668E3 /* WSMessageHeaders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMessageHeaders.m; sourceTree = "<group>"; };
+		6377F7CB20BE0E1600F668E3 /* WSMessageInv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMessageInv.h; sourceTree = "<group>"; };
+		6377F7CC20BE0E1600F668E3 /* WSMessageInv.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMessageInv.m; sourceTree = "<group>"; };
+		6377F7CD20BE0E1600F668E3 /* WSMessageMempool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMessageMempool.h; sourceTree = "<group>"; };
+		6377F7CE20BE0E1600F668E3 /* WSMessageMempool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMessageMempool.m; sourceTree = "<group>"; };
+		6377F7CF20BE0E1600F668E3 /* WSMessageMerkleblock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMessageMerkleblock.h; sourceTree = "<group>"; };
+		6377F7D020BE0E1600F668E3 /* WSMessageMerkleblock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMessageMerkleblock.m; sourceTree = "<group>"; };
+		6377F7D120BE0E1600F668E3 /* WSMessageNotfound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMessageNotfound.h; sourceTree = "<group>"; };
+		6377F7D220BE0E1600F668E3 /* WSMessageNotfound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMessageNotfound.m; sourceTree = "<group>"; };
+		6377F7D320BE0E1600F668E3 /* WSMessagePing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMessagePing.h; sourceTree = "<group>"; };
+		6377F7D420BE0E1600F668E3 /* WSMessagePing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMessagePing.m; sourceTree = "<group>"; };
+		6377F7D520BE0E1600F668E3 /* WSMessagePong.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMessagePong.h; sourceTree = "<group>"; };
+		6377F7D620BE0E1600F668E3 /* WSMessagePong.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMessagePong.m; sourceTree = "<group>"; };
+		6377F7D720BE0E1600F668E3 /* WSMessageReject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMessageReject.h; sourceTree = "<group>"; };
+		6377F7D820BE0E1600F668E3 /* WSMessageReject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMessageReject.m; sourceTree = "<group>"; };
+		6377F7D920BE0E1600F668E3 /* WSMessageTx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMessageTx.h; sourceTree = "<group>"; };
+		6377F7DA20BE0E1600F668E3 /* WSMessageTx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMessageTx.m; sourceTree = "<group>"; };
+		6377F7DB20BE0E1600F668E3 /* WSMessageVerack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMessageVerack.h; sourceTree = "<group>"; };
+		6377F7DC20BE0E1600F668E3 /* WSMessageVerack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMessageVerack.m; sourceTree = "<group>"; };
+		6377F7DD20BE0E1600F668E3 /* WSMessageVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMessageVersion.h; sourceTree = "<group>"; };
+		6377F7DE20BE0E1600F668E3 /* WSMessageVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMessageVersion.m; sourceTree = "<group>"; };
+		6377F7E020BE0E1600F668E3 /* NSData+Base58.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base58.h"; sourceTree = "<group>"; };
+		6377F7E120BE0E1600F668E3 /* NSData+Base58.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base58.m"; sourceTree = "<group>"; };
+		6377F7E220BE0E1600F668E3 /* NSData+Binary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Binary.h"; sourceTree = "<group>"; };
+		6377F7E320BE0E1600F668E3 /* NSData+Binary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Binary.m"; sourceTree = "<group>"; };
+		6377F7E420BE0E1600F668E3 /* NSData+Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Hash.h"; sourceTree = "<group>"; };
+		6377F7E520BE0E1600F668E3 /* NSData+Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Hash.m"; sourceTree = "<group>"; };
+		6377F7E620BE0E1600F668E3 /* NSString+Base58.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base58.h"; sourceTree = "<group>"; };
+		6377F7E720BE0E1600F668E3 /* NSString+Base58.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base58.m"; sourceTree = "<group>"; };
+		6377F7E820BE0E1600F668E3 /* NSString+Binary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Binary.h"; sourceTree = "<group>"; };
+		6377F7E920BE0E1600F668E3 /* NSString+Binary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Binary.m"; sourceTree = "<group>"; };
+		6377F7EA20BE0E1600F668E3 /* WSGCDTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSGCDTimer.h; sourceTree = "<group>"; };
+		6377F7EB20BE0E1600F668E3 /* WSGCDTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSGCDTimer.m; sourceTree = "<group>"; };
+		6377F7EC20BE0E1600F668E3 /* WSIndentableDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSIndentableDescription.h; sourceTree = "<group>"; };
+		6377F7ED20BE0E1600F668E3 /* WSLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSLogFormatter.h; sourceTree = "<group>"; };
+		6377F7EE20BE0E1600F668E3 /* WSLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSLogFormatter.m; sourceTree = "<group>"; };
+		6377F7EF20BE0E1600F668E3 /* WSSized.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSSized.h; sourceTree = "<group>"; };
+		6377F7F120BE0E1600F668E3 /* WSHDWallet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSHDWallet.h; sourceTree = "<group>"; };
+		6377F7F220BE0E1600F668E3 /* WSHDWallet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSHDWallet.m; sourceTree = "<group>"; };
+		6377F7F320BE0E1600F668E3 /* WSTransactionMetadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSTransactionMetadata.h; sourceTree = "<group>"; };
+		6377F7F420BE0E1600F668E3 /* WSTransactionMetadata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSTransactionMetadata.m; sourceTree = "<group>"; };
+		6377F7F520BE0E1600F668E3 /* WSWallet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSWallet.h; sourceTree = "<group>"; };
+		6377F7F620BE0E1600F668E3 /* WSWallet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSWallet.m; sourceTree = "<group>"; };
+		6377F7F820BE0E1600F668E3 /* WSJSONClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSJSONClient.h; sourceTree = "<group>"; };
+		6377F7F920BE0E1600F668E3 /* WSJSONClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSJSONClient.m; sourceTree = "<group>"; };
+		6377F7FA20BE0E1600F668E3 /* WSWebExplorer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSWebExplorer.h; sourceTree = "<group>"; };
+		6377F7FB20BE0E1600F668E3 /* WSWebExplorer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSWebExplorer.m; sourceTree = "<group>"; };
+		6377F7FC20BE0E1600F668E3 /* WSWebExplorerBiteasy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSWebExplorerBiteasy.h; sourceTree = "<group>"; };
+		6377F7FD20BE0E1600F668E3 /* WSWebExplorerBiteasy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSWebExplorerBiteasy.m; sourceTree = "<group>"; };
+		6377F7FE20BE0E1600F668E3 /* WSWebExplorerBlockchain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSWebExplorerBlockchain.h; sourceTree = "<group>"; };
+		6377F7FF20BE0E1600F668E3 /* WSWebExplorerBlockchain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSWebExplorerBlockchain.m; sourceTree = "<group>"; };
+		6377F80020BE0E1600F668E3 /* WSWebExplorerBlockExplorer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSWebExplorerBlockExplorer.h; sourceTree = "<group>"; };
+		6377F80120BE0E1600F668E3 /* WSWebExplorerBlockExplorer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSWebExplorerBlockExplorer.m; sourceTree = "<group>"; };
+		6377F80220BE0E1600F668E3 /* WSWebExplorerBlockr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSWebExplorerBlockr.h; sourceTree = "<group>"; };
+		6377F80320BE0E1600F668E3 /* WSWebExplorerBlockr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSWebExplorerBlockr.m; sourceTree = "<group>"; };
+		6377F80420BE0E1600F668E3 /* WSWebTicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSWebTicker.h; sourceTree = "<group>"; };
+		6377F80520BE0E1600F668E3 /* WSWebTicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSWebTicker.m; sourceTree = "<group>"; };
+		6377F80620BE0E1600F668E3 /* WSWebTickerBitPay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSWebTickerBitPay.h; sourceTree = "<group>"; };
+		6377F80720BE0E1600F668E3 /* WSWebTickerBitPay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSWebTickerBitPay.m; sourceTree = "<group>"; };
+		6377F80820BE0E1600F668E3 /* WSWebTickerBitstamp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSWebTickerBitstamp.h; sourceTree = "<group>"; };
+		6377F80920BE0E1600F668E3 /* WSWebTickerBitstamp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSWebTickerBitstamp.m; sourceTree = "<group>"; };
+		6377F80A20BE0E1600F668E3 /* WSWebTickerBlockchain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSWebTickerBlockchain.h; sourceTree = "<group>"; };
+		6377F80B20BE0E1600F668E3 /* WSWebTickerBlockchain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSWebTickerBlockchain.m; sourceTree = "<group>"; };
+		6377F80C20BE0E1600F668E3 /* WSWebTickerMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSWebTickerMonitor.h; sourceTree = "<group>"; };
+		6377F80D20BE0E1600F668E3 /* WSWebTickerMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSWebTickerMonitor.m; sourceTree = "<group>"; };
+		6395BB5020C0192D002EA989 /* CLIColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLIColor.h; sourceTree = "<group>"; };
+		6395BB5120C0192D002EA989 /* CLIColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLIColor.m; sourceTree = "<group>"; };
+		6395BB5220C0192D002EA989 /* CocoaLumberjack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaLumberjack.h; sourceTree = "<group>"; };
+		6395BB5320C0192D002EA989 /* CocoaLumberjack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoaLumberjack.swift; sourceTree = "<group>"; };
+		6395BB5420C0192D002EA989 /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
+		6395BB5520C0192D002EA989 /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
+		6395BB5620C0192D002EA989 /* DDASLLogCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogCapture.h; sourceTree = "<group>"; };
+		6395BB5720C0192D002EA989 /* DDASLLogCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDASLLogCapture.m; sourceTree = "<group>"; };
+		6395BB5820C0192D002EA989 /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
+		6395BB5920C0192D002EA989 /* DDASLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDASLLogger.m; sourceTree = "<group>"; };
+		6395BB5A20C0192D002EA989 /* DDAssertMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAssertMacros.h; sourceTree = "<group>"; };
+		6395BB5B20C0192D002EA989 /* DDFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDFileLogger.h; sourceTree = "<group>"; };
+		6395BB5C20C0192D002EA989 /* DDFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDFileLogger.m; sourceTree = "<group>"; };
+		6395BB5D20C0192D002EA989 /* DDLegacyMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLegacyMacros.h; sourceTree = "<group>"; };
+		6395BB5E20C0192D002EA989 /* DDLog+LOGV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DDLog+LOGV.h"; sourceTree = "<group>"; };
+		6395BB5F20C0192D002EA989 /* DDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLog.h; sourceTree = "<group>"; };
+		6395BB6020C0192D002EA989 /* DDLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDLog.m; sourceTree = "<group>"; };
+		6395BB6120C0192D002EA989 /* DDLogMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLogMacros.h; sourceTree = "<group>"; };
+		6395BB6220C0192D002EA989 /* DDOSLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDOSLogger.h; sourceTree = "<group>"; };
+		6395BB6320C0192D002EA989 /* DDOSLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDOSLogger.m; sourceTree = "<group>"; };
+		6395BB6420C0192D002EA989 /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTTYLogger.h; sourceTree = "<group>"; };
+		6395BB6520C0192D002EA989 /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
+		6395BB6720C0192D002EA989 /* DDContextFilterLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDContextFilterLogFormatter.h; sourceTree = "<group>"; };
+		6395BB6820C0192D002EA989 /* DDContextFilterLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDContextFilterLogFormatter.m; sourceTree = "<group>"; };
+		6395BB6920C0192D002EA989 /* DDDispatchQueueLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDDispatchQueueLogFormatter.h; sourceTree = "<group>"; };
+		6395BB6A20C0192D002EA989 /* DDDispatchQueueLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDispatchQueueLogFormatter.m; sourceTree = "<group>"; };
+		6395BB6B20C0192D002EA989 /* DDMultiFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMultiFormatter.h; sourceTree = "<group>"; };
+		6395BB6C20C0192D002EA989 /* DDMultiFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMultiFormatter.m; sourceTree = "<group>"; };
+		63F4FD4920C585F700215698 /* WSCoreDataBlockStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WSCoreDataBlockStore.xcdatamodel; sourceTree = "<group>"; };
+		63F4FD4C20C6D09900215698 /* TransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
 		63F66C0C20B421BF007DF79D /* NRLPrivateKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRLPrivateKey.swift; sourceTree = "<group>"; };
 		63F66C0D20B421BF007DF79D /* NRLPublicKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRLPublicKey.swift; sourceTree = "<group>"; };
 		63F66C0F20B421BF007DF79D /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
@@ -279,6 +813,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6377F21120BD9DD100F668E3 /* libssl.a in Frameworks */,
+				6377F21220BD9DD100F668E3 /* libcrypto.a in Frameworks */,
 				63F66C1720B42444007DF79D /* CryptoSwift.framework in Frameworks */,
 				63F66C1C20B49031007DF79D /* neoutils.framework in Frameworks */,
 			);
@@ -328,6 +864,7 @@
 				63F66C0B20B421BF007DF79D /* Key */,
 				63F66C4D20B4C502007DF79D /* Networking */,
 				63F66C0E20B421BF007DF79D /* Wallet */,
+				6377F21320BDA35000F668E3 /* Libraries */,
 				2167C2A42098FF5C00A8653E /* Info.plist */,
 				2167C346209B464400A8653E /* NRLWalletSDK.h */,
 				2171AA33209B481200EA283E /* NRLWalletSDKError.swift */,
@@ -343,6 +880,7 @@
 			children = (
 				2167C2F5209AF09D00A8653E /* AppDelegate.swift */,
 				2167C2F7209AF09D00A8653E /* ViewController.swift */,
+				63F4FD4C20C6D09900215698 /* TransactionViewController.swift */,
 				2167C2F9209AF09D00A8653E /* Main.storyboard */,
 				2167C2FC209AF0A500A8653E /* Assets.xcassets */,
 				2167C2FE209AF0A500A8653E /* LaunchScreen.storyboard */,
@@ -379,6 +917,8 @@
 		431162E9CDABEB14022578A5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6377F21020BD9DD100F668E3 /* libcrypto.a */,
+				6377F20F20BD9DD100F668E3 /* libssl.a */,
 				63F66C1920B49031007DF79D /* neoutils.framework */,
 				63F66C1620B42444007DF79D /* CryptoSwift.framework */,
 			);
@@ -550,6 +1090,470 @@
 			path = Coins;
 			sourceTree = "<group>";
 		};
+		6377F21320BDA35000F668E3 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				6377F3DB20BDACE500F668E3 /* AutoCoding */,
+				6377F6AD20BE0E1600F668E3 /* BitcoinSPV */,
+				6377F3E120BDACE500F668E3 /* CocoaAsyncSocket */,
+				6377F28A20BDA35100F668E3 /* CocoaLumberjack */,
+			);
+			path = Libraries;
+			sourceTree = SOURCE_ROOT;
+		};
+		6377F28A20BDA35100F668E3 /* CocoaLumberjack */ = {
+			isa = PBXGroup;
+			children = (
+				6395BB4E20C0192D002EA989 /* Lumberjack */,
+			);
+			path = CocoaLumberjack;
+			sourceTree = "<group>";
+		};
+		6377F3DB20BDACE500F668E3 /* AutoCoding */ = {
+			isa = PBXGroup;
+			children = (
+				6377F3DC20BDACE500F668E3 /* AutoCoding */,
+				6377F3DF20BDACE500F668E3 /* LICENCE.md */,
+				6377F3E020BDACE500F668E3 /* README.md */,
+			);
+			path = AutoCoding;
+			sourceTree = "<group>";
+		};
+		6377F3DC20BDACE500F668E3 /* AutoCoding */ = {
+			isa = PBXGroup;
+			children = (
+				6377F3DD20BDACE500F668E3 /* AutoCoding.h */,
+				6377F3DE20BDACE500F668E3 /* AutoCoding.m */,
+			);
+			path = AutoCoding;
+			sourceTree = "<group>";
+		};
+		6377F3E120BDACE500F668E3 /* CocoaAsyncSocket */ = {
+			isa = PBXGroup;
+			children = (
+				6377F3E220BDACE500F668E3 /* README.markdown */,
+				6377F3E320BDACE500F668E3 /* Source */,
+			);
+			path = CocoaAsyncSocket;
+			sourceTree = "<group>";
+		};
+		6377F3E320BDACE500F668E3 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				6377F3E420BDACE500F668E3 /* CocoaAsyncSocket.h */,
+				6377F3E520BDACE500F668E3 /* GCD */,
+				6377F3EA20BDACE500F668E3 /* RunLoop */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		6377F3E520BDACE500F668E3 /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				6377F3E620BDACE500F668E3 /* GCDAsyncSocket.h */,
+				6377F3E720BDACE500F668E3 /* GCDAsyncSocket.m */,
+				6377F3E820BDACE500F668E3 /* GCDAsyncUdpSocket.h */,
+				6377F3E920BDACE500F668E3 /* GCDAsyncUdpSocket.m */,
+			);
+			path = GCD;
+			sourceTree = "<group>";
+		};
+		6377F3EA20BDACE500F668E3 /* RunLoop */ = {
+			isa = PBXGroup;
+			children = (
+				6377F3EB20BDACE500F668E3 /* AsyncSocket.h */,
+				6377F3EC20BDACE500F668E3 /* AsyncSocket.m */,
+				6377F3ED20BDACE500F668E3 /* AsyncUdpSocket.h */,
+				6377F3EE20BDACE500F668E3 /* AsyncUdpSocket.m */,
+			);
+			path = RunLoop;
+			sourceTree = "<group>";
+		};
+		6377F6AD20BE0E1600F668E3 /* BitcoinSPV */ = {
+			isa = PBXGroup;
+			children = (
+				63F4FD4920C585F700215698 /* WSCoreDataBlockStore.xcdatamodel */,
+				6377F72420BE0E1600F668E3 /* Sources */,
+			);
+			name = BitcoinSPV;
+			path = Libraries/BitcoinSPV;
+			sourceTree = SOURCE_ROOT;
+		};
+		6377F72420BE0E1600F668E3 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				6377F72520BE0E1600F668E3 /* BIPS */,
+				6377F73220BE0E1600F668E3 /* BitcoinSPV.h */,
+				6377F73320BE0E1600F668E3 /* Blockchain */,
+				6377F73C20BE0E1600F668E3 /* Core */,
+				6377F77020BE0E1600F668E3 /* Currency */,
+				6377F77620BE0E1600F668E3 /* Global */,
+				6377F77F20BE0E1600F668E3 /* Model */,
+				6377F79020BE0E1600F668E3 /* Networking */,
+				6377F7A320BE0E1600F668E3 /* Parameters */,
+				6377F7B020BE0E1600F668E3 /* Protocol */,
+				6377F7DF20BE0E1600F668E3 /* Utils */,
+				6377F7F020BE0E1600F668E3 /* Wallet */,
+				6377F7F720BE0E1600F668E3 /* Web */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		6377F72520BE0E1600F668E3 /* BIPS */ = {
+			isa = PBXGroup;
+			children = (
+				6377F72620BE0E1600F668E3 /* WSBIP21.h */,
+				6377F72720BE0E1600F668E3 /* WSBIP21.m */,
+				6377F72820BE0E1600F668E3 /* WSBIP32.h */,
+				6377F72920BE0E1600F668E3 /* WSBIP32.m */,
+				6377F72A20BE0E1600F668E3 /* WSBIP37.h */,
+				6377F72B20BE0E1600F668E3 /* WSBIP37.m */,
+				6377F72C20BE0E1600F668E3 /* WSBIP38.h */,
+				6377F72D20BE0E1600F668E3 /* WSBIP38.m */,
+				6377F72E20BE0E1600F668E3 /* WSBIP39.h */,
+				6377F72F20BE0E1600F668E3 /* WSBIP39.m */,
+				6377F73020BE0E1600F668E3 /* WSBIP44.h */,
+				6377F73120BE0E1600F668E3 /* WSBIP44.m */,
+			);
+			path = BIPS;
+			sourceTree = "<group>";
+		};
+		6377F73320BE0E1600F668E3 /* Blockchain */ = {
+			isa = PBXGroup;
+			children = (
+				6377F73420BE0E1600F668E3 /* WSBlockChain.h */,
+				6377F73520BE0E1600F668E3 /* WSBlockChain.m */,
+				6377F73620BE0E1600F668E3 /* WSBlockStore.h */,
+				6377F73720BE0E1600F668E3 /* WSBlockStore.m */,
+				6377F73820BE0E1600F668E3 /* WSMemoryBlockStore.h */,
+				6377F73920BE0E1600F668E3 /* WSMemoryBlockStore.m */,
+				6377F73A20BE0E1600F668E3 /* WSStorableBlock+BlockChain.h */,
+				6377F73B20BE0E1600F668E3 /* WSStorableBlock+BlockChain.m */,
+			);
+			path = Blockchain;
+			sourceTree = "<group>";
+		};
+		6377F73C20BE0E1600F668E3 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				6377F73D20BE0E1600F668E3 /* WSAbstractKey.h */,
+				6377F73E20BE0E1600F668E3 /* WSAddress.h */,
+				6377F73F20BE0E1600F668E3 /* WSAddress.m */,
+				6377F74020BE0E1600F668E3 /* WSBlock.h */,
+				6377F74120BE0E1600F668E3 /* WSBlock.m */,
+				6377F74220BE0E1600F668E3 /* WSBlockHeader.h */,
+				6377F74320BE0E1600F668E3 /* WSBlockHeader.m */,
+				6377F74420BE0E1600F668E3 /* WSBlockLocator.h */,
+				6377F74520BE0E1600F668E3 /* WSBlockLocator.m */,
+				6377F74620BE0E1600F668E3 /* WSBloomFilter.h */,
+				6377F74720BE0E1600F668E3 /* WSBloomFilter.m */,
+				6377F74820BE0E1600F668E3 /* WSBuffer.h */,
+				6377F74920BE0E1600F668E3 /* WSBuffer.m */,
+				6377F74A20BE0E1600F668E3 /* WSFilteredBlock.h */,
+				6377F74B20BE0E1600F668E3 /* WSFilteredBlock.m */,
+				6377F74C20BE0E1600F668E3 /* WSHash160.h */,
+				6377F74D20BE0E1600F668E3 /* WSHash160.m */,
+				6377F74E20BE0E1600F668E3 /* WSHash256.h */,
+				6377F74F20BE0E1600F668E3 /* WSHash256.m */,
+				6377F75020BE0E1600F668E3 /* WSHDKeyring.h */,
+				6377F75120BE0E1600F668E3 /* WSHDKeyring.m */,
+				6377F75220BE0E1600F668E3 /* WSInventory.h */,
+				6377F75320BE0E1600F668E3 /* WSInventory.m */,
+				6377F75420BE0E1600F668E3 /* WSKey.h */,
+				6377F75520BE0E1600F668E3 /* WSKey.m */,
+				6377F75620BE0E1600F668E3 /* WSMacrosCore.h */,
+				6377F75720BE0E1600F668E3 /* WSMacrosCore.m */,
+				6377F75820BE0E1600F668E3 /* WSMacrosPrivate.h */,
+				6377F75920BE0E1600F668E3 /* WSMacrosPrivate.m */,
+				6377F75A20BE0E1600F668E3 /* WSNetworkAddress.h */,
+				6377F75B20BE0E1600F668E3 /* WSNetworkAddress.m */,
+				6377F75C20BE0E1600F668E3 /* WSPartialMerkleTree.h */,
+				6377F75D20BE0E1600F668E3 /* WSPartialMerkleTree.m */,
+				6377F75E20BE0E1600F668E3 /* WSPublicKey.h */,
+				6377F75F20BE0E1600F668E3 /* WSPublicKey.m */,
+				6377F76020BE0E1600F668E3 /* WSScript.h */,
+				6377F76120BE0E1600F668E3 /* WSScript.m */,
+				6377F76220BE0E1600F668E3 /* WSSeed.h */,
+				6377F76320BE0E1600F668E3 /* WSSeed.m */,
+				6377F76420BE0E1600F668E3 /* WSSeedGenerator.h */,
+				6377F76520BE0E1600F668E3 /* WSSeedGenerator.m */,
+				6377F76620BE0E1600F668E3 /* WSStorableBlock.h */,
+				6377F76720BE0E1600F668E3 /* WSStorableBlock.m */,
+				6377F76820BE0E1600F668E3 /* WSTransaction.h */,
+				6377F76920BE0E1600F668E3 /* WSTransaction.m */,
+				6377F76A20BE0E1600F668E3 /* WSTransactionInput.h */,
+				6377F76B20BE0E1600F668E3 /* WSTransactionInput.m */,
+				6377F76C20BE0E1600F668E3 /* WSTransactionOutPoint.h */,
+				6377F76D20BE0E1600F668E3 /* WSTransactionOutPoint.m */,
+				6377F76E20BE0E1600F668E3 /* WSTransactionOutput.h */,
+				6377F76F20BE0E1600F668E3 /* WSTransactionOutput.m */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		6377F77020BE0E1600F668E3 /* Currency */ = {
+			isa = PBXGroup;
+			children = (
+				6377F77120BE0E1600F668E3 /* WSBitcoinCurrency.h */,
+				6377F77220BE0E1600F668E3 /* WSBitcoinCurrency.m */,
+				6377F77320BE0E1600F668E3 /* WSCurrency.h */,
+				6377F77420BE0E1600F668E3 /* WSPhysicalCurrency.h */,
+				6377F77520BE0E1600F668E3 /* WSPhysicalCurrency.m */,
+			);
+			path = Currency;
+			sourceTree = "<group>";
+		};
+		6377F77620BE0E1600F668E3 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				6377F77720BE0E1600F668E3 /* WSBitcoinConstants.h */,
+				6377F77820BE0E1600F668E3 /* WSBitcoinConstants.m */,
+				6377F77920BE0E1600F668E3 /* WSConfig.h */,
+				6377F77A20BE0E1600F668E3 /* WSConfig.m */,
+				6377F77B20BE0E1600F668E3 /* WSErrors.h */,
+				6377F77C20BE0E1600F668E3 /* WSErrors.m */,
+				6377F77D20BE0E1600F668E3 /* WSLogging.h */,
+				6377F77E20BE0E1600F668E3 /* WSLogging.m */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		6377F77F20BE0E1600F668E3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6377F78020BE0E1600F668E3 /* WSBlockHeaderEntity.h */,
+				6377F78120BE0E1600F668E3 /* WSBlockHeaderEntity.m */,
+				6377F78220BE0E1600F668E3 /* WSCoreDataManager.h */,
+				6377F78320BE0E1600F668E3 /* WSCoreDataManager.m */,
+				6377F78420BE0E1600F668E3 /* WSPartialMerkleTreeEntity.h */,
+				6377F78520BE0E1600F668E3 /* WSPartialMerkleTreeEntity.m */,
+				6377F78620BE0E1600F668E3 /* WSStorableBlockEntity.h */,
+				6377F78720BE0E1600F668E3 /* WSStorableBlockEntity.m */,
+				6377F78820BE0E1600F668E3 /* WSTransactionEntity.h */,
+				6377F78920BE0E1600F668E3 /* WSTransactionEntity.m */,
+				6377F78A20BE0E1600F668E3 /* WSTransactionInputEntity.h */,
+				6377F78B20BE0E1600F668E3 /* WSTransactionInputEntity.m */,
+				6377F78C20BE0E1600F668E3 /* WSTransactionOutPointEntity.h */,
+				6377F78D20BE0E1600F668E3 /* WSTransactionOutPointEntity.m */,
+				6377F78E20BE0E1600F668E3 /* WSTransactionOutputEntity.h */,
+				6377F78F20BE0E1600F668E3 /* WSTransactionOutputEntity.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6377F79020BE0E1600F668E3 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				6377F79120BE0E1600F668E3 /* WSBlockChainDownloader.h */,
+				6377F79220BE0E1600F668E3 /* WSBlockChainDownloader.m */,
+				6377F79320BE0E1600F668E3 /* WSConnection.h */,
+				6377F79420BE0E1600F668E3 /* WSConnection.m */,
+				6377F79520BE0E1600F668E3 /* WSConnectionPool.h */,
+				6377F79620BE0E1600F668E3 /* WSConnectionPool.m */,
+				6377F79720BE0E1600F668E3 /* WSPeer.h */,
+				6377F79820BE0E1600F668E3 /* WSPeer.m */,
+				6377F79920BE0E1600F668E3 /* WSPeerGroup+Download.h */,
+				6377F79A20BE0E1600F668E3 /* WSPeerGroup+Download.m */,
+				6377F79B20BE0E1600F668E3 /* WSPeerGroup.h */,
+				6377F79C20BE0E1600F668E3 /* WSPeerGroup.m */,
+				6377F79D20BE0E1600F668E3 /* WSPeerGroupNotifier.h */,
+				6377F79E20BE0E1600F668E3 /* WSPeerGroupNotifier.m */,
+				6377F79F20BE0E1600F668E3 /* WSProtocolDeserializer.h */,
+				6377F7A020BE0E1600F668E3 /* WSProtocolDeserializer.m */,
+				6377F7A120BE0E1600F668E3 /* WSReachability.h */,
+				6377F7A220BE0E1600F668E3 /* WSReachability.m */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		6377F7A320BE0E1600F668E3 /* Parameters */ = {
+			isa = PBXGroup;
+			children = (
+				6377F7A420BE0E1600F668E3 /* WSNetworkType.h */,
+				6377F7A520BE0E1600F668E3 /* WSNetworkType.m */,
+				6377F7A620BE0E1600F668E3 /* WSParameters.h */,
+				6377F7A720BE0E1600F668E3 /* WSParameters.m */,
+				6377F7A820BE0E1600F668E3 /* WSParametersFactory.h */,
+				6377F7A920BE0E1600F668E3 /* WSParametersFactory.m */,
+				6377F7AA20BE0E1600F668E3 /* WSParametersFactoryMain.h */,
+				6377F7AB20BE0E1600F668E3 /* WSParametersFactoryMain.m */,
+				6377F7AC20BE0E1600F668E3 /* WSParametersFactoryRegtest.h */,
+				6377F7AD20BE0E1600F668E3 /* WSParametersFactoryRegtest.m */,
+				6377F7AE20BE0E1600F668E3 /* WSParametersFactoryTestnet3.h */,
+				6377F7AF20BE0E1600F668E3 /* WSParametersFactoryTestnet3.m */,
+			);
+			path = Parameters;
+			sourceTree = "<group>";
+		};
+		6377F7B020BE0E1600F668E3 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				6377F7B120BE0E1600F668E3 /* WSAbstractMessage.h */,
+				6377F7B220BE0E1600F668E3 /* WSAbstractMessage.m */,
+				6377F7B320BE0E1600F668E3 /* WSAbstractMessageInventoryBased.h */,
+				6377F7B420BE0E1600F668E3 /* WSAbstractMessageInventoryBased.m */,
+				6377F7B520BE0E1600F668E3 /* WSAbstractMessageLocatorBased.h */,
+				6377F7B620BE0E1600F668E3 /* WSAbstractMessageLocatorBased.m */,
+				6377F7B720BE0E1600F668E3 /* WSMessage.h */,
+				6377F7B820BE0E1600F668E3 /* WSMessage.m */,
+				6377F7B920BE0E1600F668E3 /* WSMessageAddr.h */,
+				6377F7BA20BE0E1600F668E3 /* WSMessageAddr.m */,
+				6377F7BB20BE0E1600F668E3 /* WSMessageBlock.h */,
+				6377F7BC20BE0E1600F668E3 /* WSMessageBlock.m */,
+				6377F7BD20BE0E1600F668E3 /* WSMessageFactory.h */,
+				6377F7BE20BE0E1600F668E3 /* WSMessageFactory.m */,
+				6377F7BF20BE0E1600F668E3 /* WSMessageFilterload.h */,
+				6377F7C020BE0E1600F668E3 /* WSMessageFilterload.m */,
+				6377F7C120BE0E1600F668E3 /* WSMessageGetaddr.h */,
+				6377F7C220BE0E1600F668E3 /* WSMessageGetaddr.m */,
+				6377F7C320BE0E1600F668E3 /* WSMessageGetblocks.h */,
+				6377F7C420BE0E1600F668E3 /* WSMessageGetblocks.m */,
+				6377F7C520BE0E1600F668E3 /* WSMessageGetdata.h */,
+				6377F7C620BE0E1600F668E3 /* WSMessageGetdata.m */,
+				6377F7C720BE0E1600F668E3 /* WSMessageGetheaders.h */,
+				6377F7C820BE0E1600F668E3 /* WSMessageGetheaders.m */,
+				6377F7C920BE0E1600F668E3 /* WSMessageHeaders.h */,
+				6377F7CA20BE0E1600F668E3 /* WSMessageHeaders.m */,
+				6377F7CB20BE0E1600F668E3 /* WSMessageInv.h */,
+				6377F7CC20BE0E1600F668E3 /* WSMessageInv.m */,
+				6377F7CD20BE0E1600F668E3 /* WSMessageMempool.h */,
+				6377F7CE20BE0E1600F668E3 /* WSMessageMempool.m */,
+				6377F7CF20BE0E1600F668E3 /* WSMessageMerkleblock.h */,
+				6377F7D020BE0E1600F668E3 /* WSMessageMerkleblock.m */,
+				6377F7D120BE0E1600F668E3 /* WSMessageNotfound.h */,
+				6377F7D220BE0E1600F668E3 /* WSMessageNotfound.m */,
+				6377F7D320BE0E1600F668E3 /* WSMessagePing.h */,
+				6377F7D420BE0E1600F668E3 /* WSMessagePing.m */,
+				6377F7D520BE0E1600F668E3 /* WSMessagePong.h */,
+				6377F7D620BE0E1600F668E3 /* WSMessagePong.m */,
+				6377F7D720BE0E1600F668E3 /* WSMessageReject.h */,
+				6377F7D820BE0E1600F668E3 /* WSMessageReject.m */,
+				6377F7D920BE0E1600F668E3 /* WSMessageTx.h */,
+				6377F7DA20BE0E1600F668E3 /* WSMessageTx.m */,
+				6377F7DB20BE0E1600F668E3 /* WSMessageVerack.h */,
+				6377F7DC20BE0E1600F668E3 /* WSMessageVerack.m */,
+				6377F7DD20BE0E1600F668E3 /* WSMessageVersion.h */,
+				6377F7DE20BE0E1600F668E3 /* WSMessageVersion.m */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		6377F7DF20BE0E1600F668E3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				6377F7E020BE0E1600F668E3 /* NSData+Base58.h */,
+				6377F7E120BE0E1600F668E3 /* NSData+Base58.m */,
+				6377F7E220BE0E1600F668E3 /* NSData+Binary.h */,
+				6377F7E320BE0E1600F668E3 /* NSData+Binary.m */,
+				6377F7E420BE0E1600F668E3 /* NSData+Hash.h */,
+				6377F7E520BE0E1600F668E3 /* NSData+Hash.m */,
+				6377F7E620BE0E1600F668E3 /* NSString+Base58.h */,
+				6377F7E720BE0E1600F668E3 /* NSString+Base58.m */,
+				6377F7E820BE0E1600F668E3 /* NSString+Binary.h */,
+				6377F7E920BE0E1600F668E3 /* NSString+Binary.m */,
+				6377F7EA20BE0E1600F668E3 /* WSGCDTimer.h */,
+				6377F7EB20BE0E1600F668E3 /* WSGCDTimer.m */,
+				6377F7EC20BE0E1600F668E3 /* WSIndentableDescription.h */,
+				6377F7ED20BE0E1600F668E3 /* WSLogFormatter.h */,
+				6377F7EE20BE0E1600F668E3 /* WSLogFormatter.m */,
+				6377F7EF20BE0E1600F668E3 /* WSSized.h */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		6377F7F020BE0E1600F668E3 /* Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				6377F7F120BE0E1600F668E3 /* WSHDWallet.h */,
+				6377F7F220BE0E1600F668E3 /* WSHDWallet.m */,
+				6377F7F320BE0E1600F668E3 /* WSTransactionMetadata.h */,
+				6377F7F420BE0E1600F668E3 /* WSTransactionMetadata.m */,
+				6377F7F520BE0E1600F668E3 /* WSWallet.h */,
+				6377F7F620BE0E1600F668E3 /* WSWallet.m */,
+			);
+			path = Wallet;
+			sourceTree = "<group>";
+		};
+		6377F7F720BE0E1600F668E3 /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				6377F7F820BE0E1600F668E3 /* WSJSONClient.h */,
+				6377F7F920BE0E1600F668E3 /* WSJSONClient.m */,
+				6377F7FA20BE0E1600F668E3 /* WSWebExplorer.h */,
+				6377F7FB20BE0E1600F668E3 /* WSWebExplorer.m */,
+				6377F7FC20BE0E1600F668E3 /* WSWebExplorerBiteasy.h */,
+				6377F7FD20BE0E1600F668E3 /* WSWebExplorerBiteasy.m */,
+				6377F7FE20BE0E1600F668E3 /* WSWebExplorerBlockchain.h */,
+				6377F7FF20BE0E1600F668E3 /* WSWebExplorerBlockchain.m */,
+				6377F80020BE0E1600F668E3 /* WSWebExplorerBlockExplorer.h */,
+				6377F80120BE0E1600F668E3 /* WSWebExplorerBlockExplorer.m */,
+				6377F80220BE0E1600F668E3 /* WSWebExplorerBlockr.h */,
+				6377F80320BE0E1600F668E3 /* WSWebExplorerBlockr.m */,
+				6377F80420BE0E1600F668E3 /* WSWebTicker.h */,
+				6377F80520BE0E1600F668E3 /* WSWebTicker.m */,
+				6377F80620BE0E1600F668E3 /* WSWebTickerBitPay.h */,
+				6377F80720BE0E1600F668E3 /* WSWebTickerBitPay.m */,
+				6377F80820BE0E1600F668E3 /* WSWebTickerBitstamp.h */,
+				6377F80920BE0E1600F668E3 /* WSWebTickerBitstamp.m */,
+				6377F80A20BE0E1600F668E3 /* WSWebTickerBlockchain.h */,
+				6377F80B20BE0E1600F668E3 /* WSWebTickerBlockchain.m */,
+				6377F80C20BE0E1600F668E3 /* WSWebTickerMonitor.h */,
+				6377F80D20BE0E1600F668E3 /* WSWebTickerMonitor.m */,
+			);
+			path = Web;
+			sourceTree = "<group>";
+		};
+		6395BB4E20C0192D002EA989 /* Lumberjack */ = {
+			isa = PBXGroup;
+			children = (
+				6395BB4F20C0192D002EA989 /* CLI */,
+				6395BB5220C0192D002EA989 /* CocoaLumberjack.h */,
+				6395BB5320C0192D002EA989 /* CocoaLumberjack.swift */,
+				6395BB5420C0192D002EA989 /* DDAbstractDatabaseLogger.h */,
+				6395BB5520C0192D002EA989 /* DDAbstractDatabaseLogger.m */,
+				6395BB5620C0192D002EA989 /* DDASLLogCapture.h */,
+				6395BB5720C0192D002EA989 /* DDASLLogCapture.m */,
+				6395BB5820C0192D002EA989 /* DDASLLogger.h */,
+				6395BB5920C0192D002EA989 /* DDASLLogger.m */,
+				6395BB5A20C0192D002EA989 /* DDAssertMacros.h */,
+				6395BB5B20C0192D002EA989 /* DDFileLogger.h */,
+				6395BB5C20C0192D002EA989 /* DDFileLogger.m */,
+				6395BB5D20C0192D002EA989 /* DDLegacyMacros.h */,
+				6395BB5E20C0192D002EA989 /* DDLog+LOGV.h */,
+				6395BB5F20C0192D002EA989 /* DDLog.h */,
+				6395BB6020C0192D002EA989 /* DDLog.m */,
+				6395BB6120C0192D002EA989 /* DDLogMacros.h */,
+				6395BB6220C0192D002EA989 /* DDOSLogger.h */,
+				6395BB6320C0192D002EA989 /* DDOSLogger.m */,
+				6395BB6420C0192D002EA989 /* DDTTYLogger.h */,
+				6395BB6520C0192D002EA989 /* DDTTYLogger.m */,
+				6395BB6620C0192D002EA989 /* Extensions */,
+			);
+			path = Lumberjack;
+			sourceTree = "<group>";
+		};
+		6395BB4F20C0192D002EA989 /* CLI */ = {
+			isa = PBXGroup;
+			children = (
+				6395BB5020C0192D002EA989 /* CLIColor.h */,
+				6395BB5120C0192D002EA989 /* CLIColor.m */,
+			);
+			path = CLI;
+			sourceTree = "<group>";
+		};
+		6395BB6620C0192D002EA989 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6395BB6720C0192D002EA989 /* DDContextFilterLogFormatter.h */,
+				6395BB6820C0192D002EA989 /* DDContextFilterLogFormatter.m */,
+				6395BB6920C0192D002EA989 /* DDDispatchQueueLogFormatter.h */,
+				6395BB6A20C0192D002EA989 /* DDDispatchQueueLogFormatter.m */,
+				6395BB6B20C0192D002EA989 /* DDMultiFormatter.h */,
+				6395BB6C20C0192D002EA989 /* DDMultiFormatter.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		63F66C0B20B421BF007DF79D /* Key */ = {
 			isa = PBXGroup;
 			children = (
@@ -572,6 +1576,7 @@
 			isa = PBXGroup;
 			children = (
 				63F66C2A20B4B511007DF79D /* Bitcoin.swift */,
+				6377EF2D20BC6DA900F668E3 /* BitcoinNetwork.swift */,
 			);
 			path = Bitcoin;
 			sourceTree = "<group>";
@@ -653,15 +1658,150 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6377F89320BE0E1600F668E3 /* WSStorableBlock+BlockChain.h in Headers */,
+				6377F88820BE0E1600F668E3 /* WSBIP39.h in Headers */,
+				6377F94F20BE0E1700F668E3 /* WSWebExplorerBlockExplorer.h in Headers */,
+				6377F88F20BE0E1600F668E3 /* WSBlockStore.h in Headers */,
+				6377F8B820BE0E1700F668E3 /* WSScript.h in Headers */,
+				6377F91520BE0E1700F668E3 /* WSMessageGetblocks.h in Headers */,
 				6327C19320B839D500CB2017 /* sc.h in Headers */,
+				6377F92920BE0E1700F668E3 /* WSMessageReject.h in Headers */,
+				6377F94920BE0E1700F668E3 /* WSWebExplorer.h in Headers */,
+				6377F8C420BE0E1700F668E3 /* WSTransactionOutPoint.h in Headers */,
+				6377F8EF20BE0E1700F668E3 /* WSPeerGroup.h in Headers */,
+				6377F94320BE0E1700F668E3 /* WSTransactionMetadata.h in Headers */,
+				6377F8FB20BE0E1700F668E3 /* WSParametersFactory.h in Headers */,
+				6377F93320BE0E1700F668E3 /* NSData+Binary.h in Headers */,
 				6327C18920B839D500CB2017 /* fe.h in Headers */,
+				6377F95920BE0E1700F668E3 /* WSWebTickerBlockchain.h in Headers */,
+				6377F95320BE0E1700F668E3 /* WSWebTicker.h in Headers */,
+				6377F88420BE0E1600F668E3 /* WSBIP37.h in Headers */,
+				6377F90520BE0E1700F668E3 /* WSAbstractMessageInventoryBased.h in Headers */,
+				6377F90D20BE0E1700F668E3 /* WSMessageBlock.h in Headers */,
+				6377F8D920BE0E1700F668E3 /* WSPartialMerkleTreeEntity.h in Headers */,
+				6377F95720BE0E1700F668E3 /* WSWebTickerBitstamp.h in Headers */,
+				6377F94720BE0E1700F668E3 /* WSJSONClient.h in Headers */,
+				6377F92120BE0E1700F668E3 /* WSMessageMerkleblock.h in Headers */,
+				6395BB7B20C0192D002EA989 /* DDLog+LOGV.h in Headers */,
+				6377F91720BE0E1700F668E3 /* WSMessageGetdata.h in Headers */,
+				6377F91F20BE0E1700F668E3 /* WSMessageMempool.h in Headers */,
+				6377F3F720BDACE500F668E3 /* GCDAsyncUdpSocket.h in Headers */,
+				6377F90720BE0E1700F668E3 /* WSAbstractMessageLocatorBased.h in Headers */,
+				6377F92B20BE0E1700F668E3 /* WSMessageTx.h in Headers */,
+				6395BB7720C0192D002EA989 /* DDAssertMacros.h in Headers */,
+				6377F8BA20BE0E1700F668E3 /* WSSeed.h in Headers */,
+				6377F90120BE0E1700F668E3 /* WSParametersFactoryTestnet3.h in Headers */,
+				6377F8B620BE0E1700F668E3 /* WSPublicKey.h in Headers */,
+				6377F90F20BE0E1700F668E3 /* WSMessageFactory.h in Headers */,
+				6377F93520BE0E1700F668E3 /* NSData+Hash.h in Headers */,
+				6377F93920BE0E1700F668E3 /* NSString+Binary.h in Headers */,
+				6377F92320BE0E1700F668E3 /* WSMessageNotfound.h in Headers */,
+				6377F89820BE0E1600F668E3 /* WSBlock.h in Headers */,
+				6377F8C020BE0E1700F668E3 /* WSTransaction.h in Headers */,
+				6377F94520BE0E1700F668E3 /* WSWallet.h in Headers */,
+				6377F8E520BE0E1700F668E3 /* WSBlockChainDownloader.h in Headers */,
+				6377F8FD20BE0E1700F668E3 /* WSParametersFactoryMain.h in Headers */,
+				6377F8AA20BE0E1700F668E3 /* WSInventory.h in Headers */,
+				6395BB8520C0192D002EA989 /* DDDispatchQueueLogFormatter.h in Headers */,
+				6377F8A420BE0E1700F668E3 /* WSHash160.h in Headers */,
+				6395BB8120C0192D002EA989 /* DDTTYLogger.h in Headers */,
+				6377F94120BE0E1700F668E3 /* WSHDWallet.h in Headers */,
+				6377F8F920BE0E1700F668E3 /* WSParameters.h in Headers */,
+				6377F8C220BE0E1700F668E3 /* WSTransactionInput.h in Headers */,
+				6377F95B20BE0E1700F668E3 /* WSWebTickerMonitor.h in Headers */,
+				6377F8DB20BE0E1700F668E3 /* WSStorableBlockEntity.h in Headers */,
+				6377F91D20BE0E1700F668E3 /* WSMessageInv.h in Headers */,
+				6377F8D520BE0E1700F668E3 /* WSBlockHeaderEntity.h in Headers */,
+				6377F3F520BDACE500F668E3 /* GCDAsyncSocket.h in Headers */,
+				6377F93E20BE0E1700F668E3 /* WSLogFormatter.h in Headers */,
+				6377F94D20BE0E1700F668E3 /* WSWebExplorerBlockchain.h in Headers */,
+				6395BB7820C0192D002EA989 /* DDFileLogger.h in Headers */,
+				6395BB7E20C0192D002EA989 /* DDLogMacros.h in Headers */,
+				6377F8F120BE0E1700F668E3 /* WSPeerGroupNotifier.h in Headers */,
+				6377F91320BE0E1700F668E3 /* WSMessageGetaddr.h in Headers */,
+				6377F8F720BE0E1700F668E3 /* WSNetworkType.h in Headers */,
+				6377F3F920BDACE500F668E3 /* AsyncSocket.h in Headers */,
+				6377F92F20BE0E1700F668E3 /* WSMessageVersion.h in Headers */,
+				6377F8AE20BE0E1700F668E3 /* WSMacrosCore.h in Headers */,
+				6377F8D320BE0E1700F668E3 /* WSLogging.h in Headers */,
+				6395BB7520C0192D002EA989 /* DDASLLogger.h in Headers */,
+				6377F8DF20BE0E1700F668E3 /* WSTransactionInputEntity.h in Headers */,
+				6377F8E720BE0E1700F668E3 /* WSConnection.h in Headers */,
+				6377F8CD20BE0E1700F668E3 /* WSBitcoinConstants.h in Headers */,
+				6377F93D20BE0E1700F668E3 /* WSIndentableDescription.h in Headers */,
+				6377F95520BE0E1700F668E3 /* WSWebTickerBitPay.h in Headers */,
+				6377F94020BE0E1700F668E3 /* WSSized.h in Headers */,
 				6327C19620B839D500CB2017 /* sha512.h in Headers */,
+				6377F93B20BE0E1700F668E3 /* WSGCDTimer.h in Headers */,
+				6377F8B020BE0E1700F668E3 /* WSMacrosPrivate.h in Headers */,
+				6377F88D20BE0E1600F668E3 /* WSBlockChain.h in Headers */,
+				6395BB6D20C0192D002EA989 /* CLIColor.h in Headers */,
+				6377F91920BE0E1700F668E3 /* WSMessageGetheaders.h in Headers */,
+				6377F3EF20BDACE500F668E3 /* AutoCoding.h in Headers */,
+				6377F8BE20BE0E1700F668E3 /* WSStorableBlock.h in Headers */,
+				6377F8A220BE0E1700F668E3 /* WSFilteredBlock.h in Headers */,
+				6377F8AC20BE0E1700F668E3 /* WSKey.h in Headers */,
+				6377F88020BE0E1600F668E3 /* WSBIP21.h in Headers */,
+				6377F89E20BE0E1700F668E3 /* WSBloomFilter.h in Headers */,
+				6377F88620BE0E1600F668E3 /* WSBIP38.h in Headers */,
+				6377F8D720BE0E1700F668E3 /* WSCoreDataManager.h in Headers */,
+				6377F88A20BE0E1600F668E3 /* WSBIP44.h in Headers */,
+				6395BB7320C0192D002EA989 /* DDASLLogCapture.h in Headers */,
 				6327C19120B839D500CB2017 /* precomp_data.h in Headers */,
+				6377F89520BE0E1600F668E3 /* WSAbstractKey.h in Headers */,
+				6377F8A020BE0E1700F668E3 /* WSBuffer.h in Headers */,
+				6395BB7A20C0192D002EA989 /* DDLegacyMacros.h in Headers */,
+				6395BB8320C0192D002EA989 /* DDContextFilterLogFormatter.h in Headers */,
+				6377F3FB20BDACE500F668E3 /* AsyncUdpSocket.h in Headers */,
+				6395BB8720C0192D002EA989 /* DDMultiFormatter.h in Headers */,
+				6395BB7F20C0192D002EA989 /* DDOSLogger.h in Headers */,
+				6377F8F520BE0E1700F668E3 /* WSReachability.h in Headers */,
+				6377F8A620BE0E1700F668E3 /* WSHash256.h in Headers */,
+				6377F8E120BE0E1700F668E3 /* WSTransactionOutPointEntity.h in Headers */,
+				6377F8BC20BE0E1700F668E3 /* WSSeedGenerator.h in Headers */,
 				2167C344209B431500A8653E /* Internal.h in Headers */,
+				6377F8E920BE0E1700F668E3 /* WSConnectionPool.h in Headers */,
+				6377F8F320BE0E1700F668E3 /* WSProtocolDeserializer.h in Headers */,
+				6377F95120BE0E1700F668E3 /* WSWebExplorerBlockr.h in Headers */,
 				6327C18D20B839D500CB2017 /* ed25519.h in Headers */,
 				630DC5BC20AB2BC00005800A /* NRLWalletSDK.h in Headers */,
+				6377F89620BE0E1600F668E3 /* WSAddress.h in Headers */,
+				6377F8E320BE0E1700F668E3 /* WSTransactionOutputEntity.h in Headers */,
+				6377F8EB20BE0E1700F668E3 /* WSPeer.h in Headers */,
+				6377F8ED20BE0E1700F668E3 /* WSPeerGroup+Download.h in Headers */,
+				6377F8B420BE0E1700F668E3 /* WSPartialMerkleTree.h in Headers */,
 				6327C18C20B839D500CB2017 /* ge.h in Headers */,
+				6377F88C20BE0E1600F668E3 /* BitcoinSPV.h in Headers */,
+				6395BB7120C0192D002EA989 /* DDAbstractDatabaseLogger.h in Headers */,
+				6377F8C620BE0E1700F668E3 /* WSTransactionOutput.h in Headers */,
+				6377F93720BE0E1700F668E3 /* NSString+Base58.h in Headers */,
+				6377F88220BE0E1600F668E3 /* WSBIP32.h in Headers */,
+				6377F8DD20BE0E1700F668E3 /* WSTransactionEntity.h in Headers */,
+				6377F89C20BE0E1700F668E3 /* WSBlockLocator.h in Headers */,
+				6377F89A20BE0E1600F668E3 /* WSBlockHeader.h in Headers */,
+				6377F90B20BE0E1700F668E3 /* WSMessageAddr.h in Headers */,
+				6377F91B20BE0E1700F668E3 /* WSMessageHeaders.h in Headers */,
+				6377F94B20BE0E1700F668E3 /* WSWebExplorerBiteasy.h in Headers */,
+				6377F3F420BDACE500F668E3 /* CocoaAsyncSocket.h in Headers */,
+				6377F8CF20BE0E1700F668E3 /* WSConfig.h in Headers */,
+				6377F92520BE0E1700F668E3 /* WSMessagePing.h in Headers */,
+				6377F8D120BE0E1700F668E3 /* WSErrors.h in Headers */,
 				6327C18A20B839D500CB2017 /* fixedint.h in Headers */,
+				6377F92D20BE0E1700F668E3 /* WSMessageVerack.h in Headers */,
+				6377F93120BE0E1700F668E3 /* NSData+Base58.h in Headers */,
+				6395BB6F20C0192D002EA989 /* CocoaLumberjack.h in Headers */,
+				6377F8B220BE0E1700F668E3 /* WSNetworkAddress.h in Headers */,
+				6377F8FF20BE0E1700F668E3 /* WSParametersFactoryRegtest.h in Headers */,
+				6377F8A820BE0E1700F668E3 /* WSHDKeyring.h in Headers */,
+				6395BB7C20C0192D002EA989 /* DDLog.h in Headers */,
+				6377F92720BE0E1700F668E3 /* WSMessagePong.h in Headers */,
+				6377F8CB20BE0E1700F668E3 /* WSPhysicalCurrency.h in Headers */,
+				6377F89120BE0E1600F668E3 /* WSMemoryBlockStore.h in Headers */,
+				6377F8CA20BE0E1700F668E3 /* WSCurrency.h in Headers */,
+				6377F90920BE0E1700F668E3 /* WSMessage.h in Headers */,
+				6377F8C820BE0E1700F668E3 /* WSBitcoinCurrency.h in Headers */,
+				6377F91120BE0E1700F668E3 /* WSMessageFilterload.h in Headers */,
+				6377F90320BE0E1700F668E3 /* WSAbstractMessage.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -721,6 +1861,7 @@
 					};
 					2167C2F2209AF09D00A8653E = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 				};
 			};
@@ -750,7 +1891,7 @@
 			files = (
 				6327C19020B839D500CB2017 /* license.txt in Resources */,
 				630DC5D620AB35A80005800A /* Readme.md in Resources */,
-				630DC72B20ABF0710005800A /* README.md in Resources */,
+				6377F3F120BDACE500F668E3 /* LICENCE.md in Resources */,
 				630DC72A20ABF0710005800A /* LICENSE.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -773,98 +1914,225 @@
 			buildActionMask = 2147483647;
 			files = (
 				63F66C6520B4C502007DF79D /* Cancellable.swift in Sources */,
+				6377F8B520BE0E1700F668E3 /* WSPartialMerkleTree.m in Sources */,
 				6327C1AE20B86C7A00CB2017 /* WordList.swift in Sources */,
+				6377F92820BE0E1700F668E3 /* WSMessagePong.m in Sources */,
+				6377F8D620BE0E1700F668E3 /* WSBlockHeaderEntity.m in Sources */,
 				63F66C7520B4C502007DF79D /* URLEncodedSerialization.swift in Sources */,
 				2167C318209AF60500A8653E /* Spanish.swift in Sources */,
+				6377F89B20BE0E1700F668E3 /* WSBlockHeader.m in Sources */,
+				6377F93420BE0E1700F668E3 /* NSData+Binary.m in Sources */,
+				6377F95C20BE0E1700F668E3 /* WSWebTickerMonitor.m in Sources */,
 				630DC72F20ABF0710005800A /* SipHasher.swift in Sources */,
 				2167C316209AF56500A8653E /* Japanese.swift in Sources */,
+				6377F8B320BE0E1700F668E3 /* WSNetworkAddress.m in Sources */,
+				6377F89020BE0E1600F668E3 /* WSBlockStore.m in Sources */,
+				6377F90620BE0E1700F668E3 /* WSAbstractMessageInventoryBased.m in Sources */,
 				63F66C3420B4B671007DF79D /* Balance.swift in Sources */,
 				6327C1BC20B86D7D00CB2017 /* DateFormatter+ISOParsing.swift in Sources */,
 				2171AA34209B481200EA283E /* NRLWalletSDKError.swift in Sources */,
+				6377F91820BE0E1700F668E3 /* WSMessageGetdata.m in Sources */,
 				6327C1AA20B86C7A00CB2017 /* DataConvertable.swift in Sources */,
+				6377F88520BE0E1600F668E3 /* WSBIP37.m in Sources */,
 				63F66C1420B421BF007DF79D /* NRLWallet.swift in Sources */,
+				6377F94420BE0E1700F668E3 /* WSTransactionMetadata.m in Sources */,
 				2167C314209AF4B100A8653E /* Italian.swift in Sources */,
+				6377F92020BE0E1700F668E3 /* WSMessageMempool.m in Sources */,
 				6327C19520B839D500CB2017 /* sha512.c in Sources */,
 				63F66C6820B4C502007DF79D /* HTTPClientType.swift in Sources */,
 				6327C18F20B839D500CB2017 /* keypair.c in Sources */,
+				6377F8F220BE0E1700F668E3 /* WSPeerGroupNotifier.m in Sources */,
 				6327C13720B6363500CB2017 /* SMP+Extensions.swift in Sources */,
 				63F66C6B20B4C502007DF79D /* Batch.swift in Sources */,
+				6377F8EC20BE0E1700F668E3 /* WSPeer.m in Sources */,
+				6377F88920BE0E1600F668E3 /* WSBIP39.m in Sources */,
+				6377F88B20BE0E1600F668E3 /* WSBIP44.m in Sources */,
 				63F66C4A20B4B722007DF79D /* EllipticCurveEncrypterSecp256k1.swift in Sources */,
 				2167C345209B431500A8653E /* Internal.m in Sources */,
 				2167C321209AF7F300A8653E /* String+MnemonicData.swift in Sources */,
 				63F66C3720B4B671007DF79D /* SentTransaction.swift in Sources */,
+				6377F95220BE0E1700F668E3 /* WSWebExplorerBlockr.m in Sources */,
 				6327C1AC20B86C7A00CB2017 /* Mnemonic.swift in Sources */,
 				6327C13A20B6526300CB2017 /* Litecoin.swift in Sources */,
 				63F66C7320B4C502007DF79D /* JSONRPC.swift in Sources */,
+				6377F90A20BE0E1700F668E3 /* WSMessage.m in Sources */,
 				6327C1A820B86C7A00CB2017 /* BigInt+Extension.swift in Sources */,
+				6395BB7D20C0192D002EA989 /* DDLog.m in Sources */,
+				6377F8D820BE0E1700F668E3 /* WSCoreDataManager.m in Sources */,
+				6377F8C720BE0E1700F668E3 /* WSTransactionOutput.m in Sources */,
+				6395BB8020C0192D002EA989 /* DDOSLogger.m in Sources */,
+				6377F90E20BE0E1700F668E3 /* WSMessageBlock.m in Sources */,
+				6377F89220BE0E1600F668E3 /* WSMemoryBlockStore.m in Sources */,
 				2167C312209AF38500A8653E /* French.swift in Sources */,
+				6395BB7920C0192D002EA989 /* DDFileLogger.m in Sources */,
+				6377F89920BE0E1600F668E3 /* WSBlock.m in Sources */,
 				63F66C6620B4C502007DF79D /* Configuration.swift in Sources */,
+				6377F3FA20BDACE500F668E3 /* AsyncSocket.m in Sources */,
 				6327C1AD20B86C7A00CB2017 /* RIPEMD160.swift in Sources */,
 				6327C19420B839D500CB2017 /* seed.c in Sources */,
+				6377F8F620BE0E1700F668E3 /* WSReachability.m in Sources */,
 				6327C1BE20B86D7D00CB2017 /* String+Base64.swift in Sources */,
+				6377F3F820BDACE500F668E3 /* GCDAsyncUdpSocket.m in Sources */,
+				6377F8E820BE0E1700F668E3 /* WSConnection.m in Sources */,
 				6327C18B20B839D500CB2017 /* ge.c in Sources */,
 				63F66C6F20B4C502007DF79D /* IDGenerator.swift in Sources */,
 				6327C19720B839D500CB2017 /* sign.c in Sources */,
+				6377F8BB20BE0E1700F668E3 /* WSSeed.m in Sources */,
 				6327C18E20B839D500CB2017 /* key_exchange.c in Sources */,
+				6377F3FC20BDACE500F668E3 /* AsyncUdpSocket.m in Sources */,
 				6327C1C120B86D7D00CB2017 /* String+Base32.swift in Sources */,
 				2167C31F209AF7F300A8653E /* Data+NRLBitArray.swift in Sources */,
+				6377F90C20BE0E1700F668E3 /* WSMessageAddr.m in Sources */,
 				6327C1C720B8812700CB2017 /* Seed.swift in Sources */,
 				63F66C6720B4C502007DF79D /* HTTPClient.swift in Sources */,
 				2167C310209AF2F700A8653E /* English.swift in Sources */,
+				6377F94220BE0E1700F668E3 /* WSHDWallet.m in Sources */,
+				6377F8A320BE0E1700F668E3 /* WSFilteredBlock.m in Sources */,
+				6377F92620BE0E1700F668E3 /* WSMessagePing.m in Sources */,
 				63F66C7120B4C502007DF79D /* JSONRPCRequest.swift in Sources */,
+				6395BB7220C0192D002EA989 /* DDAbstractDatabaseLogger.m in Sources */,
+				6395BB7020C0192D002EA989 /* CocoaLumberjack.swift in Sources */,
+				6377F93220BE0E1700F668E3 /* NSData+Base58.m in Sources */,
+				6377F94820BE0E1700F668E3 /* WSJSONClient.m in Sources */,
+				6377F8A920BE0E1700F668E3 /* WSHDKeyring.m in Sources */,
+				6377F94E20BE0E1700F668E3 /* WSWebExplorerBlockchain.m in Sources */,
 				6327C1C320B86D7D00CB2017 /* UtilBase32.swift in Sources */,
 				630DC73A20AC2C4F0005800A /* CryptoExtensions.swift in Sources */,
+				6377F95620BE0E1700F668E3 /* WSWebTickerBitPay.m in Sources */,
+				6377F95020BE0E1700F668E3 /* WSWebExplorerBlockExplorer.m in Sources */,
+				6377F8BF20BE0E1700F668E3 /* WSStorableBlock.m in Sources */,
+				6377F8AF20BE0E1700F668E3 /* WSMacrosCore.m in Sources */,
 				63F66C1320B421BF007DF79D /* Network.swift in Sources */,
 				6327C1C020B86D7D00CB2017 /* Data+Base32.swift in Sources */,
+				6377F8B120BE0E1700F668E3 /* WSMacrosPrivate.m in Sources */,
+				6377F8E620BE0E1700F668E3 /* WSBlockChainDownloader.m in Sources */,
 				630DC74320AC2E210005800A /* Dictionary+Extension.swift in Sources */,
+				6377F89F20BE0E1700F668E3 /* WSBloomFilter.m in Sources */,
+				6377F8EE20BE0E1700F668E3 /* WSPeerGroup+Download.m in Sources */,
 				63F66C4320B4B722007DF79D /* Converter.swift in Sources */,
+				6377F93020BE0E1700F668E3 /* WSMessageVersion.m in Sources */,
+				6377F8FA20BE0E1700F668E3 /* WSParameters.m in Sources */,
+				6377F89420BE0E1600F668E3 /* WSStorableBlock+BlockChain.m in Sources */,
 				6327C1C920B89BBB00CB2017 /* VersionByte.swift in Sources */,
 				6327C1A920B86C7A00CB2017 /* SMP.swift in Sources */,
 				63F66C3520B4B671007DF79D /* BlockParameter.swift in Sources */,
+				6377EF2E20BC6DA900F668E3 /* BitcoinNetwork.swift in Sources */,
 				6327C19220B839D500CB2017 /* sc.c in Sources */,
+				6377F8F020BE0E1700F668E3 /* WSPeerGroup.m in Sources */,
+				6377F8DC20BE0E1700F668E3 /* WSStorableBlockEntity.m in Sources */,
+				6395BB8620C0192D002EA989 /* DDDispatchQueueLogFormatter.m in Sources */,
 				63F66C1220B421BF007DF79D /* NRLPublicKey.swift in Sources */,
+				6377F93A20BE0E1700F668E3 /* NSString+Binary.m in Sources */,
 				63F66C3820B4B671007DF79D /* Transaction.swift in Sources */,
+				6377F8B920BE0E1700F668E3 /* WSScript.m in Sources */,
 				634EB2AC20AC2EAB00ACAA06 /* NSRegularExpressionExtension.swift in Sources */,
 				630DC72C20ABF0710005800A /* Primitive Types.swift in Sources */,
+				6377F8BD20BE0E1700F668E3 /* WSSeedGenerator.m in Sources */,
 				6327C13E20B815D100CB2017 /* Stellar.swift in Sources */,
+				6377F8B720BE0E1700F668E3 /* WSPublicKey.m in Sources */,
+				6377F90020BE0E1700F668E3 /* WSParametersFactoryRegtest.m in Sources */,
+				63F4FD4A20C585F700215698 /* WSCoreDataBlockStore.xcdatamodel in Sources */,
+				6377F88320BE0E1600F668E3 /* WSBIP32.m in Sources */,
 				6327C1AB20B86C7A00CB2017 /* HDCrypto.swift in Sources */,
+				6377F8E420BE0E1700F668E3 /* WSTransactionOutputEntity.m in Sources */,
+				6377F91C20BE0E1700F668E3 /* WSMessageHeaders.m in Sources */,
 				63F66C1120B421BF007DF79D /* NRLPrivateKey.swift in Sources */,
+				6377F8DE20BE0E1700F668E3 /* WSTransactionEntity.m in Sources */,
 				63F66C7220B4C502007DF79D /* Etherscan.swift in Sources */,
+				6377F89720BE0E1600F668E3 /* WSAddress.m in Sources */,
+				6377F93F20BE0E1700F668E3 /* WSLogFormatter.m in Sources */,
+				6377F94620BE0E1700F668E3 /* WSWallet.m in Sources */,
+				6377F8D220BE0E1700F668E3 /* WSErrors.m in Sources */,
+				6377F91E20BE0E1700F668E3 /* WSMessageInv.m in Sources */,
+				6377F8D420BE0E1700F668E3 /* WSLogging.m in Sources */,
+				6377F8FE20BE0E1700F668E3 /* WSParametersFactoryMain.m in Sources */,
 				6327C18820B839D500CB2017 /* fe.c in Sources */,
+				6377F91A20BE0E1700F668E3 /* WSMessageGetheaders.m in Sources */,
+				6377F90420BE0E1700F668E3 /* WSAbstractMessage.m in Sources */,
 				63F66C6920B4C502007DF79D /* Method.swift in Sources */,
+				6377F93820BE0E1700F668E3 /* NSString+Base58.m in Sources */,
+				6377F95A20BE0E1700F668E3 /* WSWebTickerBlockchain.m in Sources */,
 				63F66C4520B4B722007DF79D /* EIP55.swift in Sources */,
 				63F66C7020B4C502007DF79D /* JSONRPCError.swift in Sources */,
 				63F66C7420B4C502007DF79D /* JSONBodySerialization.swift in Sources */,
+				6377F8F420BE0E1700F668E3 /* WSProtocolDeserializer.m in Sources */,
+				6377F93C20BE0E1700F668E3 /* WSGCDTimer.m in Sources */,
+				6377F91420BE0E1700F668E3 /* WSMessageGetaddr.m in Sources */,
+				6377F8AB20BE0E1700F668E3 /* WSInventory.m in Sources */,
+				6377F92220BE0E1700F668E3 /* WSMessageMerkleblock.m in Sources */,
+				6377F8FC20BE0E1700F668E3 /* WSParametersFactory.m in Sources */,
+				6377F8A120BE0E1700F668E3 /* WSBuffer.m in Sources */,
 				6327C1BF20B86D7D00CB2017 /* Data+CRC.swift in Sources */,
+				6377F93620BE0E1700F668E3 /* NSData+Hash.m in Sources */,
+				6377F92E20BE0E1700F668E3 /* WSMessageVerack.m in Sources */,
 				6327C1C220B86D7D00CB2017 /* StringExtension.swift in Sources */,
+				6377F8E020BE0E1700F668E3 /* WSTransactionInputEntity.m in Sources */,
 				63F66C2B20B4B511007DF79D /* Bitcoin.swift in Sources */,
 				63F66C2020B49074007DF79D /* NRLCoin.swift in Sources */,
+				6377F89D20BE0E1700F668E3 /* WSBlockLocator.m in Sources */,
 				63F66C3320B4B671007DF79D /* Address.swift in Sources */,
+				6377F8A520BE0E1700F668E3 /* WSHash160.m in Sources */,
+				6377F90820BE0E1700F668E3 /* WSAbstractMessageLocatorBased.m in Sources */,
+				6377F8CE20BE0E1700F668E3 /* WSBitcoinConstants.m in Sources */,
+				6377F3F020BDACE500F668E3 /* AutoCoding.m in Sources */,
 				630DC74520AC2E210005800A /* Array+Extension.swift in Sources */,
 				2167C340209B421E00A8653E /* Crypto.swift in Sources */,
+				6377F88720BE0E1600F668E3 /* WSBIP38.m in Sources */,
+				6395BB7620C0192D002EA989 /* DDASLLogger.m in Sources */,
 				630DC73D20AC2D7C0005800A /* Data+Extension.swift in Sources */,
+				6377F92C20BE0E1700F668E3 /* WSMessageTx.m in Sources */,
 				63F66C6E20B4C502007DF79D /* HTTPJSONRPCRequest.swift in Sources */,
 				2167C30F209AF2F700A8653E /* Chinese.swift in Sources */,
 				63F66C6D20B4C502007DF79D /* BatchFactory.swift in Sources */,
+				6377F95820BE0E1700F668E3 /* WSWebTickerBitstamp.m in Sources */,
 				6327C18720B839D500CB2017 /* add_scalar.c in Sources */,
+				6377F8D020BE0E1700F668E3 /* WSConfig.m in Sources */,
 				630DC72E20ABF0710005800A /* SipHashable.swift in Sources */,
+				6377F8DA20BE0E1700F668E3 /* WSPartialMerkleTreeEntity.m in Sources */,
+				6377F8EA20BE0E1700F668E3 /* WSConnectionPool.m in Sources */,
 				630DC72D20ABF0710005800A /* RandomUInt64.swift in Sources */,
 				6327C16920B8201500CB2017 /* ChecksumXmodem.swift in Sources */,
 				6327C1BB20B86D7D00CB2017 /* Dictionary+HttpParams.swift in Sources */,
+				6377F8C320BE0E1700F668E3 /* WSTransactionInput.m in Sources */,
+				6395BB8820C0192D002EA989 /* DDMultiFormatter.m in Sources */,
 				6327C1C520B86D7D00CB2017 /* String+Encoding.swift in Sources */,
+				6377F8C520BE0E1700F668E3 /* WSTransactionOutPoint.m in Sources */,
 				63F66C4620B4B722007DF79D /* Result.swift in Sources */,
+				6377F8C920BE0E1700F668E3 /* WSBitcoinCurrency.m in Sources */,
 				63304D6720AD4D77006D444B /* Neo.swift in Sources */,
+				6377F88120BE0E1600F668E3 /* WSBIP21.m in Sources */,
+				6377F88E20BE0E1600F668E3 /* WSBlockChain.m in Sources */,
+				6377F91220BE0E1700F668E3 /* WSMessageFilterload.m in Sources */,
 				2167C31A209AF60F00A8653E /* Korean.swift in Sources */,
+				6377F8A720BE0E1700F668E3 /* WSHash256.m in Sources */,
+				6377F94A20BE0E1700F668E3 /* WSWebExplorer.m in Sources */,
 				6327C19820B839D500CB2017 /* verify.c in Sources */,
+				6377F8CC20BE0E1700F668E3 /* WSPhysicalCurrency.m in Sources */,
+				6377F90220BE0E1700F668E3 /* WSParametersFactoryTestnet3.m in Sources */,
 				630DC74420AC2E210005800A /* String+Extension.swift in Sources */,
+				6395BB6E20C0192D002EA989 /* CLIColor.m in Sources */,
+				6377F91020BE0E1700F668E3 /* WSMessageFactory.m in Sources */,
+				6377F3F620BDACE500F668E3 /* GCDAsyncSocket.m in Sources */,
+				6377F8F820BE0E1700F668E3 /* WSNetworkType.m in Sources */,
 				2167C320209AF7F300A8653E /* NRLMnemonic.swift in Sources */,
 				63F66C6420B4C502007DF79D /* Geth.swift in Sources */,
+				6377F91620BE0E1700F668E3 /* WSMessageGetblocks.m in Sources */,
+				6395BB8220C0192D002EA989 /* DDTTYLogger.m in Sources */,
+				6377F8AD20BE0E1700F668E3 /* WSKey.m in Sources */,
+				6377F92420BE0E1700F668E3 /* WSMessageNotfound.m in Sources */,
 				63F66C6A20B4C502007DF79D /* RequestType.swift in Sources */,
+				6395BB8420C0192D002EA989 /* DDContextFilterLogFormatter.m in Sources */,
+				6377F95420BE0E1700F668E3 /* WSWebTicker.m in Sources */,
+				6395BB7420C0192D002EA989 /* DDASLLogCapture.m in Sources */,
+				6377F92A20BE0E1700F668E3 /* WSMessageReject.m in Sources */,
 				63F66C3620B4B671007DF79D /* RawTransaction.swift in Sources */,
 				6327C1A720B86C7A00CB2017 /* Base58Encode.swift in Sources */,
 				63F66C6C20B4C502007DF79D /* BatchElement.swift in Sources */,
+				6377F94C20BE0E1700F668E3 /* WSWebExplorerBiteasy.m in Sources */,
 				630DC67820ABE8510005800A /* Ethereum.swift in Sources */,
+				6377F8C120BE0E1700F668E3 /* WSTransaction.m in Sources */,
 				6327C1C420B86D7D00CB2017 /* Data+Base16.swift in Sources */,
+				6377F8E220BE0E1700F668E3 /* WSTransactionOutPointEntity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -873,7 +2141,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2167C2F8209AF09D00A8653E /* ViewController.swift in Sources */,
+				63F4FD4B20C589F800215698 /* WSCoreDataBlockStore.xcdatamodel in Sources */,
 				2167C2F6209AF09D00A8653E /* AppDelegate.swift in Sources */,
+				63F4FD4D20C6D09900215698 /* TransactionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1048,7 +2318,7 @@
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/Libraries/secp256k1/include",
-					"$(SRCROOT)/Libraries/openssl/include",
+					"$(SRCROOT)/Libraries/OpenSSL-Universal/include-ios",
 				);
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1058,11 +2328,15 @@
 					"@loader_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = (
-					"$(SRCROOT)/Libraries/secp256k1/lib",
-					"$(SRCROOT)/Libraries/openssl/lib",
+					"$(PROJECT_DIR)/Libraries/OpenSSL-Universal/lib-ios",
+					"$(PROJECT_DIR)/Libraries/secp256k1/lib",
 				);
 				MODULEMAP_FILE = "$(SRCROOT)/Sources/NRLWalletSDK.modulemap";
 				MODULEMAP_PRIVATE_FILE = "";
+				OTHER_LDFLAGS = (
+					"-lcrypto",
+					"-lssl",
+				);
 				OTHER_LIBTOOLFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.norestlabs.NRLWalletSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -1096,7 +2370,7 @@
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/Libraries/secp256k1/include",
-					"$(SRCROOT)/Libraries/openssl/include",
+					"$(SRCROOT)/Libraries/OpenSSL-Universal/include-ios",
 				);
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1106,11 +2380,15 @@
 					"@loader_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = (
-					"$(SRCROOT)/Libraries/secp256k1/lib",
-					"$(SRCROOT)/Libraries/openssl/lib",
+					"$(PROJECT_DIR)/Libraries/OpenSSL-Universal/lib-ios",
+					"$(PROJECT_DIR)/Libraries/secp256k1/lib",
 				);
 				MODULEMAP_FILE = "$(SRCROOT)/Sources/NRLWalletSDK.modulemap";
 				MODULEMAP_PRIVATE_FILE = "";
+				OTHER_LDFLAGS = (
+					"-lcrypto",
+					"-lssl",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.norestlabs.NRLWalletSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1126,6 +2404,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
 				HEADER_SEARCH_PATHS = (
@@ -1137,8 +2416,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.norestlabs.NRLWalletSDK-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1149,6 +2430,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
 				HEADER_SEARCH_PATHS = (
@@ -1160,6 +2442,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.norestlabs.NRLWalletSDK-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
