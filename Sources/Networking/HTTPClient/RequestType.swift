@@ -51,7 +51,7 @@ extension RequestType {
     /// build method builds url request
     ///
     /// - Returns: built url request
-    public func build() -> Result<URLRequest> {
+    public func build() -> ResultCrypto<URLRequest> {
         let url = path.isEmpty ? baseURL : baseURL.appendingPathComponent(path)
         
         guard var components = URLComponents(url: url, resolvingAgainstBaseURL: true) else {
@@ -91,7 +91,7 @@ extension RequestType {
     ///   - response: returned response from http response
     ///   - error: returned error from http response
     /// - Returns: decoded response
-    public func buildResponse(from data: Data?, response: URLResponse?, error: Error?) -> Result<Response> {
+    public func buildResponse(from data: Data?, response: URLResponse?, error: Error?) -> ResultCrypto<Response> {
         if let error = error {
             return .failure(NRLWalletSDKError.responseError(.connectionError(error)))
         }

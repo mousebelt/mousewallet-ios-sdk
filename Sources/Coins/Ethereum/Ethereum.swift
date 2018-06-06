@@ -9,6 +9,8 @@
 import Foundation
 
 class NRLEthereum : NRLCoin{
+    var privKey: EthereumPrivateKey?
+    
     init(seed: Data, fTest: Bool) {
         var network: Network = .main(.ethereum)
         if (fTest) {
@@ -38,5 +40,21 @@ class NRLEthereum : NRLCoin{
         let publicKey = Crypto.generatePublicKey(data: (self.pathPrivateKey?.raw)!, compressed: false)
         self.address = Address(data: addressDataFromPublicKey(publicKey: publicKey)).string
         self.wif = self.pathPrivateKey?.raw.toHexString()
+    }
+    
+    override func createOwnWallet(created: Date, fnew: Bool) {
+        do {
+            try generateExternalKeyPair(at: 0)
+        
+            let privateKey = getPrivateKeyStr()
+            
+            self.privKey = try? EthereumPrivateKey(hexPrivateKey: privateKey)
+        
+            DDLogDebug("\nEthereum private key = \(String(describing: privateKey))")
+            DDLogDebug("Ethereum address1 = \(String(describing: self.privKey?.address.hex(eip55: true)))")
+
+        } catch {
+            DDLogDebug(error as! String)
+        }
     }
 }

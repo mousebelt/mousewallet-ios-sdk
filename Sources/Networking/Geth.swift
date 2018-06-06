@@ -18,7 +18,7 @@ public final class Geth {
     ///
     /// - Parameters:
     ///   - completionHandler:
-    public func getGasPrice(completionHandler: @escaping (Result<Wei>) -> Void) {
+    public func getGasPrice(completionHandler: @escaping (ResultCrypto<Wei>) -> Void) {
         httpClient.send(JSONRPC.GetGasPrice(), completionHandler: completionHandler)
     }
     
@@ -28,7 +28,7 @@ public final class Geth {
     ///   - address: address you want to get the balance of
     ///   - blockParameter:
     ///   - completionHandler:
-    public func getBalance(of address: String, blockParameter: BlockParameter = .latest, completionHandler: @escaping (Result<Balance>) -> Void) {
+    public func getBalance(of address: String, blockParameter: BlockParameter = .latest, completionHandler: @escaping (ResultCrypto<Balance>) -> Void) {
         httpClient.send(JSONRPC.GetBalance(address: address, blockParameter: blockParameter), completionHandler: completionHandler)
     }
     
@@ -38,7 +38,7 @@ public final class Geth {
     ///   - address: address to check
     ///   - blockParameter:
     ///   - completionHandler:
-    public func getTransactionCount(of address: String, blockParameter: BlockParameter = .latest, completionHandler: @escaping (Result<Int>) -> Void) {
+    public func getTransactionCount(of address: String, blockParameter: BlockParameter = .latest, completionHandler: @escaping (ResultCrypto<Int>) -> Void) {
         httpClient.send(JSONRPC.GetTransactionCount(address: address, blockParameter: blockParameter), completionHandler: completionHandler)
     }
     
@@ -47,14 +47,14 @@ public final class Geth {
     /// - Parameters:
     ///   - rawTransaction: raw transaction encoded in rlp hex format
     ///   - completionHandler:
-    public func sendRawTransaction(rawTransaction: String, completionHandler: @escaping (Result<SentTransaction>) -> Void) {
+    public func sendRawTransaction(rawTransaction: String, completionHandler: @escaping (ResultCrypto<SentTransaction>) -> Void) {
         httpClient.send(JSONRPC.SendRawTransaction(rawTransaction: rawTransaction), completionHandler: completionHandler)
     }
     
     /// getBlockNumber returns the latest block number
     ///
     /// - Parameter completionHandler:
-    public func getBlockNumber(completionHandler: @escaping (Result<Int>) -> Void) {
+    public func getBlockNumber(completionHandler: @escaping (ResultCrypto<Int>) -> Void) {
         httpClient.send(JSONRPC.GetBlockNumber(), completionHandler: completionHandler)
     }
     
@@ -69,7 +69,7 @@ public final class Geth {
     ///   - data: data to include in tx
     ///   - blockParameter:
     ///   - completionHandler:
-    public func call(from: String? = nil, to: String, gasLimit: Int? = nil, gasPrice: Int? = nil, value: Int? = nil, data: String? = nil, blockParameter: BlockParameter = .latest, completionHandler: @escaping (Result<String>) -> Void) {
+    public func call(from: String? = nil, to: String, gasLimit: Int? = nil, gasPrice: Int? = nil, value: Int? = nil, data: String? = nil, blockParameter: BlockParameter = .latest, completionHandler: @escaping (ResultCrypto<String>) -> Void) {
         let request = JSONRPC.Call(
             from: from,
             to: to,
@@ -93,7 +93,7 @@ public final class Geth {
     ///   - value: value in wei
     ///   - data: data to include in tx
     ///   - completionHandler:
-    public func getEstimateGas(from: String? = nil, to: String, gasLimit: Int? = nil, gasPrice: Int? = nil, value: Int? = nil, data: String? = nil, completionHandler: @escaping (Result<Wei>) -> Void) {
+    public func getEstimateGas(from: String? = nil, to: String, gasLimit: Int? = nil, gasPrice: Int? = nil, value: Int? = nil, data: String? = nil, completionHandler: @escaping (ResultCrypto<Wei>) -> Void) {
         let request = JSONRPC.GetEstimatGas(
             from: from,
             to: to,
@@ -113,7 +113,7 @@ public final class Geth {
     /// - Parameters:
     ///   - address: address to get transactions from
     ///   - completionHandler:
-    public func getTransactions(address: String, completionHandler: @escaping (Result<Transactions>) -> Void) {
+    public func getTransactions(address: String, completionHandler: @escaping (ResultCrypto<Transactions>) -> Void) {
         let request = Etherscan.GetTransactions(
             configuration: .init(baseURL: configuration.etherscanURL, apiKey: configuration.etherscanAPIKey),
             address: address

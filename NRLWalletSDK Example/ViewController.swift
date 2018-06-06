@@ -135,8 +135,7 @@ class ViewController: UIViewController {
         
         let seed = Data(fromHexEncodedString: "47d8d8898556e5c4fcf042b249ef92160e667046d7ff487392a9e6ca9e1d912b11a7b134baf7a8893c92d1a40731b08d1ef24789128d07101df740ad1ba4a12c")!
         */
-        generateMneonic()
-        generateSeed()
+
         coinWallet = NRLWallet(seed: self.seed!, network: .test(.bitcoin))
         
 //        bitcoinWallet.generateExternalKeyPair(at: 0)
@@ -226,17 +225,11 @@ class ViewController: UIViewController {
     
     func setEthereumWallet() {
         print("\n------------------------- Ethereum ----------------------------\n")
-        // Ethereum : 60ß
+        // Ethereum : 60
         coinWallet = NRLWallet(seed: self.seed!, network: .main(.ethereum))
-        coinWallet?.generateExternalKeyPair(at: 0)
 
-        let privateKey = coinWallet?.getWIF()
-        let publicKey = coinWallet?.getPublicKey()
-        let address = coinWallet?.getAddress()
-
-        print("\nEthereum private key = \(String(describing: privateKey))")
-        print("Ethereum public key = \(String(describing: publicKey))")
-        print("Ethereum address = \(String(describing: address))")
+        
+        coinWallet?.createOwnWallet(created: Date(), fnew: true)
     }
     
     func setNeoWallet() {
@@ -289,9 +282,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //defaultDebugLevel = DDLogLevel.verbose
-        //DDLog.add(DDTTYLogger.sharedInstance)
+        defaultDebugLevel = DDLogLevel.debug
+        DDLog.add(DDTTYLogger.sharedInstance)
+        
+        generateMneonic()
+        generateSeed()
 
-        setBitcoinWallet()
+//        setBitcoinWallet()
+        setEthereumWallet()
     }
 }

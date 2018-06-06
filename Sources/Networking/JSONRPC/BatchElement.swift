@@ -7,7 +7,7 @@ protocol BatchElementType {
     var body: Any { get }
     
     func response(from: Any) throws -> Request.Response
-    func result(from: Any) -> Result<Request.Response>
+    func result(from: Any) -> ResultCrypto<Request.Response>
 }
 
 internal extension BatchElementType {
@@ -21,7 +21,7 @@ internal extension BatchElementType {
         }
     }
     
-    internal func result(from object: Any) -> Result<Request.Response> {
+    internal func result(from object: Any) -> ResultCrypto<Request.Response> {
         guard let dictionary = object as? [String: Any] else {
             return .failure(NRLWalletSDKError.responseError(.jsonrpcError(.unexpectedTypeObject(object))))
         }
@@ -61,7 +61,7 @@ internal extension BatchElementType where Request.Response == Void {
         return ()
     }
     
-    internal func result(_ object: Any) -> Result<Request.Response> {
+    internal func result(_ object: Any) -> ResultCrypto<Request.Response> {
         return .success(())
     }
 }

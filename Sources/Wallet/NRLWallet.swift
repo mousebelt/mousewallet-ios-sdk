@@ -45,9 +45,9 @@ public class NRLWallet {
         case .test(.stellar):
             coin = NRLStellar(seed: seed, fTest: true)
             break
-        default:
-            coin = NRLEthereum(seed: seed, fTest: false)
-            break
+//        default:
+//            coin = NRLEthereum(seed: seed, fTest: false)
+//            break
         }
     }
     
