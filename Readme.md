@@ -4,10 +4,13 @@
 
 >this framework will be installed when run carthage update --platform iOS
 
-github "krzyzanowskim/CryptoSwift"
-github "attaswift/BigInt"
-github "mxcl/PromiseKit"
-github "Boilertalk/secp256k1.swift"
+* github "krzyzanowskim/CryptoSwift"
+* github "attaswift/BigInt" ~> 3.0
+* github "Boilertalk/Web3.swift"
+
+* these sources are derived from Web3.swift
+>github "mxcl/PromiseKit"
+>github "Boilertalk/secp256k1.swift"
 
 ## framework
 ### neoutils.framework

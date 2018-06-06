@@ -285,8 +285,9 @@ class ViewController: UIViewController {
         defaultDebugLevel = DDLogLevel.debug
         DDLog.add(DDTTYLogger.sharedInstance)
         
-        generateMneonic()
-        generateSeed()
+        //generateMneonic()
+        //generateSeed()
+        self.seed = Data(fromHexEncodedString: "86d1538c7dd3124fd8a2f13f54df5e18ec537848372edf59c31ee0adc1b42c899cf77482e7cb8c6c8472d20de4542d12ecc715b84150b045d0a003fb99077eb0")!
 
 //        setBitcoinWallet()
         setEthereumWallet()

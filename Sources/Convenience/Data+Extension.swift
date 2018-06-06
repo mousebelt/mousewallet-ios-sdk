@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 extension Data {
     
     init<T>(fromArray values: [T]) {

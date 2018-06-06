@@ -7,8 +7,12 @@
 //
 
 import Foundation
+import PromiseKit
+import Web3
+import BigInt
 
 class NRLEthereum : NRLCoin{
+    let web3 = Web3(rpcURL: urlWeb3Provider)
     var privKey: EthereumPrivateKey?
     
     init(seed: Data, fTest: Bool) {
@@ -57,4 +61,45 @@ class NRLEthereum : NRLCoin{
             DDLogDebug(error as! String)
         }
     }
+    
+    override func getWalletBalance() -> UInt64 {
+        return 0
+    }
+    
+    override func getAddressesOfWallet() -> NSMutableArray? {return nil}
+    override func getPrivKeysOfWallet() -> NSMutableArray? {return nil}
+    override func getPubKeysOfWallet() -> NSMutableArray? {return nil}
+    override func getReceiveAddress() -> String? {return ""}
+    override func getAllTransactions() -> NSDictionary? {
+        
+        return nil
+    }
+    //transaction
+    override func sendTransaction(to: String, value: UInt64, fee: UInt64) -> Bool {
+        firstly {
+            self.web3.eth.getTransactionCount(address: (self.privKey?.address)!, block: .latest)
+            }.then { nonce in
+                Promise { seal in
+                    var tx = try EthereumTransaction(
+                        nonce: nonce,
+                        gasPrice: EthereumQuantity(quantity:BigUInt(fee)),
+                        gasLimit: 21000,
+                        to: EthereumAddress(hex: to, eip55: true),
+                        value: EthereumQuantity(quantity: BigUInt(value)),
+                        chainId: 1
+                    )
+                    try tx.sign(with: self.privKey!)
+                    seal.resolve(tx, nil)
+                }
+            }.then { tx in
+                self.web3.eth.sendRawTransaction(transaction: tx)
+            }.done { hash in
+                print(hash)
+            }.catch { error in
+                print(error)
+        }
+        return false
+    }
+    override func signTransaction(to: String, value: UInt64, fee: UInt64) -> WSSignedTransaction? {return nil}
+    override func sendSignTransaction(tx: WSSignedTransaction) -> Bool {return false}
 }
