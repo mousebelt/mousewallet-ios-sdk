@@ -7,7 +7,6 @@
 //
 
 public enum NRLWalletSDKError: Error {
-    case keyDerivateionFailed
     public enum RequestError: Error {
         case invalidURL
         case invalidParameters(Any)
@@ -27,9 +26,21 @@ public enum NRLWalletSDKError: Error {
         case keyDerivateionFailed
     }
     
+    public enum SyncError: Error {
+        case failedToConnect
+    }
+
+    public enum TransactionError: Error {
+        case parameterError
+        case transactionFailed(Error)
+        case signFailed(Error)
+    }
+    case nrlSuccess
     case requestError(RequestError)
     case responseError(ResponseError)
     case cryptoError(CryptoError)
+    case syncError(SyncError)
+    case transactionError(TransactionError)
 }
 
 public enum Ed25519Error: Error {

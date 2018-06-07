@@ -66,7 +66,7 @@ public struct NRLPrivateKey {
         )
 
         guard let derivedKey = keyDeriver.derived(at: index, hardened: hardens, curveOrder: coin.curve) else {
-            throw NRLWalletSDKError.keyDerivateionFailed
+            throw NRLWalletSDKError.cryptoError(.keyDerivateionFailed)
         }
 
         return NRLPrivateKey(

@@ -123,14 +123,14 @@ class NRLCoin {
     func stopSyncing() -> Bool {return false}
     func isConnected() -> Bool {return false}
     func isDownloading() -> Bool {return false}
-    func getWalletBalance() -> UInt64 {return 0}
+    func getWalletBalance(callback:@escaping (_ err: NRLWalletSDKError, _ value: String) -> ()) {}
     func getAddressesOfWallet() -> NSMutableArray? {return nil}
     func getPrivKeysOfWallet() -> NSMutableArray? {return nil}
     func getPubKeysOfWallet() -> NSMutableArray? {return nil}
     func getReceiveAddress() -> String? {return ""}
     func getAllTransactions() -> NSDictionary? {return nil}
     //transaction
-    func sendTransaction(to: String, value: UInt64, fee: UInt64) -> Bool {return false}
-    func signTransaction(to: String, value: UInt64, fee: UInt64) -> WSSignedTransaction? {return nil}
-    func sendSignTransaction(tx: WSSignedTransaction) -> Bool {return false}
+    func sendTransaction(to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {}
+    func signTransaction(to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {}
+    func sendSignTransaction(tx: Any, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {}
 }

@@ -120,8 +120,8 @@ class NRLBitcoin : NRLCoin{
         return self.btcpeer!.isDownloading()
     }
     
-    override func getWalletBalance() -> UInt64 {
-        return self.btcpeer!.getWalletBalance()
+    override func getWalletBalance(callback:@escaping (_ err: NRLWalletSDKError, _ value: String) -> ()) {
+        return self.btcpeer!.getWalletBalance(callback: callback)
     }
     
     override func getAddressesOfWallet() -> NSMutableArray {
@@ -146,15 +146,15 @@ class NRLBitcoin : NRLCoin{
     }
     
     //transaction
-    override func sendTransaction(to: String, value: UInt64, fee: UInt64) -> Bool {
-        return (self.btcpeer?.sendTransaction(to: to, value: value, fee: fee))!
+    override func sendTransaction(to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
+        self.btcpeer?.sendTransaction(to: to, value: value, fee: fee, callback: callback)
     }
     
-    override func signTransaction(to: String, value: UInt64, fee: UInt64) -> WSSignedTransaction? {
-        return self.btcpeer?.signTransaction(to: to, value: value, fee: fee)
+    override func signTransaction(to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
+        self.btcpeer?.signTransaction(to: to, value: value, fee: fee, callback: callback)
     }
     
-    override func sendSignTransaction(tx: WSSignedTransaction) -> Bool {
-        return (self.btcpeer?.sendSignTransaction(tx: tx))!
+    override func sendSignTransaction(tx: Any, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
+        self.btcpeer?.sendSignTransaction(tx: tx, callback: callback)
     }
 }

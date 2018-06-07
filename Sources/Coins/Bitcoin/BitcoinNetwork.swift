@@ -8,6 +8,7 @@
 
 import Foundation
 import NRLWalletSDK.Private
+import BigInt
 
 
 public class BitcoinPeer {
@@ -40,12 +41,13 @@ public class BitcoinPeer {
         setNotifications()
     }
     
-    func getWalletBalance() -> UInt64 {
+    func getWalletBalance(callback:@escaping (_ err: NRLWalletSDKError, _ value: String) -> ()) {
         self.wallet?.recalculateSpendsAndBalance()
-        let balance = self.wallet?.balance()
-        DDLogDebug("Balance: \(String(describing: balance))")
+        let balance = String(format: "%.8f", Double((self.wallet?.balance())!) / 100000000)
         
-        return balance!
+        DDLogDebug("Balance: \(balance)")
+
+        callback(NRLWalletSDKError.nrlSuccess, balance)
     }
     
     func getAddressesOfWallet() -> NSMutableArray {
@@ -221,7 +223,7 @@ public class BitcoinPeer {
     }
     
     //transaction
-    func sendTransaction(to: String, value: UInt64, fee: UInt64) -> Bool {
+    func sendTransaction(to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
         let address = WSAddress(parameters: self.parameters, encoded: to)
         
         do {
@@ -230,18 +232,19 @@ public class BitcoinPeer {
             
             if (!(self.peerGroup?.publishTransaction(tx))!) {
                 DDLogInfo("Publish failed, no connected peers");
-                return false;
+                callback(NRLWalletSDKError.syncError(.failedToConnect), 0)
+                return
             }
             
             DDLogVerbose("\(value) was sent to \(to)")
-            return true
+            callback(NRLWalletSDKError.nrlSuccess, tx?.txId() as Any)
         } catch {
-            print(error)
-            return false
+            DDLogDebug("sendTransaction error: \(error)")
+            callback(NRLWalletSDKError.transactionError(.transactionFailed(error)), 0)
         }
     }
     
-    func signTransaction(to: String, value: UInt64, fee: UInt64) -> WSSignedTransaction? {
+    func signTransaction(to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
         let address = WSAddress(parameters: self.parameters, encoded: to)
         
         do {
@@ -249,20 +252,21 @@ public class BitcoinPeer {
             let tx = try self.wallet?.signedTransaction(with: builder)
             
             DDLogVerbose("signed transaction (\(value) to \(to))")
-            return tx
+            callback(NRLWalletSDKError.nrlSuccess, tx as Any)
         } catch {
             print(error)
-            return nil
+            callback(NRLWalletSDKError.transactionError(.transactionFailed(error)), 0)
         }
     }
     
-    func sendSignTransaction(tx: WSSignedTransaction) -> Bool {
-        if (!(self.peerGroup?.publishTransaction(tx))!) {
+    func sendSignTransaction(tx: Any, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
+        let txSigned = tx as! WSSignedTransaction
+        if (!(self.peerGroup?.publishTransaction(txSigned))!) {
             DDLogInfo("Publish failed, no connected peers");
-            return false;
+            callback(NRLWalletSDKError.syncError(.failedToConnect), 0)
         }
 
-        return true
+        callback(NRLWalletSDKError.nrlSuccess, txSigned.txId() as Any)
     }
     
     

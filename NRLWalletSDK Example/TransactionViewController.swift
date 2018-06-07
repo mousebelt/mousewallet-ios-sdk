@@ -20,11 +20,14 @@ internal class TransactionViewController: UIViewController {
         let value = UInt64(tfValue.text!)
         let fee = UInt64(tfFee.text!)
         
-        if (coinWallet?.sendTransaction(to: to!, value: value!, fee: fee!))! {
-            textTransaction.text = "Successfully sent transaction. Waiting result..."
-        }
-        else {
-            textTransaction.text = "Failed"
+        coinWallet?.sendTransaction(to: to!, value: value!, fee: fee!) { (err, tx) -> () in
+            switch (err) {
+            case NRLWalletSDKError.nrlSuccess:
+                self.textTransaction.text = "Successfully sent transaction. tx: \(tx)"
+            default:
+                self.textTransaction.text = "Failed: \(err)"
+            }
+            
         }
     }
     

@@ -171,14 +171,18 @@ class ViewController: UIViewController {
         
         print("Balance: \(walletObj.balance)")
         
-        self.lbBalance.text = String(format: "%.8f", Double((coinWallet?.getWalletBalance())!) / 100000000)
+        coinWallet?.getWalletBalance() { (err, value) -> () in
+            self.lbBalance.text = value
+        }
     }
     
     @objc func PeerGroupDidStartDownload(notification: Notification) {
         self.blockFromHight = notification.userInfo?[WSPeerGroupDownloadFromHeightKey] as? UInt32
         self.blockToHight = notification.userInfo?[WSPeerGroupDownloadToHeightKey] as? UInt32
         
-        self.lbBalance.text = String(format: "%.8f", Double((coinWallet?.getWalletBalance())!) / 100000000)
+        coinWallet?.getWalletBalance() { (err, value) -> () in
+            self.lbBalance.text = value
+        }
         self.lbAddress.text = coinWallet?.getReceiveAddress();
         
         var progressed = 0;
@@ -226,7 +230,7 @@ class ViewController: UIViewController {
     func setEthereumWallet() {
         print("\n------------------------- Ethereum ----------------------------\n")
         // Ethereum : 60
-        coinWallet = NRLWallet(seed: self.seed!, network: .main(.ethereum))
+        coinWallet = NRLWallet(seed: self.seed!, network: .test(.ethereum))
 
         
         coinWallet?.createOwnWallet(created: Date(), fnew: true)
@@ -291,5 +295,10 @@ class ViewController: UIViewController {
 
 //        setBitcoinWallet()
         setEthereumWallet()
+        
+        coinWallet?.getWalletBalance() { (err, value) -> () in
+            self.lbBalance.text = value
+        }
+        self.lbAddress.text = coinWallet?.getReceiveAddress();
     }
 }
