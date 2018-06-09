@@ -108,7 +108,7 @@ extension RequestType {
         do {
             response = try self.response(from: try parse(from: data))
         } catch let error {
-            return .failure(NRLWalletSDKError.responseError(.unexpected(error)))
+            return .failure(NRLWalletSDKError.responseError(.connectionError(error)))
         }
         
         return .success(response)

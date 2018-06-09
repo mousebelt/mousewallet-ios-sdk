@@ -15,7 +15,7 @@ public enum NRLWalletSDKError: Error {
     public enum ResponseError: Error {
         case jsonrpcError(JSONRPCError)
         case connectionError(Error)
-        case unexpected(Error)
+        case unexpected(Any)
         case unacceptableStatusCode(Int)
         case noContentProvided
     }

@@ -124,8 +124,8 @@ public class NRLWallet {
         return self.coin.getReceiveAddress()
     }
     
-    public func getAllTransactions() -> NSDictionary? {
-        return self.coin.getAllTransactions()
+    public func getAccountTransactions(offset: Int, count: Int, order: UInt, callback:@escaping (_ err: NRLWalletSDKError , _ tx: Any ) -> ()) {
+        return self.coin.getAccountTransactions(offset: offset, count: count, order: order, callback: callback)
     }
     
     public func sendTransaction(to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {

@@ -128,7 +128,7 @@ class NRLCoin {
     func getPrivKeysOfWallet() -> NSMutableArray? {return nil}
     func getPubKeysOfWallet() -> NSMutableArray? {return nil}
     func getReceiveAddress() -> String? {return ""}
-    func getAllTransactions() -> NSDictionary? {return nil}
+    func getAccountTransactions(offset: Int, count: Int, order: UInt, callback:@escaping (_ err: NRLWalletSDKError , _ tx: Any ) -> ()) {}
     //transaction
     func sendTransaction(to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {}
     func signTransaction(to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {}

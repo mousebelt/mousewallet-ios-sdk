@@ -82,14 +82,26 @@ class ViewController: UIViewController {
     var blockToHight: UInt32?
     
     @IBAction func OnGetAllTransactions(_ sender: Any) {
-        let transactions = coinWallet?.getAllTransactions();
-        var strTransactions = String(describing: transactions)
-        
-        strTransactions = strTransactions.replacingOccurrences(of: "\\n", with: "\n")
-        strTransactions = strTransactions.replacingOccurrences(of: "\\t", with: "\t")
-        
-        print("transactions: \(strTransactions)")
-        self.txtTransactions.text = strTransactions
+        coinWallet?.getAccountTransactions(offset: 0, count: 10, order: 0){ (err, tx) -> () in
+            switch (err) {
+            case NRLWalletSDKError.nrlSuccess:
+                //for ethereum tx is TransactionResponse mapping object and can get any field
+                var strTransactions = String(describing: tx)
+
+                strTransactions = strTransactions.replacingOccurrences(of: "\\n", with: "\n")
+                strTransactions = strTransactions.replacingOccurrences(of: "\\t", with: "\t")
+
+                print("transactions: \(strTransactions)")
+                self.txtTransactions.text = strTransactions
+            case NRLWalletSDKError.responseError(.unexpected(let error)):
+                self.txtTransactions.text = "Server request error: \(error)"
+            case NRLWalletSDKError.responseError(.connectionError(let error)):
+                self.txtTransactions.text = "Server connection error: \(error)"
+            default:
+                self.txtTransactions.text = "Failed: \(String(describing: err))"
+            }
+
+        }
     }
     
     @IBAction func OnConnect(_ sender: Any) {

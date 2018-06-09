@@ -141,8 +141,8 @@ class NRLBitcoin : NRLCoin{
         return self.btcpeer!.getReceiveAddress()
     }
     
-    override func getAllTransactions() -> NSDictionary {
-        return self.btcpeer!.getAllTransactions()
+    override func getAccountTransactions(offset: Int, count: Int, order: UInt, callback:@escaping (_ err: NRLWalletSDKError , _ tx: Any ) -> ()) {
+        self.btcpeer!.getAccountTransactions(offset: offset, count: count, order: order, callback: callback)
     }
     
     //transaction

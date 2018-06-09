@@ -101,11 +101,11 @@ public class BitcoinPeer {
         return (address?.encoded())!
     }
     
-    func getAllTransactions() -> NSDictionary {
-        let transactions = self.wallet?.allTransactions()
+    func getAccountTransactions(offset: Int, count: Int, order: UInt, callback:@escaping (_ err: NRLWalletSDKError , _ tx: Any ) -> ()){
+        let transactions = self.wallet?.transactions(in: NSRange(location: offset, length: count))
         DDLogDebug("allTransactions: \(String(describing: transactions))")
         
-        return transactions! as NSDictionary
+        callback(NRLWalletSDKError.nrlSuccess, transactions!)
     }
     
     func createWallet(seedData: Data, created: Date, fnew: Bool) {
@@ -237,7 +237,8 @@ public class BitcoinPeer {
             }
             
             DDLogVerbose("\(value) was sent to \(to)")
-            callback(NRLWalletSDKError.nrlSuccess, tx?.txId() as Any)
+            let hash: WSHash256 = (tx?.txId())!
+            callback(NRLWalletSDKError.nrlSuccess, hash.data() as Any)
         } catch {
             DDLogDebug("sendTransaction error: \(error)")
             callback(NRLWalletSDKError.transactionError(.transactionFailed(error)), 0)
@@ -249,7 +250,7 @@ public class BitcoinPeer {
         
         do {
             let builder = try self.wallet?.buildTransaction(to: address, forValue: value, fee: fee)
-            let tx = try self.wallet?.signedTransaction(with: builder)
+            let tx: WSSignedTransaction = (try self.wallet?.signedTransaction(with: builder))!
             
             DDLogVerbose("signed transaction (\(value) to \(to))")
             callback(NRLWalletSDKError.nrlSuccess, tx as Any)
@@ -266,7 +267,8 @@ public class BitcoinPeer {
             callback(NRLWalletSDKError.syncError(.failedToConnect), 0)
         }
 
-        callback(NRLWalletSDKError.nrlSuccess, txSigned.txId() as Any)
+        let hash: WSHash256 = (txSigned.txId())!
+        callback(NRLWalletSDKError.nrlSuccess, hash.data() as Any)
     }
     
     

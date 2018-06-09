@@ -1,3 +1,6 @@
 github "krzyzanowskim/CryptoSwift"
 github "attaswift/BigInt" ~> 3.0
 github "Boilertalk/Web3.swift"
+github "Alamofire/Alamofire" ~> 4.7
+github "Hearst-DD/ObjectMapper" ~> 3.2
+github "SwiftyJSON/SwiftyJSON" ~> 4.0
