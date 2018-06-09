@@ -31,16 +31,9 @@
 		630DC5BC20AB2BC00005800A /* NRLWalletSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 2167C346209B464400A8653E /* NRLWalletSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		630DC5D620AB35A80005800A /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 630DC5D520AB35A80005800A /* Readme.md */; };
 		630DC67820ABE8510005800A /* Ethereum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DC67720ABE8510005800A /* Ethereum.swift */; };
-		630DC72A20ABF0710005800A /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 630DC72320ABF0700005800A /* LICENSE.md */; };
-		630DC72C20ABF0710005800A /* Primitive Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DC72620ABF0700005800A /* Primitive Types.swift */; };
-		630DC72D20ABF0710005800A /* RandomUInt64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DC72720ABF0700005800A /* RandomUInt64.swift */; };
-		630DC72E20ABF0710005800A /* SipHashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DC72820ABF0700005800A /* SipHashable.swift */; };
-		630DC72F20ABF0710005800A /* SipHasher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DC72920ABF0700005800A /* SipHasher.swift */; };
 		630DC73A20AC2C4F0005800A /* CryptoExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DC73920AC2C4F0005800A /* CryptoExtensions.swift */; };
 		630DC73D20AC2D7C0005800A /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DC73C20AC2D7B0005800A /* Data+Extension.swift */; };
 		630DC74320AC2E210005800A /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DC74020AC2E200005800A /* Dictionary+Extension.swift */; };
-		630DC74420AC2E210005800A /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DC74120AC2E200005800A /* String+Extension.swift */; };
-		630DC74520AC2E210005800A /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DC74220AC2E210005800A /* Array+Extension.swift */; };
 		6327C13720B6363500CB2017 /* SMP+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6327C13620B6363500CB2017 /* SMP+Extensions.swift */; };
 		6327C13A20B6526300CB2017 /* Litecoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6327C13920B6526300CB2017 /* Litecoin.swift */; };
 		6327C13E20B815D100CB2017 /* Stellar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6327C13D20B815D100CB2017 /* Stellar.swift */; };
@@ -84,13 +77,11 @@
 		6327C1C720B8812700CB2017 /* Seed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6327C1C620B8812600CB2017 /* Seed.swift */; };
 		6327C1C920B89BBB00CB2017 /* VersionByte.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6327C1C820B89BBB00CB2017 /* VersionByte.swift */; };
 		63304D6720AD4D77006D444B /* Neo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63304D6620AD4D77006D444B /* Neo.swift */; };
-		634EB2AC20AC2EAB00ACAA06 /* NSRegularExpressionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634EB2AB20AC2EAB00ACAA06 /* NSRegularExpressionExtension.swift */; };
 		6377EF2E20BC6DA900F668E3 /* BitcoinNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6377EF2D20BC6DA900F668E3 /* BitcoinNetwork.swift */; };
 		6377F21120BD9DD100F668E3 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6377F20F20BD9DD100F668E3 /* libssl.a */; };
 		6377F21220BD9DD100F668E3 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6377F21020BD9DD100F668E3 /* libcrypto.a */; };
 		6377F3EF20BDACE500F668E3 /* AutoCoding.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F3DD20BDACE500F668E3 /* AutoCoding.h */; };
 		6377F3F020BDACE500F668E3 /* AutoCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F3DE20BDACE500F668E3 /* AutoCoding.m */; };
-		6377F3F120BDACE500F668E3 /* LICENCE.md in Resources */ = {isa = PBXBuildFile; fileRef = 6377F3DF20BDACE500F668E3 /* LICENCE.md */; };
 		6377F3F420BDACE500F668E3 /* CocoaAsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F3E420BDACE500F668E3 /* CocoaAsyncSocket.h */; };
 		6377F3F520BDACE500F668E3 /* GCDAsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F3E620BDACE500F668E3 /* GCDAsyncSocket.h */; };
 		6377F3F620BDACE500F668E3 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F3E720BDACE500F668E3 /* GCDAsyncSocket.m */; };
@@ -349,9 +340,39 @@
 		6395BB8620C0192D002EA989 /* DDDispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395BB6A20C0192D002EA989 /* DDDispatchQueueLogFormatter.m */; };
 		6395BB8720C0192D002EA989 /* DDMultiFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB6B20C0192D002EA989 /* DDMultiFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6395BB8820C0192D002EA989 /* DDMultiFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395BB6C20C0192D002EA989 /* DDMultiFormatter.m */; };
+		63D499D620CAE70F0047840F /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D499D320CAE70E0047840F /* ObjectMapper.framework */; };
+		63D499D720CAE70F0047840F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D499D420CAE70E0047840F /* Alamofire.framework */; };
+		63D499D820CAE70F0047840F /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D499D520CAE70F0047840F /* SwiftyJSON.framework */; };
+		63D499D920CAF0560047840F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D499D420CAE70E0047840F /* Alamofire.framework */; };
+		63D499DA20CAF0560047840F /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63D499D420CAE70E0047840F /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		63D499DB20CAF0560047840F /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D499D320CAE70E0047840F /* ObjectMapper.framework */; };
+		63D499DC20CAF0560047840F /* ObjectMapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63D499D320CAE70E0047840F /* ObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		63D499DD20CAF0560047840F /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D499D520CAE70F0047840F /* SwiftyJSON.framework */; };
+		63D499DE20CAF0560047840F /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63D499D520CAE70F0047840F /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		63F4FD4A20C585F700215698 /* WSCoreDataBlockStore.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 63F4FD4920C585F700215698 /* WSCoreDataBlockStore.xcdatamodel */; };
 		63F4FD4B20C589F800215698 /* WSCoreDataBlockStore.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 63F4FD4920C585F700215698 /* WSCoreDataBlockStore.xcdatamodel */; };
 		63F4FD4D20C6D09900215698 /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F4FD4C20C6D09900215698 /* TransactionViewController.swift */; };
+		63F4FE3320C8819100215698 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F4FE3220C8819000215698 /* String+Extension.swift */; };
+		63F4FE3520C882B600215698 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F4FE3420C882B600215698 /* Array+Extension.swift */; };
+		63F4FE3720C8833800215698 /* NSRegularExpressionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F4FE3620C8833800215698 /* NSRegularExpressionExtension.swift */; };
+		63F4FE3A20C8849000215698 /* EthereumConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F4FE3920C8849000215698 /* EthereumConfig.swift */; };
+		63F4FE3C20C8F2C200215698 /* Web3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE3B20C8F2C100215698 /* Web3.framework */; };
+		63F4FE3D20C8F2F600215698 /* Web3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE3B20C8F2C100215698 /* Web3.framework */; };
+		63F4FE3E20C8F2F600215698 /* Web3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE3B20C8F2C100215698 /* Web3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		63F4FE4320C8F33C00215698 /* BigInt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE3F20C8F33B00215698 /* BigInt.framework */; };
+		63F4FE4420C8F33C00215698 /* SipHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE4020C8F33B00215698 /* SipHash.framework */; };
+		63F4FE4520C8F33C00215698 /* secp256k1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE4120C8F33B00215698 /* secp256k1.framework */; };
+		63F4FE4620C8F33C00215698 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE4220C8F33C00215698 /* PromiseKit.framework */; };
+		63F4FE4720C8F34E00215698 /* BigInt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE3F20C8F33B00215698 /* BigInt.framework */; };
+		63F4FE4820C8F34E00215698 /* BigInt.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE3F20C8F33B00215698 /* BigInt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		63F4FE4920C8F34E00215698 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE4220C8F33C00215698 /* PromiseKit.framework */; };
+		63F4FE4A20C8F34E00215698 /* PromiseKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE4220C8F33C00215698 /* PromiseKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		63F4FE4B20C8F34E00215698 /* secp256k1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE4120C8F33B00215698 /* secp256k1.framework */; };
+		63F4FE4C20C8F34E00215698 /* secp256k1.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE4120C8F33B00215698 /* secp256k1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		63F4FE4D20C8F34E00215698 /* SipHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE4020C8F33B00215698 /* SipHash.framework */; };
+		63F4FE4E20C8F34E00215698 /* SipHash.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE4020C8F33B00215698 /* SipHash.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		63F4FE5020C9C0DE00215698 /* CoinNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F4FE4F20C9C0DE00215698 /* CoinNetwork.swift */; };
+		63F4FE5220C9C23600215698 /* EthereumNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F4FE5120C9C23600215698 /* EthereumNetwork.swift */; };
 		63F66C1120B421BF007DF79D /* NRLPrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C0C20B421BF007DF79D /* NRLPrivateKey.swift */; };
 		63F66C1220B421BF007DF79D /* NRLPublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C0D20B421BF007DF79D /* NRLPublicKey.swift */; };
 		63F66C1320B421BF007DF79D /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C0F20B421BF007DF79D /* Network.swift */; };
@@ -374,7 +395,7 @@
 		63F66C4A20B4B722007DF79D /* EllipticCurveEncrypterSecp256k1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C4020B4B722007DF79D /* EllipticCurveEncrypterSecp256k1.swift */; };
 		63F66C6420B4C502007DF79D /* Geth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C4E20B4C502007DF79D /* Geth.swift */; };
 		63F66C6520B4C502007DF79D /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C5020B4C502007DF79D /* Cancellable.swift */; };
-		63F66C6620B4C502007DF79D /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C5120B4C502007DF79D /* Configuration.swift */; };
+		63F66C6620B4C502007DF79D /* HTTPClientConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C5120B4C502007DF79D /* HTTPClientConfiguration.swift */; };
 		63F66C6720B4C502007DF79D /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C5220B4C502007DF79D /* HTTPClient.swift */; };
 		63F66C6820B4C502007DF79D /* HTTPClientType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C5320B4C502007DF79D /* HTTPClientType.swift */; };
 		63F66C6920B4C502007DF79D /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C5420B4C502007DF79D /* Method.swift */; };
@@ -409,8 +430,16 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				63D499DC20CAF0560047840F /* ObjectMapper.framework in Embed Frameworks */,
+				63F4FE3E20C8F2F600215698 /* Web3.framework in Embed Frameworks */,
+				63F4FE4C20C8F34E00215698 /* secp256k1.framework in Embed Frameworks */,
+				63F4FE4820C8F34E00215698 /* BigInt.framework in Embed Frameworks */,
+				63D499DE20CAF0560047840F /* SwiftyJSON.framework in Embed Frameworks */,
+				63F4FE4A20C8F34E00215698 /* PromiseKit.framework in Embed Frameworks */,
+				63F4FE4E20C8F34E00215698 /* SipHash.framework in Embed Frameworks */,
 				2167C306209AF0C100A8653E /* NRLWalletSDK.framework in Embed Frameworks */,
 				63F66C2820B49564007DF79D /* CryptoSwift.framework in Embed Frameworks */,
+				63D499DA20CAF0560047840F /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,17 +474,9 @@
 		2171AA33209B481200EA283E /* NRLWalletSDKError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRLWalletSDKError.swift; sourceTree = "<group>"; };
 		630DC5D520AB35A80005800A /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		630DC67720ABE8510005800A /* Ethereum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ethereum.swift; sourceTree = "<group>"; };
-		630DC72320ABF0700005800A /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
-		630DC72420ABF0700005800A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		630DC72620ABF0700005800A /* Primitive Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Primitive Types.swift"; sourceTree = "<group>"; };
-		630DC72720ABF0700005800A /* RandomUInt64.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomUInt64.swift; sourceTree = "<group>"; };
-		630DC72820ABF0700005800A /* SipHashable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SipHashable.swift; sourceTree = "<group>"; };
-		630DC72920ABF0700005800A /* SipHasher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SipHasher.swift; sourceTree = "<group>"; };
 		630DC73920AC2C4F0005800A /* CryptoExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoExtensions.swift; sourceTree = "<group>"; };
 		630DC73C20AC2D7B0005800A /* Data+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		630DC74020AC2E200005800A /* Dictionary+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
-		630DC74120AC2E200005800A /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
-		630DC74220AC2E210005800A /* Array+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		6327C13620B6363500CB2017 /* SMP+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SMP+Extensions.swift"; sourceTree = "<group>"; };
 		6327C13920B6526300CB2017 /* Litecoin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Litecoin.swift; sourceTree = "<group>"; };
 		6327C13D20B815D100CB2017 /* Stellar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stellar.swift; sourceTree = "<group>"; };
@@ -500,15 +521,11 @@
 		6327C1C620B8812600CB2017 /* Seed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Seed.swift; sourceTree = "<group>"; };
 		6327C1C820B89BBB00CB2017 /* VersionByte.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionByte.swift; sourceTree = "<group>"; };
 		63304D6620AD4D77006D444B /* Neo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neo.swift; sourceTree = "<group>"; };
-		634EB2AB20AC2EAB00ACAA06 /* NSRegularExpressionExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSRegularExpressionExtension.swift; sourceTree = "<group>"; };
 		6377EF2D20BC6DA900F668E3 /* BitcoinNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinNetwork.swift; sourceTree = "<group>"; };
 		6377F20F20BD9DD100F668E3 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "Libraries/OpenSSL-Universal/lib-ios/libssl.a"; sourceTree = "<group>"; };
 		6377F21020BD9DD100F668E3 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "Libraries/OpenSSL-Universal/lib-ios/libcrypto.a"; sourceTree = "<group>"; };
 		6377F3DD20BDACE500F668E3 /* AutoCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoCoding.h; sourceTree = "<group>"; };
 		6377F3DE20BDACE500F668E3 /* AutoCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoCoding.m; sourceTree = "<group>"; };
-		6377F3DF20BDACE500F668E3 /* LICENCE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENCE.md; sourceTree = "<group>"; };
-		6377F3E020BDACE500F668E3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		6377F3E220BDACE500F668E3 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.markdown; sourceTree = "<group>"; };
 		6377F3E420BDACE500F668E3 /* CocoaAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaAsyncSocket.h; sourceTree = "<group>"; };
 		6377F3E620BDACE500F668E3 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
 		6377F3E720BDACE500F668E3 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
@@ -767,8 +784,22 @@
 		6395BB6A20C0192D002EA989 /* DDDispatchQueueLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDDispatchQueueLogFormatter.m; sourceTree = "<group>"; };
 		6395BB6B20C0192D002EA989 /* DDMultiFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMultiFormatter.h; sourceTree = "<group>"; };
 		6395BB6C20C0192D002EA989 /* DDMultiFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMultiFormatter.m; sourceTree = "<group>"; };
+		63D499D320CAE70E0047840F /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
+		63D499D420CAE70E0047840F /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		63D499D520CAE70F0047840F /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		63F4FD4920C585F700215698 /* WSCoreDataBlockStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WSCoreDataBlockStore.xcdatamodel; sourceTree = "<group>"; };
 		63F4FD4C20C6D09900215698 /* TransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
+		63F4FE3220C8819000215698 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		63F4FE3420C882B600215698 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		63F4FE3620C8833800215698 /* NSRegularExpressionExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSRegularExpressionExtension.swift; sourceTree = "<group>"; };
+		63F4FE3920C8849000215698 /* EthereumConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumConfig.swift; sourceTree = "<group>"; };
+		63F4FE3B20C8F2C100215698 /* Web3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Web3.framework; path = Carthage/Build/iOS/Web3.framework; sourceTree = "<group>"; };
+		63F4FE3F20C8F33B00215698 /* BigInt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BigInt.framework; path = Carthage/Build/iOS/BigInt.framework; sourceTree = "<group>"; };
+		63F4FE4020C8F33B00215698 /* SipHash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SipHash.framework; path = Carthage/Build/iOS/SipHash.framework; sourceTree = "<group>"; };
+		63F4FE4120C8F33B00215698 /* secp256k1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = secp256k1.framework; path = Carthage/Build/iOS/secp256k1.framework; sourceTree = "<group>"; };
+		63F4FE4220C8F33C00215698 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/iOS/PromiseKit.framework; sourceTree = "<group>"; };
+		63F4FE4F20C9C0DE00215698 /* CoinNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinNetwork.swift; sourceTree = "<group>"; };
+		63F4FE5120C9C23600215698 /* EthereumNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumNetwork.swift; sourceTree = "<group>"; };
 		63F66C0C20B421BF007DF79D /* NRLPrivateKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRLPrivateKey.swift; sourceTree = "<group>"; };
 		63F66C0D20B421BF007DF79D /* NRLPublicKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRLPublicKey.swift; sourceTree = "<group>"; };
 		63F66C0F20B421BF007DF79D /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
@@ -790,7 +821,7 @@
 		63F66C4020B4B722007DF79D /* EllipticCurveEncrypterSecp256k1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EllipticCurveEncrypterSecp256k1.swift; sourceTree = "<group>"; };
 		63F66C4E20B4C502007DF79D /* Geth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geth.swift; sourceTree = "<group>"; };
 		63F66C5020B4C502007DF79D /* Cancellable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
-		63F66C5120B4C502007DF79D /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		63F66C5120B4C502007DF79D /* HTTPClientConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClientConfiguration.swift; sourceTree = "<group>"; };
 		63F66C5220B4C502007DF79D /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		63F66C5320B4C502007DF79D /* HTTPClientType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClientType.swift; sourceTree = "<group>"; };
 		63F66C5420B4C502007DF79D /* Method.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
@@ -814,7 +845,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				6377F21120BD9DD100F668E3 /* libssl.a in Frameworks */,
+				63F4FE4320C8F33C00215698 /* BigInt.framework in Frameworks */,
+				63D499D620CAE70F0047840F /* ObjectMapper.framework in Frameworks */,
+				63F4FE3C20C8F2C200215698 /* Web3.framework in Frameworks */,
+				63F4FE4620C8F33C00215698 /* PromiseKit.framework in Frameworks */,
+				63F4FE4520C8F33C00215698 /* secp256k1.framework in Frameworks */,
 				6377F21220BD9DD100F668E3 /* libcrypto.a in Frameworks */,
+				63D499D720CAE70F0047840F /* Alamofire.framework in Frameworks */,
+				63D499D820CAE70F0047840F /* SwiftyJSON.framework in Frameworks */,
+				63F4FE4420C8F33C00215698 /* SipHash.framework in Frameworks */,
 				63F66C1720B42444007DF79D /* CryptoSwift.framework in Frameworks */,
 				63F66C1C20B49031007DF79D /* neoutils.framework in Frameworks */,
 			);
@@ -824,8 +863,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63D499DB20CAF0560047840F /* ObjectMapper.framework in Frameworks */,
+				63F4FE3D20C8F2F600215698 /* Web3.framework in Frameworks */,
+				63F4FE4B20C8F34E00215698 /* secp256k1.framework in Frameworks */,
+				63F4FE4720C8F34E00215698 /* BigInt.framework in Frameworks */,
+				63D499DD20CAF0560047840F /* SwiftyJSON.framework in Frameworks */,
+				63F4FE4920C8F34E00215698 /* PromiseKit.framework in Frameworks */,
+				63F4FE4D20C8F34E00215698 /* SipHash.framework in Frameworks */,
 				2167C305209AF0C100A8653E /* NRLWalletSDK.framework in Frameworks */,
 				63F66C2720B49564007DF79D /* CryptoSwift.framework in Frameworks */,
+				63D499D920CAF0560047840F /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -856,6 +903,7 @@
 		2167C2C62099A47C00A8653E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				63F4FE3820C8846600215698 /* Config */,
 				63304D6520AD4D4E006D444B /* Coins */,
 				630DC67F20ABEFB00005800A /* Cryptography */,
 				630DC67920ABE9CC0005800A /* Convenience */,
@@ -919,6 +967,14 @@
 			children = (
 				6377F21020BD9DD100F668E3 /* libcrypto.a */,
 				6377F20F20BD9DD100F668E3 /* libssl.a */,
+				63D499D420CAE70E0047840F /* Alamofire.framework */,
+				63D499D320CAE70E0047840F /* ObjectMapper.framework */,
+				63D499D520CAE70F0047840F /* SwiftyJSON.framework */,
+				63F4FE3F20C8F33B00215698 /* BigInt.framework */,
+				63F4FE4220C8F33C00215698 /* PromiseKit.framework */,
+				63F4FE4120C8F33B00215698 /* secp256k1.framework */,
+				63F4FE4020C8F33B00215698 /* SipHash.framework */,
+				63F4FE3B20C8F2C100215698 /* Web3.framework */,
 				63F66C1920B49031007DF79D /* neoutils.framework */,
 				63F66C1620B42444007DF79D /* CryptoSwift.framework */,
 			);
@@ -929,6 +985,7 @@
 			isa = PBXGroup;
 			children = (
 				630DC67720ABE8510005800A /* Ethereum.swift */,
+				63F4FE5120C9C23600215698 /* EthereumNetwork.swift */,
 			);
 			path = Ethereum;
 			sourceTree = "<group>";
@@ -943,13 +1000,13 @@
 				6327C1AF20B86D7B00CB2017 /* Dictionary+HttpParams.swift */,
 				6327C1B220B86D7B00CB2017 /* String+Base64.swift */,
 				6327C1BA20B86D7C00CB2017 /* String+Encoding.swift */,
-				634EB2AB20AC2EAB00ACAA06 /* NSRegularExpressionExtension.swift */,
-				630DC74220AC2E210005800A /* Array+Extension.swift */,
+				63F4FE3220C8819000215698 /* String+Extension.swift */,
 				630DC74020AC2E200005800A /* Dictionary+Extension.swift */,
-				630DC74120AC2E200005800A /* String+Extension.swift */,
 				630DC73920AC2C4F0005800A /* CryptoExtensions.swift */,
 				630DC73C20AC2D7B0005800A /* Data+Extension.swift */,
 				6327C13620B6363500CB2017 /* SMP+Extensions.swift */,
+				63F4FE3420C882B600215698 /* Array+Extension.swift */,
+				63F4FE3620C8833800215698 /* NSRegularExpressionExtension.swift */,
 			);
 			path = Convenience;
 			sourceTree = "<group>";
@@ -965,30 +1022,8 @@
 				2167C33A209B421E00A8653E /* Crypto.swift */,
 				6327C19D20B86C7900CB2017 /* HDWallet */,
 				6327C17220B839D500CB2017 /* ed25519-C */,
-				630DC72220ABF0700005800A /* SipHash */,
 			);
 			path = Cryptography;
-			sourceTree = "<group>";
-		};
-		630DC72220ABF0700005800A /* SipHash */ = {
-			isa = PBXGroup;
-			children = (
-				630DC72320ABF0700005800A /* LICENSE.md */,
-				630DC72420ABF0700005800A /* README.md */,
-				630DC72520ABF0700005800A /* SipHash */,
-			);
-			path = SipHash;
-			sourceTree = "<group>";
-		};
-		630DC72520ABF0700005800A /* SipHash */ = {
-			isa = PBXGroup;
-			children = (
-				630DC72620ABF0700005800A /* Primitive Types.swift */,
-				630DC72720ABF0700005800A /* RandomUInt64.swift */,
-				630DC72820ABF0700005800A /* SipHashable.swift */,
-				630DC72920ABF0700005800A /* SipHasher.swift */,
-			);
-			path = SipHash;
 			sourceTree = "<group>";
 		};
 		6327C13820B6526300CB2017 /* Litecoin */ = {
@@ -1113,8 +1148,6 @@
 			isa = PBXGroup;
 			children = (
 				6377F3DC20BDACE500F668E3 /* AutoCoding */,
-				6377F3DF20BDACE500F668E3 /* LICENCE.md */,
-				6377F3E020BDACE500F668E3 /* README.md */,
 			);
 			path = AutoCoding;
 			sourceTree = "<group>";
@@ -1131,7 +1164,6 @@
 		6377F3E120BDACE500F668E3 /* CocoaAsyncSocket */ = {
 			isa = PBXGroup;
 			children = (
-				6377F3E220BDACE500F668E3 /* README.markdown */,
 				6377F3E320BDACE500F668E3 /* Source */,
 			);
 			path = CocoaAsyncSocket;
@@ -1554,6 +1586,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		63F4FE3820C8846600215698 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				63F4FE4F20C9C0DE00215698 /* CoinNetwork.swift */,
+				63F4FE3920C8849000215698 /* EthereumConfig.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		63F66C0B20B421BF007DF79D /* Key */ = {
 			isa = PBXGroup;
 			children = (
@@ -1610,7 +1651,7 @@
 			isa = PBXGroup;
 			children = (
 				63F66C5020B4C502007DF79D /* Cancellable.swift */,
-				63F66C5120B4C502007DF79D /* Configuration.swift */,
+				63F66C5120B4C502007DF79D /* HTTPClientConfiguration.swift */,
 				63F66C5220B4C502007DF79D /* HTTPClient.swift */,
 				63F66C5320B4C502007DF79D /* HTTPClientType.swift */,
 				63F66C5420B4C502007DF79D /* Method.swift */,
@@ -1891,8 +1932,6 @@
 			files = (
 				6327C19020B839D500CB2017 /* license.txt in Resources */,
 				630DC5D620AB35A80005800A /* Readme.md in Resources */,
-				6377F3F120BDACE500F668E3 /* LICENCE.md in Resources */,
-				630DC72A20ABF0710005800A /* LICENSE.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1923,7 +1962,6 @@
 				6377F89B20BE0E1700F668E3 /* WSBlockHeader.m in Sources */,
 				6377F93420BE0E1700F668E3 /* NSData+Binary.m in Sources */,
 				6377F95C20BE0E1700F668E3 /* WSWebTickerMonitor.m in Sources */,
-				630DC72F20ABF0710005800A /* SipHasher.swift in Sources */,
 				2167C316209AF56500A8653E /* Japanese.swift in Sources */,
 				6377F8B320BE0E1700F668E3 /* WSNetworkAddress.m in Sources */,
 				6377F89020BE0E1600F668E3 /* WSBlockStore.m in Sources */,
@@ -1966,7 +2004,7 @@
 				2167C312209AF38500A8653E /* French.swift in Sources */,
 				6395BB7920C0192D002EA989 /* DDFileLogger.m in Sources */,
 				6377F89920BE0E1600F668E3 /* WSBlock.m in Sources */,
-				63F66C6620B4C502007DF79D /* Configuration.swift in Sources */,
+				63F66C6620B4C502007DF79D /* HTTPClientConfiguration.swift in Sources */,
 				6377F3FA20BDACE500F668E3 /* AsyncSocket.m in Sources */,
 				6327C1AD20B86C7A00CB2017 /* RIPEMD160.swift in Sources */,
 				6327C19420B839D500CB2017 /* seed.c in Sources */,
@@ -1979,6 +2017,7 @@
 				6327C19720B839D500CB2017 /* sign.c in Sources */,
 				6377F8BB20BE0E1700F668E3 /* WSSeed.m in Sources */,
 				6327C18E20B839D500CB2017 /* key_exchange.c in Sources */,
+				63F4FE5020C9C0DE00215698 /* CoinNetwork.swift in Sources */,
 				6377F3FC20BDACE500F668E3 /* AsyncUdpSocket.m in Sources */,
 				6327C1C120B86D7D00CB2017 /* String+Base32.swift in Sources */,
 				2167C31F209AF7F300A8653E /* Data+NRLBitArray.swift in Sources */,
@@ -2008,6 +2047,7 @@
 				6377F8E620BE0E1700F668E3 /* WSBlockChainDownloader.m in Sources */,
 				630DC74320AC2E210005800A /* Dictionary+Extension.swift in Sources */,
 				6377F89F20BE0E1700F668E3 /* WSBloomFilter.m in Sources */,
+				63F4FE5220C9C23600215698 /* EthereumNetwork.swift in Sources */,
 				6377F8EE20BE0E1700F668E3 /* WSPeerGroup+Download.m in Sources */,
 				63F66C4320B4B722007DF79D /* Converter.swift in Sources */,
 				6377F93020BE0E1700F668E3 /* WSMessageVersion.m in Sources */,
@@ -2025,17 +2065,17 @@
 				6377F93A20BE0E1700F668E3 /* NSString+Binary.m in Sources */,
 				63F66C3820B4B671007DF79D /* Transaction.swift in Sources */,
 				6377F8B920BE0E1700F668E3 /* WSScript.m in Sources */,
-				634EB2AC20AC2EAB00ACAA06 /* NSRegularExpressionExtension.swift in Sources */,
-				630DC72C20ABF0710005800A /* Primitive Types.swift in Sources */,
 				6377F8BD20BE0E1700F668E3 /* WSSeedGenerator.m in Sources */,
 				6327C13E20B815D100CB2017 /* Stellar.swift in Sources */,
 				6377F8B720BE0E1700F668E3 /* WSPublicKey.m in Sources */,
 				6377F90020BE0E1700F668E3 /* WSParametersFactoryRegtest.m in Sources */,
 				63F4FD4A20C585F700215698 /* WSCoreDataBlockStore.xcdatamodel in Sources */,
+				63F4FE3320C8819100215698 /* String+Extension.swift in Sources */,
 				6377F88320BE0E1600F668E3 /* WSBIP32.m in Sources */,
 				6327C1AB20B86C7A00CB2017 /* HDCrypto.swift in Sources */,
 				6377F8E420BE0E1700F668E3 /* WSTransactionOutputEntity.m in Sources */,
 				6377F91C20BE0E1700F668E3 /* WSMessageHeaders.m in Sources */,
+				63F4FE3A20C8849000215698 /* EthereumConfig.swift in Sources */,
 				63F66C1120B421BF007DF79D /* NRLPrivateKey.swift in Sources */,
 				6377F8DE20BE0E1700F668E3 /* WSTransactionEntity.m in Sources */,
 				63F66C7220B4C502007DF79D /* Etherscan.swift in Sources */,
@@ -2075,22 +2115,20 @@
 				6377F90820BE0E1700F668E3 /* WSAbstractMessageLocatorBased.m in Sources */,
 				6377F8CE20BE0E1700F668E3 /* WSBitcoinConstants.m in Sources */,
 				6377F3F020BDACE500F668E3 /* AutoCoding.m in Sources */,
-				630DC74520AC2E210005800A /* Array+Extension.swift in Sources */,
 				2167C340209B421E00A8653E /* Crypto.swift in Sources */,
 				6377F88720BE0E1600F668E3 /* WSBIP38.m in Sources */,
 				6395BB7620C0192D002EA989 /* DDASLLogger.m in Sources */,
 				630DC73D20AC2D7C0005800A /* Data+Extension.swift in Sources */,
 				6377F92C20BE0E1700F668E3 /* WSMessageTx.m in Sources */,
 				63F66C6E20B4C502007DF79D /* HTTPJSONRPCRequest.swift in Sources */,
+				63F4FE3520C882B600215698 /* Array+Extension.swift in Sources */,
 				2167C30F209AF2F700A8653E /* Chinese.swift in Sources */,
 				63F66C6D20B4C502007DF79D /* BatchFactory.swift in Sources */,
 				6377F95820BE0E1700F668E3 /* WSWebTickerBitstamp.m in Sources */,
 				6327C18720B839D500CB2017 /* add_scalar.c in Sources */,
 				6377F8D020BE0E1700F668E3 /* WSConfig.m in Sources */,
-				630DC72E20ABF0710005800A /* SipHashable.swift in Sources */,
 				6377F8DA20BE0E1700F668E3 /* WSPartialMerkleTreeEntity.m in Sources */,
 				6377F8EA20BE0E1700F668E3 /* WSConnectionPool.m in Sources */,
-				630DC72D20ABF0710005800A /* RandomUInt64.swift in Sources */,
 				6327C16920B8201500CB2017 /* ChecksumXmodem.swift in Sources */,
 				6327C1BB20B86D7D00CB2017 /* Dictionary+HttpParams.swift in Sources */,
 				6377F8C320BE0E1700F668E3 /* WSTransactionInput.m in Sources */,
@@ -2102,6 +2140,7 @@
 				63304D6720AD4D77006D444B /* Neo.swift in Sources */,
 				6377F88120BE0E1600F668E3 /* WSBIP21.m in Sources */,
 				6377F88E20BE0E1600F668E3 /* WSBlockChain.m in Sources */,
+				63F4FE3720C8833800215698 /* NSRegularExpressionExtension.swift in Sources */,
 				6377F91220BE0E1700F668E3 /* WSMessageFilterload.m in Sources */,
 				2167C31A209AF60F00A8653E /* Korean.swift in Sources */,
 				6377F8A720BE0E1700F668E3 /* WSHash256.m in Sources */,
@@ -2109,7 +2148,6 @@
 				6327C19820B839D500CB2017 /* verify.c in Sources */,
 				6377F8CC20BE0E1700F668E3 /* WSPhysicalCurrency.m in Sources */,
 				6377F90220BE0E1700F668E3 /* WSParametersFactoryTestnet3.m in Sources */,
-				630DC74420AC2E210005800A /* String+Extension.swift in Sources */,
 				6395BB6E20C0192D002EA989 /* CLIColor.m in Sources */,
 				6377F91020BE0E1700F668E3 /* WSMessageFactory.m in Sources */,
 				6377F3F620BDACE500F668E3 /* GCDAsyncSocket.m in Sources */,
@@ -2316,10 +2354,7 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Frameworks",
 				);
-				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/Libraries/secp256k1/include",
-					"$(SRCROOT)/Libraries/OpenSSL-Universal/include-ios",
-				);
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Libraries/OpenSSL-Universal/include-ios";
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2327,10 +2362,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/Libraries/OpenSSL-Universal/lib-ios",
-					"$(PROJECT_DIR)/Libraries/secp256k1/lib",
-				);
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/Libraries/OpenSSL-Universal/lib-ios";
 				MODULEMAP_FILE = "$(SRCROOT)/Sources/NRLWalletSDK.modulemap";
 				MODULEMAP_PRIVATE_FILE = "";
 				OTHER_LDFLAGS = (
@@ -2368,10 +2400,7 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Frameworks",
 				);
-				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/Libraries/secp256k1/include",
-					"$(SRCROOT)/Libraries/OpenSSL-Universal/include-ios",
-				);
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Libraries/OpenSSL-Universal/include-ios";
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2379,10 +2408,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/Libraries/OpenSSL-Universal/lib-ios",
-					"$(PROJECT_DIR)/Libraries/secp256k1/lib",
-				);
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/Libraries/OpenSSL-Universal/lib-ios";
 				MODULEMAP_FILE = "$(SRCROOT)/Sources/NRLWalletSDK.modulemap";
 				MODULEMAP_PRIVATE_FILE = "";
 				OTHER_LDFLAGS = (

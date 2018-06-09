@@ -45,9 +45,9 @@ public class NRLWallet {
         case .test(.stellar):
             coin = NRLStellar(seed: seed, fTest: true)
             break
-        default:
-            coin = NRLEthereum(seed: seed, fTest: false)
-            break
+//        default:
+//            coin = NRLEthereum(seed: seed, fTest: false)
+//            break
         }
     }
     
@@ -104,8 +104,8 @@ public class NRLWallet {
         return self.coin.isDownloading()
     }
     
-    public func getWalletBalance() -> UInt64 {
-        return self.coin.getWalletBalance()
+    public func getWalletBalance(callback:@escaping (_ err: NRLWalletSDKError, _ value: String) -> ()) {
+        return self.coin.getWalletBalance(callback: callback)
     }
     
     public func getAddressesOfWallet() -> NSMutableArray? {
@@ -124,19 +124,19 @@ public class NRLWallet {
         return self.coin.getReceiveAddress()
     }
     
-    public func getAllTransactions() -> NSDictionary? {
-        return self.coin.getAllTransactions()
+    public func getAccountTransactions(offset: Int, count: Int, order: UInt, callback:@escaping (_ err: NRLWalletSDKError , _ tx: Any ) -> ()) {
+        return self.coin.getAccountTransactions(offset: offset, count: count, order: order, callback: callback)
     }
     
-    public func sendTransaction(to: String, value: UInt64, fee: UInt64) -> Bool {
-        return self.coin.sendTransaction(to: to, value: value, fee: fee)
-    }
+    public func sendTransaction(to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
+        self.coin.sendTransaction(to: to, value: value, fee: fee, callback: callback)
+    }   
     
-    public func signTransaction(to: String, value: UInt64, fee: UInt64) -> WSSignedTransaction? {
-        return self.coin.signTransaction(to: to, value: value, fee: fee)
+    public func signTransaction(to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
+        self.coin.signTransaction(to: to, value: value, fee: fee, callback: callback)
     }
-    public func sendSignTransaction(tx: WSSignedTransaction) -> Bool {
-        return self.coin.sendSignTransaction(tx: tx)
+    public func sendSignTransaction(tx: WSSignedTransaction, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
+        return self.coin.sendSignTransaction(tx: tx, callback: callback)
     }
 
 }

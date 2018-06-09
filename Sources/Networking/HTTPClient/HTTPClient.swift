@@ -22,7 +22,7 @@ public class HTTPClient: HTTPClientType {
     ///   - completionHandler:
     /// - Returns: session task used to send request
     @discardableResult
-    public func send<Request: JSONRPCRequest>(_ request: Request, completionHandler: @escaping (Result<Request.Response>) -> Void) -> Cancellable? {
+    public func send<Request: JSONRPCRequest>(_ request: Request, completionHandler: @escaping (ResultCrypto<Request.Response>) -> Void) -> Cancellable? {
         let httpRequest = HTTPJSONRPCRequest(batch: batchFactory.create(request), endpoint: URL(string: configuration.nodeEndpoint)!)
         return send(httpRequest, completionHandler: completionHandler)
     }
@@ -34,7 +34,7 @@ public class HTTPClient: HTTPClientType {
     ///   - completionHandler:
     /// - Returns: session task used to send request
     @discardableResult
-    public func send<Request: RequestType>(_ request: Request, completionHandler: @escaping (Result<Request.Response>) -> Void) -> Cancellable? {
+    public func send<Request: RequestType>(_ request: Request, completionHandler: @escaping (ResultCrypto<Request.Response>) -> Void) -> Cancellable? {
         switch request.build() {
         case .success(let urlRequest):
             let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in

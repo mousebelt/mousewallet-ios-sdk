@@ -20,7 +20,7 @@ public struct JSONBodySerialization {
     
     /// Builds `RequestBodyEntity.data` that represents `JSONObject`.
     /// - Throws: `NSError` if `JSONSerialization` fails to serialize `JSONObject`.
-    public func build() -> Result<Data> {
+    public func build() -> ResultCrypto<Data> {
         
         // If isValidJSONObject(_:) is false, dataWithJSONObject(_:options:) throws NSException.
         guard JSONSerialization.isValidJSONObject(object) else {

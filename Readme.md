@@ -1,21 +1,40 @@
-## dependency libraries
+# dependency libraries
 
-### CryptoSwift.framework
->https://github.com/krzyzanowskim/CryptoSwift
+## Carthage
+
 >this framework will be installed when run carthage update --platform iOS
+
+* github "krzyzanowskim/CryptoSwift"
+* github "attaswift/BigInt" ~> 3.0
+* github "Boilertalk/Web3.swift"
+
+* these sources are derived from Web3.swift
+>github "mxcl/PromiseKit"
+>github "Boilertalk/secp256k1.swift"
+
+## framework
+### neoutils.framework
+>https://github.com/O3Labs/neo-utils
+>need setting of bitcode disabled
+>need to manually include from O3Labs
+>to build neo-utils, need to install go and go-mobile
+
+
+## included sources
+
+### web3.swift
+
+>https://github.com/Boilertalk/Web3.swift
+
+* folder: Libraries/Web3
+
+
 
 ### CocoaLumberjack
 
 can be downloaded from BitcoinSPV pod. or 
 
 >https://github.com/CocoaLumberjack/CocoaLumberjack
-
-
-### neoutils.framework
->https://github.com/O3Labs/neo-utils
->need setting of bitcode disabled
->need to manually include from O3Labs
->to build neo-utils, need to install go and go-mobile
 
 ### secp256k1
 >https://github.com/bitcoin-core/secp256k1
@@ -33,9 +52,6 @@ to libs of libssl and libcrypto should be explicitly included as linked library 
 
 >https://github.com/openssl/openssl
 >need to add in Libraries manually
-
-### CocoaLumberjack
->https://github.com/CocoaLumberjack/CocoaLumberjack
 
 # environment
 ### carthage
@@ -61,7 +77,7 @@ to libs of libssl and libcrypto should be explicitly included as linked library 
 now we can get result at $SOURCEROOT/carthage/Build/iOS
 
 
-## test
+## key / address test
 ### bitcoin, litecoin, ethereum
 >https://iancoleman.io/bip39/
 
@@ -71,4 +87,8 @@ now we can get result at $SOURCEROOT/carthage/Build/iOS
 ### stellar
 >https://github.com/stellar/go/releases/  stellar-hd-wallet
 
+## transaction test
 
+### bitcoin
+* faucet: https://testnet.manu.backend.hamburg/faucet
+* https://testnet.blockchain.info/

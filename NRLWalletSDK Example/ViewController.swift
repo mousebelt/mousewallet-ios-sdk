@@ -82,14 +82,26 @@ class ViewController: UIViewController {
     var blockToHight: UInt32?
     
     @IBAction func OnGetAllTransactions(_ sender: Any) {
-        let transactions = coinWallet?.getAllTransactions();
-        var strTransactions = String(describing: transactions)
-        
-        strTransactions = strTransactions.replacingOccurrences(of: "\\n", with: "\n")
-        strTransactions = strTransactions.replacingOccurrences(of: "\\t", with: "\t")
-        
-        print("transactions: \(strTransactions)")
-        self.txtTransactions.text = strTransactions
+        coinWallet?.getAccountTransactions(offset: 0, count: 10, order: 0){ (err, tx) -> () in
+            switch (err) {
+            case NRLWalletSDKError.nrlSuccess:
+                //for ethereum tx is TransactionResponse mapping object and can get any field
+                var strTransactions = String(describing: tx)
+
+                strTransactions = strTransactions.replacingOccurrences(of: "\\n", with: "\n")
+                strTransactions = strTransactions.replacingOccurrences(of: "\\t", with: "\t")
+
+                print("transactions: \(strTransactions)")
+                self.txtTransactions.text = strTransactions
+            case NRLWalletSDKError.responseError(.unexpected(let error)):
+                self.txtTransactions.text = "Server request error: \(error)"
+            case NRLWalletSDKError.responseError(.connectionError(let error)):
+                self.txtTransactions.text = "Server connection error: \(error)"
+            default:
+                self.txtTransactions.text = "Failed: \(String(describing: err))"
+            }
+
+        }
     }
     
     @IBAction func OnConnect(_ sender: Any) {
@@ -135,8 +147,7 @@ class ViewController: UIViewController {
         
         let seed = Data(fromHexEncodedString: "47d8d8898556e5c4fcf042b249ef92160e667046d7ff487392a9e6ca9e1d912b11a7b134baf7a8893c92d1a40731b08d1ef24789128d07101df740ad1ba4a12c")!
         */
-        generateMneonic()
-        generateSeed()
+
         coinWallet = NRLWallet(seed: self.seed!, network: .test(.bitcoin))
         
 //        bitcoinWallet.generateExternalKeyPair(at: 0)
@@ -172,14 +183,18 @@ class ViewController: UIViewController {
         
         print("Balance: \(walletObj.balance)")
         
-        self.lbBalance.text = String(format: "%.8f", Double((coinWallet?.getWalletBalance())!) / 100000000)
+        coinWallet?.getWalletBalance() { (err, value) -> () in
+            self.lbBalance.text = value
+        }
     }
     
     @objc func PeerGroupDidStartDownload(notification: Notification) {
         self.blockFromHight = notification.userInfo?[WSPeerGroupDownloadFromHeightKey] as? UInt32
         self.blockToHight = notification.userInfo?[WSPeerGroupDownloadToHeightKey] as? UInt32
         
-        self.lbBalance.text = String(format: "%.8f", Double((coinWallet?.getWalletBalance())!) / 100000000)
+        coinWallet?.getWalletBalance() { (err, value) -> () in
+            self.lbBalance.text = value
+        }
         self.lbAddress.text = coinWallet?.getReceiveAddress();
         
         var progressed = 0;
@@ -226,17 +241,11 @@ class ViewController: UIViewController {
     
     func setEthereumWallet() {
         print("\n------------------------- Ethereum ----------------------------\n")
-        // Ethereum : 60ß
-        coinWallet = NRLWallet(seed: self.seed!, network: .main(.ethereum))
-        coinWallet?.generateExternalKeyPair(at: 0)
+        // Ethereum : 60
+        coinWallet = NRLWallet(seed: self.seed!, network: .test(.ethereum))
 
-        let privateKey = coinWallet?.getWIF()
-        let publicKey = coinWallet?.getPublicKey()
-        let address = coinWallet?.getAddress()
-
-        print("\nEthereum private key = \(String(describing: privateKey))")
-        print("Ethereum public key = \(String(describing: publicKey))")
-        print("Ethereum address = \(String(describing: address))")
+        
+        coinWallet?.createOwnWallet(created: Date(), fnew: true)
     }
     
     func setNeoWallet() {
@@ -289,9 +298,19 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //defaultDebugLevel = DDLogLevel.verbose
-        //DDLog.add(DDTTYLogger.sharedInstance)
+        defaultDebugLevel = DDLogLevel.debug
+        DDLog.add(DDTTYLogger.sharedInstance)
+        
+        //generateMneonic()
+        //generateSeed()
+        self.seed = Data(fromHexEncodedString: "86d1538c7dd3124fd8a2f13f54df5e18ec537848372edf59c31ee0adc1b42c899cf77482e7cb8c6c8472d20de4542d12ecc715b84150b045d0a003fb99077eb0")!
 
-        setBitcoinWallet()
+//        setBitcoinWallet()
+        setEthereumWallet()
+        
+        coinWallet?.getWalletBalance() { (err, value) -> () in
+            self.lbBalance.text = value
+        }
+        self.lbAddress.text = coinWallet?.getReceiveAddress();
     }
 }
