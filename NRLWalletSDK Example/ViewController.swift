@@ -269,15 +269,20 @@ class ViewController: UIViewController {
         // Litecoin : 2
         
         coinWallet = NRLWallet(seed: self.seed!, network: .main(.litecoin))
-        coinWallet?.generateExternalKeyPair(at: 0)
+//        coinWallet?.generateExternalKeyPair(at: 0)
+//
+//        let privateKey = coinWallet?.getWIF()
+//        let publicKey = coinWallet?.getPublicKey()
+//        let address = coinWallet?.getAddress()
+//
+//        print("\nLitecoinWallet private key = \(String(describing: privateKey))")
+//        print("LitecoinWallet public key = \(String(describing: publicKey))")
+//        print("LitecoinWallet address = \(String(describing: address))")
         
-        let privateKey = coinWallet?.getWIF()
-        let publicKey = coinWallet?.getPublicKey()
-        let address = coinWallet?.getAddress()
-        
-        print("\nLitecoinWallet private key = \(String(describing: privateKey))")
-        print("LitecoinWallet public key = \(String(describing: publicKey))")
-        print("LitecoinWallet address = \(String(describing: address))")
+        print("\nCreate Own Wallet")
+        coinWallet?.createOwnWallet(created: Date(), fnew: true)
+        print("\nCreate Peer Group")
+        coinWallet?.createPeerGroup()
     }
     
     func setStellarWallet() {
@@ -306,7 +311,8 @@ class ViewController: UIViewController {
         self.seed = Data(fromHexEncodedString: "86d1538c7dd3124fd8a2f13f54df5e18ec537848372edf59c31ee0adc1b42c899cf77482e7cb8c6c8472d20de4542d12ecc715b84150b045d0a003fb99077eb0")!
 
 //        setBitcoinWallet()
-        setEthereumWallet()
+//        setEthereumWallet()
+        setLitecoinWallet()
         
         coinWallet?.getWalletBalance() { (err, value) -> () in
             self.lbBalance.text = value

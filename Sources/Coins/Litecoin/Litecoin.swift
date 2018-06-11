@@ -84,5 +84,74 @@ class NRLLitecoin : NRLCoin{
         self.address = toAddress(publickkey: (self.pathPrivateKey?.nrlPublicKey().raw)!);
         self.wif = toWIF(privatekey: (self.pathPrivateKey?.raw)!, compressed: true);
     }
+    
+    //override functions for own wallet and synchronizing as spv
+    override func createOwnWallet(created: Date, fnew: Bool) {
+    }
+    
+    override func createPeerGroup() {
+    }
+    
+    override func connectPeers() -> Bool {
+        return false
+    }
+    
+    override func disConnectPeers() -> Bool {
+        return false
+    }
+    
+    override func startSyncing() -> Bool {
+        return false
+    }
+    
+    override func stopSyncing() -> Bool {
+        return false
+    }
+    
+    override func isConnected() -> Bool {
+        return false
+    }
+    
+    override func isDownloading() -> Bool {
+        return false
+    }
+    
+    override func getWalletBalance(callback:@escaping (_ err: NRLWalletSDKError, _ value: String) -> ()) {
+        
+    }
+    
+    override func getAddressesOfWallet() -> NSMutableArray {
+        return NSMutableArray()
+    }
+    
+    
+    override func getPrivKeysOfWallet() -> NSMutableArray {
+        return self.btcpeer!.getPrivKeysOfWallet()
+    }
+    
+    override func getPubKeysOfWallet() -> NSMutableArray {
+        return self.btcpeer!.getPubKeysOfWallet()
+    }
+    
+    override func getReceiveAddress() -> String {
+        return self.btcpeer!.getReceiveAddress()
+    }
+    
+    override func getAccountTransactions(offset: Int, count: Int, order: UInt, callback:@escaping (_ err: NRLWalletSDKError , _ tx: Any ) -> ()) {
+        self.btcpeer!.getAccountTransactions(offset: offset, count: count, order: order, callback: callback)
+    }
+    
+    //transaction
+    override func sendTransaction(to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
+        self.btcpeer?.sendTransaction(to: to, value: value, fee: fee, callback: callback)
+    }
+    
+    override func signTransaction(to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
+        self.btcpeer?.signTransaction(to: to, value: value, fee: fee, callback: callback)
+    }
+    
+    override func sendSignTransaction(tx: Any, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
+        self.btcpeer?.sendSignTransaction(tx: tx, callback: callback)
+    }
 }
 

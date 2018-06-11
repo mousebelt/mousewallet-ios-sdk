@@ -41,6 +41,7 @@ public enum NRLWalletSDKError: Error {
     case cryptoError(CryptoError)
     case syncError(SyncError)
     case transactionError(TransactionError)
+    case malformedData
 }
 
 public enum Ed25519Error: Error {
