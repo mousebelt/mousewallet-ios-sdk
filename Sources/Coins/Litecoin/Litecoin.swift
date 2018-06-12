@@ -10,7 +10,19 @@ import Foundation
 
 class NRLLitecoin : NRLCoin{
     let isTest: Bool;
-    init(seed: Data, fTest: Bool) {
+    fileprivate var walletManager: WalletManager?
+    private var walletCoordinator: WalletCoordinator?
+    private var feeUpdater: FeeUpdater?
+    private var reachability = ReachabilityMonitor()
+    private let noAuthApiClient = BRAPIClient(authenticator: NoAuthAuthenticator())
+    private var fetchCompletionHandler: ((UIBackgroundFetchResult) -> Void)?
+    private var launchURL: URL?
+    private var defaultsUpdater: UserDefaultsUpdater?
+    private var hasPerformedWalletDependentInitialization = false
+    private var didInitWallet = false
+    private let pin = "1234"
+    
+    init(mnemonic: [String], seed: Data, fTest: Bool) {
         self.isTest = fTest;
         var network: Network = .main(.litecoin)
         if (fTest) {
@@ -19,7 +31,8 @@ class NRLLitecoin : NRLCoin{
         
         let cointype = network.coinType
         
-        super.init(seed: seed,
+        super.init(mnemonic: mnemonic,
+                   seed: seed,
                    network: network,
                    coinType: cointype,
                    seedKey: "Bitcoin seed",
@@ -85,19 +98,99 @@ class NRLLitecoin : NRLCoin{
         self.wif = toWIF(privatekey: (self.pathPrivateKey?.raw)!, compressed: true);
     }
     
+    private func didInitWalletManager() {
+        guard let walletManager = walletManager else { assert(false, "WalletManager should exist!"); return }
+        hasPerformedWalletDependentInitialization = true
+        
+        DDLogDebug("PinLength set \(walletManager.pinLength)")
+        
+        walletCoordinator = WalletCoordinator(walletManager: walletManager)
+        feeUpdater = FeeUpdater(walletManager: walletManager)
+        defaultsUpdater = UserDefaultsUpdater(walletManager: walletManager)
+    }
+    
+    private func startDataFetchers() {
+        feeUpdater?.refresh()
+        defaultsUpdater?.refresh()
+    }
+    
+    func clearKeychain() {
+        let classes = [kSecClassGenericPassword as String,
+                       kSecClassInternetPassword as String,
+                       kSecClassCertificate as String,
+                       kSecClassKey as String,
+                       kSecClassIdentity as String]
+        classes.forEach { className in
+            SecItemDelete([kSecClass as String: className]  as CFDictionary)
+        }
+    }
+    
+    
+    func removeWallet(pin: String = "forceWipe") -> Bool {
+        return self.walletManager!.wipeWallet(pin: pin)
+    }
+    
     //override functions for own wallet and synchronizing as spv
     override func createOwnWallet(created: Date, fnew: Bool) {
+        self.walletManager = try? WalletManager(dbPath: nil)
+        let _ = self.walletManager?.wallet //attempt to initialize wallet
+        
+        if (fnew) {
+            if (self.didInitWallet && !(self.walletManager?.noWallet)!) {
+                DDLogDebug("createOwnWallet: already created")
+                if (!self.removeWallet(pin: self.pin)) {
+                    DDLogDebug("Failed to remove original wallet")
+                    return
+                }
+            }
+
+            let bindedString = self.mnemonic.joined(separator: " ")
+            
+            let phraseLen = strlen(bindedString) + 1
+            let phraseData = CFDataCreate(secureAllocator, bindedString, phraseLen)
+            let phrase = CFStringCreateFromExternalRepresentation(secureAllocator, phraseData,
+                                                                  CFStringBuiltInEncodings.UTF8.rawValue) as String
+            guard self.walletManager?.setSeedPhrase(phrase) != nil else {
+                DDLogDebug("Failed to Publick key generation")
+                return
+            }
+            
+            DDLogDebug("Wallet created : \(Date())")
+            let _ = self.walletManager?.wallet //attempt to initialize wallet
+        }
+        
+        DispatchQueue.main.async {
+            self.didInitWallet = true
+            if !self.hasPerformedWalletDependentInitialization {
+                self.didInitWalletManager()
+            }
+        }
     }
     
     override func createPeerGroup() {
+        if !self.hasPerformedWalletDependentInitialization {
+            self.didInitWalletManager()
+        }
     }
     
     override func connectPeers() -> Bool {
-        return false
+        if (self.walletManager == nil || (self.walletManager?.noWallet)!) {
+            DDLogDebug("connectPeers: Failed, no wallet")
+            return false
+        }
+
+        DispatchQueue.walletQueue.async {
+            self.walletManager?.peerManager?.connect()
+        }
+
+        self.startDataFetchers()
+
+        return true
     }
     
     override func disConnectPeers() -> Bool {
-        return false
+        self.walletManager?.peerManager?.disconnect()
+        return true
     }
     
     override func startSyncing() -> Bool {
@@ -109,7 +202,10 @@ class NRLLitecoin : NRLCoin{
     }
     
     override func isConnected() -> Bool {
-        return false
+        if ((self.walletManager?.peerManager == nil) || !(self.walletManager?.peerManager?.isConnected)!) {
+            return false;
+        }
+        return true
     }
     
     override func isDownloading() -> Bool {
@@ -126,32 +222,32 @@ class NRLLitecoin : NRLCoin{
     
     
     override func getPrivKeysOfWallet() -> NSMutableArray {
-        return self.btcpeer!.getPrivKeysOfWallet()
+        return NSMutableArray()
     }
     
     override func getPubKeysOfWallet() -> NSMutableArray {
-        return self.btcpeer!.getPubKeysOfWallet()
+        return NSMutableArray()
     }
     
     override func getReceiveAddress() -> String {
-        return self.btcpeer!.getReceiveAddress()
+        return ""
     }
     
     override func getAccountTransactions(offset: Int, count: Int, order: UInt, callback:@escaping (_ err: NRLWalletSDKError , _ tx: Any ) -> ()) {
-        self.btcpeer!.getAccountTransactions(offset: offset, count: count, order: order, callback: callback)
+        
     }
     
     //transaction
     override func sendTransaction(to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
-        self.btcpeer?.sendTransaction(to: to, value: value, fee: fee, callback: callback)
+        
     }
     
     override func signTransaction(to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
-        self.btcpeer?.signTransaction(to: to, value: value, fee: fee, callback: callback)
+        
     }
     
     override func sendSignTransaction(tx: Any, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
-        self.btcpeer?.sendSignTransaction(tx: tx, callback: callback)
+        
     }
 }
 

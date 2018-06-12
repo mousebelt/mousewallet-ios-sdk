@@ -39,6 +39,13 @@ class WalletCoordinator : Trackable {
             self?.reachabilityDidChange(isReachable: isReachable)
         }
     }
+    
+    private func notifyWithName(name: NSNotification.Name, userInfo: [AnyHashable : Any])
+    {
+        DispatchQueue.main.async {
+            NotificationCenter.default.post(name: name, object: self, userInfo: userInfo)
+        }
+    }
 
     private var lastBlockHeight: UInt32 {
         set {
@@ -53,6 +60,9 @@ class WalletCoordinator : Trackable {
         DispatchQueue.walletQueue.async {
             guard let progress = self.walletManager.peerManager?.syncProgress(fromStartHeight: self.lastBlockHeight), let timestamp = self.walletManager.peerManager?.lastBlockTimestamp else { return }
             DDLogDebug("PROGRESS: \(progress) \(timestamp)")
+            
+            let userinfo = [PeerGroupDownloadBlockProgressKey: progress, PeerGroupDownloadBlockTimestampKey: timestamp] as [String : Any]
+            self.notifyWithName(name: Notification.Name.LTC_PeerGroupDidDownloadBlock, userInfo: userinfo)
         }
         self.updateBalance()
     }
@@ -187,6 +197,8 @@ class WalletCoordinator : Trackable {
             DispatchQueue.main.async {
 //                self.checkForReceived(newBalance: newBalance)
                 DDLogDebug("Balance updated: \(newBalance)")
+                let userinfo = [WalletBalanceKey: newBalance] as [String : Any]
+                self.notifyWithName(name: Notification.Name.LTC_WalletDidUpdateBalance, userInfo: userinfo)
 //                self.store.perform(action: WalletChange.setBalance(newBalance))
             }
         }

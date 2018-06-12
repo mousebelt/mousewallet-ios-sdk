@@ -18,7 +18,7 @@ class NRLEthereum : NRLCoin{
     var privKey: EthereumPrivateKey?
     var chainid: EthereumQuantity //1 for mainnet. 3 for ropsten. 4 for rinkeby. 42 for kovan.
     
-    init(seed: Data, fTest: Bool) {
+    init(mnemonic: [String], seed: Data, fTest: Bool) {
         var network: Network = .main(.ethereum)
         self.chainid = 1
         if (fTest) {
@@ -28,7 +28,8 @@ class NRLEthereum : NRLCoin{
         
         let cointype = network.coinType
         
-        super.init(seed: seed,
+        super.init(mnemonic: mnemonic,
+                   seed: seed,
                    network: network,
                    coinType: cointype,
                    seedKey: "Bitcoin seed",

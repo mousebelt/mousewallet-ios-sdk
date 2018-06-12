@@ -26,7 +26,7 @@ class NRLStellar : NRLCoin{
         return seed.secret
     }
     
-    init(seed: Data, fTest: Bool) {
+    init(mnemonic: [String], seed: Data, fTest: Bool) {
         var network: Network = .main(.stellar)
         if (fTest) {
             network = .test(.ethereum)
@@ -34,7 +34,8 @@ class NRLStellar : NRLCoin{
         
         let cointype = network.coinType
         
-        super.init(seed: seed,
+        super.init(mnemonic: mnemonic,
+                   seed: seed,
                    network: network,
                    coinType: cointype,
                    seedKey: "ed25519 seed",

@@ -148,7 +148,7 @@ class ViewController: UIViewController {
         let seed = Data(fromHexEncodedString: "47d8d8898556e5c4fcf042b249ef92160e667046d7ff487392a9e6ca9e1d912b11a7b134baf7a8893c92d1a40731b08d1ef24789128d07101df740ad1ba4a12c")!
         */
 
-        coinWallet = NRLWallet(seed: self.seed!, network: .test(.bitcoin))
+        coinWallet = NRLWallet(mnemonic: self.mnemonic!, seed: self.seed!, network: .test(.bitcoin))
         
 //        bitcoinWallet.generateExternalKeyPair(at: 0)
         
@@ -222,7 +222,7 @@ class ViewController: UIViewController {
     
     func generateMneonic() {
         do {
-            self.mnemonic = try NRLMnemonic.generateMnemonic(strength: .hight, language: .english)
+            self.mnemonic = try NRLMnemonic.generateMnemonic(strength: .normal, language: .english)
             let bindedString = self.mnemonic?.joined(separator: " ")
             print("mnemonic = \(String(describing: bindedString))")
         } catch {
@@ -242,7 +242,7 @@ class ViewController: UIViewController {
     func setEthereumWallet() {
         print("\n------------------------- Ethereum ----------------------------\n")
         // Ethereum : 60
-        coinWallet = NRLWallet(seed: self.seed!, network: .test(.ethereum))
+        coinWallet = NRLWallet(mnemonic: self.mnemonic!, seed: self.seed!, network: .test(.ethereum))
 
         
         coinWallet?.createOwnWallet(created: Date(), fnew: true)
@@ -252,7 +252,7 @@ class ViewController: UIViewController {
         print("\n------------------------- NEO ----------------------------\n")
         // NEO : 888
 
-        coinWallet = NRLWallet(seed: self.seed!, network: .main(.neo))
+        coinWallet = NRLWallet(mnemonic: self.mnemonic!, seed: self.seed!, network: .main(.neo))
         coinWallet?.generateExternalKeyPair(at: 0)
         
         let privateKey = coinWallet?.getWIF()
@@ -268,7 +268,7 @@ class ViewController: UIViewController {
         print("\n------------------------- Litecoin ----------------------------\n")
         // Litecoin : 2
         
-        coinWallet = NRLWallet(seed: self.seed!, network: .main(.litecoin))
+        coinWallet = NRLWallet(mnemonic: self.mnemonic!, seed: self.seed!, network: .main(.litecoin))
 //        coinWallet?.generateExternalKeyPair(at: 0)
 //
 //        let privateKey = coinWallet?.getWIF()
@@ -279,17 +279,47 @@ class ViewController: UIViewController {
 //        print("LitecoinWallet public key = \(String(describing: publicKey))")
 //        print("LitecoinWallet address = \(String(describing: address))")
         
+        NotificationCenter.default.addObserver(self, selector: #selector(On_LTC_WalletDidUpdateBalance(notification:)), name: NSNotification.Name.LTC_WalletDidUpdateBalance, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(On_LTC_PeerGroupDidDownloadBlock(notification:)), name: Notification.Name.LTC_PeerGroupDidDownloadBlock, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(PeerGroupDidStartDownload(notification:)), name: NSNotification.Name.WSPeerGroupDidStartDownload, object: nil)
+        
         print("\nCreate Own Wallet")
         coinWallet?.createOwnWallet(created: Date(), fnew: true)
         print("\nCreate Peer Group")
         coinWallet?.createPeerGroup()
     }
     
+    private let dateFormatter: DateFormatter = {
+        let df = DateFormatter()
+        df.setLocalizedDateFormatFromTemplate("MMM d, yyyy")
+        return df
+    }()
+    
+    @objc func On_LTC_PeerGroupDidDownloadBlock(notification: Notification) {
+        let userinfo = notification.userInfo as! [String: Any]
+        
+        let progress = userinfo[PeerGroupDownloadBlockProgressKey] as! Double
+        let timestamp = userinfo[PeerGroupDownloadBlockTimestampKey] as! UInt32
+        
+        let txt = dateFormatter.string(from: Date(timeIntervalSince1970: Double(timestamp)))
+        
+        self.lbProgress.text = String(format: "Progress: \(progress * 100) %%  \(txt)")
+    }
+    
+    @objc func On_LTC_WalletDidUpdateBalance(notification: Notification) {
+        let userinfo = notification.userInfo as! [String: Any]
+        
+        let balance = userinfo[WalletBalanceKey] as! UInt64
+        
+        self.lbBalance.text = String(format: "\(balance)")
+    }
+
+    
     func setStellarWallet() {
         print("\n------------------------- Stellar ----------------------------\n")
         // Stellar : 148
         
-        coinWallet = NRLWallet(seed: self.seed!, network: .main(.stellar))
+        coinWallet = NRLWallet(mnemonic: self.mnemonic!, seed: self.seed!, network: .main(.stellar))
         coinWallet?.generateExternalKeyPair(at: 0)
         
         let privateKey = coinWallet?.getWIF()
@@ -306,9 +336,9 @@ class ViewController: UIViewController {
         defaultDebugLevel = DDLogLevel.debug
         DDLog.add(DDTTYLogger.sharedInstance)
         
-        //generateMneonic()
-        //generateSeed()
-        self.seed = Data(fromHexEncodedString: "86d1538c7dd3124fd8a2f13f54df5e18ec537848372edf59c31ee0adc1b42c899cf77482e7cb8c6c8472d20de4542d12ecc715b84150b045d0a003fb99077eb0")!
+        generateMneonic()
+        generateSeed()
+//        self.seed = Data(fromHexEncodedString: "86d1538c7dd3124fd8a2f13f54df5e18ec537848372edf59c31ee0adc1b42c899cf77482e7cb8c6c8472d20de4542d12ecc715b84150b045d0a003fb99077eb0")!
 
 //        setBitcoinWallet()
 //        setEthereumWallet()

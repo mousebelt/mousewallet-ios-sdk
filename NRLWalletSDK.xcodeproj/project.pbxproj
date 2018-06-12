@@ -425,6 +425,8 @@
 		63D49B4E20CE39BA0047840F /* AssociatedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B4D20CE39B90047840F /* AssociatedObject.swift */; };
 		63D49B5020CE3B2B0047840F /* BRBitID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B4F20CE3B2B0047840F /* BRBitID.swift */; };
 		63D49B5220CE3CB40047840F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B5120CE3CB40047840F /* Strings.swift */; };
+		63D49B5720CF60BA0047840F /* UserDefaultsUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B5620CF60BA0047840F /* UserDefaultsUpdater.swift */; };
+		63D49B5920CFCB790047840F /* NRLCoinNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B5820CFCB790047840F /* NRLCoinNotification.swift */; };
 		63F4FD4A20C585F700215698 /* WSCoreDataBlockStore.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 63F4FD4920C585F700215698 /* WSCoreDataBlockStore.xcdatamodel */; };
 		63F4FD4B20C589F800215698 /* WSCoreDataBlockStore.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 63F4FD4920C585F700215698 /* WSCoreDataBlockStore.xcdatamodel */; };
 		63F4FD4D20C6D09900215698 /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F4FD4C20C6D09900215698 /* TransactionViewController.swift */; };
@@ -942,6 +944,8 @@
 		63D49B4D20CE39B90047840F /* AssociatedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssociatedObject.swift; path = Sources/Coins/Litecoin/LitecoinNetwork/AssociatedObject.swift; sourceTree = SOURCE_ROOT; };
 		63D49B4F20CE3B2B0047840F /* BRBitID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRBitID.swift; sourceTree = "<group>"; };
 		63D49B5120CE3CB40047840F /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		63D49B5620CF60BA0047840F /* UserDefaultsUpdater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsUpdater.swift; sourceTree = "<group>"; };
+		63D49B5820CFCB790047840F /* NRLCoinNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRLCoinNotification.swift; sourceTree = "<group>"; };
 		63F4FD4920C585F700215698 /* WSCoreDataBlockStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WSCoreDataBlockStore.xcdatamodel; sourceTree = "<group>"; };
 		63F4FD4C20C6D09900215698 /* TransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
 		63F4FE3220C8819000215698 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -1199,6 +1203,7 @@
 				6327C13920B6526300CB2017 /* Litecoin.swift */,
 				63D49B4720CE27220047840F /* ReachabilityMonitor.swift */,
 				63D49B4920CE27410047840F /* RetryTimer.swift */,
+				63D49B5620CF60BA0047840F /* UserDefaultsUpdater.swift */,
 			);
 			path = Litecoin;
 			sourceTree = "<group>";
@@ -1290,6 +1295,7 @@
 				63304D6420AD4D3E006D444B /* Neo */,
 				6327C13820B6526300CB2017 /* Litecoin */,
 				6327C13C20B815D100CB2017 /* Stellar */,
+				63D49B5820CFCB790047840F /* NRLCoinNotification.swift */,
 			);
 			path = Coins;
 			sourceTree = "<group>";
@@ -2394,6 +2400,7 @@
 				63D49A7120CD3CE90047840F /* BRAddress.c in Sources */,
 				6377F8F020BE0E1700F668E3 /* WSPeerGroup.m in Sources */,
 				63D49A8C20CD3CE90047840F /* BRSet.c in Sources */,
+				63D49B5920CFCB790047840F /* NRLCoinNotification.swift in Sources */,
 				63D49AEF20CD40820047840F /* BRCore.swift in Sources */,
 				6377F8DC20BE0E1700F668E3 /* WSStorableBlockEntity.m in Sources */,
 				6395BB8620C0192D002EA989 /* DDDispatchQueueLogFormatter.m in Sources */,
@@ -2467,6 +2474,7 @@
 				6377F8A520BE0E1700F668E3 /* WSHash160.m in Sources */,
 				6377F90820BE0E1700F668E3 /* WSAbstractMessageLocatorBased.m in Sources */,
 				6377F8CE20BE0E1700F668E3 /* WSBitcoinConstants.m in Sources */,
+				63D49B5720CF60BA0047840F /* UserDefaultsUpdater.swift in Sources */,
 				6377F3F020BDACE500F668E3 /* AutoCoding.m in Sources */,
 				2167C340209B421E00A8653E /* Crypto.swift in Sources */,
 				6377F88720BE0E1600F668E3 /* WSBIP38.m in Sources */,
