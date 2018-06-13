@@ -71,7 +71,13 @@ public class NRLWallet {
         return self.coin.getAddressStr();
     }
     
-    // functions for own wallet and synchronizing as spv
+    /*
+     * Create own wallet
+     * @params
+     *   created: Set creation date for wallet. This is neccessary if import old wallet with seed.
+     *   fnew: flag if make wallet newly or use current saved wallet. If this is set to true, original wallet in store will be wiped.
+     *
+    */
     public func createOwnWallet(created: Date, fnew: Bool) {
         self.coin.createOwnWallet(created: created, fnew: fnew)
     }
