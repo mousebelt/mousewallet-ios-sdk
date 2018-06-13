@@ -234,17 +234,17 @@ class NRLLitecoin : NRLCoin{
         callback(NRLWalletSDKError.nrlSuccess, String(describing: self.walletManager?.wallet?.balance))
     }
     
-    override func getAddressesOfWallet() -> NSMutableArray {
-        return self.walletManager?.wallet?.allAddresses as! NSMutableArray
+    override func getAddressesOfWallet() -> NSArray {
+        return self.walletManager?.wallet?.allAddresses as! NSArray
     }
     
     
-    override func getPrivKeysOfWallet() -> NSMutableArray {
-        return NSMutableArray()
+    override func getPrivKeysOfWallet() -> NSArray {
+        return NSArray()
     }
     
-    override func getPubKeysOfWallet() -> NSMutableArray {
-        return NSMutableArray()
+    override func getPubKeysOfWallet() -> NSArray {
+        return NSArray()
     }
     
     override func getReceiveAddress() -> String {
@@ -254,11 +254,12 @@ class NRLLitecoin : NRLCoin{
     override func getAccountTransactions(offset: Int, count: Int, order: UInt, callback:@escaping (_ err: NRLWalletSDKError , _ tx: Any ) -> ()) {
         let txs = self.walletManager?.wallet?.transactions as [BRTxRef?]?
         
-        var txsReturn: [BRTxRef] = []
+        var txsReturn: [BRTransaction] = []
         
         for index in offset...offset + count {
             if (index < (txs?.count)!) {
-                txsReturn.append(txs![index]!)
+                let brtx = txs![index]?.pointee
+                txsReturn.append(brtx!)
             }
         }
         

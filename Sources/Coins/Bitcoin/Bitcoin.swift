@@ -125,16 +125,16 @@ class NRLBitcoin : NRLCoin{
         return self.btcpeer!.getWalletBalance(callback: callback)
     }
     
-    override func getAddressesOfWallet() -> NSMutableArray {
+    override func getAddressesOfWallet() -> NSArray {
         return self.btcpeer!.getAddressesOfWallet()
     }
     
     
-    override func getPrivKeysOfWallet() -> NSMutableArray {
+    override func getPrivKeysOfWallet() -> NSArray {
         return self.btcpeer!.getPrivKeysOfWallet()
     }
     
-    override func getPubKeysOfWallet() -> NSMutableArray {
+    override func getPubKeysOfWallet() -> NSArray {
         return self.btcpeer!.getPubKeysOfWallet()
     }
     

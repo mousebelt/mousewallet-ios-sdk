@@ -114,15 +114,15 @@ public class NRLWallet {
         return self.coin.getWalletBalance(callback: callback)
     }
     
-    public func getAddressesOfWallet() -> NSMutableArray? {
+    public func getAddressesOfWallet() -> NSArray? {
         return self.coin.getAddressesOfWallet()
     }
     
-    public func getPrivKeysOfWallet() -> NSMutableArray? {
+    public func getPrivKeysOfWallet() -> NSArray? {
         return self.coin.getPrivKeysOfWallet()
     }
     
-    public func getPubKeysOfWallet() -> NSMutableArray? {
+    public func getPubKeysOfWallet() -> NSArray? {
         return self.coin.getPubKeysOfWallet()
     }
     

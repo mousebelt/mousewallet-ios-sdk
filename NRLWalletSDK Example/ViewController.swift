@@ -316,7 +316,8 @@ class ViewController: UIViewController {
         // Litecoin : 2
         //for test
         self.mnemonic = ["vivid", "gesture", "series", "lady", "owner", "amused", "sock", "grunt", "hotel", "olive", "carpet", "visual"]
-        
+//        self.mnemonic = ["point", "secret", "crew", "boil", "spin", "letter", "race", "taste", "monkey", "garage", "awesome", "van"]
+
         coinWallet = NRLWallet(mnemonic: self.mnemonic!, seed: self.seed!, network: .main(.litecoin))
         
         guard let wallet = coinWallet else {
@@ -341,6 +342,9 @@ class ViewController: UIViewController {
         
         print("\nCreate Own Wallet")
         wallet.createOwnWallet(created: Date(), fnew: false)
+        
+        let addresses = wallet.getAddressesOfWallet()
+        print("Address: \(String(describing: addresses))")
         print("\nCreate Peer Group")
         wallet.createPeerGroup()
     }
