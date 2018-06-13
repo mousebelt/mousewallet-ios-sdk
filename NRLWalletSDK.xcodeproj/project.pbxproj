@@ -349,6 +349,84 @@
 		63D499DC20CAF0560047840F /* ObjectMapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63D499D320CAE70E0047840F /* ObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		63D499DD20CAF0560047840F /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D499D520CAE70F0047840F /* SwiftyJSON.framework */; };
 		63D499DE20CAF0560047840F /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63D499D520CAE70F0047840F /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		63D49A6F20CD3CE90047840F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 63D499E020CD3CE90047840F /* .gitignore */; };
+		63D49A7020CD3CE90047840F /* .gitmodules in Resources */ = {isa = PBXBuildFile; fileRef = 63D499E120CD3CE90047840F /* .gitmodules */; };
+		63D49A7120CD3CE90047840F /* BRAddress.c in Sources */ = {isa = PBXBuildFile; fileRef = 63D499E220CD3CE90047840F /* BRAddress.c */; };
+		63D49A7220CD3CE90047840F /* BRAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D499E320CD3CE90047840F /* BRAddress.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63D49A7320CD3CE90047840F /* BRArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D499E420CD3CE90047840F /* BRArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63D49A7420CD3CE90047840F /* BRBase58.c in Sources */ = {isa = PBXBuildFile; fileRef = 63D499E520CD3CE90047840F /* BRBase58.c */; };
+		63D49A7520CD3CE90047840F /* BRBase58.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D499E620CD3CE90047840F /* BRBase58.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63D49A7620CD3CE90047840F /* BRBIP32Sequence.c in Sources */ = {isa = PBXBuildFile; fileRef = 63D499E720CD3CE90047840F /* BRBIP32Sequence.c */; };
+		63D49A7720CD3CE90047840F /* BRBIP32Sequence.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D499E820CD3CE90047840F /* BRBIP32Sequence.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63D49A7820CD3CE90047840F /* BRBIP38Key.c in Sources */ = {isa = PBXBuildFile; fileRef = 63D499E920CD3CE90047840F /* BRBIP38Key.c */; };
+		63D49A7920CD3CE90047840F /* BRBIP38Key.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D499EA20CD3CE90047840F /* BRBIP38Key.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63D49A7A20CD3CE90047840F /* BRBIP39Mnemonic.c in Sources */ = {isa = PBXBuildFile; fileRef = 63D499EB20CD3CE90047840F /* BRBIP39Mnemonic.c */; };
+		63D49A7B20CD3CE90047840F /* BRBIP39Mnemonic.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D499EC20CD3CE90047840F /* BRBIP39Mnemonic.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63D49A7C20CD3CE90047840F /* BRBIP39WordsEn.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D499ED20CD3CE90047840F /* BRBIP39WordsEn.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63D49A7D20CD3CE90047840F /* BRBloomFilter.c in Sources */ = {isa = PBXBuildFile; fileRef = 63D499EE20CD3CE90047840F /* BRBloomFilter.c */; };
+		63D49A7E20CD3CE90047840F /* BRBloomFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D499EF20CD3CE90047840F /* BRBloomFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63D49A7F20CD3CE90047840F /* BRCrypto.c in Sources */ = {isa = PBXBuildFile; fileRef = 63D499F020CD3CE90047840F /* BRCrypto.c */; };
+		63D49A8020CD3CE90047840F /* BRCrypto.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D499F120CD3CE90047840F /* BRCrypto.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63D49A8120CD3CE90047840F /* BRInt.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D499F220CD3CE90047840F /* BRInt.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63D49A8220CD3CE90047840F /* BRKey.c in Sources */ = {isa = PBXBuildFile; fileRef = 63D499F320CD3CE90047840F /* BRKey.c */; };
+		63D49A8320CD3CE90047840F /* BRKey.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D499F420CD3CE90047840F /* BRKey.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63D49A8420CD3CE90047840F /* BRMerkleBlock.c in Sources */ = {isa = PBXBuildFile; fileRef = 63D499F520CD3CE90047840F /* BRMerkleBlock.c */; };
+		63D49A8520CD3CE90047840F /* BRMerkleBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D499F620CD3CE90047840F /* BRMerkleBlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63D49A8620CD3CE90047840F /* BRPaymentProtocol.c in Sources */ = {isa = PBXBuildFile; fileRef = 63D499F720CD3CE90047840F /* BRPaymentProtocol.c */; };
+		63D49A8720CD3CE90047840F /* BRPaymentProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D499F820CD3CE90047840F /* BRPaymentProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63D49A8820CD3CE90047840F /* BRPeer.c in Sources */ = {isa = PBXBuildFile; fileRef = 63D499F920CD3CE90047840F /* BRPeer.c */; };
+		63D49A8920CD3CE90047840F /* BRPeer.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D499FA20CD3CE90047840F /* BRPeer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63D49A8A20CD3CE90047840F /* BRPeerManager.c in Sources */ = {isa = PBXBuildFile; fileRef = 63D499FB20CD3CE90047840F /* BRPeerManager.c */; };
+		63D49A8B20CD3CE90047840F /* BRPeerManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D499FC20CD3CE90047840F /* BRPeerManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63D49A8C20CD3CE90047840F /* BRSet.c in Sources */ = {isa = PBXBuildFile; fileRef = 63D499FD20CD3CE90047840F /* BRSet.c */; };
+		63D49A8D20CD3CE90047840F /* BRSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D499FE20CD3CE90047840F /* BRSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63D49A8E20CD3CE90047840F /* BRTransaction.c in Sources */ = {isa = PBXBuildFile; fileRef = 63D499FF20CD3CE90047840F /* BRTransaction.c */; };
+		63D49A8F20CD3CE90047840F /* BRTransaction.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D49A0020CD3CE90047840F /* BRTransaction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63D49A9020CD3CE90047840F /* BRWallet.c in Sources */ = {isa = PBXBuildFile; fileRef = 63D49A0120CD3CE90047840F /* BRWallet.c */; };
+		63D49A9120CD3CE90047840F /* BRWallet.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D49A0220CD3CE90047840F /* BRWallet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63D49A9220CD3CE90047840F /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 63D49A0320CD3CE90047840F /* LICENSE */; };
+		63D49A9320CD3CE90047840F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 63D49A0520CD3CE90047840F /* README.md */; };
+		63D49AED20CD3CE90047840F /* test.c in Sources */ = {isa = PBXBuildFile; fileRef = 63D49A6E20CD3CE90047840F /* test.c */; };
+		63D49AEF20CD40820047840F /* BRCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49AEE20CD40820047840F /* BRCore.swift */; };
+		63D49AF120CD4EE60047840F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49AF020CD4EE50047840F /* Extensions.swift */; };
+		63D49AF420CDC5EA0047840F /* WalletCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49AF220CDC5EA0047840F /* WalletCoordinator.swift */; };
+		63D49AF520CDC5EA0047840F /* WalletManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49AF320CDC5EA0047840F /* WalletManager.swift */; };
+		63D49B0420CDE5C60047840F /* DispatchQueue+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B0320CDE5C60047840F /* DispatchQueue+Additions.swift */; };
+		63D49B1220CDE7740047840F /* BRAPIClient+Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B0E20CDE7730047840F /* BRAPIClient+Events.swift */; };
+		63D49B1320CDE7740047840F /* BRAPIClient+Features.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B0F20CDE7730047840F /* BRAPIClient+Features.swift */; };
+		63D49B1420CDE7740047840F /* BRAPIClient+KV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B1020CDE7730047840F /* BRAPIClient+KV.swift */; };
+		63D49B1520CDE7740047840F /* BRAPIClient+Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B1120CDE7730047840F /* BRAPIClient+Wallet.swift */; };
+		63D49B1720CDE7BC0047840F /* BRAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B1620CDE7BB0047840F /* BRAPIClient.swift */; };
+		63D49B1A20CDE8100047840F /* PaymentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B1820CDE8100047840F /* PaymentProtocol.swift */; };
+		63D49B1B20CDE8100047840F /* PaymentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B1920CDE8100047840F /* PaymentRequest.swift */; };
+		63D49B1D20CDEC660047840F /* BRWalletPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B1C20CDEC660047840F /* BRWalletPlugin.swift */; };
+		63D49B1F20CDECC00047840F /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B1E20CDECC00047840F /* Types.swift */; };
+		63D49B2220CDED860047840F /* WalletManager+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B2020CDED850047840F /* WalletManager+Auth.swift */; };
+		63D49B2320CDED860047840F /* WalletManager+BCash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B2120CDED860047840F /* WalletManager+BCash.swift */; };
+		63D49B2A20CDEE4D0047840F /* BRAPIProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B2520CDEE4C0047840F /* BRAPIProxy.swift */; };
+		63D49B2B20CDEE4D0047840F /* BRHTTPFileMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B2620CDEE4C0047840F /* BRHTTPFileMiddleware.swift */; };
+		63D49B2C20CDEE4D0047840F /* BRHTTPIndexMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B2720CDEE4C0047840F /* BRHTTPIndexMiddleware.swift */; };
+		63D49B2D20CDEE4D0047840F /* BRHTTPRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B2820CDEE4C0047840F /* BRHTTPRouter.swift */; };
+		63D49B2E20CDEE4D0047840F /* BRHTTPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B2920CDEE4C0047840F /* BRHTTPServer.swift */; };
+		63D49B3420CDEED80047840F /* BRSocketHelpers.c in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B3020CDEED80047840F /* BRSocketHelpers.c */; };
+		63D49B3520CDEED80047840F /* BRSocketHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D49B3120CDEED80047840F /* BRSocketHelpers.h */; };
+		63D49B3620CDEED80047840F /* BRWebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B3320CDEED80047840F /* BRWebSocket.swift */; };
+		63D49B3820CDFAC00047840F /* String+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B3720CDFAC00047840F /* String+Additions.swift */; };
+		63D49B3A20CDFB0C0047840F /* String+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B3920CDFB0C0047840F /* String+Keys.swift */; };
+		63D49B3C20CDFB210047840F /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B3B20CDFB210047840F /* Rate.swift */; };
+		63D49B3E20CDFBC80047840F /* BRReplicatedKVStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B3D20CDFBC80047840F /* BRReplicatedKVStore.swift */; };
+		63D49B4020CE24390047840F /* LAContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B3F20CE24380047840F /* LAContext+Extensions.swift */; };
+		63D49B4220CE25820047840F /* FeeUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B4120CE25810047840F /* FeeUpdater.swift */; };
+		63D49B4420CE25D30047840F /* UserDefaults+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B4320CE25D30047840F /* UserDefaults+Additions.swift */; };
+		63D49B4620CE26530047840F /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B4520CE26530047840F /* Environment.swift */; };
+		63D49B4820CE27220047840F /* ReachabilityMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B4720CE27220047840F /* ReachabilityMonitor.swift */; };
+		63D49B4A20CE27420047840F /* RetryTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B4920CE27410047840F /* RetryTimer.swift */; };
+		63D49B4C20CE28860047840F /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B4B20CE28860047840F /* Functions.swift */; };
+		63D49B4E20CE39BA0047840F /* AssociatedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B4D20CE39B90047840F /* AssociatedObject.swift */; };
+		63D49B5020CE3B2B0047840F /* BRBitID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B4F20CE3B2B0047840F /* BRBitID.swift */; };
+		63D49B5220CE3CB40047840F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B5120CE3CB40047840F /* Strings.swift */; };
+		63D49B5720CF60BA0047840F /* UserDefaultsUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B5620CF60BA0047840F /* UserDefaultsUpdater.swift */; };
+		63D49B5920CFCB790047840F /* NRLCoinNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49B5820CFCB790047840F /* NRLCoinNotification.swift */; };
 		63F4FD4A20C585F700215698 /* WSCoreDataBlockStore.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 63F4FD4920C585F700215698 /* WSCoreDataBlockStore.xcdatamodel */; };
 		63F4FD4B20C589F800215698 /* WSCoreDataBlockStore.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 63F4FD4920C585F700215698 /* WSCoreDataBlockStore.xcdatamodel */; };
 		63F4FD4D20C6D09900215698 /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F4FD4C20C6D09900215698 /* TransactionViewController.swift */; };
@@ -787,6 +865,87 @@
 		63D499D320CAE70E0047840F /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
 		63D499D420CAE70E0047840F /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		63D499D520CAE70F0047840F /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		63D499E020CD3CE90047840F /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		63D499E120CD3CE90047840F /* .gitmodules */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitmodules; sourceTree = "<group>"; };
+		63D499E220CD3CE90047840F /* BRAddress.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BRAddress.c; sourceTree = "<group>"; };
+		63D499E320CD3CE90047840F /* BRAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRAddress.h; sourceTree = "<group>"; };
+		63D499E420CD3CE90047840F /* BRArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRArray.h; sourceTree = "<group>"; };
+		63D499E520CD3CE90047840F /* BRBase58.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BRBase58.c; sourceTree = "<group>"; };
+		63D499E620CD3CE90047840F /* BRBase58.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRBase58.h; sourceTree = "<group>"; };
+		63D499E720CD3CE90047840F /* BRBIP32Sequence.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BRBIP32Sequence.c; sourceTree = "<group>"; };
+		63D499E820CD3CE90047840F /* BRBIP32Sequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRBIP32Sequence.h; sourceTree = "<group>"; };
+		63D499E920CD3CE90047840F /* BRBIP38Key.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BRBIP38Key.c; sourceTree = "<group>"; };
+		63D499EA20CD3CE90047840F /* BRBIP38Key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRBIP38Key.h; sourceTree = "<group>"; };
+		63D499EB20CD3CE90047840F /* BRBIP39Mnemonic.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BRBIP39Mnemonic.c; sourceTree = "<group>"; };
+		63D499EC20CD3CE90047840F /* BRBIP39Mnemonic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRBIP39Mnemonic.h; sourceTree = "<group>"; };
+		63D499ED20CD3CE90047840F /* BRBIP39WordsEn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRBIP39WordsEn.h; sourceTree = "<group>"; };
+		63D499EE20CD3CE90047840F /* BRBloomFilter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BRBloomFilter.c; sourceTree = "<group>"; };
+		63D499EF20CD3CE90047840F /* BRBloomFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRBloomFilter.h; sourceTree = "<group>"; };
+		63D499F020CD3CE90047840F /* BRCrypto.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BRCrypto.c; sourceTree = "<group>"; };
+		63D499F120CD3CE90047840F /* BRCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRCrypto.h; sourceTree = "<group>"; };
+		63D499F220CD3CE90047840F /* BRInt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRInt.h; sourceTree = "<group>"; };
+		63D499F320CD3CE90047840F /* BRKey.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BRKey.c; sourceTree = "<group>"; };
+		63D499F420CD3CE90047840F /* BRKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRKey.h; sourceTree = "<group>"; };
+		63D499F520CD3CE90047840F /* BRMerkleBlock.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BRMerkleBlock.c; sourceTree = "<group>"; };
+		63D499F620CD3CE90047840F /* BRMerkleBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRMerkleBlock.h; sourceTree = "<group>"; };
+		63D499F720CD3CE90047840F /* BRPaymentProtocol.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BRPaymentProtocol.c; sourceTree = "<group>"; };
+		63D499F820CD3CE90047840F /* BRPaymentProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRPaymentProtocol.h; sourceTree = "<group>"; };
+		63D499F920CD3CE90047840F /* BRPeer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BRPeer.c; sourceTree = "<group>"; };
+		63D499FA20CD3CE90047840F /* BRPeer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRPeer.h; sourceTree = "<group>"; };
+		63D499FB20CD3CE90047840F /* BRPeerManager.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BRPeerManager.c; sourceTree = "<group>"; };
+		63D499FC20CD3CE90047840F /* BRPeerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRPeerManager.h; sourceTree = "<group>"; };
+		63D499FD20CD3CE90047840F /* BRSet.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BRSet.c; sourceTree = "<group>"; };
+		63D499FE20CD3CE90047840F /* BRSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRSet.h; sourceTree = "<group>"; };
+		63D499FF20CD3CE90047840F /* BRTransaction.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BRTransaction.c; sourceTree = "<group>"; };
+		63D49A0020CD3CE90047840F /* BRTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRTransaction.h; sourceTree = "<group>"; };
+		63D49A0120CD3CE90047840F /* BRWallet.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BRWallet.c; sourceTree = "<group>"; };
+		63D49A0220CD3CE90047840F /* BRWallet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRWallet.h; sourceTree = "<group>"; };
+		63D49A0320CD3CE90047840F /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		63D49A0420CD3CE90047840F /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		63D49A0520CD3CE90047840F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		63D49A6E20CD3CE90047840F /* test.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = test.c; sourceTree = "<group>"; };
+		63D49AEE20CD40820047840F /* BRCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRCore.swift; sourceTree = "<group>"; };
+		63D49AF020CD4EE50047840F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		63D49AF220CDC5EA0047840F /* WalletCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletCoordinator.swift; sourceTree = "<group>"; };
+		63D49AF320CDC5EA0047840F /* WalletManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletManager.swift; sourceTree = "<group>"; };
+		63D49AFB20CDE4330047840F /* sqlite.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = sqlite.modulemap; sourceTree = "<group>"; };
+		63D49B0320CDE5C60047840F /* DispatchQueue+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Additions.swift"; sourceTree = "<group>"; };
+		63D49B0E20CDE7730047840F /* BRAPIClient+Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BRAPIClient+Events.swift"; sourceTree = "<group>"; };
+		63D49B0F20CDE7730047840F /* BRAPIClient+Features.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BRAPIClient+Features.swift"; sourceTree = "<group>"; };
+		63D49B1020CDE7730047840F /* BRAPIClient+KV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BRAPIClient+KV.swift"; sourceTree = "<group>"; };
+		63D49B1120CDE7730047840F /* BRAPIClient+Wallet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BRAPIClient+Wallet.swift"; sourceTree = "<group>"; };
+		63D49B1620CDE7BB0047840F /* BRAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRAPIClient.swift; sourceTree = "<group>"; };
+		63D49B1820CDE8100047840F /* PaymentProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentProtocol.swift; sourceTree = "<group>"; };
+		63D49B1920CDE8100047840F /* PaymentRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentRequest.swift; sourceTree = "<group>"; };
+		63D49B1C20CDEC660047840F /* BRWalletPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRWalletPlugin.swift; sourceTree = "<group>"; };
+		63D49B1E20CDECC00047840F /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		63D49B2020CDED850047840F /* WalletManager+Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WalletManager+Auth.swift"; sourceTree = "<group>"; };
+		63D49B2120CDED860047840F /* WalletManager+BCash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WalletManager+BCash.swift"; sourceTree = "<group>"; };
+		63D49B2520CDEE4C0047840F /* BRAPIProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRAPIProxy.swift; sourceTree = "<group>"; };
+		63D49B2620CDEE4C0047840F /* BRHTTPFileMiddleware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRHTTPFileMiddleware.swift; sourceTree = "<group>"; };
+		63D49B2720CDEE4C0047840F /* BRHTTPIndexMiddleware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRHTTPIndexMiddleware.swift; sourceTree = "<group>"; };
+		63D49B2820CDEE4C0047840F /* BRHTTPRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRHTTPRouter.swift; sourceTree = "<group>"; };
+		63D49B2920CDEE4C0047840F /* BRHTTPServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRHTTPServer.swift; sourceTree = "<group>"; };
+		63D49B3020CDEED80047840F /* BRSocketHelpers.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BRSocketHelpers.c; sourceTree = "<group>"; };
+		63D49B3120CDEED80047840F /* BRSocketHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRSocketHelpers.h; sourceTree = "<group>"; };
+		63D49B3220CDEED80047840F /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		63D49B3320CDEED80047840F /* BRWebSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRWebSocket.swift; sourceTree = "<group>"; };
+		63D49B3720CDFAC00047840F /* String+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Additions.swift"; sourceTree = "<group>"; };
+		63D49B3920CDFB0C0047840F /* String+Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Keys.swift"; sourceTree = "<group>"; };
+		63D49B3B20CDFB210047840F /* Rate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rate.swift; sourceTree = "<group>"; };
+		63D49B3D20CDFBC80047840F /* BRReplicatedKVStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRReplicatedKVStore.swift; sourceTree = "<group>"; };
+		63D49B3F20CE24380047840F /* LAContext+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LAContext+Extensions.swift"; sourceTree = "<group>"; };
+		63D49B4120CE25810047840F /* FeeUpdater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeeUpdater.swift; sourceTree = "<group>"; };
+		63D49B4320CE25D30047840F /* UserDefaults+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Additions.swift"; sourceTree = "<group>"; };
+		63D49B4520CE26530047840F /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		63D49B4720CE27220047840F /* ReachabilityMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityMonitor.swift; sourceTree = "<group>"; };
+		63D49B4920CE27410047840F /* RetryTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetryTimer.swift; sourceTree = "<group>"; };
+		63D49B4B20CE28860047840F /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		63D49B4D20CE39B90047840F /* AssociatedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssociatedObject.swift; path = Sources/Coins/Litecoin/LitecoinNetwork/AssociatedObject.swift; sourceTree = SOURCE_ROOT; };
+		63D49B4F20CE3B2B0047840F /* BRBitID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRBitID.swift; sourceTree = "<group>"; };
+		63D49B5120CE3CB40047840F /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		63D49B5620CF60BA0047840F /* UserDefaultsUpdater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsUpdater.swift; sourceTree = "<group>"; };
+		63D49B5820CFCB790047840F /* NRLCoinNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRLCoinNotification.swift; sourceTree = "<group>"; };
 		63F4FD4920C585F700215698 /* WSCoreDataBlockStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WSCoreDataBlockStore.xcdatamodel; sourceTree = "<group>"; };
 		63F4FD4C20C6D09900215698 /* TransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
 		63F4FE3220C8819000215698 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -994,19 +1153,22 @@
 			isa = PBXGroup;
 			children = (
 				6327C1B420B86D7C00CB2017 /* Base32 */,
+				63F4FE3420C882B600215698 /* Array+Extension.swift */,
+				630DC73920AC2C4F0005800A /* CryptoExtensions.swift */,
 				6327C1B920B86D7C00CB2017 /* Data+Base16.swift */,
 				6327C1B320B86D7B00CB2017 /* Data+CRC.swift */,
+				630DC73C20AC2D7B0005800A /* Data+Extension.swift */,
 				6327C1B020B86D7B00CB2017 /* DateFormatter+ISOParsing.swift */,
+				630DC74020AC2E200005800A /* Dictionary+Extension.swift */,
 				6327C1AF20B86D7B00CB2017 /* Dictionary+HttpParams.swift */,
+				63D49B0320CDE5C60047840F /* DispatchQueue+Additions.swift */,
+				63F4FE3620C8833800215698 /* NSRegularExpressionExtension.swift */,
 				6327C1B220B86D7B00CB2017 /* String+Base64.swift */,
+				63D49B3720CDFAC00047840F /* String+Additions.swift */,
 				6327C1BA20B86D7C00CB2017 /* String+Encoding.swift */,
 				63F4FE3220C8819000215698 /* String+Extension.swift */,
-				630DC74020AC2E200005800A /* Dictionary+Extension.swift */,
-				630DC73920AC2C4F0005800A /* CryptoExtensions.swift */,
-				630DC73C20AC2D7B0005800A /* Data+Extension.swift */,
 				6327C13620B6363500CB2017 /* SMP+Extensions.swift */,
-				63F4FE3420C882B600215698 /* Array+Extension.swift */,
-				63F4FE3620C8833800215698 /* NSRegularExpressionExtension.swift */,
+				63D49B3920CDFB0C0047840F /* String+Keys.swift */,
 			);
 			path = Convenience;
 			sourceTree = "<group>";
@@ -1029,7 +1191,19 @@
 		6327C13820B6526300CB2017 /* Litecoin */ = {
 			isa = PBXGroup;
 			children = (
+				63D49B5520CE49CB0047840F /* LitecoinNetwork */,
+				63D49B5420CE49890047840F /* Extensions */,
+				63D49B5320CE494D0047840F /* WalletManager */,
+				63D49B0D20CDE7730047840F /* BRAPIClient */,
+				63D49B2420CDEE4C0047840F /* Middleware */,
+				63D49B2F20CDEED80047840F /* BRSocket */,
+				63D49AEE20CD40820047840F /* BRCore.swift */,
+				63D49B3D20CDFBC80047840F /* BRReplicatedKVStore.swift */,
+				63D49B1C20CDEC660047840F /* BRWalletPlugin.swift */,
 				6327C13920B6526300CB2017 /* Litecoin.swift */,
+				63D49B4720CE27220047840F /* ReachabilityMonitor.swift */,
+				63D49B4920CE27410047840F /* RetryTimer.swift */,
+				63D49B5620CF60BA0047840F /* UserDefaultsUpdater.swift */,
 			);
 			path = Litecoin;
 			sourceTree = "<group>";
@@ -1121,6 +1295,7 @@
 				63304D6420AD4D3E006D444B /* Neo */,
 				6327C13820B6526300CB2017 /* Litecoin */,
 				6327C13C20B815D100CB2017 /* Stellar */,
+				63D49B5820CFCB790047840F /* NRLCoinNotification.swift */,
 			);
 			path = Coins;
 			sourceTree = "<group>";
@@ -1128,10 +1303,12 @@
 		6377F21320BDA35000F668E3 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				63D499DF20CD3CE90047840F /* loafwallet-core */,
 				6377F3DB20BDACE500F668E3 /* AutoCoding */,
 				6377F6AD20BE0E1600F668E3 /* BitcoinSPV */,
 				6377F3E120BDACE500F668E3 /* CocoaAsyncSocket */,
 				6377F28A20BDA35100F668E3 /* CocoaLumberjack */,
+				63D49AFB20CDE4330047840F /* sqlite.modulemap */,
 			);
 			path = Libraries;
 			sourceTree = SOURCE_ROOT;
@@ -1586,6 +1763,124 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		63D499DF20CD3CE90047840F /* loafwallet-core */ = {
+			isa = PBXGroup;
+			children = (
+				63D499E020CD3CE90047840F /* .gitignore */,
+				63D499E120CD3CE90047840F /* .gitmodules */,
+				63D499E220CD3CE90047840F /* BRAddress.c */,
+				63D499E320CD3CE90047840F /* BRAddress.h */,
+				63D499E420CD3CE90047840F /* BRArray.h */,
+				63D499E520CD3CE90047840F /* BRBase58.c */,
+				63D499E620CD3CE90047840F /* BRBase58.h */,
+				63D499E720CD3CE90047840F /* BRBIP32Sequence.c */,
+				63D499E820CD3CE90047840F /* BRBIP32Sequence.h */,
+				63D499E920CD3CE90047840F /* BRBIP38Key.c */,
+				63D499EA20CD3CE90047840F /* BRBIP38Key.h */,
+				63D499EB20CD3CE90047840F /* BRBIP39Mnemonic.c */,
+				63D499EC20CD3CE90047840F /* BRBIP39Mnemonic.h */,
+				63D499ED20CD3CE90047840F /* BRBIP39WordsEn.h */,
+				63D499EE20CD3CE90047840F /* BRBloomFilter.c */,
+				63D499EF20CD3CE90047840F /* BRBloomFilter.h */,
+				63D499F020CD3CE90047840F /* BRCrypto.c */,
+				63D499F120CD3CE90047840F /* BRCrypto.h */,
+				63D499F220CD3CE90047840F /* BRInt.h */,
+				63D499F320CD3CE90047840F /* BRKey.c */,
+				63D499F420CD3CE90047840F /* BRKey.h */,
+				63D499F520CD3CE90047840F /* BRMerkleBlock.c */,
+				63D499F620CD3CE90047840F /* BRMerkleBlock.h */,
+				63D499F720CD3CE90047840F /* BRPaymentProtocol.c */,
+				63D499F820CD3CE90047840F /* BRPaymentProtocol.h */,
+				63D499F920CD3CE90047840F /* BRPeer.c */,
+				63D499FA20CD3CE90047840F /* BRPeer.h */,
+				63D499FB20CD3CE90047840F /* BRPeerManager.c */,
+				63D499FC20CD3CE90047840F /* BRPeerManager.h */,
+				63D499FD20CD3CE90047840F /* BRSet.c */,
+				63D499FE20CD3CE90047840F /* BRSet.h */,
+				63D499FF20CD3CE90047840F /* BRTransaction.c */,
+				63D49A0020CD3CE90047840F /* BRTransaction.h */,
+				63D49A0120CD3CE90047840F /* BRWallet.c */,
+				63D49A0220CD3CE90047840F /* BRWallet.h */,
+				63D49A0320CD3CE90047840F /* LICENSE */,
+				63D49A0420CD3CE90047840F /* module.modulemap */,
+				63D49A0520CD3CE90047840F /* README.md */,
+				63D49A6E20CD3CE90047840F /* test.c */,
+			);
+			name = "loafwallet-core";
+			path = "Libraries/loafwallet-core";
+			sourceTree = SOURCE_ROOT;
+		};
+		63D49B0D20CDE7730047840F /* BRAPIClient */ = {
+			isa = PBXGroup;
+			children = (
+				63D49B1620CDE7BB0047840F /* BRAPIClient.swift */,
+				63D49B0E20CDE7730047840F /* BRAPIClient+Events.swift */,
+				63D49B0F20CDE7730047840F /* BRAPIClient+Features.swift */,
+				63D49B1020CDE7730047840F /* BRAPIClient+KV.swift */,
+				63D49B1120CDE7730047840F /* BRAPIClient+Wallet.swift */,
+			);
+			path = BRAPIClient;
+			sourceTree = "<group>";
+		};
+		63D49B2420CDEE4C0047840F /* Middleware */ = {
+			isa = PBXGroup;
+			children = (
+				63D49B2520CDEE4C0047840F /* BRAPIProxy.swift */,
+				63D49B2620CDEE4C0047840F /* BRHTTPFileMiddleware.swift */,
+				63D49B2720CDEE4C0047840F /* BRHTTPIndexMiddleware.swift */,
+				63D49B2820CDEE4C0047840F /* BRHTTPRouter.swift */,
+				63D49B2920CDEE4C0047840F /* BRHTTPServer.swift */,
+			);
+			path = Middleware;
+			sourceTree = "<group>";
+		};
+		63D49B2F20CDEED80047840F /* BRSocket */ = {
+			isa = PBXGroup;
+			children = (
+				63D49B3320CDEED80047840F /* BRWebSocket.swift */,
+				63D49B3020CDEED80047840F /* BRSocketHelpers.c */,
+				63D49B3120CDEED80047840F /* BRSocketHelpers.h */,
+				63D49B3220CDEED80047840F /* module.modulemap */,
+			);
+			path = BRSocket;
+			sourceTree = "<group>";
+		};
+		63D49B5320CE494D0047840F /* WalletManager */ = {
+			isa = PBXGroup;
+			children = (
+				63D49AF220CDC5EA0047840F /* WalletCoordinator.swift */,
+				63D49AF320CDC5EA0047840F /* WalletManager.swift */,
+				63D49B2020CDED850047840F /* WalletManager+Auth.swift */,
+				63D49B2120CDED860047840F /* WalletManager+BCash.swift */,
+			);
+			path = WalletManager;
+			sourceTree = "<group>";
+		};
+		63D49B5420CE49890047840F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				63D49AF020CD4EE50047840F /* Extensions.swift */,
+				63D49B4B20CE28860047840F /* Functions.swift */,
+				63D49B3F20CE24380047840F /* LAContext+Extensions.swift */,
+				63D49B5120CE3CB40047840F /* Strings.swift */,
+				63D49B4320CE25D30047840F /* UserDefaults+Additions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		63D49B5520CE49CB0047840F /* LitecoinNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				63D49B4D20CE39B90047840F /* AssociatedObject.swift */,
+				63D49B4F20CE3B2B0047840F /* BRBitID.swift */,
+				63D49B4520CE26530047840F /* Environment.swift */,
+				63D49B4120CE25810047840F /* FeeUpdater.swift */,
+				63D49B1820CDE8100047840F /* PaymentProtocol.swift */,
+				63D49B1920CDE8100047840F /* PaymentRequest.swift */,
+			);
+			path = LitecoinNetwork;
+			sourceTree = "<group>";
+		};
 		63F4FE3820C8846600215698 /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -1629,8 +1924,10 @@
 				63F66C2E20B4B671007DF79D /* Balance.swift */,
 				63F66C2F20B4B671007DF79D /* BlockParameter.swift */,
 				63F66C3020B4B671007DF79D /* RawTransaction.swift */,
+				63D49B3B20CDFB210047840F /* Rate.swift */,
 				63F66C3120B4B671007DF79D /* SentTransaction.swift */,
 				63F66C3220B4B671007DF79D /* Transaction.swift */,
+				63D49B1E20CDECC00047840F /* Types.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1700,6 +1997,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6377F89320BE0E1600F668E3 /* WSStorableBlock+BlockChain.h in Headers */,
+				63D49A7520CD3CE90047840F /* BRBase58.h in Headers */,
 				6377F88820BE0E1600F668E3 /* WSBIP39.h in Headers */,
 				6377F94F20BE0E1700F668E3 /* WSWebExplorerBlockExplorer.h in Headers */,
 				6377F88F20BE0E1600F668E3 /* WSBlockStore.h in Headers */,
@@ -1722,6 +2020,7 @@
 				6377F8D920BE0E1700F668E3 /* WSPartialMerkleTreeEntity.h in Headers */,
 				6377F95720BE0E1700F668E3 /* WSWebTickerBitstamp.h in Headers */,
 				6377F94720BE0E1700F668E3 /* WSJSONClient.h in Headers */,
+				63D49A8320CD3CE90047840F /* BRKey.h in Headers */,
 				6377F92120BE0E1700F668E3 /* WSMessageMerkleblock.h in Headers */,
 				6395BB7B20C0192D002EA989 /* DDLog+LOGV.h in Headers */,
 				6377F91720BE0E1700F668E3 /* WSMessageGetdata.h in Headers */,
@@ -1735,6 +2034,7 @@
 				6377F8B620BE0E1700F668E3 /* WSPublicKey.h in Headers */,
 				6377F90F20BE0E1700F668E3 /* WSMessageFactory.h in Headers */,
 				6377F93520BE0E1700F668E3 /* NSData+Hash.h in Headers */,
+				63D49A8F20CD3CE90047840F /* BRTransaction.h in Headers */,
 				6377F93920BE0E1700F668E3 /* NSString+Binary.h in Headers */,
 				6377F92320BE0E1700F668E3 /* WSMessageNotfound.h in Headers */,
 				6377F89820BE0E1600F668E3 /* WSBlock.h in Headers */,
@@ -1749,13 +2049,17 @@
 				6377F94120BE0E1700F668E3 /* WSHDWallet.h in Headers */,
 				6377F8F920BE0E1700F668E3 /* WSParameters.h in Headers */,
 				6377F8C220BE0E1700F668E3 /* WSTransactionInput.h in Headers */,
+				63D49A8520CD3CE90047840F /* BRMerkleBlock.h in Headers */,
 				6377F95B20BE0E1700F668E3 /* WSWebTickerMonitor.h in Headers */,
 				6377F8DB20BE0E1700F668E3 /* WSStorableBlockEntity.h in Headers */,
+				63D49A7320CD3CE90047840F /* BRArray.h in Headers */,
 				6377F91D20BE0E1700F668E3 /* WSMessageInv.h in Headers */,
 				6377F8D520BE0E1700F668E3 /* WSBlockHeaderEntity.h in Headers */,
 				6377F3F520BDACE500F668E3 /* GCDAsyncSocket.h in Headers */,
+				63D49B3520CDEED80047840F /* BRSocketHelpers.h in Headers */,
 				6377F93E20BE0E1700F668E3 /* WSLogFormatter.h in Headers */,
 				6377F94D20BE0E1700F668E3 /* WSWebExplorerBlockchain.h in Headers */,
+				63D49A8D20CD3CE90047840F /* BRSet.h in Headers */,
 				6395BB7820C0192D002EA989 /* DDFileLogger.h in Headers */,
 				6395BB7E20C0192D002EA989 /* DDLogMacros.h in Headers */,
 				6377F8F120BE0E1700F668E3 /* WSPeerGroupNotifier.h in Headers */,
@@ -1765,16 +2069,20 @@
 				6377F92F20BE0E1700F668E3 /* WSMessageVersion.h in Headers */,
 				6377F8AE20BE0E1700F668E3 /* WSMacrosCore.h in Headers */,
 				6377F8D320BE0E1700F668E3 /* WSLogging.h in Headers */,
+				63D49A7B20CD3CE90047840F /* BRBIP39Mnemonic.h in Headers */,
 				6395BB7520C0192D002EA989 /* DDASLLogger.h in Headers */,
 				6377F8DF20BE0E1700F668E3 /* WSTransactionInputEntity.h in Headers */,
 				6377F8E720BE0E1700F668E3 /* WSConnection.h in Headers */,
 				6377F8CD20BE0E1700F668E3 /* WSBitcoinConstants.h in Headers */,
+				63D49A7720CD3CE90047840F /* BRBIP32Sequence.h in Headers */,
 				6377F93D20BE0E1700F668E3 /* WSIndentableDescription.h in Headers */,
 				6377F95520BE0E1700F668E3 /* WSWebTickerBitPay.h in Headers */,
 				6377F94020BE0E1700F668E3 /* WSSized.h in Headers */,
+				63D49A9120CD3CE90047840F /* BRWallet.h in Headers */,
 				6327C19620B839D500CB2017 /* sha512.h in Headers */,
 				6377F93B20BE0E1700F668E3 /* WSGCDTimer.h in Headers */,
 				6377F8B020BE0E1700F668E3 /* WSMacrosPrivate.h in Headers */,
+				63D49A8720CD3CE90047840F /* BRPaymentProtocol.h in Headers */,
 				6377F88D20BE0E1600F668E3 /* WSBlockChain.h in Headers */,
 				6395BB6D20C0192D002EA989 /* CLIColor.h in Headers */,
 				6377F91920BE0E1700F668E3 /* WSMessageGetheaders.h in Headers */,
@@ -1785,11 +2093,14 @@
 				6377F88020BE0E1600F668E3 /* WSBIP21.h in Headers */,
 				6377F89E20BE0E1700F668E3 /* WSBloomFilter.h in Headers */,
 				6377F88620BE0E1600F668E3 /* WSBIP38.h in Headers */,
+				63D49A7220CD3CE90047840F /* BRAddress.h in Headers */,
 				6377F8D720BE0E1700F668E3 /* WSCoreDataManager.h in Headers */,
+				63D49A8120CD3CE90047840F /* BRInt.h in Headers */,
 				6377F88A20BE0E1600F668E3 /* WSBIP44.h in Headers */,
 				6395BB7320C0192D002EA989 /* DDASLLogCapture.h in Headers */,
 				6327C19120B839D500CB2017 /* precomp_data.h in Headers */,
 				6377F89520BE0E1600F668E3 /* WSAbstractKey.h in Headers */,
+				63D49A7E20CD3CE90047840F /* BRBloomFilter.h in Headers */,
 				6377F8A020BE0E1700F668E3 /* WSBuffer.h in Headers */,
 				6395BB7A20C0192D002EA989 /* DDLegacyMacros.h in Headers */,
 				6395BB8320C0192D002EA989 /* DDContextFilterLogFormatter.h in Headers */,
@@ -1798,11 +2109,13 @@
 				6395BB7F20C0192D002EA989 /* DDOSLogger.h in Headers */,
 				6377F8F520BE0E1700F668E3 /* WSReachability.h in Headers */,
 				6377F8A620BE0E1700F668E3 /* WSHash256.h in Headers */,
+				63D49A7920CD3CE90047840F /* BRBIP38Key.h in Headers */,
 				6377F8E120BE0E1700F668E3 /* WSTransactionOutPointEntity.h in Headers */,
 				6377F8BC20BE0E1700F668E3 /* WSSeedGenerator.h in Headers */,
 				2167C344209B431500A8653E /* Internal.h in Headers */,
 				6377F8E920BE0E1700F668E3 /* WSConnectionPool.h in Headers */,
 				6377F8F320BE0E1700F668E3 /* WSProtocolDeserializer.h in Headers */,
+				63D49A8B20CD3CE90047840F /* BRPeerManager.h in Headers */,
 				6377F95120BE0E1700F668E3 /* WSWebExplorerBlockr.h in Headers */,
 				6327C18D20B839D500CB2017 /* ed25519.h in Headers */,
 				630DC5BC20AB2BC00005800A /* NRLWalletSDK.h in Headers */,
@@ -1828,6 +2141,7 @@
 				6377F92520BE0E1700F668E3 /* WSMessagePing.h in Headers */,
 				6377F8D120BE0E1700F668E3 /* WSErrors.h in Headers */,
 				6327C18A20B839D500CB2017 /* fixedint.h in Headers */,
+				63D49A8920CD3CE90047840F /* BRPeer.h in Headers */,
 				6377F92D20BE0E1700F668E3 /* WSMessageVerack.h in Headers */,
 				6377F93120BE0E1700F668E3 /* NSData+Base58.h in Headers */,
 				6395BB6F20C0192D002EA989 /* CocoaLumberjack.h in Headers */,
@@ -1837,10 +2151,12 @@
 				6395BB7C20C0192D002EA989 /* DDLog.h in Headers */,
 				6377F92720BE0E1700F668E3 /* WSMessagePong.h in Headers */,
 				6377F8CB20BE0E1700F668E3 /* WSPhysicalCurrency.h in Headers */,
+				63D49A7C20CD3CE90047840F /* BRBIP39WordsEn.h in Headers */,
 				6377F89120BE0E1600F668E3 /* WSMemoryBlockStore.h in Headers */,
 				6377F8CA20BE0E1700F668E3 /* WSCurrency.h in Headers */,
 				6377F90920BE0E1700F668E3 /* WSMessage.h in Headers */,
 				6377F8C820BE0E1700F668E3 /* WSBitcoinCurrency.h in Headers */,
+				63D49A8020CD3CE90047840F /* BRCrypto.h in Headers */,
 				6377F91120BE0E1700F668E3 /* WSMessageFilterload.h in Headers */,
 				6377F90320BE0E1700F668E3 /* WSAbstractMessage.h in Headers */,
 			);
@@ -1930,8 +2246,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63D49A9320CD3CE90047840F /* README.md in Resources */,
 				6327C19020B839D500CB2017 /* license.txt in Resources */,
+				63D49A6F20CD3CE90047840F /* .gitignore in Resources */,
+				63D49A7020CD3CE90047840F /* .gitmodules in Resources */,
 				630DC5D620AB35A80005800A /* Readme.md in Resources */,
+				63D49A9220CD3CE90047840F /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1954,7 +2274,10 @@
 			files = (
 				63F66C6520B4C502007DF79D /* Cancellable.swift in Sources */,
 				6377F8B520BE0E1700F668E3 /* WSPartialMerkleTree.m in Sources */,
+				63D49B3420CDEED80047840F /* BRSocketHelpers.c in Sources */,
 				6327C1AE20B86C7A00CB2017 /* WordList.swift in Sources */,
+				63D49B0420CDE5C60047840F /* DispatchQueue+Additions.swift in Sources */,
+				63D49B2C20CDEE4D0047840F /* BRHTTPIndexMiddleware.swift in Sources */,
 				6377F92820BE0E1700F668E3 /* WSMessagePong.m in Sources */,
 				6377F8D620BE0E1700F668E3 /* WSBlockHeaderEntity.m in Sources */,
 				63F66C7520B4C502007DF79D /* URLEncodedSerialization.swift in Sources */,
@@ -1965,13 +2288,16 @@
 				2167C316209AF56500A8653E /* Japanese.swift in Sources */,
 				6377F8B320BE0E1700F668E3 /* WSNetworkAddress.m in Sources */,
 				6377F89020BE0E1600F668E3 /* WSBlockStore.m in Sources */,
+				63D49B4E20CE39BA0047840F /* AssociatedObject.swift in Sources */,
 				6377F90620BE0E1700F668E3 /* WSAbstractMessageInventoryBased.m in Sources */,
 				63F66C3420B4B671007DF79D /* Balance.swift in Sources */,
+				63D49B4A20CE27420047840F /* RetryTimer.swift in Sources */,
 				6327C1BC20B86D7D00CB2017 /* DateFormatter+ISOParsing.swift in Sources */,
 				2171AA34209B481200EA283E /* NRLWalletSDKError.swift in Sources */,
 				6377F91820BE0E1700F668E3 /* WSMessageGetdata.m in Sources */,
 				6327C1AA20B86C7A00CB2017 /* DataConvertable.swift in Sources */,
 				6377F88520BE0E1600F668E3 /* WSBIP37.m in Sources */,
+				63D49AF520CDC5EA0047840F /* WalletManager.swift in Sources */,
 				63F66C1420B421BF007DF79D /* NRLWallet.swift in Sources */,
 				6377F94420BE0E1700F668E3 /* WSTransactionMetadata.m in Sources */,
 				2167C314209AF4B100A8653E /* Italian.swift in Sources */,
@@ -1988,6 +2314,7 @@
 				63F66C4A20B4B722007DF79D /* EllipticCurveEncrypterSecp256k1.swift in Sources */,
 				2167C345209B431500A8653E /* Internal.m in Sources */,
 				2167C321209AF7F300A8653E /* String+MnemonicData.swift in Sources */,
+				63D49B3820CDFAC00047840F /* String+Additions.swift in Sources */,
 				63F66C3720B4B671007DF79D /* SentTransaction.swift in Sources */,
 				6377F95220BE0E1700F668E3 /* WSWebExplorerBlockr.m in Sources */,
 				6327C1AC20B86C7A00CB2017 /* Mnemonic.swift in Sources */,
@@ -2003,11 +2330,14 @@
 				6377F89220BE0E1600F668E3 /* WSMemoryBlockStore.m in Sources */,
 				2167C312209AF38500A8653E /* French.swift in Sources */,
 				6395BB7920C0192D002EA989 /* DDFileLogger.m in Sources */,
+				63D49A7A20CD3CE90047840F /* BRBIP39Mnemonic.c in Sources */,
 				6377F89920BE0E1600F668E3 /* WSBlock.m in Sources */,
 				63F66C6620B4C502007DF79D /* HTTPClientConfiguration.swift in Sources */,
 				6377F3FA20BDACE500F668E3 /* AsyncSocket.m in Sources */,
 				6327C1AD20B86C7A00CB2017 /* RIPEMD160.swift in Sources */,
+				63D49B1320CDE7740047840F /* BRAPIClient+Features.swift in Sources */,
 				6327C19420B839D500CB2017 /* seed.c in Sources */,
+				63D49B1520CDE7740047840F /* BRAPIClient+Wallet.swift in Sources */,
 				6377F8F620BE0E1700F668E3 /* WSReachability.m in Sources */,
 				6327C1BE20B86D7D00CB2017 /* String+Base64.swift in Sources */,
 				6377F3F820BDACE500F668E3 /* GCDAsyncUdpSocket.m in Sources */,
@@ -2034,12 +2364,15 @@
 				6377F93220BE0E1700F668E3 /* NSData+Base58.m in Sources */,
 				6377F94820BE0E1700F668E3 /* WSJSONClient.m in Sources */,
 				6377F8A920BE0E1700F668E3 /* WSHDKeyring.m in Sources */,
+				63D49B1F20CDECC00047840F /* Types.swift in Sources */,
 				6377F94E20BE0E1700F668E3 /* WSWebExplorerBlockchain.m in Sources */,
 				6327C1C320B86D7D00CB2017 /* UtilBase32.swift in Sources */,
 				630DC73A20AC2C4F0005800A /* CryptoExtensions.swift in Sources */,
 				6377F95620BE0E1700F668E3 /* WSWebTickerBitPay.m in Sources */,
 				6377F95020BE0E1700F668E3 /* WSWebExplorerBlockExplorer.m in Sources */,
+				63D49A8A20CD3CE90047840F /* BRPeerManager.c in Sources */,
 				6377F8BF20BE0E1700F668E3 /* WSStorableBlock.m in Sources */,
+				63D49B1220CDE7740047840F /* BRAPIClient+Events.swift in Sources */,
 				6377F8AF20BE0E1700F668E3 /* WSMacrosCore.m in Sources */,
 				63F66C1320B421BF007DF79D /* Network.swift in Sources */,
 				6327C1C020B86D7D00CB2017 /* Data+Base32.swift in Sources */,
@@ -2047,22 +2380,37 @@
 				6377F8E620BE0E1700F668E3 /* WSBlockChainDownloader.m in Sources */,
 				630DC74320AC2E210005800A /* Dictionary+Extension.swift in Sources */,
 				6377F89F20BE0E1700F668E3 /* WSBloomFilter.m in Sources */,
+				63D49B1D20CDEC660047840F /* BRWalletPlugin.swift in Sources */,
 				63F4FE5220C9C23600215698 /* EthereumNetwork.swift in Sources */,
 				6377F8EE20BE0E1700F668E3 /* WSPeerGroup+Download.m in Sources */,
+				63D49A7F20CD3CE90047840F /* BRCrypto.c in Sources */,
 				63F66C4320B4B722007DF79D /* Converter.swift in Sources */,
+				63D49B2320CDED860047840F /* WalletManager+BCash.swift in Sources */,
+				63D49B5220CE3CB40047840F /* Strings.swift in Sources */,
 				6377F93020BE0E1700F668E3 /* WSMessageVersion.m in Sources */,
+				63D49B4C20CE28860047840F /* Functions.swift in Sources */,
 				6377F8FA20BE0E1700F668E3 /* WSParameters.m in Sources */,
 				6377F89420BE0E1600F668E3 /* WSStorableBlock+BlockChain.m in Sources */,
+				63D49A7420CD3CE90047840F /* BRBase58.c in Sources */,
 				6327C1C920B89BBB00CB2017 /* VersionByte.swift in Sources */,
 				6327C1A920B86C7A00CB2017 /* SMP.swift in Sources */,
 				63F66C3520B4B671007DF79D /* BlockParameter.swift in Sources */,
 				6377EF2E20BC6DA900F668E3 /* BitcoinNetwork.swift in Sources */,
 				6327C19220B839D500CB2017 /* sc.c in Sources */,
+				63D49A7120CD3CE90047840F /* BRAddress.c in Sources */,
 				6377F8F020BE0E1700F668E3 /* WSPeerGroup.m in Sources */,
+				63D49A8C20CD3CE90047840F /* BRSet.c in Sources */,
+				63D49B5920CFCB790047840F /* NRLCoinNotification.swift in Sources */,
+				63D49AEF20CD40820047840F /* BRCore.swift in Sources */,
 				6377F8DC20BE0E1700F668E3 /* WSStorableBlockEntity.m in Sources */,
 				6395BB8620C0192D002EA989 /* DDDispatchQueueLogFormatter.m in Sources */,
 				63F66C1220B421BF007DF79D /* NRLPublicKey.swift in Sources */,
+				63D49B4220CE25820047840F /* FeeUpdater.swift in Sources */,
+				63D49B4620CE26530047840F /* Environment.swift in Sources */,
+				63D49B3C20CDFB210047840F /* Rate.swift in Sources */,
+				63D49B2220CDED860047840F /* WalletManager+Auth.swift in Sources */,
 				6377F93A20BE0E1700F668E3 /* NSString+Binary.m in Sources */,
+				63D49B3620CDEED80047840F /* BRWebSocket.swift in Sources */,
 				63F66C3820B4B671007DF79D /* Transaction.swift in Sources */,
 				6377F8B920BE0E1700F668E3 /* WSScript.m in Sources */,
 				6377F8BD20BE0E1700F668E3 /* WSSeedGenerator.m in Sources */,
@@ -2071,10 +2419,13 @@
 				6377F90020BE0E1700F668E3 /* WSParametersFactoryRegtest.m in Sources */,
 				63F4FD4A20C585F700215698 /* WSCoreDataBlockStore.xcdatamodel in Sources */,
 				63F4FE3320C8819100215698 /* String+Extension.swift in Sources */,
+				63D49B1B20CDE8100047840F /* PaymentRequest.swift in Sources */,
 				6377F88320BE0E1600F668E3 /* WSBIP32.m in Sources */,
+				63D49B1A20CDE8100047840F /* PaymentProtocol.swift in Sources */,
 				6327C1AB20B86C7A00CB2017 /* HDCrypto.swift in Sources */,
 				6377F8E420BE0E1700F668E3 /* WSTransactionOutputEntity.m in Sources */,
 				6377F91C20BE0E1700F668E3 /* WSMessageHeaders.m in Sources */,
+				63D49A7620CD3CE90047840F /* BRBIP32Sequence.c in Sources */,
 				63F4FE3A20C8849000215698 /* EthereumConfig.swift in Sources */,
 				63F66C1120B421BF007DF79D /* NRLPrivateKey.swift in Sources */,
 				6377F8DE20BE0E1700F668E3 /* WSTransactionEntity.m in Sources */,
@@ -2083,37 +2434,47 @@
 				6377F93F20BE0E1700F668E3 /* WSLogFormatter.m in Sources */,
 				6377F94620BE0E1700F668E3 /* WSWallet.m in Sources */,
 				6377F8D220BE0E1700F668E3 /* WSErrors.m in Sources */,
+				63D49A8E20CD3CE90047840F /* BRTransaction.c in Sources */,
 				6377F91E20BE0E1700F668E3 /* WSMessageInv.m in Sources */,
 				6377F8D420BE0E1700F668E3 /* WSLogging.m in Sources */,
 				6377F8FE20BE0E1700F668E3 /* WSParametersFactoryMain.m in Sources */,
+				63D49A8820CD3CE90047840F /* BRPeer.c in Sources */,
+				63D49AF120CD4EE60047840F /* Extensions.swift in Sources */,
 				6327C18820B839D500CB2017 /* fe.c in Sources */,
 				6377F91A20BE0E1700F668E3 /* WSMessageGetheaders.m in Sources */,
+				63D49B5020CE3B2B0047840F /* BRBitID.swift in Sources */,
 				6377F90420BE0E1700F668E3 /* WSAbstractMessage.m in Sources */,
 				63F66C6920B4C502007DF79D /* Method.swift in Sources */,
 				6377F93820BE0E1700F668E3 /* NSString+Base58.m in Sources */,
 				6377F95A20BE0E1700F668E3 /* WSWebTickerBlockchain.m in Sources */,
 				63F66C4520B4B722007DF79D /* EIP55.swift in Sources */,
 				63F66C7020B4C502007DF79D /* JSONRPCError.swift in Sources */,
+				63D49B4420CE25D30047840F /* UserDefaults+Additions.swift in Sources */,
 				63F66C7420B4C502007DF79D /* JSONBodySerialization.swift in Sources */,
 				6377F8F420BE0E1700F668E3 /* WSProtocolDeserializer.m in Sources */,
 				6377F93C20BE0E1700F668E3 /* WSGCDTimer.m in Sources */,
 				6377F91420BE0E1700F668E3 /* WSMessageGetaddr.m in Sources */,
+				63D49AED20CD3CE90047840F /* test.c in Sources */,
 				6377F8AB20BE0E1700F668E3 /* WSInventory.m in Sources */,
+				63D49B3E20CDFBC80047840F /* BRReplicatedKVStore.swift in Sources */,
 				6377F92220BE0E1700F668E3 /* WSMessageMerkleblock.m in Sources */,
 				6377F8FC20BE0E1700F668E3 /* WSParametersFactory.m in Sources */,
 				6377F8A120BE0E1700F668E3 /* WSBuffer.m in Sources */,
 				6327C1BF20B86D7D00CB2017 /* Data+CRC.swift in Sources */,
 				6377F93620BE0E1700F668E3 /* NSData+Hash.m in Sources */,
 				6377F92E20BE0E1700F668E3 /* WSMessageVerack.m in Sources */,
+				63D49B4820CE27220047840F /* ReachabilityMonitor.swift in Sources */,
 				6327C1C220B86D7D00CB2017 /* StringExtension.swift in Sources */,
 				6377F8E020BE0E1700F668E3 /* WSTransactionInputEntity.m in Sources */,
 				63F66C2B20B4B511007DF79D /* Bitcoin.swift in Sources */,
 				63F66C2020B49074007DF79D /* NRLCoin.swift in Sources */,
 				6377F89D20BE0E1700F668E3 /* WSBlockLocator.m in Sources */,
+				63D49B1720CDE7BC0047840F /* BRAPIClient.swift in Sources */,
 				63F66C3320B4B671007DF79D /* Address.swift in Sources */,
 				6377F8A520BE0E1700F668E3 /* WSHash160.m in Sources */,
 				6377F90820BE0E1700F668E3 /* WSAbstractMessageLocatorBased.m in Sources */,
 				6377F8CE20BE0E1700F668E3 /* WSBitcoinConstants.m in Sources */,
+				63D49B5720CF60BA0047840F /* UserDefaultsUpdater.swift in Sources */,
 				6377F3F020BDACE500F668E3 /* AutoCoding.m in Sources */,
 				2167C340209B421E00A8653E /* Crypto.swift in Sources */,
 				6377F88720BE0E1600F668E3 /* WSBIP38.m in Sources */,
@@ -2122,11 +2483,16 @@
 				6377F92C20BE0E1700F668E3 /* WSMessageTx.m in Sources */,
 				63F66C6E20B4C502007DF79D /* HTTPJSONRPCRequest.swift in Sources */,
 				63F4FE3520C882B600215698 /* Array+Extension.swift in Sources */,
+				63D49A8420CD3CE90047840F /* BRMerkleBlock.c in Sources */,
 				2167C30F209AF2F700A8653E /* Chinese.swift in Sources */,
 				63F66C6D20B4C502007DF79D /* BatchFactory.swift in Sources */,
+				63D49B2B20CDEE4D0047840F /* BRHTTPFileMiddleware.swift in Sources */,
 				6377F95820BE0E1700F668E3 /* WSWebTickerBitstamp.m in Sources */,
 				6327C18720B839D500CB2017 /* add_scalar.c in Sources */,
 				6377F8D020BE0E1700F668E3 /* WSConfig.m in Sources */,
+				63D49B2A20CDEE4D0047840F /* BRAPIProxy.swift in Sources */,
+				63D49A7820CD3CE90047840F /* BRBIP38Key.c in Sources */,
+				63D49A7D20CD3CE90047840F /* BRBloomFilter.c in Sources */,
 				6377F8DA20BE0E1700F668E3 /* WSPartialMerkleTreeEntity.m in Sources */,
 				6377F8EA20BE0E1700F668E3 /* WSConnectionPool.m in Sources */,
 				6327C16920B8201500CB2017 /* ChecksumXmodem.swift in Sources */,
@@ -2137,6 +2503,7 @@
 				6377F8C520BE0E1700F668E3 /* WSTransactionOutPoint.m in Sources */,
 				63F66C4620B4B722007DF79D /* Result.swift in Sources */,
 				6377F8C920BE0E1700F668E3 /* WSBitcoinCurrency.m in Sources */,
+				63D49A8220CD3CE90047840F /* BRKey.c in Sources */,
 				63304D6720AD4D77006D444B /* Neo.swift in Sources */,
 				6377F88120BE0E1600F668E3 /* WSBIP21.m in Sources */,
 				6377F88E20BE0E1600F668E3 /* WSBlockChain.m in Sources */,
@@ -2149,16 +2516,22 @@
 				6377F8CC20BE0E1700F668E3 /* WSPhysicalCurrency.m in Sources */,
 				6377F90220BE0E1700F668E3 /* WSParametersFactoryTestnet3.m in Sources */,
 				6395BB6E20C0192D002EA989 /* CLIColor.m in Sources */,
+				63D49A8620CD3CE90047840F /* BRPaymentProtocol.c in Sources */,
 				6377F91020BE0E1700F668E3 /* WSMessageFactory.m in Sources */,
+				63D49A9020CD3CE90047840F /* BRWallet.c in Sources */,
 				6377F3F620BDACE500F668E3 /* GCDAsyncSocket.m in Sources */,
+				63D49B3A20CDFB0C0047840F /* String+Keys.swift in Sources */,
 				6377F8F820BE0E1700F668E3 /* WSNetworkType.m in Sources */,
 				2167C320209AF7F300A8653E /* NRLMnemonic.swift in Sources */,
 				63F66C6420B4C502007DF79D /* Geth.swift in Sources */,
+				63D49B1420CDE7740047840F /* BRAPIClient+KV.swift in Sources */,
 				6377F91620BE0E1700F668E3 /* WSMessageGetblocks.m in Sources */,
 				6395BB8220C0192D002EA989 /* DDTTYLogger.m in Sources */,
 				6377F8AD20BE0E1700F668E3 /* WSKey.m in Sources */,
 				6377F92420BE0E1700F668E3 /* WSMessageNotfound.m in Sources */,
+				63D49B2D20CDEE4D0047840F /* BRHTTPRouter.swift in Sources */,
 				63F66C6A20B4C502007DF79D /* RequestType.swift in Sources */,
+				63D49B4020CE24390047840F /* LAContext+Extensions.swift in Sources */,
 				6395BB8420C0192D002EA989 /* DDContextFilterLogFormatter.m in Sources */,
 				6377F95420BE0E1700F668E3 /* WSWebTicker.m in Sources */,
 				6395BB7420C0192D002EA989 /* DDASLLogCapture.m in Sources */,
@@ -2171,6 +2544,8 @@
 				6377F8C120BE0E1700F668E3 /* WSTransaction.m in Sources */,
 				6327C1C420B86D7D00CB2017 /* Data+Base16.swift in Sources */,
 				6377F8E220BE0E1700F668E3 /* WSTransactionOutPointEntity.m in Sources */,
+				63D49AF420CDC5EA0047840F /* WalletCoordinator.swift in Sources */,
+				63D49B2E20CDEE4D0047840F /* BRHTTPServer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2373,7 +2748,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.norestlabs.NRLWalletSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Sources $(SRCROOT)/Libraries $(SRCROOT)/Sources/Cryptography/ed25519-C";
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Sources $(SRCROOT)/Libraries $(SRCROOT)/Sources/Cryptography/ed25519-C $(SRCROOT)/Sources/Coins/Litecoin/BRSocket";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2418,7 +2793,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.norestlabs.NRLWalletSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Sources $(SRCROOT)/Libraries $(SRCROOT)/Sources/Cryptography/ed25519-C";
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Sources $(SRCROOT)/Libraries $(SRCROOT)/Sources/Cryptography/ed25519-C $(SRCROOT)/Sources/Coins/Litecoin/BRSocket";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = /opt/local/include;

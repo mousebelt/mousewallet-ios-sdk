@@ -17,7 +17,8 @@ class NRLCoin {
     
     // https://github.com/satoshilabs/slips/blob/master/slip-0044.md
 
-    var seed: Data;
+    var seed: Data
+    var mnemonic: [String]
     var masterPrivateKey: NRLPrivateKey?
     var pathPrivateKey: NRLPrivateKey?
     
@@ -29,7 +30,8 @@ class NRLCoin {
     var address: String?
     var wif: String?
 
-    public init(seed: Data, network:Network, coinType: UInt32, seedKey: String, curve: String) {
+    public init(mnemonic: [String], seed: Data, network:Network, coinType: UInt32, seedKey: String, curve: String) {
+        self.mnemonic = mnemonic
         self.seed = seed;
         self.network = network
         self.coinType = coinType

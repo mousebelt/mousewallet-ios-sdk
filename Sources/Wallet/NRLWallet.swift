@@ -13,37 +13,37 @@ import CryptoSwift
 public class NRLWallet {
     let coin: NRLCoin
     
-    public init(seed: Data, network: Network) {
+    public init(mnemonic: [String], seed: Data, network: Network) {
         switch network {
         case .main(.ethereum):
-            coin = NRLEthereum(seed: seed, fTest: false)
+            coin = NRLEthereum(mnemonic: mnemonic, seed: seed, fTest: false)
             break
         case .test(.ethereum):
-            coin = NRLEthereum(seed: seed, fTest: true)
+            coin = NRLEthereum(mnemonic: mnemonic, seed: seed, fTest: true)
             break
         case .main(.neo):
-            coin = NRLNeo(seed: seed, fTest: false)
+            coin = NRLNeo(mnemonic: mnemonic, seed: seed, fTest: false)
             break
         case .test(.neo):
-            coin = NRLNeo(seed: seed, fTest: true)
+            coin = NRLNeo(mnemonic: mnemonic, seed: seed, fTest: true)
             break
         case .main(.bitcoin):
-            coin = NRLBitcoin(seed: seed, fTest: false)
+            coin = NRLBitcoin(mnemonic: mnemonic, seed: seed, fTest: false)
             break
         case .test(.bitcoin):
-            coin = NRLBitcoin(seed: seed, fTest: true)
+            coin = NRLBitcoin(mnemonic: mnemonic, seed: seed, fTest: true)
             break
         case .main(.litecoin):
-            coin = NRLLitecoin(seed: seed, fTest: false)
+            coin = NRLLitecoin(mnemonic: mnemonic, seed: seed, fTest: false)
             break
         case .test(.litecoin):
-            coin = NRLLitecoin(seed: seed, fTest: true)
+            coin = NRLLitecoin(mnemonic: mnemonic, seed: seed, fTest: true)
             break
         case .main(.stellar):
-            coin = NRLStellar(seed: seed, fTest: false)
+            coin = NRLStellar(mnemonic: mnemonic, seed: seed, fTest: false)
             break
         case .test(.stellar):
-            coin = NRLStellar(seed: seed, fTest: true)
+            coin = NRLStellar(mnemonic: mnemonic, seed: seed, fTest: true)
             break
 //        default:
 //            coin = NRLEthereum(seed: seed, fTest: false)

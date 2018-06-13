@@ -12,7 +12,7 @@ class NRLBitcoin : NRLCoin{
     let isTest: Bool;
     var btcpeer: BitcoinPeer?
     
-    init(seed: Data, fTest: Bool) {
+    init(mnemonic: [String], seed: Data, fTest: Bool) {
         self.isTest = fTest;
 
         var network: Network = .main(.bitcoin)
@@ -21,7 +21,8 @@ class NRLBitcoin : NRLCoin{
         }
         let cointype = network.coinType
         
-        super.init(seed: seed,
+        super.init(mnemonic: mnemonic,
+                   seed: seed,
                    network: network,
                    coinType: cointype,
                    seedKey: "Bitcoin seed",

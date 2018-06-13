@@ -10,7 +10,7 @@ import Foundation
 import Neoutils
 
 class NRLNeo : NRLCoin{
-    init(seed: Data, fTest: Bool) {
+    init(mnemonic: [String], seed: Data, fTest: Bool) {
         var network: Network = .main(.ethereum)
         if (fTest) {
             network = .test(.ethereum)
@@ -18,7 +18,8 @@ class NRLNeo : NRLCoin{
         
         let cointype = network.coinType
         
-        super.init(seed: seed,
+        super.init(mnemonic: mnemonic,
+                   seed: seed,
                    network: network,
                    coinType: cointype,
                    seedKey: "Nist256p1 seed",
