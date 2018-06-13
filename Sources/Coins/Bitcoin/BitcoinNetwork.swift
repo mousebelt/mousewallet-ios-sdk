@@ -50,7 +50,7 @@ public class BitcoinPeer {
         callback(NRLWalletSDKError.nrlSuccess, balance)
     }
     
-    func getAddressesOfWallet() -> NSMutableArray {
+    func getAddressesOfWallet() -> NSArray {
         let allReceiveAddresses = self.wallet?.allReceiveAddresses()
         
         let addressArray = NSMutableArray()
@@ -65,7 +65,7 @@ public class BitcoinPeer {
     }
     
     
-    func getPrivKeysOfWallet() -> NSMutableArray {
+    func getPrivKeysOfWallet() -> NSArray {
         let allReceiveAddresses = self.wallet?.allReceiveAddresses()
         
         let privkeys = NSMutableArray()
@@ -80,7 +80,7 @@ public class BitcoinPeer {
         return privkeys
     }
     
-    func getPubKeysOfWallet() -> NSMutableArray {
+    func getPubKeysOfWallet() -> NSArray {
         let allReceiveAddresses = self.wallet?.allReceiveAddresses()
         
         let pubkeys = NSMutableArray()

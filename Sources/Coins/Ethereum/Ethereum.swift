@@ -95,17 +95,17 @@ class NRLEthereum : NRLCoin{
         }
     }
     
-    override func getAddressesOfWallet() -> NSMutableArray? {
+    override func getAddressesOfWallet() -> NSArray? {
         let result = NSMutableArray()
         result.add(self.privKey?.address as Any)
         return result
     }
-    override func getPrivKeysOfWallet() -> NSMutableArray? {
+    override func getPrivKeysOfWallet() -> NSArray? {
         let result = NSMutableArray()
         result.add(self.privKey as Any)
         return result
     }
-    override func getPubKeysOfWallet() -> NSMutableArray? {return nil}
+    override func getPubKeysOfWallet() -> NSArray? {return nil}
     override func getReceiveAddress() -> String? {
         return self.privKey?.address.hex(eip55: false)
     }
