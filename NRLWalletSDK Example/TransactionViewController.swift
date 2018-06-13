@@ -20,7 +20,12 @@ internal class TransactionViewController: UIViewController {
         let value = UInt64(tfValue.text!)
         let fee = UInt64(tfFee.text!)
         
-        coinWallet?.sendTransaction(to: to!, value: value!, fee: fee!) { (err, tx) -> () in
+        guard let wallet = coinWallet else {
+            print("setStellarWallet Error: cannot init wallet!")
+            return
+        }
+        
+        wallet.sendTransaction(to: to!, value: value!, fee: fee!) { (err, tx) -> () in
             switch (err) {
             case NRLWalletSDKError.nrlSuccess:
                 self.textTransaction.text = "Successfully sent transaction. tx: \(tx)"
