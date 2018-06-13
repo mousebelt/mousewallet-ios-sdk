@@ -267,7 +267,8 @@ class ViewController: UIViewController {
     func setLitecoinWallet() {
         print("\n------------------------- Litecoin ----------------------------\n")
         // Litecoin : 2
-        
+        //for test
+        self.mnemonic = ["vivid", "gesture", "series", "lady", "owner", "amused", "sock", "grunt", "hotel", "olive", "carpet", "visual"]
         coinWallet = NRLWallet(mnemonic: self.mnemonic!, seed: self.seed!, network: .main(.litecoin))
 //        coinWallet?.generateExternalKeyPair(at: 0)
 //
@@ -281,7 +282,7 @@ class ViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(On_LTC_WalletDidUpdateBalance(notification:)), name: NSNotification.Name.LTC_WalletDidUpdateBalance, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(On_LTC_PeerGroupDidDownloadBlock(notification:)), name: Notification.Name.LTC_PeerGroupDidDownloadBlock, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(PeerGroupDidStartDownload(notification:)), name: NSNotification.Name.WSPeerGroupDidStartDownload, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(On_LTC_PeerGroupDidStartDownload(notification:)), name: NSNotification.Name.LTC_PeerGroupDidStartDownload, object: nil)
         
         print("\nCreate Own Wallet")
         coinWallet?.createOwnWallet(created: Date(), fnew: true)
@@ -312,6 +313,15 @@ class ViewController: UIViewController {
         let balance = userinfo[WalletBalanceKey] as! UInt64
         
         self.lbBalance.text = String(format: "\(balance)")
+    }
+    
+    @objc func On_LTC_PeerGroupDidStartDownload(notification: Notification) {
+        coinWallet?.getWalletBalance() { (err, value) -> () in
+            self.lbBalance.text = value
+        }
+        
+        DDLogDebug("ReceiveAddress: \(String(describing: coinWallet?.getReceiveAddress()))")
+        self.lbAddress.text = coinWallet?.getReceiveAddress();
     }
 
     
@@ -344,9 +354,6 @@ class ViewController: UIViewController {
 //        setEthereumWallet()
         setLitecoinWallet()
         
-        coinWallet?.getWalletBalance() { (err, value) -> () in
-            self.lbBalance.text = value
-        }
-        self.lbAddress.text = coinWallet?.getReceiveAddress();
+
     }
 }

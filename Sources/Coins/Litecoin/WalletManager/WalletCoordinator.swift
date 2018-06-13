@@ -40,7 +40,7 @@ class WalletCoordinator : Trackable {
         }
     }
     
-    private func notifyWithName(name: NSNotification.Name, userInfo: [AnyHashable : Any])
+    private func notifyWithName(name: NSNotification.Name, userInfo: [AnyHashable : Any]?)
     {
         DispatchQueue.main.async {
             NotificationCenter.default.post(name: name, object: self, userInfo: userInfo)
@@ -72,6 +72,7 @@ class WalletCoordinator : Trackable {
         startBackgroundTask()
         progressTimer = Timer.scheduledTimer(timeInterval: progressUpdateInterval, target: self, selector: #selector(WalletCoordinator.updateProgress), userInfo: nil, repeats: true)
         DDLogDebug("Sync Start")
+        self.notifyWithName(name: Notification.Name.LTC_PeerGroupDidStartDownload, userInfo: nil)
         startActivity()
     }
 

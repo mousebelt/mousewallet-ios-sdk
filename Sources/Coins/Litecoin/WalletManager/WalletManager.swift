@@ -143,6 +143,7 @@ class WalletManager : BRWalletListener, BRPeerManagerListener {
     }
 
     init(masterPubKey: BRMasterPubKey, earliestKeyTime: TimeInterval, dbPath: String? = nil) throws {
+        DDLogDebug("MasterPubkey: \(masterPubKey.pubKey)")
         self.masterPubKey = masterPubKey
         self.earliestKeyTime = earliestKeyTime
         self.dbPath = try dbPath ??

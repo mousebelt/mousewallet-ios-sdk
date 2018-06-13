@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import BRCore
 
 class NRLLitecoin : NRLCoin{
     let isTest: Bool;
@@ -130,32 +131,41 @@ class NRLLitecoin : NRLCoin{
         return self.walletManager!.wipeWallet(pin: pin)
     }
     
+    //mnemonic should be procesed by pin code. so call self.walletManager?.seedPhrase(pin: <#T##String#>)
+    func getPhrase() -> String {
+        let bindedString = self.mnemonic.joined(separator: " ")
+        DDLogDebug("bindString is: \(bindedString)")
+        
+        let phraseLen = strlen(bindedString) + 1
+        let phraseData = CFDataCreate(secureAllocator, bindedString, phraseLen)
+        let phrase = CFStringCreateFromExternalRepresentation(secureAllocator, phraseData,
+                                                              CFStringBuiltInEncodings.UTF8.rawValue) as String
+        
+        return phrase
+    }
+    
     //override functions for own wallet and synchronizing as spv
     override func createOwnWallet(created: Date, fnew: Bool) {
         self.walletManager = try? WalletManager(dbPath: nil)
         let _ = self.walletManager?.wallet //attempt to initialize wallet
         
         if (fnew) {
-            if (self.didInitWallet && !(self.walletManager?.noWallet)!) {
+            if (!(self.walletManager?.noWallet)!) {
                 DDLogDebug("createOwnWallet: already created")
+                self.walletManager?.forceSetPin(newPin: self.pin)
                 if (!self.removeWallet(pin: self.pin)) {
                     DDLogDebug("Failed to remove original wallet")
                     return
                 }
             }
 
-            let bindedString = self.mnemonic.joined(separator: " ")
-            
-            let phraseLen = strlen(bindedString) + 1
-            let phraseData = CFDataCreate(secureAllocator, bindedString, phraseLen)
-            let phrase = CFStringCreateFromExternalRepresentation(secureAllocator, phraseData,
-                                                                  CFStringBuiltInEncodings.UTF8.rawValue) as String
-            guard self.walletManager?.setSeedPhrase(phrase) != nil else {
+            guard self.walletManager?.setSeedPhrase(getPhrase()) != nil else {
                 DDLogDebug("Failed to Publick key generation")
                 return
             }
             
             DDLogDebug("Wallet created : \(Date())")
+            self.walletManager = try? WalletManager(dbPath: nil)
             let _ = self.walletManager?.wallet //attempt to initialize wallet
         }
         
@@ -189,7 +199,9 @@ class NRLLitecoin : NRLCoin{
     }
     
     override func disConnectPeers() -> Bool {
-        self.walletManager?.peerManager?.disconnect()
+        DispatchQueue.walletQueue.async {
+            self.walletManager?.peerManager?.disconnect()
+        }
         return true
     }
     
@@ -213,11 +225,11 @@ class NRLLitecoin : NRLCoin{
     }
     
     override func getWalletBalance(callback:@escaping (_ err: NRLWalletSDKError, _ value: String) -> ()) {
-        
+        callback(NRLWalletSDKError.nrlSuccess, String(describing: self.walletManager?.wallet?.balance))
     }
     
     override func getAddressesOfWallet() -> NSMutableArray {
-        return NSMutableArray()
+        return self.walletManager?.wallet?.allAddresses as! NSMutableArray
     }
     
     
@@ -230,24 +242,99 @@ class NRLLitecoin : NRLCoin{
     }
     
     override func getReceiveAddress() -> String {
-        return ""
+        return (self.walletManager?.wallet?.receiveAddress)!
     }
     
     override func getAccountTransactions(offset: Int, count: Int, order: UInt, callback:@escaping (_ err: NRLWalletSDKError , _ tx: Any ) -> ()) {
+        let txs = self.walletManager?.wallet?.transactions as [BRTxRef?]?
         
+        var txsReturn: [BRTxRef] = []
+        
+        for index in offset...offset + count {
+            if (index < (txs?.count)!) {
+                txsReturn.append(txs![index]!)
+            }
+        }
+        
+        callback(NRLWalletSDKError.nrlSuccess, txsReturn)
     }
     
     //transaction
+    
     override func sendTransaction(to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
+        let tx = self.walletManager?.wallet?.createTransaction(forAmount: value, toAddress: to);
         
+        guard let txSigned = tx else {
+            callback(NRLWalletSDKError.cryptoError(.failedToSign), 0)
+            return
+        }
+        
+        if (!signTx(tx!)) {
+            callback(NRLWalletSDKError.cryptoError(.failedToSign), 0)
+            return
+        }
+        
+        DispatchQueue.walletQueue.async {[weak self] in
+            guard let myself = self else {
+                callback(NRLWalletSDKError.transactionError(.publishError), 0)
+                return;
+            }
+            
+            myself.walletManager?.peerManager?.publishTx(txSigned, completion: { success, error in
+                DispatchQueue.main.async {
+                    if let error = error {
+                        callback(NRLWalletSDKError.transactionError(.transactionFailed(error)), 0)
+                    } else {
+                        callback(NRLWalletSDKError.nrlSuccess, txSigned.pointee.txHash.description)
+                    }
+                }
+            })
+        }
     }
     
+    //this is function of WalletManager+Auth.
+    //This is private as walletmanager will do this function only when pin code verification is passed.
+    private func signTx(_ tx: BRTxRef, forkId: Int = 0) -> Bool {
+        return autoreleasepool {
+            var seed = UInt512()
+            defer { seed = UInt512() }
+            guard let wallet = self.walletManager?.wallet else { return false }
+            let phrase: String = getPhrase()
+            BRBIP39DeriveKey(&seed, phrase, nil)
+            return wallet.signTransaction(tx, forkId: forkId, seed: &seed)
+        }
+    }
+    
+    // forkId is 0 for bitcoin, 0x40 for b-cash
     override func signTransaction(to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
+        let tx = self.walletManager?.wallet?.createTransaction(forAmount: value, toAddress: to);
         
+        if (signTx(tx!)) {
+            callback(NRLWalletSDKError.nrlSuccess, tx as Any)
+        }
+        else {
+            callback(NRLWalletSDKError.cryptoError(.failedToSign), 0)
+        }
     }
     
     override func sendSignTransaction(tx: Any, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
-        
+        let txSigned = tx as! BRTxRef
+        DispatchQueue.walletQueue.async {[weak self] in
+            guard let myself = self else {
+                callback(NRLWalletSDKError.transactionError(.publishError), 0)
+                return;
+            }
+            
+            myself.walletManager?.peerManager?.publishTx(txSigned, completion: { success, error in
+                DispatchQueue.main.async {
+                    if let error = error {
+                        callback(NRLWalletSDKError.transactionError(.transactionFailed(error)), 0)
+                    } else {
+                        callback(NRLWalletSDKError.nrlSuccess, txSigned.pointee.txHash.description)
+                    }
+                }
+            })
+        }
     }
 }
 
