@@ -285,7 +285,7 @@ class ViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(On_LTC_PeerGroupDidStartDownload(notification:)), name: NSNotification.Name.LTC_PeerGroupDidStartDownload, object: nil)
         
         print("\nCreate Own Wallet")
-        coinWallet?.createOwnWallet(created: Date(), fnew: true)
+        coinWallet?.createOwnWallet(created: Date(), fnew: false)
         print("\nCreate Peer Group")
         coinWallet?.createPeerGroup()
     }

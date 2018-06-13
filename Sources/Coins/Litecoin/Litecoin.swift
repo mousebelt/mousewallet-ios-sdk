@@ -152,13 +152,19 @@ class NRLLitecoin : NRLCoin{
         if (fnew) {
             if (!(self.walletManager?.noWallet)!) {
                 DDLogDebug("createOwnWallet: already created")
-                self.walletManager?.forceSetPin(newPin: self.pin)
+                if (!(self.walletManager?.forceSetPin(newPin: self.pin))!) {
+                    DDLogDebug("Failed to forceSetPin")
+                    return
+                }
+
                 if (!self.removeWallet(pin: self.pin)) {
                     DDLogDebug("Failed to remove original wallet")
                     return
                 }
             }
+        }
 
+        if (self.walletManager?.noWallet)! {
             guard self.walletManager?.setSeedPhrase(getPhrase()) != nil else {
                 DDLogDebug("Failed to Publick key generation")
                 return
