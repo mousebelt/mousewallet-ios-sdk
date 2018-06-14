@@ -399,16 +399,9 @@ class ViewController: UIViewController {
             print("setStellarWallet Error: cannot init wallet!")
             return
         }
-        
-        wallet.generateExternalKeyPair(at: 0)
-        
-        let privateKey = wallet.getWIF()
-        let publicKey = wallet.getPublicKey()
-        let address = wallet.getAddress()
-        
-        print("\nstellar private key = \(String(describing: privateKey))")
-        print("stellar public key = \(String(describing: publicKey))")
-        print("stellar address = \(String(describing: address))")
+                
+        print("\nCreate Own Wallet")
+        wallet.createOwnWallet(created: Date(), fnew: false)
     }
     
     override func viewDidLoad() {
@@ -421,7 +414,8 @@ class ViewController: UIViewController {
 
 //        setBitcoinWallet()
 //        setEthereumWallet()
-        setLitecoinWallet()
+//        setLitecoinWallet()
+        setStellarWallet()
         
 
     }
