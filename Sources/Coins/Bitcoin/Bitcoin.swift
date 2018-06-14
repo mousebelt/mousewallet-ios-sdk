@@ -15,7 +15,7 @@ class NRLBitcoin : NRLCoin{
     init(mnemonic: [String], seed: Data, fTest: Bool) {
         self.isTest = fTest;
 
-        var network: Network = .main(.bitcoin)
+        var network: NRLNetwork = .main(.bitcoin)
         if (fTest) {
             network = .test(.bitcoin)
         }

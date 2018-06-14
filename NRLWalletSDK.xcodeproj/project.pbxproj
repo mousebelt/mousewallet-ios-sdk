@@ -312,6 +312,197 @@
 		6377F95A20BE0E1700F668E3 /* WSWebTickerBlockchain.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F80B20BE0E1600F668E3 /* WSWebTickerBlockchain.m */; };
 		6377F95B20BE0E1700F668E3 /* WSWebTickerMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 6377F80C20BE0E1600F668E3 /* WSWebTickerMonitor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6377F95C20BE0E1700F668E3 /* WSWebTickerMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6377F80D20BE0E1600F668E3 /* WSWebTickerMonitor.m */; };
+		637CE80520D20EA70076DD74 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE65D20D20EA60076DD74 /* Account.swift */; };
+		637CE80620D20EA70076DD74 /* AccountMergeOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE65E20D20EA60076DD74 /* AccountMergeOperation.swift */; };
+		637CE80720D20EA70076DD74 /* AllowTrustOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE65F20D20EA60076DD74 /* AllowTrustOperation.swift */; };
+		637CE80820D20EA70076DD74 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE66020D20EA60076DD74 /* Asset.swift */; };
+		637CE80920D20EA70076DD74 /* ChangeTrustOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE66120D20EA60076DD74 /* ChangeTrustOperation.swift */; };
+		637CE80A20D20EA70076DD74 /* CreateAccountOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE66220D20EA60076DD74 /* CreateAccountOperation.swift */; };
+		637CE80B20D20EA70076DD74 /* CreatePassiveOfferOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE66320D20EA60076DD74 /* CreatePassiveOfferOperation.swift */; };
+		637CE80C20D20EA70076DD74 /* ManageDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE66420D20EA60076DD74 /* ManageDataOperation.swift */; };
+		637CE80D20D20EA70076DD74 /* ManageOfferOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE66520D20EA60076DD74 /* ManageOfferOperation.swift */; };
+		637CE80E20D20EA70076DD74 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE66620D20EA60076DD74 /* Memo.swift */; };
+		637CE80F20D20EA70076DD74 /* MemoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE66720D20EA60076DD74 /* MemoProtocol.swift */; };
+		637CE81020D20EA70076DD74 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE66820D20EA60076DD74 /* Network.swift */; };
+		637CE81120D20EA70076DD74 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE66920D20EA60076DD74 /* Operation.swift */; };
+		637CE81220D20EA70076DD74 /* PathPaymentOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE66A20D20EA60076DD74 /* PathPaymentOperation.swift */; };
+		637CE81320D20EA70076DD74 /* PaymentOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE66B20D20EA60076DD74 /* PaymentOperation.swift */; };
+		637CE81420D20EA70076DD74 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE66C20D20EA60076DD74 /* Price.swift */; };
+		637CE81520D20EA70076DD74 /* SetOptionsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE66D20D20EA60076DD74 /* SetOptionsOperation.swift */; };
+		637CE81620D20EA70076DD74 /* Signer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE66E20D20EA60076DD74 /* Signer.swift */; };
+		637CE81720D20EA70076DD74 /* TimeBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE66F20D20EA60076DD74 /* TimeBounds.swift */; };
+		637CE81820D20EA70076DD74 /* StellarTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE67020D20EA60076DD74 /* StellarTransaction.swift */; };
+		637CE81920D20EA70076DD74 /* TransactionAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE67120D20EA60076DD74 /* TransactionAccount.swift */; };
+		637CE82C20D20EA70076DD74 /* stellarsdk.h in Headers */ = {isa = PBXBuildFile; fileRef = 637CE68820D20EA60076DD74 /* stellarsdk.h */; };
+		637CE82D20D20EA70076DD74 /* StellarSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE68920D20EA60076DD74 /* StellarSDK.swift */; };
+		637CE91620D211F50076DD74 /* AccountBalanceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE88120D211F50076DD74 /* AccountBalanceResponse.swift */; };
+		637CE91720D211F50076DD74 /* AccountFlagsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE88220D211F50076DD74 /* AccountFlagsResponse.swift */; };
+		637CE91820D211F50076DD74 /* AccountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE88320D211F50076DD74 /* AccountResponse.swift */; };
+		637CE91920D211F50076DD74 /* AccountSignerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE88420D211F50076DD74 /* AccountSignerResponse.swift */; };
+		637CE91A20D211F50076DD74 /* AccountThresholdsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE88520D211F50076DD74 /* AccountThresholdsResponse.swift */; };
+		637CE91B20D211F50076DD74 /* DataForAccountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE88620D211F50076DD74 /* DataForAccountResponse.swift */; };
+		637CE91C20D211F50076DD74 /* AssetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE88820D211F50076DD74 /* AssetResponse.swift */; };
+		637CE91D20D211F50076DD74 /* AccountCreatedEffectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE88A20D211F50076DD74 /* AccountCreatedEffectResponse.swift */; };
+		637CE91E20D211F50076DD74 /* AccountCreditedEffectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE88B20D211F50076DD74 /* AccountCreditedEffectResponse.swift */; };
+		637CE91F20D211F50076DD74 /* AccountDebitedEffectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE88C20D211F50076DD74 /* AccountDebitedEffectResponse.swift */; };
+		637CE92020D211F50076DD74 /* AccountFlagsUpdatedEffectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE88D20D211F50076DD74 /* AccountFlagsUpdatedEffectResponse.swift */; };
+		637CE92120D211F50076DD74 /* AccountHomeDomainUpdatedEffectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE88E20D211F50076DD74 /* AccountHomeDomainUpdatedEffectResponse.swift */; };
+		637CE92220D211F50076DD74 /* AccountInflationDestinationUpdatedEffectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE88F20D211F50076DD74 /* AccountInflationDestinationUpdatedEffectResponse.swift */; };
+		637CE92320D211F50076DD74 /* AccountRemovedEffectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE89020D211F50076DD74 /* AccountRemovedEffectResponse.swift */; };
+		637CE92420D211F50076DD74 /* AccountThresholdsUpdatedEffectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE89120D211F50076DD74 /* AccountThresholdsUpdatedEffectResponse.swift */; };
+		637CE92520D211F50076DD74 /* EffectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE89220D211F50076DD74 /* EffectResponse.swift */; };
+		637CE92620D211F50076DD74 /* EffectsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE89320D211F50076DD74 /* EffectsFactory.swift */; };
+		637CE92720D211F50076DD74 /* OfferCreatedEffectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE89420D211F50076DD74 /* OfferCreatedEffectResponse.swift */; };
+		637CE92820D211F50076DD74 /* OfferRemovedEffectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE89520D211F50076DD74 /* OfferRemovedEffectResponse.swift */; };
+		637CE92920D211F50076DD74 /* OfferUpdatedEffectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE89620D211F50076DD74 /* OfferUpdatedEffectResponse.swift */; };
+		637CE92A20D211F50076DD74 /* SignerCreatedEffectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE89720D211F50076DD74 /* SignerCreatedEffectResponse.swift */; };
+		637CE92B20D211F50076DD74 /* SignerEffectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE89820D211F50076DD74 /* SignerEffectResponse.swift */; };
+		637CE92C20D211F50076DD74 /* SignerRemovedEffectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE89920D211F50076DD74 /* SignerRemovedEffectResponse.swift */; };
+		637CE92D20D211F50076DD74 /* SignerUpdatedEffectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE89A20D211F50076DD74 /* SignerUpdatedEffectResponse.swift */; };
+		637CE92E20D211F50076DD74 /* TradeEffectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE89B20D211F50076DD74 /* TradeEffectResponse.swift */; };
+		637CE92F20D211F50076DD74 /* TrustlineAuthorizedEffectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE89C20D211F50076DD74 /* TrustlineAuthorizedEffectResponse.swift */; };
+		637CE93020D211F50076DD74 /* TrustlineCreatedEffectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE89D20D211F50076DD74 /* TrustlineCreatedEffectResponse.swift */; };
+		637CE93120D211F50076DD74 /* TrustlineDeauthorizedEffectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE89E20D211F50076DD74 /* TrustlineDeauthorizedEffectResponse.swift */; };
+		637CE93220D211F50076DD74 /* TrustlineEffectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE89F20D211F50076DD74 /* TrustlineEffectResponse.swift */; };
+		637CE93320D211F50076DD74 /* TrustlineRemovedEffectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8A020D211F50076DD74 /* TrustlineRemovedEffectResponse.swift */; };
+		637CE93420D211F50076DD74 /* TrustlineUpdatedEffectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8A120D211F50076DD74 /* TrustlineUpdatedEffectResponse.swift */; };
+		637CE93520D211F50076DD74 /* BadRequestErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8A320D211F50076DD74 /* BadRequestErrorResponse.swift */; };
+		637CE93620D211F50076DD74 /* BeforeHistoryErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8A420D211F50076DD74 /* BeforeHistoryErrorResponse.swift */; };
+		637CE93720D211F50076DD74 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8A520D211F50076DD74 /* ErrorResponse.swift */; };
+		637CE93820D211F50076DD74 /* ForbiddenErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8A620D211F50076DD74 /* ForbiddenErrorResponse.swift */; };
+		637CE93920D211F50076DD74 /* InternalServerErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8A720D211F50076DD74 /* InternalServerErrorResponse.swift */; };
+		637CE93A20D211F50076DD74 /* NotAcceptableErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8A820D211F50076DD74 /* NotAcceptableErrorResponse.swift */; };
+		637CE93B20D211F50076DD74 /* NotFoundErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8A920D211F50076DD74 /* NotFoundErrorResponse.swift */; };
+		637CE93C20D211F50076DD74 /* NotImplementedErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8AA20D211F50076DD74 /* NotImplementedErrorResponse.swift */; };
+		637CE93D20D211F50076DD74 /* RateLimitExceededErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8AB20D211F50076DD74 /* RateLimitExceededErrorResponse.swift */; };
+		637CE93E20D211F50076DD74 /* StaleHistoryErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8AC20D211F50076DD74 /* StaleHistoryErrorResponse.swift */; };
+		637CE93F20D211F50076DD74 /* TransactionFailedErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8AD20D211F50076DD74 /* TransactionFailedErrorResponse.swift */; };
+		637CE94020D211F50076DD74 /* TransactionMalformedErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8AE20D211F50076DD74 /* TransactionMalformedErrorResponse.swift */; };
+		637CE94120D211F50076DD74 /* LedgerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8B020D211F50076DD74 /* LedgerResponse.swift */; };
+		637CE94220D211F50076DD74 /* AccountLinksResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8B220D211F50076DD74 /* AccountLinksResponse.swift */; };
+		637CE94320D211F50076DD74 /* AssetLinksResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8B320D211F50076DD74 /* AssetLinksResponse.swift */; };
+		637CE94420D211F50076DD74 /* EffectLinksResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8B420D211F50076DD74 /* EffectLinksResponse.swift */; };
+		637CE94520D211F50076DD74 /* LedgerLinksResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8B520D211F50076DD74 /* LedgerLinksResponse.swift */; };
+		637CE94620D211F50076DD74 /* LinkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8B620D211F50076DD74 /* LinkResponse.swift */; };
+		637CE94720D211F50076DD74 /* OfferLinksResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8B720D211F50076DD74 /* OfferLinksResponse.swift */; };
+		637CE94820D211F50076DD74 /* OperationLinksResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8B820D211F50076DD74 /* OperationLinksResponse.swift */; };
+		637CE94920D211F50076DD74 /* PagingLinksResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8B920D211F50076DD74 /* PagingLinksResponse.swift */; };
+		637CE94A20D211F50076DD74 /* TradeLinksResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8BA20D211F50076DD74 /* TradeLinksResponse.swift */; };
+		637CE94B20D211F50076DD74 /* TransactionLinksResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8BB20D211F50076DD74 /* TransactionLinksResponse.swift */; };
+		637CE94C20D211F50076DD74 /* OfferAssetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8BD20D211F50076DD74 /* OfferAssetResponse.swift */; };
+		637CE94D20D211F50076DD74 /* OfferPriceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8BE20D211F50076DD74 /* OfferPriceResponse.swift */; };
+		637CE94E20D211F50076DD74 /* OfferResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8BF20D211F50076DD74 /* OfferResponse.swift */; };
+		637CE94F20D211F50076DD74 /* AccountCreatedOperationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8C120D211F50076DD74 /* AccountCreatedOperationResponse.swift */; };
+		637CE95020D211F50076DD74 /* AccountMergeOperationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8C220D211F50076DD74 /* AccountMergeOperationResponse.swift */; };
+		637CE95120D211F50076DD74 /* AllowTrustOperationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8C320D211F50076DD74 /* AllowTrustOperationResponse.swift */; };
+		637CE95220D211F50076DD74 /* ChangeTrustOperationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8C420D211F50076DD74 /* ChangeTrustOperationResponse.swift */; };
+		637CE95320D211F50076DD74 /* CreatePassiveOfferOperationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8C520D211F50076DD74 /* CreatePassiveOfferOperationResponse.swift */; };
+		637CE95420D211F50076DD74 /* InflationOperationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8C620D211F50076DD74 /* InflationOperationResponse.swift */; };
+		637CE95520D211F50076DD74 /* ManageDataOperationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8C720D211F50076DD74 /* ManageDataOperationResponse.swift */; };
+		637CE95620D211F50076DD74 /* ManageOfferOperationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8C820D211F50076DD74 /* ManageOfferOperationResponse.swift */; };
+		637CE95720D211F50076DD74 /* OperationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8C920D211F50076DD74 /* OperationResponse.swift */; };
+		637CE95820D211F50076DD74 /* OperationsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8CA20D211F50076DD74 /* OperationsFactory.swift */; };
+		637CE95920D211F50076DD74 /* PathPaymentOperationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8CB20D211F50076DD74 /* PathPaymentOperationResponse.swift */; };
+		637CE95A20D211F50076DD74 /* PaymentOperationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8CC20D211F50076DD74 /* PaymentOperationResponse.swift */; };
+		637CE95B20D211F50076DD74 /* SetOptionsOperationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8CD20D211F50076DD74 /* SetOptionsOperationResponse.swift */; };
+		637CE95C20D211F50076DD74 /* OrderbookOfferResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8CF20D211F50076DD74 /* OrderbookOfferResponse.swift */; };
+		637CE95D20D211F50076DD74 /* OrderbookResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8D020D211F50076DD74 /* OrderbookResponse.swift */; };
+		637CE95E20D211F50076DD74 /* PageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8D220D211F50076DD74 /* PageResponse.swift */; };
+		637CE95F20D211F50076DD74 /* FindPaymentPathsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8D420D211F50076DD74 /* FindPaymentPathsResponse.swift */; };
+		637CE96020D211F50076DD74 /* PaymentPathResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8D520D211F50076DD74 /* PaymentPathResponse.swift */; };
+		637CE96120D211F50076DD74 /* TradeAggregationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8D720D211F50076DD74 /* TradeAggregationResponse.swift */; };
+		637CE96220D211F50076DD74 /* TradeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8D920D211F50076DD74 /* TradeResponse.swift */; };
+		637CE96320D211F50076DD74 /* SubmitTransactionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8DB20D211F50076DD74 /* SubmitTransactionResponse.swift */; };
+		637CE96420D211F50076DD74 /* TransactionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8DC20D211F50076DD74 /* TransactionResponse.swift */; };
+		637CE96520D211F50076DD74 /* AccountEntryXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8DE20D211F50076DD74 /* AccountEntryXDR.swift */; };
+		637CE96620D211F50076DD74 /* AccountMergeResultXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8DF20D211F50076DD74 /* AccountMergeResultXDR.swift */; };
+		637CE96720D211F50076DD74 /* AllowTrustOpAssetXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8E020D211F50076DD74 /* AllowTrustOpAssetXDR.swift */; };
+		637CE96820D211F50076DD74 /* AllowTrustOperationXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8E120D211F50076DD74 /* AllowTrustOperationXDR.swift */; };
+		637CE96920D211F50076DD74 /* AllowTrustResultXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8E220D211F50076DD74 /* AllowTrustResultXDR.swift */; };
+		637CE96A20D211F50076DD74 /* AssetXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8E320D211F50076DD74 /* AssetXDR.swift */; };
+		637CE96B20D211F50076DD74 /* ChangeTrustOperationXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8E420D211F50076DD74 /* ChangeTrustOperationXDR.swift */; };
+		637CE96C20D211F50076DD74 /* ChangeTrustResultXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8E520D211F50076DD74 /* ChangeTrustResultXDR.swift */; };
+		637CE96D20D211F50076DD74 /* ClaimOfferAtomXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8E620D211F50076DD74 /* ClaimOfferAtomXDR.swift */; };
+		637CE96E20D211F50076DD74 /* CreateAccountOperationXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8E720D211F50076DD74 /* CreateAccountOperationXDR.swift */; };
+		637CE96F20D211F50076DD74 /* CreateAccountResultXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8E820D211F50076DD74 /* CreateAccountResultXDR.swift */; };
+		637CE97020D211F50076DD74 /* CreatePassiveOfferOperationXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8E920D211F50076DD74 /* CreatePassiveOfferOperationXDR.swift */; };
+		637CE97120D211F50076DD74 /* DataEntryXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8EA20D211F50076DD74 /* DataEntryXDR.swift */; };
+		637CE97220D211F50076DD74 /* DecoratedSignatureXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8EB20D211F50076DD74 /* DecoratedSignatureXDR.swift */; };
+		637CE97320D211F50076DD74 /* InflationPayoutXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8EC20D211F50076DD74 /* InflationPayoutXDR.swift */; };
+		637CE97420D211F50076DD74 /* InflationResultXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8ED20D211F50076DD74 /* InflationResultXDR.swift */; };
+		637CE97520D211F50076DD74 /* LedgerEntryChangesXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8EE20D211F50076DD74 /* LedgerEntryChangesXDR.swift */; };
+		637CE97620D211F50076DD74 /* LedgerEntryChangeXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8EF20D211F50076DD74 /* LedgerEntryChangeXDR.swift */; };
+		637CE97720D211F50076DD74 /* LedgerEntryXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8F020D211F50076DD74 /* LedgerEntryXDR.swift */; };
+		637CE97820D211F50076DD74 /* LedgerExtryDataXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8F120D211F50076DD74 /* LedgerExtryDataXDR.swift */; };
+		637CE97920D211F50076DD74 /* LedgerKeyAccountXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8F220D211F50076DD74 /* LedgerKeyAccountXDR.swift */; };
+		637CE97A20D211F50076DD74 /* LedgerKeyDataXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8F320D211F50076DD74 /* LedgerKeyDataXDR.swift */; };
+		637CE97B20D211F50076DD74 /* LedgerKeyOfferXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8F420D211F50076DD74 /* LedgerKeyOfferXDR.swift */; };
+		637CE97C20D211F50076DD74 /* LedgerKeyTrustlineXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8F520D211F50076DD74 /* LedgerKeyTrustlineXDR.swift */; };
+		637CE97D20D211F50076DD74 /* LedgerKeyXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8F620D211F50076DD74 /* LedgerKeyXDR.swift */; };
+		637CE97E20D211F50076DD74 /* ManageDataOperationXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8F720D211F50076DD74 /* ManageDataOperationXDR.swift */; };
+		637CE97F20D211F50076DD74 /* ManageDataResultXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8F820D211F50076DD74 /* ManageDataResultXDR.swift */; };
+		637CE98020D211F50076DD74 /* ManageOfferOperationXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8F920D211F50076DD74 /* ManageOfferOperationXDR.swift */; };
+		637CE98120D211F50076DD74 /* ManageOfferResultXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8FA20D211F50076DD74 /* ManageOfferResultXDR.swift */; };
+		637CE98220D211F50076DD74 /* ManageOfferSuccessResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8FB20D211F50076DD74 /* ManageOfferSuccessResult.swift */; };
+		637CE98320D211F50076DD74 /* MemoXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8FC20D211F50076DD74 /* MemoXDR.swift */; };
+		637CE98420D211F50076DD74 /* OfferEntryXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8FD20D211F50076DD74 /* OfferEntryXDR.swift */; };
+		637CE98520D211F50076DD74 /* OperationBodyXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8FE20D211F50076DD74 /* OperationBodyXDR.swift */; };
+		637CE98620D211F50076DD74 /* OperationMetaXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE8FF20D211F50076DD74 /* OperationMetaXDR.swift */; };
+		637CE98720D211F50076DD74 /* OperationResultXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE90020D211F50076DD74 /* OperationResultXDR.swift */; };
+		637CE98820D211F50076DD74 /* OperationXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE90120D211F50076DD74 /* OperationXDR.swift */; };
+		637CE98920D211F50076DD74 /* PathPaymentOperationXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE90220D211F50076DD74 /* PathPaymentOperationXDR.swift */; };
+		637CE98A20D211F50076DD74 /* PathPaymentResultXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE90320D211F50076DD74 /* PathPaymentResultXDR.swift */; };
+		637CE98B20D211F50076DD74 /* PaymentOperationXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE90420D211F50076DD74 /* PaymentOperationXDR.swift */; };
+		637CE98C20D211F50076DD74 /* PaymentResultXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE90520D211F50076DD74 /* PaymentResultXDR.swift */; };
+		637CE98D20D211F50076DD74 /* PriceXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE90620D211F50076DD74 /* PriceXDR.swift */; };
+		637CE98E20D211F50076DD74 /* SetOptionsOperationXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE90720D211F50076DD74 /* SetOptionsOperationXDR.swift */; };
+		637CE98F20D211F50076DD74 /* SetOptionsResultXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE90820D211F50076DD74 /* SetOptionsResultXDR.swift */; };
+		637CE99020D211F50076DD74 /* SignerKeyXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE90920D211F50076DD74 /* SignerKeyXDR.swift */; };
+		637CE99120D211F50076DD74 /* SignerXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE90A20D211F50076DD74 /* SignerXDR.swift */; };
+		637CE99220D211F50076DD74 /* SimplePaymentResultXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE90B20D211F50076DD74 /* SimplePaymentResultXDR.swift */; };
+		637CE99320D211F50076DD74 /* TimeBoundsXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE90C20D211F50076DD74 /* TimeBoundsXDR.swift */; };
+		637CE99420D211F50076DD74 /* TransactionEnvelopeXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE90D20D211F50076DD74 /* TransactionEnvelopeXDR.swift */; };
+		637CE99520D211F50076DD74 /* TransactionMetaXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE90E20D211F50076DD74 /* TransactionMetaXDR.swift */; };
+		637CE99620D211F50076DD74 /* TransactionResultXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE90F20D211F50076DD74 /* TransactionResultXDR.swift */; };
+		637CE99720D211F50076DD74 /* TransactionSignaturePayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE91020D211F50076DD74 /* TransactionSignaturePayload.swift */; };
+		637CE99820D211F50076DD74 /* TransactionXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE91120D211F50076DD74 /* TransactionXDR.swift */; };
+		637CE99920D211F50076DD74 /* TrustlineEntryXDR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE91220D211F50076DD74 /* TrustlineEntryXDR.swift */; };
+		637CE99A20D211F50076DD74 /* HorizonRequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE91420D211F50076DD74 /* HorizonRequestError.swift */; };
+		637CE99B20D211F50076DD74 /* StellarSDKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE91520D211F50076DD74 /* StellarSDKError.swift */; };
+		637CE9A720D213700076DD74 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE99D20D213700076DD74 /* Constants.swift */; };
+		637CE9A820D213700076DD74 /* DataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE99E20D213700076DD74 /* DataTypes.swift */; };
+		637CE9A920D213700076DD74 /* EventSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE99F20D213700076DD74 /* EventSource.swift */; };
+		637CE9AA20D213700076DD74 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE9A020D213700076DD74 /* Order.swift */; };
+		637CE9AB20D213700076DD74 /* StellarSDKLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE9A120D213700076DD74 /* StellarSDKLog.swift */; };
+		637CE9AC20D213700076DD74 /* XDRCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE9A320D213700076DD74 /* XDRCodable.swift */; };
+		637CE9AD20D213700076DD74 /* XDRCodableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE9A420D213700076DD74 /* XDRCodableExtensions.swift */; };
+		637CE9AE20D213700076DD74 /* XDRDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE9A520D213700076DD74 /* XDRDecoder.swift */; };
+		637CE9AF20D213700076DD74 /* XDREncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE9A620D213700076DD74 /* XDREncoder.swift */; };
+		637CE9E420D214170076DD74 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE9C220D214170076DD74 /* AccountService.swift */; };
+		637CE9E520D214170076DD74 /* AssetsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE9C320D214170076DD74 /* AssetsService.swift */; };
+		637CE9E620D214170076DD74 /* EffectsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE9C420D214170076DD74 /* EffectsService.swift */; };
+		637CE9E720D214170076DD74 /* LedgersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE9C520D214170076DD74 /* LedgersService.swift */; };
+		637CE9E820D214170076DD74 /* OffersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE9C620D214170076DD74 /* OffersService.swift */; };
+		637CE9E920D214170076DD74 /* OperationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE9C720D214170076DD74 /* OperationsService.swift */; };
+		637CE9EA20D214170076DD74 /* OrderbookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE9C820D214170076DD74 /* OrderbookService.swift */; };
+		637CE9EB20D214170076DD74 /* PaymentPathsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE9C920D214170076DD74 /* PaymentPathsService.swift */; };
+		637CE9EC20D214170076DD74 /* PaymentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE9CA20D214170076DD74 /* PaymentsService.swift */; };
+		637CE9ED20D214170076DD74 /* ServiceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE9CB20D214170076DD74 /* ServiceHelper.swift */; };
+		637CE9EE20D214170076DD74 /* EffectsStreamItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE9CD20D214170076DD74 /* EffectsStreamItem.swift */; };
+		637CE9EF20D214170076DD74 /* LedgersStreamItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE9CE20D214170076DD74 /* LedgersStreamItem.swift */; };
+		637CE9F020D214170076DD74 /* OperationsStreamItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE9CF20D214170076DD74 /* OperationsStreamItem.swift */; };
+		637CE9F120D214170076DD74 /* StreamingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE9D020D214170076DD74 /* StreamingHelper.swift */; };
+		637CE9F220D214170076DD74 /* TransactionsStreamItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE9D120D214170076DD74 /* TransactionsStreamItem.swift */; };
+		637CE9F320D214170076DD74 /* TradeAggregationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE9D220D214170076DD74 /* TradeAggregationsService.swift */; };
+		637CE9F420D214170076DD74 /* TradesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE9D320D214170076DD74 /* TradesService.swift */; };
+		637CE9F520D214170076DD74 /* TransactionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE9D420D214170076DD74 /* TransactionsService.swift */; };
+		637CEA0420D214E90076DD74 /* Data+Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CEA0320D214E90076DD74 /* Data+Hash.swift */; };
+		637CEA0820D246CF0076DD74 /* KeyPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CEA0720D246CF0076DD74 /* KeyPair.swift */; };
+		637CEA0E20D248A30076DD74 /* PrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CEA0920D248A10076DD74 /* PrivateKey.swift */; };
+		637CEA0F20D248A30076DD74 /* PublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CEA0A20D248A20076DD74 /* PublicKey.swift */; };
+		637CEA1020D248A30076DD74 /* Ed25519Derivation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CEA0B20D248A20076DD74 /* Ed25519Derivation.swift */; };
+		637CEA1120D248A30076DD74 /* Ed25519Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CEA0C20D248A20076DD74 /* Ed25519Error.swift */; };
+		637CEA1220D248A30076DD74 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CEA0D20D248A30076DD74 /* Wallet.swift */; };
 		6395BB6D20C0192D002EA989 /* CLIColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB5020C0192D002EA989 /* CLIColor.h */; };
 		6395BB6E20C0192D002EA989 /* CLIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395BB5120C0192D002EA989 /* CLIColor.m */; };
 		6395BB6F20C0192D002EA989 /* CocoaLumberjack.h in Headers */ = {isa = PBXBuildFile; fileRef = 6395BB5220C0192D002EA989 /* CocoaLumberjack.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -349,8 +540,6 @@
 		63D499DC20CAF0560047840F /* ObjectMapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63D499D320CAE70E0047840F /* ObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		63D499DD20CAF0560047840F /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D499D520CAE70F0047840F /* SwiftyJSON.framework */; };
 		63D499DE20CAF0560047840F /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63D499D520CAE70F0047840F /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		63D49A6F20CD3CE90047840F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 63D499E020CD3CE90047840F /* .gitignore */; };
-		63D49A7020CD3CE90047840F /* .gitmodules in Resources */ = {isa = PBXBuildFile; fileRef = 63D499E120CD3CE90047840F /* .gitmodules */; };
 		63D49A7120CD3CE90047840F /* BRAddress.c in Sources */ = {isa = PBXBuildFile; fileRef = 63D499E220CD3CE90047840F /* BRAddress.c */; };
 		63D49A7220CD3CE90047840F /* BRAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D499E320CD3CE90047840F /* BRAddress.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63D49A7320CD3CE90047840F /* BRArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D499E420CD3CE90047840F /* BRArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -384,8 +573,6 @@
 		63D49A8F20CD3CE90047840F /* BRTransaction.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D49A0020CD3CE90047840F /* BRTransaction.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63D49A9020CD3CE90047840F /* BRWallet.c in Sources */ = {isa = PBXBuildFile; fileRef = 63D49A0120CD3CE90047840F /* BRWallet.c */; };
 		63D49A9120CD3CE90047840F /* BRWallet.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D49A0220CD3CE90047840F /* BRWallet.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		63D49A9220CD3CE90047840F /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 63D49A0320CD3CE90047840F /* LICENSE */; };
-		63D49A9320CD3CE90047840F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 63D49A0520CD3CE90047840F /* README.md */; };
 		63D49AED20CD3CE90047840F /* test.c in Sources */ = {isa = PBXBuildFile; fileRef = 63D49A6E20CD3CE90047840F /* test.c */; };
 		63D49AEF20CD40820047840F /* BRCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49AEE20CD40820047840F /* BRCore.swift */; };
 		63D49AF120CD4EE60047840F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D49AF020CD4EE50047840F /* Extensions.swift */; };
@@ -453,7 +640,7 @@
 		63F4FE5220C9C23600215698 /* EthereumNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F4FE5120C9C23600215698 /* EthereumNetwork.swift */; };
 		63F66C1120B421BF007DF79D /* NRLPrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C0C20B421BF007DF79D /* NRLPrivateKey.swift */; };
 		63F66C1220B421BF007DF79D /* NRLPublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C0D20B421BF007DF79D /* NRLPublicKey.swift */; };
-		63F66C1320B421BF007DF79D /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C0F20B421BF007DF79D /* Network.swift */; };
+		63F66C1320B421BF007DF79D /* NRLNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C0F20B421BF007DF79D /* NRLNetwork.swift */; };
 		63F66C1420B421BF007DF79D /* NRLWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C1020B421BF007DF79D /* NRLWallet.swift */; };
 		63F66C1720B42444007DF79D /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F66C1620B42444007DF79D /* CryptoSwift.framework */; };
 		63F66C1C20B49031007DF79D /* neoutils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F66C1920B49031007DF79D /* neoutils.framework */; };
@@ -466,7 +653,6 @@
 		63F66C3520B4B671007DF79D /* BlockParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C2F20B4B671007DF79D /* BlockParameter.swift */; };
 		63F66C3620B4B671007DF79D /* RawTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C3020B4B671007DF79D /* RawTransaction.swift */; };
 		63F66C3720B4B671007DF79D /* SentTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C3120B4B671007DF79D /* SentTransaction.swift */; };
-		63F66C3820B4B671007DF79D /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C3220B4B671007DF79D /* Transaction.swift */; };
 		63F66C4320B4B722007DF79D /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C3920B4B721007DF79D /* Converter.swift */; };
 		63F66C4520B4B722007DF79D /* EIP55.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C3B20B4B721007DF79D /* EIP55.swift */; };
 		63F66C4620B4B722007DF79D /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C3C20B4B721007DF79D /* Result.swift */; };
@@ -485,7 +671,6 @@
 		63F66C6F20B4C502007DF79D /* IDGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C5B20B4C502007DF79D /* IDGenerator.swift */; };
 		63F66C7020B4C502007DF79D /* JSONRPCError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C5C20B4C502007DF79D /* JSONRPCError.swift */; };
 		63F66C7120B4C502007DF79D /* JSONRPCRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C5D20B4C502007DF79D /* JSONRPCRequest.swift */; };
-		63F66C7220B4C502007DF79D /* Etherscan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C5F20B4C502007DF79D /* Etherscan.swift */; };
 		63F66C7320B4C502007DF79D /* JSONRPC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C6020B4C502007DF79D /* JSONRPC.swift */; };
 		63F66C7420B4C502007DF79D /* JSONBodySerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C6220B4C502007DF79D /* JSONBodySerialization.swift */; };
 		63F66C7520B4C502007DF79D /* URLEncodedSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C6320B4C502007DF79D /* URLEncodedSerialization.swift */; };
@@ -834,6 +1019,197 @@
 		6377F80B20BE0E1600F668E3 /* WSWebTickerBlockchain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSWebTickerBlockchain.m; sourceTree = "<group>"; };
 		6377F80C20BE0E1600F668E3 /* WSWebTickerMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSWebTickerMonitor.h; sourceTree = "<group>"; };
 		6377F80D20BE0E1600F668E3 /* WSWebTickerMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSWebTickerMonitor.m; sourceTree = "<group>"; };
+		637CE65D20D20EA60076DD74 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		637CE65E20D20EA60076DD74 /* AccountMergeOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountMergeOperation.swift; sourceTree = "<group>"; };
+		637CE65F20D20EA60076DD74 /* AllowTrustOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllowTrustOperation.swift; sourceTree = "<group>"; };
+		637CE66020D20EA60076DD74 /* Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
+		637CE66120D20EA60076DD74 /* ChangeTrustOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeTrustOperation.swift; sourceTree = "<group>"; };
+		637CE66220D20EA60076DD74 /* CreateAccountOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountOperation.swift; sourceTree = "<group>"; };
+		637CE66320D20EA60076DD74 /* CreatePassiveOfferOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePassiveOfferOperation.swift; sourceTree = "<group>"; };
+		637CE66420D20EA60076DD74 /* ManageDataOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageDataOperation.swift; sourceTree = "<group>"; };
+		637CE66520D20EA60076DD74 /* ManageOfferOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageOfferOperation.swift; sourceTree = "<group>"; };
+		637CE66620D20EA60076DD74 /* Memo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
+		637CE66720D20EA60076DD74 /* MemoProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoProtocol.swift; sourceTree = "<group>"; };
+		637CE66820D20EA60076DD74 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		637CE66920D20EA60076DD74 /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
+		637CE66A20D20EA60076DD74 /* PathPaymentOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathPaymentOperation.swift; sourceTree = "<group>"; };
+		637CE66B20D20EA60076DD74 /* PaymentOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentOperation.swift; sourceTree = "<group>"; };
+		637CE66C20D20EA60076DD74 /* Price.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
+		637CE66D20D20EA60076DD74 /* SetOptionsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetOptionsOperation.swift; sourceTree = "<group>"; };
+		637CE66E20D20EA60076DD74 /* Signer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signer.swift; sourceTree = "<group>"; };
+		637CE66F20D20EA60076DD74 /* TimeBounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeBounds.swift; sourceTree = "<group>"; };
+		637CE67020D20EA60076DD74 /* StellarTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StellarTransaction.swift; sourceTree = "<group>"; };
+		637CE67120D20EA60076DD74 /* TransactionAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionAccount.swift; sourceTree = "<group>"; };
+		637CE68820D20EA60076DD74 /* stellarsdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stellarsdk.h; sourceTree = "<group>"; };
+		637CE68920D20EA60076DD74 /* StellarSDK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StellarSDK.swift; sourceTree = "<group>"; };
+		637CE88120D211F50076DD74 /* AccountBalanceResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountBalanceResponse.swift; sourceTree = "<group>"; };
+		637CE88220D211F50076DD74 /* AccountFlagsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountFlagsResponse.swift; sourceTree = "<group>"; };
+		637CE88320D211F50076DD74 /* AccountResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountResponse.swift; sourceTree = "<group>"; };
+		637CE88420D211F50076DD74 /* AccountSignerResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSignerResponse.swift; sourceTree = "<group>"; };
+		637CE88520D211F50076DD74 /* AccountThresholdsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountThresholdsResponse.swift; sourceTree = "<group>"; };
+		637CE88620D211F50076DD74 /* DataForAccountResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataForAccountResponse.swift; sourceTree = "<group>"; };
+		637CE88820D211F50076DD74 /* AssetResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetResponse.swift; sourceTree = "<group>"; };
+		637CE88A20D211F50076DD74 /* AccountCreatedEffectResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCreatedEffectResponse.swift; sourceTree = "<group>"; };
+		637CE88B20D211F50076DD74 /* AccountCreditedEffectResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCreditedEffectResponse.swift; sourceTree = "<group>"; };
+		637CE88C20D211F50076DD74 /* AccountDebitedEffectResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountDebitedEffectResponse.swift; sourceTree = "<group>"; };
+		637CE88D20D211F50076DD74 /* AccountFlagsUpdatedEffectResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountFlagsUpdatedEffectResponse.swift; sourceTree = "<group>"; };
+		637CE88E20D211F50076DD74 /* AccountHomeDomainUpdatedEffectResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountHomeDomainUpdatedEffectResponse.swift; sourceTree = "<group>"; };
+		637CE88F20D211F50076DD74 /* AccountInflationDestinationUpdatedEffectResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountInflationDestinationUpdatedEffectResponse.swift; sourceTree = "<group>"; };
+		637CE89020D211F50076DD74 /* AccountRemovedEffectResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountRemovedEffectResponse.swift; sourceTree = "<group>"; };
+		637CE89120D211F50076DD74 /* AccountThresholdsUpdatedEffectResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountThresholdsUpdatedEffectResponse.swift; sourceTree = "<group>"; };
+		637CE89220D211F50076DD74 /* EffectResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectResponse.swift; sourceTree = "<group>"; };
+		637CE89320D211F50076DD74 /* EffectsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectsFactory.swift; sourceTree = "<group>"; };
+		637CE89420D211F50076DD74 /* OfferCreatedEffectResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferCreatedEffectResponse.swift; sourceTree = "<group>"; };
+		637CE89520D211F50076DD74 /* OfferRemovedEffectResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferRemovedEffectResponse.swift; sourceTree = "<group>"; };
+		637CE89620D211F50076DD74 /* OfferUpdatedEffectResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferUpdatedEffectResponse.swift; sourceTree = "<group>"; };
+		637CE89720D211F50076DD74 /* SignerCreatedEffectResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignerCreatedEffectResponse.swift; sourceTree = "<group>"; };
+		637CE89820D211F50076DD74 /* SignerEffectResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignerEffectResponse.swift; sourceTree = "<group>"; };
+		637CE89920D211F50076DD74 /* SignerRemovedEffectResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignerRemovedEffectResponse.swift; sourceTree = "<group>"; };
+		637CE89A20D211F50076DD74 /* SignerUpdatedEffectResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignerUpdatedEffectResponse.swift; sourceTree = "<group>"; };
+		637CE89B20D211F50076DD74 /* TradeEffectResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TradeEffectResponse.swift; sourceTree = "<group>"; };
+		637CE89C20D211F50076DD74 /* TrustlineAuthorizedEffectResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrustlineAuthorizedEffectResponse.swift; sourceTree = "<group>"; };
+		637CE89D20D211F50076DD74 /* TrustlineCreatedEffectResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrustlineCreatedEffectResponse.swift; sourceTree = "<group>"; };
+		637CE89E20D211F50076DD74 /* TrustlineDeauthorizedEffectResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrustlineDeauthorizedEffectResponse.swift; sourceTree = "<group>"; };
+		637CE89F20D211F50076DD74 /* TrustlineEffectResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrustlineEffectResponse.swift; sourceTree = "<group>"; };
+		637CE8A020D211F50076DD74 /* TrustlineRemovedEffectResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrustlineRemovedEffectResponse.swift; sourceTree = "<group>"; };
+		637CE8A120D211F50076DD74 /* TrustlineUpdatedEffectResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrustlineUpdatedEffectResponse.swift; sourceTree = "<group>"; };
+		637CE8A320D211F50076DD74 /* BadRequestErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadRequestErrorResponse.swift; sourceTree = "<group>"; };
+		637CE8A420D211F50076DD74 /* BeforeHistoryErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeforeHistoryErrorResponse.swift; sourceTree = "<group>"; };
+		637CE8A520D211F50076DD74 /* ErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		637CE8A620D211F50076DD74 /* ForbiddenErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForbiddenErrorResponse.swift; sourceTree = "<group>"; };
+		637CE8A720D211F50076DD74 /* InternalServerErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternalServerErrorResponse.swift; sourceTree = "<group>"; };
+		637CE8A820D211F50076DD74 /* NotAcceptableErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotAcceptableErrorResponse.swift; sourceTree = "<group>"; };
+		637CE8A920D211F50076DD74 /* NotFoundErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotFoundErrorResponse.swift; sourceTree = "<group>"; };
+		637CE8AA20D211F50076DD74 /* NotImplementedErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotImplementedErrorResponse.swift; sourceTree = "<group>"; };
+		637CE8AB20D211F50076DD74 /* RateLimitExceededErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateLimitExceededErrorResponse.swift; sourceTree = "<group>"; };
+		637CE8AC20D211F50076DD74 /* StaleHistoryErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaleHistoryErrorResponse.swift; sourceTree = "<group>"; };
+		637CE8AD20D211F50076DD74 /* TransactionFailedErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionFailedErrorResponse.swift; sourceTree = "<group>"; };
+		637CE8AE20D211F50076DD74 /* TransactionMalformedErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionMalformedErrorResponse.swift; sourceTree = "<group>"; };
+		637CE8B020D211F50076DD74 /* LedgerResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LedgerResponse.swift; sourceTree = "<group>"; };
+		637CE8B220D211F50076DD74 /* AccountLinksResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountLinksResponse.swift; sourceTree = "<group>"; };
+		637CE8B320D211F50076DD74 /* AssetLinksResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetLinksResponse.swift; sourceTree = "<group>"; };
+		637CE8B420D211F50076DD74 /* EffectLinksResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectLinksResponse.swift; sourceTree = "<group>"; };
+		637CE8B520D211F50076DD74 /* LedgerLinksResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LedgerLinksResponse.swift; sourceTree = "<group>"; };
+		637CE8B620D211F50076DD74 /* LinkResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkResponse.swift; sourceTree = "<group>"; };
+		637CE8B720D211F50076DD74 /* OfferLinksResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferLinksResponse.swift; sourceTree = "<group>"; };
+		637CE8B820D211F50076DD74 /* OperationLinksResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationLinksResponse.swift; sourceTree = "<group>"; };
+		637CE8B920D211F50076DD74 /* PagingLinksResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingLinksResponse.swift; sourceTree = "<group>"; };
+		637CE8BA20D211F50076DD74 /* TradeLinksResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TradeLinksResponse.swift; sourceTree = "<group>"; };
+		637CE8BB20D211F50076DD74 /* TransactionLinksResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionLinksResponse.swift; sourceTree = "<group>"; };
+		637CE8BD20D211F50076DD74 /* OfferAssetResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferAssetResponse.swift; sourceTree = "<group>"; };
+		637CE8BE20D211F50076DD74 /* OfferPriceResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferPriceResponse.swift; sourceTree = "<group>"; };
+		637CE8BF20D211F50076DD74 /* OfferResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferResponse.swift; sourceTree = "<group>"; };
+		637CE8C120D211F50076DD74 /* AccountCreatedOperationResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCreatedOperationResponse.swift; sourceTree = "<group>"; };
+		637CE8C220D211F50076DD74 /* AccountMergeOperationResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountMergeOperationResponse.swift; sourceTree = "<group>"; };
+		637CE8C320D211F50076DD74 /* AllowTrustOperationResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllowTrustOperationResponse.swift; sourceTree = "<group>"; };
+		637CE8C420D211F50076DD74 /* ChangeTrustOperationResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeTrustOperationResponse.swift; sourceTree = "<group>"; };
+		637CE8C520D211F50076DD74 /* CreatePassiveOfferOperationResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePassiveOfferOperationResponse.swift; sourceTree = "<group>"; };
+		637CE8C620D211F50076DD74 /* InflationOperationResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InflationOperationResponse.swift; sourceTree = "<group>"; };
+		637CE8C720D211F50076DD74 /* ManageDataOperationResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageDataOperationResponse.swift; sourceTree = "<group>"; };
+		637CE8C820D211F50076DD74 /* ManageOfferOperationResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageOfferOperationResponse.swift; sourceTree = "<group>"; };
+		637CE8C920D211F50076DD74 /* OperationResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationResponse.swift; sourceTree = "<group>"; };
+		637CE8CA20D211F50076DD74 /* OperationsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationsFactory.swift; sourceTree = "<group>"; };
+		637CE8CB20D211F50076DD74 /* PathPaymentOperationResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathPaymentOperationResponse.swift; sourceTree = "<group>"; };
+		637CE8CC20D211F50076DD74 /* PaymentOperationResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentOperationResponse.swift; sourceTree = "<group>"; };
+		637CE8CD20D211F50076DD74 /* SetOptionsOperationResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetOptionsOperationResponse.swift; sourceTree = "<group>"; };
+		637CE8CF20D211F50076DD74 /* OrderbookOfferResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderbookOfferResponse.swift; sourceTree = "<group>"; };
+		637CE8D020D211F50076DD74 /* OrderbookResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderbookResponse.swift; sourceTree = "<group>"; };
+		637CE8D220D211F50076DD74 /* PageResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageResponse.swift; sourceTree = "<group>"; };
+		637CE8D420D211F50076DD74 /* FindPaymentPathsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindPaymentPathsResponse.swift; sourceTree = "<group>"; };
+		637CE8D520D211F50076DD74 /* PaymentPathResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentPathResponse.swift; sourceTree = "<group>"; };
+		637CE8D720D211F50076DD74 /* TradeAggregationResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TradeAggregationResponse.swift; sourceTree = "<group>"; };
+		637CE8D920D211F50076DD74 /* TradeResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TradeResponse.swift; sourceTree = "<group>"; };
+		637CE8DB20D211F50076DD74 /* SubmitTransactionResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitTransactionResponse.swift; sourceTree = "<group>"; };
+		637CE8DC20D211F50076DD74 /* TransactionResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionResponse.swift; sourceTree = "<group>"; };
+		637CE8DE20D211F50076DD74 /* AccountEntryXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountEntryXDR.swift; sourceTree = "<group>"; };
+		637CE8DF20D211F50076DD74 /* AccountMergeResultXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountMergeResultXDR.swift; sourceTree = "<group>"; };
+		637CE8E020D211F50076DD74 /* AllowTrustOpAssetXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllowTrustOpAssetXDR.swift; sourceTree = "<group>"; };
+		637CE8E120D211F50076DD74 /* AllowTrustOperationXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllowTrustOperationXDR.swift; sourceTree = "<group>"; };
+		637CE8E220D211F50076DD74 /* AllowTrustResultXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllowTrustResultXDR.swift; sourceTree = "<group>"; };
+		637CE8E320D211F50076DD74 /* AssetXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetXDR.swift; sourceTree = "<group>"; };
+		637CE8E420D211F50076DD74 /* ChangeTrustOperationXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeTrustOperationXDR.swift; sourceTree = "<group>"; };
+		637CE8E520D211F50076DD74 /* ChangeTrustResultXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeTrustResultXDR.swift; sourceTree = "<group>"; };
+		637CE8E620D211F50076DD74 /* ClaimOfferAtomXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClaimOfferAtomXDR.swift; sourceTree = "<group>"; };
+		637CE8E720D211F50076DD74 /* CreateAccountOperationXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountOperationXDR.swift; sourceTree = "<group>"; };
+		637CE8E820D211F50076DD74 /* CreateAccountResultXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountResultXDR.swift; sourceTree = "<group>"; };
+		637CE8E920D211F50076DD74 /* CreatePassiveOfferOperationXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePassiveOfferOperationXDR.swift; sourceTree = "<group>"; };
+		637CE8EA20D211F50076DD74 /* DataEntryXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEntryXDR.swift; sourceTree = "<group>"; };
+		637CE8EB20D211F50076DD74 /* DecoratedSignatureXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecoratedSignatureXDR.swift; sourceTree = "<group>"; };
+		637CE8EC20D211F50076DD74 /* InflationPayoutXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InflationPayoutXDR.swift; sourceTree = "<group>"; };
+		637CE8ED20D211F50076DD74 /* InflationResultXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InflationResultXDR.swift; sourceTree = "<group>"; };
+		637CE8EE20D211F50076DD74 /* LedgerEntryChangesXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LedgerEntryChangesXDR.swift; sourceTree = "<group>"; };
+		637CE8EF20D211F50076DD74 /* LedgerEntryChangeXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LedgerEntryChangeXDR.swift; sourceTree = "<group>"; };
+		637CE8F020D211F50076DD74 /* LedgerEntryXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LedgerEntryXDR.swift; sourceTree = "<group>"; };
+		637CE8F120D211F50076DD74 /* LedgerExtryDataXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LedgerExtryDataXDR.swift; sourceTree = "<group>"; };
+		637CE8F220D211F50076DD74 /* LedgerKeyAccountXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LedgerKeyAccountXDR.swift; sourceTree = "<group>"; };
+		637CE8F320D211F50076DD74 /* LedgerKeyDataXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LedgerKeyDataXDR.swift; sourceTree = "<group>"; };
+		637CE8F420D211F50076DD74 /* LedgerKeyOfferXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LedgerKeyOfferXDR.swift; sourceTree = "<group>"; };
+		637CE8F520D211F50076DD74 /* LedgerKeyTrustlineXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LedgerKeyTrustlineXDR.swift; sourceTree = "<group>"; };
+		637CE8F620D211F50076DD74 /* LedgerKeyXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LedgerKeyXDR.swift; sourceTree = "<group>"; };
+		637CE8F720D211F50076DD74 /* ManageDataOperationXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageDataOperationXDR.swift; sourceTree = "<group>"; };
+		637CE8F820D211F50076DD74 /* ManageDataResultXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageDataResultXDR.swift; sourceTree = "<group>"; };
+		637CE8F920D211F50076DD74 /* ManageOfferOperationXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageOfferOperationXDR.swift; sourceTree = "<group>"; };
+		637CE8FA20D211F50076DD74 /* ManageOfferResultXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageOfferResultXDR.swift; sourceTree = "<group>"; };
+		637CE8FB20D211F50076DD74 /* ManageOfferSuccessResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageOfferSuccessResult.swift; sourceTree = "<group>"; };
+		637CE8FC20D211F50076DD74 /* MemoXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoXDR.swift; sourceTree = "<group>"; };
+		637CE8FD20D211F50076DD74 /* OfferEntryXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferEntryXDR.swift; sourceTree = "<group>"; };
+		637CE8FE20D211F50076DD74 /* OperationBodyXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationBodyXDR.swift; sourceTree = "<group>"; };
+		637CE8FF20D211F50076DD74 /* OperationMetaXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationMetaXDR.swift; sourceTree = "<group>"; };
+		637CE90020D211F50076DD74 /* OperationResultXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationResultXDR.swift; sourceTree = "<group>"; };
+		637CE90120D211F50076DD74 /* OperationXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationXDR.swift; sourceTree = "<group>"; };
+		637CE90220D211F50076DD74 /* PathPaymentOperationXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathPaymentOperationXDR.swift; sourceTree = "<group>"; };
+		637CE90320D211F50076DD74 /* PathPaymentResultXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathPaymentResultXDR.swift; sourceTree = "<group>"; };
+		637CE90420D211F50076DD74 /* PaymentOperationXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentOperationXDR.swift; sourceTree = "<group>"; };
+		637CE90520D211F50076DD74 /* PaymentResultXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentResultXDR.swift; sourceTree = "<group>"; };
+		637CE90620D211F50076DD74 /* PriceXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceXDR.swift; sourceTree = "<group>"; };
+		637CE90720D211F50076DD74 /* SetOptionsOperationXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetOptionsOperationXDR.swift; sourceTree = "<group>"; };
+		637CE90820D211F50076DD74 /* SetOptionsResultXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetOptionsResultXDR.swift; sourceTree = "<group>"; };
+		637CE90920D211F50076DD74 /* SignerKeyXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignerKeyXDR.swift; sourceTree = "<group>"; };
+		637CE90A20D211F50076DD74 /* SignerXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignerXDR.swift; sourceTree = "<group>"; };
+		637CE90B20D211F50076DD74 /* SimplePaymentResultXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimplePaymentResultXDR.swift; sourceTree = "<group>"; };
+		637CE90C20D211F50076DD74 /* TimeBoundsXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeBoundsXDR.swift; sourceTree = "<group>"; };
+		637CE90D20D211F50076DD74 /* TransactionEnvelopeXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionEnvelopeXDR.swift; sourceTree = "<group>"; };
+		637CE90E20D211F50076DD74 /* TransactionMetaXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionMetaXDR.swift; sourceTree = "<group>"; };
+		637CE90F20D211F50076DD74 /* TransactionResultXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionResultXDR.swift; sourceTree = "<group>"; };
+		637CE91020D211F50076DD74 /* TransactionSignaturePayload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionSignaturePayload.swift; sourceTree = "<group>"; };
+		637CE91120D211F50076DD74 /* TransactionXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionXDR.swift; sourceTree = "<group>"; };
+		637CE91220D211F50076DD74 /* TrustlineEntryXDR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrustlineEntryXDR.swift; sourceTree = "<group>"; };
+		637CE91420D211F50076DD74 /* HorizonRequestError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizonRequestError.swift; sourceTree = "<group>"; };
+		637CE91520D211F50076DD74 /* StellarSDKError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StellarSDKError.swift; sourceTree = "<group>"; };
+		637CE99D20D213700076DD74 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		637CE99E20D213700076DD74 /* DataTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTypes.swift; sourceTree = "<group>"; };
+		637CE99F20D213700076DD74 /* EventSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventSource.swift; sourceTree = "<group>"; };
+		637CE9A020D213700076DD74 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		637CE9A120D213700076DD74 /* StellarSDKLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StellarSDKLog.swift; sourceTree = "<group>"; };
+		637CE9A320D213700076DD74 /* XDRCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDRCodable.swift; sourceTree = "<group>"; };
+		637CE9A420D213700076DD74 /* XDRCodableExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDRCodableExtensions.swift; sourceTree = "<group>"; };
+		637CE9A520D213700076DD74 /* XDRDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDRDecoder.swift; sourceTree = "<group>"; };
+		637CE9A620D213700076DD74 /* XDREncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDREncoder.swift; sourceTree = "<group>"; };
+		637CE9C220D214170076DD74 /* AccountService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
+		637CE9C320D214170076DD74 /* AssetsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsService.swift; sourceTree = "<group>"; };
+		637CE9C420D214170076DD74 /* EffectsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectsService.swift; sourceTree = "<group>"; };
+		637CE9C520D214170076DD74 /* LedgersService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LedgersService.swift; sourceTree = "<group>"; };
+		637CE9C620D214170076DD74 /* OffersService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffersService.swift; sourceTree = "<group>"; };
+		637CE9C720D214170076DD74 /* OperationsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationsService.swift; sourceTree = "<group>"; };
+		637CE9C820D214170076DD74 /* OrderbookService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderbookService.swift; sourceTree = "<group>"; };
+		637CE9C920D214170076DD74 /* PaymentPathsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentPathsService.swift; sourceTree = "<group>"; };
+		637CE9CA20D214170076DD74 /* PaymentsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentsService.swift; sourceTree = "<group>"; };
+		637CE9CB20D214170076DD74 /* ServiceHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceHelper.swift; sourceTree = "<group>"; };
+		637CE9CD20D214170076DD74 /* EffectsStreamItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectsStreamItem.swift; sourceTree = "<group>"; };
+		637CE9CE20D214170076DD74 /* LedgersStreamItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LedgersStreamItem.swift; sourceTree = "<group>"; };
+		637CE9CF20D214170076DD74 /* OperationsStreamItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationsStreamItem.swift; sourceTree = "<group>"; };
+		637CE9D020D214170076DD74 /* StreamingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamingHelper.swift; sourceTree = "<group>"; };
+		637CE9D120D214170076DD74 /* TransactionsStreamItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsStreamItem.swift; sourceTree = "<group>"; };
+		637CE9D220D214170076DD74 /* TradeAggregationsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TradeAggregationsService.swift; sourceTree = "<group>"; };
+		637CE9D320D214170076DD74 /* TradesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TradesService.swift; sourceTree = "<group>"; };
+		637CE9D420D214170076DD74 /* TransactionsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsService.swift; sourceTree = "<group>"; };
+		637CEA0320D214E90076DD74 /* Data+Hash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Hash.swift"; sourceTree = "<group>"; };
+		637CEA0720D246CF0076DD74 /* KeyPair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPair.swift; sourceTree = "<group>"; };
+		637CEA0920D248A10076DD74 /* PrivateKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateKey.swift; sourceTree = "<group>"; };
+		637CEA0A20D248A20076DD74 /* PublicKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicKey.swift; sourceTree = "<group>"; };
+		637CEA0B20D248A20076DD74 /* Ed25519Derivation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ed25519Derivation.swift; sourceTree = "<group>"; };
+		637CEA0C20D248A20076DD74 /* Ed25519Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ed25519Error.swift; sourceTree = "<group>"; };
+		637CEA0D20D248A30076DD74 /* Wallet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		6395BB5020C0192D002EA989 /* CLIColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLIColor.h; sourceTree = "<group>"; };
 		6395BB5120C0192D002EA989 /* CLIColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLIColor.m; sourceTree = "<group>"; };
 		6395BB5220C0192D002EA989 /* CocoaLumberjack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaLumberjack.h; sourceTree = "<group>"; };
@@ -865,8 +1241,6 @@
 		63D499D320CAE70E0047840F /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
 		63D499D420CAE70E0047840F /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		63D499D520CAE70F0047840F /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
-		63D499E020CD3CE90047840F /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		63D499E120CD3CE90047840F /* .gitmodules */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitmodules; sourceTree = "<group>"; };
 		63D499E220CD3CE90047840F /* BRAddress.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BRAddress.c; sourceTree = "<group>"; };
 		63D499E320CD3CE90047840F /* BRAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRAddress.h; sourceTree = "<group>"; };
 		63D499E420CD3CE90047840F /* BRArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRArray.h; sourceTree = "<group>"; };
@@ -900,15 +1274,12 @@
 		63D49A0020CD3CE90047840F /* BRTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRTransaction.h; sourceTree = "<group>"; };
 		63D49A0120CD3CE90047840F /* BRWallet.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BRWallet.c; sourceTree = "<group>"; };
 		63D49A0220CD3CE90047840F /* BRWallet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRWallet.h; sourceTree = "<group>"; };
-		63D49A0320CD3CE90047840F /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		63D49A0420CD3CE90047840F /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
-		63D49A0520CD3CE90047840F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		63D49A6E20CD3CE90047840F /* test.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = test.c; sourceTree = "<group>"; };
 		63D49AEE20CD40820047840F /* BRCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRCore.swift; sourceTree = "<group>"; };
 		63D49AF020CD4EE50047840F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		63D49AF220CDC5EA0047840F /* WalletCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletCoordinator.swift; sourceTree = "<group>"; };
 		63D49AF320CDC5EA0047840F /* WalletManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletManager.swift; sourceTree = "<group>"; };
-		63D49AFB20CDE4330047840F /* sqlite.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = sqlite.modulemap; sourceTree = "<group>"; };
 		63D49B0320CDE5C60047840F /* DispatchQueue+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Additions.swift"; sourceTree = "<group>"; };
 		63D49B0E20CDE7730047840F /* BRAPIClient+Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BRAPIClient+Events.swift"; sourceTree = "<group>"; };
 		63D49B0F20CDE7730047840F /* BRAPIClient+Features.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BRAPIClient+Features.swift"; sourceTree = "<group>"; };
@@ -961,7 +1332,7 @@
 		63F4FE5120C9C23600215698 /* EthereumNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumNetwork.swift; sourceTree = "<group>"; };
 		63F66C0C20B421BF007DF79D /* NRLPrivateKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRLPrivateKey.swift; sourceTree = "<group>"; };
 		63F66C0D20B421BF007DF79D /* NRLPublicKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRLPublicKey.swift; sourceTree = "<group>"; };
-		63F66C0F20B421BF007DF79D /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		63F66C0F20B421BF007DF79D /* NRLNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRLNetwork.swift; sourceTree = "<group>"; };
 		63F66C1020B421BF007DF79D /* NRLWallet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRLWallet.swift; sourceTree = "<group>"; };
 		63F66C1520B422A5007DF79D /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		63F66C1620B42444007DF79D /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = "<group>"; };
@@ -973,7 +1344,6 @@
 		63F66C2F20B4B671007DF79D /* BlockParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockParameter.swift; sourceTree = "<group>"; };
 		63F66C3020B4B671007DF79D /* RawTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawTransaction.swift; sourceTree = "<group>"; };
 		63F66C3120B4B671007DF79D /* SentTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentTransaction.swift; sourceTree = "<group>"; };
-		63F66C3220B4B671007DF79D /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		63F66C3920B4B721007DF79D /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
 		63F66C3B20B4B721007DF79D /* EIP55.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EIP55.swift; sourceTree = "<group>"; };
 		63F66C3C20B4B721007DF79D /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -992,7 +1362,6 @@
 		63F66C5B20B4C502007DF79D /* IDGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDGenerator.swift; sourceTree = "<group>"; };
 		63F66C5C20B4C502007DF79D /* JSONRPCError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONRPCError.swift; sourceTree = "<group>"; };
 		63F66C5D20B4C502007DF79D /* JSONRPCRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONRPCRequest.swift; sourceTree = "<group>"; };
-		63F66C5F20B4C502007DF79D /* Etherscan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Etherscan.swift; sourceTree = "<group>"; };
 		63F66C6020B4C502007DF79D /* JSONRPC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONRPC.swift; sourceTree = "<group>"; };
 		63F66C6220B4C502007DF79D /* JSONBodySerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONBodySerialization.swift; sourceTree = "<group>"; };
 		63F66C6320B4C502007DF79D /* URLEncodedSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLEncodedSerialization.swift; sourceTree = "<group>"; };
@@ -1157,6 +1526,7 @@
 				630DC73920AC2C4F0005800A /* CryptoExtensions.swift */,
 				6327C1B920B86D7C00CB2017 /* Data+Base16.swift */,
 				6327C1B320B86D7B00CB2017 /* Data+CRC.swift */,
+				637CEA0320D214E90076DD74 /* Data+Hash.swift */,
 				630DC73C20AC2D7B0005800A /* Data+Extension.swift */,
 				6327C1B020B86D7B00CB2017 /* DateFormatter+ISOParsing.swift */,
 				630DC74020AC2E200005800A /* Dictionary+Extension.swift */,
@@ -1178,8 +1548,14 @@
 			children = (
 				63F66C3920B4B721007DF79D /* Converter.swift */,
 				6327C16820B8201400CB2017 /* ChecksumXmodem.swift */,
+				637CEA0B20D248A20076DD74 /* Ed25519Derivation.swift */,
+				637CEA0C20D248A20076DD74 /* Ed25519Error.swift */,
+				637CEA0920D248A10076DD74 /* PrivateKey.swift */,
+				637CEA0A20D248A20076DD74 /* PublicKey.swift */,
+				637CEA0D20D248A30076DD74 /* Wallet.swift */,
 				63F66C3B20B4B721007DF79D /* EIP55.swift */,
 				63F66C4020B4B722007DF79D /* EllipticCurveEncrypterSecp256k1.swift */,
+				637CEA0720D246CF0076DD74 /* KeyPair.swift */,
 				63F66C3C20B4B721007DF79D /* Result.swift */,
 				2167C33A209B421E00A8653E /* Crypto.swift */,
 				6327C19D20B86C7900CB2017 /* HDWallet */,
@@ -1308,7 +1684,7 @@
 				6377F6AD20BE0E1600F668E3 /* BitcoinSPV */,
 				6377F3E120BDACE500F668E3 /* CocoaAsyncSocket */,
 				6377F28A20BDA35100F668E3 /* CocoaLumberjack */,
-				63D49AFB20CDE4330047840F /* sqlite.modulemap */,
+				637CE52E20D20EA50076DD74 /* stellar-ios-mac-sdk */,
 			);
 			path = Libraries;
 			sourceTree = SOURCE_ROOT;
@@ -1712,6 +2088,389 @@
 			path = Web;
 			sourceTree = "<group>";
 		};
+		637CE52E20D20EA50076DD74 /* stellar-ios-mac-sdk */ = {
+			isa = PBXGroup;
+			children = (
+				637CE54420D20EA50076DD74 /* stellarsdk */,
+			);
+			path = "stellar-ios-mac-sdk";
+			sourceTree = "<group>";
+		};
+		637CE54420D20EA50076DD74 /* stellarsdk */ = {
+			isa = PBXGroup;
+			children = (
+				637CE54520D20EA50076DD74 /* stellarsdk */,
+			);
+			path = stellarsdk;
+			sourceTree = "<group>";
+		};
+		637CE54520D20EA50076DD74 /* stellarsdk */ = {
+			isa = PBXGroup;
+			children = (
+				637CE9C120D214170076DD74 /* service */,
+				637CE91320D211F50076DD74 /* errors */,
+				637CE87F20D211F50076DD74 /* responses */,
+				637CE65C20D20EA60076DD74 /* sdk */,
+				637CE99C20D213700076DD74 /* utils */,
+				637CE68820D20EA60076DD74 /* stellarsdk.h */,
+				637CE68920D20EA60076DD74 /* StellarSDK.swift */,
+			);
+			path = stellarsdk;
+			sourceTree = "<group>";
+		};
+		637CE65C20D20EA60076DD74 /* sdk */ = {
+			isa = PBXGroup;
+			children = (
+				637CE65D20D20EA60076DD74 /* Account.swift */,
+				637CE65E20D20EA60076DD74 /* AccountMergeOperation.swift */,
+				637CE65F20D20EA60076DD74 /* AllowTrustOperation.swift */,
+				637CE66020D20EA60076DD74 /* Asset.swift */,
+				637CE66120D20EA60076DD74 /* ChangeTrustOperation.swift */,
+				637CE66220D20EA60076DD74 /* CreateAccountOperation.swift */,
+				637CE66320D20EA60076DD74 /* CreatePassiveOfferOperation.swift */,
+				637CE66420D20EA60076DD74 /* ManageDataOperation.swift */,
+				637CE66520D20EA60076DD74 /* ManageOfferOperation.swift */,
+				637CE66620D20EA60076DD74 /* Memo.swift */,
+				637CE66720D20EA60076DD74 /* MemoProtocol.swift */,
+				637CE66820D20EA60076DD74 /* Network.swift */,
+				637CE66920D20EA60076DD74 /* Operation.swift */,
+				637CE66A20D20EA60076DD74 /* PathPaymentOperation.swift */,
+				637CE66B20D20EA60076DD74 /* PaymentOperation.swift */,
+				637CE66C20D20EA60076DD74 /* Price.swift */,
+				637CE66D20D20EA60076DD74 /* SetOptionsOperation.swift */,
+				637CE66E20D20EA60076DD74 /* Signer.swift */,
+				637CE66F20D20EA60076DD74 /* TimeBounds.swift */,
+				637CE67020D20EA60076DD74 /* StellarTransaction.swift */,
+				637CE67120D20EA60076DD74 /* TransactionAccount.swift */,
+			);
+			path = sdk;
+			sourceTree = "<group>";
+		};
+		637CE87F20D211F50076DD74 /* responses */ = {
+			isa = PBXGroup;
+			children = (
+				637CE88020D211F50076DD74 /* account_responses */,
+				637CE88720D211F50076DD74 /* assets_responses */,
+				637CE88920D211F50076DD74 /* effects_responses */,
+				637CE8A220D211F50076DD74 /* error_responses */,
+				637CE8AF20D211F50076DD74 /* ledgers_responses */,
+				637CE8B120D211F50076DD74 /* links */,
+				637CE8BC20D211F50076DD74 /* offer_responses */,
+				637CE8C020D211F50076DD74 /* operations_responses */,
+				637CE8CE20D211F50076DD74 /* orderbook_responses */,
+				637CE8D120D211F50076DD74 /* page_responeses */,
+				637CE8D320D211F50076DD74 /* payment_path_responses */,
+				637CE8D620D211F50076DD74 /* trades_aggregations_responses */,
+				637CE8D820D211F50076DD74 /* trades_responses */,
+				637CE8DA20D211F50076DD74 /* transactions_responses */,
+				637CE8DD20D211F50076DD74 /* xdr */,
+			);
+			path = responses;
+			sourceTree = "<group>";
+		};
+		637CE88020D211F50076DD74 /* account_responses */ = {
+			isa = PBXGroup;
+			children = (
+				637CE88120D211F50076DD74 /* AccountBalanceResponse.swift */,
+				637CE88220D211F50076DD74 /* AccountFlagsResponse.swift */,
+				637CE88320D211F50076DD74 /* AccountResponse.swift */,
+				637CE88420D211F50076DD74 /* AccountSignerResponse.swift */,
+				637CE88520D211F50076DD74 /* AccountThresholdsResponse.swift */,
+				637CE88620D211F50076DD74 /* DataForAccountResponse.swift */,
+			);
+			path = account_responses;
+			sourceTree = "<group>";
+		};
+		637CE88720D211F50076DD74 /* assets_responses */ = {
+			isa = PBXGroup;
+			children = (
+				637CE88820D211F50076DD74 /* AssetResponse.swift */,
+			);
+			path = assets_responses;
+			sourceTree = "<group>";
+		};
+		637CE88920D211F50076DD74 /* effects_responses */ = {
+			isa = PBXGroup;
+			children = (
+				637CE88A20D211F50076DD74 /* AccountCreatedEffectResponse.swift */,
+				637CE88B20D211F50076DD74 /* AccountCreditedEffectResponse.swift */,
+				637CE88C20D211F50076DD74 /* AccountDebitedEffectResponse.swift */,
+				637CE88D20D211F50076DD74 /* AccountFlagsUpdatedEffectResponse.swift */,
+				637CE88E20D211F50076DD74 /* AccountHomeDomainUpdatedEffectResponse.swift */,
+				637CE88F20D211F50076DD74 /* AccountInflationDestinationUpdatedEffectResponse.swift */,
+				637CE89020D211F50076DD74 /* AccountRemovedEffectResponse.swift */,
+				637CE89120D211F50076DD74 /* AccountThresholdsUpdatedEffectResponse.swift */,
+				637CE89220D211F50076DD74 /* EffectResponse.swift */,
+				637CE89320D211F50076DD74 /* EffectsFactory.swift */,
+				637CE89420D211F50076DD74 /* OfferCreatedEffectResponse.swift */,
+				637CE89520D211F50076DD74 /* OfferRemovedEffectResponse.swift */,
+				637CE89620D211F50076DD74 /* OfferUpdatedEffectResponse.swift */,
+				637CE89720D211F50076DD74 /* SignerCreatedEffectResponse.swift */,
+				637CE89820D211F50076DD74 /* SignerEffectResponse.swift */,
+				637CE89920D211F50076DD74 /* SignerRemovedEffectResponse.swift */,
+				637CE89A20D211F50076DD74 /* SignerUpdatedEffectResponse.swift */,
+				637CE89B20D211F50076DD74 /* TradeEffectResponse.swift */,
+				637CE89C20D211F50076DD74 /* TrustlineAuthorizedEffectResponse.swift */,
+				637CE89D20D211F50076DD74 /* TrustlineCreatedEffectResponse.swift */,
+				637CE89E20D211F50076DD74 /* TrustlineDeauthorizedEffectResponse.swift */,
+				637CE89F20D211F50076DD74 /* TrustlineEffectResponse.swift */,
+				637CE8A020D211F50076DD74 /* TrustlineRemovedEffectResponse.swift */,
+				637CE8A120D211F50076DD74 /* TrustlineUpdatedEffectResponse.swift */,
+			);
+			path = effects_responses;
+			sourceTree = "<group>";
+		};
+		637CE8A220D211F50076DD74 /* error_responses */ = {
+			isa = PBXGroup;
+			children = (
+				637CE8A320D211F50076DD74 /* BadRequestErrorResponse.swift */,
+				637CE8A420D211F50076DD74 /* BeforeHistoryErrorResponse.swift */,
+				637CE8A520D211F50076DD74 /* ErrorResponse.swift */,
+				637CE8A620D211F50076DD74 /* ForbiddenErrorResponse.swift */,
+				637CE8A720D211F50076DD74 /* InternalServerErrorResponse.swift */,
+				637CE8A820D211F50076DD74 /* NotAcceptableErrorResponse.swift */,
+				637CE8A920D211F50076DD74 /* NotFoundErrorResponse.swift */,
+				637CE8AA20D211F50076DD74 /* NotImplementedErrorResponse.swift */,
+				637CE8AB20D211F50076DD74 /* RateLimitExceededErrorResponse.swift */,
+				637CE8AC20D211F50076DD74 /* StaleHistoryErrorResponse.swift */,
+				637CE8AD20D211F50076DD74 /* TransactionFailedErrorResponse.swift */,
+				637CE8AE20D211F50076DD74 /* TransactionMalformedErrorResponse.swift */,
+			);
+			path = error_responses;
+			sourceTree = "<group>";
+		};
+		637CE8AF20D211F50076DD74 /* ledgers_responses */ = {
+			isa = PBXGroup;
+			children = (
+				637CE8B020D211F50076DD74 /* LedgerResponse.swift */,
+			);
+			path = ledgers_responses;
+			sourceTree = "<group>";
+		};
+		637CE8B120D211F50076DD74 /* links */ = {
+			isa = PBXGroup;
+			children = (
+				637CE8B220D211F50076DD74 /* AccountLinksResponse.swift */,
+				637CE8B320D211F50076DD74 /* AssetLinksResponse.swift */,
+				637CE8B420D211F50076DD74 /* EffectLinksResponse.swift */,
+				637CE8B520D211F50076DD74 /* LedgerLinksResponse.swift */,
+				637CE8B620D211F50076DD74 /* LinkResponse.swift */,
+				637CE8B720D211F50076DD74 /* OfferLinksResponse.swift */,
+				637CE8B820D211F50076DD74 /* OperationLinksResponse.swift */,
+				637CE8B920D211F50076DD74 /* PagingLinksResponse.swift */,
+				637CE8BA20D211F50076DD74 /* TradeLinksResponse.swift */,
+				637CE8BB20D211F50076DD74 /* TransactionLinksResponse.swift */,
+			);
+			path = links;
+			sourceTree = "<group>";
+		};
+		637CE8BC20D211F50076DD74 /* offer_responses */ = {
+			isa = PBXGroup;
+			children = (
+				637CE8BD20D211F50076DD74 /* OfferAssetResponse.swift */,
+				637CE8BE20D211F50076DD74 /* OfferPriceResponse.swift */,
+				637CE8BF20D211F50076DD74 /* OfferResponse.swift */,
+			);
+			path = offer_responses;
+			sourceTree = "<group>";
+		};
+		637CE8C020D211F50076DD74 /* operations_responses */ = {
+			isa = PBXGroup;
+			children = (
+				637CE8C120D211F50076DD74 /* AccountCreatedOperationResponse.swift */,
+				637CE8C220D211F50076DD74 /* AccountMergeOperationResponse.swift */,
+				637CE8C320D211F50076DD74 /* AllowTrustOperationResponse.swift */,
+				637CE8C420D211F50076DD74 /* ChangeTrustOperationResponse.swift */,
+				637CE8C520D211F50076DD74 /* CreatePassiveOfferOperationResponse.swift */,
+				637CE8C620D211F50076DD74 /* InflationOperationResponse.swift */,
+				637CE8C720D211F50076DD74 /* ManageDataOperationResponse.swift */,
+				637CE8C820D211F50076DD74 /* ManageOfferOperationResponse.swift */,
+				637CE8C920D211F50076DD74 /* OperationResponse.swift */,
+				637CE8CA20D211F50076DD74 /* OperationsFactory.swift */,
+				637CE8CB20D211F50076DD74 /* PathPaymentOperationResponse.swift */,
+				637CE8CC20D211F50076DD74 /* PaymentOperationResponse.swift */,
+				637CE8CD20D211F50076DD74 /* SetOptionsOperationResponse.swift */,
+			);
+			path = operations_responses;
+			sourceTree = "<group>";
+		};
+		637CE8CE20D211F50076DD74 /* orderbook_responses */ = {
+			isa = PBXGroup;
+			children = (
+				637CE8CF20D211F50076DD74 /* OrderbookOfferResponse.swift */,
+				637CE8D020D211F50076DD74 /* OrderbookResponse.swift */,
+			);
+			path = orderbook_responses;
+			sourceTree = "<group>";
+		};
+		637CE8D120D211F50076DD74 /* page_responeses */ = {
+			isa = PBXGroup;
+			children = (
+				637CE8D220D211F50076DD74 /* PageResponse.swift */,
+			);
+			path = page_responeses;
+			sourceTree = "<group>";
+		};
+		637CE8D320D211F50076DD74 /* payment_path_responses */ = {
+			isa = PBXGroup;
+			children = (
+				637CE8D420D211F50076DD74 /* FindPaymentPathsResponse.swift */,
+				637CE8D520D211F50076DD74 /* PaymentPathResponse.swift */,
+			);
+			path = payment_path_responses;
+			sourceTree = "<group>";
+		};
+		637CE8D620D211F50076DD74 /* trades_aggregations_responses */ = {
+			isa = PBXGroup;
+			children = (
+				637CE8D720D211F50076DD74 /* TradeAggregationResponse.swift */,
+			);
+			path = trades_aggregations_responses;
+			sourceTree = "<group>";
+		};
+		637CE8D820D211F50076DD74 /* trades_responses */ = {
+			isa = PBXGroup;
+			children = (
+				637CE8D920D211F50076DD74 /* TradeResponse.swift */,
+			);
+			path = trades_responses;
+			sourceTree = "<group>";
+		};
+		637CE8DA20D211F50076DD74 /* transactions_responses */ = {
+			isa = PBXGroup;
+			children = (
+				637CE8DB20D211F50076DD74 /* SubmitTransactionResponse.swift */,
+				637CE8DC20D211F50076DD74 /* TransactionResponse.swift */,
+			);
+			path = transactions_responses;
+			sourceTree = "<group>";
+		};
+		637CE8DD20D211F50076DD74 /* xdr */ = {
+			isa = PBXGroup;
+			children = (
+				637CE8DE20D211F50076DD74 /* AccountEntryXDR.swift */,
+				637CE8DF20D211F50076DD74 /* AccountMergeResultXDR.swift */,
+				637CE8E020D211F50076DD74 /* AllowTrustOpAssetXDR.swift */,
+				637CE8E120D211F50076DD74 /* AllowTrustOperationXDR.swift */,
+				637CE8E220D211F50076DD74 /* AllowTrustResultXDR.swift */,
+				637CE8E320D211F50076DD74 /* AssetXDR.swift */,
+				637CE8E420D211F50076DD74 /* ChangeTrustOperationXDR.swift */,
+				637CE8E520D211F50076DD74 /* ChangeTrustResultXDR.swift */,
+				637CE8E620D211F50076DD74 /* ClaimOfferAtomXDR.swift */,
+				637CE8E720D211F50076DD74 /* CreateAccountOperationXDR.swift */,
+				637CE8E820D211F50076DD74 /* CreateAccountResultXDR.swift */,
+				637CE8E920D211F50076DD74 /* CreatePassiveOfferOperationXDR.swift */,
+				637CE8EA20D211F50076DD74 /* DataEntryXDR.swift */,
+				637CE8EB20D211F50076DD74 /* DecoratedSignatureXDR.swift */,
+				637CE8EC20D211F50076DD74 /* InflationPayoutXDR.swift */,
+				637CE8ED20D211F50076DD74 /* InflationResultXDR.swift */,
+				637CE8EE20D211F50076DD74 /* LedgerEntryChangesXDR.swift */,
+				637CE8EF20D211F50076DD74 /* LedgerEntryChangeXDR.swift */,
+				637CE8F020D211F50076DD74 /* LedgerEntryXDR.swift */,
+				637CE8F120D211F50076DD74 /* LedgerExtryDataXDR.swift */,
+				637CE8F220D211F50076DD74 /* LedgerKeyAccountXDR.swift */,
+				637CE8F320D211F50076DD74 /* LedgerKeyDataXDR.swift */,
+				637CE8F420D211F50076DD74 /* LedgerKeyOfferXDR.swift */,
+				637CE8F520D211F50076DD74 /* LedgerKeyTrustlineXDR.swift */,
+				637CE8F620D211F50076DD74 /* LedgerKeyXDR.swift */,
+				637CE8F720D211F50076DD74 /* ManageDataOperationXDR.swift */,
+				637CE8F820D211F50076DD74 /* ManageDataResultXDR.swift */,
+				637CE8F920D211F50076DD74 /* ManageOfferOperationXDR.swift */,
+				637CE8FA20D211F50076DD74 /* ManageOfferResultXDR.swift */,
+				637CE8FB20D211F50076DD74 /* ManageOfferSuccessResult.swift */,
+				637CE8FC20D211F50076DD74 /* MemoXDR.swift */,
+				637CE8FD20D211F50076DD74 /* OfferEntryXDR.swift */,
+				637CE8FE20D211F50076DD74 /* OperationBodyXDR.swift */,
+				637CE8FF20D211F50076DD74 /* OperationMetaXDR.swift */,
+				637CE90020D211F50076DD74 /* OperationResultXDR.swift */,
+				637CE90120D211F50076DD74 /* OperationXDR.swift */,
+				637CE90220D211F50076DD74 /* PathPaymentOperationXDR.swift */,
+				637CE90320D211F50076DD74 /* PathPaymentResultXDR.swift */,
+				637CE90420D211F50076DD74 /* PaymentOperationXDR.swift */,
+				637CE90520D211F50076DD74 /* PaymentResultXDR.swift */,
+				637CE90620D211F50076DD74 /* PriceXDR.swift */,
+				637CE90720D211F50076DD74 /* SetOptionsOperationXDR.swift */,
+				637CE90820D211F50076DD74 /* SetOptionsResultXDR.swift */,
+				637CE90920D211F50076DD74 /* SignerKeyXDR.swift */,
+				637CE90A20D211F50076DD74 /* SignerXDR.swift */,
+				637CE90B20D211F50076DD74 /* SimplePaymentResultXDR.swift */,
+				637CE90C20D211F50076DD74 /* TimeBoundsXDR.swift */,
+				637CE90D20D211F50076DD74 /* TransactionEnvelopeXDR.swift */,
+				637CE90E20D211F50076DD74 /* TransactionMetaXDR.swift */,
+				637CE90F20D211F50076DD74 /* TransactionResultXDR.swift */,
+				637CE91020D211F50076DD74 /* TransactionSignaturePayload.swift */,
+				637CE91120D211F50076DD74 /* TransactionXDR.swift */,
+				637CE91220D211F50076DD74 /* TrustlineEntryXDR.swift */,
+			);
+			path = xdr;
+			sourceTree = "<group>";
+		};
+		637CE91320D211F50076DD74 /* errors */ = {
+			isa = PBXGroup;
+			children = (
+				637CE91420D211F50076DD74 /* HorizonRequestError.swift */,
+				637CE91520D211F50076DD74 /* StellarSDKError.swift */,
+			);
+			path = errors;
+			sourceTree = "<group>";
+		};
+		637CE99C20D213700076DD74 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				637CE99D20D213700076DD74 /* Constants.swift */,
+				637CE99E20D213700076DD74 /* DataTypes.swift */,
+				637CE99F20D213700076DD74 /* EventSource.swift */,
+				637CE9A020D213700076DD74 /* Order.swift */,
+				637CE9A120D213700076DD74 /* StellarSDKLog.swift */,
+				637CE9A220D213700076DD74 /* xdrCodable */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		637CE9A220D213700076DD74 /* xdrCodable */ = {
+			isa = PBXGroup;
+			children = (
+				637CE9A320D213700076DD74 /* XDRCodable.swift */,
+				637CE9A420D213700076DD74 /* XDRCodableExtensions.swift */,
+				637CE9A520D213700076DD74 /* XDRDecoder.swift */,
+				637CE9A620D213700076DD74 /* XDREncoder.swift */,
+			);
+			path = xdrCodable;
+			sourceTree = "<group>";
+		};
+		637CE9C120D214170076DD74 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				637CE9C220D214170076DD74 /* AccountService.swift */,
+				637CE9C320D214170076DD74 /* AssetsService.swift */,
+				637CE9C420D214170076DD74 /* EffectsService.swift */,
+				637CE9C520D214170076DD74 /* LedgersService.swift */,
+				637CE9C620D214170076DD74 /* OffersService.swift */,
+				637CE9C720D214170076DD74 /* OperationsService.swift */,
+				637CE9C820D214170076DD74 /* OrderbookService.swift */,
+				637CE9C920D214170076DD74 /* PaymentPathsService.swift */,
+				637CE9CA20D214170076DD74 /* PaymentsService.swift */,
+				637CE9CB20D214170076DD74 /* ServiceHelper.swift */,
+				637CE9CC20D214170076DD74 /* Streaming */,
+				637CE9D220D214170076DD74 /* TradeAggregationsService.swift */,
+				637CE9D320D214170076DD74 /* TradesService.swift */,
+				637CE9D420D214170076DD74 /* TransactionsService.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+		637CE9CC20D214170076DD74 /* Streaming */ = {
+			isa = PBXGroup;
+			children = (
+				637CE9CD20D214170076DD74 /* EffectsStreamItem.swift */,
+				637CE9CE20D214170076DD74 /* LedgersStreamItem.swift */,
+				637CE9CF20D214170076DD74 /* OperationsStreamItem.swift */,
+				637CE9D020D214170076DD74 /* StreamingHelper.swift */,
+				637CE9D120D214170076DD74 /* TransactionsStreamItem.swift */,
+			);
+			path = Streaming;
+			sourceTree = "<group>";
+		};
 		6395BB4E20C0192D002EA989 /* Lumberjack */ = {
 			isa = PBXGroup;
 			children = (
@@ -1766,8 +2525,6 @@
 		63D499DF20CD3CE90047840F /* loafwallet-core */ = {
 			isa = PBXGroup;
 			children = (
-				63D499E020CD3CE90047840F /* .gitignore */,
-				63D499E120CD3CE90047840F /* .gitmodules */,
 				63D499E220CD3CE90047840F /* BRAddress.c */,
 				63D499E320CD3CE90047840F /* BRAddress.h */,
 				63D499E420CD3CE90047840F /* BRArray.h */,
@@ -1801,9 +2558,7 @@
 				63D49A0020CD3CE90047840F /* BRTransaction.h */,
 				63D49A0120CD3CE90047840F /* BRWallet.c */,
 				63D49A0220CD3CE90047840F /* BRWallet.h */,
-				63D49A0320CD3CE90047840F /* LICENSE */,
 				63D49A0420CD3CE90047840F /* module.modulemap */,
-				63D49A0520CD3CE90047840F /* README.md */,
 				63D49A6E20CD3CE90047840F /* test.c */,
 			);
 			name = "loafwallet-core";
@@ -1902,7 +2657,7 @@
 		63F66C0E20B421BF007DF79D /* Wallet */ = {
 			isa = PBXGroup;
 			children = (
-				63F66C0F20B421BF007DF79D /* Network.swift */,
+				63F66C0F20B421BF007DF79D /* NRLNetwork.swift */,
 				63F66C1020B421BF007DF79D /* NRLWallet.swift */,
 			);
 			path = Wallet;
@@ -1926,7 +2681,6 @@
 				63F66C3020B4B671007DF79D /* RawTransaction.swift */,
 				63D49B3B20CDFB210047840F /* Rate.swift */,
 				63F66C3120B4B671007DF79D /* SentTransaction.swift */,
-				63F66C3220B4B671007DF79D /* Transaction.swift */,
 				63D49B1E20CDECC00047840F /* Types.swift */,
 			);
 			path = Model;
@@ -1974,7 +2728,6 @@
 		63F66C5E20B4C502007DF79D /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				63F66C5F20B4C502007DF79D /* Etherscan.swift */,
 				63F66C6020B4C502007DF79D /* JSONRPC.swift */,
 			);
 			path = Request;
@@ -2130,6 +2883,7 @@
 				6377F8C620BE0E1700F668E3 /* WSTransactionOutput.h in Headers */,
 				6377F93720BE0E1700F668E3 /* NSString+Base58.h in Headers */,
 				6377F88220BE0E1600F668E3 /* WSBIP32.h in Headers */,
+				637CE82C20D20EA70076DD74 /* stellarsdk.h in Headers */,
 				6377F8DD20BE0E1700F668E3 /* WSTransactionEntity.h in Headers */,
 				6377F89C20BE0E1700F668E3 /* WSBlockLocator.h in Headers */,
 				6377F89A20BE0E1600F668E3 /* WSBlockHeader.h in Headers */,
@@ -2246,12 +3000,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63D49A9320CD3CE90047840F /* README.md in Resources */,
 				6327C19020B839D500CB2017 /* license.txt in Resources */,
-				63D49A6F20CD3CE90047840F /* .gitignore in Resources */,
-				63D49A7020CD3CE90047840F /* .gitmodules in Resources */,
 				630DC5D620AB35A80005800A /* Readme.md in Resources */,
-				63D49A9220CD3CE90047840F /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2272,19 +3022,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				637CE94D20D211F50076DD74 /* OfferPriceResponse.swift in Sources */,
 				63F66C6520B4C502007DF79D /* Cancellable.swift in Sources */,
 				6377F8B520BE0E1700F668E3 /* WSPartialMerkleTree.m in Sources */,
 				63D49B3420CDEED80047840F /* BRSocketHelpers.c in Sources */,
 				6327C1AE20B86C7A00CB2017 /* WordList.swift in Sources */,
+				637CE92A20D211F50076DD74 /* SignerCreatedEffectResponse.swift in Sources */,
 				63D49B0420CDE5C60047840F /* DispatchQueue+Additions.swift in Sources */,
 				63D49B2C20CDEE4D0047840F /* BRHTTPIndexMiddleware.swift in Sources */,
 				6377F92820BE0E1700F668E3 /* WSMessagePong.m in Sources */,
+				637CE92F20D211F50076DD74 /* TrustlineAuthorizedEffectResponse.swift in Sources */,
 				6377F8D620BE0E1700F668E3 /* WSBlockHeaderEntity.m in Sources */,
+				637CE81820D20EA70076DD74 /* StellarTransaction.swift in Sources */,
 				63F66C7520B4C502007DF79D /* URLEncodedSerialization.swift in Sources */,
 				2167C318209AF60500A8653E /* Spanish.swift in Sources */,
 				6377F89B20BE0E1700F668E3 /* WSBlockHeader.m in Sources */,
 				6377F93420BE0E1700F668E3 /* NSData+Binary.m in Sources */,
 				6377F95C20BE0E1700F668E3 /* WSWebTickerMonitor.m in Sources */,
+				637CE99820D211F50076DD74 /* TransactionXDR.swift in Sources */,
+				637CEA1220D248A30076DD74 /* Wallet.swift in Sources */,
+				637CE92920D211F50076DD74 /* OfferUpdatedEffectResponse.swift in Sources */,
 				2167C316209AF56500A8653E /* Japanese.swift in Sources */,
 				6377F8B320BE0E1700F668E3 /* WSNetworkAddress.m in Sources */,
 				6377F89020BE0E1600F668E3 /* WSBlockStore.m in Sources */,
@@ -2292,49 +3049,89 @@
 				6377F90620BE0E1700F668E3 /* WSAbstractMessageInventoryBased.m in Sources */,
 				63F66C3420B4B671007DF79D /* Balance.swift in Sources */,
 				63D49B4A20CE27420047840F /* RetryTimer.swift in Sources */,
+				637CE96F20D211F50076DD74 /* CreateAccountResultXDR.swift in Sources */,
 				6327C1BC20B86D7D00CB2017 /* DateFormatter+ISOParsing.swift in Sources */,
+				637CE80D20D20EA70076DD74 /* ManageOfferOperation.swift in Sources */,
+				637CE99220D211F50076DD74 /* SimplePaymentResultXDR.swift in Sources */,
+				637CE9A820D213700076DD74 /* DataTypes.swift in Sources */,
 				2171AA34209B481200EA283E /* NRLWalletSDKError.swift in Sources */,
 				6377F91820BE0E1700F668E3 /* WSMessageGetdata.m in Sources */,
+				637CE92D20D211F50076DD74 /* SignerUpdatedEffectResponse.swift in Sources */,
 				6327C1AA20B86C7A00CB2017 /* DataConvertable.swift in Sources */,
 				6377F88520BE0E1600F668E3 /* WSBIP37.m in Sources */,
+				637CE96620D211F50076DD74 /* AccountMergeResultXDR.swift in Sources */,
 				63D49AF520CDC5EA0047840F /* WalletManager.swift in Sources */,
 				63F66C1420B421BF007DF79D /* NRLWallet.swift in Sources */,
 				6377F94420BE0E1700F668E3 /* WSTransactionMetadata.m in Sources */,
+				637CE95A20D211F50076DD74 /* PaymentOperationResponse.swift in Sources */,
+				637CE98020D211F50076DD74 /* ManageOfferOperationXDR.swift in Sources */,
+				637CE91F20D211F50076DD74 /* AccountDebitedEffectResponse.swift in Sources */,
 				2167C314209AF4B100A8653E /* Italian.swift in Sources */,
 				6377F92020BE0E1700F668E3 /* WSMessageMempool.m in Sources */,
+				637CE91820D211F50076DD74 /* AccountResponse.swift in Sources */,
 				6327C19520B839D500CB2017 /* sha512.c in Sources */,
 				63F66C6820B4C502007DF79D /* HTTPClientType.swift in Sources */,
 				6327C18F20B839D500CB2017 /* keypair.c in Sources */,
+				637CE96C20D211F50076DD74 /* ChangeTrustResultXDR.swift in Sources */,
+				637CEA0E20D248A30076DD74 /* PrivateKey.swift in Sources */,
 				6377F8F220BE0E1700F668E3 /* WSPeerGroupNotifier.m in Sources */,
 				6327C13720B6363500CB2017 /* SMP+Extensions.swift in Sources */,
+				637CE93B20D211F50076DD74 /* NotFoundErrorResponse.swift in Sources */,
 				63F66C6B20B4C502007DF79D /* Batch.swift in Sources */,
 				6377F8EC20BE0E1700F668E3 /* WSPeer.m in Sources */,
+				637CE94C20D211F50076DD74 /* OfferAssetResponse.swift in Sources */,
+				637CE80B20D20EA70076DD74 /* CreatePassiveOfferOperation.swift in Sources */,
+				637CE9E420D214170076DD74 /* AccountService.swift in Sources */,
+				637CE80E20D20EA70076DD74 /* Memo.swift in Sources */,
+				637CE97C20D211F50076DD74 /* LedgerKeyTrustlineXDR.swift in Sources */,
+				637CE98120D211F50076DD74 /* ManageOfferResultXDR.swift in Sources */,
 				6377F88920BE0E1600F668E3 /* WSBIP39.m in Sources */,
 				6377F88B20BE0E1600F668E3 /* WSBIP44.m in Sources */,
 				63F66C4A20B4B722007DF79D /* EllipticCurveEncrypterSecp256k1.swift in Sources */,
 				2167C345209B431500A8653E /* Internal.m in Sources */,
 				2167C321209AF7F300A8653E /* String+MnemonicData.swift in Sources */,
+				637CE96E20D211F50076DD74 /* CreateAccountOperationXDR.swift in Sources */,
+				637CE98620D211F50076DD74 /* OperationMetaXDR.swift in Sources */,
 				63D49B3820CDFAC00047840F /* String+Additions.swift in Sources */,
 				63F66C3720B4B671007DF79D /* SentTransaction.swift in Sources */,
+				637CE94420D211F50076DD74 /* EffectLinksResponse.swift in Sources */,
 				6377F95220BE0E1700F668E3 /* WSWebExplorerBlockr.m in Sources */,
 				6327C1AC20B86C7A00CB2017 /* Mnemonic.swift in Sources */,
+				637CE96220D211F50076DD74 /* TradeResponse.swift in Sources */,
 				6327C13A20B6526300CB2017 /* Litecoin.swift in Sources */,
 				63F66C7320B4C502007DF79D /* JSONRPC.swift in Sources */,
 				6377F90A20BE0E1700F668E3 /* WSMessage.m in Sources */,
 				6327C1A820B86C7A00CB2017 /* BigInt+Extension.swift in Sources */,
+				637CE9E720D214170076DD74 /* LedgersService.swift in Sources */,
+				637CE97620D211F50076DD74 /* LedgerEntryChangeXDR.swift in Sources */,
+				637CE95520D211F50076DD74 /* ManageDataOperationResponse.swift in Sources */,
 				6395BB7D20C0192D002EA989 /* DDLog.m in Sources */,
+				637CE94320D211F50076DD74 /* AssetLinksResponse.swift in Sources */,
 				6377F8D820BE0E1700F668E3 /* WSCoreDataManager.m in Sources */,
 				6377F8C720BE0E1700F668E3 /* WSTransactionOutput.m in Sources */,
+				637CE96520D211F50076DD74 /* AccountEntryXDR.swift in Sources */,
 				6395BB8020C0192D002EA989 /* DDOSLogger.m in Sources */,
 				6377F90E20BE0E1700F668E3 /* WSMessageBlock.m in Sources */,
+				637CE96320D211F50076DD74 /* SubmitTransactionResponse.swift in Sources */,
+				637CE96020D211F50076DD74 /* PaymentPathResponse.swift in Sources */,
 				6377F89220BE0E1600F668E3 /* WSMemoryBlockStore.m in Sources */,
+				637CE93D20D211F50076DD74 /* RateLimitExceededErrorResponse.swift in Sources */,
+				637CE93620D211F50076DD74 /* BeforeHistoryErrorResponse.swift in Sources */,
 				2167C312209AF38500A8653E /* French.swift in Sources */,
 				6395BB7920C0192D002EA989 /* DDFileLogger.m in Sources */,
+				637CE9EF20D214170076DD74 /* LedgersStreamItem.swift in Sources */,
 				63D49A7A20CD3CE90047840F /* BRBIP39Mnemonic.c in Sources */,
+				637CE82D20D20EA70076DD74 /* StellarSDK.swift in Sources */,
 				6377F89920BE0E1600F668E3 /* WSBlock.m in Sources */,
 				63F66C6620B4C502007DF79D /* HTTPClientConfiguration.swift in Sources */,
+				637CE96B20D211F50076DD74 /* ChangeTrustOperationXDR.swift in Sources */,
+				637CE94E20D211F50076DD74 /* OfferResponse.swift in Sources */,
 				6377F3FA20BDACE500F668E3 /* AsyncSocket.m in Sources */,
+				637CEA1120D248A30076DD74 /* Ed25519Error.swift in Sources */,
 				6327C1AD20B86C7A00CB2017 /* RIPEMD160.swift in Sources */,
+				637CE98520D211F50076DD74 /* OperationBodyXDR.swift in Sources */,
+				637CE97220D211F50076DD74 /* DecoratedSignatureXDR.swift in Sources */,
+				637CE98820D211F50076DD74 /* OperationXDR.swift in Sources */,
 				63D49B1320CDE7740047840F /* BRAPIClient+Features.swift in Sources */,
 				6327C19420B839D500CB2017 /* seed.c in Sources */,
 				63D49B1520CDE7740047840F /* BRAPIClient+Wallet.swift in Sources */,
@@ -2342,166 +3139,279 @@
 				6327C1BE20B86D7D00CB2017 /* String+Base64.swift in Sources */,
 				6377F3F820BDACE500F668E3 /* GCDAsyncUdpSocket.m in Sources */,
 				6377F8E820BE0E1700F668E3 /* WSConnection.m in Sources */,
+				637CE95720D211F50076DD74 /* OperationResponse.swift in Sources */,
 				6327C18B20B839D500CB2017 /* ge.c in Sources */,
+				637CE81120D20EA70076DD74 /* Operation.swift in Sources */,
+				637CE94820D211F50076DD74 /* OperationLinksResponse.swift in Sources */,
+				637CE9F520D214170076DD74 /* TransactionsService.swift in Sources */,
 				63F66C6F20B4C502007DF79D /* IDGenerator.swift in Sources */,
 				6327C19720B839D500CB2017 /* sign.c in Sources */,
+				637CE99A20D211F50076DD74 /* HorizonRequestError.swift in Sources */,
+				637CE81520D20EA70076DD74 /* SetOptionsOperation.swift in Sources */,
+				637CE96A20D211F50076DD74 /* AssetXDR.swift in Sources */,
+				637CE94F20D211F50076DD74 /* AccountCreatedOperationResponse.swift in Sources */,
+				637CE93820D211F50076DD74 /* ForbiddenErrorResponse.swift in Sources */,
+				637CE98720D211F50076DD74 /* OperationResultXDR.swift in Sources */,
 				6377F8BB20BE0E1700F668E3 /* WSSeed.m in Sources */,
+				637CE91A20D211F50076DD74 /* AccountThresholdsResponse.swift in Sources */,
+				637CE96120D211F50076DD74 /* TradeAggregationResponse.swift in Sources */,
 				6327C18E20B839D500CB2017 /* key_exchange.c in Sources */,
 				63F4FE5020C9C0DE00215698 /* CoinNetwork.swift in Sources */,
 				6377F3FC20BDACE500F668E3 /* AsyncUdpSocket.m in Sources */,
+				637CE92620D211F50076DD74 /* EffectsFactory.swift in Sources */,
 				6327C1C120B86D7D00CB2017 /* String+Base32.swift in Sources */,
 				2167C31F209AF7F300A8653E /* Data+NRLBitArray.swift in Sources */,
+				637CE97020D211F50076DD74 /* CreatePassiveOfferOperationXDR.swift in Sources */,
 				6377F90C20BE0E1700F668E3 /* WSMessageAddr.m in Sources */,
 				6327C1C720B8812700CB2017 /* Seed.swift in Sources */,
 				63F66C6720B4C502007DF79D /* HTTPClient.swift in Sources */,
 				2167C310209AF2F700A8653E /* English.swift in Sources */,
+				637CE95B20D211F50076DD74 /* SetOptionsOperationResponse.swift in Sources */,
 				6377F94220BE0E1700F668E3 /* WSHDWallet.m in Sources */,
 				6377F8A320BE0E1700F668E3 /* WSFilteredBlock.m in Sources */,
 				6377F92620BE0E1700F668E3 /* WSMessagePing.m in Sources */,
+				637CE97B20D211F50076DD74 /* LedgerKeyOfferXDR.swift in Sources */,
 				63F66C7120B4C502007DF79D /* JSONRPCRequest.swift in Sources */,
+				637CE9AB20D213700076DD74 /* StellarSDKLog.swift in Sources */,
+				637CE96420D211F50076DD74 /* TransactionResponse.swift in Sources */,
 				6395BB7220C0192D002EA989 /* DDAbstractDatabaseLogger.m in Sources */,
 				6395BB7020C0192D002EA989 /* CocoaLumberjack.swift in Sources */,
+				637CE92820D211F50076DD74 /* OfferRemovedEffectResponse.swift in Sources */,
 				6377F93220BE0E1700F668E3 /* NSData+Base58.m in Sources */,
 				6377F94820BE0E1700F668E3 /* WSJSONClient.m in Sources */,
+				637CE97A20D211F50076DD74 /* LedgerKeyDataXDR.swift in Sources */,
 				6377F8A920BE0E1700F668E3 /* WSHDKeyring.m in Sources */,
 				63D49B1F20CDECC00047840F /* Types.swift in Sources */,
 				6377F94E20BE0E1700F668E3 /* WSWebExplorerBlockchain.m in Sources */,
 				6327C1C320B86D7D00CB2017 /* UtilBase32.swift in Sources */,
+				637CE92520D211F50076DD74 /* EffectResponse.swift in Sources */,
 				630DC73A20AC2C4F0005800A /* CryptoExtensions.swift in Sources */,
 				6377F95620BE0E1700F668E3 /* WSWebTickerBitPay.m in Sources */,
 				6377F95020BE0E1700F668E3 /* WSWebExplorerBlockExplorer.m in Sources */,
+				637CE91920D211F50076DD74 /* AccountSignerResponse.swift in Sources */,
 				63D49A8A20CD3CE90047840F /* BRPeerManager.c in Sources */,
+				637CE81320D20EA70076DD74 /* PaymentOperation.swift in Sources */,
 				6377F8BF20BE0E1700F668E3 /* WSStorableBlock.m in Sources */,
 				63D49B1220CDE7740047840F /* BRAPIClient+Events.swift in Sources */,
 				6377F8AF20BE0E1700F668E3 /* WSMacrosCore.m in Sources */,
-				63F66C1320B421BF007DF79D /* Network.swift in Sources */,
+				63F66C1320B421BF007DF79D /* NRLNetwork.swift in Sources */,
 				6327C1C020B86D7D00CB2017 /* Data+Base32.swift in Sources */,
+				637CE98320D211F50076DD74 /* MemoXDR.swift in Sources */,
+				637CE97920D211F50076DD74 /* LedgerKeyAccountXDR.swift in Sources */,
+				637CE95120D211F50076DD74 /* AllowTrustOperationResponse.swift in Sources */,
 				6377F8B120BE0E1700F668E3 /* WSMacrosPrivate.m in Sources */,
 				6377F8E620BE0E1700F668E3 /* WSBlockChainDownloader.m in Sources */,
+				637CE95D20D211F50076DD74 /* OrderbookResponse.swift in Sources */,
 				630DC74320AC2E210005800A /* Dictionary+Extension.swift in Sources */,
+				637CE99920D211F50076DD74 /* TrustlineEntryXDR.swift in Sources */,
+				637CE80620D20EA70076DD74 /* AccountMergeOperation.swift in Sources */,
 				6377F89F20BE0E1700F668E3 /* WSBloomFilter.m in Sources */,
+				637CE9E920D214170076DD74 /* OperationsService.swift in Sources */,
+				637CE9AE20D213700076DD74 /* XDRDecoder.swift in Sources */,
+				637CE95420D211F50076DD74 /* InflationOperationResponse.swift in Sources */,
+				637CE92320D211F50076DD74 /* AccountRemovedEffectResponse.swift in Sources */,
+				637CE96920D211F50076DD74 /* AllowTrustResultXDR.swift in Sources */,
+				637CE98E20D211F50076DD74 /* SetOptionsOperationXDR.swift in Sources */,
 				63D49B1D20CDEC660047840F /* BRWalletPlugin.swift in Sources */,
+				637CE93420D211F50076DD74 /* TrustlineUpdatedEffectResponse.swift in Sources */,
 				63F4FE5220C9C23600215698 /* EthereumNetwork.swift in Sources */,
 				6377F8EE20BE0E1700F668E3 /* WSPeerGroup+Download.m in Sources */,
 				63D49A7F20CD3CE90047840F /* BRCrypto.c in Sources */,
 				63F66C4320B4B722007DF79D /* Converter.swift in Sources */,
+				637CE98C20D211F50076DD74 /* PaymentResultXDR.swift in Sources */,
 				63D49B2320CDED860047840F /* WalletManager+BCash.swift in Sources */,
 				63D49B5220CE3CB40047840F /* Strings.swift in Sources */,
 				6377F93020BE0E1700F668E3 /* WSMessageVersion.m in Sources */,
+				637CE93E20D211F50076DD74 /* StaleHistoryErrorResponse.swift in Sources */,
 				63D49B4C20CE28860047840F /* Functions.swift in Sources */,
+				637CE9EA20D214170076DD74 /* OrderbookService.swift in Sources */,
 				6377F8FA20BE0E1700F668E3 /* WSParameters.m in Sources */,
+				637CE80520D20EA70076DD74 /* Account.swift in Sources */,
+				637CE91E20D211F50076DD74 /* AccountCreditedEffectResponse.swift in Sources */,
+				637CE80C20D20EA70076DD74 /* ManageDataOperation.swift in Sources */,
 				6377F89420BE0E1600F668E3 /* WSStorableBlock+BlockChain.m in Sources */,
+				637CE81220D20EA70076DD74 /* PathPaymentOperation.swift in Sources */,
+				637CEA1020D248A30076DD74 /* Ed25519Derivation.swift in Sources */,
 				63D49A7420CD3CE90047840F /* BRBase58.c in Sources */,
 				6327C1C920B89BBB00CB2017 /* VersionByte.swift in Sources */,
 				6327C1A920B86C7A00CB2017 /* SMP.swift in Sources */,
 				63F66C3520B4B671007DF79D /* BlockParameter.swift in Sources */,
+				637CE95920D211F50076DD74 /* PathPaymentOperationResponse.swift in Sources */,
+				637CE97120D211F50076DD74 /* DataEntryXDR.swift in Sources */,
 				6377EF2E20BC6DA900F668E3 /* BitcoinNetwork.swift in Sources */,
+				637CE9EE20D214170076DD74 /* EffectsStreamItem.swift in Sources */,
 				6327C19220B839D500CB2017 /* sc.c in Sources */,
 				63D49A7120CD3CE90047840F /* BRAddress.c in Sources */,
+				637CE99120D211F50076DD74 /* SignerXDR.swift in Sources */,
 				6377F8F020BE0E1700F668E3 /* WSPeerGroup.m in Sources */,
+				637CE92720D211F50076DD74 /* OfferCreatedEffectResponse.swift in Sources */,
+				637CE9AC20D213700076DD74 /* XDRCodable.swift in Sources */,
 				63D49A8C20CD3CE90047840F /* BRSet.c in Sources */,
 				63D49B5920CFCB790047840F /* NRLCoinNotification.swift in Sources */,
+				637CE81920D20EA70076DD74 /* TransactionAccount.swift in Sources */,
 				63D49AEF20CD40820047840F /* BRCore.swift in Sources */,
 				6377F8DC20BE0E1700F668E3 /* WSStorableBlockEntity.m in Sources */,
 				6395BB8620C0192D002EA989 /* DDDispatchQueueLogFormatter.m in Sources */,
+				637CE97E20D211F50076DD74 /* ManageDataOperationXDR.swift in Sources */,
 				63F66C1220B421BF007DF79D /* NRLPublicKey.swift in Sources */,
 				63D49B4220CE25820047840F /* FeeUpdater.swift in Sources */,
+				637CE93020D211F50076DD74 /* TrustlineCreatedEffectResponse.swift in Sources */,
+				637CE81020D20EA70076DD74 /* Network.swift in Sources */,
 				63D49B4620CE26530047840F /* Environment.swift in Sources */,
+				637CE98B20D211F50076DD74 /* PaymentOperationXDR.swift in Sources */,
+				637CE97320D211F50076DD74 /* InflationPayoutXDR.swift in Sources */,
+				637CE96720D211F50076DD74 /* AllowTrustOpAssetXDR.swift in Sources */,
+				637CE96D20D211F50076DD74 /* ClaimOfferAtomXDR.swift in Sources */,
 				63D49B3C20CDFB210047840F /* Rate.swift in Sources */,
+				637CE9AD20D213700076DD74 /* XDRCodableExtensions.swift in Sources */,
 				63D49B2220CDED860047840F /* WalletManager+Auth.swift in Sources */,
 				6377F93A20BE0E1700F668E3 /* NSString+Binary.m in Sources */,
 				63D49B3620CDEED80047840F /* BRWebSocket.swift in Sources */,
-				63F66C3820B4B671007DF79D /* Transaction.swift in Sources */,
 				6377F8B920BE0E1700F668E3 /* WSScript.m in Sources */,
 				6377F8BD20BE0E1700F668E3 /* WSSeedGenerator.m in Sources */,
 				6327C13E20B815D100CB2017 /* Stellar.swift in Sources */,
 				6377F8B720BE0E1700F668E3 /* WSPublicKey.m in Sources */,
 				6377F90020BE0E1700F668E3 /* WSParametersFactoryRegtest.m in Sources */,
 				63F4FD4A20C585F700215698 /* WSCoreDataBlockStore.xcdatamodel in Sources */,
+				637CE93120D211F50076DD74 /* TrustlineDeauthorizedEffectResponse.swift in Sources */,
 				63F4FE3320C8819100215698 /* String+Extension.swift in Sources */,
+				637CE94220D211F50076DD74 /* AccountLinksResponse.swift in Sources */,
+				637CE95820D211F50076DD74 /* OperationsFactory.swift in Sources */,
 				63D49B1B20CDE8100047840F /* PaymentRequest.swift in Sources */,
 				6377F88320BE0E1600F668E3 /* WSBIP32.m in Sources */,
+				637CE95E20D211F50076DD74 /* PageResponse.swift in Sources */,
 				63D49B1A20CDE8100047840F /* PaymentProtocol.swift in Sources */,
 				6327C1AB20B86C7A00CB2017 /* HDCrypto.swift in Sources */,
+				637CE94720D211F50076DD74 /* OfferLinksResponse.swift in Sources */,
+				637CE93520D211F50076DD74 /* BadRequestErrorResponse.swift in Sources */,
+				637CE81720D20EA70076DD74 /* TimeBounds.swift in Sources */,
 				6377F8E420BE0E1700F668E3 /* WSTransactionOutputEntity.m in Sources */,
 				6377F91C20BE0E1700F668E3 /* WSMessageHeaders.m in Sources */,
+				637CE91B20D211F50076DD74 /* DataForAccountResponse.swift in Sources */,
+				637CE91D20D211F50076DD74 /* AccountCreatedEffectResponse.swift in Sources */,
 				63D49A7620CD3CE90047840F /* BRBIP32Sequence.c in Sources */,
 				63F4FE3A20C8849000215698 /* EthereumConfig.swift in Sources */,
+				637CE93F20D211F50076DD74 /* TransactionFailedErrorResponse.swift in Sources */,
 				63F66C1120B421BF007DF79D /* NRLPrivateKey.swift in Sources */,
 				6377F8DE20BE0E1700F668E3 /* WSTransactionEntity.m in Sources */,
-				63F66C7220B4C502007DF79D /* Etherscan.swift in Sources */,
+				637CE98420D211F50076DD74 /* OfferEntryXDR.swift in Sources */,
+				637CE80F20D20EA70076DD74 /* MemoProtocol.swift in Sources */,
 				6377F89720BE0E1600F668E3 /* WSAddress.m in Sources */,
 				6377F93F20BE0E1700F668E3 /* WSLogFormatter.m in Sources */,
 				6377F94620BE0E1700F668E3 /* WSWallet.m in Sources */,
 				6377F8D220BE0E1700F668E3 /* WSErrors.m in Sources */,
+				637CE95220D211F50076DD74 /* ChangeTrustOperationResponse.swift in Sources */,
+				637CE92E20D211F50076DD74 /* TradeEffectResponse.swift in Sources */,
 				63D49A8E20CD3CE90047840F /* BRTransaction.c in Sources */,
 				6377F91E20BE0E1700F668E3 /* WSMessageInv.m in Sources */,
+				637CE98F20D211F50076DD74 /* SetOptionsResultXDR.swift in Sources */,
 				6377F8D420BE0E1700F668E3 /* WSLogging.m in Sources */,
 				6377F8FE20BE0E1700F668E3 /* WSParametersFactoryMain.m in Sources */,
 				63D49A8820CD3CE90047840F /* BRPeer.c in Sources */,
 				63D49AF120CD4EE60047840F /* Extensions.swift in Sources */,
 				6327C18820B839D500CB2017 /* fe.c in Sources */,
+				637CE9F220D214170076DD74 /* TransactionsStreamItem.swift in Sources */,
+				637CE80920D20EA70076DD74 /* ChangeTrustOperation.swift in Sources */,
+				637CE91620D211F50076DD74 /* AccountBalanceResponse.swift in Sources */,
+				637CE9F120D214170076DD74 /* StreamingHelper.swift in Sources */,
 				6377F91A20BE0E1700F668E3 /* WSMessageGetheaders.m in Sources */,
 				63D49B5020CE3B2B0047840F /* BRBitID.swift in Sources */,
 				6377F90420BE0E1700F668E3 /* WSAbstractMessage.m in Sources */,
 				63F66C6920B4C502007DF79D /* Method.swift in Sources */,
+				637CE98220D211F50076DD74 /* ManageOfferSuccessResult.swift in Sources */,
 				6377F93820BE0E1700F668E3 /* NSString+Base58.m in Sources */,
+				637CE92B20D211F50076DD74 /* SignerEffectResponse.swift in Sources */,
 				6377F95A20BE0E1700F668E3 /* WSWebTickerBlockchain.m in Sources */,
 				63F66C4520B4B722007DF79D /* EIP55.swift in Sources */,
 				63F66C7020B4C502007DF79D /* JSONRPCError.swift in Sources */,
 				63D49B4420CE25D30047840F /* UserDefaults+Additions.swift in Sources */,
 				63F66C7420B4C502007DF79D /* JSONBodySerialization.swift in Sources */,
+				637CE99720D211F50076DD74 /* TransactionSignaturePayload.swift in Sources */,
 				6377F8F420BE0E1700F668E3 /* WSProtocolDeserializer.m in Sources */,
+				637CE80720D20EA70076DD74 /* AllowTrustOperation.swift in Sources */,
 				6377F93C20BE0E1700F668E3 /* WSGCDTimer.m in Sources */,
 				6377F91420BE0E1700F668E3 /* WSMessageGetaddr.m in Sources */,
 				63D49AED20CD3CE90047840F /* test.c in Sources */,
 				6377F8AB20BE0E1700F668E3 /* WSInventory.m in Sources */,
 				63D49B3E20CDFBC80047840F /* BRReplicatedKVStore.swift in Sources */,
 				6377F92220BE0E1700F668E3 /* WSMessageMerkleblock.m in Sources */,
+				637CE81620D20EA70076DD74 /* Signer.swift in Sources */,
+				637CE92C20D211F50076DD74 /* SignerRemovedEffectResponse.swift in Sources */,
 				6377F8FC20BE0E1700F668E3 /* WSParametersFactory.m in Sources */,
+				637CE97420D211F50076DD74 /* InflationResultXDR.swift in Sources */,
 				6377F8A120BE0E1700F668E3 /* WSBuffer.m in Sources */,
 				6327C1BF20B86D7D00CB2017 /* Data+CRC.swift in Sources */,
+				637CE9AF20D213700076DD74 /* XDREncoder.swift in Sources */,
 				6377F93620BE0E1700F668E3 /* NSData+Hash.m in Sources */,
+				637CE80820D20EA70076DD74 /* Asset.swift in Sources */,
 				6377F92E20BE0E1700F668E3 /* WSMessageVerack.m in Sources */,
 				63D49B4820CE27220047840F /* ReachabilityMonitor.swift in Sources */,
 				6327C1C220B86D7D00CB2017 /* StringExtension.swift in Sources */,
+				637CE9F420D214170076DD74 /* TradesService.swift in Sources */,
 				6377F8E020BE0E1700F668E3 /* WSTransactionInputEntity.m in Sources */,
 				63F66C2B20B4B511007DF79D /* Bitcoin.swift in Sources */,
+				637CE92120D211F50076DD74 /* AccountHomeDomainUpdatedEffectResponse.swift in Sources */,
 				63F66C2020B49074007DF79D /* NRLCoin.swift in Sources */,
 				6377F89D20BE0E1700F668E3 /* WSBlockLocator.m in Sources */,
+				637CE9E620D214170076DD74 /* EffectsService.swift in Sources */,
+				637CE99020D211F50076DD74 /* SignerKeyXDR.swift in Sources */,
 				63D49B1720CDE7BC0047840F /* BRAPIClient.swift in Sources */,
 				63F66C3320B4B671007DF79D /* Address.swift in Sources */,
+				637CE9EC20D214170076DD74 /* PaymentsService.swift in Sources */,
 				6377F8A520BE0E1700F668E3 /* WSHash160.m in Sources */,
 				6377F90820BE0E1700F668E3 /* WSAbstractMessageLocatorBased.m in Sources */,
 				6377F8CE20BE0E1700F668E3 /* WSBitcoinConstants.m in Sources */,
 				63D49B5720CF60BA0047840F /* UserDefaultsUpdater.swift in Sources */,
+				637CE9AA20D213700076DD74 /* Order.swift in Sources */,
 				6377F3F020BDACE500F668E3 /* AutoCoding.m in Sources */,
+				637CE97720D211F50076DD74 /* LedgerEntryXDR.swift in Sources */,
 				2167C340209B421E00A8653E /* Crypto.swift in Sources */,
 				6377F88720BE0E1600F668E3 /* WSBIP38.m in Sources */,
+				637CE93720D211F50076DD74 /* ErrorResponse.swift in Sources */,
+				637CE97F20D211F50076DD74 /* ManageDataResultXDR.swift in Sources */,
+				637CE98920D211F50076DD74 /* PathPaymentOperationXDR.swift in Sources */,
 				6395BB7620C0192D002EA989 /* DDASLLogger.m in Sources */,
 				630DC73D20AC2D7C0005800A /* Data+Extension.swift in Sources */,
 				6377F92C20BE0E1700F668E3 /* WSMessageTx.m in Sources */,
 				63F66C6E20B4C502007DF79D /* HTTPJSONRPCRequest.swift in Sources */,
 				63F4FE3520C882B600215698 /* Array+Extension.swift in Sources */,
 				63D49A8420CD3CE90047840F /* BRMerkleBlock.c in Sources */,
+				637CE94620D211F50076DD74 /* LinkResponse.swift in Sources */,
 				2167C30F209AF2F700A8653E /* Chinese.swift in Sources */,
+				637CE94520D211F50076DD74 /* LedgerLinksResponse.swift in Sources */,
 				63F66C6D20B4C502007DF79D /* BatchFactory.swift in Sources */,
+				637CE97520D211F50076DD74 /* LedgerEntryChangesXDR.swift in Sources */,
+				637CE95C20D211F50076DD74 /* OrderbookOfferResponse.swift in Sources */,
+				637CE9ED20D214170076DD74 /* ServiceHelper.swift in Sources */,
 				63D49B2B20CDEE4D0047840F /* BRHTTPFileMiddleware.swift in Sources */,
 				6377F95820BE0E1700F668E3 /* WSWebTickerBitstamp.m in Sources */,
+				637CE92020D211F50076DD74 /* AccountFlagsUpdatedEffectResponse.swift in Sources */,
 				6327C18720B839D500CB2017 /* add_scalar.c in Sources */,
 				6377F8D020BE0E1700F668E3 /* WSConfig.m in Sources */,
+				637CE9F320D214170076DD74 /* TradeAggregationsService.swift in Sources */,
+				637CE81420D20EA70076DD74 /* Price.swift in Sources */,
 				63D49B2A20CDEE4D0047840F /* BRAPIProxy.swift in Sources */,
+				637CE98D20D211F50076DD74 /* PriceXDR.swift in Sources */,
 				63D49A7820CD3CE90047840F /* BRBIP38Key.c in Sources */,
+				637CE95620D211F50076DD74 /* ManageOfferOperationResponse.swift in Sources */,
+				637CEA0F20D248A30076DD74 /* PublicKey.swift in Sources */,
+				637CE99620D211F50076DD74 /* TransactionResultXDR.swift in Sources */,
 				63D49A7D20CD3CE90047840F /* BRBloomFilter.c in Sources */,
 				6377F8DA20BE0E1700F668E3 /* WSPartialMerkleTreeEntity.m in Sources */,
+				637CE93920D211F50076DD74 /* InternalServerErrorResponse.swift in Sources */,
 				6377F8EA20BE0E1700F668E3 /* WSConnectionPool.m in Sources */,
 				6327C16920B8201500CB2017 /* ChecksumXmodem.swift in Sources */,
 				6327C1BB20B86D7D00CB2017 /* Dictionary+HttpParams.swift in Sources */,
+				637CE99520D211F50076DD74 /* TransactionMetaXDR.swift in Sources */,
 				6377F8C320BE0E1700F668E3 /* WSTransactionInput.m in Sources */,
+				637CE91C20D211F50076DD74 /* AssetResponse.swift in Sources */,
 				6395BB8820C0192D002EA989 /* DDMultiFormatter.m in Sources */,
 				6327C1C520B86D7D00CB2017 /* String+Encoding.swift in Sources */,
 				6377F8C520BE0E1700F668E3 /* WSTransactionOutPoint.m in Sources */,
+				637CE92420D211F50076DD74 /* AccountThresholdsUpdatedEffectResponse.swift in Sources */,
+				637CE93C20D211F50076DD74 /* NotImplementedErrorResponse.swift in Sources */,
 				63F66C4620B4B722007DF79D /* Result.swift in Sources */,
+				637CE93A20D211F50076DD74 /* NotAcceptableErrorResponse.swift in Sources */,
 				6377F8C920BE0E1700F668E3 /* WSBitcoinCurrency.m in Sources */,
 				63D49A8220CD3CE90047840F /* BRKey.c in Sources */,
 				63304D6720AD4D77006D444B /* Neo.swift in Sources */,
@@ -2514,36 +3424,64 @@
 				6377F94A20BE0E1700F668E3 /* WSWebExplorer.m in Sources */,
 				6327C19820B839D500CB2017 /* verify.c in Sources */,
 				6377F8CC20BE0E1700F668E3 /* WSPhysicalCurrency.m in Sources */,
+				637CE95F20D211F50076DD74 /* FindPaymentPathsResponse.swift in Sources */,
+				637CE94A20D211F50076DD74 /* TradeLinksResponse.swift in Sources */,
 				6377F90220BE0E1700F668E3 /* WSParametersFactoryTestnet3.m in Sources */,
 				6395BB6E20C0192D002EA989 /* CLIColor.m in Sources */,
+				637CE93220D211F50076DD74 /* TrustlineEffectResponse.swift in Sources */,
 				63D49A8620CD3CE90047840F /* BRPaymentProtocol.c in Sources */,
+				637CE94920D211F50076DD74 /* PagingLinksResponse.swift in Sources */,
+				637CE96820D211F50076DD74 /* AllowTrustOperationXDR.swift in Sources */,
 				6377F91020BE0E1700F668E3 /* WSMessageFactory.m in Sources */,
+				637CE9E520D214170076DD74 /* AssetsService.swift in Sources */,
+				637CE9E820D214170076DD74 /* OffersService.swift in Sources */,
+				637CEA0420D214E90076DD74 /* Data+Hash.swift in Sources */,
+				637CE93320D211F50076DD74 /* TrustlineRemovedEffectResponse.swift in Sources */,
+				637CEA0820D246CF0076DD74 /* KeyPair.swift in Sources */,
 				63D49A9020CD3CE90047840F /* BRWallet.c in Sources */,
 				6377F3F620BDACE500F668E3 /* GCDAsyncSocket.m in Sources */,
 				63D49B3A20CDFB0C0047840F /* String+Keys.swift in Sources */,
 				6377F8F820BE0E1700F668E3 /* WSNetworkType.m in Sources */,
+				637CE9F020D214170076DD74 /* OperationsStreamItem.swift in Sources */,
 				2167C320209AF7F300A8653E /* NRLMnemonic.swift in Sources */,
+				637CE95320D211F50076DD74 /* CreatePassiveOfferOperationResponse.swift in Sources */,
 				63F66C6420B4C502007DF79D /* Geth.swift in Sources */,
 				63D49B1420CDE7740047840F /* BRAPIClient+KV.swift in Sources */,
+				637CE9A720D213700076DD74 /* Constants.swift in Sources */,
+				637CE99320D211F50076DD74 /* TimeBoundsXDR.swift in Sources */,
 				6377F91620BE0E1700F668E3 /* WSMessageGetblocks.m in Sources */,
+				637CE9A920D213700076DD74 /* EventSource.swift in Sources */,
+				637CE94020D211F50076DD74 /* TransactionMalformedErrorResponse.swift in Sources */,
 				6395BB8220C0192D002EA989 /* DDTTYLogger.m in Sources */,
+				637CE99420D211F50076DD74 /* TransactionEnvelopeXDR.swift in Sources */,
 				6377F8AD20BE0E1700F668E3 /* WSKey.m in Sources */,
+				637CE92220D211F50076DD74 /* AccountInflationDestinationUpdatedEffectResponse.swift in Sources */,
 				6377F92420BE0E1700F668E3 /* WSMessageNotfound.m in Sources */,
 				63D49B2D20CDEE4D0047840F /* BRHTTPRouter.swift in Sources */,
 				63F66C6A20B4C502007DF79D /* RequestType.swift in Sources */,
+				637CE98A20D211F50076DD74 /* PathPaymentResultXDR.swift in Sources */,
 				63D49B4020CE24390047840F /* LAContext+Extensions.swift in Sources */,
 				6395BB8420C0192D002EA989 /* DDContextFilterLogFormatter.m in Sources */,
+				637CE97D20D211F50076DD74 /* LedgerKeyXDR.swift in Sources */,
 				6377F95420BE0E1700F668E3 /* WSWebTicker.m in Sources */,
 				6395BB7420C0192D002EA989 /* DDASLLogCapture.m in Sources */,
 				6377F92A20BE0E1700F668E3 /* WSMessageReject.m in Sources */,
 				63F66C3620B4B671007DF79D /* RawTransaction.swift in Sources */,
 				6327C1A720B86C7A00CB2017 /* Base58Encode.swift in Sources */,
+				637CE94120D211F50076DD74 /* LedgerResponse.swift in Sources */,
+				637CE80A20D20EA70076DD74 /* CreateAccountOperation.swift in Sources */,
+				637CE91720D211F50076DD74 /* AccountFlagsResponse.swift in Sources */,
+				637CE99B20D211F50076DD74 /* StellarSDKError.swift in Sources */,
 				63F66C6C20B4C502007DF79D /* BatchElement.swift in Sources */,
 				6377F94C20BE0E1700F668E3 /* WSWebExplorerBiteasy.m in Sources */,
+				637CE94B20D211F50076DD74 /* TransactionLinksResponse.swift in Sources */,
 				630DC67820ABE8510005800A /* Ethereum.swift in Sources */,
 				6377F8C120BE0E1700F668E3 /* WSTransaction.m in Sources */,
+				637CE95020D211F50076DD74 /* AccountMergeOperationResponse.swift in Sources */,
 				6327C1C420B86D7D00CB2017 /* Data+Base16.swift in Sources */,
+				637CE97820D211F50076DD74 /* LedgerExtryDataXDR.swift in Sources */,
 				6377F8E220BE0E1700F668E3 /* WSTransactionOutPointEntity.m in Sources */,
+				637CE9EB20D214170076DD74 /* PaymentPathsService.swift in Sources */,
 				63D49AF420CDC5EA0047840F /* WalletCoordinator.swift in Sources */,
 				63D49B2E20CDEE4D0047840F /* BRHTTPServer.swift in Sources */,
 			);
@@ -2749,6 +3687,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Sources $(SRCROOT)/Libraries $(SRCROOT)/Sources/Cryptography/ed25519-C $(SRCROOT)/Sources/Coins/Litecoin/BRSocket";
+				"SWIFT_INCLUDE_PATHS[sdk=iphoneos*]" = "$(SRCROOT)/Sources $(SRCROOT)/Libraries $(SRCROOT)/Sources/Cryptography/ed25519-C $(SRCROOT)/Sources/Coins/Litecoin/BRSocket $(SRCROOT)/Libraries/stellar-ios-mac-sdk/stellarsdk/stellarsdk/iphone";
+				"SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]" = "$(SRCROOT)/Sources $(SRCROOT)/Libraries $(SRCROOT)/Sources/Cryptography/ed25519-C $(SRCROOT)/Sources/Coins/Litecoin/BRSocket $(SRCROOT)/Libraries/stellar-ios-mac-sdk/stellarsdk/stellarsdk/simulator";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2794,6 +3734,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Sources $(SRCROOT)/Libraries $(SRCROOT)/Sources/Cryptography/ed25519-C $(SRCROOT)/Sources/Coins/Litecoin/BRSocket";
+				"SWIFT_INCLUDE_PATHS[sdk=iphoneos*]" = "$(SRCROOT)/Sources $(SRCROOT)/Libraries $(SRCROOT)/Sources/Cryptography/ed25519-C $(SRCROOT)/Sources/Coins/Litecoin/BRSocket $(SRCROOT)/Libraries/stellar-ios-mac-sdk/stellarsdk/stellarsdk/iphone";
+				"SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]" = "$(SRCROOT)/Sources $(SRCROOT)/Libraries $(SRCROOT)/Sources/Cryptography/ed25519-C $(SRCROOT)/Sources/Coins/Litecoin/BRSocket $(SRCROOT)/Libraries/stellar-ios-mac-sdk/stellarsdk/stellarsdk/simulator";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = /opt/local/include;

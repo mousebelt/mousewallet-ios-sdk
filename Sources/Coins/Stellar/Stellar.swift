@@ -10,7 +10,8 @@ import Foundation
 import ed25519C
 
 class NRLStellar : NRLCoin{
-    var pubkeyData: Data?;
+    var pubkeyData: Data?
+    var keyPair: KeyPair?
     
     func accountId(bytes: [UInt8]) -> String {
         var versionByte = VersionByte.accountId.rawValue
@@ -27,7 +28,7 @@ class NRLStellar : NRLCoin{
     }
     
     init(mnemonic: [String], seed: Data, fTest: Bool) {
-        var network: Network = .main(.stellar)
+        var network: NRLNetwork = .main(.stellar)
         if (fTest) {
             network = .test(.ethereum)
         }
@@ -48,22 +49,11 @@ class NRLStellar : NRLCoin{
     
     func generatePublickey(seed: Seed) {
         
-        var pubBuffer = [UInt8](repeating: 0, count: 32)
-        var privBuffer = [UInt8](repeating: 0, count: 64)
+        self.keyPair = KeyPair(seed: seed)
         
-        privBuffer.withUnsafeMutableBufferPointer { priv in
-            pubBuffer.withUnsafeMutableBufferPointer { pub in
-                seed.bytes.withUnsafeBufferPointer { seed in
-                    ed25519_create_keypair(pub.baseAddress,
-                                           priv.baseAddress,
-                                           seed.baseAddress)
-                }
-            }
-        }
-        
-        self.pubkeyData = Data(bytes: pubBuffer)
+        self.pubkeyData = Data(bytes: (self.keyPair?.publicKey.bytes)!)
         self.wif = secret(seed: seed);
-        self.address = accountId(bytes: pubBuffer);
+        self.address = accountId(bytes: (self.keyPair?.publicKey.bytes)!);
     }
     
     override func generateExternalKeyPair(at index: UInt32) throws {
@@ -90,4 +80,82 @@ class NRLStellar : NRLCoin{
     override func getPublicKey() -> Data {
         return self.pubkeyData!
     }
+    
+    override func createOwnWallet(created: Date, fnew: Bool) {
+        do {
+            try generateExternalKeyPair(at: 0)
+            
+            let privateKey = getPrivateKeyStr()
+            let publicKey = getPublicKey()
+            let address = getAddressStr()
+            
+            print("\nstellar private key = \(String(describing: privateKey))")
+            print("stellar public key = \(String(describing: publicKey))")
+            print("stellar address = \(String(describing: address))")
+        } catch {
+            print(error)
+        }
+
+//        // create keypair with the seed of your already existing account.
+//        // replace the seed with your own.
+//        let sourceAccountKeyPair = try KeyPair(secretSeed:"SDXEJKRXYLTV344KWCRJ4PXXXJVXKGK3UGESRWBWLDEWYO4S5OQ6VQ6I")
+//
+//        // generate a random keypair representing the new account to be created.
+//        let destinationKeyPair = try KeyPair.generateRandomKeyPair()
+//        print("Destination account Id: " + destinationKeyPair.accountId)
+//        print("Destination secret seed: " + destinationKeyPair.secretSeed)
+//
+//        // load the source account from horizon to be sure that we have the current sequence number.
+//        sdk.accounts.getAccountDetails(accountId: sourceAccountKeyPair.accountId) { (response) -> (Void) in
+//            switch response {
+//            case .success(let accountResponse): // source account successfully loaded.
+//                do {
+//                    // build a create account operation.
+//                    let createAccount = CreateAccountOperation(destination: destinationKeyPair, startBalance: 2.0)
+//
+//                    // build a transaction that contains the create account operation.
+//                    et transaction = try Transaction(sourceAccount: accountResponse,
+//                                                     operations: [createAccount],
+//                                                     memo: Memo.none,
+//                                                     timeBounds:nil)
+//
+//                    // sign the transaction.
+//                    try transaction.sign(keyPair: sourceAccountKeyPair, network: Network.testnet)
+//
+//                    // submit the transaction to the stellar network.
+//                    try sdk.transactions.submitTransaction(transaction: transaction) { (response) -> (Void) in
+//                        switch response {
+//                        case .success(_):
+//                            print("Account successfully created.")
+//                        case .failure(let error):
+//                            StellarSDKLog.printHorizonRequestErrorMessage(tag:"Create account", horizonRequestError: error)
+//                        }
+//                    }
+//                } catch {
+//                    // ...
+//                }
+//            case .failure(let error): // error loading account details
+//                StellarSDKLog.printHorizonRequestErrorMessage(tag:"Error:", horizonRequestError: error)
+//            }
+//        }
+
+    }
+    override func createPeerGroup() {}
+    override func connectPeers() -> Bool {return false}
+    override func disConnectPeers() -> Bool {return false}
+    override func startSyncing() -> Bool {return false}
+    override func stopSyncing() -> Bool {return false}
+    override func isConnected() -> Bool {return false}
+    override func isDownloading() -> Bool {return false}
+    override func getWalletBalance(callback:@escaping (_ err: NRLWalletSDKError, _ value: String) -> ()) {}
+    override func getAddressesOfWallet() -> NSArray? {return nil}
+    override func getPrivKeysOfWallet() -> NSArray? {return nil}
+    override func getPubKeysOfWallet() -> NSArray? {return nil}
+    override func getReceiveAddress() -> String? {return ""}
+    override func getAccountTransactions(offset: Int, count: Int, order: UInt, callback:@escaping (_ err: NRLWalletSDKError , _ tx: Any ) -> ()) {}
+    //transaction
+    override func sendTransaction(to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {}
+    override func signTransaction(to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {}
+    override func sendSignTransaction(tx: Any, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {}
+
 }
