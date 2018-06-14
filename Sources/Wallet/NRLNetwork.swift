@@ -15,7 +15,7 @@ public enum Coin {
 }
 
 //coin_type
-public enum Network {
+public enum NRLNetwork {
     case main(Coin)
     case test(Coin)
     //case `private`(Coin)

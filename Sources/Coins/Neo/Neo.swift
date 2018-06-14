@@ -11,7 +11,7 @@ import Neoutils
 
 class NRLNeo : NRLCoin{
     init(mnemonic: [String], seed: Data, fTest: Bool) {
-        var network: Network = .main(.ethereum)
+        var network: NRLNetwork = .main(.ethereum)
         if (fTest) {
             network = .test(.ethereum)
         }

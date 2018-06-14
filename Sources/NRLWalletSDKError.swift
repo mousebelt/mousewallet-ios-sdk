@@ -24,6 +24,14 @@ public enum NRLWalletSDKError: Error {
         case failedToSign
         case failedToEncode(Any)
         case keyDerivateionFailed
+        case seedGenerationFailed
+        case invalidSeed
+        case invalidSeedLength
+        case invalidPublicKey
+        case invalidPublicKeyLength
+        case invalidPrivateKey
+        case invalidPrivateKeyLength
+        case invalidSignatureLength
     }
     
     public enum SyncError: Error {
@@ -45,14 +53,3 @@ public enum NRLWalletSDKError: Error {
     case malformedData
 }
 
-public enum Ed25519Error: Error {
-    case seedGenerationFailed
-    case invalidSeed
-    case invalidSeedLength
-    case invalidScalarLength
-    case invalidPublicKey
-    case invalidPublicKeyLength
-    case invalidPrivateKey
-    case invalidPrivateKeyLength
-    case invalidSignatureLength
-}

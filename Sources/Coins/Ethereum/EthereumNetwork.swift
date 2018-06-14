@@ -55,7 +55,7 @@ class TxDetailResponse: Mappable, Equatable {
     }
 }
 
-class TransactionResponse: Mappable, Equatable {
+class GetTransactionsResponse: Mappable, Equatable {
     var total: UInt?
     var result: [TxDetailResponse]?
     
@@ -69,7 +69,7 @@ class TransactionResponse: Mappable, Equatable {
         result        <- map["result"]
     }
     
-    static func == (lhs: TransactionResponse, rhs: TransactionResponse) -> Bool {
+    static func == (lhs: GetTransactionsResponse, rhs: GetTransactionsResponse) -> Bool {
         return lhs.total == rhs.total &&
             lhs.result == rhs.result
     }

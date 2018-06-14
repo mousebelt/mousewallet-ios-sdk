@@ -9,6 +9,7 @@
 import Foundation
 import CSwiftyCommonCrypto
 
+
 public extension String {
     var sha256Hash: Data {
         get {

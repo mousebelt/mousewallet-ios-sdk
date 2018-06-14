@@ -27,7 +27,7 @@ class NRLStellar : NRLCoin{
     }
     
     init(mnemonic: [String], seed: Data, fTest: Bool) {
-        var network: Network = .main(.stellar)
+        var network: NRLNetwork = .main(.stellar)
         if (fTest) {
             network = .test(.ethereum)
         }
@@ -48,22 +48,11 @@ class NRLStellar : NRLCoin{
     
     func generatePublickey(seed: Seed) {
         
-        var pubBuffer = [UInt8](repeating: 0, count: 32)
-        var privBuffer = [UInt8](repeating: 0, count: 64)
+        let pair = KeyPair(seed: seed)
         
-        privBuffer.withUnsafeMutableBufferPointer { priv in
-            pubBuffer.withUnsafeMutableBufferPointer { pub in
-                seed.bytes.withUnsafeBufferPointer { seed in
-                    ed25519_create_keypair(pub.baseAddress,
-                                           priv.baseAddress,
-                                           seed.baseAddress)
-                }
-            }
-        }
-        
-        self.pubkeyData = Data(bytes: pubBuffer)
+        self.pubkeyData = Data(bytes: pair.publicKey.bytes)
         self.wif = secret(seed: seed);
-        self.address = accountId(bytes: pubBuffer);
+        self.address = accountId(bytes: pair.publicKey.bytes);
     }
     
     override func generateExternalKeyPair(at index: UInt32) throws {

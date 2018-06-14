@@ -19,7 +19,7 @@ class NRLEthereum : NRLCoin{
     var chainid: EthereumQuantity //1 for mainnet. 3 for ropsten. 4 for rinkeby. 42 for kovan.
     
     init(mnemonic: [String], seed: Data, fTest: Bool) {
-        var network: Network = .main(.ethereum)
+        var network: NRLNetwork = .main(.ethereum)
         self.chainid = 1
         if (fTest) {
             network = .test(.ethereum)
@@ -116,7 +116,7 @@ class NRLEthereum : NRLCoin{
         firstly {
             sendRequest(responseObject:VCoinResponse.self, url: url, parameters: ["offset": offset, "count": count, "order": order])
             }.done { res in
-                let resObj = Mapper<TransactionResponse>().map(JSONObject: res.data)
+                let resObj = Mapper<GetTransactionsResponse>().map(JSONObject: res.data)
                 
                 callback(NRLWalletSDKError.nrlSuccess, resObj!)
             }.catch { error in

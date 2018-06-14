@@ -113,11 +113,11 @@ public final class Geth {
     /// - Parameters:
     ///   - address: address to get transactions from
     ///   - completionHandler:
-    public func getTransactions(address: String, completionHandler: @escaping (ResultCrypto<Transactions>) -> Void) {
-        let request = Etherscan.GetTransactions(
-            configuration: .init(baseURL: configuration.etherscanURL, apiKey: configuration.etherscanAPIKey),
-            address: address
-        )
-        httpClient.send(request, completionHandler: completionHandler)
-    }
+//    public func getTransactions(address: String, completionHandler: @escaping (ResultCrypto<Transactions>) -> Void) {
+//        let request = Etherscan.GetTransactions(
+//            configuration: .init(baseURL: configuration.etherscanURL, apiKey: configuration.etherscanAPIKey),
+//            address: address
+//        )
+//        httpClient.send(request, completionHandler: completionHandler)
+//    }
 }
