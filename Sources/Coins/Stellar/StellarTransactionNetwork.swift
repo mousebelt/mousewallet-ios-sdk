@@ -1,15 +1,16 @@
 //
-//  EthereumNetwork.swift
+//  StellarTransactionNetwork.swift
 //  NRLWalletSDK
 //
-//  Created by David Bala on 08/06/2018.
+//  Created by David Bala on 15/06/2018.
 //  Copyright © 2018 NoRestLabs. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-class ETHTxDetailResponse: Mappable, Equatable {
+
+class StellarTxDetailResponse: Mappable, Equatable {
     var blockHash: String?
     var blockNumber: UInt?
     var from: String?
@@ -48,14 +49,14 @@ class ETHTxDetailResponse: Mappable, Equatable {
         s                   <- map["s"]
     }
     
-    static func == (lhs: ETHTxDetailResponse, rhs: ETHTxDetailResponse) -> Bool {
+    static func == (lhs: StellarTxDetailResponse, rhs: StellarTxDetailResponse) -> Bool {
         return lhs.blockHash == rhs.blockHash &&
             lhs.transactionIndex == rhs.transactionIndex &&
             lhs.hash == rhs.hash
     }
 }
 
-class ETHGetTransactionsResponse: Mappable, Equatable {
+class StellarGetTransactionsResponse: Mappable, Equatable {
     var total: UInt?
     var result: [ETHTxDetailResponse]?
     
@@ -69,32 +70,14 @@ class ETHGetTransactionsResponse: Mappable, Equatable {
         result        <- map["result"]
     }
     
-    static func == (lhs: ETHGetTransactionsResponse, rhs: ETHGetTransactionsResponse) -> Bool {
+    static func == (lhs: StellarGetTransactionsResponse, rhs: StellarGetTransactionsResponse) -> Bool {
         return lhs.total == rhs.total &&
             lhs.result == rhs.result
     }
 }
 
-class ETHGetBalanceResponse: Mappable, Equatable {
-    var balance: String?
-    var address: String?
-    
-    required init?(map: Map) {
-        
-    }
-    
-    // Mappable
-    func mapping(map: Map) {
-        balance        <- map["balance"]
-        address        <- map["address"]
-    }
-    
-    static func == (lhs: ETHGetBalanceResponse, rhs: ETHGetBalanceResponse) -> Bool {
-        return lhs.address == rhs.address
-    }
-}
 
-class ETHSendSignedTransactionResponse: Mappable, Equatable {
+class StellarSendSignedTransactionResponse: Mappable, Equatable {
     var blockNumber: UInt?
     var status: Bool?
     var to: String?
@@ -128,10 +111,9 @@ class ETHSendSignedTransactionResponse: Mappable, Equatable {
         transactionIndex    <- map["transactionIndex"]
     }
     
-    static func == (lhs: ETHSendSignedTransactionResponse, rhs: ETHSendSignedTransactionResponse) -> Bool {
+    static func == (lhs: StellarSendSignedTransactionResponse, rhs: StellarSendSignedTransactionResponse) -> Bool {
         return lhs.transactionHash == rhs.transactionHash &&
             lhs.blockHash == rhs.blockHash
     }
 }
-
 

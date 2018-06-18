@@ -78,7 +78,6 @@ public struct NRLPrivateKey {
             coin: self.coin
         )
     }
-    
 
     public func derived_Ed25519(at index: UInt32) -> NRLPrivateKey {
         let edge: UInt32 = 0x80000000

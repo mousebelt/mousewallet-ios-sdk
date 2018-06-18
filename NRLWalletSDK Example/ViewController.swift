@@ -91,7 +91,7 @@ class ViewController: UIViewController {
         wallet.getAccountTransactions(offset: 0, count: 10, order: 0){ (err, tx) -> () in
             switch (err) {
             case NRLWalletSDKError.nrlSuccess:
-                //for ethereum tx is GetTransactionsResponse mapping object and can get any field
+                //for ethereum tx is ETHGetTransactionsResponse mapping object and can get any field
                 var strTransactions = String(describing: tx)
 
                 strTransactions = strTransactions.replacingOccurrences(of: "\\n", with: "\n")

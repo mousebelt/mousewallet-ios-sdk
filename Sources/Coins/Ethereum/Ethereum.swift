@@ -86,7 +86,7 @@ class NRLEthereum : NRLCoin{
         firstly {
             sendRequest(responseObject:VCoinResponse.self, url: url)
             }.done { res in
-                let resObj = Mapper<GetBalanceResponse>().map(JSONObject: res.data)
+                let resObj = Mapper<ETHGetBalanceResponse>().map(JSONObject: res.data)
                 let balance: String = (resObj?.balance)!
                 DDLogDebug("balance: \(balance)")
                 callback(NRLWalletSDKError.nrlSuccess, balance)
@@ -116,7 +116,7 @@ class NRLEthereum : NRLCoin{
         firstly {
             sendRequest(responseObject:VCoinResponse.self, url: url, parameters: ["offset": offset, "count": count, "order": order])
             }.done { res in
-                let resObj = Mapper<GetTransactionsResponse>().map(JSONObject: res.data)
+                let resObj = Mapper<ETHGetTransactionsResponse>().map(JSONObject: res.data)
                 
                 callback(NRLWalletSDKError.nrlSuccess, resObj!)
             }.catch { error in
@@ -250,12 +250,12 @@ class NRLEthereum : NRLCoin{
                             DDLogDebug("\(res2)")
                             seal.fulfill(res2)
                             }
-                        .catch { error in
-                            seal.reject(error)
+                        .catch { error2 in
+                            seal.reject(error2)
                     }
                 }
-            }.done { res in
-                let resObj = Mapper<SendSignedTransactionResponse>().map(JSONObject: res.data)
+            }.done { res3 in
+                let resObj = Mapper<ETHSendSignedTransactionResponse>().map(JSONObject: res3.data)
                 let hash: String = (resObj?.transactionHash)!
             
                 callback(NRLWalletSDKError.nrlSuccess, hash as Any)
@@ -313,7 +313,7 @@ class NRLEthereum : NRLCoin{
                 sendRequest(responseObject:VCoinResponse.self, url: url, method: .post,
                             parameters: ["raw": String(describing: rawData.toHexString())])
             }.done { res in
-                let resObj = Mapper<SendSignedTransactionResponse>().map(JSONObject: res.data)
+                let resObj = Mapper<ETHSendSignedTransactionResponse>().map(JSONObject: res.data)
                 let hash: String = (resObj?.transactionHash)!
                 
                 callback(NRLWalletSDKError.nrlSuccess, hash as Any)
