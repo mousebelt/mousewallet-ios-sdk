@@ -2094,7 +2094,7 @@ public class BIntMath
 	///   - b: base
 	///   - p: power
 	///   - m: modulus
-	/// - Returns: pow(b, p) % m
+	/// - Returns: bPow(b, p) % m
 	static func mod_exp(_ b: BInt, _ p: BInt, _ m: BInt) -> BInt {
 		precondition(m != 0, "modulus needs to be non-zero")
 		precondition(p >= 0, "exponent needs to be non-negative")
@@ -2883,6 +2883,6 @@ public func ceil(_ base: BDouble) -> BInt
 /**
  * Returns a BDouble number raised to a given power.
  */
-public func pow(_ base : BDouble, _ exp : Int) -> BDouble {
+public func bPow(_ base : BDouble, _ exp : Int) -> BDouble {
 	return base**exp
 }

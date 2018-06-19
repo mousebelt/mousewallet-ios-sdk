@@ -125,7 +125,7 @@ class NRLCoin {
     func stopSyncing() -> Bool {return false}
     func isConnected() -> Bool {return false}
     func isDownloading() -> Bool {return false}
-    func getWalletBalance(callback:@escaping (_ err: NRLWalletSDKError, _ value: String) -> ()) {}
+    func getWalletBalance(callback:@escaping (_ err: NRLWalletSDKError, _ value: Any) -> ()) {}
     func getAddressesOfWallet() -> NSArray? {return nil}
     func getPrivKeysOfWallet() -> NSArray? {return nil}
     func getPubKeysOfWallet() -> NSArray? {return nil}

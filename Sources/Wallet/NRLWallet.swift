@@ -110,7 +110,7 @@ public class NRLWallet {
         return self.coin.isDownloading()
     }
     
-    public func getWalletBalance(callback:@escaping (_ err: NRLWalletSDKError, _ value: String) -> ()) {
+    public func getWalletBalance(callback:@escaping (_ err: NRLWalletSDKError, _ value: Any) -> ()) {
         return self.coin.getWalletBalance(callback: callback)
     }
     

@@ -210,7 +210,7 @@ class ViewController: UIViewController {
         print("Balance: \(walletObj.balance)")
         
         wallet.getWalletBalance() { (err, value) -> () in
-            self.lbBalance.text = value
+            self.lbBalance.text = String(describing: value)
         }
     }
     
@@ -229,7 +229,7 @@ class ViewController: UIViewController {
         self.blockToHight = userInfo[WSPeerGroupDownloadToHeightKey] as! UInt32
         
         wallet.getWalletBalance() { (err, value) -> () in
-            self.lbBalance.text = value
+            self.lbBalance.text = String(describing: value)
         }
         self.lbAddress.text = wallet.getReceiveAddress();
         
@@ -381,7 +381,7 @@ class ViewController: UIViewController {
         }
         
         wallet.getWalletBalance() { (err, value) -> () in
-            self.lbBalance.text = value
+            self.lbBalance.text = String(describing: value)
         }
         
         DDLogDebug("ReceiveAddress: \(String(describing: wallet.getReceiveAddress()))")

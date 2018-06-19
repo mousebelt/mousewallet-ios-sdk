@@ -121,7 +121,7 @@ class NRLBitcoin : NRLCoin{
         return self.btcpeer!.isDownloading()
     }
     
-    override func getWalletBalance(callback:@escaping (_ err: NRLWalletSDKError, _ value: String) -> ()) {
+    override func getWalletBalance(callback:@escaping (_ err: NRLWalletSDKError, _ value: Any) -> ()) {
         return self.btcpeer!.getWalletBalance(callback: callback)
     }
     

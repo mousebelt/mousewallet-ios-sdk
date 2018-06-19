@@ -68,7 +68,7 @@ class NRLEthereum : NRLCoin{
         }
     }
     
-    override func getWalletBalance(callback:@escaping (_ err: NRLWalletSDKError, _ value: String) -> ()) {
+    override func getWalletBalance(callback:@escaping (_ err: NRLWalletSDKError, _ value: Any) -> ()) {
 //        firstly {
 //            web3.eth.getBalance(address: (self.privKey?.address)!, block: .latest)
 //            }.done { balance in

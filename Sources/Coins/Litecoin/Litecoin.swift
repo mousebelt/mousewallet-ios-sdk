@@ -230,8 +230,8 @@ class NRLLitecoin : NRLCoin{
         return false
     }
     
-    override func getWalletBalance(callback:@escaping (_ err: NRLWalletSDKError, _ value: String) -> ()) {
-        callback(NRLWalletSDKError.nrlSuccess, String(describing: self.walletManager?.wallet?.balance))
+    override func getWalletBalance(callback:@escaping (_ err: NRLWalletSDKError, _ value: Any) -> ()) {
+        callback(NRLWalletSDKError.nrlSuccess, self.walletManager?.wallet?.balance)
     }
     
     override func getAddressesOfWallet() -> NSArray {

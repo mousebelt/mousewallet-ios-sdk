@@ -201,7 +201,7 @@ class NRLStellar : NRLCoin{
     override func stopSyncing() -> Bool {return false}
     override func isConnected() -> Bool {return false}
     override func isDownloading() -> Bool {return false}
-    override func getWalletBalance(callback:@escaping (_ err: NRLWalletSDKError, _ value: String) -> ()) {}
+    override func getWalletBalance(callback:@escaping (_ err: NRLWalletSDKError, _ value: Any) -> ()) {}
     override func getAddressesOfWallet() -> NSArray? {return nil}
     override func getPrivKeysOfWallet() -> NSArray? {return nil}
     override func getPubKeysOfWallet() -> NSArray? {return nil}

@@ -75,15 +75,6 @@ public extension String {
         }
     }
     
-    func base58DecodedData() -> Data {
-        let len = BRBase58Decode(nil, 0, self)
-        var data = Data(count: len)
-        return data.withUnsafeMutableBytes { (ptr: UnsafeMutablePointer<CUnsignedChar>) in
-            BRBase58Decode(ptr, len, self)
-            return data
-        }
-    }
-    
     var urlEscapedString: String {
         return addingPercentEncoding(withAllowedCharacters: String.urlQuoteCharacterSet) ?? ""
     }
