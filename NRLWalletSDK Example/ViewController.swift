@@ -77,7 +77,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var txtTransactions: UITextView!
     
     var mnemonic: [String]?
-    var seed: Data?
     
     var blockFromHight: UInt32 = 0
     var blockToHight: UInt32 = 0
@@ -160,8 +159,12 @@ class ViewController: UIViewController {
         
         let seed = Data(fromHexEncodedString: "47d8d8898556e5c4fcf042b249ef92160e667046d7ff487392a9e6ca9e1d912b11a7b134baf7a8893c92d1a40731b08d1ef24789128d07101df740ad1ba4a12c")!
         */
-
-        coinWallet = NRLWallet(mnemonic: self.mnemonic!, seed: self.seed!, network: .test(.bitcoin))
+        guard let mnemonic = self.mnemonic else {
+            print("Error: no mnemonic")
+            return
+        }
+        
+        coinWallet = NRLWallet(mnemonic: mnemonic, passphrase: "Test", network: .test(.bitcoin))
         guard let wallet = coinWallet else {
             print("Error: cannot init wallet!")
             return
@@ -194,7 +197,10 @@ class ViewController: UIViewController {
         */
         let date = Date()
         print("\nCreate Own Wallet")
-        wallet.createOwnWallet(created: date, fnew: true)
+        if (!wallet.createOwnWallet(created: date, fnew: true)) {
+            print("Failed to create wallet")
+            return;
+        }
         print("\nCreate Peer Group")
         wallet.createPeerGroup()
     }
@@ -266,20 +272,17 @@ class ViewController: UIViewController {
         }
     }
     
-    func generateSeed() {
-        do {
-            self.seed = try NRLMnemonic.mnemonicToSeed(from: self.mnemonic!, withPassphrase: "Test")
-            print("\nseed = \(String(describing: self.seed?.hexEncodedString()))")
-        } catch {
-            print(error)
-        }
-    }
-    
     func setEthereumWallet() {
         print("\n------------------------- Ethereum ----------------------------\n")
 
         // Ethereum : 60
-        coinWallet = NRLWallet(mnemonic: self.mnemonic!, seed: self.seed!, network: .test(.ethereum))
+        
+        guard let mnemonic = self.mnemonic else {
+            print("Error: no mnemonic")
+            return
+        }
+        
+        coinWallet = NRLWallet(mnemonic: mnemonic, passphrase: "Test", network: .test(.ethereum))
 
         guard let wallet = coinWallet else {
             print("setEthereumWallet Error: cannot init wallet!")
@@ -293,7 +296,11 @@ class ViewController: UIViewController {
         print("\n------------------------- NEO ----------------------------\n")
         // NEO : 888
 
-        coinWallet = NRLWallet(mnemonic: self.mnemonic!, seed: self.seed!, network: .main(.neo))
+        guard let mnemonic = self.mnemonic else {
+            print("Error: no mnemonic")
+            return
+        }
+        coinWallet = NRLWallet(mnemonic: mnemonic, passphrase: "Test", network: .main(.neo))
         
         guard let wallet = coinWallet else {
             print("setNeoWallet Error: cannot init wallet!")
@@ -315,10 +322,15 @@ class ViewController: UIViewController {
         print("\n------------------------- Litecoin ----------------------------\n")
         // Litecoin : 2
         //for test
-        self.mnemonic = ["vivid", "gesture", "series", "lady", "owner", "amused", "sock", "grunt", "hotel", "olive", "carpet", "visual"]
-//        self.mnemonic = ["point", "secret", "crew", "boil", "spin", "letter", "race", "taste", "monkey", "garage", "awesome", "van"]
+//        self.mnemonic = ["vivid", "gesture", "series", "lady", "owner", "amused", "sock", "grunt", "hotel", "olive", "carpet", "visual"]
+        self.mnemonic = ["nasty", "believe", "cinnamon", "crouch", "snap", "shuffle", "spice", "bleak", "ridge", "planet", "identify", "trumpet"]
 
-        coinWallet = NRLWallet(mnemonic: self.mnemonic!, seed: self.seed!, network: .main(.litecoin))
+        guard let mnemonic = self.mnemonic else {
+            print("Error: no mnemonic")
+            return
+        }
+        
+        coinWallet = NRLWallet(mnemonic: mnemonic, passphrase: "Test", network: .main(.litecoin))
         
         guard let wallet = coinWallet else {
             print("setLitecoinWallet Error: cannot init wallet!")
@@ -341,7 +353,10 @@ class ViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(On_LTC_PeerGroupDidStartDownload(notification:)), name: NSNotification.Name.LTC_PeerGroupDidStartDownload, object: nil)
         
         print("\nCreate Own Wallet")
-        wallet.createOwnWallet(created: Date(), fnew: false)
+        if (!wallet.createOwnWallet(created: Date(), fnew: false)) {
+            print("create wallet failed")
+            return
+        }
         
         let addresses = wallet.getAddressesOfWallet()
         print("Address: \(String(describing: addresses))")
@@ -392,8 +407,13 @@ class ViewController: UIViewController {
     func setStellarWallet() {
         print("\n------------------------- Stellar ----------------------------\n")
         // Stellar : 148
+                
+        guard let mnemonic = self.mnemonic else {
+            print("Error: no mnemonic")
+            return
+        }
         
-        coinWallet = NRLWallet(mnemonic: self.mnemonic!, seed: self.seed!, network: .main(.stellar))
+        coinWallet = NRLWallet(mnemonic: mnemonic, passphrase: "Test", network: .main(.stellar))
         
         guard let wallet = coinWallet else {
             print("setStellarWallet Error: cannot init wallet!")
@@ -401,7 +421,7 @@ class ViewController: UIViewController {
         }
                 
         print("\nCreate Own Wallet")
-        wallet.createOwnWallet(created: Date(), fnew: false)
+        _ = wallet.createOwnWallet(created: Date(), fnew: false)
     }
     
     override func viewDidLoad() {
@@ -410,7 +430,6 @@ class ViewController: UIViewController {
         DDLog.add(DDTTYLogger.sharedInstance)
         
         generateMneonic()
-        generateSeed()
 
 //        setBitcoinWallet()
 //        setEthereumWallet()

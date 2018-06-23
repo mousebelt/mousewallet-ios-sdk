@@ -23,6 +23,8 @@ class StellarAccountCreator {
             //this seed data should be loaded from encrypted file. Or from mnemonic which is saved in local file or sqlite.
 //            let mnemonic = "casino roast sign inflict blouse clown office fame slot reward traffic penalty"
 //            self.creatorKeyPair = try StellarWallet.createKeyPair(mnemonic: mnemonic, passphrase: "Test", index: 0)
+            
+            //address : GCIA6RMJKSV2XFJYVXWTKWPGE4FYOPO4PCT2RVWCWWRS7GW734K472WH
             self.creatorKeyPair = try StellarKeyPair(secretSeed: "SAFGCNACP7QSEJTB24JPVGEVXU7ZGEBQUCRVPO4PTTOR45XDBSSPHYTT")
         } catch {
             DDLogDebug("Stellar Account Creator init error: \(error)")

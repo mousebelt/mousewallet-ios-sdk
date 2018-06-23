@@ -12,7 +12,7 @@ import Neoutils
 class NRLNeo : NRLCoin{
     var account: NeoAccount?
     
-    init(mnemonic: [String], seed: Data, fTest: Bool) {
+    init(mnemonic: [String], passphrase: String, fTest: Bool) {
         var network: NRLNetwork = .main(.ethereum)
         if (fTest) {
             network = .test(.ethereum)
@@ -21,7 +21,7 @@ class NRLNeo : NRLCoin{
         let cointype = network.coinType
         
         super.init(mnemonic: mnemonic,
-                   seed: seed,
+                   passphrase: passphrase,
                    network: network,
                    coinType: cointype,
                    seedKey: "Nist256p1 seed",
@@ -44,12 +44,13 @@ class NRLNeo : NRLCoin{
         self.address = (wallet?.address())!
     }
     
-    override func createOwnWallet(created: Date, fnew: Bool) {
+    override func createOwnWallet(created: Date, fnew: Bool) -> Bool {
         guard let privkey = self.pathPrivateKey else {
             DDLogDebug("createOwnWallet error: no pathPrivateKey")
-            return
+            return false
         }
         self.account = NeoAccount(privateKey: privkey.raw.toHexString())
+        return true
     }
     
     override func getWalletBalance(callback:@escaping (_ err: NRLWalletSDKError, _ value: Any) -> ()) {

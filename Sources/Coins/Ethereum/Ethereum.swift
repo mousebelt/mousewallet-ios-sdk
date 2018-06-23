@@ -18,7 +18,8 @@ class NRLEthereum : NRLCoin{
     var privKey: EthereumPrivateKey?
     var chainid: EthereumQuantity //1 for mainnet. 3 for ropsten. 4 for rinkeby. 42 for kovan.
     
-    init(mnemonic: [String], seed: Data, fTest: Bool) {
+    init(mnemonic: [String], passphrase: String, fTest: Bool) {
+        
         var network: NRLNetwork = .main(.ethereum)
         self.chainid = 1
         if (fTest) {
@@ -29,7 +30,7 @@ class NRLEthereum : NRLCoin{
         let cointype = network.coinType
         
         super.init(mnemonic: mnemonic,
-                   seed: seed,
+                   passphrase: passphrase,
                    network: network,
                    coinType: cointype,
                    seedKey: "Bitcoin seed",
@@ -52,7 +53,7 @@ class NRLEthereum : NRLCoin{
         self.wif = self.pathPrivateKey?.raw.toHexString()
     }
     
-    override func createOwnWallet(created: Date, fnew: Bool) {
+    override func createOwnWallet(created: Date, fnew: Bool)  -> Bool {
         do {
             try generateExternalKeyPair(at: 0)
         
@@ -62,9 +63,11 @@ class NRLEthereum : NRLCoin{
         
             DDLogDebug("\nEthereum private key = \(String(describing: privateKey))")
             DDLogDebug("Ethereum address1 = \(String(describing: self.privKey?.address.hex(eip55: true)))")
+            return true
 
         } catch {
             DDLogDebug(error as! String)
+            return false
         }
     }
     
