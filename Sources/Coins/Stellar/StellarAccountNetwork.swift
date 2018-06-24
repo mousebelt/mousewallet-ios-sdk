@@ -134,7 +134,7 @@ class StellarAccountResponse: Mappable {
     var signers:[StellarAccountSignerResponse]?
 
     /// The current sequence number that can be used when submitting a transaction from this account.
-    var sequenceNumber: UInt64?
+    var sequence: String?
 
     required init?(map: Map) {
         
@@ -147,7 +147,7 @@ class StellarAccountResponse: Mappable {
         balances                <- map["balances"]
         thresholds              <- map["thresholds"]
         signers                 <- map["signers"]
-        sequenceNumber          <- map["sequence"]
+        sequence                <- map["sequence"]
     }
 }
 

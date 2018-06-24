@@ -17,14 +17,15 @@ internal class TransactionViewController: UIViewController {
     
     @IBAction func OnSend() {
         let to = tfTo.text;
-        let value = UInt64(tfValue.text!)
-        let fee = UInt64(tfFee.text!)
+        let value = Double(tfValue.text!)
+        let fee = Double(tfFee.text!)
         
         guard let wallet = coinWallet else {
             print("setStellarWallet Error: cannot init wallet!")
             return
         }
-        
+
+        //for stellar, we need to insert double values
         wallet.sendTransaction(to: to!, value: value!, fee: fee!) { (err, tx) -> () in
             switch (err) {
             case NRLWalletSDKError.nrlSuccess:

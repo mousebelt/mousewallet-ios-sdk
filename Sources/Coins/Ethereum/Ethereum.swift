@@ -18,7 +18,8 @@ class NRLEthereum : NRLCoin{
     var privKey: EthereumPrivateKey?
     var chainid: EthereumQuantity //1 for mainnet. 3 for ropsten. 4 for rinkeby. 42 for kovan.
     
-    init(mnemonic: [String], seed: Data, fTest: Bool) {
+    init(mnemonic: [String], passphrase: String, fTest: Bool) {
+        
         var network: NRLNetwork = .main(.ethereum)
         self.chainid = 1
         if (fTest) {
@@ -29,7 +30,7 @@ class NRLEthereum : NRLCoin{
         let cointype = network.coinType
         
         super.init(mnemonic: mnemonic,
-                   seed: seed,
+                   passphrase: passphrase,
                    network: network,
                    coinType: cointype,
                    seedKey: "Bitcoin seed",
@@ -52,7 +53,7 @@ class NRLEthereum : NRLCoin{
         self.wif = self.pathPrivateKey?.raw.toHexString()
     }
     
-    override func createOwnWallet(created: Date, fnew: Bool) {
+    override func createOwnWallet(created: Date, fnew: Bool)  -> Bool {
         do {
             try generateExternalKeyPair(at: 0)
         
@@ -62,13 +63,15 @@ class NRLEthereum : NRLCoin{
         
             DDLogDebug("\nEthereum private key = \(String(describing: privateKey))")
             DDLogDebug("Ethereum address1 = \(String(describing: self.privKey?.address.hex(eip55: true)))")
+            return true
 
         } catch {
             DDLogDebug(error as! String)
+            return false
         }
     }
     
-    override func getWalletBalance(callback:@escaping (_ err: NRLWalletSDKError, _ value: String) -> ()) {
+    override func getWalletBalance(callback:@escaping (_ err: NRLWalletSDKError, _ value: Any) -> ()) {
 //        firstly {
 //            web3.eth.getBalance(address: (self.privKey?.address)!, block: .latest)
 //            }.done { balance in
@@ -106,8 +109,12 @@ class NRLEthereum : NRLCoin{
         return result
     }
     override func getPubKeysOfWallet() -> NSArray? {return nil}
-    override func getReceiveAddress() -> String? {
-        return self.privKey?.address.hex(eip55: false)
+    override func getReceiveAddress() -> String {
+        guard let key = self.privKey else {
+            return ""
+        }
+        
+        return key.address.hex(eip55: false)
     }
     override func getAccountTransactions(offset: Int, count: Int, order: UInt, callback:@escaping (_ err: NRLWalletSDKError , _ tx: Any ) -> ()) {
         let address = self.privKey!.address.hex(eip55: false)

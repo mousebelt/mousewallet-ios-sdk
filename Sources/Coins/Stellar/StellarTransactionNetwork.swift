@@ -78,18 +78,11 @@ class StellarGetTransactionsResponse: Mappable, Equatable {
 
 
 class StellarSendSignedTransactionResponse: Mappable, Equatable {
-    var blockNumber: UInt?
-    var status: Bool?
-    var to: String?
-    var transactionHash: String?
-    var blockHash: String?
-    var from: String?
-    var contractAddress: String?
-    var logsBloom: String?
-    var logs: [String]?
-    var gasUsed: UInt?
-    var cumulativeGasUsed: UInt?
-    var transactionIndex: UInt?
+    var result_meta_xdr: String?
+    var result_xdr: String?
+    var hash: String?
+    var ledger: String?
+    var envelope_xdr: String?
     
     required init?(map: Map) {
         
@@ -97,23 +90,16 @@ class StellarSendSignedTransactionResponse: Mappable, Equatable {
     
     // Mappable
     func mapping(map: Map) {
-        blockNumber         <- map["blockNumber"]
-        status              <- map["status"]
-        to                  <- map["to"]
-        transactionHash     <- map["transactionHash"]
-        blockHash           <- map["blockHash"]
-        from                <- map["from"]
-        contractAddress     <- map["contractAddress"]
-        logsBloom           <- map["logsBloom"]
-        logs                <- map["logs"]
-        gasUsed             <- map["gasUsed"]
-        cumulativeGasUsed   <- map["cumulativeGasUsed"]
-        transactionIndex    <- map["transactionIndex"]
+        result_meta_xdr         <- map["result_meta_xdr"]
+        result_xdr              <- map["result_xdr"]
+        hash                    <- map["hash"]
+        ledger                  <- map["ledger"]
+        envelope_xdr            <- map["envelope_xdr"]
     }
     
     static func == (lhs: StellarSendSignedTransactionResponse, rhs: StellarSendSignedTransactionResponse) -> Bool {
-        return lhs.transactionHash == rhs.transactionHash &&
-            lhs.blockHash == rhs.blockHash
+        return lhs.hash == rhs.hash &&
+            lhs.ledger == rhs.ledger
     }
 }
 

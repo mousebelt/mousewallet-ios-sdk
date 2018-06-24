@@ -17,7 +17,7 @@ class NRLCoin {
     
     // https://github.com/satoshilabs/slips/blob/master/slip-0044.md
 
-    var seed: Data
+    var seed: Data?
     var mnemonic: [String]
     var masterPrivateKey: NRLPrivateKey?
     var pathPrivateKey: NRLPrivateKey?
@@ -25,18 +25,28 @@ class NRLCoin {
     var network: NRLNetwork
     var coinType: UInt32
     var seedKey: String
-    var curve: String;
+    var curve: String
+    var passphrase: String
     
     var address: String?
     var wif: String?
 
-    public init(mnemonic: [String], seed: Data, network: NRLNetwork, coinType: UInt32, seedKey: String, curve: String) {
+    public init(mnemonic: [String], passphrase: String, network: NRLNetwork, coinType: UInt32, seedKey: String, curve: String) {
         self.mnemonic = mnemonic
-        self.seed = seed;
         self.network = network
         self.coinType = coinType
         self.seedKey = seedKey
         self.curve = curve
+        self.passphrase = passphrase
+        
+        do {
+            self.seed = try NRLMnemonic.mnemonicToSeed(from: mnemonic, withPassphrase: passphrase)
+            DDLogDebug("\nseed = \(String(describing: seed?.hexEncodedString()))")
+
+        } catch let error {
+            DDLogDebug("Cannot generate seed: \(error)")
+            return
+        }
     }
     //should be overrided
     func generateAddress() {
@@ -51,8 +61,8 @@ class NRLCoin {
         return self.pathPrivateKey!.nrlPublicKey().raw;
     }
 
-    func getAddressStr() -> String {
-        return self.address!;
+    func getAddressStr() -> String? {
+        return self.address;
     }
 
     func getPrivateKeyStr() -> String {
@@ -63,20 +73,26 @@ class NRLCoin {
         return self.seedKey.data(using: .ascii)!;
     }
     
-    func generateMasterKey() -> Data {
-        return Crypto.HMACSHA512(key: self.getSeedKey(), data: self.seed);
+    func generateMasterKey() -> Data? {
+        guard let seed = self.seed else { return nil }
+        return Crypto.HMACSHA512(key: self.getSeedKey(), data: seed);
     }
     
     //these functions should be overrided by subcoins with generate address function
     func generateExternalKeyPair(at index: UInt32) throws {
+        guard let seed = self.seed else { return }
+        guard let masterkey = generateMasterKey() else { return }
         
-        self.masterPrivateKey = NRLPrivateKey(seed: self.seed, privkey: generateMasterKey(), coin: self)
+        self.masterPrivateKey = NRLPrivateKey(seed: seed, privkey: masterkey, coin: self)
         self.pathPrivateKey = try generateExternalPrivateKey(at: index)
         generateAddress()
     }
     
     func generateInternalKeyPair(at index: UInt32) throws {
-        self.masterPrivateKey = NRLPrivateKey(seed: self.seed, privkey: generateMasterKey(), coin: self)
+        guard let seed = self.seed else { return }
+        guard let masterkey = generateMasterKey() else { return }
+        
+        self.masterPrivateKey = NRLPrivateKey(seed: seed, privkey: masterkey, coin: self)
         self.pathPrivateKey = try generateInteranlPrivateKey(at: index)
         generateAddress()
     }
@@ -117,7 +133,7 @@ class NRLCoin {
     
     
     //override functions for own wallet and synchronizing as spv
-    func createOwnWallet(created: Date, fnew: Bool) {}
+    func createOwnWallet(created: Date, fnew: Bool)  -> Bool {return false}
     func createPeerGroup() {}
     func connectPeers() -> Bool {return false}
     func disConnectPeers() -> Bool {return false}
@@ -125,14 +141,16 @@ class NRLCoin {
     func stopSyncing() -> Bool {return false}
     func isConnected() -> Bool {return false}
     func isDownloading() -> Bool {return false}
-    func getWalletBalance(callback:@escaping (_ err: NRLWalletSDKError, _ value: String) -> ()) {}
+    func getWalletBalance(callback:@escaping (_ err: NRLWalletSDKError, _ value: Any) -> ()) {}
     func getAddressesOfWallet() -> NSArray? {return nil}
     func getPrivKeysOfWallet() -> NSArray? {return nil}
     func getPubKeysOfWallet() -> NSArray? {return nil}
-    func getReceiveAddress() -> String? {return ""}
+    func getReceiveAddress() -> String {return ""}
     func getAccountTransactions(offset: Int, count: Int, order: UInt, callback:@escaping (_ err: NRLWalletSDKError , _ tx: Any ) -> ()) {}
     //transaction
     func sendTransaction(to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {}
     func signTransaction(to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {}
+    func sendTransaction(to: String, value: Double, fee: Double, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {}
+    func signTransaction(to: String, value: Double, fee: Double, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {}
     func sendSignTransaction(tx: Any, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {}
 }

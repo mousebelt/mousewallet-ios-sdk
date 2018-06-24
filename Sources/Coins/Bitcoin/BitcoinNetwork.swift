@@ -41,7 +41,7 @@ public class BitcoinPeer {
         setNotifications()
     }
     
-    func getWalletBalance(callback:@escaping (_ err: NRLWalletSDKError, _ value: String) -> ()) {
+    func getWalletBalance(callback:@escaping (_ err: NRLWalletSDKError, _ value: Any) -> ()) {
         self.wallet?.recalculateSpendsAndBalance()
         let balance = String(format: "%.8f", Double((self.wallet?.balance())!) / 100000000)
         

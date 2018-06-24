@@ -13,37 +13,38 @@ import CryptoSwift
 public class NRLWallet {
     let coin: NRLCoin
     
-    public init(mnemonic: [String], seed: Data, network: NRLNetwork) {
+    public init(mnemonic: [String], passphrase: String, network: NRLNetwork) {
+
         switch network {
         case .main(.ethereum):
-            coin = NRLEthereum(mnemonic: mnemonic, seed: seed, fTest: false)
+            coin = NRLEthereum(mnemonic: mnemonic, passphrase: passphrase, fTest: false)
             break
         case .test(.ethereum):
-            coin = NRLEthereum(mnemonic: mnemonic, seed: seed, fTest: true)
+            coin = NRLEthereum(mnemonic: mnemonic, passphrase: passphrase, fTest: true)
             break
         case .main(.neo):
-            coin = NRLNeo(mnemonic: mnemonic, seed: seed, fTest: false)
+            coin = NRLNeo(mnemonic: mnemonic, passphrase: passphrase, fTest: false)
             break
         case .test(.neo):
-            coin = NRLNeo(mnemonic: mnemonic, seed: seed, fTest: true)
+            coin = NRLNeo(mnemonic: mnemonic, passphrase: passphrase, fTest: true)
             break
         case .main(.bitcoin):
-            coin = NRLBitcoin(mnemonic: mnemonic, seed: seed, fTest: false)
+            coin = NRLBitcoin(mnemonic: mnemonic, passphrase: passphrase, fTest: false)
             break
         case .test(.bitcoin):
-            coin = NRLBitcoin(mnemonic: mnemonic, seed: seed, fTest: true)
+            coin = NRLBitcoin(mnemonic: mnemonic, passphrase: passphrase, fTest: true)
             break
         case .main(.litecoin):
-            coin = NRLLitecoin(mnemonic: mnemonic, seed: seed, fTest: false)
+            coin = NRLLitecoin(mnemonic: mnemonic, passphrase: passphrase, fTest: false)
             break
         case .test(.litecoin):
-            coin = NRLLitecoin(mnemonic: mnemonic, seed: seed, fTest: true)
+            coin = NRLLitecoin(mnemonic: mnemonic, passphrase: passphrase, fTest: true)
             break
         case .main(.stellar):
-            coin = NRLStellar(mnemonic: mnemonic, seed: seed, fTest: false)
+            coin = NRLStellar(mnemonic: mnemonic, passphrase: passphrase, fTest: false)
             break
         case .test(.stellar):
-            coin = NRLStellar(mnemonic: mnemonic, seed: seed, fTest: true)
+            coin = NRLStellar(mnemonic: mnemonic, passphrase: passphrase, fTest: true)
             break
 //        default:
 //            coin = NRLEthereum(seed: seed, fTest: false)
@@ -67,7 +68,7 @@ public class NRLWallet {
         return self.coin.getPrivateKeyStr();
     }
     
-    public func getAddress() -> String {
+    public func getAddress() -> String? {
         return self.coin.getAddressStr();
     }
     
@@ -78,8 +79,8 @@ public class NRLWallet {
      *   fnew: flag if make wallet newly or use current saved wallet. If this is set to true, original wallet in store will be wiped.
      *
     */
-    public func createOwnWallet(created: Date, fnew: Bool) {
-        self.coin.createOwnWallet(created: created, fnew: fnew)
+    public func createOwnWallet(created: Date, fnew: Bool) -> Bool {
+        return self.coin.createOwnWallet(created: created, fnew: fnew)
     }
     
     public func createPeerGroup() {
@@ -110,7 +111,7 @@ public class NRLWallet {
         return self.coin.isDownloading()
     }
     
-    public func getWalletBalance(callback:@escaping (_ err: NRLWalletSDKError, _ value: String) -> ()) {
+    public func getWalletBalance(callback:@escaping (_ err: NRLWalletSDKError, _ value: Any) -> ()) {
         return self.coin.getWalletBalance(callback: callback)
     }
     
@@ -126,7 +127,7 @@ public class NRLWallet {
         return self.coin.getPubKeysOfWallet()
     }
     
-    public func getReceiveAddress() -> String? {
+    public func getReceiveAddress() -> String {
         return self.coin.getReceiveAddress()
     }
     
@@ -143,6 +144,13 @@ public class NRLWallet {
     }
     public func sendSignTransaction(tx: WSSignedTransaction, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
         return self.coin.sendSignTransaction(tx: tx, callback: callback)
+    }
+    
+    public func sendTransaction(to: String, value: Double, fee: Double, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
+        self.coin.sendTransaction(to: to, value: value, fee: fee, callback: callback)
+    }
+    public func signTransaction(to: String, value: Double, fee: Double, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
+        self.coin.signTransaction(to: to, value: value, fee: fee, callback: callback)
     }
 
 }

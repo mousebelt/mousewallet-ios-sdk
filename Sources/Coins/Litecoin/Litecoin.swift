@@ -23,7 +23,7 @@ class NRLLitecoin : NRLCoin{
     private var didInitWallet = false
     private let pin = "1234"
     
-    init(mnemonic: [String], seed: Data, fTest: Bool) {
+    init(mnemonic: [String], passphrase: String, fTest: Bool) {
         self.isTest = fTest;
         var network: NRLNetwork = .main(.litecoin)
         if (fTest) {
@@ -33,7 +33,7 @@ class NRLLitecoin : NRLCoin{
         let cointype = network.coinType
         
         super.init(mnemonic: mnemonic,
-                   seed: seed,
+                   passphrase: passphrase,
                    network: network,
                    coinType: cointype,
                    seedKey: "Bitcoin seed",
@@ -145,7 +145,7 @@ class NRLLitecoin : NRLCoin{
     }
     
     //override functions for own wallet and synchronizing as spv
-    override func createOwnWallet(created: Date, fnew: Bool) {
+    override func createOwnWallet(created: Date, fnew: Bool) -> Bool {
         self.walletManager = try? WalletManager(dbPath: nil)
         let _ = self.walletManager?.wallet //attempt to initialize wallet
         
@@ -154,12 +154,12 @@ class NRLLitecoin : NRLCoin{
                 DDLogDebug("createOwnWallet: already created")
                 if (!(self.walletManager?.forceSetPin(newPin: self.pin))!) {
                     DDLogDebug("Failed to forceSetPin")
-                    return
+                    return false
                 }
 
                 if (!self.removeWallet(pin: self.pin)) {
                     DDLogDebug("Failed to remove original wallet")
-                    return
+                    return false
                 }
             }
         }
@@ -167,7 +167,7 @@ class NRLLitecoin : NRLCoin{
         if (self.walletManager?.noWallet)! {
             guard self.walletManager?.setSeedPhrase(getPhrase()) != nil else {
                 DDLogDebug("Failed to Publick key generation")
-                return
+                return false
             }
             
             DDLogDebug("Wallet created : \(Date())")
@@ -181,6 +181,7 @@ class NRLLitecoin : NRLCoin{
                 self.didInitWalletManager()
             }
         }
+        return true
     }
     
     override func createPeerGroup() {
@@ -230,8 +231,8 @@ class NRLLitecoin : NRLCoin{
         return false
     }
     
-    override func getWalletBalance(callback:@escaping (_ err: NRLWalletSDKError, _ value: String) -> ()) {
-        callback(NRLWalletSDKError.nrlSuccess, String(describing: self.walletManager?.wallet?.balance))
+    override func getWalletBalance(callback:@escaping (_ err: NRLWalletSDKError, _ value: Any) -> ()) {
+        callback(NRLWalletSDKError.nrlSuccess, self.walletManager?.wallet?.balance)
     }
     
     override func getAddressesOfWallet() -> NSArray {

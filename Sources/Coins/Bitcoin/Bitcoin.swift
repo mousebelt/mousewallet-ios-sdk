@@ -12,7 +12,7 @@ class NRLBitcoin : NRLCoin{
     let isTest: Bool;
     var btcpeer: BitcoinPeer?
     
-    init(mnemonic: [String], seed: Data, fTest: Bool) {
+    init(mnemonic: [String], passphrase: String, fTest: Bool) {
         self.isTest = fTest;
 
         var network: NRLNetwork = .main(.bitcoin)
@@ -22,7 +22,7 @@ class NRLBitcoin : NRLCoin{
         let cointype = network.coinType
         
         super.init(mnemonic: mnemonic,
-                   seed: seed,
+                   passphrase: passphrase,
                    network: network,
                    coinType: cointype,
                    seedKey: "Bitcoin seed",
@@ -89,8 +89,13 @@ class NRLBitcoin : NRLCoin{
     }
     
     //override functions for own wallet and synchronizing as spv
-    override func createOwnWallet(created: Date, fnew: Bool) {
-        self.btcpeer?.createWallet(seedData: self.seed, created: created, fnew: fnew)
+    override func createOwnWallet(created: Date, fnew: Bool) -> Bool {
+        guard let seed = self.seed else {
+            DDLogDebug("createOwnWallet failed: no seed");
+            return false;
+        }
+        self.btcpeer?.createWallet(seedData: seed, created: created, fnew: fnew)
+        return true
     }
 
     override func createPeerGroup() {
@@ -121,7 +126,7 @@ class NRLBitcoin : NRLCoin{
         return self.btcpeer!.isDownloading()
     }
     
-    override func getWalletBalance(callback:@escaping (_ err: NRLWalletSDKError, _ value: String) -> ()) {
+    override func getWalletBalance(callback:@escaping (_ err: NRLWalletSDKError, _ value: Any) -> ()) {
         return self.btcpeer!.getWalletBalance(callback: callback)
     }
     
