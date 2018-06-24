@@ -136,29 +136,6 @@ class ViewController: UIViewController {
         print("\n------------------------- Bitcoin ----------------------------\n")
         // Bitcoin : 0
         
-        /* test
-         menmonic= "click offer off current alien soon foster wide senior student mystery agree target grace whale puppy slim join wet plug love trophy federal destroy"
-         
-         address:
-         myqAKSukSdtUH4YUregNvfjEWJMk3jTEUj,
-         mjnt7mvGW3mZNd6Ao1SamDDezcWrpT8n8r,
-         mvb4PXxf77LvtF9ooy1N77tzZSD5bqfFWT,
-         n42oeaDttQTJXxVo6wcHFr8AXNe4kifEAm,
-         mo89Y9csq3Yy96Vkp8XoZqnKUSFKjedhB7,
-         mpaQosi6hUaSPyv4Q5TmHm1BpAQJMWo8Nn,
-         mn1qQyyUMAQTK4Qjebof7gSXks7pUFDibq,
-         privkeys:
-         cS2zeeAtj51W3Pre6bSa8pjcr4nDmFSWQa8ynGzDEbt9xu7w3kBd,
-         cPwaYXfxwP7UpEMAczgcub6V5ugK3EVspzmFKuUrQAnqbRD8hzND,
-         cUFKu2NJnQxAGEbZwJjsHSzuN1ei2KM4EywtNNg86V9JUVRPfRLq,
-         cPTzK5xGh2b6WmbsC2RV4V4G7sGWNtfewv2JcDofysauQrnPMsUK,
-         cQErDBqZqbiXqoiTRVHJTkgbX42qqFJmSpoByLLbCRy6xeaFmKEt,
-         cRw3wwp8sJiiDbvSbSYKYZ7Zzz7mG5ZayC5aF2oCPTTZCw99KFtU,
-         cQHC62RtXrnidk55i19rpWBJGKMXHVG3wWnahxoPMRzVcFtN5aRb,
- 
-        
-        let seed = Data(fromHexEncodedString: "47d8d8898556e5c4fcf042b249ef92160e667046d7ff487392a9e6ca9e1d912b11a7b134baf7a8893c92d1a40731b08d1ef24789128d07101df740ad1ba4a12c")!
-        */
         guard let mnemonic = self.mnemonic else {
             print("Error: no mnemonic")
             return
@@ -289,7 +266,7 @@ class ViewController: UIViewController {
             return
         }
         
-        wallet.createOwnWallet(created: Date(), fnew: true)
+        _ = wallet.createOwnWallet(created: Date(), fnew: true)
     }
     
     func setNeoWallet() {
@@ -321,9 +298,6 @@ class ViewController: UIViewController {
     func setLitecoinWallet() {
         print("\n------------------------- Litecoin ----------------------------\n")
         // Litecoin : 2
-        //for test
-//        self.mnemonic = ["vivid", "gesture", "series", "lady", "owner", "amused", "sock", "grunt", "hotel", "olive", "carpet", "visual"]
-        self.mnemonic = ["nasty", "believe", "cinnamon", "crouch", "snap", "shuffle", "spice", "bleak", "ridge", "planet", "identify", "trumpet"]
 
         guard let mnemonic = self.mnemonic else {
             print("Error: no mnemonic")
@@ -336,16 +310,6 @@ class ViewController: UIViewController {
             print("setLitecoinWallet Error: cannot init wallet!")
             return
         }
-        
-//        coinWallet?.generateExternalKeyPair(at: 0)
-//
-//        let privateKey = coinWallet?.getWIF()
-//        let publicKey = coinWallet?.getPublicKey()
-//        let address = coinWallet?.getAddress()
-//
-//        print("\nLitecoinWallet private key = \(String(describing: privateKey))")
-//        print("LitecoinWallet public key = \(String(describing: publicKey))")
-//        print("LitecoinWallet address = \(String(describing: address))")
         
         //notification handlers from spv node events
         NotificationCenter.default.addObserver(self, selector: #selector(On_LTC_WalletDidUpdateBalance(notification:)), name: NSNotification.Name.LTC_WalletDidUpdateBalance, object: nil)
