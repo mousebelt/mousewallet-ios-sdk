@@ -109,8 +109,12 @@ class NRLEthereum : NRLCoin{
         return result
     }
     override func getPubKeysOfWallet() -> NSArray? {return nil}
-    override func getReceiveAddress() -> String? {
-        return self.privKey?.address.hex(eip55: false)
+    override func getReceiveAddress() -> String {
+        guard let key = self.privKey else {
+            return ""
+        }
+        
+        return key.address.hex(eip55: false)
     }
     override func getAccountTransactions(offset: Int, count: Int, order: UInt, callback:@escaping (_ err: NRLWalletSDKError , _ tx: Any ) -> ()) {
         let address = self.privKey!.address.hex(eip55: false)

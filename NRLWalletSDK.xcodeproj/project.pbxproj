@@ -501,7 +501,6 @@
 		637CE9F420D214170076DD74 /* TradesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE9D320D214170076DD74 /* TradesService.swift */; };
 		637CE9F520D214170076DD74 /* TransactionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CE9D420D214170076DD74 /* TransactionsService.swift */; };
 		637CEA0420D214E90076DD74 /* Data+Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CEA0320D214E90076DD74 /* Data+Hash.swift */; };
-		637CEA1420D2CB4F0076DD74 /* StellarAccountCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CEA1320D2CB4F0076DD74 /* StellarAccountCreator.swift */; };
 		637CEA1E20D2D3740076DD74 /* Ed25519Derivation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CEA1720D2D3250076DD74 /* Ed25519Derivation.swift */; };
 		637CEA1F20D2D3740076DD74 /* Ed25519Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CEA1920D2D3260076DD74 /* Ed25519Error.swift */; };
 		637CEA2020D2D3740076DD74 /* StellarPrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637CEA1620D2D3250076DD74 /* StellarPrivateKey.swift */; };
@@ -1231,7 +1230,6 @@
 		637CE9D320D214170076DD74 /* TradesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TradesService.swift; sourceTree = "<group>"; };
 		637CE9D420D214170076DD74 /* TransactionsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsService.swift; sourceTree = "<group>"; };
 		637CEA0320D214E90076DD74 /* Data+Hash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Hash.swift"; sourceTree = "<group>"; };
-		637CEA1320D2CB4F0076DD74 /* StellarAccountCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StellarAccountCreator.swift; sourceTree = "<group>"; };
 		637CEA1620D2D3250076DD74 /* StellarPrivateKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StellarPrivateKey.swift; sourceTree = "<group>"; };
 		637CEA1720D2D3250076DD74 /* Ed25519Derivation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ed25519Derivation.swift; sourceTree = "<group>"; };
 		637CEA1820D2D3250076DD74 /* StellarWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StellarWallet.swift; sourceTree = "<group>"; };
@@ -1632,7 +1630,6 @@
 			isa = PBXGroup;
 			children = (
 				6327C13D20B815D100CB2017 /* Stellar.swift */,
-				637CEA1320D2CB4F0076DD74 /* StellarAccountCreator.swift */,
 				637CEA2620D38A460076DD74 /* StellarAccountNetwork.swift */,
 				637CEA2A20D3C6180076DD74 /* StellarTransactionNetwork.swift */,
 			);
@@ -3253,7 +3250,6 @@
 				637CE81520D20EA70076DD74 /* SetOptionsOperation.swift in Sources */,
 				637CE96A20D211F50076DD74 /* AssetXDR.swift in Sources */,
 				637CE94F20D211F50076DD74 /* AccountCreatedOperationResponse.swift in Sources */,
-				637CEA1420D2CB4F0076DD74 /* StellarAccountCreator.swift in Sources */,
 				637CE93820D211F50076DD74 /* ForbiddenErrorResponse.swift in Sources */,
 				637CE98720D211F50076DD74 /* OperationResultXDR.swift in Sources */,
 				6377F8BB20BE0E1700F668E3 /* WSSeed.m in Sources */,

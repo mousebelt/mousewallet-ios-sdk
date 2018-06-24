@@ -61,8 +61,8 @@ class NRLCoin {
         return self.pathPrivateKey!.nrlPublicKey().raw;
     }
 
-    func getAddressStr() -> String {
-        return self.address!;
+    func getAddressStr() -> String? {
+        return self.address;
     }
 
     func getPrivateKeyStr() -> String {
@@ -145,10 +145,12 @@ class NRLCoin {
     func getAddressesOfWallet() -> NSArray? {return nil}
     func getPrivKeysOfWallet() -> NSArray? {return nil}
     func getPubKeysOfWallet() -> NSArray? {return nil}
-    func getReceiveAddress() -> String? {return ""}
+    func getReceiveAddress() -> String {return ""}
     func getAccountTransactions(offset: Int, count: Int, order: UInt, callback:@escaping (_ err: NRLWalletSDKError , _ tx: Any ) -> ()) {}
     //transaction
     func sendTransaction(to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {}
     func signTransaction(to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {}
+    func sendTransaction(to: String, value: Double, fee: Double, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {}
+    func signTransaction(to: String, value: Double, fee: Double, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {}
     func sendSignTransaction(tx: Any, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {}
 }

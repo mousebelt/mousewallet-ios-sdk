@@ -44,12 +44,20 @@ public enum NRLWalletSDKError: Error {
         case transactionFailed(Error)
         case signFailed(Error)
     }
+    
+    public enum AccountError: Error {
+        case keyError
+        case addressError
+        case seqnumError
+    }
+    
     case nrlSuccess
     case requestError(RequestError)
     case responseError(ResponseError)
     case cryptoError(CryptoError)
     case syncError(SyncError)
     case transactionError(TransactionError)
+    case accountError(AccountError)
     case malformedData
 }
 

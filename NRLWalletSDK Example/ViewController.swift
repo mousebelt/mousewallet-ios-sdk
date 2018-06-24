@@ -407,7 +407,8 @@ class ViewController: UIViewController {
     func setStellarWallet() {
         print("\n------------------------- Stellar ----------------------------\n")
         // Stellar : 148
-                
+        
+        self.mnemonic = ["casino", "roast", "sign", "inflict", "blouse", "clown", "office", "fame", "slot", "reward", "traffic", "penalty"]
         guard let mnemonic = self.mnemonic else {
             print("Error: no mnemonic")
             return

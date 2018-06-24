@@ -75,7 +75,7 @@ class NRLNeo : NRLCoin{
     override func getAddressesOfWallet() -> NSArray? {return nil}
     override func getPrivKeysOfWallet() -> NSArray? {return nil}
     override func getPubKeysOfWallet() -> NSArray? {return nil}
-    override func getReceiveAddress() -> String? {return ""}
+    override func getReceiveAddress() -> String {return ""}
     override func getAccountTransactions(offset: Int, count: Int, order: UInt, callback:@escaping (_ err: NRLWalletSDKError , _ tx: Any ) -> ()) {}
     //transaction
     override func sendTransaction(to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {}

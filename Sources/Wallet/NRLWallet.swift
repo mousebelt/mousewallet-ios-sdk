@@ -68,7 +68,7 @@ public class NRLWallet {
         return self.coin.getPrivateKeyStr();
     }
     
-    public func getAddress() -> String {
+    public func getAddress() -> String? {
         return self.coin.getAddressStr();
     }
     
@@ -127,7 +127,7 @@ public class NRLWallet {
         return self.coin.getPubKeysOfWallet()
     }
     
-    public func getReceiveAddress() -> String? {
+    public func getReceiveAddress() -> String {
         return self.coin.getReceiveAddress()
     }
     
@@ -144,6 +144,13 @@ public class NRLWallet {
     }
     public func sendSignTransaction(tx: WSSignedTransaction, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
         return self.coin.sendSignTransaction(tx: tx, callback: callback)
+    }
+    
+    public func sendTransaction(to: String, value: Double, fee: Double, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
+        self.coin.sendTransaction(to: to, value: value, fee: fee, callback: callback)
+    }
+    public func signTransaction(to: String, value: Double, fee: Double, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
+        self.coin.signTransaction(to: to, value: value, fee: fee, callback: callback)
     }
 
 }
