@@ -65,8 +65,8 @@ class NRLCoin {
         return self.address;
     }
 
-    func getPrivateKeyStr() -> String {
-        return self.wif!;
+    func getPrivateKeyStr() -> String? {
+        return self.wif;
     }
     
     func getSeedKey() -> Data {
@@ -85,7 +85,6 @@ class NRLCoin {
         
         self.masterPrivateKey = NRLPrivateKey(seed: seed, privkey: masterkey, coin: self)
         self.pathPrivateKey = try generateExternalPrivateKey(at: index)
-        generateAddress()
     }
     
     func generateInternalKeyPair(at index: UInt32) throws {
@@ -94,7 +93,6 @@ class NRLCoin {
         
         self.masterPrivateKey = NRLPrivateKey(seed: seed, privkey: masterkey, coin: self)
         self.pathPrivateKey = try generateInteranlPrivateKey(at: index)
-        generateAddress()
     }
 
     // MARK: - Private Methods
@@ -150,7 +148,9 @@ class NRLCoin {
     //transaction
     func sendTransaction(to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {}
     func signTransaction(to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {}
+    func sendTransaction(asset: AssetId, to: String, value: Double, fee: Double, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {}
     func sendTransaction(to: String, value: Double, fee: Double, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {}
     func signTransaction(to: String, value: Double, fee: Double, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {}
+    func signTransaction(asset: AssetId, to: String, value: Double, fee: Double, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {}
     func sendSignTransaction(tx: Any, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {}
 }

@@ -86,9 +86,9 @@ class NRLStellar : NRLCoin{
             .derived_Ed25519(at: index)
     }
     
-    override func getPublicKey() -> Data {
-        return self.pubkeyData!
-    }
+//    override func getPublicKey() -> Data {
+//        return self.pubkeyData!
+//    }
     
     override func createOwnWallet(created: Date, fnew: Bool) -> Bool {
         if (fnew) {

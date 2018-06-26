@@ -81,6 +81,9 @@
 		63695DF520D95A6B0088C83E /* OpCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63695DF220D95A6A0088C83E /* OpCodes.swift */; };
 		63695DF620D95A6B0088C83E /* ScriptBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63695DF320D95A6A0088C83E /* ScriptBuilder.swift */; };
 		63695DF820D95AF20088C83E /* ContractResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63695DF720D95AF20088C83E /* ContractResult.swift */; };
+		63695DFA20E06F400088C83E /* NeoConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63695DF920E06F400088C83E /* NeoConfig.swift */; };
+		63695DFC20E076190088C83E /* NeoAccountNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63695DFB20E076190088C83E /* NeoAccountNetwork.swift */; };
+		63695DFE20E154570088C83E /* NeoTransactionNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63695DFD20E154570088C83E /* NeoTransactionNetwork.swift */; };
 		6377EF2E20BC6DA900F668E3 /* BitcoinNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6377EF2D20BC6DA900F668E3 /* BitcoinNetwork.swift */; };
 		6377F21120BD9DD100F668E3 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6377F20F20BD9DD100F668E3 /* libssl.a */; };
 		6377F21220BD9DD100F668E3 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6377F21020BD9DD100F668E3 /* libcrypto.a */; };
@@ -810,6 +813,9 @@
 		63695DF220D95A6A0088C83E /* OpCodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpCodes.swift; sourceTree = "<group>"; };
 		63695DF320D95A6A0088C83E /* ScriptBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptBuilder.swift; sourceTree = "<group>"; };
 		63695DF720D95AF20088C83E /* ContractResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContractResult.swift; sourceTree = "<group>"; };
+		63695DF920E06F400088C83E /* NeoConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoConfig.swift; sourceTree = "<group>"; };
+		63695DFB20E076190088C83E /* NeoAccountNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoAccountNetwork.swift; sourceTree = "<group>"; };
+		63695DFD20E154570088C83E /* NeoTransactionNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoTransactionNetwork.swift; sourceTree = "<group>"; };
 		6377EF2D20BC6DA900F668E3 /* BitcoinNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinNetwork.swift; sourceTree = "<group>"; };
 		6377F20F20BD9DD100F668E3 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "Libraries/OpenSSL-Universal/lib-ios/libssl.a"; sourceTree = "<group>"; };
 		6377F21020BD9DD100F668E3 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "Libraries/OpenSSL-Universal/lib-ios/libcrypto.a"; sourceTree = "<group>"; };
@@ -1703,6 +1709,8 @@
 				63304D6620AD4D77006D444B /* Neo.swift */,
 				637CEA2C20D84B8A0076DD74 /* NeoAccount.swift */,
 				637CEA3B20D8F44D0076DD74 /* AssetIdConstants.swift */,
+				63695DFB20E076190088C83E /* NeoAccountNetwork.swift */,
+				63695DFD20E154570088C83E /* NeoTransactionNetwork.swift */,
 			);
 			path = Neo;
 			sourceTree = "<group>";
@@ -2731,6 +2739,7 @@
 				63F4FE4F20C9C0DE00215698 /* CoinNetwork.swift */,
 				63F4FE3920C8849000215698 /* EthereumConfig.swift */,
 				637CEA2820D3BB210076DD74 /* StellarConfig.swift */,
+				63695DF920E06F400088C83E /* NeoConfig.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -3388,6 +3397,7 @@
 				6327C1AB20B86C7A00CB2017 /* HDCrypto.swift in Sources */,
 				637CE94720D211F50076DD74 /* OfferLinksResponse.swift in Sources */,
 				637CE93520D211F50076DD74 /* BadRequestErrorResponse.swift in Sources */,
+				63695DFE20E154570088C83E /* NeoTransactionNetwork.swift in Sources */,
 				637CE81720D20EA70076DD74 /* TimeBounds.swift in Sources */,
 				6377F8E420BE0E1700F668E3 /* WSTransactionOutputEntity.m in Sources */,
 				6377F91C20BE0E1700F668E3 /* WSMessageHeaders.m in Sources */,
@@ -3429,6 +3439,7 @@
 				6377F95A20BE0E1700F668E3 /* WSWebTickerBlockchain.m in Sources */,
 				63F66C4520B4B722007DF79D /* EIP55.swift in Sources */,
 				63F66C7020B4C502007DF79D /* JSONRPCError.swift in Sources */,
+				63695DFC20E076190088C83E /* NeoAccountNetwork.swift in Sources */,
 				63D49B4420CE25D30047840F /* UserDefaults+Additions.swift in Sources */,
 				637CEA2920D3BB210076DD74 /* StellarConfig.swift in Sources */,
 				63F66C7420B4C502007DF79D /* JSONBodySerialization.swift in Sources */,
@@ -3446,6 +3457,7 @@
 				637CE92C20D211F50076DD74 /* SignerRemovedEffectResponse.swift in Sources */,
 				6377F8FC20BE0E1700F668E3 /* WSParametersFactory.m in Sources */,
 				637CE97420D211F50076DD74 /* InflationResultXDR.swift in Sources */,
+				63695DFA20E06F400088C83E /* NeoConfig.swift in Sources */,
 				6377F8A120BE0E1700F668E3 /* WSBuffer.m in Sources */,
 				6327C1BF20B86D7D00CB2017 /* Data+CRC.swift in Sources */,
 				637CEA2720D38A460076DD74 /* StellarAccountNetwork.swift in Sources */,

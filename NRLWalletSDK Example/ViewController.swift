@@ -146,18 +146,6 @@ class ViewController: UIViewController {
             print("Error: cannot init wallet!")
             return
         }
-        
-        /*  not use key generation module, instead of it, use bitcoin spv
-            bitcoinWallet.generateExternalKeyPair(at: 0)
-         
-            let privateKey = bitcoinWallet.getWIF()
-            let publicKey = bitcoinWallet.getPublicKey()
-            let address = bitcoinWallet.getAddress()
-
-            print("\nBitcoinWallet private key = \(privateKey)")
-            print("BitcoinWallet public key = \(publicKey)")
-            print("BitcoinWallet address = \(address)")
-        */
 
         //notification handlers from spv node events
         NotificationCenter.default.addObserver(self, selector: #selector(WalletDidUpdateBalance(notification:)), name: NSNotification.Name.WSWalletDidUpdateBalance, object: nil)
@@ -272,6 +260,8 @@ class ViewController: UIViewController {
     func setNeoWallet() {
         print("\n------------------------- NEO ----------------------------\n")
         // NEO : 888
+        
+        self.mnemonic = ["menu", "year", "tool", "traffic", "civil", "tool", "lesson", "merit", "limb", "first", "sound", "gasp"]
 
         guard let mnemonic = self.mnemonic else {
             print("Error: no mnemonic")
@@ -283,16 +273,24 @@ class ViewController: UIViewController {
             print("setNeoWallet Error: cannot init wallet!")
             return
         }
-        
-        wallet.generateExternalKeyPair(at: 0)
-        
-        let privateKey = wallet.getWIF()
-        let publicKey = wallet.getPublicKey()
-        let address = wallet.getAddress()
-        
-        print("\nNeo private key = \(String(describing: privateKey))")
-        print("Neo public key = \(String(describing: publicKey))")
-        print("Neo address = \(String(describing: address))")
+
+        if (wallet.createOwnWallet(created: Date(), fnew: true)) {
+            wallet.getWalletBalance() { (err, balance) -> () in
+                switch (err) {
+                case NRLWalletSDKError.nrlSuccess:
+                    print("balanceobj: \(String(describing: balance))")
+                    let balanceobj = balance as! NeoGetBalanceResponse
+                    
+                    let value1 = balanceobj.balance![0].value;
+                    print("balance: \(String(describing: value1))")
+                    self.lbBalance.text = String(describing: balanceobj)
+                default:
+                    self.lbBalance.text = "Failed: \(err)"
+                }
+                
+            }
+        }
+            
     }
     
     func setLitecoinWallet() {
@@ -398,7 +396,8 @@ class ViewController: UIViewController {
 //        setBitcoinWallet()
 //        setEthereumWallet()
 //        setLitecoinWallet()
-        setStellarWallet()
+//        setStellarWallet()
+        setNeoWallet()
         
 
     }

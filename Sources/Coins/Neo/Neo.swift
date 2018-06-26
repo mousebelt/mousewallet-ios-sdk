@@ -8,6 +8,9 @@
 
 import Foundation
 import Neoutils
+import Alamofire
+import ObjectMapper
+import PromiseKit
 
 class NRLNeo : NRLCoin{
     var account: NeoAccount?
@@ -45,12 +48,27 @@ class NRLNeo : NRLCoin{
     }
     
     override func createOwnWallet(created: Date, fnew: Bool) -> Bool {
-        guard let privkey = self.pathPrivateKey else {
-            DDLogDebug("createOwnWallet error: no pathPrivateKey")
+        do {
+            try generateExternalKeyPair(at: 0)
+            
+            guard let privkey = self.pathPrivateKey else {
+                DDLogDebug("createOwnWallet error: no pathPrivateKey")
+                return false
+            }
+            self.account = NeoAccount(privateKey: privkey.raw.toHexString())
+            guard let neoAccount = self.account else {
+                DDLogDebug("Failed to create account")
+                return false
+            }
+            
+            DDLogDebug("wif: \(neoAccount.privateKeyString)")
+            DDLogDebug("pubkeuy: \(neoAccount.publicKeyString)")
+            DDLogDebug("address: \(neoAccount.address)")
+             return true
+        } catch {
+            DDLogDebug(error as! String)
             return false
         }
-        self.account = NeoAccount(privateKey: privkey.raw.toHexString())
-        return true
     }
     
     override func getWalletBalance(callback:@escaping (_ err: NRLWalletSDKError, _ value: Any) -> ()) {
@@ -63,6 +81,7 @@ class NRLNeo : NRLCoin{
         neoAccount.getBalance() { (asset, error) in
             if (error == nil) {
                 DDLogDebug("getWalletBalance: \(String(describing: asset))")
+                
                 callback(NRLWalletSDKError.nrlSuccess, asset!)
             }
             else {
@@ -72,14 +91,71 @@ class NRLNeo : NRLCoin{
         }
     }
     
-    override func getAddressesOfWallet() -> NSArray? {return nil}
-    override func getPrivKeysOfWallet() -> NSArray? {return nil}
-    override func getPubKeysOfWallet() -> NSArray? {return nil}
-    override func getReceiveAddress() -> String {return ""}
-    override func getAccountTransactions(offset: Int, count: Int, order: UInt, callback:@escaping (_ err: NRLWalletSDKError , _ tx: Any ) -> ()) {}
+    override func getAddressesOfWallet() -> NSArray? {
+        guard let neoAccount = self.account else {
+            DDLogDebug("no account")
+            return nil
+        }
+        
+        return NSArray(array: [neoAccount.address])
+    }
+    override func getPrivKeysOfWallet() -> NSArray? {
+        guard let neoAccount = self.account else {
+            DDLogDebug("no account")
+            return nil
+        }
+        
+        return NSArray(array: [neoAccount.privateKeyString])
+    }
+    override func getPubKeysOfWallet() -> NSArray? {
+        guard let neoAccount = self.account else {
+            DDLogDebug("no account")
+            return nil
+        }
+        
+        return NSArray(array: [neoAccount.publicKeyString])
+    }
+    override func getReceiveAddress() -> String {
+        guard let neoAccount = self.account else {
+            DDLogDebug("no account")
+            return ""
+        }
+        
+        return neoAccount.address
+    }
+    
+    override func getAccountTransactions(offset: Int, count: Int, order: UInt, callback:@escaping (_ err: NRLWalletSDKError , _ tx: Any ) -> ()) {
+        guard let neoAccount = self.account else {
+            DDLogDebug("Failed to create account")
+            callback(NRLWalletSDKError.transactionError(.transactionFailed("no account" as! Error)), 0)
+            return
+        }
+        
+//        let address = neoAccount.address
+        let address = "Ae2d6qj91YL3LVUMkza7WQsaTYjzjHm4z1"
+        let url = "\(urlNeoServer)/api/v1/address/txs/\(address)"
+        
+        firstly {
+            sendRequest(responseObject:VCoinResponse.self, url: url, parameters: ["offset": offset, "count": count, "order": order])
+            }.done { res in
+                DDLogDebug("Transactions: \(String(describing: res.data))")
+                let resObj = Mapper<NeoTransactionsMap>().map(JSONObject: res.data)
+                
+                callback(NRLWalletSDKError.nrlSuccess, resObj as Any)
+            }.catch { error in
+                callback((error as? NRLWalletSDKError)!, 0)
+        }
+    }
     //transaction
-    override func sendTransaction(to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {}
-    override func signTransaction(to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {}
+    
+    override func sendTransaction(asset: AssetId, to: String, value: Double, fee: Double, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
+        self.account?.sendAssetTransaction(asset: asset, amount: value, toAddress: to) { (Bool, Error) in
+            
+        }
+    }
+    override func signTransaction(asset: AssetId, to: String, value: Double, fee: Double, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
+        
+    }
     override func sendSignTransaction(tx: Any, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {}
 }
 
