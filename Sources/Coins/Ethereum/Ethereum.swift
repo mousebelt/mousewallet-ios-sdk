@@ -47,10 +47,14 @@ class NRLEthereum : NRLCoin{
         return Crypto.hashSHA3_256(publicKey.dropFirst()).suffix(20)
     }
     
-    override func generateAddress() {
-        let publicKey = Crypto.generatePublicKey(data: (self.pathPrivateKey?.raw)!, compressed: false)
-        self.address = Address(data: addressDataFromPublicKey(publicKey: publicKey)).string
-        self.wif = self.pathPrivateKey?.raw.toHexString()
+//    override func generateAddress() {
+//        let publicKey = Crypto.generatePublicKey(data: (self.pathPrivateKey?.raw)!, compressed: false)
+//        self.address = Address(data: addressDataFromPublicKey(publicKey: publicKey)).string
+//        self.wif = self.pathPrivateKey?.raw.toHexString()
+//    }
+    
+    override func getPrivateKeyStr() -> String? {
+        return self.pathPrivateKey?.raw.toHexString()
     }
     
     override func createOwnWallet(created: Date, fnew: Bool)  -> Bool {
@@ -59,7 +63,7 @@ class NRLEthereum : NRLCoin{
         
             let privateKey = getPrivateKeyStr()
             
-            self.privKey = try? EthereumPrivateKey(hexPrivateKey: privateKey)
+            self.privKey = try? EthereumPrivateKey(hexPrivateKey: privateKey!)
         
             DDLogDebug("\nEthereum private key = \(String(describing: privateKey))")
             DDLogDebug("Ethereum address1 = \(String(describing: self.privKey?.address.hex(eip55: true)))")

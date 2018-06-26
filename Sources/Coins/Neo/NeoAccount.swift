@@ -8,6 +8,9 @@
 
 import Foundation
 import Neoutils
+import Alamofire
+import ObjectMapper
+import PromiseKit
 
 public class NeoAccount {
     //allow this to override the entire client not only the network
@@ -91,7 +94,8 @@ public class NeoAccount {
         return NeoutilsDecrypt(key, text)
     }
     
-    func getBalance(completion: @escaping(NeoAssets?, Error?) -> Void) {
+    func getBalance(completion: @escaping(Any?, Error?) -> Void) {
+// original sdk code
 //        neoClient.getAssets(for: self.address, params: []) { result in
 //            switch result {
 //            case .failure(let error):
@@ -100,6 +104,20 @@ public class NeoAccount {
 //                completion(assets, nil)
 //            }
 //        }
+        
+        let address = self.address
+        let url = "\(urlNeoServer)/api/v1/balance/\(address)"
+        
+        firstly {
+            sendRequest(responseObject:VCoinResponse.self, url: url)
+            }.done { res in
+                DDLogDebug("balance: \(String(describing: res.data))")
+                let resObj = Mapper<NeoGetBalanceResponse>().map(JSONObject: res.data)
+                
+                completion(resObj, nil)
+            }.catch { error in
+                completion(nil, (error as? NRLWalletSDKError)!)
+        }
     }
     
     /*
@@ -166,6 +184,7 @@ public class NeoAccount {
             index = index + 1
             count = count + 1
         }
+        
         var inputData = [UInt8]()
         inputData.append(count)
         for x in 0..<neededForTransaction.count {
