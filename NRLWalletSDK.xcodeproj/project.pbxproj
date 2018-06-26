@@ -81,9 +81,12 @@
 		63695DF520D95A6B0088C83E /* OpCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63695DF220D95A6A0088C83E /* OpCodes.swift */; };
 		63695DF620D95A6B0088C83E /* ScriptBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63695DF320D95A6A0088C83E /* ScriptBuilder.swift */; };
 		63695DF820D95AF20088C83E /* ContractResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63695DF720D95AF20088C83E /* ContractResult.swift */; };
+<<<<<<< HEAD
 		63695DFA20E06F400088C83E /* NeoConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63695DF920E06F400088C83E /* NeoConfig.swift */; };
 		63695DFC20E076190088C83E /* NeoAccountNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63695DFB20E076190088C83E /* NeoAccountNetwork.swift */; };
 		63695DFE20E154570088C83E /* NeoTransactionNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63695DFD20E154570088C83E /* NeoTransactionNetwork.swift */; };
+=======
+>>>>>>> aae5465e19a3172bbd09070e713158c16d6b4c9d
 		6377EF2E20BC6DA900F668E3 /* BitcoinNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6377EF2D20BC6DA900F668E3 /* BitcoinNetwork.swift */; };
 		6377F21120BD9DD100F668E3 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6377F20F20BD9DD100F668E3 /* libssl.a */; };
 		6377F21220BD9DD100F668E3 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6377F21020BD9DD100F668E3 /* libcrypto.a */; };
@@ -813,9 +816,12 @@
 		63695DF220D95A6A0088C83E /* OpCodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpCodes.swift; sourceTree = "<group>"; };
 		63695DF320D95A6A0088C83E /* ScriptBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptBuilder.swift; sourceTree = "<group>"; };
 		63695DF720D95AF20088C83E /* ContractResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContractResult.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		63695DF920E06F400088C83E /* NeoConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoConfig.swift; sourceTree = "<group>"; };
 		63695DFB20E076190088C83E /* NeoAccountNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoAccountNetwork.swift; sourceTree = "<group>"; };
 		63695DFD20E154570088C83E /* NeoTransactionNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoTransactionNetwork.swift; sourceTree = "<group>"; };
+=======
+>>>>>>> aae5465e19a3172bbd09070e713158c16d6b4c9d
 		6377EF2D20BC6DA900F668E3 /* BitcoinNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinNetwork.swift; sourceTree = "<group>"; };
 		6377F20F20BD9DD100F668E3 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "Libraries/OpenSSL-Universal/lib-ios/libssl.a"; sourceTree = "<group>"; };
 		6377F21020BD9DD100F668E3 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "Libraries/OpenSSL-Universal/lib-ios/libcrypto.a"; sourceTree = "<group>"; };
@@ -1709,8 +1715,11 @@
 				63304D6620AD4D77006D444B /* Neo.swift */,
 				637CEA2C20D84B8A0076DD74 /* NeoAccount.swift */,
 				637CEA3B20D8F44D0076DD74 /* AssetIdConstants.swift */,
+<<<<<<< HEAD
 				63695DFB20E076190088C83E /* NeoAccountNetwork.swift */,
 				63695DFD20E154570088C83E /* NeoTransactionNetwork.swift */,
+=======
+>>>>>>> aae5465e19a3172bbd09070e713158c16d6b4c9d
 			);
 			path = Neo;
 			sourceTree = "<group>";
