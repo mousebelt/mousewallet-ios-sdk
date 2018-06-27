@@ -22,3 +22,6 @@ deploy:
   on:
     repo: gedanziger/nrlwallet-ios-sdk
     branch: develop
+    tags: true
+  skip_cleanup: true
+

@@ -10,10 +10,9 @@ import Foundation
 import ObjectMapper
 
 public class NeoTokenMapp: Mappable {
-    public var _id:String?
-    public var name:String?
-    public var ticker:String?
-    public var asset:String?
+    public var name:String?     //token name
+    public var symbol:String?   //token symbol
+    public var asset:String?    //token address
     public var type:String?
 
     public required init?(map: Map) {
@@ -22,9 +21,8 @@ public class NeoTokenMapp: Mappable {
     
     // Mappable
     public func mapping(map: Map) {
-        _id        <- map["_id"]
         name       <- map["name"]
-        ticker     <- map["ticker"]
+        symbol     <- map["ticker"]
         asset      <- map["asset"]
         type       <- map["type"]
     }

@@ -7,6 +7,9 @@
 * github "krzyzanowskim/CryptoSwift"
 * github "attaswift/BigInt" ~> 3.0
 * github "Boilertalk/Web3.swift"
+* github "Alamofire/Alamofire" ~> 4.7
+* github "Hearst-DD/ObjectMapper" ~> 3.2
+* github "SwiftyJSON/SwiftyJSON" ~> 4.0
 
 * these sources are derived from Web3.swift
 >github "mxcl/PromiseKit"
@@ -26,11 +29,7 @@
 
 >https://github.com/Boilertalk/Web3.swift
 
-* folder: Libraries/Web3
-
-
-
-### CocoaLumberjack
+### CocoaLumberjack (Libraries)
 
 can be downloaded from BitcoinSPV pod. or 
 
@@ -40,7 +39,7 @@ can be downloaded from BitcoinSPV pod. or
 >https://github.com/bitcoin-core/secp256k1
 >need to add in Libraries manually
 
-### BitcoinSPV
+### BitcoinSPV (Libraries)
 >https://github.com/keeshux/BitcoinSPV/
 >need to add in Libraries manually
 
@@ -52,6 +51,15 @@ to libs of libssl and libcrypto should be explicitly included as linked library 
 
 >https://github.com/openssl/openssl
 >need to add in Libraries manually
+
+### loafwallet-core (Libraries)
+>https://github.com/litecoin-foundation/loafwallet-ios
+>only included loafwallet-core
+
+### stellar-ios-mac-sdk
+>https://github.com/Soneso/stellar-ios-mac-sdk
+>only included part of this sdk, so need to update for each files
+
 
 # environment
 ### carthage

@@ -229,21 +229,20 @@ class NRLEthereum : NRLCoin{
                 return Promise<VCoinResponse> { seal in
                     let nonce: UInt = res.data as! UInt
 
-                    var tx = try EthereumTransaction(
+                    let tx = try EthereumTransaction(
                         nonce: EthereumQuantity(quantity: BigUInt(nonce)),
-                        gasPrice: EthereumQuantity(quantity:BigUInt(fee)),
-                        gasLimit: 21000,
+                        gasPrice: EthereumQuantity(quantity: BigUInt(fee)),
+                        gas: 21000,
                         to: EthereumAddress(hex: to, eip55: false),
-                        value: EthereumQuantity(quantity: BigUInt(value)),
-                        chainId: self.chainid
+                        value: EthereumQuantity(quantity: BigUInt(value))
                     )
-                    DDLogDebug("chainid: \(tx.chainId.hex())")
-                    DDLogDebug("nonce: \(tx.nonce.hex())")
-                    DDLogDebug("to: \(tx.to.hex(eip55: false))")
-                    DDLogDebug("value: \(tx.value.hex())")
-                    DDLogDebug("gasPrice: \(tx.gasPrice.hex())")
+                    
+                    DDLogDebug("nonce: \(String(describing: tx.nonce?.hex()))")
+                    DDLogDebug("to: \(String(describing: tx.to?.hex(eip55: false)))")
+                    DDLogDebug("value: \(String(describing: tx.value?.hex()))")
+                    DDLogDebug("gasPrice: \(String(describing: tx.gasPrice?.hex()))")
 
-                    let newtx = try tx.sign(with: self.privKey!)
+                    let newtx: EthereumSignedTransaction = try tx.sign(with: self.privKey!, chainId: self.chainid)
 
                     DDLogDebug("r: \(newtx.r.hex())")
                     DDLogDebug("s: \(newtx.s.hex())")
@@ -285,21 +284,30 @@ class NRLEthereum : NRLCoin{
             }.done { res in
                 let nonce: UInt = res.data as! UInt
                 
-                var tx = try EthereumTransaction(
+                let tx = try EthereumTransaction(
                     nonce: EthereumQuantity(quantity: BigUInt(nonce)),
-                    gasPrice: EthereumQuantity(quantity:BigUInt(fee)),
-                    gasLimit: 21000,
+                    gasPrice: EthereumQuantity(quantity: BigUInt(fee)),
+                    gas: 21000,
                     to: EthereumAddress(hex: to, eip55: false),
-                    value: EthereumQuantity(quantity: BigUInt(value)),
-                    chainId: self.chainid
+                    value: EthereumQuantity(quantity: BigUInt(value))
                 )
-                DDLogDebug("chainid: \(tx.chainId.hex())")
-                DDLogDebug("nonce: \(tx.nonce.hex())")
-                DDLogDebug("to: \(tx.to.hex(eip55: false))")
-                DDLogDebug("value: \(tx.value.hex())")
-                DDLogDebug("gasPrice: \(tx.gasPrice.hex())")
+
+//                var tx = try EthereumTransaction(
+//                    nonce: EthereumQuantity(quantity: BigUInt(nonce)),
+//                    gasPrice: EthereumQuantity(quantity:BigUInt(fee)),
+//                    gasLimit: 21000,
+//                    to: EthereumAddress(hex: to, eip55: false),
+//                    value: EthereumQuantity(quantity: BigUInt(value))
+//                    ,
+//                    chainId: self.chainid
+//                )
+//                DDLogDebug("chainid: \(tx.chainId.hex())")
+                DDLogDebug("nonce: \(String(describing: tx.nonce?.hex()))")
+                DDLogDebug("to: \(String(describing: tx.to?.hex(eip55: false)))")
+                DDLogDebug("value: \(String(describing: tx.value?.hex()))")
+                DDLogDebug("gasPrice: \(String(describing: tx.gasPrice?.hex()))")
                 
-                let newtx: EthereumTransaction = try tx.sign(with: self.privKey!)
+                let newtx: EthereumSignedTransaction = try tx.sign(with: self.privKey!, chainId: self.chainid)
                 
                 DDLogDebug("r: \(newtx.r.hex())")
                 DDLogDebug("s: \(newtx.s.hex())")
@@ -315,7 +323,7 @@ class NRLEthereum : NRLCoin{
     }
   
     override func sendSignTransaction(tx: Any, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
-        let transactionSigned = tx as! EthereumTransaction
+        let transactionSigned = tx as! EthereumSignedTransaction
         let url = "\(urlEtherServer)/api/v1/sendsignedtransaction"
         let rawData: Bytes = try! RLPEncoder().encode(transactionSigned.rlp())
         DDLogDebug("rawDAta: \(String(describing: rawData.toHexString()))")

@@ -131,8 +131,8 @@ class NRLNeo : NRLCoin{
             return
         }
         
-//        let address = neoAccount.address
-        let address = "Ae2d6qj91YL3LVUMkza7WQsaTYjzjHm4z1"
+        let address = neoAccount.address
+//        let address = "Ae2d6qj91YL3LVUMkza7WQsaTYjzjHm4z1"
         let url = "\(urlNeoServer)/api/v1/address/txs/\(address)"
         
         firstly {
