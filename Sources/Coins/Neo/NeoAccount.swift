@@ -288,6 +288,22 @@ public class NeoAccount {
 //                }
 //            }
 //        }
+        
+        let address = self.address
+        let url = "\(urlNeoServer)/api/v1/balance/\(address)"
+        
+        firstly {
+            sendRequest(responseObject:VCoinResponse.self, url: url)
+            }.done { res in
+                DDLogDebug("balance: \(String(describing: res.data))")
+                let resObj = Mapper<NeoGetBalanceResponse>().map(JSONObject: res.data)
+                
+
+//                let payload = self.generateSendTransactionPayload(asset: asset, amount: amount, toAddress: toAddress, assets: assets, attributes: attributes)
+
+            }.catch { error in
+                completion(nil, (error as? NRLWalletSDKError)!)
+        }
     }
     
     /*
