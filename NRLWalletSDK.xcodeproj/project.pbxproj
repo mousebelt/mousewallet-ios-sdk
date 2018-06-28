@@ -12,8 +12,6 @@
 		2167C2FB209AF09D00A8653E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2167C2F9209AF09D00A8653E /* Main.storyboard */; };
 		2167C2FD209AF0A500A8653E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2167C2FC209AF0A500A8653E /* Assets.xcassets */; };
 		2167C300209AF0A500A8653E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2167C2FE209AF0A500A8653E /* LaunchScreen.storyboard */; };
-		2167C305209AF0C100A8653E /* NRLWalletSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2167C2A02098FF5C00A8653E /* NRLWalletSDK.framework */; };
-		2167C306209AF0C100A8653E /* NRLWalletSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2167C2A02098FF5C00A8653E /* NRLWalletSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2167C30F209AF2F700A8653E /* Chinese.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2167C30D209AF2F700A8653E /* Chinese.swift */; };
 		2167C310209AF2F700A8653E /* English.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2167C30E209AF2F700A8653E /* English.swift */; };
 		2167C312209AF38500A8653E /* French.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2167C311209AF38500A8653E /* French.swift */; };
@@ -46,7 +44,6 @@
 		6327C18D20B839D500CB2017 /* ed25519.h in Headers */ = {isa = PBXBuildFile; fileRef = 6327C17A20B839D500CB2017 /* ed25519.h */; };
 		6327C18E20B839D500CB2017 /* key_exchange.c in Sources */ = {isa = PBXBuildFile; fileRef = 6327C17B20B839D500CB2017 /* key_exchange.c */; };
 		6327C18F20B839D500CB2017 /* keypair.c in Sources */ = {isa = PBXBuildFile; fileRef = 6327C17C20B839D500CB2017 /* keypair.c */; };
-		6327C19020B839D500CB2017 /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6327C17D20B839D500CB2017 /* license.txt */; };
 		6327C19120B839D500CB2017 /* precomp_data.h in Headers */ = {isa = PBXBuildFile; fileRef = 6327C17F20B839D500CB2017 /* precomp_data.h */; };
 		6327C19220B839D500CB2017 /* sc.c in Sources */ = {isa = PBXBuildFile; fileRef = 6327C18020B839D500CB2017 /* sc.c */; };
 		6327C19320B839D500CB2017 /* sc.h in Headers */ = {isa = PBXBuildFile; fileRef = 6327C18120B839D500CB2017 /* sc.h */; };
@@ -73,6 +70,28 @@
 		6327C1C420B86D7D00CB2017 /* Data+Base16.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6327C1B920B86D7C00CB2017 /* Data+Base16.swift */; };
 		6327C1C520B86D7D00CB2017 /* String+Encoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6327C1BA20B86D7C00CB2017 /* String+Encoding.swift */; };
 		63304D6720AD4D77006D444B /* Neo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63304D6620AD4D77006D444B /* Neo.swift */; };
+		6355616120E5465A006F2C31 /* NRLWalletSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2167C2A02098FF5C00A8653E /* NRLWalletSDK.framework */; };
+		6355616220E5465A006F2C31 /* NRLWalletSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2167C2A02098FF5C00A8653E /* NRLWalletSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6355616520E5465A006F2C31 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D499D420CAE70E0047840F /* Alamofire.framework */; };
+		6355616620E5465A006F2C31 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63D499D420CAE70E0047840F /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6355616720E5465A006F2C31 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D499D320CAE70E0047840F /* ObjectMapper.framework */; };
+		6355616820E5465A006F2C31 /* ObjectMapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63D499D320CAE70E0047840F /* ObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6355616920E5465A006F2C31 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D499D520CAE70F0047840F /* SwiftyJSON.framework */; };
+		6355616A20E5465A006F2C31 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63D499D520CAE70F0047840F /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6355616B20E5465A006F2C31 /* BigInt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE3F20C8F33B00215698 /* BigInt.framework */; };
+		6355616C20E5465A006F2C31 /* BigInt.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE3F20C8F33B00215698 /* BigInt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6355616D20E5465A006F2C31 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE4220C8F33C00215698 /* PromiseKit.framework */; };
+		6355616E20E5465A006F2C31 /* PromiseKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE4220C8F33C00215698 /* PromiseKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6355616F20E5465A006F2C31 /* secp256k1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE4120C8F33B00215698 /* secp256k1.framework */; };
+		6355617020E5465A006F2C31 /* secp256k1.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE4120C8F33B00215698 /* secp256k1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6355617120E5465A006F2C31 /* SipHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE4020C8F33B00215698 /* SipHash.framework */; };
+		6355617220E5465A006F2C31 /* SipHash.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE4020C8F33B00215698 /* SipHash.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6355617320E5465A006F2C31 /* Web3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE3B20C8F2C100215698 /* Web3.framework */; };
+		6355617420E5465A006F2C31 /* Web3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE3B20C8F2C100215698 /* Web3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6355617520E5465A006F2C31 /* neoutils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F66C1920B49031007DF79D /* neoutils.framework */; };
+		6355617620E5465A006F2C31 /* neoutils.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63F66C1920B49031007DF79D /* neoutils.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6355617720E5465A006F2C31 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F66C1620B42444007DF79D /* CryptoSwift.framework */; };
+		6355617820E5465A006F2C31 /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63F66C1620B42444007DF79D /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		63695DEA20D94ECA0088C83E /* ValueIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63695DE820D94ECA0088C83E /* ValueIn.swift */; };
 		63695DEB20D94ECA0088C83E /* ValueOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63695DE920D94ECA0088C83E /* ValueOut.swift */; };
 		63695DED20D94EDF0088C83E /* Script.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63695DEC20D94EDF0088C83E /* Script.swift */; };
@@ -559,12 +578,6 @@
 		63D499D620CAE70F0047840F /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D499D320CAE70E0047840F /* ObjectMapper.framework */; };
 		63D499D720CAE70F0047840F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D499D420CAE70E0047840F /* Alamofire.framework */; };
 		63D499D820CAE70F0047840F /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D499D520CAE70F0047840F /* SwiftyJSON.framework */; };
-		63D499D920CAF0560047840F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D499D420CAE70E0047840F /* Alamofire.framework */; };
-		63D499DA20CAF0560047840F /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63D499D420CAE70E0047840F /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		63D499DB20CAF0560047840F /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D499D320CAE70E0047840F /* ObjectMapper.framework */; };
-		63D499DC20CAF0560047840F /* ObjectMapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63D499D320CAE70E0047840F /* ObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		63D499DD20CAF0560047840F /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D499D520CAE70F0047840F /* SwiftyJSON.framework */; };
-		63D499DE20CAF0560047840F /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63D499D520CAE70F0047840F /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		63D49A7120CD3CE90047840F /* BRAddress.c in Sources */ = {isa = PBXBuildFile; fileRef = 63D499E220CD3CE90047840F /* BRAddress.c */; };
 		63D49A7220CD3CE90047840F /* BRAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D499E320CD3CE90047840F /* BRAddress.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63D49A7320CD3CE90047840F /* BRArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D499E420CD3CE90047840F /* BRArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -647,20 +660,10 @@
 		63F4FE3720C8833800215698 /* NSRegularExpressionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F4FE3620C8833800215698 /* NSRegularExpressionExtension.swift */; };
 		63F4FE3A20C8849000215698 /* EthereumConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F4FE3920C8849000215698 /* EthereumConfig.swift */; };
 		63F4FE3C20C8F2C200215698 /* Web3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE3B20C8F2C100215698 /* Web3.framework */; };
-		63F4FE3D20C8F2F600215698 /* Web3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE3B20C8F2C100215698 /* Web3.framework */; };
-		63F4FE3E20C8F2F600215698 /* Web3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE3B20C8F2C100215698 /* Web3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		63F4FE4320C8F33C00215698 /* BigInt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE3F20C8F33B00215698 /* BigInt.framework */; };
 		63F4FE4420C8F33C00215698 /* SipHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE4020C8F33B00215698 /* SipHash.framework */; };
 		63F4FE4520C8F33C00215698 /* secp256k1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE4120C8F33B00215698 /* secp256k1.framework */; };
 		63F4FE4620C8F33C00215698 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE4220C8F33C00215698 /* PromiseKit.framework */; };
-		63F4FE4720C8F34E00215698 /* BigInt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE3F20C8F33B00215698 /* BigInt.framework */; };
-		63F4FE4820C8F34E00215698 /* BigInt.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE3F20C8F33B00215698 /* BigInt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		63F4FE4920C8F34E00215698 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE4220C8F33C00215698 /* PromiseKit.framework */; };
-		63F4FE4A20C8F34E00215698 /* PromiseKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE4220C8F33C00215698 /* PromiseKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		63F4FE4B20C8F34E00215698 /* secp256k1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE4120C8F33B00215698 /* secp256k1.framework */; };
-		63F4FE4C20C8F34E00215698 /* secp256k1.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE4120C8F33B00215698 /* secp256k1.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		63F4FE4D20C8F34E00215698 /* SipHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE4020C8F33B00215698 /* SipHash.framework */; };
-		63F4FE4E20C8F34E00215698 /* SipHash.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63F4FE4020C8F33B00215698 /* SipHash.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		63F4FE5020C9C0DE00215698 /* CoinNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F4FE4F20C9C0DE00215698 /* CoinNetwork.swift */; };
 		63F4FE5220C9C23600215698 /* EthereumNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F4FE5120C9C23600215698 /* EthereumNetwork.swift */; };
 		63F66C1120B421BF007DF79D /* NRLPrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C0C20B421BF007DF79D /* NRLPrivateKey.swift */; };
@@ -670,8 +673,6 @@
 		63F66C1720B42444007DF79D /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F66C1620B42444007DF79D /* CryptoSwift.framework */; };
 		63F66C1C20B49031007DF79D /* neoutils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F66C1920B49031007DF79D /* neoutils.framework */; };
 		63F66C2020B49074007DF79D /* NRLCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C1F20B49074007DF79D /* NRLCoin.swift */; };
-		63F66C2720B49564007DF79D /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F66C1620B42444007DF79D /* CryptoSwift.framework */; };
-		63F66C2820B49564007DF79D /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63F66C1620B42444007DF79D /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		63F66C2B20B4B511007DF79D /* Bitcoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C2A20B4B511007DF79D /* Bitcoin.swift */; };
 		63F66C3320B4B671007DF79D /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C2D20B4B671007DF79D /* Address.swift */; };
 		63F66C3420B4B671007DF79D /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F66C2E20B4B671007DF79D /* Balance.swift */; };
@@ -702,7 +703,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2167C307209AF0C100A8653E /* PBXContainerItemProxy */ = {
+		6355616320E5465A006F2C31 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2167C2972098FF5B00A8653E /* Project object */;
 			proxyType = 1;
@@ -712,22 +713,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		2167C309209AF0C100A8653E /* Embed Frameworks */ = {
+		6355617920E5465B006F2C31 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				63D499DC20CAF0560047840F /* ObjectMapper.framework in Embed Frameworks */,
-				63F4FE3E20C8F2F600215698 /* Web3.framework in Embed Frameworks */,
-				63F4FE4C20C8F34E00215698 /* secp256k1.framework in Embed Frameworks */,
-				63F4FE4820C8F34E00215698 /* BigInt.framework in Embed Frameworks */,
-				63D499DE20CAF0560047840F /* SwiftyJSON.framework in Embed Frameworks */,
-				63F4FE4A20C8F34E00215698 /* PromiseKit.framework in Embed Frameworks */,
-				63F4FE4E20C8F34E00215698 /* SipHash.framework in Embed Frameworks */,
-				2167C306209AF0C100A8653E /* NRLWalletSDK.framework in Embed Frameworks */,
-				63F66C2820B49564007DF79D /* CryptoSwift.framework in Embed Frameworks */,
-				63D499DA20CAF0560047840F /* Alamofire.framework in Embed Frameworks */,
+				6355617420E5465A006F2C31 /* Web3.framework in Embed Frameworks */,
+				6355616A20E5465A006F2C31 /* SwiftyJSON.framework in Embed Frameworks */,
+				6355616820E5465A006F2C31 /* ObjectMapper.framework in Embed Frameworks */,
+				6355616220E5465A006F2C31 /* NRLWalletSDK.framework in Embed Frameworks */,
+				6355617020E5465A006F2C31 /* secp256k1.framework in Embed Frameworks */,
+				6355617620E5465A006F2C31 /* neoutils.framework in Embed Frameworks */,
+				6355617820E5465A006F2C31 /* CryptoSwift.framework in Embed Frameworks */,
+				6355616E20E5465A006F2C31 /* PromiseKit.framework in Embed Frameworks */,
+				6355617220E5465A006F2C31 /* SipHash.framework in Embed Frameworks */,
+				6355616C20E5465A006F2C31 /* BigInt.framework in Embed Frameworks */,
+				6355616620E5465A006F2C31 /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -777,7 +779,6 @@
 		6327C17A20B839D500CB2017 /* ed25519.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ed25519.h; sourceTree = "<group>"; };
 		6327C17B20B839D500CB2017 /* key_exchange.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = key_exchange.c; sourceTree = "<group>"; };
 		6327C17C20B839D500CB2017 /* keypair.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = keypair.c; sourceTree = "<group>"; };
-		6327C17D20B839D500CB2017 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
 		6327C17E20B839D500CB2017 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		6327C17F20B839D500CB2017 /* precomp_data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = precomp_data.h; sourceTree = "<group>"; };
 		6327C18020B839D500CB2017 /* sc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sc.c; sourceTree = "<group>"; };
@@ -1441,16 +1442,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63D499DB20CAF0560047840F /* ObjectMapper.framework in Frameworks */,
-				63F4FE3D20C8F2F600215698 /* Web3.framework in Frameworks */,
-				63F4FE4B20C8F34E00215698 /* secp256k1.framework in Frameworks */,
-				63F4FE4720C8F34E00215698 /* BigInt.framework in Frameworks */,
-				63D499DD20CAF0560047840F /* SwiftyJSON.framework in Frameworks */,
-				63F4FE4920C8F34E00215698 /* PromiseKit.framework in Frameworks */,
-				63F4FE4D20C8F34E00215698 /* SipHash.framework in Frameworks */,
-				2167C305209AF0C100A8653E /* NRLWalletSDK.framework in Frameworks */,
-				63F66C2720B49564007DF79D /* CryptoSwift.framework in Frameworks */,
-				63D499D920CAF0560047840F /* Alamofire.framework in Frameworks */,
+				6355617320E5465A006F2C31 /* Web3.framework in Frameworks */,
+				6355616920E5465A006F2C31 /* SwiftyJSON.framework in Frameworks */,
+				6355616720E5465A006F2C31 /* ObjectMapper.framework in Frameworks */,
+				6355616120E5465A006F2C31 /* NRLWalletSDK.framework in Frameworks */,
+				6355616F20E5465A006F2C31 /* secp256k1.framework in Frameworks */,
+				6355617520E5465A006F2C31 /* neoutils.framework in Frameworks */,
+				6355617720E5465A006F2C31 /* CryptoSwift.framework in Frameworks */,
+				6355616D20E5465A006F2C31 /* PromiseKit.framework in Frameworks */,
+				6355617120E5465A006F2C31 /* SipHash.framework in Frameworks */,
+				6355616B20E5465A006F2C31 /* BigInt.framework in Frameworks */,
+				6355616520E5465A006F2C31 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1654,7 +1656,6 @@
 				6327C17820B839D500CB2017 /* ge.h */,
 				6327C17B20B839D500CB2017 /* key_exchange.c */,
 				6327C17C20B839D500CB2017 /* keypair.c */,
-				6327C17D20B839D500CB2017 /* license.txt */,
 				6327C17E20B839D500CB2017 /* module.modulemap */,
 				6327C17F20B839D500CB2017 /* precomp_data.h */,
 				6327C18020B839D500CB2017 /* sc.c */,
@@ -3043,12 +3044,12 @@
 				2167C2EF209AF09D00A8653E /* Sources */,
 				2167C2F0209AF09D00A8653E /* Frameworks */,
 				2167C2F1209AF09D00A8653E /* Resources */,
-				2167C309209AF0C100A8653E /* Embed Frameworks */,
+				6355617920E5465B006F2C31 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				2167C308209AF0C100A8653E /* PBXTargetDependency */,
+				6355616420E5465A006F2C31 /* PBXTargetDependency */,
 			);
 			name = "NRLWalletSDK Example";
 			productName = "NRLWalletSDK Example";
@@ -3099,7 +3100,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6327C19020B839D500CB2017 /* license.txt in Resources */,
 				630DC5D620AB35A80005800A /* Readme.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3625,10 +3625,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2167C308209AF0C100A8653E /* PBXTargetDependency */ = {
+		6355616420E5465A006F2C31 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2167C29F2098FF5C00A8653E /* NRLWalletSDK */;
-			targetProxy = 2167C307209AF0C100A8653E /* PBXContainerItemProxy */;
+			targetProxy = 6355616320E5465A006F2C31 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -3873,7 +3873,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/Libraries/secp256k1/include",
 					"$(SRCROOT)/Libraries/openssl/include",
@@ -3899,7 +3902,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/Libraries/secp256k1/include",
 					"$(SRCROOT)/Libraries/openssl/include",
