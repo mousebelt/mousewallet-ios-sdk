@@ -81,9 +81,9 @@ to libs of libssl and libcrypto should be explicitly included as linked library 
 
 ### carthage build
 >carthage build --no-skip-current
+>carthage archive NRLWalletSDK
 
-now we can get result at $SOURCEROOT/carthage/Build/iOS
-
+>git push   ---> this carthage can be used as global carthage file
 
 ## key / address test
 ### bitcoin, litecoin, ethereum
@@ -97,6 +97,21 @@ now we can get result at $SOURCEROOT/carthage/Build/iOS
 
 ## transaction test
 
+### ethereum
+* http://etherscan.io/
+* http://ropsten.etherscan.io/
+
 ### bitcoin
 * faucet: https://testnet.manu.backend.hamburg/faucet
 * https://testnet.blockchain.info/
+
+### litecoin
+* https://live.blockcypher.com/ltc
+
+### neo
+* https://neotracker.io/
+
+### stellar
+* https://stellarchain.io/
+
+

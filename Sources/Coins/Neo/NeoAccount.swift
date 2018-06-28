@@ -271,7 +271,7 @@ public class NeoAccount {
     }
     
     
-    public func sendAssetTransaction(asset: AssetId, amount: Double, toAddress: String, attributes: [TransactionAttritbute]? = nil, completion: @escaping(Bool?, Error?) -> Void) {
+    public func sendAssetTransaction(asset: AssetId, amount: Decimal, toAddress: String, attributes: [TransactionAttritbute]? = nil, completion: @escaping(Bool?, Error?) -> Void) {
 //        neoClient.getAssets(for: self.address, params: []) { result in
 //            switch result {
 //            case .failure(let error):
@@ -297,7 +297,21 @@ public class NeoAccount {
             }.done { res in
                 DDLogDebug("balance: \(String(describing: res.data))")
                 let resObj = Mapper<NeoGetBalanceResponse>().map(JSONObject: res.data)
+                var selectedAsset: NeoAssetMap? = nil
                 
+                for neoasset in (resObj?.balance)! {
+                    DDLogDebug("symbol: \(String(describing: neoasset.symbol)) address: \(String(describing: neoasset.asset))")
+                    
+                    if (neoasset.asset == asset.rawValue) {
+                        selectedAsset = neoasset
+                        break
+                    }
+                }
+
+                if (selectedAsset == nil || (selectedAsset?.value!)! < amount) {
+                    completion(nil, NRLWalletSDKError.transactionError(.parameterError))
+                    return
+                }
 
 //                let payload = self.generateSendTransactionPayload(asset: asset, amount: amount, toAddress: toAddress, assets: assets, attributes: attributes)
 

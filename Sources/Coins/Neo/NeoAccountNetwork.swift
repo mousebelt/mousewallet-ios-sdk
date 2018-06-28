@@ -30,8 +30,8 @@ public class NeoTokenMapp: Mappable {
 
 public class NeoAssetMap: Mappable {
     public var asset:String?
-    public var value:Double?
-    public var ticker:String?
+    public var value:Decimal?
+    public var symbol:String?
     public var token:NeoTokenMapp?
     
     public required init?(map: Map) {
@@ -42,7 +42,7 @@ public class NeoAssetMap: Mappable {
     public func mapping(map: Map) {
         asset        <- map["asset"]
         value        <- map["value"]
-        ticker       <- map["ticker"]
+        symbol       <- map["ticker"]
         token        <- map["token"]
     }
 }

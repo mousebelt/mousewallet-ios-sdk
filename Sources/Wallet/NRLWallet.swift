@@ -143,7 +143,7 @@ public class NRLWallet {
         self.coin.signTransaction(to: to, value: value, fee: fee, callback: callback)
     }
     
-    public func sendTransaction(asset: AssetId, to: String, value: Double, fee: Double, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
+    public func sendTransaction(asset: AssetId, to: String, value: Decimal, fee: Decimal, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
         self.coin.sendTransaction(asset: asset, to: to, value: value, fee: fee, callback: callback)
     }
     
@@ -159,7 +159,7 @@ public class NRLWallet {
         self.coin.signTransaction(to: to, value: value, fee: fee, callback: callback)
     }
 
-    public func signTransaction(asset: AssetId, to: String, value: Double, fee: Double, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
+    public func signTransaction(asset: AssetId, to: String, value: Decimal, fee: Decimal, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
         self.coin.sendTransaction(asset: asset, to: to, value: value, fee: fee, callback: callback)
     }
 }
