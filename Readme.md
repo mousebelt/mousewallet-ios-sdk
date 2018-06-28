@@ -1,4 +1,39 @@
-# dependency libraries
+# How to use
+
+## environment
+### carthage
+* Download latest carthage from https://github.com/Carthage/Carthage/releases
+### xcode setting
+* Select proper command line tool from Xcode > Preferences > Locations 
+* Disable bitecode at build settings.
+
+## Cartfile
+To use NRLWalletSDK, need to make Cartfile at the root folder of your project.
+
+```
+github "krzyzanowskim/CryptoSwift"
+github "attaswift/BigInt" ~> 3.0
+github "Boilertalk/Web3.swift"
+github "Alamofire/Alamofire" ~> 4.7
+github "Hearst-DD/ObjectMapper" ~> 3.2
+github "SwiftyJSON/SwiftyJSON" ~> 4.0
+github "gedanziger/nrlwallet-ios-sdk"
+```
+## Update Carthage
+Once you made cartfile, you can now update carthage.
+>carthage update --platform iOS 
+
+## Embed frameworks
+After update carthage, now you can embed frameworks to your target.
+
+* Select target to integrate with NRLWalletSDK.
+* General tab and go to Embedded Binaries section.
+* Push plus button and import frameworks which was made from carthage.
+
+Now you can use NRLWalletSDK!
+
+
+# Dependency libraries
 
 ## Carthage
 
@@ -59,13 +94,6 @@ to libs of libssl and libcrypto should be explicitly included as linked library 
 ### stellar-ios-mac-sdk
 >https://github.com/Soneso/stellar-ios-mac-sdk
 >only included part of this sdk, so need to update for each files
-
-
-# environment
-### carthage
-* Download latest carthage from https://github.com/Carthage/Carthage/releases
-### xcode setting
-* Select proper command line tool from Xcode > Preferences > Locations 
 
 
 # Build Carthage framework
