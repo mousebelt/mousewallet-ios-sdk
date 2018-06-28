@@ -77,8 +77,6 @@ to libs of libssl and libcrypto should be explicitly included as linked library 
 
 ### build project at xcode
 
-### compress framework from building to zip and put it at root directory
-
 ### carthage build
 >carthage build --no-skip-current
 >carthage archive NRLWalletSDK
