@@ -112,6 +112,37 @@ public class NeoTransactionsMap: Mappable {
     }
 }
 
+public class NeoUTXOMap: Mappable {
+    public var txid: String?
+    public var index: Int?
+    public var value: Decimal?
+    public var asset: String?
+    public var createdAtBlock: Int?
+    
+    public required init?(map: Map) {
+    }
+    
+    // Mappable
+    public func mapping(map: Map) {
+        txid                <- map["txid"]
+        index               <- map["index"]
+        value               <- map["value"]
+        asset               <- map["asset"]
+        createdAtBlock      <- map["createdAtBlock"]
+    }
+}
+
+public class NeoUTXOsResponse: Mappable {
+    public var utxos: [NeoUTXOMap]?
+    
+    public required init?(map: Map) {
+    }
+    
+    // Mappable
+    public func mapping(map: Map) {
+        utxos        <- map["utxos"]
+    }
+}
 
 
 
