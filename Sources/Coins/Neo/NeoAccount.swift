@@ -94,16 +94,31 @@ public class NeoAccount {
         return NeoutilsDecrypt(key, text)
     }
     
+    func updateUTXO() -> Promise<[UTXO]>{
+        return Promise { seal in
+            let address = self.address
+            let url = "\(urlNeoServer)/api/v1/address/utxo/\(address)"
+            
+            firstly {
+                sendRequest(responseObject:VCoinResponse.self, url: url)
+                }.done { res in
+                    DDLogDebug("utxo: \(String(describing: res.data))")
+                    let result = Mapper<NeoUTXOsResponse>().map(JSONObject: res.data)
+                    
+                    var utxoList: [UTXO] = []
+                    for utxomap in (result?.utxos)! {
+                        let utxoObj = UTXO(asset: utxomap.asset!, index: utxomap.index!, txid: utxomap.txid!, value: utxomap.value!, createdAtBlock: utxomap.createdAtBlock!)
+                        utxoList.append(utxoObj)
+                    }
+                    
+                    seal.fulfill(utxoList)
+                }.catch { error in
+                    seal.reject(error)
+            }
+        }
+    }
+    
     func getBalance(completion: @escaping(Any?, Error?) -> Void) {
-// original sdk code
-//        neoClient.getAssets(for: self.address, params: []) { result in
-//            switch result {
-//            case .failure(let error):
-//                completion(nil, error)
-//            case .success(let assets):
-//                completion(assets, nil)
-//            }
-//        }
         
         let address = self.address
         let url = "\(urlNeoServer)/api/v1/balance/\(address)"
@@ -272,49 +287,65 @@ public class NeoAccount {
     
     
     public func sendAssetTransaction(asset: AssetId, amount: Decimal, toAddress: String, attributes: [TransactionAttritbute]? = nil, completion: @escaping(Bool?, Error?) -> Void) {
-//        neoClient.getAssets(for: self.address, params: []) { result in
-//            switch result {
-//            case .failure(let error):
-//                completion(nil, error)
-//            case .success(let assets):
-//                let payload = self.generateSendTransactionPayload(asset: asset, amount: amount, toAddress: toAddress, assets: assets, attributes: attributes)
-//                self.neoClient.sendRawTransaction(with: payload) { (result) in
-//                    switch result {
-//                    case .failure(let error):
-//                        completion(nil, error)
-//                    case .success(let response):
-//                        completion(response, nil)
-//                    }
-//                }
-//            }
-//        }
-        
-        let address = self.address
-        let url = "\(urlNeoServer)/api/v1/balance/\(address)"
         
         firstly {
-            sendRequest(responseObject:VCoinResponse.self, url: url)
+            updateUTXO()
             }.done { res in
-                DDLogDebug("balance: \(String(describing: res.data))")
-                let resObj = Mapper<NeoGetBalanceResponse>().map(JSONObject: res.data)
-                var selectedAsset: NeoAssetMap? = nil
+                DDLogDebug("utxo: \(String(describing: res))")
+
+                let selectedAsset = NeoAssets(data: res)
+                let amountDouble = Double(truncating:amount as NSNumber)
+
+                let payload = self.generateSendTransactionPayload(asset: asset, amount: amountDouble, toAddress: toAddress, assets: selectedAsset, attributes: attributes)
+
+               
+                let url = "\(urlNeoServer)/api/v1/rpc"
                 
-                for neoasset in (resObj?.balance)! {
-                    DDLogDebug("symbol: \(String(describing: neoasset.symbol)) address: \(String(describing: neoasset.asset))")
-                    
-                    if (neoasset.asset == asset.rawValue) {
-                        selectedAsset = neoasset
-                        break
-                    }
+                firstly {
+                    sendRequest(responseObject:VCoinResponse.self, url: url, method: .post, parameters: ["data":  payload.fullHexString])
+                    }.done { res in
+                        DDLogDebug("send transaction result: \(String(describing: res.data))")
+//                        let resObj = Mapper<NeoGetBalanceResponse>().map(JSONObject: res.data)
+//
+//                        completion(resObj, nil)
+                    }.catch { error in
+                        completion(nil, (error as? NRLWalletSDKError)!)
                 }
 
-                if (selectedAsset == nil || (selectedAsset?.value!)! < amount) {
-                    completion(nil, NRLWalletSDKError.transactionError(.parameterError))
-                    return
-                }
-
-//                let payload = self.generateSendTransactionPayload(asset: asset, amount: amount, toAddress: toAddress, assets: assets, attributes: attributes)
-
+            }.catch { error in
+                completion(nil, (error as? NRLWalletSDKError)!)
+        }
+    }
+    
+    public func signAssetTransaction(asset: AssetId, amount: Decimal, toAddress: String, attributes: [TransactionAttritbute]? = nil, completion: @escaping(Error?, String?) -> Void) {
+        
+        firstly {
+            updateUTXO()
+            }.done { res in
+                DDLogDebug("utxo: \(String(describing: res))")
+                
+                let selectedAsset = NeoAssets(data: res)
+                let amountDouble = Double(truncating:amount as NSNumber)
+                
+                let payload = self.generateSendTransactionPayload(asset: asset, amount: amountDouble, toAddress: toAddress, assets: selectedAsset, attributes: attributes)
+                
+                completion(nil, payload.fullHexString)
+            }.catch { error in
+                completion((error as? NRLWalletSDKError)!, nil)
+        }
+    }
+    
+    public func sendSignedAssetTransaction(payload: String, completion: @escaping(Bool?, Error?) -> Void) {
+        
+        let url = "\(urlNeoServer)/api/v1/rpc"
+        
+        firstly {
+            sendRequest(responseObject:VCoinResponse.self, url: url, method: .post, parameters: ["data":  payload])
+            }.done { res in
+                DDLogDebug("send transaction result: \(String(describing: res.data))")
+                //                        let resObj = Mapper<NeoGetBalanceResponse>().map(JSONObject: res.data)
+                //
+                //                        completion(resObj, nil)
             }.catch { error in
                 completion(nil, (error as? NRLWalletSDKError)!)
         }

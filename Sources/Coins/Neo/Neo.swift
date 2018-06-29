@@ -132,7 +132,6 @@ class NRLNeo : NRLCoin{
         }
         
         let address = neoAccount.address
-//        let address = "Ae2d6qj91YL3LVUMkza7WQsaTYjzjHm4z1"
         let url = "\(urlNeoServer)/api/v1/address/txs/\(address)"
         
         firstly {
@@ -149,13 +148,34 @@ class NRLNeo : NRLCoin{
     //transaction
     
     override func sendTransaction(asset: AssetId, to: String, value: Decimal, fee: Decimal, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
-        self.account?.sendAssetTransaction(asset: asset, amount: value, toAddress: to) { (Bool, Error) in
-            
+        self.account?.sendAssetTransaction(asset: asset, amount: value, toAddress: to) { (val, error) in
+            if ((error) != nil) {
+                callback(NRLWalletSDKError.nrlSuccess, val as Any)
+            }
+            else {
+                callback(NRLWalletSDKError.transactionError(.transactionFailed(error!)), 0)
+            }
         }
     }
-//    override func signTransaction(asset: AssetId, to: String, value: Double, fee: Double, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
-    
-//    }
-    override func sendSignTransaction(tx: Any, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {}
+    override func signTransaction(asset: AssetId, to: String, value: Decimal, fee: Decimal, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
+        self.account?.signAssetTransaction(asset: asset, amount: value, toAddress: to) { (error, val) in
+            if ((error) != nil) {
+                callback(NRLWalletSDKError.nrlSuccess, val as Any)
+            }
+            else {
+                callback(NRLWalletSDKError.transactionError(.transactionFailed(error!)), 0)
+            }
+        }
+    }
+    override func sendSignTransaction(tx: Any, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
+        self.account?.sendSignedAssetTransaction(payload: tx as! String) { (val, error) in
+            if ((error) != nil) {
+                callback(NRLWalletSDKError.nrlSuccess, val as Any)
+            }
+            else {
+                callback(NRLWalletSDKError.transactionError(.transactionFailed(error!)), 0)
+            }
+        }
+    }
 }
 
