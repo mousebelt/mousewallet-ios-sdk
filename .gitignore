@@ -6,8 +6,6 @@
 build/
 DerivedData/
 .DS_Store
-NRLWalletSDK.framework.zip
-
 
 ## Various settings
 *.pbxuser
