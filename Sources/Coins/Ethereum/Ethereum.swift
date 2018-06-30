@@ -18,7 +18,7 @@ class NRLEthereum : NRLCoin{
     var privKey: EthereumPrivateKey?
     var chainid: EthereumQuantity //1 for mainnet. 3 for ropsten. 4 for rinkeby. 42 for kovan.
     
-    init(mnemonic: [String], passphrase: String, fTest: Bool) {
+    init(symbol: String, mnemonic: [String], passphrase: String, fTest: Bool) {
         
         var network: NRLNetwork = .main(.ethereum)
         self.chainid = 1
@@ -29,7 +29,8 @@ class NRLEthereum : NRLCoin{
         
         let cointype = network.coinType
         
-        super.init(mnemonic: mnemonic,
+        super.init(symbol: symbol,
+                   mnemonic: mnemonic,
                    passphrase: passphrase,
                    network: network,
                    coinType: cointype,

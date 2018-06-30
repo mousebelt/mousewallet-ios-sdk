@@ -12,7 +12,7 @@ class NRLBitcoin : NRLCoin{
     let isTest: Bool;
     var btcpeer: BitcoinPeer?
     
-    init(mnemonic: [String], passphrase: String, fTest: Bool) {
+    init(symbol: String, mnemonic: [String], passphrase: String, fTest: Bool) {
         self.isTest = fTest;
 
         var network: NRLNetwork = .main(.bitcoin)
@@ -21,12 +21,14 @@ class NRLBitcoin : NRLCoin{
         }
         let cointype = network.coinType
         
-        super.init(mnemonic: mnemonic,
-                   passphrase: passphrase,
-                   network: network,
-                   coinType: cointype,
-                   seedKey: "Bitcoin seed",
-                   curve: "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141")
+        super.init(
+            symbol: symbol,
+            mnemonic: mnemonic,
+            passphrase: passphrase,
+            network: network,
+            coinType: cointype,
+            seedKey: "Bitcoin seed",
+            curve: "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141")
         self.btcpeer = BitcoinPeer(fTest: self.isTest)
     }
     

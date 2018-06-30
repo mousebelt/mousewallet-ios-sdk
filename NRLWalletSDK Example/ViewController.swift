@@ -141,7 +141,7 @@ class ViewController: UIViewController {
             return
         }
         
-        coinWallet = NRLWallet(mnemonic: mnemonic, passphrase: "Test", network: .test(.bitcoin))
+        coinWallet = NRLWallet(mnemonic: mnemonic, passphrase: "Test", network: .test(.bitcoin), symbol: "BTC")
         guard let wallet = coinWallet else {
             print("Error: cannot init wallet!")
             return
@@ -247,7 +247,7 @@ class ViewController: UIViewController {
             return
         }
         
-        coinWallet = NRLWallet(mnemonic: mnemonic, passphrase: "Test", network: .test(.ethereum))
+        coinWallet = NRLWallet(mnemonic: mnemonic, passphrase: "Test", network: .test(.ethereum), symbol: "ETC")
 
         guard let wallet = coinWallet else {
             print("setEthereumWallet Error: cannot init wallet!")
@@ -267,7 +267,7 @@ class ViewController: UIViewController {
             print("Error: no mnemonic")
             return
         }
-        coinWallet = NRLWallet(mnemonic: mnemonic, passphrase: "Test", network: .main(.neo))
+        coinWallet = NRLWallet(mnemonic: mnemonic, passphrase: "Test", network: .main(.neo), symbol: "NEO")
         
         guard let wallet = coinWallet else {
             print("setNeoWallet Error: cannot init wallet!")
@@ -302,7 +302,7 @@ class ViewController: UIViewController {
             return
         }
         
-        coinWallet = NRLWallet(mnemonic: mnemonic, passphrase: "Test", network: .main(.litecoin))
+        coinWallet = NRLWallet(mnemonic: mnemonic, passphrase: "Test", network: .main(.litecoin), symbol: "LTC")
         
         guard let wallet = coinWallet else {
             print("setLitecoinWallet Error: cannot init wallet!")
@@ -375,7 +375,7 @@ class ViewController: UIViewController {
             return
         }
         
-        coinWallet = NRLWallet(mnemonic: mnemonic, passphrase: "Test", network: .main(.stellar))
+        coinWallet = NRLWallet(mnemonic: mnemonic, passphrase: "Test", network: .main(.stellar), symbol: "XLM")
         
         guard let wallet = coinWallet else {
             print("setStellarWallet Error: cannot init wallet!")
@@ -393,11 +393,11 @@ class ViewController: UIViewController {
         
         generateMneonic()
 
-//        setBitcoinWallet()
+        setBitcoinWallet()
 //        setEthereumWallet()
 //        setLitecoinWallet()
 //        setStellarWallet()
-        setNeoWallet()
+//        setNeoWallet()
         
 
     }

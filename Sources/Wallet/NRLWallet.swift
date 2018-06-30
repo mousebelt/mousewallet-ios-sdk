@@ -13,38 +13,38 @@ import CryptoSwift
 public class NRLWallet {
     let coin: NRLCoin
     
-    public init(mnemonic: [String], passphrase: String, network: NRLNetwork) {
+    public init(mnemonic: [String], passphrase: String, network: NRLNetwork, symbol: String) {
 
         switch network {
         case .main(.ethereum):
-            coin = NRLEthereum(mnemonic: mnemonic, passphrase: passphrase, fTest: false)
+            coin = NRLEthereum(symbol: symbol, mnemonic: mnemonic, passphrase: passphrase, fTest: false)
             break
         case .test(.ethereum):
-            coin = NRLEthereum(mnemonic: mnemonic, passphrase: passphrase, fTest: true)
+            coin = NRLEthereum(symbol: symbol, mnemonic: mnemonic, passphrase: passphrase, fTest: true)
             break
         case .main(.neo):
-            coin = NRLNeo(mnemonic: mnemonic, passphrase: passphrase, fTest: false)
+            coin = NRLNeo(symbol: symbol, mnemonic: mnemonic, passphrase: passphrase, fTest: false)
             break
         case .test(.neo):
-            coin = NRLNeo(mnemonic: mnemonic, passphrase: passphrase, fTest: true)
+            coin = NRLNeo(symbol: symbol, mnemonic: mnemonic, passphrase: passphrase, fTest: true)
             break
         case .main(.bitcoin):
-            coin = NRLBitcoin(mnemonic: mnemonic, passphrase: passphrase, fTest: false)
+            coin = NRLBitcoin(symbol: symbol, mnemonic: mnemonic, passphrase: passphrase, fTest: false)
             break
         case .test(.bitcoin):
-            coin = NRLBitcoin(mnemonic: mnemonic, passphrase: passphrase, fTest: true)
+            coin = NRLBitcoin(symbol: symbol, mnemonic: mnemonic, passphrase: passphrase, fTest: true)
             break
         case .main(.litecoin):
-            coin = NRLLitecoin(mnemonic: mnemonic, passphrase: passphrase, fTest: false)
+            coin = NRLLitecoin(symbol: symbol, mnemonic: mnemonic, passphrase: passphrase, fTest: false)
             break
         case .test(.litecoin):
-            coin = NRLLitecoin(mnemonic: mnemonic, passphrase: passphrase, fTest: true)
+            coin = NRLLitecoin(symbol: symbol, mnemonic: mnemonic, passphrase: passphrase, fTest: true)
             break
         case .main(.stellar):
-            coin = NRLStellar(mnemonic: mnemonic, passphrase: passphrase, fTest: false)
+            coin = NRLStellar(symbol: symbol, mnemonic: mnemonic, passphrase: passphrase, fTest: false)
             break
         case .test(.stellar):
-            coin = NRLStellar(mnemonic: mnemonic, passphrase: passphrase, fTest: true)
+            coin = NRLStellar(symbol: symbol, mnemonic: mnemonic, passphrase: passphrase, fTest: true)
             break
 //        default:
 //            coin = NRLEthereum(seed: seed, fTest: false)

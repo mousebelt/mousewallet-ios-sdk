@@ -22,6 +22,8 @@ class NRLCoin {
     var masterPrivateKey: NRLPrivateKey?
     var pathPrivateKey: NRLPrivateKey?
     
+    var coinsymbol: String
+    
     var network: NRLNetwork
     var coinType: UInt32
     var seedKey: String
@@ -31,7 +33,8 @@ class NRLCoin {
     var address: String?
     var wif: String?
 
-    public init(mnemonic: [String], passphrase: String, network: NRLNetwork, coinType: UInt32, seedKey: String, curve: String) {
+    public init(symbol:String, mnemonic: [String], passphrase: String, network: NRLNetwork, coinType: UInt32, seedKey: String, curve: String) {
+        self.coinsymbol = symbol;
         self.mnemonic = mnemonic
         self.network = network
         self.coinType = coinType

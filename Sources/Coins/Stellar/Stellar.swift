@@ -18,7 +18,7 @@ class NRLStellar : NRLCoin{
     var trNetwork: Network
     var bCreated: Bool = false
     
-    init(mnemonic: [String], passphrase: String, fTest: Bool) {
+    init(symbol: String, mnemonic: [String], passphrase: String, fTest: Bool) {
         var network: NRLNetwork = .main(.stellar)
         self.trNetwork = Network.public
         if (fTest) {
@@ -28,7 +28,8 @@ class NRLStellar : NRLCoin{
         
         let cointype = network.coinType
         
-        super.init(mnemonic: mnemonic,
+        super.init(symbol: symbol,
+                   mnemonic: mnemonic,
                    passphrase: passphrase,
                    network: network,
                    coinType: cointype,

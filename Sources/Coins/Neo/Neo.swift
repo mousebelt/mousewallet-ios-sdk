@@ -15,7 +15,7 @@ import PromiseKit
 class NRLNeo : NRLCoin{
     var account: NeoAccount?
     
-    init(mnemonic: [String], passphrase: String, fTest: Bool) {
+    init(symbol: String, mnemonic: [String], passphrase: String, fTest: Bool) {
         var network: NRLNetwork = .main(.ethereum)
         if (fTest) {
             network = .test(.ethereum)
@@ -23,7 +23,8 @@ class NRLNeo : NRLCoin{
         
         let cointype = network.coinType
         
-        super.init(mnemonic: mnemonic,
+        super.init(symbol: symbol,
+                   mnemonic: mnemonic,
                    passphrase: passphrase,
                    network: network,
                    coinType: cointype,

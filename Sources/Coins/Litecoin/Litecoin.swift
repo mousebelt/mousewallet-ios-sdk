@@ -23,7 +23,7 @@ class NRLLitecoin : NRLCoin{
     private var didInitWallet = false
     private let pin = "1234"
     
-    init(mnemonic: [String], passphrase: String, fTest: Bool) {
+    init(symbol: String, mnemonic: [String], passphrase: String, fTest: Bool) {
         self.isTest = fTest;
         var network: NRLNetwork = .main(.litecoin)
         if (fTest) {
@@ -32,7 +32,8 @@ class NRLLitecoin : NRLCoin{
         
         let cointype = network.coinType
         
-        super.init(mnemonic: mnemonic,
+        super.init(symbol: symbol,
+                   mnemonic: mnemonic,
                    passphrase: passphrase,
                    network: network,
                    coinType: cointype,
