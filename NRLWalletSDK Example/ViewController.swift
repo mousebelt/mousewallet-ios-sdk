@@ -87,6 +87,8 @@ class ViewController: UIViewController {
             return
         }
         
+        updateBalance()
+        
         wallet.getAccountTransactions(offset: 0, count: 10, order: 0){ (err, tx) -> () in
             switch (err) {
             case NRLWalletSDKError.nrlSuccess:
@@ -185,6 +187,17 @@ class ViewController: UIViewController {
         }
     }
     
+    func updateBalance() {
+        guard let wallet = coinWallet else {
+            print("PeerGroupDidStartDownload Error: cannot init wallet!")
+            return
+        }
+    
+        wallet.getWalletBalance() { (err, value) -> () in
+            self.lbBalance.text = String(describing: value)
+        }
+    }
+    
     @objc func PeerGroupDidStartDownload(notification: Notification) {
         guard let wallet = coinWallet else {
             print("PeerGroupDidStartDownload Error: cannot init wallet!")
@@ -241,7 +254,7 @@ class ViewController: UIViewController {
         print("\n------------------------- Ethereum ----------------------------\n")
 
         // Ethereum : 60
-        
+        self.mnemonic = ["menu", "year", "tool", "traffic", "civil", "tool", "lesson", "merit", "limb", "first", "sound", "gasp"]
         guard let mnemonic = self.mnemonic else {
             print("Error: no mnemonic")
             return
@@ -393,8 +406,8 @@ class ViewController: UIViewController {
         
         generateMneonic()
 
-        setBitcoinWallet()
-//        setEthereumWallet()
+//        setBitcoinWallet()
+        setEthereumWallet()
 //        setLitecoinWallet()
 //        setStellarWallet()
 //        setNeoWallet()

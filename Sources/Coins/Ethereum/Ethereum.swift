@@ -14,17 +14,20 @@ import Alamofire
 import ObjectMapper
 
 class NRLEthereum : NRLCoin{
-//    let web3 = Web3(rpcURL: urlWeb3Provider)
+    let web3 = Web3(rpcURL: "") //this is only used for contract transaction sign.
     var privKey: EthereumPrivateKey?
     var chainid: EthereumQuantity //1 for mainnet. 3 for ropsten. 4 for rinkeby. 42 for kovan.
+    var urlServer: String
     
     init(symbol: String, mnemonic: [String], passphrase: String, fTest: Bool) {
         
         var network: NRLNetwork = .main(.ethereum)
         self.chainid = 1
+        self.urlServer = urlEtherServer
         if (fTest) {
             network = .test(.ethereum)
             self.chainid = 3
+            self.urlServer = urlEtherTestServer
         }
         
         let cointype = network.coinType
@@ -89,15 +92,16 @@ class NRLEthereum : NRLCoin{
 //        }
         
         let address = self.privKey!.address.hex(eip55: false)
-        let url = "\(urlEtherServer)/api/v1/balance/\(address)"
+
+        let url = "\(self.urlServer)/api/v1/balance/\(address)"
         
         firstly {
             sendRequest(responseObject:VCoinResponse.self, url: url)
             }.done { res in
                 let resObj = Mapper<ETHGetBalanceResponse>().map(JSONObject: res.data)
-                let balance: String = (resObj?.balance)!
-                DDLogDebug("balance: \(balance)")
-                callback(NRLWalletSDKError.nrlSuccess, balance)
+                let balances = (resObj?.balances)!
+                DDLogDebug("balance: \(balances)")
+                callback(NRLWalletSDKError.nrlSuccess, balances)
             }.catch { error in
                 callback((error as? NRLWalletSDKError)!, "")
         }
@@ -123,7 +127,7 @@ class NRLEthereum : NRLCoin{
     }
     override func getAccountTransactions(offset: Int, count: Int, order: UInt, callback:@escaping (_ err: NRLWalletSDKError , _ tx: Any ) -> ()) {
         let address = self.privKey!.address.hex(eip55: false)
-        let url = "\(urlEtherServer)/api/v1/address/txs/\(address)"
+        let url = "\(self.urlServer)/api/v1/address/txs/\(address)"
         
         firstly {
             sendRequest(responseObject:VCoinResponse.self, url: url, parameters: ["offset": offset, "count": count, "order": order])
@@ -220,9 +224,9 @@ class NRLEthereum : NRLCoin{
 //    }
     
     //transaction
-    override func sendTransaction(to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
+    override func sendTransaction(contractHash: String, to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
         let address = self.privKey!.address.hex(eip55: false)
-        var url = "\(urlEtherServer)/api/v1/address/gettransactioncount/\(address)"
+        var url = "\(self.urlServer)/api/v1/address/gettransactioncount/\(address)"
         
         firstly {
             sendRequest(responseObject:VCoinResponse.self, url: url)
@@ -230,31 +234,53 @@ class NRLEthereum : NRLCoin{
                 return Promise<VCoinResponse> { seal in
                     let nonce: UInt = res.data as! UInt
 
-                    let tx = try EthereumTransaction(
-                        nonce: EthereumQuantity(quantity: BigUInt(nonce)),
-                        gasPrice: EthereumQuantity(quantity: BigUInt(fee)),
-                        gas: 21000,
-                        to: EthereumAddress(hex: to, eip55: false),
-                        value: EthereumQuantity(quantity: BigUInt(value))
-                    )
+                    var tx: EthereumTransaction
+                    if (contractHash == "0") {
+                        tx = try EthereumTransaction(
+                            nonce: EthereumQuantity(quantity: BigUInt(nonce)),
+                            gasPrice: EthereumQuantity(quantity: BigUInt(fee)),
+                            gas: EthereumQuantity(quantity: BigUInt(ethereumGasAmount)),
+                            to: EthereumAddress(hex: to, eip55: false),
+                            value: EthereumQuantity(quantity: BigUInt(value))
+                        )
+                    }
+                    else {
+                        let contractAddress = try EthereumAddress(hex: contractHash, eip55: false)
+                        let contract = GenericERC20Contract(address: contractAddress, eth:self.web3.eth)
+                        
+                        tx = try contract.transfer(to: EthereumAddress(hex: to, eip55: false), value: BigUInt(value)).createTransaction(
+                            nonce: EthereumQuantity(quantity: BigUInt(nonce)),
+                            from: EthereumAddress(hex: address, eip55: false),
+                            value: 0,
+                            gas: EthereumQuantity(quantity: BigUInt(contractTransferGasAmount)),
+                            gasPrice: EthereumQuantity(quantity: BigUInt(fee))
+                            )!
+                    }
                     
-                    DDLogDebug("nonce: \(String(describing: tx.nonce?.hex()))")
-                    DDLogDebug("to: \(String(describing: tx.to?.hex(eip55: false)))")
-                    DDLogDebug("value: \(String(describing: tx.value?.hex()))")
-                    DDLogDebug("gasPrice: \(String(describing: tx.gasPrice?.hex()))")
+                    DDLogDebug("transaction: \(String(describing: tx))")
 
                     let newtx: EthereumSignedTransaction = try tx.sign(with: self.privKey!, chainId: self.chainid)
+                    
+                    
 
+//                    firstly {
+//                        self.web3.eth.sendRawTransaction(transaction: newtx)
+//                        }.done { txHash in
+//                            DDLogDebug("txHash: \(txHash)")
+//                        }.catch { error in
+//                            DDLogDebug("error: \(error)")
+//                    }
+                    
                     DDLogDebug("r: \(newtx.r.hex())")
                     DDLogDebug("s: \(newtx.s.hex())")
                     DDLogDebug("v: \(newtx.v.hex())")
-                    
+
                     DDLogDebug("inputdata: \(tx.data.hex())")
 
-                    url = "\(urlEtherServer)/api/v1/sendsignedtransaction"
+                    url = "\(self.urlServer)/api/v1/sendsignedtransaction"
                     let rawData: Bytes = try! RLPEncoder().encode(newtx.rlp())
                     DDLogDebug("rawDAta: \(String(describing: rawData.toHexString()))")
-                    
+
                     sendRequest(responseObject:VCoinResponse.self, url: url, method: .post,
                                 parameters: ["raw": String(describing: rawData.toHexString())])
                         .done {res2 in
@@ -276,9 +302,9 @@ class NRLEthereum : NRLCoin{
         }
     }
     
-    override func signTransaction(to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
+    override func signTransaction(contractHash: String, to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
         let address = self.privKey!.address.hex(eip55: false)
-        let url = "\(urlEtherServer)/api/v1/address/gettransactioncount/\(address)"
+        let url = "\(self.urlServer)/api/v1/address/gettransactioncount/\(address)"
         
         firstly {
             sendRequest(responseObject:VCoinResponse.self, url: url)
@@ -325,7 +351,7 @@ class NRLEthereum : NRLCoin{
   
     override func sendSignTransaction(tx: Any, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
         let transactionSigned = tx as! EthereumSignedTransaction
-        let url = "\(urlEtherServer)/api/v1/sendsignedtransaction"
+        let url = "\(self.urlServer)/api/v1/sendsignedtransaction"
         let rawData: Bytes = try! RLPEncoder().encode(transactionSigned.rlp())
         DDLogDebug("rawDAta: \(String(describing: rawData.toHexString()))")
         

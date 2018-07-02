@@ -75,9 +75,9 @@ class ETHGetTransactionsResponse: Mappable, Equatable {
     }
 }
 
-class ETHGetBalanceResponse: Mappable, Equatable {
+class ETHGetBalanceMap: Mappable, Equatable {
     var balance: String?
-    var address: String?
+    var symbol: String?
     
     required init?(map: Map) {
         
@@ -85,13 +85,27 @@ class ETHGetBalanceResponse: Mappable, Equatable {
     
     // Mappable
     func mapping(map: Map) {
-        balance        <- map["balance"]
-        address        <- map["address"]
+        balance       <- map["balance"]
+        symbol        <- map["symbol"]
     }
     
-    static func == (lhs: ETHGetBalanceResponse, rhs: ETHGetBalanceResponse) -> Bool {
-        return lhs.address == rhs.address
+    static func == (lhs: ETHGetBalanceMap, rhs: ETHGetBalanceMap) -> Bool {
+        return lhs.symbol == rhs.symbol
     }
+}
+
+class ETHGetBalanceResponse: Mappable {
+    var balances: [ETHGetBalanceMap]?
+    
+    required init?(map: Map) {
+        
+    }
+    
+    // Mappable
+    func mapping(map: Map) {
+        balances        <- map["balances"]
+    }
+
 }
 
 class ETHSendSignedTransactionResponse: Mappable, Equatable {

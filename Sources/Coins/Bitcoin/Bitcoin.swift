@@ -154,11 +154,11 @@ class NRLBitcoin : NRLCoin{
     }
     
     //transaction
-    override func sendTransaction(to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
+    override func sendTransaction(contractHash: String, to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
         self.btcpeer?.sendTransaction(to: to, value: value, fee: fee, callback: callback)
     }
     
-    override func signTransaction(to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
+    override func signTransaction(contractHash: String, to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
         self.btcpeer?.signTransaction(to: to, value: value, fee: fee, callback: callback)
     }
     

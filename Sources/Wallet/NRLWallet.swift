@@ -13,7 +13,7 @@ import CryptoSwift
 public class NRLWallet {
     let coin: NRLCoin
     
-    public init(mnemonic: [String], passphrase: String, network: NRLNetwork, symbol: String) {
+    public init(mnemonic: [String], passphrase: String, network: NRLNetwork, symbol: String = "") {
 
         switch network {
         case .main(.ethereum):
@@ -135,12 +135,13 @@ public class NRLWallet {
         return self.coin.getAccountTransactions(offset: offset, count: count, order: order, callback: callback)
     }
     
-    public func sendTransaction(to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
-        self.coin.sendTransaction(to: to, value: value, fee: fee, callback: callback)
+    //contractHash: 0 means ether transaction, other value means contract address of ERC20 token
+    public func sendTransaction(contractHash: String = "0", to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
+        self.coin.sendTransaction(contractHash: contractHash, to: to, value: value, fee: fee, callback: callback)
     }   
     
-    public func signTransaction(to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
-        self.coin.signTransaction(to: to, value: value, fee: fee, callback: callback)
+    public func signTransaction(contractHash: String = "0", to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
+        self.coin.signTransaction(contractHash: contractHash, to: to, value: value, fee: fee, callback: callback)
     }
     
     public func sendTransaction(asset: AssetId, to: String, value: Decimal, fee: Decimal, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {

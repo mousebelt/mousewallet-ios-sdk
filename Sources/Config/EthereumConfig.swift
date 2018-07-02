@@ -9,6 +9,6 @@
 import Foundation
 
 let urlEtherServer = "http://18.232.254.235"
-//let urlWeb3Provider = "https://ropsten.infura.io/TINkP1xOPWqKFJqcU9si"
-//let urlWeb3Provider = "https://api.myetherapi.com/rop"
-
+let urlEtherTestServer = "http://18.209.104.0"
+let ethereumGasAmount = 21000
+let contractTransferGasAmount = 100000
