@@ -250,21 +250,9 @@ class NRLStellar : NRLCoin{
                 }
                 
                 DDLogDebug("account info: \(String(describing: resObj))")
+
                 
-                guard let balances = resObj.balances else {
-                    DDLogDebug("Account balance is nul")
-                    callback(NRLWalletSDKError.responseError(.unexpected("no data")), 0)
-                    return
-                }
-                
-                let balancelist = NSMutableArray(capacity: 0)
-                for balance in balances {
-                    guard let balanceobj = Mapper<StellarAccountBalanceResponse>().map(JSONObject: balance) else {continue}
-                    
-                    balancelist.add(balanceobj)
-                }
-                
-                callback(NRLWalletSDKError.nrlSuccess, balancelist)
+                callback(NRLWalletSDKError.nrlSuccess, resObj.balances!)
 
             }.catch { error in
                 self.bCreated = false
