@@ -407,10 +407,10 @@ class ViewController: UIViewController {
         generateMneonic()
 
 //        setBitcoinWallet()
-        setEthereumWallet()
+//        setEthereumWallet()
 //        setLitecoinWallet()
 //        setStellarWallet()
-//        setNeoWallet()
+        setNeoWallet()
         
 
     }

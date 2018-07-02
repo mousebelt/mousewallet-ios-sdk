@@ -8,4 +8,4 @@
 
 import Foundation
 
-let urlNeoServer = "http://18.232.163.132"
+let urlNeoServer = "http://54.152.5.218"
