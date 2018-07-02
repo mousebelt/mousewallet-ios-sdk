@@ -10,28 +10,22 @@ public enum NRLWalletSDKError: Error {
     public enum RequestError: Error {
         case invalidURL
         case invalidParameters(Any)
+        case unexpected(Any)
     }
     
     public enum ResponseError: Error {
         case jsonrpcError(JSONRPCError)
         case connectionError(Error)
-        case unexpected(Any)
         case unacceptableStatusCode(Int)
         case noContentProvided
+        case unexpected(Any)
     }
     
     public enum CryptoError: Error {
+        case failed(Any)
         case failedToSign
-        case failedToEncode(Any)
+        case failedToCreateTransaction
         case keyDerivateionFailed
-        case seedGenerationFailed
-        case invalidSeed
-        case invalidSeedLength
-        case invalidPublicKey
-        case invalidPublicKeyLength
-        case invalidPrivateKey
-        case invalidPrivateKeyLength
-        case invalidSignatureLength
     }
     
     public enum SyncError: Error {
@@ -42,7 +36,6 @@ public enum NRLWalletSDKError: Error {
         case parameterError
         case publishError
         case transactionFailed(Error)
-        case signFailed(Error)
     }
     
     public enum AccountError: Error {

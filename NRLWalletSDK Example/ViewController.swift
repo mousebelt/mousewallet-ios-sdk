@@ -107,7 +107,6 @@ class ViewController: UIViewController {
             default:
                 self.txtTransactions.text = "Failed: \(String(describing: err))"
             }
-
         }
     }
     

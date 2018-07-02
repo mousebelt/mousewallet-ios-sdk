@@ -128,6 +128,8 @@ class NRLStellar : NRLCoin{
         
         return true
     }
+    
+// Auto payment for newly created account so that it can be really created to network.
 //                return Promise<VCoinResponse> { seal in
 //                    DDLogDebug("account info \(String(describing: res.data))")
 //                    let resObj = Mapper<StellarAccountResponse>().map(JSONObject: res.data)
@@ -170,7 +172,7 @@ class NRLStellar : NRLCoin{
 //                        }
 //                    }
 //                    else {
-//                        seal.reject(NRLWalletSDKError.requestError(.invalidParameters("parameter encode error")))
+//                        seal.reject(NRLWalletSDKError.requestError(.unexpected("parameter encode error")))
 //                    }
 //                }
 //            }.then { res3 in
@@ -245,7 +247,7 @@ class NRLStellar : NRLCoin{
                 
                 guard let resObj = Mapper<StellarAccountResponse>().map(JSONObject: res.data) else {
                     DDLogDebug("Get account info respone data is null")
-                    callback(NRLWalletSDKError.responseError(.unexpected("no data")), 0)
+                    callback(NRLWalletSDKError.responseError(.unexpected("no data in VCoinResponse")), 0)
                     return
                 }
                 
@@ -339,7 +341,7 @@ class NRLStellar : NRLCoin{
                     
                     guard let resObj = Mapper<StellarAccountResponse>().map(JSONObject: res.data) else {
                         DDLogDebug("Get account info respone data is null")
-                        seal.reject(NRLWalletSDKError.responseError(.unexpected("no data")))
+                        seal.reject(NRLWalletSDKError.responseError(.unexpected("no data in VCoinResponse")))
                         return
                     }
                     
@@ -347,7 +349,7 @@ class NRLStellar : NRLCoin{
                     
                     guard let balances = resObj.balances else {
                         DDLogDebug("Account balance is nul")
-                        seal.reject(NRLWalletSDKError.responseError(.unexpected("no data")))
+                        seal.reject(NRLWalletSDKError.responseError(.unexpected("no balances in response data")))
                         return
                     }
                     
@@ -403,7 +405,7 @@ class NRLStellar : NRLCoin{
                         }
                     }
                     else {
-                        seal.reject(NRLWalletSDKError.requestError(.invalidParameters("parameter encode error")))
+                        seal.reject(NRLWalletSDKError.requestError(.unexpected("parameter encode error")))
                     }
                 }
             }.done { res3 in

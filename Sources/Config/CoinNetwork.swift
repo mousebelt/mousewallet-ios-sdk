@@ -41,7 +41,7 @@ func sendRequest<T: Mappable>(responseObject: T.Type, url: URLConvertible, metho
                         }
                     }
                 case .failure(let error):
-                    seal.reject(NRLWalletSDKError.responseError(.connectionError(error)))
+                    seal.reject(NRLWalletSDKError.responseError(.unexpected(error)))
                 }
         }
     }

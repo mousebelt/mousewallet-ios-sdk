@@ -207,7 +207,7 @@ class NRLEthereum : NRLCoin{
 //                callback(NRLWalletSDKError.nrlSuccess, tx as Any)
 //            }.catch { error in
 //                DDLogDebug("Failed to send: \(error)")
-//                callback(NRLWalletSDKError.transactionError(.signFailed(error)), 0)
+//                callback(NRLWalletSDKError.transactionError(.transactionFailed(error)), 0)
 //        }
 //    }
 //

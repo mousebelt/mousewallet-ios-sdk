@@ -274,7 +274,7 @@ class NRLLitecoin : NRLCoin{
         let tx = self.walletManager?.wallet?.createTransaction(forAmount: value, toAddress: to);
         
         guard let txSigned = tx else {
-            callback(NRLWalletSDKError.cryptoError(.failedToSign), 0)
+            callback(NRLWalletSDKError.cryptoError(.failedToCreateTransaction), 0)
             return
         }
         
