@@ -89,25 +89,25 @@ class ViewController: UIViewController {
         
         updateBalance()
         
-        wallet.getAccountTransactions(offset: 0, count: 10, order: 0){ (err, tx) -> () in
-            switch (err) {
-            case NRLWalletSDKError.nrlSuccess:
-                //for ethereum tx is ETHGetTransactionsResponse mapping object and can get any field
-                var strTransactions = String(describing: tx)
-
-                strTransactions = strTransactions.replacingOccurrences(of: "\\n", with: "\n")
-                strTransactions = strTransactions.replacingOccurrences(of: "\\t", with: "\t")
-
-                print("transactions: \(strTransactions)")
-                self.txtTransactions.text = strTransactions
-            case NRLWalletSDKError.responseError(.unexpected(let error)):
-                self.txtTransactions.text = "Server request error: \(error)"
-            case NRLWalletSDKError.responseError(.connectionError(let error)):
-                self.txtTransactions.text = "Server connection error: \(error)"
-            default:
-                self.txtTransactions.text = "Failed: \(String(describing: err))"
-            }
-        }
+//        wallet.getAccountTransactions(offset: 0, count: 10, order: 0){ (err, tx) -> () in
+//            switch (err) {
+//            case NRLWalletSDKError.nrlSuccess:
+//                //for ethereum tx is ETHGetTransactionsResponse mapping object and can get any field
+//                var strTransactions = String(describing: tx)
+//
+//                strTransactions = strTransactions.replacingOccurrences(of: "\\n", with: "\n")
+//                strTransactions = strTransactions.replacingOccurrences(of: "\\t", with: "\t")
+//
+//                print("transactions: \(strTransactions)")
+//                self.txtTransactions.text = strTransactions
+//            case NRLWalletSDKError.responseError(.unexpected(let error)):
+//                self.txtTransactions.text = "Server request error: \(error)"
+//            case NRLWalletSDKError.responseError(.connectionError(let error)):
+//                self.txtTransactions.text = "Server connection error: \(error)"
+//            default:
+//                self.txtTransactions.text = "Failed: \(String(describing: err))"
+//            }
+//        }
     }
     
     @IBAction func OnConnect(_ sender: Any) {
@@ -253,7 +253,7 @@ class ViewController: UIViewController {
         print("\n------------------------- Ethereum ----------------------------\n")
 
         // Ethereum : 60
-        self.mnemonic = ["menu", "year", "tool", "traffic", "civil", "tool", "lesson", "merit", "limb", "first", "sound", "gasp"]
+//        self.mnemonic = ["menu", "year", "tool", "traffic", "civil", "tool", "lesson", "merit", "limb", "first", "sound", "gasp"]
         guard let mnemonic = self.mnemonic else {
             print("Error: no mnemonic")
             return
@@ -406,10 +406,10 @@ class ViewController: UIViewController {
         generateMneonic()
 
 //        setBitcoinWallet()
-//        setEthereumWallet()
+        setEthereumWallet()
 //        setLitecoinWallet()
 //        setStellarWallet()
-        setNeoWallet()
+//        setNeoWallet()
         
 
     }

@@ -106,25 +106,26 @@ class NRLStellar : NRLCoin{
             return false
         }
 
-        guard let walletkey = self.keyPair else {
-            DDLogDebug("Wallet key is invalid.")
-            return false
-        }
-        
-        let account = walletkey.accountId
-        let url = "\(urlStellarServer)/api/v1/account/\(String(describing: account))"
-
-        firstly {
-            sendRequest(responseObject:VCoinResponse.self, url: url)
-            }.done { res in
-                let resObj = Mapper<StellarAccountResponse>().map(JSONObject: res.data)
-                DDLogDebug("account info: \(String(describing: resObj))")
-                
-                self.bCreated = true
-            }.catch { error in
-                DDLogDebug("Get account info request error: \(error)")
-                
-        }
+        return true
+//        guard let walletkey = self.keyPair else {
+//            DDLogDebug("Wallet key is invalid.")
+//            return false
+//        }
+//
+//        let account = walletkey.accountId
+//        let url = "\(urlStellarServer)/api/v1/account/\(String(describing: account))"
+//
+//        firstly {
+//            sendRequest(responseObject:VCoinResponse.self, url: url)
+//            }.done { res in
+//                let resObj = Mapper<StellarAccountResponse>().map(JSONObject: res.data)
+//                DDLogDebug("account info: \(String(describing: resObj))")
+//
+//                self.bCreated = true
+//            }.catch { error in
+//                DDLogDebug("Get account info request error: \(error)")
+//
+//        }
         
         return true
     }
@@ -238,6 +239,7 @@ class NRLStellar : NRLCoin{
         }
         
         let account = walletkey.accountId
+//        let account = "GCIA6RMJKSV2XFJYVXWTKWPGE4FYOPO4PCT2RVWCWWRS7GW734K472WH"
         let url = "\(urlStellarServer)/api/v1/account/\(String(describing: account))"
         
         firstly {

@@ -118,7 +118,7 @@ public class NeoAccount {
         }
     }
     
-    func getBalance(completion: @escaping(Any?, Error?) -> Void) {
+    func getBalance(completion: @escaping(Any?, NRLWalletSDKError?) -> Void) {
         
         let address = self.address
         let url = "\(urlNeoServer)/api/v1/balance/\(address)"

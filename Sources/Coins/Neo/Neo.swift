@@ -87,7 +87,7 @@ class NRLNeo : NRLCoin{
             }
             else {
                 DDLogDebug("getWalletBalance error: \(String(describing: error))")
-                callback(NRLWalletSDKError.responseError(.unexpected(error!)), "")
+                callback(error!, "")
             }
         }
     }
