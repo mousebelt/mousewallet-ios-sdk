@@ -30,7 +30,7 @@ public class NeoTokenMapp: Mappable {
 
 public class NeoAssetMap: Mappable {
     public var asset:String?
-    public var value:Decimal?
+    public var value:Double?
     public var symbol:String?
     public var token:NeoTokenMapp?
     
