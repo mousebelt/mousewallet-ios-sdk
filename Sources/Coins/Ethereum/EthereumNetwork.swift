@@ -10,20 +10,20 @@ import Foundation
 import ObjectMapper
 
 public class ETHTxDetailResponse: Mappable, Equatable {
-    var blockHash: String?
-    var blockNumber: UInt?
-    var from: String?
-    var to: String?
-    var gas: UInt?
-    var gasPrice: String?
-    var hash: String?
-    var input: String?
-    var nonce: UInt?
-    var transactionIndex: UInt?
-    var value: UInt?
-    var v: String?
-    var r: String?
-    var s: String?
+    public var blockHash: String?
+    public var blockNumber: UInt?
+    public var from: String?
+    public var to: String?
+    public var gas: UInt?
+    public var gasPrice: String?
+    public var hash: String?
+    public var input: String?
+    public var nonce: UInt?
+    public var transactionIndex: UInt?
+    public var value: UInt?
+    public var v: String?
+    public var r: String?
+    public var s: String?
     
     
     public required init?(map: Map) {
@@ -56,8 +56,8 @@ public class ETHTxDetailResponse: Mappable, Equatable {
 }
 
 public class ETHGetTransactionsResponse: Mappable, Equatable {
-    var total: UInt?
-    var result: [ETHTxDetailResponse]?
+    public var total: UInt?
+    public var result: [ETHTxDetailResponse]?
     
     public required init?(map: Map) {
         
@@ -76,8 +76,8 @@ public class ETHGetTransactionsResponse: Mappable, Equatable {
 }
 
 public class ETHGetBalanceMap: Mappable, Equatable {
-    var balance: String?
-    var symbol: String?
+    public var balance: String?
+    public var symbol: String?
     
     public required init?(map: Map) {
         
@@ -95,7 +95,7 @@ public class ETHGetBalanceMap: Mappable, Equatable {
 }
 
 public class ETHGetBalanceResponse: Mappable {
-    var balances: [ETHGetBalanceMap]?
+    public var balances: [ETHGetBalanceMap]?
     
     public required init?(map: Map) {
         
@@ -109,18 +109,18 @@ public class ETHGetBalanceResponse: Mappable {
 }
 
 public class ETHSendSignedTransactionResponse: Mappable, Equatable {
-    var blockNumber: UInt?
-    var status: Bool?
-    var to: String?
-    var transactionHash: String?
-    var blockHash: String?
-    var from: String?
-    var contractAddress: String?
-    var logsBloom: String?
-    var logs: [String]?
-    var gasUsed: UInt?
-    var cumulativeGasUsed: UInt?
-    var transactionIndex: UInt?
+    public var blockNumber: UInt?
+    public var status: Bool?
+    public var to: String?
+    public var transactionHash: String?
+    public var blockHash: String?
+    public var from: String?
+    public var contractAddress: String?
+    public var logsBloom: String?
+    public var logs: [String]?
+    public var gasUsed: UInt?
+    public var cumulativeGasUsed: UInt?
+    public var transactionIndex: UInt?
     
     public required init?(map: Map) {
         
