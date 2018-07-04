@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class StellarAccountFlagsResponse: Mappable {
+public class StellarAccountFlagsResponse: Mappable {
     
     /// Requires the issuing account to give other accounts permission before they can hold the issuing account’s credit.
     var authRequired:Bool?
@@ -20,19 +20,19 @@ class StellarAccountFlagsResponse: Mappable {
     /// If this is set then none of the authorization flags can be set and the account can never be deleted.
     var authImmutable:Bool?
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
     // Mappable
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         authRequired           <- map["auth_required"]
         authRevocable          <- map["auth_revocable"]
         authImmutable          <- map["auth_immutable"]
     }
 }
 
-class StellarAccountBalanceResponse: Mappable {
+public class StellarAccountBalanceResponse: Mappable {
     
     /// Balance for the specified asset.
     var balance:String?
@@ -50,12 +50,12 @@ class StellarAccountBalanceResponse: Mappable {
     /// The account id of the account that created the asset.
     var assetIssuer:String?
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
     // Mappable
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         balance           <- map["balance"]
         limit             <- map["limit"]
         assetType         <- map["asset_type"]
@@ -64,7 +64,7 @@ class StellarAccountBalanceResponse: Mappable {
     }
 }
 
-class StellarAccountThresholdsResponse: Mappable {
+public class StellarAccountThresholdsResponse: Mappable {
     
     /// The account's threshhold for low security operations.
     var lowThreshold:Int?
@@ -75,19 +75,19 @@ class StellarAccountThresholdsResponse: Mappable {
     /// The account's threshhold for high security operations.
     var highThreshold:Int?
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
     // Mappable
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         lowThreshold          <- map["low_threshold"]
         medThreshold          <- map["med_threshold"]
         highThreshold         <- map["high_threshold"]
     }
 }
 
-class StellarAccountSignerResponse: Mappable {
+public class StellarAccountSignerResponse: Mappable {
     
     /// Public key of the signer / account id.
     var publicKey:String?
@@ -101,12 +101,12 @@ class StellarAccountSignerResponse: Mappable {
     /// Type of the key e.g. ed25519_public_key
     var type:String?
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
     // Mappable
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         publicKey         <- map["public_key"]
         weight            <- map["weight"]
         key               <- map["key"]
@@ -116,7 +116,7 @@ class StellarAccountSignerResponse: Mappable {
 
 ///  Represents an account response, containing information relating to a single account.
 ///  Reffer nrlxplore stellar api "/api/v1/account/:accountId" at "https://github.com/gedanziger/nrlxplore-vcoins/wiki/Stellar#get-account-information-by-accountid")
-class StellarAccountResponse: Mappable {
+public class StellarAccountResponse: Mappable {
     
     /// The number of account subentries.
     var subentryCount:UInt?
@@ -136,12 +136,12 @@ class StellarAccountResponse: Mappable {
     /// The current sequence number that can be used when submitting a transaction from this account.
     var sequence: String?
 
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
     // Mappable
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         subentryCount           <- map["subentry_count"]
         flags                   <- map["flags"]
         balances                <- map["balances"]
@@ -151,14 +151,14 @@ class StellarAccountResponse: Mappable {
     }
 }
 
-class StellarTransactionAccount: TransactionAccount {
+public class StellarTransactionAccount: TransactionAccount {
     /// Returns keypair associated with this Account.
-    var keyPair: StellarKeyPair
+    public var keyPair: StellarKeyPair
     
     /// Returns current sequence number of this Account.
-    var sequenceNumber : UInt64
+    public var sequenceNumber : UInt64
     
-    init(keypair: StellarKeyPair, seqnum: UInt64) {
+    public init(keypair: StellarKeyPair, seqnum: UInt64) {
         self.keyPair = keypair
         self.sequenceNumber = seqnum
     }

@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 
-class StellarTxDetailResponse: Mappable, Equatable {
+public class StellarTxDetailResponse: Mappable, Equatable {
     var id: String?
     var paging_token: String?
     var hash: String?
@@ -27,12 +27,12 @@ class StellarTxDetailResponse: Mappable, Equatable {
     var signatures: [String]?
     
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
     // Mappable
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         id           <- map["id"]
         paging_token         <- map["paging_token"]
         hash                <- map["hash"]
@@ -49,24 +49,24 @@ class StellarTxDetailResponse: Mappable, Equatable {
         signatures                   <- map["signatures"]
     }
     
-    static func == (lhs: StellarTxDetailResponse, rhs: StellarTxDetailResponse) -> Bool {
+    public static func == (lhs: StellarTxDetailResponse, rhs: StellarTxDetailResponse) -> Bool {
         return lhs.id == rhs.id &&
             lhs.ledger == rhs.ledger &&
             lhs.hash == rhs.hash
     }
 }
 
-class StellarGetTransactionsResponse: Mappable {
+public class StellarGetTransactionsResponse: Mappable {
     var next: String?
     var prev: String?
     var result: [StellarTxDetailResponse]?
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
     // Mappable
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         next         <- map["next"]
         prev         <- map["prev"]
         result        <- map["result"]
@@ -74,19 +74,19 @@ class StellarGetTransactionsResponse: Mappable {
 }
 
 
-class StellarSendSignedTransactionResponse: Mappable, Equatable {
+public class StellarSendSignedTransactionResponse: Mappable, Equatable {
     var result_meta_xdr: String?
     var result_xdr: String?
     var hash: String?
     var ledger: String?
     var envelope_xdr: String?
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
     // Mappable
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         result_meta_xdr         <- map["result_meta_xdr"]
         result_xdr              <- map["result_xdr"]
         hash                    <- map["hash"]
@@ -94,7 +94,7 @@ class StellarSendSignedTransactionResponse: Mappable, Equatable {
         envelope_xdr            <- map["envelope_xdr"]
     }
     
-    static func == (lhs: StellarSendSignedTransactionResponse, rhs: StellarSendSignedTransactionResponse) -> Bool {
+    public static func == (lhs: StellarSendSignedTransactionResponse, rhs: StellarSendSignedTransactionResponse) -> Bool {
         return lhs.hash == rhs.hash &&
             lhs.ledger == rhs.ledger
     }

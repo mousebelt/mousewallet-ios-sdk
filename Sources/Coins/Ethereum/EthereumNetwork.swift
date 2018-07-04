@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class ETHTxDetailResponse: Mappable, Equatable {
+public class ETHTxDetailResponse: Mappable, Equatable {
     var blockHash: String?
     var blockNumber: UInt?
     var from: String?
@@ -26,12 +26,12 @@ class ETHTxDetailResponse: Mappable, Equatable {
     var s: String?
     
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
     // Mappable
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         blockHash           <- map["blockHash"]
         blockNumber         <- map["blockNumber"]
         from                <- map["from"]
@@ -48,67 +48,67 @@ class ETHTxDetailResponse: Mappable, Equatable {
         s                   <- map["s"]
     }
     
-    static func == (lhs: ETHTxDetailResponse, rhs: ETHTxDetailResponse) -> Bool {
+    public static func == (lhs: ETHTxDetailResponse, rhs: ETHTxDetailResponse) -> Bool {
         return lhs.blockHash == rhs.blockHash &&
             lhs.transactionIndex == rhs.transactionIndex &&
             lhs.hash == rhs.hash
     }
 }
 
-class ETHGetTransactionsResponse: Mappable, Equatable {
+public class ETHGetTransactionsResponse: Mappable, Equatable {
     var total: UInt?
     var result: [ETHTxDetailResponse]?
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
     // Mappable
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         total         <- map["total"]
         result        <- map["result"]
     }
     
-    static func == (lhs: ETHGetTransactionsResponse, rhs: ETHGetTransactionsResponse) -> Bool {
+    public static func == (lhs: ETHGetTransactionsResponse, rhs: ETHGetTransactionsResponse) -> Bool {
         return lhs.total == rhs.total &&
             lhs.result == rhs.result
     }
 }
 
-class ETHGetBalanceMap: Mappable, Equatable {
+public class ETHGetBalanceMap: Mappable, Equatable {
     var balance: String?
     var symbol: String?
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
     // Mappable
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         balance       <- map["balance"]
         symbol        <- map["symbol"]
     }
     
-    static func == (lhs: ETHGetBalanceMap, rhs: ETHGetBalanceMap) -> Bool {
+    public static func == (lhs: ETHGetBalanceMap, rhs: ETHGetBalanceMap) -> Bool {
         return lhs.symbol == rhs.symbol
     }
 }
 
-class ETHGetBalanceResponse: Mappable {
+public class ETHGetBalanceResponse: Mappable {
     var balances: [ETHGetBalanceMap]?
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
     // Mappable
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         balances        <- map["balances"]
     }
 
 }
 
-class ETHSendSignedTransactionResponse: Mappable, Equatable {
+public class ETHSendSignedTransactionResponse: Mappable, Equatable {
     var blockNumber: UInt?
     var status: Bool?
     var to: String?
@@ -122,12 +122,12 @@ class ETHSendSignedTransactionResponse: Mappable, Equatable {
     var cumulativeGasUsed: UInt?
     var transactionIndex: UInt?
     
-    required init?(map: Map) {
+    public required init?(map: Map) {
         
     }
     
     // Mappable
-    func mapping(map: Map) {
+    public func mapping(map: Map) {
         blockNumber         <- map["blockNumber"]
         status              <- map["status"]
         to                  <- map["to"]
@@ -142,7 +142,7 @@ class ETHSendSignedTransactionResponse: Mappable, Equatable {
         transactionIndex    <- map["transactionIndex"]
     }
     
-    static func == (lhs: ETHSendSignedTransactionResponse, rhs: ETHSendSignedTransactionResponse) -> Bool {
+    public static func == (lhs: ETHSendSignedTransactionResponse, rhs: ETHSendSignedTransactionResponse) -> Bool {
         return lhs.transactionHash == rhs.transactionHash &&
             lhs.blockHash == rhs.blockHash
     }
