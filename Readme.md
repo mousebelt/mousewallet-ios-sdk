@@ -37,18 +37,18 @@ Now you can use NRLWalletSDK!
 
 ## Carthage
 
->this framework will be installed when run carthage update --platform iOS
-
-* github "krzyzanowskim/CryptoSwift"
-* github "attaswift/BigInt" ~> 3.0
-* github "Boilertalk/Web3.swift"
-* github "Alamofire/Alamofire" ~> 4.7
-* github "Hearst-DD/ObjectMapper" ~> 3.2
-* github "SwiftyJSON/SwiftyJSON" ~> 4.0
-
-* these sources are derived from Web3.swift
->github "mxcl/PromiseKit"
->github "Boilertalk/secp256k1.swift"
+* make Cartfile at the root folder of project
+```
+github "krzyzanowskim/CryptoSwift"
+github "attaswift/BigInt" ~> 3.0
+github "Boilertalk/Web3.swift"
+github "Alamofire/Alamofire" ~> 4.7
+github "Hearst-DD/ObjectMapper" ~> 3.2
+github "SwiftyJSON/SwiftyJSON" ~> 4.0
+github "gedanziger/nrlwallet-ios-sdk"
+```
+* run following command 
+>carthage update --platform iOS --no-use-binaries
 
 ## framework
 ### neoutils.framework
