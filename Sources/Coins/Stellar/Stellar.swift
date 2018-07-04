@@ -127,7 +127,7 @@ class NRLStellar : NRLCoin{
 //
 //        }
         
-        return true
+//        return true
     }
     
 // Auto payment for newly created account so that it can be really created to network.
@@ -239,7 +239,7 @@ class NRLStellar : NRLCoin{
         }
         
         let account = walletkey.accountId
-//        let account = "GCIA6RMJKSV2XFJYVXWTKWPGE4FYOPO4PCT2RVWCWWRS7GW734K472WH"
+
         let url = "\(urlStellarServer)/api/v1/account/\(String(describing: account))"
         
         firstly {
@@ -261,7 +261,14 @@ class NRLStellar : NRLCoin{
             }.catch { error in
                 self.bCreated = false
                 DDLogDebug("Get account info request error: \(error)")
-                callback(NRLWalletSDKError.responseError(.unexpected(error)), 0)
+
+                switch error {
+                case NRLWalletSDKError.responseError(.resourceMissing( _)):
+                    callback(NRLWalletSDKError.accountError(.notCreated), 0)
+                    return
+                default:
+                    callback((error as? NRLWalletSDKError)!, 0)
+                }
         }
     }
     
@@ -307,15 +314,40 @@ class NRLStellar : NRLCoin{
             callback(NRLWalletSDKError.transactionError(.transactionFailed("Account has no address" as! Error)), 0)
             return
         }
-
-        let url = "\(urlStellarServer)/api/v1/account/txs"
+//        let account = "GCIA6RMJKSV2XFJYVXWTKWPGE4FYOPO4PCT2RVWCWWRS7GW734K472WH"
+        var url = "\(urlStellarServer)/api/v1/account/\(String(describing: account))"
         
         firstly {
-            sendRequest(responseObject:VCoinResponse.self, url: url, method: .post, parameters: ["account": account])
-            }.done { res in
-                DDLogDebug("res: \(res)")
+            sendRequest(responseObject:VCoinResponse.self, url: url)
+            }.done { _ in
+                url = "\(urlStellarServer)/api/v1/address/txs/\(String(describing: account))"
+                
+                firstly {
+                    sendRequest(responseObject:VCoinResponse.self, url: url, method: .get)
+                    }.done { res in
+                        guard let resObj = Mapper<StellarGetTransactionsResponse>().map(JSONObject: res.data) else {
+                            DDLogDebug("getAccountTransactions respone data is null")
+                            callback(NRLWalletSDKError.responseError(.unexpected("no data in VCoinResponse")), 0)
+                            return
+                        }
+                        DDLogDebug("res: \(resObj)")
+
+                        callback(NRLWalletSDKError.nrlSuccess, resObj)
+                    }.catch { error in
+                        DDLogDebug("Error: \(error)")
+                        callback((error as? NRLWalletSDKError)!, 0)
+                }
             }.catch { error in
-                DDLogDebug("Error: \(error)")
+                self.bCreated = false
+                DDLogDebug("Get account info request error: \(error)")
+                
+                switch error {
+                case NRLWalletSDKError.responseError(.resourceMissing( _)):
+                    callback(NRLWalletSDKError.accountError(.notCreated), 0)
+                    return
+                default:
+                    callback((error as? NRLWalletSDKError)!, 0)
+                }
         }
     }
     
@@ -421,7 +453,14 @@ class NRLStellar : NRLCoin{
             }.catch { error in
                 self.bCreated = false
                 DDLogDebug("Get account info request error: \(error)")
-                callback(NRLWalletSDKError.transactionError(.transactionFailed(error)), 0)
+                
+                switch error {
+                case NRLWalletSDKError.responseError(.resourceMissing( _)):
+                    callback(NRLWalletSDKError.accountError(.notCreated), 0)
+                    return
+                default:
+                    callback((error as? NRLWalletSDKError)!, 0)
+                }
         }
     }
     override func signTransaction(to: String, value: Double, fee: Double, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
@@ -504,7 +543,14 @@ class NRLStellar : NRLCoin{
             }.catch { error in
                 self.bCreated = false
                 DDLogDebug("Get account info request error: \(error)")
-                callback(NRLWalletSDKError.transactionError(.transactionFailed(error)), 0)
+                
+                switch error {
+                case NRLWalletSDKError.responseError(.resourceMissing( _)):
+                    callback(NRLWalletSDKError.accountError(.notCreated), 0)
+                    return
+                default:
+                    callback((error as? NRLWalletSDKError)!, 0)
+                }
         }
     }
     override func sendSignTransaction(tx: Any, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
@@ -525,7 +571,7 @@ class NRLStellar : NRLCoin{
             }.catch { error in
                 self.bCreated = false
                 DDLogDebug("Get account info request error: \(error)")
-                callback(NRLWalletSDKError.transactionError(.transactionFailed(error)), 0)
+                callback((error as? NRLWalletSDKError)!, 0)
         }
     }
 }

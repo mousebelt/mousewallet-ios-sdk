@@ -18,6 +18,7 @@ public enum NRLWalletSDKError: Error {
         case connectionError(Error)
         case unacceptableStatusCode(Int)
         case noContentProvided
+        case resourceMissing(Any)
         case unexpected(Any)
     }
     
@@ -42,6 +43,8 @@ public enum NRLWalletSDKError: Error {
         case keyError
         case addressError
         case seqnumError
+        case notCreated
+        case failed(Any)
     }
     
     case nrlSuccess

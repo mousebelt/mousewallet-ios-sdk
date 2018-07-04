@@ -34,7 +34,12 @@ func sendRequest<T: Mappable>(responseObject: T.Type, url: URLConvertible, metho
                     }
                     else {
                         if (vcoinresObj.data != nil) {
-                            seal.reject(NRLWalletSDKError.responseError(.unexpected(vcoinresObj.data!)))
+                            if (vcoinresObj.status == 404) {
+                                seal.reject(NRLWalletSDKError.responseError(.resourceMissing(vcoinresObj.data!)))
+                            }
+                            else {
+                                seal.reject(NRLWalletSDKError.responseError(.unexpected(vcoinresObj.data!)))
+                            }
                         }
                         else {
                             seal.reject(NRLWalletSDKError.responseError(.unexpected(vcoinresObj)))

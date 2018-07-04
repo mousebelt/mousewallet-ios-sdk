@@ -102,10 +102,14 @@ public class BitcoinPeer {
     }
     
     func getAccountTransactions(offset: Int, count: Int, order: UInt, callback:@escaping (_ err: NRLWalletSDKError , _ tx: Any ) -> ()){
-        let transactions = self.wallet?.transactions(in: NSRange(location: offset, length: count))
+        guard let transactions = self.wallet?.transactions(in: NSRange(location: offset, length: count)) else {
+            DDLogDebug("no transactions in peer wallet")
+            callback(NRLWalletSDKError.accountError(.failed("no transactions in peer wallet")), 0)
+            return
+        }
         DDLogDebug("allTransactions: \(String(describing: transactions))")
         
-        callback(NRLWalletSDKError.nrlSuccess, transactions!)
+        callback(NRLWalletSDKError.nrlSuccess, transactions)
     }
     
     func createWallet(seedData: Data, created: Date, fnew: Bool) {

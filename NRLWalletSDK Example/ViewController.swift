@@ -89,25 +89,25 @@ class ViewController: UIViewController {
         
         updateBalance()
         
-//        wallet.getAccountTransactions(offset: 0, count: 10, order: 0){ (err, tx) -> () in
-//            switch (err) {
-//            case NRLWalletSDKError.nrlSuccess:
-//                //for ethereum tx is ETHGetTransactionsResponse mapping object and can get any field
-//                var strTransactions = String(describing: tx)
-//
-//                strTransactions = strTransactions.replacingOccurrences(of: "\\n", with: "\n")
-//                strTransactions = strTransactions.replacingOccurrences(of: "\\t", with: "\t")
-//
-//                print("transactions: \(strTransactions)")
-//                self.txtTransactions.text = strTransactions
-//            case NRLWalletSDKError.responseError(.unexpected(let error)):
-//                self.txtTransactions.text = "Server request error: \(error)"
-//            case NRLWalletSDKError.responseError(.connectionError(let error)):
-//                self.txtTransactions.text = "Server connection error: \(error)"
-//            default:
-//                self.txtTransactions.text = "Failed: \(String(describing: err))"
-//            }
-//        }
+        wallet.getAccountTransactions(offset: 0, count: 10, order: 0){ (err, tx) -> () in
+            switch (err) {
+            case NRLWalletSDKError.nrlSuccess:
+                //for ethereum tx is ETHGetTransactionsResponse mapping object and can get any field
+                var strTransactions = String(describing: tx)
+
+                strTransactions = strTransactions.replacingOccurrences(of: "\\n", with: "\n")
+                strTransactions = strTransactions.replacingOccurrences(of: "\\t", with: "\t")
+
+                print("transactions: \(strTransactions)")
+                self.txtTransactions.text = strTransactions
+            case NRLWalletSDKError.responseError(.unexpected(let error)):
+                self.txtTransactions.text = "Server request error: \(error)"
+            case NRLWalletSDKError.responseError(.connectionError(let error)):
+                self.txtTransactions.text = "Server connection error: \(error)"
+            default:
+                self.txtTransactions.text = "Failed: \(String(describing: err))"
+            }
+        }
     }
     
     @IBAction func OnConnect(_ sender: Any) {
@@ -142,7 +142,7 @@ class ViewController: UIViewController {
             return
         }
         
-        coinWallet = NRLWallet(mnemonic: mnemonic, passphrase: "Test", network: .test(.bitcoin), symbol: "BTC")
+        coinWallet = NRLWallet(mnemonic: mnemonic, passphrase: "Test", network: .main(.bitcoin), symbol: "BTC")
         guard let wallet = coinWallet else {
             print("Error: cannot init wallet!")
             return
@@ -408,8 +408,8 @@ class ViewController: UIViewController {
 //        setBitcoinWallet()
 //        setEthereumWallet()
 //        setLitecoinWallet()
-//        setStellarWallet()
-        setNeoWallet()
+        setStellarWallet()
+//        setNeoWallet()
         
 
     }

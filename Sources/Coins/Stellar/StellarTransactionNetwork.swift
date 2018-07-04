@@ -11,20 +11,20 @@ import ObjectMapper
 
 
 class StellarTxDetailResponse: Mappable, Equatable {
-    var blockHash: String?
-    var blockNumber: UInt?
-    var from: String?
-    var to: String?
-    var gas: UInt?
-    var gasPrice: String?
+    var id: String?
+    var paging_token: String?
     var hash: String?
-    var input: String?
-    var nonce: UInt?
-    var transactionIndex: UInt?
-    var value: UInt?
-    var v: String?
-    var r: String?
-    var s: String?
+    var ledger: UInt?
+    var created_at: String?
+    var source_account: String?
+    var source_account_sequence: String?
+    var fee_paid: UInt?
+    var operation_count: UInt?
+    var envelope_xdr: String?
+    var result_xdr: String?
+    var result_meta_xdr: String?
+    var fee_meta_xdr: String?
+    var signatures: [String]?
     
     
     required init?(map: Map) {
@@ -33,32 +33,33 @@ class StellarTxDetailResponse: Mappable, Equatable {
     
     // Mappable
     func mapping(map: Map) {
-        blockHash           <- map["blockHash"]
-        blockNumber         <- map["blockNumber"]
-        from                <- map["from"]
-        to                  <- map["to"]
-        gas                 <- map["gas"]
-        gasPrice            <- map["gasPrice"]
+        id           <- map["id"]
+        paging_token         <- map["paging_token"]
         hash                <- map["hash"]
-        input               <- map["input"]
-        nonce               <- map["nonce"]
-        transactionIndex    <- map["transactionIndex"]
-        value               <- map["value"]
-        v                   <- map["v"]
-        r                   <- map["r"]
-        s                   <- map["s"]
+        ledger                  <- map["ledger"]
+        created_at                 <- map["created_at"]
+        source_account            <- map["source_account"]
+        source_account_sequence                <- map["source_account_sequence"]
+        fee_paid               <- map["fee_paid"]
+        operation_count               <- map["operation_count"]
+        envelope_xdr    <- map["envelope_xdr"]
+        result_xdr               <- map["result_xdr"]
+        result_meta_xdr                   <- map["result_meta_xdr"]
+        fee_meta_xdr                   <- map["fee_meta_xdr"]
+        signatures                   <- map["signatures"]
     }
     
     static func == (lhs: StellarTxDetailResponse, rhs: StellarTxDetailResponse) -> Bool {
-        return lhs.blockHash == rhs.blockHash &&
-            lhs.transactionIndex == rhs.transactionIndex &&
+        return lhs.id == rhs.id &&
+            lhs.ledger == rhs.ledger &&
             lhs.hash == rhs.hash
     }
 }
 
-class StellarGetTransactionsResponse: Mappable, Equatable {
-    var total: UInt?
-    var result: [ETHTxDetailResponse]?
+class StellarGetTransactionsResponse: Mappable {
+    var next: String?
+    var prev: String?
+    var result: [StellarTxDetailResponse]?
     
     required init?(map: Map) {
         
@@ -66,13 +67,9 @@ class StellarGetTransactionsResponse: Mappable, Equatable {
     
     // Mappable
     func mapping(map: Map) {
-        total         <- map["total"]
+        next         <- map["next"]
+        prev         <- map["prev"]
         result        <- map["result"]
-    }
-    
-    static func == (lhs: StellarGetTransactionsResponse, rhs: StellarGetTransactionsResponse) -> Bool {
-        return lhs.total == rhs.total &&
-            lhs.result == rhs.result
     }
 }
 

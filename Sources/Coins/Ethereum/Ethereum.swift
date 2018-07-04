@@ -288,7 +288,7 @@ class NRLEthereum : NRLCoin{
                 callback(NRLWalletSDKError.nrlSuccess, hash as Any)
             }.catch { error in
                 DDLogDebug("Failed to send: \(error)")
-                callback(NRLWalletSDKError.transactionError(.transactionFailed(error)), 0)
+                callback((error as? NRLWalletSDKError)!, 0)
         }
     }
     
@@ -335,7 +335,7 @@ class NRLEthereum : NRLCoin{
                 callback(NRLWalletSDKError.nrlSuccess, newtx as Any)
             }.catch { error in
                 DDLogDebug("Failed to send: \(error)")
-                callback(NRLWalletSDKError.transactionError(.transactionFailed(error)), 0)
+                callback((error as? NRLWalletSDKError)!, 0)
         }
     }
   
@@ -355,7 +355,7 @@ class NRLEthereum : NRLCoin{
                 callback(NRLWalletSDKError.nrlSuccess, hash as Any)
             }.catch { error in
                 DDLogDebug("Failed to send: \(error)")
-                callback(NRLWalletSDKError.transactionError(.transactionFailed(error)), 0)
+                callback((error as? NRLWalletSDKError)!, 0)
         }
     }
 }
