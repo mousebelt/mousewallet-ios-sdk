@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CocoaLumberjack.h"
+#import "BRTransaction.h"
 
 
 

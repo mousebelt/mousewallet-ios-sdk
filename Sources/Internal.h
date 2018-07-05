@@ -4,6 +4,7 @@
 #import "DDTTYLogger.h"
 
 
+
 NS_ASSUME_NONNULL_BEGIN
 @interface CryptoHash : NSObject
 + (NSData *)sha256:(NSData *)data;

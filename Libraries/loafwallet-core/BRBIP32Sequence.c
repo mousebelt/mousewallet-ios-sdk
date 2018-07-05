@@ -116,8 +116,8 @@ BRMasterPubKey BRBIP32MasterPubKey(const void *seed, size_t seedLen)
     
     if (seed || seedLen == 0) {
         BRHMAC(&I, BRSHA512, sizeof(UInt512), BIP32_SEED_KEY, strlen(BIP32_SEED_KEY), seed, seedLen);
-        secret = *(UInt256 *)&I;
-        chain = *(UInt256 *)&I.u8[sizeof(UInt256)];
+        secret = *(UInt256 *)&I;    //same as masterPrivateKey of
+        chain = *(UInt256 *)&I.u8[sizeof(UInt256)]; //same as chaincodd
         var_clean(&I);
     
         BRKeySetSecret(&key, &secret, 1);
