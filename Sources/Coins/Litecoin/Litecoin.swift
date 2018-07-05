@@ -21,7 +21,7 @@ class NRLLitecoin : NRLCoin{
     private var defaultsUpdater: UserDefaultsUpdater?
     private var hasPerformedWalletDependentInitialization = false
     private var didInitWallet = false
-    private let pin = "1234"
+    private let pin = ""
     
     init(symbol: String, mnemonic: [String], passphrase: String, fTest: Bool) {
         self.isTest = fTest;
@@ -70,6 +70,7 @@ class NRLLitecoin : NRLCoin{
     
     override func generatePublickeyFromPrivatekey(privateKey: Data) throws -> Data {
         let publicKey = Crypto.generatePublicKey(data: privateKey, compressed: true)
+        DDLogDebug("Public: \(publicKey.toHexString())")
         return publicKey;
     }
     
@@ -147,6 +148,14 @@ class NRLLitecoin : NRLCoin{
     
     //override functions for own wallet and synchronizing as spv
     override func createOwnWallet(created: Date, fnew: Bool) -> Bool {
+        do {
+            try generateExternalKeyPair(at: 0)
+            generateAddress()
+        } catch {
+            
+        }
+        let privateKey = getPrivateKeyStr()
+        
         self.walletManager = try? WalletManager(dbPath: nil)
         let _ = self.walletManager?.wallet //attempt to initialize wallet
         

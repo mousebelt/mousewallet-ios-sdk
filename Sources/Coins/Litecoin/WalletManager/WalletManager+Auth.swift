@@ -329,7 +329,9 @@ extension WalletManager : WalletAuthenticator {
             var seed = UInt512()
             try setKeychainItem(key: KeychainKey.mnemonic, item: nfkdPhrase as String?, authenticated: true)
             BRBIP39DeriveKey(&seed, nfkdPhrase as String, nil)
+            DDLogDebug("BRBIP39 seed: \(seed.u8)")
             self.masterPubKey = BRBIP32MasterPubKey(&seed, MemoryLayout<UInt512>.size)
+            DDLogDebug("BRBIP39 masterkey: \(self.masterPubKey)")
             seed = UInt512() // clear seed
             if self.earliestKeyTime < BIP39CreationTime { self.earliestKeyTime = BIP39CreationTime }
             try setKeychainItem(key: KeychainKey.masterPubKey, item: Data(masterPubKey: self.masterPubKey))

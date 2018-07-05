@@ -64,6 +64,12 @@ public struct NRLPrivateKey {
             fingerprint: fingerprint,
             childIndex: childIndex
         )
+        
+        DDLogDebug("deriver privateKey: \(keyDeriver.privateKey?.toHexString())")
+        DDLogDebug("deriver publicKey: \(keyDeriver.publicKey?.toHexString())")
+        DDLogDebug("deriver chainCode: \(keyDeriver.chainCode.toHexString())")
+        DDLogDebug("deriver fingerprint: \(keyDeriver.fingerprint)")
+        
 
         guard let derivedKey = keyDeriver.derived(at: index, hardened: hardens, curveOrder: coin.curve) else {
             throw NRLWalletSDKError.cryptoError(.keyDerivateionFailed)

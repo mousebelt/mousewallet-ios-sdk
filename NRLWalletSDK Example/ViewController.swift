@@ -273,13 +273,14 @@ class ViewController: UIViewController {
         print("\n------------------------- NEO ----------------------------\n")
         // NEO : 888
         
-        self.mnemonic = ["menu", "year", "tool", "traffic", "civil", "tool", "lesson", "merit", "limb", "first", "sound", "gasp"]
+//        self.mnemonic = ["menu", "year", "tool", "traffic", "civil", "tool", "lesson", "merit", "limb", "first", "sound", "gasp"]
+//        self.mnemonic = ["casino", "roast", "sign", "inflict", "blouse", "clown", "office", "fame", "slot", "reward", "traffic", "penalty"]
 
         guard let mnemonic = self.mnemonic else {
             print("Error: no mnemonic")
             return
         }
-        coinWallet = NRLWallet(mnemonic: mnemonic, passphrase: "Test", network: .main(.neo), symbol: "NEO")
+        coinWallet = NRLWallet(mnemonic: mnemonic, passphrase: "", network: .main(.neo), symbol: "NEO")
         
         guard let wallet = coinWallet else {
             print("setNeoWallet Error: cannot init wallet!")
@@ -309,12 +310,17 @@ class ViewController: UIViewController {
         print("\n------------------------- Litecoin ----------------------------\n")
         // Litecoin : 2
 
-        guard let mnemonic = self.mnemonic else {
-            print("Error: no mnemonic")
-            return
-        }
+//        guard let mnemonic = self.mnemonic else {
+//            print("Error: no mnemonic")
+//            return
+//        }
         
-        coinWallet = NRLWallet(mnemonic: mnemonic, passphrase: "Test", network: .main(.litecoin), symbol: "LTC")
+        let mnemonic = ["vivid", "gesture", "series", "lady", "owner", "amused", "sock", "grunt", "hotel", "olive", "carpet", "visual"]
+//        let mnemonic = ["menu", "year", "tool", "traffic", "civil", "tool", "lesson", "merit", "limb", "first", "sound", "gasp"]
+//        let mnemonic = ["casino", "roast", "sign", "inflict", "blouse", "clown", "office", "fame", "slot", "reward", "traffic", "penalty"]
+
+        //passphrase is ignored in brcore
+        coinWallet = NRLWallet(mnemonic: mnemonic, passphrase: "", network: .main(.litecoin), symbol: "LTC")
         
         guard let wallet = coinWallet else {
             print("setLitecoinWallet Error: cannot init wallet!")
@@ -327,7 +333,7 @@ class ViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(On_LTC_PeerGroupDidStartDownload(notification:)), name: NSNotification.Name.LTC_PeerGroupDidStartDownload, object: nil)
         
         print("\nCreate Own Wallet")
-        if (!wallet.createOwnWallet(created: Date(), fnew: false)) {
+        if (!wallet.createOwnWallet(created: Date(), fnew: true)) {
             print("create wallet failed")
             return
         }
@@ -407,8 +413,8 @@ class ViewController: UIViewController {
 
 //        setBitcoinWallet()
 //        setEthereumWallet()
-//        setLitecoinWallet()
-        setStellarWallet()
+        setLitecoinWallet()
+//        setStellarWallet()
 //        setNeoWallet()
         
 

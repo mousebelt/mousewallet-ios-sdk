@@ -85,9 +85,13 @@ class NRLCoin {
     func generateExternalKeyPair(at index: UInt32) throws {
         guard let seed = self.seed else { return }
         guard let masterkey = generateMasterKey() else { return }
+        DDLogDebug("masterkey: \(masterkey.toHexString())")
         
         self.masterPrivateKey = NRLPrivateKey(seed: seed, privkey: masterkey, coin: self)
+        DDLogDebug("masterPrivateKey: \(String(describing: self.masterPrivateKey?.raw.toHexString()))")
+        DDLogDebug("masterPrivateKey chaincodd: \(String(describing: self.masterPrivateKey?.chainCode.toHexString()))")
         self.pathPrivateKey = try generateExternalPrivateKey(at: index)
+        DDLogDebug("pathPrivateKey: \(String(describing: self.pathPrivateKey?.raw.toHexString()))")
     }
     
     func generateInternalKeyPair(at index: UInt32) throws {

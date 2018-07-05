@@ -99,7 +99,7 @@ class NRLStellar : NRLCoin{
         let bindedString = self.mnemonic.joined(separator: " ")
 
         do {
-            self.keyPair = try StellarWallet.createKeyPair(mnemonic: bindedString, passphrase: "Test", index: 0)
+            self.keyPair = try StellarWallet.createKeyPair(mnemonic: bindedString, passphrase: self.passphrase, index: 0)
             DDLogDebug("Wallet creted. \(String(describing: self.keyPair?.accountId))")
         } catch {
             DDLogDebug("Create stellar wallet error: \(error)")

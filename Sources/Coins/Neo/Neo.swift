@@ -35,9 +35,16 @@ class NRLNeo : NRLCoin{
     override func generatePublickeyFromPrivatekey(privateKey: Data) throws -> Data {
         var error: NSError?
         let wallet = NeoutilsGenerateFromPrivateKey(privateKey.toHexString(), &error)
-        let publickey = wallet?.publicKey()
-//        print("public key generated: \(publickey?.toHexString() ?? "")")
-        return publickey!
+        
+        DDLogDebug("privatekey: \(privateKey.toHexString())     error: \(String(describing: error))")
+        if (error == nil) {
+            let publickey = wallet?.publicKey()
+            print("public key generated: \(publickey?.toHexString() ?? "")")
+            return publickey!
+        }
+        else {
+            return Data()
+        }
     }
     
     //in neo should use secp256r1. (it was secp256k1 in ethereum)

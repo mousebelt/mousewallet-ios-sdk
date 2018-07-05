@@ -18,7 +18,12 @@ public struct NRLPublicKey {
 
     init(nrlPrivateKey: NRLPrivateKey, chainCode: Data, coin: NRLCoin, depth: UInt8, fingerprint: UInt32, childIndex: UInt32) {
         self.coin = coin
-        self.raw = try! self.coin.generatePublickeyFromPrivatekey(privateKey: nrlPrivateKey.raw);
+        do {
+            self.raw = try! self.coin.generatePublickeyFromPrivatekey(privateKey: nrlPrivateKey.raw);
+        } catch {
+            self.raw = Data()
+        }
+        
         self.chainCode = chainCode
         self.depth = depth
         self.fingerprint = fingerprint
