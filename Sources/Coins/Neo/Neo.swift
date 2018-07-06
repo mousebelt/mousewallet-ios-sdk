@@ -16,9 +16,9 @@ class NRLNeo : NRLCoin{
     var account: NeoAccount?
     
     init(symbol: String, mnemonic: [String], passphrase: String, fTest: Bool) {
-        var network: NRLNetwork = .main(.ethereum)
+        var network: NRLNetwork = .main(.neo)
         if (fTest) {
-            network = .test(.ethereum)
+            network = .test(.neo)
         }
         
         let cointype = network.coinType
@@ -53,11 +53,14 @@ class NRLNeo : NRLCoin{
         let wallet = NeoutilsGenerateFromPrivateKey(self.pathPrivateKey?.raw.toHexString(), &error)
         self.wif = (wallet?.wif())!
         self.address = (wallet?.address())!
+        DDLogDebug("wif: \(String(describing: self.wif))")
+        DDLogDebug("address: \(String(describing: self.address))")
     }
     
     override func createOwnWallet(created: Date, fnew: Bool) -> Bool {
         do {
             try generateExternalKeyPair(at: 0)
+            generateAddress()
             
             guard let privkey = self.pathPrivateKey else {
                 DDLogDebug("createOwnWallet error: no pathPrivateKey")

@@ -275,6 +275,7 @@ class ViewController: UIViewController {
         
 //        self.mnemonic = ["menu", "year", "tool", "traffic", "civil", "tool", "lesson", "merit", "limb", "first", "sound", "gasp"]
 //        self.mnemonic = ["casino", "roast", "sign", "inflict", "blouse", "clown", "office", "fame", "slot", "reward", "traffic", "penalty"]
+//        self.mnemonic = ["inch", "special", "shaft", "bronze", "maze", "someone", "file", "volume", "beyond", "mad", "rug", "case"]
 
         guard let mnemonic = self.mnemonic else {
             print("Error: no mnemonic")
@@ -413,9 +414,9 @@ class ViewController: UIViewController {
 
 //        setBitcoinWallet()
 //        setEthereumWallet()
-        setLitecoinWallet()
+//        setLitecoinWallet()
 //        setStellarWallet()
-//        setNeoWallet()
+        setNeoWallet()
         
 
     }
