@@ -44,6 +44,7 @@ public enum NRLWalletSDKError: Error {
         case addressError
         case seqnumError
         case notCreated
+        case nowallet
         case failed(Any)
     }
     

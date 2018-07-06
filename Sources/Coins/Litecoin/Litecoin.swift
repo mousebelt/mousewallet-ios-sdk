@@ -154,7 +154,7 @@ class NRLLitecoin : NRLCoin{
         } catch {
             
         }
-        let privateKey = getPrivateKeyStr()
+        _ = getPrivateKeyStr()
         
         self.walletManager = try? WalletManager(dbPath: nil)
         let _ = self.walletManager?.wallet //attempt to initialize wallet
@@ -242,11 +242,33 @@ class NRLLitecoin : NRLCoin{
     }
     
     override func getWalletBalance(callback:@escaping (_ err: NRLWalletSDKError, _ value: Any) -> ()) {
-        callback(NRLWalletSDKError.nrlSuccess, self.walletManager?.wallet?.balance)
+        guard let walletmanager = self.walletManager else {
+            DDLogDebug("wallet manager is null")
+            callback(NRLWalletSDKError.accountError(.nowallet), 0)
+            return
+        }
+
+        guard let wallet = walletmanager.wallet else {
+            DDLogDebug("wallet is null")
+            callback(NRLWalletSDKError.accountError(.nowallet), 0)
+            return
+        }
+        
+        callback(NRLWalletSDKError.nrlSuccess, wallet.balance)
     }
     
     override func getAddressesOfWallet() -> NSArray {
-        return self.walletManager?.wallet?.allAddresses as! NSArray
+        guard let walletmanager = self.walletManager else {
+            DDLogDebug("wallet manager is null")
+            return NSArray()
+        }
+        
+        guard let wallet = walletmanager.wallet else {
+            DDLogDebug("wallet is null")
+            return NSArray()
+        }
+        
+        return wallet.allAddresses as NSArray
     }
     
     
@@ -259,18 +281,43 @@ class NRLLitecoin : NRLCoin{
     }
     
     override func getReceiveAddress() -> String {
-        return (self.walletManager?.wallet?.receiveAddress)!
+        guard let walletmanager = self.walletManager else {
+            DDLogDebug("wallet manager is null")
+            return ""
+        }
+        
+        guard let wallet = walletmanager.wallet else {
+            DDLogDebug("wallet is null")
+            return ""
+        }
+        
+        return wallet.receiveAddress
     }
     
     override func getAccountTransactions(offset: Int, count: Int, order: UInt, callback:@escaping (_ err: NRLWalletSDKError , _ tx: Any ) -> ()) {
-        let txs = self.walletManager?.wallet?.transactions as [BRTxRef?]?
+        guard let walletmanager = self.walletManager else {
+            DDLogDebug("wallet manager is null")
+            callback(NRLWalletSDKError.accountError(.nowallet), 0)
+            return
+        }
+        
+        guard let wallet = walletmanager.wallet else {
+            DDLogDebug("wallet is null")
+            callback(NRLWalletSDKError.accountError(.nowallet), 0)
+            return
+        }
+        let txs = wallet.transactions
         
         var txsReturn: [BRTransaction] = []
         
         for index in offset...offset + count {
-            if (index < (txs?.count)!) {
-                let brtx = txs![index]?.pointee
-                txsReturn.append(brtx!)
+            if (index < txs.count) {
+                guard let tx = txs[index] else {
+                    continue
+                }
+                
+                let brtx = tx.pointee
+                txsReturn.append(brtx)
             }
         }
         
