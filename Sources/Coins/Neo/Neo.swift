@@ -60,7 +60,7 @@ class NRLNeo : NRLCoin{
     override func createOwnWallet(created: Date, fnew: Bool) -> Bool {
         do {
             try generateExternalKeyPair(at: 0)
-            generateAddress()
+//            generateAddress()
             
             guard let privkey = self.pathPrivateKey else {
                 DDLogDebug("createOwnWallet error: no pathPrivateKey")
