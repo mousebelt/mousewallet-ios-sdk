@@ -163,7 +163,9 @@
     NSData *digest = [CryptoHash hmacsha512:data key:self.chainCode];
     NSData *derivedPrivateKey = [digest subdataWithRange:NSMakeRange(0, 32)];
     NSData *derivedChainCode = [digest subdataWithRange:NSMakeRange(32, 32)];
-    
+    NSLog(@"---------derivedAtIndex-----------");
+    NSLog(@"%@", derivedPrivateKey);
+    NSLog(@"%@", derivedChainCode);
     
     BIGNUM *curveOrder = BN_new();
     BN_hex2bn(&curveOrder, curveOrderStr);
