@@ -105,7 +105,7 @@ class NRLNeo : NRLCoin{
     override func getAddressesOfWallet() -> NSArray? {
         guard let neoAccount = self.account else {
             DDLogDebug("no account")
-            return nil
+            return NSArray()
         }
         
         return NSArray(array: [neoAccount.address])
@@ -113,7 +113,7 @@ class NRLNeo : NRLCoin{
     override func getPrivKeysOfWallet() -> NSArray? {
         guard let neoAccount = self.account else {
             DDLogDebug("no account")
-            return nil
+            return NSArray()
         }
         
         return NSArray(array: [neoAccount.privateKeyString])
@@ -121,7 +121,7 @@ class NRLNeo : NRLCoin{
     override func getPubKeysOfWallet() -> NSArray? {
         guard let neoAccount = self.account else {
             DDLogDebug("no account")
-            return nil
+            return NSArray()
         }
         
         return NSArray(array: [neoAccount.publicKeyString])

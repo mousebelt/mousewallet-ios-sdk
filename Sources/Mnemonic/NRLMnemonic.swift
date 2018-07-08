@@ -45,7 +45,7 @@ public enum NRLMnemonicLanguage {
 /**
  Enumerates of NSErrors supported by NRLWalletSDK
  */
-enum NRLMnemonicError: Error
+public enum NRLMnemonicError: Error
 {
 	case invalidStrength
 	case unableToGetRandomData

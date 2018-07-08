@@ -275,7 +275,7 @@ class NRLStellar : NRLCoin{
     override func getAddressesOfWallet() -> NSArray? {
         guard let walletkey = self.keyPair else {
             DDLogDebug("Wallet key is invalid.")
-            return nil
+            return NSArray()
         }
         
         let account = walletkey.accountId
@@ -284,7 +284,7 @@ class NRLStellar : NRLCoin{
     override func getPrivKeysOfWallet() -> NSArray? {
         guard let walletkey = self.keyPair else {
             DDLogDebug("Wallet key is invalid.")
-            return nil
+            return NSArray()
         }
         
         return NSArray(array: [walletkey])
@@ -293,7 +293,7 @@ class NRLStellar : NRLCoin{
     override func getPubKeysOfWallet() -> NSArray? {
         guard let walletkey = self.keyPair else {
             DDLogDebug("Wallet key is invalid.")
-            return nil
+            return NSArray()
         }
         
         return NSArray(array: [walletkey.publicKey])

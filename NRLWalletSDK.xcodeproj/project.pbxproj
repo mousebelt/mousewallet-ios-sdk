@@ -91,6 +91,7 @@
 		6355617720E5465A006F2C31 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F66C1620B42444007DF79D /* CryptoSwift.framework */; };
 		6355617820E5465A006F2C31 /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63F66C1620B42444007DF79D /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6355617C20E76DF6006F2C31 /* neoutils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6355617A20E76DBB006F2C31 /* neoutils.framework */; };
+		6355618020F1699C006F2C31 /* Api.md in Resources */ = {isa = PBXBuildFile; fileRef = 6355617F20F1699C006F2C31 /* Api.md */; };
 		63695DEA20D94ECA0088C83E /* ValueIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63695DE820D94ECA0088C83E /* ValueIn.swift */; };
 		63695DEB20D94ECA0088C83E /* ValueOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63695DE920D94ECA0088C83E /* ValueOut.swift */; };
 		63695DED20D94EDF0088C83E /* Script.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63695DEC20D94EDF0088C83E /* Script.swift */; };
@@ -804,6 +805,7 @@
 		6327C1BA20B86D7C00CB2017 /* String+Encoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Encoding.swift"; sourceTree = "<group>"; };
 		63304D6620AD4D77006D444B /* Neo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neo.swift; sourceTree = "<group>"; };
 		6355617A20E76DBB006F2C31 /* neoutils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = neoutils.framework; path = Frameworks/neoutils.framework; sourceTree = "<group>"; };
+		6355617F20F1699C006F2C31 /* Api.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Api.md; sourceTree = "<group>"; };
 		63695DE820D94ECA0088C83E /* ValueIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueIn.swift; sourceTree = "<group>"; };
 		63695DE920D94ECA0088C83E /* ValueOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueOut.swift; sourceTree = "<group>"; };
 		63695DEC20D94EDF0088C83E /* Script.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Script.swift; sourceTree = "<group>"; };
@@ -1458,6 +1460,7 @@
 		2167C2962098FF5B00A8653E = {
 			isa = PBXGroup;
 			children = (
+				6355617F20F1699C006F2C31 /* Api.md */,
 				63F66C1520B422A5007DF79D /* Cartfile */,
 				630DC5D520AB35A80005800A /* Readme.md */,
 				2167C2C62099A47C00A8653E /* Sources */,
@@ -3097,6 +3100,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				630DC5D620AB35A80005800A /* Readme.md in Resources */,
+				6355618020F1699C006F2C31 /* Api.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

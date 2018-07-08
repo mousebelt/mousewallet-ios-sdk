@@ -88,6 +88,7 @@ class ViewController: UIViewController {
         }
         
         updateBalance()
+        DDLogDebug("ReceiveAddress: \(String(describing: wallet.getAddressesOfWallet()))")
         
         wallet.getAccountTransactions(offset: 0, count: 10, order: 0){ (err, tx) -> () in
             switch (err) {
@@ -412,11 +413,11 @@ class ViewController: UIViewController {
         
         generateMneonic()
 
-//        setBitcoinWallet()
+        setBitcoinWallet()
 //        setEthereumWallet()
 //        setLitecoinWallet()
 //        setStellarWallet()
-        setNeoWallet()
+//        setNeoWallet()
         
 
     }
