@@ -275,8 +275,8 @@ class ViewController: UIViewController {
         // NEO : 888
         
 //        self.mnemonic = ["menu", "year", "tool", "traffic", "civil", "tool", "lesson", "merit", "limb", "first", "sound", "gasp"]
-        self.mnemonic = ["casino", "roast", "sign", "inflict", "blouse", "clown", "office", "fame", "slot", "reward", "traffic", "penalty"]
-//        self.mnemonic = ["cost", "alpha", "light", "gravity", "result", "unique", "multiply", "stadium", "fitness", "catalog", "diesel", "beauty"]
+//        self.mnemonic = ["casino", "roast", "sign", "inflict", "blouse", "clown", "office", "fame", "slot", "reward", "traffic", "penalty"]
+        self.mnemonic = ["cost", "alpha", "light", "gravity", "result", "unique", "multiply", "stadium", "fitness", "catalog", "diesel", "beauty"]
 
         guard let mnemonic = self.mnemonic else {
             print("Error: no mnemonic")
@@ -413,11 +413,11 @@ class ViewController: UIViewController {
         
         generateMneonic()
 
-        setBitcoinWallet()
+//        setBitcoinWallet()
 //        setEthereumWallet()
 //        setLitecoinWallet()
 //        setStellarWallet()
-//        setNeoWallet()
+        setNeoWallet()
         
 
     }
