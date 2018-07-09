@@ -8,4 +8,4 @@
 
 import Foundation
 
-let urlNeoServer = "https://neo.mousebelt.com/api/v1"
+let urlNeoServer = "https://neo.mousebelt.com"

@@ -8,4 +8,4 @@
 
 import Foundation
 
-let urlStellarServer = "https://xlm.mousebelt.com/api/v1"
+let urlStellarServer = "https://xlm.mousebelt.com"

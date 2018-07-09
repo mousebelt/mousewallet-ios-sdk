@@ -87,6 +87,8 @@ class ViewController: UIViewController {
             return
         }
         
+        self.lbAddress.text = wallet.getReceiveAddress();
+        
         updateBalance()
         DDLogDebug("ReceiveAddress: \(String(describing: wallet.getAddressesOfWallet()))")
         

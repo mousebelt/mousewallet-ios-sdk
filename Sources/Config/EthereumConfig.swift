@@ -8,7 +8,7 @@
 
 import Foundation
 
-let urlEtherServer = "https://eth.mousebelt.com/api/v1"
-let urlEtherTestServer = "https://eth-ropsten.mousebelt.com/api/v1"
+let urlEtherServer = "https://eth.mousebelt.com"
+let urlEtherTestServer = "https://eth-ropsten.mousebelt.com"
 let ethereumGasAmount = 21000
 let contractTransferGasAmount = 100000
