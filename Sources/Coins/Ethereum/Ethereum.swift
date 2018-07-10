@@ -224,7 +224,7 @@ class NRLEthereum : NRLCoin{
 //    }
     
     //transaction
-    override func sendTransaction(contractHash: String, to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
+    override func sendTransaction(contractHash: String, to: String, value: BigUInt, fee: BigUInt, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
         let address = self.privKey!.address.hex(eip55: false)
         var url = "\(self.urlServer)/api/v1/address/gettransactioncount/\(address)"
         
@@ -235,25 +235,25 @@ class NRLEthereum : NRLCoin{
                     let nonce: UInt = res.data as! UInt
 
                     var tx: EthereumTransaction
-                    if (contractHash == "0") {
+                    if (contractHash == "") {
                         tx = try EthereumTransaction(
                             nonce: EthereumQuantity(quantity: BigUInt(nonce)),
-                            gasPrice: EthereumQuantity(quantity: BigUInt(fee)),
+                            gasPrice: EthereumQuantity(quantity: fee),
                             gas: EthereumQuantity(quantity: BigUInt(ethereumGasAmount)),
                             to: EthereumAddress(hex: to, eip55: false),
-                            value: EthereumQuantity(quantity: BigUInt(value))
+                            value: EthereumQuantity(quantity: value)
                         )
                     }
                     else {
                         let contractAddress = try EthereumAddress(hex: contractHash, eip55: false)
                         let contract = GenericERC20Contract(address: contractAddress, eth:self.web3.eth)
                         
-                        tx = try contract.transfer(to: EthereumAddress(hex: to, eip55: false), value: BigUInt(value)).createTransaction(
+                        tx = try contract.transfer(to: EthereumAddress(hex: to, eip55: false), value: value).createTransaction(
                             nonce: EthereumQuantity(quantity: BigUInt(nonce)),
                             from: EthereumAddress(hex: address, eip55: false),
                             value: 0,
                             gas: EthereumQuantity(quantity: BigUInt(contractTransferGasAmount)),
-                            gasPrice: EthereumQuantity(quantity: BigUInt(fee))
+                            gasPrice: EthereumQuantity(quantity: fee)
                             )!
                     }
                     
@@ -292,7 +292,7 @@ class NRLEthereum : NRLCoin{
         }
     }
     
-    override func signTransaction(contractHash: String, to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
+    override func signTransaction(contractHash: String, to: String, value: BigUInt, fee: BigUInt, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
         let address = self.privKey!.address.hex(eip55: false)
         let url = "\(self.urlServer)/api/v1/address/gettransactioncount/\(address)"
         

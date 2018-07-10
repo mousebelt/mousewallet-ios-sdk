@@ -12,13 +12,13 @@ import ObjectMapper
 public class StellarAccountFlagsResponse: Mappable {
     
     /// Requires the issuing account to give other accounts permission before they can hold the issuing account’s credit.
-    var authRequired:Bool?
+    public var authRequired:Bool?
     
     /// Allows the issuing account to revoke its credit held by other accounts.
-    var authRevocable:Bool?
+    public var authRevocable:Bool?
     
     /// If this is set then none of the authorization flags can be set and the account can never be deleted.
-    var authImmutable:Bool?
+    public var authImmutable:Bool?
     
     public required init?(map: Map) {
         
@@ -35,20 +35,20 @@ public class StellarAccountFlagsResponse: Mappable {
 public class StellarAccountBalanceResponse: Mappable {
     
     /// Balance for the specified asset.
-    var balance:String?
+    public var balance:String?
     
     /// Maximum number of asset amount this account can hold.
-    var limit:String?
+    public var limit:String?
     
     /// The asset type. Possible values: native, credit_alphanum4, credit_alphanum12
     /// See also Constants.AssetType
-    var assetType:String?
+    public var assetType:String?
     
     /// The asset code e.g., USD or BTC.
-    var assetCode:String?
+    public var assetCode:String?
     
     /// The account id of the account that created the asset.
-    var assetIssuer:String?
+    public var assetIssuer:String?
     
     public required init?(map: Map) {
         
@@ -67,13 +67,13 @@ public class StellarAccountBalanceResponse: Mappable {
 public class StellarAccountThresholdsResponse: Mappable {
     
     /// The account's threshhold for low security operations.
-    var lowThreshold:Int?
+    public var lowThreshold:Int?
     
     /// The account's threshhold for medium security operations.
-    var medThreshold:Int?
+    public var medThreshold:Int?
     
     /// The account's threshhold for high security operations.
-    var highThreshold:Int?
+    public var highThreshold:Int?
     
     public required init?(map: Map) {
         
@@ -90,16 +90,16 @@ public class StellarAccountThresholdsResponse: Mappable {
 public class StellarAccountSignerResponse: Mappable {
     
     /// Public key of the signer / account id.
-    var publicKey:String?
+    public var publicKey:String?
     
     /// The signature weight of the public key of the signer.
-    var weight:Int?
+    public var weight:Int?
     
     /// Not sure about this key.
-    var key:String?
+    public var key:String?
     
     /// Type of the key e.g. ed25519_public_key
-    var type:String?
+    public var type:String?
     
     public required init?(map: Map) {
         
@@ -119,22 +119,22 @@ public class StellarAccountSignerResponse: Mappable {
 public class StellarAccountResponse: Mappable {
     
     /// The number of account subentries.
-    var subentryCount:UInt?
+    public var subentryCount:UInt?
     
     /// Flags used by the issuers of assets.
-    var flags:StellarAccountFlagsResponse?
+    public var flags:StellarAccountFlagsResponse?
     
     /// An array of the native asset or credits this account holds.
-    var balances:[StellarAccountBalanceResponse]?
+    public var balances:[StellarAccountBalanceResponse]?
 
     /// An object of account flags.
-    var thresholds:StellarAccountThresholdsResponse?
+    public var thresholds:StellarAccountThresholdsResponse?
 
     /// An array of account signers with their weights.
-    var signers:[StellarAccountSignerResponse]?
+    public var signers:[StellarAccountSignerResponse]?
 
     /// The current sequence number that can be used when submitting a transaction from this account.
-    var sequence: String?
+    public var sequence: String?
 
     public required init?(map: Map) {
         

@@ -314,13 +314,13 @@ class NRLStellar : NRLCoin{
             callback(NRLWalletSDKError.transactionError(.transactionFailed("Account has no address" as! Error)), 0)
             return
         }
-//        let account = "GCIA6RMJKSV2XFJYVXWTKWPGE4FYOPO4PCT2RVWCWWRS7GW734K472WH"
+        
         var url = "\(urlStellarServer)/api/v1/account/\(String(describing: account))"
         
         firstly {
             sendRequest(responseObject:VCoinResponse.self, url: url)
             }.done { _ in
-                url = "\(urlStellarServer)/api/v1/address/txs/\(String(describing: account))"
+                url = "\(urlStellarServer)/api/v1/address/payments/\(String(describing: account))"
                 
                 firstly {
                     sendRequest(responseObject:VCoinResponse.self, url: url, method: .get)

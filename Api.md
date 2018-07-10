@@ -533,7 +533,8 @@ NRLWalletSDKError
   Send signed transaction of send.
   
   * **Prototype**
-  > func sendTransaction(contractHash: String = "0", to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) 
+  > func sendTransaction(contractHash: String = "", to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) 
+  > func sendTransaction(to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) 
   > func sendTransaction(asset: AssetId, to: String, value: Decimal, fee: Decimal, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ())
   > func sendTransaction(to: String, value: Double, fee: Double, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ())
   * **Parameter**
@@ -542,9 +543,10 @@ NRLWalletSDKError
   **value** : amount to send.
   **fee** : fee for transaction.
   
-  * **function 1** : Bitcoin, Ethereum, Litecoin  ~ value and fee is wei unit
-  * **function 2**: Neo ~ value and fee is Neo unit
-  * **function 3**: Stellar ~ value and fee is XLM unit
+  * **function 1** : Ethereum  ~ value and fee is Wei(1E18) unit
+  * **function 2** : Bitcoin, Litecoin  ~ value and fee is satoshi and litoshi(1E8) unit
+  * **function 3**: Neo ~ value and fee is Neo unit
+  * **function 4**: Stellar ~ value and fee is XLM unit
   
   stellar, litecoin, neo: fee has no meaning
   

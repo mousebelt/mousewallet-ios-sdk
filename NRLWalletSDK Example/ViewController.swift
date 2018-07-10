@@ -66,6 +66,23 @@ extension Data {
     }
 }
 
+extension Date {
+    var yesterday: Date {
+        return Calendar.current.date(byAdding: .day, value: -10, to: noon)!
+    }
+    var tomorrow: Date {
+        return Calendar.current.date(byAdding: .day, value: 1, to: noon)!
+    }
+    var noon: Date {
+        return Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: self)!
+    }
+    var month: Int {
+        return Calendar.current.component(.month,  from: self)
+    }
+    var isLastDayOfMonth: Bool {
+        return tomorrow.month != month
+    }
+}
 
 var coinWallet: NRLWallet?
 
@@ -140,12 +157,14 @@ class ViewController: UIViewController {
         print("\n------------------------- Bitcoin ----------------------------\n")
         // Bitcoin : 0
         
-        guard let mnemonic = self.mnemonic else {
+        guard var mnemonic = self.mnemonic else {
             print("Error: no mnemonic")
             return
         }
         
-        coinWallet = NRLWallet(mnemonic: mnemonic, passphrase: "Test", network: .main(.bitcoin), symbol: "BTC")
+        mnemonic = ["cost", "alpha", "light", "gravity", "result", "unique", "multiply", "stadium", "fitness", "catalog", "diesel", "beauty"]
+        
+        coinWallet = NRLWallet(mnemonic: mnemonic, passphrase: "", network: .main(.bitcoin), symbol: "BTC")
         guard let wallet = coinWallet else {
             print("Error: cannot init wallet!")
             return
@@ -156,17 +175,18 @@ class ViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(PeerGroupDidDownloadBlock(notification:)), name: NSNotification.Name.WSPeerGroupDidDownloadBlock, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(PeerGroupDidStartDownload(notification:)), name: NSNotification.Name.WSPeerGroupDidStartDownload, object: nil)
         
-        /*test date
+        /*test date*/
             let calendar = NSCalendar.current
             var components = DateComponents()
             components.day = 1
             components.month = 4
             components.year = 2018
             let date = calendar.date(from: components)
-        */
-        let date = Date()
+//        */
+//        var date = Date()
+//        date = date.yesterday
         print("\nCreate Own Wallet")
-        if (!wallet.createOwnWallet(created: date, fnew: true)) {
+        if (!wallet.createOwnWallet(created: date!, fnew: true)) {
             print("Failed to create wallet")
             return;
         }
@@ -257,12 +277,13 @@ class ViewController: UIViewController {
 
         // Ethereum : 60
 //        self.mnemonic = ["menu", "year", "tool", "traffic", "civil", "tool", "lesson", "merit", "limb", "first", "sound", "gasp"]
+//        ["cost", "alpha", "light", "gravity", "result", "unique", "multiply", "stadium", "fitness", "catalog", "diesel", "beauty"]
         guard let mnemonic = self.mnemonic else {
             print("Error: no mnemonic")
             return
         }
         
-        coinWallet = NRLWallet(mnemonic: mnemonic, passphrase: "Test", network: .test(.ethereum), symbol: "ETC")
+        coinWallet = NRLWallet(mnemonic: mnemonic, passphrase: "", network: .test(.ethereum), symbol: "ETC")
 
         guard let wallet = coinWallet else {
             print("setEthereumWallet Error: cannot init wallet!")
@@ -319,10 +340,9 @@ class ViewController: UIViewController {
 //            return
 //        }
 
-        let mnemonic = ["vivid", "gesture", "series", "lady", "owner", "amused", "sock", "grunt", "hotel", "olive", "carpet", "visual"]
-//        let mnemonic = ["menu", "year", "tool", "traffic", "civil", "tool", "lesson", "merit", "limb", "first", "sound", "gasp"]
-//        let mnemonic = ["casino", "roast", "sign", "inflict", "blouse", "clown", "office", "fame", "slot", "reward", "traffic", "penalty"]
+//        let mnemonic = ["vivid", "gesture", "series", "lady", "owner", "amused", "sock", "grunt", "hotel", "olive", "carpet", "visual"]
 
+        let mnemonic = ["cost", "alpha", "light", "gravity", "result", "unique", "multiply", "stadium", "fitness", "catalog", "diesel", "beauty"]
         //passphrase is ignored in brcore
         coinWallet = NRLWallet(mnemonic: mnemonic, passphrase: "", network: .main(.litecoin), symbol: "LTC")
         
@@ -337,7 +357,7 @@ class ViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(On_LTC_PeerGroupDidStartDownload(notification:)), name: NSNotification.Name.LTC_PeerGroupDidStartDownload, object: nil)
         
         print("\nCreate Own Wallet")
-        if (!wallet.createOwnWallet(created: Date(), fnew: true)) {
+        if (!wallet.createOwnWallet(created: Date(), fnew: false)) {
             print("create wallet failed")
             return
         }
@@ -392,12 +412,13 @@ class ViewController: UIViewController {
         print("\n------------------------- Stellar ----------------------------\n")
         // Stellar : 148
         
-        guard let mnemonic = self.mnemonic else {
+        guard var mnemonic = self.mnemonic else {
             print("Error: no mnemonic")
             return
         }
-        
-        coinWallet = NRLWallet(mnemonic: mnemonic, passphrase: "Test", network: .main(.stellar), symbol: "XLM")
+        mnemonic = ["casino", "roast", "sign", "inflict", "blouse", "clown", "office", "fame", "slot", "reward", "traffic", "penalty"]
+//        mnemonic = ["cost", "alpha", "light", "gravity", "result", "unique", "multiply", "stadium", "fitness", "catalog", "diesel", "beauty"]
+        coinWallet = NRLWallet(mnemonic: mnemonic, passphrase: "", network: .main(.stellar), symbol: "XLM")
         
         guard let wallet = coinWallet else {
             print("setStellarWallet Error: cannot init wallet!")
@@ -415,11 +436,11 @@ class ViewController: UIViewController {
         
         generateMneonic()
 
-//        setBitcoinWallet()
+        setBitcoinWallet()
 //        setEthereumWallet()
 //        setLitecoinWallet()
 //        setStellarWallet()
-        setNeoWallet()
+//        setNeoWallet()
         
 
     }

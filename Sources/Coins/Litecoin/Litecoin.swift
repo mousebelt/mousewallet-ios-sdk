@@ -326,7 +326,7 @@ class NRLLitecoin : NRLCoin{
     
     //transaction
     
-    override func sendTransaction(contractHash: String, to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
+    override func sendTransaction(to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
         let tx = self.walletManager?.wallet?.createTransaction(forAmount: value, toAddress: to);
         
         guard let txSigned = tx else {
@@ -371,7 +371,7 @@ class NRLLitecoin : NRLCoin{
     }
     
     // forkId is 0 for bitcoin, 0x40 for b-cash
-    override func signTransaction(contractHash: String, to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
+    override func signTransaction(to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
         let tx = self.walletManager?.wallet?.createTransaction(forAmount: value, toAddress: to);
         
         if (signTx(tx!)) {
