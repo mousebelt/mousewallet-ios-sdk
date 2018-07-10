@@ -416,8 +416,8 @@ class ViewController: UIViewController {
             print("Error: no mnemonic")
             return
         }
-        mnemonic = ["casino", "roast", "sign", "inflict", "blouse", "clown", "office", "fame", "slot", "reward", "traffic", "penalty"]
-//        mnemonic = ["cost", "alpha", "light", "gravity", "result", "unique", "multiply", "stadium", "fitness", "catalog", "diesel", "beauty"]
+//        mnemonic = ["casino", "roast", "sign", "inflict", "blouse", "clown", "office", "fame", "slot", "reward", "traffic", "penalty"]
+        mnemonic = ["cost", "alpha", "light", "gravity", "result", "unique", "multiply", "stadium", "fitness", "catalog", "diesel", "beauty"]
         coinWallet = NRLWallet(mnemonic: mnemonic, passphrase: "", network: .main(.stellar), symbol: "XLM")
         
         guard let wallet = coinWallet else {
@@ -436,10 +436,10 @@ class ViewController: UIViewController {
         
         generateMneonic()
 
-        setBitcoinWallet()
+//        setBitcoinWallet()
 //        setEthereumWallet()
 //        setLitecoinWallet()
-//        setStellarWallet()
+        setStellarWallet()
 //        setNeoWallet()
         
 
