@@ -162,8 +162,6 @@ class ViewController: UIViewController {
             return
         }
         
-        mnemonic = ["cost", "alpha", "light", "gravity", "result", "unique", "multiply", "stadium", "fitness", "catalog", "diesel", "beauty"]
-        
         coinWallet = NRLWallet(mnemonic: mnemonic, passphrase: "", network: .main(.bitcoin), symbol: "BTC")
         guard let wallet = coinWallet else {
             print("Error: cannot init wallet!")
@@ -276,8 +274,6 @@ class ViewController: UIViewController {
         print("\n------------------------- Ethereum ----------------------------\n")
 
         // Ethereum : 60
-//        self.mnemonic = ["menu", "year", "tool", "traffic", "civil", "tool", "lesson", "merit", "limb", "first", "sound", "gasp"]
-//        ["cost", "alpha", "light", "gravity", "result", "unique", "multiply", "stadium", "fitness", "catalog", "diesel", "beauty"]
         guard let mnemonic = self.mnemonic else {
             print("Error: no mnemonic")
             return
@@ -297,10 +293,6 @@ class ViewController: UIViewController {
         print("\n------------------------- NEO ----------------------------\n")
         // NEO : 888
         
-//        self.mnemonic = ["menu", "year", "tool", "traffic", "civil", "tool", "lesson", "merit", "limb", "first", "sound", "gasp"]
-//        self.mnemonic = ["casino", "roast", "sign", "inflict", "blouse", "clown", "office", "fame", "slot", "reward", "traffic", "penalty"]
-        self.mnemonic = ["cost", "alpha", "light", "gravity", "result", "unique", "multiply", "stadium", "fitness", "catalog", "diesel", "beauty"]
-
         guard let mnemonic = self.mnemonic else {
             print("Error: no mnemonic")
             return
@@ -335,14 +327,11 @@ class ViewController: UIViewController {
         print("\n------------------------- Litecoin ----------------------------\n")
         // Litecoin : 2
 
-//        guard let mnemonic = self.mnemonic else {
-//            print("Error: no mnemonic")
-//            return
-//        }
+        guard let mnemonic = self.mnemonic else {
+            print("Error: no mnemonic")
+            return
+        }
 
-//        let mnemonic = ["vivid", "gesture", "series", "lady", "owner", "amused", "sock", "grunt", "hotel", "olive", "carpet", "visual"]
-
-        let mnemonic = ["cost", "alpha", "light", "gravity", "result", "unique", "multiply", "stadium", "fitness", "catalog", "diesel", "beauty"]
         //passphrase is ignored in brcore
         coinWallet = NRLWallet(mnemonic: mnemonic, passphrase: "", network: .main(.litecoin), symbol: "LTC")
         
@@ -412,12 +401,10 @@ class ViewController: UIViewController {
         print("\n------------------------- Stellar ----------------------------\n")
         // Stellar : 148
         
-        guard var mnemonic = self.mnemonic else {
+        guard let mnemonic = self.mnemonic else {
             print("Error: no mnemonic")
             return
         }
-//        mnemonic = ["casino", "roast", "sign", "inflict", "blouse", "clown", "office", "fame", "slot", "reward", "traffic", "penalty"]
-        mnemonic = ["cost", "alpha", "light", "gravity", "result", "unique", "multiply", "stadium", "fitness", "catalog", "diesel", "beauty"]
         coinWallet = NRLWallet(mnemonic: mnemonic, passphrase: "", network: .main(.stellar), symbol: "XLM")
         
         guard let wallet = coinWallet else {
