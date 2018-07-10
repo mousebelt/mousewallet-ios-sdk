@@ -39,7 +39,7 @@
 @property (nonatomic, assign) BOOL shouldAutoSave; // NO
 @property (nonatomic, assign) BOOL maySpendUnconfirmed; // NO
 
-- (instancetype)initWithParameters:(WSParameters *)parameters seeddata:(NSData *)seeddata;
+- (instancetype)initWithParameters:(WSParameters *)parameters seeddata:(NSData *)seeddata created: (NSDate *)created;
 //- (instancetype)initWithParameters:(WSParameters *)parameters seed:(WSSeed *)seed;
 //- (instancetype)initWithParameters:(WSParameters *)parameters seed:(WSSeed *)seed chainsPath:(NSString *)chainsPath;
 //- (instancetype)initWithParameters:(WSParameters *)parameters seed:(WSSeed *)seed chainsPath:(NSString *)chainsPath gapLimit:(NSUInteger)gapLimit;

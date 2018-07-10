@@ -132,8 +132,8 @@ public class BitcoinPeer {
             }
         }
         
-        if (!(self.wallet != nil)) {
-            self.wallet = WSHDWallet(parameters: self.parameters, seeddata: seedData)
+        if (self.wallet == nil) {
+            self.wallet = WSHDWallet(parameters: self.parameters, seeddata: seedData, created: created)
             self.wallet?.save(toPath: self.walletPath)
         }
     }

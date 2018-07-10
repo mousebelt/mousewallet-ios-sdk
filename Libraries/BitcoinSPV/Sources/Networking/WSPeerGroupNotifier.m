@@ -184,7 +184,7 @@ NSString *const WSPeerGroupErrorKey                             = @"Error";
     const uint32_t currentHeight = block.height;
 
     if (currentHeight <= toHeight) {
-        if (currentHeight % 1000 == 0) {
+        if (currentHeight % 100 == 0) {
             const double progress = WSUtilsProgress(fromHeight, toHeight, currentHeight);
 
             DDLogInfo(@"Download progress = %u/%u (%.2f%%)", currentHeight, toHeight, 100.0 * progress);

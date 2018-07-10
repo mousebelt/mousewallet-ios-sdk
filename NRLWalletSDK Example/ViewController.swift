@@ -186,7 +186,7 @@ class ViewController: UIViewController {
 //        var date = Date()
 //        date = date.yesterday
         print("\nCreate Own Wallet")
-        if (!wallet.createOwnWallet(created: date!, fnew: true)) {
+        if (!wallet.createOwnWallet(created: date!, fnew: false)) {
             print("Failed to create wallet")
             return;
         }
@@ -254,7 +254,7 @@ class ViewController: UIViewController {
         
         if (total != 0 && progressed > 0) {
             if (currentHeight <= self.blockToHight) {
-                if (currentHeight % 1000 == 0 || currentHeight == self.blockToHight) {
+                if (currentHeight % 100 == 0 || currentHeight == self.blockToHight) {
                     self.lbProgress.text = String(format: "%d/%d       %.2f%%", currentHeight, self.blockToHight, Double(progressed) * 100.0 / Double(total))
                 }
             }

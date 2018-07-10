@@ -193,7 +193,7 @@ let coinWallet = NRLWallet(mnemonic: mnemonic, passphrase: "", network: .main(.n
   > func createOwnWallet(created: Date, fnew: Bool) -> Bool
   
   * **Parameter**
-  **created** : created date of wallet. Peer sync will start from blocks of this date.
+  **created** : created date of wallet. Peer sync will start from blocks of this date. Default is date of NRLWallet service started.
   **fnew** : true: remove whole stored data and create wallet newly. false: load wallet from stored data.
   
   * **Response**

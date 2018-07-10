@@ -133,9 +133,9 @@ NSString *WSHDWalletDefaultChainsPath(WSParameters *parameters)
 
 @implementation WSHDWallet
 
-- (instancetype)initWithParameters:(WSParameters *)parameters seeddata:(NSData *)seeddata
+- (instancetype)initWithParameters:(WSParameters *)parameters seeddata:(NSData *)seeddata created:(NSDate *) created
 {
-    return [self initWithParameters:parameters seeddata:seeddata chainsPath:WSHDWalletDefaultChainsPath(parameters) gapLimit:WSHDWalletDefaultGapLimit];
+    return [self initWithParameters:parameters seeddata:seeddata chainsPath:WSHDWalletDefaultChainsPath(parameters) gapLimit:WSHDWalletDefaultGapLimit created: created];
 }
 
 //- (instancetype)initWithParameters:(WSParameters *)parameters seed:(WSSeed *)seed
@@ -176,7 +176,7 @@ NSString *WSHDWalletDefaultChainsPath(WSParameters *parameters)
 //    return self;
 //}
 
-- (instancetype)initWithParameters:(WSParameters *)parameters seeddata:(NSData *)seeddata chainsPath:(NSString *)chainsPath gapLimit:(NSUInteger)gapLimit
+- (instancetype)initWithParameters:(WSParameters *)parameters seeddata:(NSData *)seeddata chainsPath:(NSString *)chainsPath gapLimit:(NSUInteger)gapLimit created:(NSDate *) created
 {
     WSExceptionCheckIllegal(parameters);
     WSExceptionCheckIllegal(seeddata);
@@ -197,7 +197,7 @@ NSString *WSHDWalletDefaultChainsPath(WSParameters *parameters)
         _usedAddresses = [[NSMutableSet alloc] init];
         _metadataByTxId = [[NSMutableDictionary alloc] init];
         
-        [self loadSensitiveDataWithSeed:seeddata created:[NSDate date]];
+        [self loadSensitiveDataWithSeed:seeddata created:created];
         [self rebuildTransientStructures];
     }
     return self;
