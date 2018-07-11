@@ -138,7 +138,7 @@ class NRLNeo : NRLCoin{
     override func getAccountTransactions(offset: Int, count: Int, order: UInt, callback:@escaping (_ err: NRLWalletSDKError , _ tx: Any ) -> ()) {
         guard let neoAccount = self.account else {
             DDLogDebug("Failed to create account")
-            callback(NRLWalletSDKError.transactionError(.transactionFailed("no account" as! Error)), 0)
+            callback(NRLWalletSDKError.transactionError(.transactionFailed("no account")), 0)
             return
         }
         

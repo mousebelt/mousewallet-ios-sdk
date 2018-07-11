@@ -27,7 +27,7 @@ internal class TransactionViewController: UIViewController {
 
         //for stellar, we need to insert double values
         //0xa54722e65fcfff7fd387fe6547a47ebcacdda381
-        wallet.sendTransaction(to: "GDKUTW5LPTVNUXHGG2NLNXRE3X6EWNMKVL344CJ5QUTNLPDOB7S4E4PS", value: 1.1, fee: 0.001) { (err, tx) -> () in
+        wallet.sendTransaction(to: "GDKUTW5LPTVNUXHGG2NLNXRE3X6EWNMKVL344CJ5QUTNLPDOB7S4E4PS", value: 1.0, fee: 0.001) { (err, tx) -> () in
             switch (err) {
             case NRLWalletSDKError.nrlSuccess:
                 self.textTransaction.text = "Successfully sent transaction. tx: \(tx)"

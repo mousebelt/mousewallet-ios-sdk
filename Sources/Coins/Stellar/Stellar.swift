@@ -311,7 +311,7 @@ class NRLStellar : NRLCoin{
     override func getAccountTransactions(offset: Int, count: Int, order: UInt, callback:@escaping (_ err: NRLWalletSDKError , _ tx: Any ) -> ()) {
         guard let account = getAddressStr() else {
             DDLogDebug("Account has no address")
-            callback(NRLWalletSDKError.transactionError(.transactionFailed("Account has no address" as! Error)), 0)
+            callback(NRLWalletSDKError.transactionError(.transactionFailed("Account has no address")), 0)
             return
         }
         
@@ -361,7 +361,7 @@ class NRLStellar : NRLCoin{
         
         guard let account = getAddressStr() else {
             DDLogDebug("Account has no address")
-            callback(NRLWalletSDKError.transactionError(.transactionFailed("Account has no address" as! Error)), 0)
+            callback(NRLWalletSDKError.transactionError(.transactionFailed("Account has no address")), 0)
             return
         }
         
@@ -389,14 +389,13 @@ class NRLStellar : NRLCoin{
                     
                     var lumens: Double = 0.0
                     for balance in balances {
-                        guard let balanceobj = Mapper<StellarAccountBalanceResponse>().map(JSONObject: balance) else {continue}
                         
-                        if (balanceobj.assetType == "native") {
-                            lumens += Double(balanceobj.balance!)!
+                        if (balance.assetType == "native") {
+                            lumens += Double(balance.balance!)!
                         }
                     }
                     
-                    if (value + fee < lumens) {
+                    if (value + fee > lumens) {
                         DDLogDebug("Balance is smaller than send value")
                         seal.reject(NRLWalletSDKError.requestError(.invalidParameters("Balance is small than send value")))
                         return
@@ -445,11 +444,11 @@ class NRLStellar : NRLCoin{
             }.done { res3 in
                 DDLogDebug("res3: \(String(describing: res3.data))")
                 guard let resObj3 = Mapper<StellarSendSignedTransactionResponse>().map(JSONObject: res3.data) else {
-                    callback(NRLWalletSDKError.transactionError(.transactionFailed("cannot get mapped data from response" as! Error)), 0)
+                    callback(NRLWalletSDKError.transactionError(.transactionFailed("cannot get mapped data from response")), 0)
                     return
                 }
                 DDLogDebug("Create account success: hash: \(String(describing: resObj3.hash)), ledger: \(String(describing: resObj3.ledger))")
-                callback(NRLWalletSDKError.nrlSuccess, resObj3.hash!)
+                callback(NRLWalletSDKError.nrlSuccess, resObj3.hash ?? "")
             }.catch { error in
                 self.bCreated = false
                 DDLogDebug("Get account info request error: \(error)")
@@ -472,7 +471,7 @@ class NRLStellar : NRLCoin{
         
         guard let account = getAddressStr() else {
             DDLogDebug("Account has no address")
-            callback(NRLWalletSDKError.transactionError(.transactionFailed("Account has no address" as! Error)), 0)
+            callback(NRLWalletSDKError.transactionError(.transactionFailed("Account has no address")), 0)
             return
         }
         
@@ -485,7 +484,7 @@ class NRLStellar : NRLCoin{
                 
                 guard let resObj = Mapper<StellarAccountResponse>().map(JSONObject: res.data) else {
                     DDLogDebug("Get account info respone data is null")
-                    callback(NRLWalletSDKError.transactionError(.transactionFailed("Account no data" as! Error)), 0)
+                    callback(NRLWalletSDKError.transactionError(.transactionFailed("Account no data")), 0)
                     return
                 }
                 
@@ -493,7 +492,7 @@ class NRLStellar : NRLCoin{
                 
                 guard let balances = resObj.balances else {
                     DDLogDebug("Account balance is nul")
-                    callback(NRLWalletSDKError.transactionError(.transactionFailed("Account has no balance" as! Error)), 0)
+                    callback(NRLWalletSDKError.transactionError(.transactionFailed("Account has no balance")), 0)
                     return
                 }
                 
@@ -508,7 +507,7 @@ class NRLStellar : NRLCoin{
                 
                 if (value + fee < lumens) {
                     DDLogDebug("Balance is smaller than send value")
-                    callback(NRLWalletSDKError.transactionError(.transactionFailed("Balance is small than send value" as! Error)), 0)
+                    callback(NRLWalletSDKError.transactionError(.transactionFailed("Balance is small than send value")), 0)
                     return
                 }
                 
@@ -538,7 +537,7 @@ class NRLStellar : NRLCoin{
                 if let encoded = envelope.urlEncoded {
                     callback(NRLWalletSDKError.nrlSuccess, encoded)
                 } else {
-                    callback(NRLWalletSDKError.transactionError(.transactionFailed("envelop failed" as! Error)), 0)
+                    callback(NRLWalletSDKError.transactionError(.transactionFailed("envelop failed")), 0)
                 }
             }.catch { error in
                 self.bCreated = false
@@ -563,7 +562,7 @@ class NRLStellar : NRLCoin{
             }.done { res in
                 DDLogDebug("res3: \(String(describing: res.data))")
                 guard let resObj3 = Mapper<StellarSendSignedTransactionResponse>().map(JSONObject: res.data) else {
-                    callback(NRLWalletSDKError.transactionError(.transactionFailed("cannot get mapped data from response" as! Error)), 0)
+                    callback(NRLWalletSDKError.transactionError(.transactionFailed("cannot get mapped data from response")), 0)
                     return
                 }
                 DDLogDebug("Create account success: hash: \(String(describing: resObj3.hash)), ledger: \(String(describing: resObj3.ledger))")

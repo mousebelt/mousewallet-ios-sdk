@@ -147,7 +147,7 @@ Create Seed data from mnemonic.
   public enum TransactionError: Error {
   case parameterError
   case publishError
-  case transactionFailed(Error)
+  case transactionFailed(Any)
   }
   
   public enum AccountError: Error {
