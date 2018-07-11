@@ -399,12 +399,13 @@ class ViewController: UIViewController {
     
     func setStellarWallet() {
         print("\n------------------------- Stellar ----------------------------\n")
+        
         // Stellar : 148
         guard let mnemonic = self.mnemonic else {
             print("Error: no mnemonic")
             return
         }
-        coinWallet = NRLWallet(mnemonic: mnemonic, passphrase: "Test", network: .main(.stellar), symbol: "XLM")
+        coinWallet = NRLWallet(mnemonic: mnemonic, passphrase: "", network: .main(.stellar), symbol: "XLM")
         
         guard let wallet = coinWallet else {
             print("setStellarWallet Error: cannot init wallet!")
