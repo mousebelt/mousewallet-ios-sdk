@@ -113,6 +113,8 @@ class ViewController: UIViewController {
             switch (err) {
             case NRLWalletSDKError.nrlSuccess:
                 //for ethereum tx is ETHGetTransactionsResponse mapping object and can get any field
+                var txArray = tx as! NSArray
+                var tx1 = txArray[0] as! WSSignedTransaction
                 var strTransactions = String(describing: tx)
 
                 strTransactions = strTransactions.replacingOccurrences(of: "\\n", with: "\n")
@@ -177,7 +179,7 @@ class ViewController: UIViewController {
             let calendar = NSCalendar.current
             var components = DateComponents()
             components.day = 1
-            components.month = 4
+            components.month = 5
             components.year = 2018
             let date = calendar.date(from: components)
 //        */
@@ -272,6 +274,8 @@ class ViewController: UIViewController {
     
     func setEthereumWallet() {
         print("\n------------------------- Ethereum ----------------------------\n")
+
+        self.mnemonic = ["target", "crater", "noble", "virus", "album", "surge", "kidney", "tennis", "snow", "click", "faculty", "robust"]
 
         // Ethereum : 60
         guard let mnemonic = self.mnemonic else {
@@ -423,10 +427,10 @@ class ViewController: UIViewController {
         
         generateMneonic()
 
-//        setBitcoinWallet()
+        setBitcoinWallet()
 //        setEthereumWallet()
 //        setLitecoinWallet()
-        setStellarWallet()
+//        setStellarWallet()
 //        setNeoWallet()
         
 

@@ -8,6 +8,7 @@
 
 import UIKit
 import NRLWalletSDK
+import BigInt
 
 internal class TransactionViewController: UIViewController {
     @IBOutlet weak var tfTo: UITextField!
@@ -17,8 +18,8 @@ internal class TransactionViewController: UIViewController {
     
     @IBAction func OnSend() {
         let to = tfTo.text;
-        let value = Double(tfValue.text!)
-        let fee = Double(tfFee.text!)
+        let value = tfValue.text!
+        let fee = tfFee.text!
         
         guard let wallet = coinWallet else {
             print("setStellarWallet Error: cannot init wallet!")
@@ -26,7 +27,7 @@ internal class TransactionViewController: UIViewController {
         }
 
         //for stellar, we need to insert double values
-        wallet.sendTransaction(to: to!, value: value!, fee: fee!) { (err, tx) -> () in
+        wallet.sendTransaction(to: to!, value: BigUInt(value)!, fee: BigUInt(fee)!) { (err, tx) -> () in
             switch (err) {
             case NRLWalletSDKError.nrlSuccess:
                 self.textTransaction.text = "Successfully sent transaction. tx: \(tx)"

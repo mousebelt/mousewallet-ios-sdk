@@ -398,6 +398,27 @@ NSString *WSHDWalletDefaultChainsPath(WSParameters *parameters)
     }
 }
 
+- (NSArray *)transactionSumariesInRange:(NSRange)range
+{
+    @synchronized (self) {
+        NSMutableArray *txs = [[NSMutableArray alloc] init];
+        const NSUInteger last = MIN(range.location + range.length, _txs.count);
+        for (NSUInteger i = range.location; i < last; ++i) {
+            uint64_t receivevalue = [self receivedValueFromTransaction: _txs[i]];
+            uint64_t sendvalue = [self sentValueByTransaction: _txs[i]];
+            uint64_t feevalue = [self feeForTransaction: _txs[i]];
+            NSDictionary * dict = [NSDictionary dictionaryWithObjectsAndKeys:
+                                   [NSNumber numberWithLongLong:receivevalue], @"receive",
+                                   [NSNumber numberWithLongLong:sendvalue], @"send",
+                                   [NSNumber numberWithLongLong:feevalue], @"fee",
+                                   [_txs[i] txId], @"txid",
+                                   nil];
+            [txs addObject: dict];
+        }
+        return txs;
+    }
+}
+
 - (uint64_t)receivedValueFromTransaction:(WSSignedTransaction *)transaction
 {
     WSExceptionCheckIllegal(transaction);
