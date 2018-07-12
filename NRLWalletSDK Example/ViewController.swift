@@ -113,8 +113,6 @@ class ViewController: UIViewController {
             switch (err) {
             case NRLWalletSDKError.nrlSuccess:
                 //for ethereum tx is ETHGetTransactionsResponse mapping object and can get any field
-                var txArray = tx as! NSArray
-                var tx1 = txArray[0] as! WSSignedTransaction
                 var strTransactions = String(describing: tx)
 
                 strTransactions = strTransactions.replacingOccurrences(of: "\\n", with: "\n")
@@ -275,8 +273,6 @@ class ViewController: UIViewController {
     func setEthereumWallet() {
         print("\n------------------------- Ethereum ----------------------------\n")
 
-        self.mnemonic = ["target", "crater", "noble", "virus", "album", "surge", "kidney", "tennis", "snow", "click", "faculty", "robust"]
-
         // Ethereum : 60
         guard let mnemonic = self.mnemonic else {
             print("Error: no mnemonic")
@@ -330,7 +326,6 @@ class ViewController: UIViewController {
     func setLitecoinWallet() {
         print("\n------------------------- Litecoin ----------------------------\n")
         // Litecoin : 2
-
         guard let mnemonic = self.mnemonic else {
             print("Error: no mnemonic")
             return
@@ -427,9 +422,9 @@ class ViewController: UIViewController {
         
         generateMneonic()
 
-        setBitcoinWallet()
+//        setBitcoinWallet()
 //        setEthereumWallet()
-//        setLitecoinWallet()
+        setLitecoinWallet()
 //        setStellarWallet()
 //        setNeoWallet()
         

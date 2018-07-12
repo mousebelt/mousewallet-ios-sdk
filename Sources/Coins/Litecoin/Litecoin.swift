@@ -308,16 +308,21 @@ class NRLLitecoin : NRLCoin{
         }
         let txs = wallet.transactions
         
-        var txsReturn: [BRTransaction] = []
+        let txsReturn = NSMutableArray()
         
         for index in offset...offset + count {
-            if (index < txs.count) {
+            if (index < txs.count) {     
                 guard let tx = txs[index] else {
                     continue
                 }
                 
                 let brtx = tx.pointee
-                txsReturn.append(brtx)
+                let receive = BRWalletAmountReceivedFromTx(wallet.cPtr, tx)
+                let send = BRWalletAmountSentByTx(wallet.cPtr, tx)
+                let fee = BRWalletFeeForTx(wallet.cPtr, tx)
+                let dict = ["receive": receive, "send": send, "fee": fee, "hash": brtx.txHash] as [String : Any]
+                
+                txsReturn.add(dict)
             }
         }
         

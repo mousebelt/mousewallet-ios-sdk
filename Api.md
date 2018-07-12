@@ -383,36 +383,15 @@ NRLWalletSDKError
   **err**: NRLWalletSDKError.nrlSuccess
   **value**:
   * **Bitcoin**
-  Transacctions as array of WSTransaction objects
+  Transacctions as array of Dictionary objects
   ```
-  @protocol WSTransaction <NSObject>
   
-  - (uint32_t)version;
-  - (NSOrderedSet *)inputs;   // id<WSTransactionInput>
-  - (NSOrderedSet *)outputs;  // WSTransactionOutput
-  - (uint32_t)lockTime;
-  
-  - (WSHash256 *)txId;
-  - (BOOL)isCoinbase;
-  
-  @end
-  
-  [{
-  version = 1,
-  id = 290e850082eabdd61611e3e0326871f4b770b75acd2fca4ab064d35a5cf5921c,
-  size = 226 bytes,
-  coinbase = NO,
-  lockTime = 0,
-  inputs =
-  {(
-  {address='1G9HZNetqbMyW93X4TG9FtAiZFPMabKHML', outpoint=a3e8a269bbef620e90e7d4320774974975240f37716eae99f3dcc77a3ea6c6fc:1, script='[3045022100922d7ff5a062f555c734c12c53401ce84d5df14b685fb066ed5f44eb1164544102204f0240dde5e7917e766287fb4fe92c8ecdb81ba9d0a248e11455a0ea541dc00e01] [029cc3688c21fe4870748b643aa320ebd8d3dfd5c149dfc8f512b9d89a8f50b4dc]', sequence=0xffffffff}
-  )},
-  outputs =
-  {(
-  {address='1D1qwf5N81gpQy8pAWQ4EmsZdgx1SYM9SH', value=152291, script='DUP HASH160 [83ca5d4ae6023ae66ebdf0f0077e148d6d89785a] EQUALVERIFY CHECKSIG'},
-  {address='17uUP8oTpyBRe2bpcaGWg2WhYCeEc9nWuB', value=797714277, script='DUP HASH160 [4bbd3de33fe3f57a648ca8c1744136ac136caaed] EQUALVERIFY CHECKSIG'}
-  )}
-  }]
+  {
+  send: 23,
+  receive: 32,
+  fee: 3
+  txid: 290e850082eabdd61611e3e0326871f4b770b75acd2fca4ab064d35a5cf5921c,
+  }
  ```
   * **Ethereum**
   Transactions as ETHGetTransactionsResponse
@@ -439,28 +418,14 @@ NRLWalletSDKError
     }
  ``` 
   * **Litecoin**
-  Transactions as array of BRTransaction
+  Transactions as NSMutableArray of following object
   ```
-  public struct BRTransaction {
-  
-      public var txHash: UInt256
-      
-      public var version: UInt32
-      
-      public var inputs: UnsafeMutablePointer<BRTxInput>!
-      
-      public var inCount: Int
-      
-      public var outputs: UnsafeMutablePointer<BRTxOutput>!
-      
-      public var outCount: Int
-      
-      public var lockTime: UInt32
-      
-      public var blockHeight: UInt32
-      
-      public var timestamp: UInt32 // time interval since unix epoch
- }
+  {
+      fee = 18446744073709551615;
+      hash = ba949adbb35e3ba36f8b139f62b3004eb3969e8b67778d04d484dada3e0cbfc1;
+      receive = 5000000;
+      send = 0;
+  }
  ```
   * **NEO**
   Transactions as NeoTransactionsMap
