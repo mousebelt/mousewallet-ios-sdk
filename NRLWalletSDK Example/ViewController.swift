@@ -114,7 +114,7 @@ class ViewController: UIViewController {
             case NRLWalletSDKError.nrlSuccess:
                 //for ethereum tx is ETHGetTransactionsResponse mapping object and can get any field
                 var strTransactions = String(describing: tx)
-
+        
                 strTransactions = strTransactions.replacingOccurrences(of: "\\n", with: "\n")
                 strTransactions = strTransactions.replacingOccurrences(of: "\\t", with: "\t")
 
@@ -421,12 +421,12 @@ class ViewController: UIViewController {
         DDLog.add(DDTTYLogger.sharedInstance)
         
         generateMneonic()
-
+        
 //        setBitcoinWallet()
 //        setEthereumWallet()
-        setLitecoinWallet()
+//        setLitecoinWallet()
 //        setStellarWallet()
-//        setNeoWallet()
+        setNeoWallet()
         
 
     }

@@ -12,14 +12,14 @@ import ObjectMapper
 
 public class StellarTxDetailResponse: Mappable, Equatable {
     public var id: String?
-    public var starting_balance: String?
+    public var amount: String?
     public var paging_token: String?
     public var transaction_hash: String?
     public var created_at: String?
     public var source_account: String?
     public var type: String?
     public var type_i: UInt?
-    public var account: String?
+    public var asset_type: String?
     public var funder: String?
     public var from: String?
     public var to: String?
@@ -31,14 +31,14 @@ public class StellarTxDetailResponse: Mappable, Equatable {
     // Mappable
     public func mapping(map: Map) {
         id                      <- map["id"]
-        starting_balance        <- map["starting_balance"]
+        amount                  <- map["amount"]
         paging_token            <- map["paging_token"]
         transaction_hash        <- map["transaction_hash"]
         created_at              <- map["created_at"]
         source_account          <- map["source_account"]
         type                    <- map["type"]
         type_i                  <- map["type_i"]
-        account                 <- map["account"]
+        asset_type              <- map["asset_type"]
         funder                  <- map["funder"]
         from                    <- map["from"]
         to                      <- map["to"]
@@ -53,7 +53,7 @@ public class StellarTxDetailResponse: Mappable, Equatable {
 public class StellarGetTransactionsResponse: Mappable {
     public var next: String?
     public var prev: String?
-    public var result: [StellarTxDetailResponse]?
+    public var result: [StellarTxDetailResponse] = []
     
     public required init?(map: Map) {
         

@@ -57,7 +57,7 @@ public class ETHTxDetailResponse: Mappable, Equatable {
 
 public class ETHGetTransactionsResponse: Mappable, Equatable {
     public var total: UInt?
-    public var result: [ETHTxDetailResponse]?
+    public var result: [ETHTxDetailResponse] = []
     
     public required init?(map: Map) {
         
@@ -95,7 +95,7 @@ public class ETHGetBalanceMap: Mappable, Equatable {
 }
 
 public class ETHGetBalanceResponse: Mappable {
-    public var balances: [ETHGetBalanceMap]?
+    public var balances: [ETHGetBalanceMap] = []
     
     public required init?(map: Map) {
         
