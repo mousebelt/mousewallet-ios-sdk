@@ -282,10 +282,10 @@ class NRLEthereum : NRLCoin{
                     }
                 }
             }.done { res3 in
-                let resObj = Mapper<ETHSendSignedTransactionResponse>().map(JSONObject: res3.data)
-                let hash: String = (resObj?.transactionHash)!
+//                let resObj = Mapper<ETHSendSignedTransactionResponse>().map(JSONObject: res3.data)
+//                let hash: String = (res3.data)! as! String
             
-                callback(NRLWalletSDKError.nrlSuccess, hash as Any)
+                callback(NRLWalletSDKError.nrlSuccess, res3.data as Any)
             }.catch { error in
                 DDLogDebug("Failed to send: \(error)")
                 callback((error as? NRLWalletSDKError)!, 0)

@@ -50,7 +50,7 @@ public class NeoAssetMap: Mappable {
 public class NeoGetBalanceResponse: Mappable, Equatable {
     
     public var address:String?
-    public var n_tx: UInt?
+    public var n_tx: Int?
     public var balance:[NeoAssetMap]?
 
     public required init?(map: Map) {

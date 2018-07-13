@@ -119,7 +119,7 @@ public class StellarAccountSignerResponse: Mappable {
 public class StellarAccountResponse: Mappable {
     
     /// The number of account subentries.
-    public var subentryCount:UInt?
+    public var subentryCount:Int?
     
     /// Flags used by the issuers of assets.
     public var flags:StellarAccountFlagsResponse?

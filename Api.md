@@ -515,7 +515,7 @@ NRLWalletSDKError
   Send signed transaction of send.
   
   * **Prototype**
-  > func sendTransaction(contractHash: String = "", to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) 
+  > func sendTransaction(contractHash: String = "", to: String, value: BigUint, fee: BigUint, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) 
   > func sendTransaction(to: String, value: UInt64, fee: UInt64, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) 
   > func sendTransaction(asset: AssetId, to: String, value: Decimal, fee: Decimal, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ())
   > func sendTransaction(to: String, value: Double, fee: Double, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ())

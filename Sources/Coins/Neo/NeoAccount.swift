@@ -11,6 +11,7 @@ import Neoutils
 import Alamofire
 import ObjectMapper
 import PromiseKit
+import SwiftyJSON
 
 public class NeoAccount {
     //allow this to override the entire client not only the network
@@ -102,12 +103,16 @@ public class NeoAccount {
             firstly {
                 sendRequest(responseObject:VCoinResponse.self, url: url)
                 }.done { res in
-                    DDLogDebug("utxo: \(String(describing: res.data))")
-                    let result = Mapper<NeoUTXOsResponse>().map(JSONObject: res.data)
+//                    let jsonObj = JSON(res as Any)
+                    
+                    var json = JSON()
+                    json["data"].arrayObject = res.data as? [Any]
+                    
+                    let result = Mapper<NeoUTXOsResponse>().map(JSONObject: json.object)
                     
                     var utxoList: [UTXO] = []
                     for utxomap in (result?.utxos)! {
-                        let utxoObj = UTXO(asset: utxomap.asset!, index: utxomap.index!, txid: utxomap.txid!, value: utxomap.value!, createdAtBlock: utxomap.createdAtBlock!)
+                        let utxoObj = UTXO(asset: utxomap.asset!, index: utxomap.index!, txid: utxomap.txid!, value: Decimal(utxomap.amount!), createdAtBlock: utxomap.createdAtBlock!)
                         utxoList.append(utxoObj)
                     }
                     

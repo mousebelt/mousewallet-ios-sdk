@@ -63,9 +63,9 @@ public class NeoScriptMap: Mappable {
     
 public class NeoTransactionDetailMap: Mappable {
     public var transactionID: String?
-    public var size: Int64?
+    public var size: Int?
     public var type: String?
-    public var version: Int64?
+    public var version: Int?
     // var attributes: [] //Need to handle this, not really sure what kind of objects it can give bakc
     public var valueIns: [NeoValueInMap]?
     public var systemFee: String?
@@ -74,8 +74,8 @@ public class NeoTransactionDetailMap: Mappable {
     public var valueOuts: [NeoValueOutMap]?
     public var scripts: [NeoScriptMap]?
     public var blockhash: String?
-    public var confirmations: UInt64?
-    public var blocktime: UInt64?
+    public var confirmations: Int?
+    public var blocktime: Int?
     
     public required init?(map: Map) {
         
@@ -115,7 +115,7 @@ public class NeoTransactionsMap: Mappable {
 public class NeoUTXOMap: Mappable {
     public var txid: String?
     public var index: Int?
-    public var value: Decimal?
+    public var amount: Double?
     public var asset: String?
     public var createdAtBlock: Int?
     
@@ -126,21 +126,35 @@ public class NeoUTXOMap: Mappable {
     public func mapping(map: Map) {
         txid                <- map["txid"]
         index               <- map["index"]
-        value               <- map["amount"]
+        amount               <- map["amount"]
         asset               <- map["asset"]
         createdAtBlock      <- map["createdAtBlock"]
     }
 }
 
 public class NeoUTXOsResponse: Mappable {
-    public var utxos: [NeoUTXOMap]?
+    public var utxos: Array<NeoUTXOMap> = []
     
     public required init?(map: Map) {
     }
     
     // Mappable
     public func mapping(map: Map) {
-        utxos        <- map["utxos"]
+        utxos        <- map["data"]
+    }
+}
+
+class VCoinResponseNeo: VCoinResponse {
+    var utxo: [NeoUTXOMap] = []
+    
+    required init?(map: Map) {
+        super.init(map: map)
+    }
+    
+    // Mappable
+    override func mapping(map: Map) {
+        super.mapping(map: map)
+        utxo        <- map["data"]
     }
 }
 

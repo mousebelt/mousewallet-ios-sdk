@@ -11,15 +11,15 @@ import ObjectMapper
 
 public class ETHTxDetailResponse: Mappable, Equatable {
     public var blockHash: String?
-    public var blockNumber: UInt?
+    public var blockNumber: Int?
     public var from: String?
     public var to: String?
-    public var gas: UInt?
+    public var gas: Int?
     public var gasPrice: String?
     public var hash: String?
     public var input: String?
-    public var nonce: UInt?
-    public var transactionIndex: UInt?
+    public var nonce: Int?
+    public var transactionIndex: Int?
     public var value: UInt?
     public var v: String?
     public var r: String?
@@ -109,7 +109,7 @@ public class ETHGetBalanceResponse: Mappable {
 }
 
 public class ETHSendSignedTransactionResponse: Mappable, Equatable {
-    public var blockNumber: UInt?
+    public var blockNumber: Int?
     public var status: Bool?
     public var to: String?
     public var transactionHash: String?
@@ -118,9 +118,9 @@ public class ETHSendSignedTransactionResponse: Mappable, Equatable {
     public var contractAddress: String?
     public var logsBloom: String?
     public var logs: [String]?
-    public var gasUsed: UInt?
-    public var cumulativeGasUsed: UInt?
-    public var transactionIndex: UInt?
+    public var gasUsed: Int?
+    public var cumulativeGasUsed: Int?
+    public var transactionIndex: Int?
     
     public required init?(map: Map) {
         
