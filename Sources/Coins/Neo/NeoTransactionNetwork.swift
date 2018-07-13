@@ -126,7 +126,7 @@ public class NeoUTXOMap: Mappable {
     public func mapping(map: Map) {
         txid                <- map["txid"]
         index               <- map["index"]
-        value               <- map["value"]
+        value               <- map["amount"]
         asset               <- map["asset"]
         createdAtBlock      <- map["createdAtBlock"]
     }

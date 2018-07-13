@@ -279,7 +279,7 @@ class ViewController: UIViewController {
             return
         }
         
-        coinWallet = NRLWallet(mnemonic: mnemonic, passphrase: "", network: .test(.ethereum), symbol: "ETC")
+        coinWallet = NRLWallet(mnemonic: mnemonic, passphrase: "", network: .main(.ethereum), symbol: "ETC")
 
         guard let wallet = coinWallet else {
             print("setEthereumWallet Error: cannot init wallet!")
@@ -422,9 +422,9 @@ class ViewController: UIViewController {
         
         generateMneonic()
 
-//        setBitcoinWallet()
+        setBitcoinWallet()
 //        setEthereumWallet()
-        setLitecoinWallet()
+//        setLitecoinWallet()
 //        setStellarWallet()
 //        setNeoWallet()
         
