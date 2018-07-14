@@ -160,7 +160,7 @@ class NRLNeo : NRLCoin{
     
     override func sendTransaction(asset: AssetId, to: String, value: Decimal, fee: Decimal, callback:@escaping (_ err: NRLWalletSDKError, _ tx:Any) -> ()) {
         self.account?.sendAssetTransaction(asset: asset, amount: value, toAddress: to) { (val, error) in
-            if ((error) != nil) {
+            if (error == nil) {
                 callback(NRLWalletSDKError.nrlSuccess, val as Any)
             }
             else {

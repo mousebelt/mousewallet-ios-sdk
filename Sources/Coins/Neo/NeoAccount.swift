@@ -108,11 +108,18 @@ public class NeoAccount {
                     var json = JSON()
                     json["data"].arrayObject = res.data as? [Any]
                     
-                    let result = Mapper<NeoUTXOsResponse>().map(JSONObject: json.object)
+                    guard let result = Mapper<NeoUTXOsResponse>().map(JSONObject: json.object) else {
+                        seal.reject(NRLWalletSDKError.transactionError(.transactionFailed("no utxo data")))
+                        return;
+                    }
                     
                     var utxoList: [UTXO] = []
-                    for utxomap in (result?.utxos)! {
-                        let utxoObj = UTXO(asset: utxomap.asset!, index: utxomap.index!, txid: utxomap.txid!, value: Decimal(utxomap.amount!), createdAtBlock: utxomap.createdAtBlock!)
+                    for utxomap in (result.utxos) {
+                        guard var txid = utxomap.txid else { continue }
+                        if txid.hasPrefix("0x") {
+                            txid = String(txid.dropFirst(2))
+                        }
+                        let utxoObj = UTXO(asset: utxomap.asset!, index: utxomap.index!, txid: txid, value: Decimal(utxomap.amount!), createdAtBlock: utxomap.createdAtBlock!)
                         utxoList.append(utxoObj)
                     }
                     
@@ -304,15 +311,13 @@ public class NeoAccount {
                 let payload = self.generateSendTransactionPayload(asset: asset, amount: amountDouble, toAddress: toAddress, assets: selectedAsset, attributes: attributes)
 
                
-                let url = "\(urlNeoServer)/api/v1/rpc"
+                let url = "\(urlNeoServer)/api/v1/sendrawtransaction"
                 
                 firstly {
-                    sendRequest(responseObject:VCoinResponse.self, url: url, method: .post, parameters: ["data":  payload.fullHexString])
+                    sendRequest(responseObject:VCoinResponse.self, url: url, method: .post, parameters: ["hex":  payload.fullHexString])
                     }.done { res in
                         DDLogDebug("send transaction result: \(String(describing: res.data))")
-//                        let resObj = Mapper<NeoGetBalanceResponse>().map(JSONObject: res.data)
-//
-//                        completion(resObj, nil)
+                        completion(res.data as! Bool, nil)
                     }.catch { error in
                         completion(nil, (error as? NRLWalletSDKError)!)
                 }
