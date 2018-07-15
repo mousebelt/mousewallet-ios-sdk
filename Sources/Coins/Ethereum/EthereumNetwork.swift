@@ -20,7 +20,7 @@ public class ETHTxDetailResponse: Mappable, Equatable {
     public var input: String?
     public var nonce: Int?
     public var transactionIndex: Int?
-    public var value: UInt?
+    public var value: String?
     public var v: String?
     public var r: String?
     public var s: String?
