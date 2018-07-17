@@ -426,9 +426,12 @@ extension WalletManager : WalletAuthenticator {
             masterPubKey = BRMasterPubKey()
             didInitWallet = false
             earliestKeyTime = 0
-            if let bundleId = Bundle.main.bundleIdentifier {
-                UserDefaults.standard.removePersistentDomain(forName: bundleId)
-            }
+            
+            ////////Danger!!!
+//            if let bundleId = Bundle.main.bundleIdentifier {
+//                UserDefaults.standard.removePersistentDomain(forName: bundleId)
+//            }
+            
             try BRAPIClient(authenticator: self).kv?.rmdb()
             try? FileManager.default.removeItem(atPath: dbPath)
             try? FileManager.default.removeItem(at: BRReplicatedKVStore.dbPath)

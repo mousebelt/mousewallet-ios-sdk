@@ -209,7 +209,7 @@ class ViewController: UIViewController {
     
     func updateBalance() {
         guard let wallet = coinWallet else {
-            print("PeerGroupDidStartDownload Error: cannot init wallet!")
+            print("PeerGroupDidStartDownload Error: cannot init wal let!")
             return
         }
     
@@ -345,7 +345,7 @@ class ViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(On_LTC_PeerGroupDidStartDownload(notification:)), name: NSNotification.Name.LTC_PeerGroupDidStartDownload, object: nil)
         
         print("\nCreate Own Wallet")
-        if (!wallet.createOwnWallet(created: Date(), fnew: false)) {
+        if (!wallet.createOwnWallet(created: Date(), fnew: true)) {
             print("create wallet failed")
             return
         }
@@ -423,8 +423,8 @@ class ViewController: UIViewController {
         generateMneonic()
         
 //        setBitcoinWallet()
-        setEthereumWallet()
-//        setLitecoinWallet()
+//        setEthereumWallet()
+        setLitecoinWallet()
 //        setStellarWallet()
 //        setNeoWallet()
         
