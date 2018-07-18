@@ -431,6 +431,7 @@ extension WalletManager : WalletAuthenticator {
 //            if let bundleId = Bundle.main.bundleIdentifier {
 //                UserDefaults.standard.removePersistentDomain(forName: bundleId)
 //            }
+            UserDefaults.standard.set(0, forKey: "LastBlockHeightKey")
             
             try BRAPIClient(authenticator: self).kv?.rmdb()
             try? FileManager.default.removeItem(atPath: dbPath)

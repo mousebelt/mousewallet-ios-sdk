@@ -377,7 +377,7 @@ class WalletManager : BRWalletListener, BRPeerManagerListener {
     }
     
     func syncStopped(_ error: BRPeerManagerError?) {
-        switch error {
+        switch error { 
         case .some(let .posixError(errorCode, description)):
             DispatchQueue.main.async() {
                 NotificationCenter.default.post(name: .WalletSyncStoppedNotification, object: nil,

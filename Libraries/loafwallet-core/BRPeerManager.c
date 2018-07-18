@@ -1827,6 +1827,20 @@ void BRPeerManagerDisconnect(BRPeerManager *manager)
     }
 }
 
+void BRPeerManagerSyncStopped(BRPeerManager *manager)
+{
+    manager->syncStartHeight = 0;
+    
+    if (manager->downloadPeer) {
+        // don't cancel timeout if there's a pending tx publish callback
+        for (size_t i = array_count(manager->publishedTx); i > 0; i--) {
+            if (manager->publishedTx[i - 1].callback != NULL) return;
+        }
+        
+        BRPeerScheduleDisconnect(manager->downloadPeer, -1); // cancel sync timeout
+    }
+}
+
 // rescans blocks and transactions after earliestKeyTime (a new random download peer is also selected due to the
 // possibility that a malicious node might lie by omitting transactions that match the bloom filter)
 void BRPeerManagerRescan(BRPeerManager *manager)

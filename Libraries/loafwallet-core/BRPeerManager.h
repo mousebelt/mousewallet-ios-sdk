@@ -74,6 +74,9 @@ int BRPeerManagerIsConnected(BRPeerManager *manager);
 // connect to bitcoin peer-to-peer network (also call this whenever networkIsReachable() status changes)
 void BRPeerManagerConnect(BRPeerManager *manager);
 
+//inserted for stop syncing
+void BRPeerManagerSyncStopped(BRPeerManager *manager);
+
 // disconnect from bitcoin peer-to-peer network (may cause syncFailed(), saveBlocks() or savePeers() callbacks to fire)
 void BRPeerManagerDisconnect(BRPeerManager *manager);
 

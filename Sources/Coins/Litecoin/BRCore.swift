@@ -593,6 +593,10 @@ class BRPeerManager {
         BRPeerManagerDisconnect(cPtr)
     }
     
+    func stopsync() {
+        BRPeerManagerSyncStopped(cPtr)
+    }
+    
     // rescans blocks and transactions after earliestKeyTime (a new random download peer is also selected due to the
     // possibility that a malicious node might lie by omitting transactions that match the bloom filter)
     func rescan() {
