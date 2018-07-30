@@ -123,12 +123,19 @@ BRMasterPubKey BRBIP32MasterPubKey(const void *seed, size_t seedLen)
         BRKeySetSecret(&key, &secret, 1);
         mpk.fingerPrint = BRKeyHash160(&key).u32[0];
         
-        _CKDpriv(&secret, &chain, 0 | BIP32_HARD); // path m/0H
+        // Multibit Derivation Path
+        //_CKDpriv(&secret, &chain, 0 | BIP32_HARD); // path m/0H
     
+        // BIP44 Derivation Path
+        _CKDpriv(&secret, &chain, 44 | BIP32_HARD); // BIP 44 Derivation Scheme
+        _CKDpriv(&secret, &chain, 2 | BIP32_HARD); // Chain type 2
+        _CKDpriv(&secret, &chain, 0 | BIP32_HARD); // Account type 0
+
+        
         mpk.chainCode = chain;
         BRKeySetSecret(&key, &secret, 1);
         var_clean(&secret, &chain);
-        BRKeyPubKey(&key, &mpk.pubKey, sizeof(mpk.pubKey)); // path N(m/0H)
+        BRKeyPubKey(&key, &mpk.pubKey, sizeof(mpk.pubKey));
         BRKeyClean(&key);
     }
     
@@ -146,6 +153,7 @@ size_t BRBIP32PubKey(uint8_t *pubKey, size_t pubKeyLen, BRMasterPubKey mpk, uint
     if (pubKey && sizeof(BRECPoint) <= pubKeyLen) {
         *(BRECPoint *)pubKey = *(BRECPoint *)mpk.pubKey;
 
+        
         _CKDpub((BRECPoint *)pubKey, &chainCode, chain); // path N(m/0H/chain)
         _CKDpub((BRECPoint *)pubKey, &chainCode, index); // index'th key in chain
         var_clean(&chainCode);
@@ -157,7 +165,15 @@ size_t BRBIP32PubKey(uint8_t *pubKey, size_t pubKeyLen, BRMasterPubKey mpk, uint
 // sets the private key for path m/0H/chain/index to key
 void BRBIP32PrivKey(BRKey *key, const void *seed, size_t seedLen, uint32_t chain, uint32_t index)
 {
-    BRBIP32PrivKeyPath(key, seed, seedLen, 3, 0 | BIP32_HARD, chain, index);
+    BRBIP32PrivKeyPath(key,
+                       seed,
+                       seedLen,
+                       5, // Accept 5 arguments for derivation
+                       44 | BIP32_HARD, // Derive according to BIP44 Spec
+                       chain, // Cointype to derive
+                       0 | BIP32_HARD, // Account to derive
+                       0, // Change
+                       index);
 }
 
 // sets the private key for path m/0H/chain/index to each element in keys
@@ -177,8 +193,13 @@ void BRBIP32PrivKeyList(BRKey keys[], size_t keysCount, const void *seed, size_t
         chainCode = *(UInt256 *)&I.u8[sizeof(UInt256)];
         var_clean(&I);
 
-        _CKDpriv(&secret, &chainCode, 0 | BIP32_HARD); // path m/0H
-        _CKDpriv(&secret, &chainCode, chain); // path m/0H/chain
+        // Derivation across BIP 44
+        _CKDpriv(&secret, &chainCode, 44 | BIP32_HARD); // path m/44'
+        _CKDpriv(&secret, &chainCode, chain); // path m/44'/chain' (must | with BIP32_hard)
+        _CKDpriv(&secret, &chainCode, 0 | BIP32_HARD); // Account to derive
+        _CKDpriv(&secret, &chainCode, 0); // change
+
+
     
         for (size_t i = 0; i < keysCount; i++) {
             s = secret;
