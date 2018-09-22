@@ -11,7 +11,8 @@ This class has no constructor and only provides
     case hight = 256
   ```
   > `.normal` means 12 words length mnemonic
-  > `.normal` means 24 words length mnemonic
+  
+  > `.height` means 24 words length mnemonic
 
 * **Languages**
   Mnemonic provides following languages as enum value:
