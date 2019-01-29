@@ -35,7 +35,7 @@ extension Data {
         var data = Data(count: length)
         for _ in 0...1024 {
             let result = data.withUnsafeMutableBytes {
-                SecRandomCopyBytes(kSecRandomDefault, data.count, $0)
+                SecRandomCopyBytes(kSecRandomDefault, length, $0)
             }
             if result == errSecSuccess {
                 return data

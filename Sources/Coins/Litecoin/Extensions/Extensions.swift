@@ -63,12 +63,13 @@ public extension String {
         }
         
         var result = Data(count: 128/8)
+        let count = result.count;
         return result.withUnsafeMutableBytes { (resultBytes: UnsafeMutablePointer<CUnsignedChar>) -> String in
             data.withUnsafeBytes { (dataBytes) -> Void in
                 BRMD5(resultBytes, dataBytes, data.count)
             }
             var hash = String()
-            for i in 0..<result.count {
+            for i in 0..<count {
                 hash = hash.appendingFormat("%02x", resultBytes[i])
             }
             return hash
@@ -336,10 +337,8 @@ public extension Data {
         return self.withUnsafeBytes({ (selfBytes: UnsafePointer<UInt8>) -> Data in
             var data = Data(count: 65)
             var k = key
-            return data.withUnsafeMutableBytes({ (bytes: UnsafeMutablePointer<UInt8>) -> Data in
-                BRKeyCompactSign(&k, bytes, 65, self.uInt256)
-                return data
-            })
+            _ = data.withUnsafeMutableBytes({ BRKeyCompactSign(&k, $0, 65, self.uInt256) })
+            return data
         })
     }
 

@@ -64,8 +64,9 @@ public class NeoAccount {
     
     public init?() {
         var pkeyData = Data(count: 32)
+        let count = pkeyData.count
         let result = pkeyData.withUnsafeMutableBytes {
-            SecRandomCopyBytes(kSecRandomDefault, pkeyData.count, $0)
+            SecRandomCopyBytes(kSecRandomDefault, count, $0)
         }
         
         if result != errSecSuccess {
