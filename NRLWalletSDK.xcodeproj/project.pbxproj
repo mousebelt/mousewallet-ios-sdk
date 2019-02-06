@@ -1422,12 +1422,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63F4FE4620C8F33C00215698 /* PromiseKit.framework in Frameworks */,
 				6355617C20E76DF6006F2C31 /* neoutils.framework in Frameworks */,
 				6377F21120BD9DD100F668E3 /* libssl.a in Frameworks */,
 				63F4FE4320C8F33C00215698 /* BigInt.framework in Frameworks */,
 				63D499D620CAE70F0047840F /* ObjectMapper.framework in Frameworks */,
 				63F4FE3C20C8F2C200215698 /* Web3.framework in Frameworks */,
-				63F4FE4620C8F33C00215698 /* PromiseKit.framework in Frameworks */,
 				63F4FE4520C8F33C00215698 /* secp256k1.framework in Frameworks */,
 				6377F21220BD9DD100F668E3 /* libcrypto.a in Frameworks */,
 				63D499D720CAE70F0047840F /* Alamofire.framework in Frameworks */,
@@ -3783,7 +3783,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 66QV52HWVA;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -3810,6 +3810,8 @@
 				OTHER_LDFLAGS = (
 					"-lcrypto",
 					"-lssl",
+					"-read_only_relocs",
+					suppress,
 				);
 				OTHER_LIBTOOLFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.norestlabs.NRLWalletSDK;
@@ -3835,7 +3837,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 66QV52HWVA;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -3862,6 +3864,8 @@
 				OTHER_LDFLAGS = (
 					"-lcrypto",
 					"-lssl",
+					"-read_only_relocs",
+					suppress,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.norestlabs.NRLWalletSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";

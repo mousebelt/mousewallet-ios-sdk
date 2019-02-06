@@ -101,7 +101,7 @@ to libs of libssl and libcrypto should be explicitly included as linked library 
 ## build
 
 ### download dependences
->carthage update --platform iOS
+>carthage update --platform iOS --no-use-binaries
 
 ### build project at xcode
 
@@ -140,4 +140,12 @@ to libs of libssl and libcrypto should be explicitly included as linked library 
 ### stellar
 * https://stellarchain.io/
 
+
+## Error cases
+* If there exists carthage errors, try following console commands, which will clear carthage cache.
+
+> rm -rf ~/Library/Caches/org.carthage.CarthageKit 
+> rm -rf ~/Library/Caches/carthage
+
+* If there exists carthage dependency problem between web3 and promisekit, please refer the dependency version from web3
 
