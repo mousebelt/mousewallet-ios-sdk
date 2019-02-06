@@ -20,7 +20,7 @@ func sendRequest<T: Mappable>(responseObject: T.Type, url: URLConvertible, metho
     DDLogDebug("headers = \(String(describing: headers))")
     
     return Promise { seal in
-        Alamofire.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers)
+        AF.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers)
             .responseJSON() { response in
                 switch response.result {
                 case .success(let data):
